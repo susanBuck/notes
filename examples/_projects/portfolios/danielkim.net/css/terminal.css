@@ -1,0 +1,17 @@
+body{
+	background-color:black;
+	color:white;
+	font:normal 15px Monaco, "Lucida", "Courier New", Courier;
+}
+.prompt{
+	height:20px;
+}
+.dir{
+	color:blue;
+}
+td{
+	padding-right:30px;
+}
+a{
+	color:white;
+}

@@ -1,0 +1,50 @@
+<!-- 
+Adapted from: http://www.ajaxdaddy.com/mootools-autocomplete.html
+-->
+
+<!-- INCLUDES -->
+<link rel="stylesheet" href="css/Autocompleter.css" type="text/css" media="screen">
+
+<script type="text/javascript" src="javascript/mootools.v1.11.js"></script>
+<script type="text/javascript" src="javascript/Observer.js"></script>
+<script type="text/javascript" src="javascript/Autocompleter.js"></script>
+
+
+<!-- AC SCRIPT -->
+<script type="text/javascript">
+window.addEvent('domready', function(){
+	var el     = $ES('input');
+	
+	/* Possible search results go in this array */
+	var tokens = [['Blackboard', ''], ['Registrar', ''], ['Registrar', '']]
+
+	var completer1 = new Autocompleter.Local(el[0], tokens, {
+		'delay': 100,
+		'filterTokens': function() {
+			var regex = new RegExp('^' + this.queryValue.escapeRegExp(), 'i');
+			return this.tokens.filter(function(token){
+				return (regex.test(token[0]) || regex.test(token[1]));
+			});
+		},
+		'injectChoice': function(choice) {
+			var el = new Element('li')
+				.setHTML(this.markQueryValue(choice[0]))
+				.adopt(new Element('span', {'class': 'example-info'}).setHTML(this.markQueryValue(choice[1])));
+			el.inputValue = choice[0];
+			this.addChoiceEvents(el).injectInside(this.choices);
+		}
+	});
+});
+</script>
+
+Search for "blackboard" or "registrar"<br/>
+
+<!-- SEARCH -->
+<input autocomplete="off" name="search" type="text"><br>	
+
+<br/>
+Step 1: View source on this page; you'll see the path to 1 css file and 3 JS files. Download all of them to your server in the directory you're working in.<br/>
+Step 2: Copy the code as you see in View Source of this page into your work<br/>
+Step 3: Replace the "tokens" in your code with your actual search terms<br/>
+Step 4: Fiddle with css/Autocompleter.css if you want to change how the autocomplete looks<br/>
+

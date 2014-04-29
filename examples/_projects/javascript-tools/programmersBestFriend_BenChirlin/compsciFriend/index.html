@@ -1,0 +1,275 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="Programmer's Best Friend" content="Binary/Hexadecimal/Decimal Converter"/>
+<title>Programmer's Best Friend</title>
+
+<script type="text/javascript" src="http://use.typekit.com/nng3bek.js"></script>
+<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+<script type="text/javascript" src="converter.js"></script>
+
+<style>
+	/*Monitor Image Style, centered*/
+	.monitor{
+		background-image:url('imgs/monitor.png');
+		background-repeat:no-repeat;
+		position:absolute;
+		top:50%;
+		left:50%;
+		width:950px;
+		height:760px;
+		margin-top:-380px;
+		margin-left:-475px;
+		border:0px;
+		text-align:right;
+		font-size:9px;
+	}
+	/*Background tile*/
+	body{
+		height:100%;
+		width:100%;
+		margin:0;
+		padding:0;
+		background-image:url('imgs/bgTile.png');
+		background-repeat:repeat;
+		background-color:#000;
+	}
+	/*Unused styles due to TypeKit*/
+	.bestFriend{
+		font-size:50px;
+		padding:0px 0px 0px 0px;
+		font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
+		color:#C60;
+		text-align:left;
+		text-decoration:underline;
+	}
+	.inputs{
+		position:absolute;
+		top:80px;
+		left:80px;
+		width: 770px;
+		padding: 10px;
+		text-align:left;
+	}
+	.numberInput{
+		border:2px dashed #C60;
+		margin: 20px 20px 20px 20px;
+		height:36px;
+		width: 100%;
+		position:relative;
+		left:-20px;
+		background-color:transparent;
+		color:#C60;
+		font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
+		font-size:30px;
+	}
+	.inputTitles{
+		font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
+		font-size:16px;
+		color:#C60;
+		text-align:center;
+	}
+</style>
+
+<script type="text/javascript">
+
+/*Reset*/
+function squareOne(){
+	document.getElementById("binary").value = "";
+	document.getElementById("hexa").value = "";
+	document.getElementById("decimal").value = "";
+	return;
+}
+/*Check Decimal Input: parse input, calculate results, throw errors, fill in fields*/
+function checkDec(input){
+	var empty = /\s+/g;
+	var neg = /^-/g;
+	if(empty.test(input) || input == ""){
+		squareOne();
+		return;
+	}
+	else if(input == parseInt(input)){
+		if(parseInt(input)<0){
+			var result = new Array();
+			result = convert(input, 'negdec');
+			document.getElementById("binary").value = result[1];
+			document.getElementById("hexa").value = "**!!NOT SUPPORTED!!**";
+			return;
+		}
+		else{
+			var result = new Array();
+			result = convert(input, 'dec');
+			document.getElementById("binary").value = result[1];
+			document.getElementById("hexa").value = result[2];
+			return;
+		}
+	}
+	else{
+		document.getElementById("binary").value = "**!!ERROR!!**";
+		document.getElementById("hexa").value = "**!!ERROR!!**";
+		return;
+	}
+}
+/*Check Binary Input: parse input, calculate results, throw errors, fill in fields*/
+function checkBin(input){
+	var empty = /\s+/g;
+	if(empty.test(input) || input == ""){
+		squareOne();
+		return;
+	}
+	var inString = new String(input);
+	var result = new Array();
+	
+	var nonBin = 0;
+	
+	for (var i = 0; i<inString.length; i++){
+		if(input.charAt(i) != '1' && input.charAt(i) != '0'){
+			document.getElementById("decimal").value = "**!!ERROR!!**";
+			document.getElementById("hexa").value = "**!!ERROR!!**";
+			nonBin = 1;
+			break;
+		}		
+	}
+	
+	if(!nonBin){
+		var result = new Array();
+		result = convert(input, 'bin');
+		document.getElementById("decimal").value = result[0];
+		document.getElementById("hexa").value = result[2];
+		return;	
+	}
+}
+/*Check Hexadecimal Input: parse input, calculate results, throw errors, fill in fields*/
+function checkHex(input){
+	var empty = /\s+/g;
+	if(empty.test(input) || input == ""){
+		squareOne();
+		return;
+	}
+	
+	var inString = new String(input.toUpperCase());
+	var result = new Array();
+	
+	var nonHex = 0;
+	
+	for (var i = 0; i<inString.length; i++){
+		if( isHex(inString.charAt(i)) ){
+			document.getElementById("decimal").value = "**!!ERROR!!**";
+			document.getElementById("binary").value = "**!!ERROR!!**";
+			nonHex = 1;
+			break;
+		}		
+	}
+	
+	if(!nonHex){
+		var result = new Array();
+		result = convert(inString, 'hex');
+		document.getElementById("decimal").value = result[0];
+		document.getElementById("binary").value = result[1];
+		return;	
+	}
+}
+/*Check if given symbol is in hexadecimal*/
+function isHex(symb){
+	if(symb != "0" &&
+	symb != "1" &&
+	symb != "2" &&
+	symb != "3" &&
+	symb != "4" &&
+	symb != "5" &&
+	symb != "6" &&
+	symb != "7" &&
+	symb != "8" &&
+	symb != "9" &&
+	symb != "A" &&
+	symb != "B" &&
+	symb != "C" &&
+	symb != "D" &&
+	symb != "E" &&
+	symb != "F"){
+		return 1;
+	}
+	return 0;
+	
+}
+
+</script>
+
+</head>
+<!--Clear fields on load-->
+<body onload="squareOne()">
+
+<div id="content" class="monitor">
+    <!--Monitor Image-->
+    
+    <!--Inputs-->
+    <div id="inputs" class="inputs"><br />
+<br />
+<br />
+<br />
+
+     <div class="tk-hydrophilia-iced" style="font-size:55px; color:#C60; text-align:center;">Programmer's Best Friend</div>
+      <div class="tk-hydrophilia-iced" style="font-size:19px; color:#C60; text-align:center;">
+        <input type="text" id="decimal" class="tk-hydrophilia-iced" style="
+        border:2px dashed #C60;
+		margin: 20px 20px 20px 20px;
+		height:36px;
+		width: 100%;
+		position:relative;
+		left:-20px;
+		background-color:transparent;
+		color:#C60;
+        text-align:center;
+		font-size:30px;"
+         onkeyup="checkDec(document.getElementById('decimal').value)"/>
+        DECIMAL<br />
+
+        <input type="text" id="binary" class="tk-hydrophilia-iced" style="
+        border:2px dashed #C60;
+		margin: 20px 20px 20px 20px;
+		height:36px;
+		width: 100%;
+		position:relative;
+		left:-20px;
+		background-color:transparent;
+		color:#C60;
+        text-align:center;
+		font-size:30px;"
+        onkeyup="checkBin(document.getElementById('binary').value)"/>
+        BINARY<br />
+        
+        <input type="text" id="hexa" class="tk-hydrophilia-iced" style="
+        border:2px dashed #C60;
+		margin: 20px 20px 20px 20px;
+		height:36px;
+		width: 100%;
+		position:relative;
+		left:-20px;
+		background-color:transparent;
+		color:#C60;
+        text-align:center;
+		font-size:30px;"
+        onkeyup="checkHex(document.getElementById('hexa').value)"/>
+       HEXADECIMAL<br /><br />
+       
+       <button type="button" class="tk-hydrophilia-iced" id="clearButton" style="
+       text-align:right;
+       font-size:25px;
+       color:#C60;
+       border:1px dotted #C60;
+       position:relative;
+       left:320px;
+       background-color:transparent;" onmousedown="squareOne()">
+       CLEAR
+       </button>
+       
+       </p>
+      </div>
+    </div>
+
+</div>
+
+</body>
+
+</html>

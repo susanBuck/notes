@@ -1,0 +1,115 @@
+/*-------------------------------------------------------------------------------------------------
+Color picker
+-------------------------------------------------------------------------------------------------*/
+.colors {
+	cursor:pointer;
+	width:30px;
+	height:30px;
+	float:left;
+	margin-right:5px;
+}
+
+#red {
+	background-color:red;
+}
+
+#orange {
+	background-color:orange;
+}
+
+#yellow {
+	background-color:yellow;
+}
+
+#green {
+	background-color:green;
+}
+
+#blue {
+	background-color:blue;
+}
+
+#indigo {
+	background-color:#11F5F5;
+}
+
+#violet {
+	background-color:#E5A7FA;
+}
+
+
+/*-------------------------------------------------------------------------------------------------
+Texture picker
+-------------------------------------------------------------------------------------------------*/
+.textures {
+	cursor:pointer;
+	width:80px;
+	height:35px;
+	border:1px solid #eee;
+	float:left;
+	margin-right:5px;
+}
+
+#paper {
+	background-image:url('../images/texture-paper.png');
+}
+
+#swirls {
+	background-image:url('../images/texture-swirls.png');
+}
+
+#circles {
+	background-image:url('../images/texture-circles.png');
+}
+
+#cloth {
+	background-image:url('../images/texture-cloth.png');
+}
+
+
+/*-------------------------------------------------------------------------------------------------
+Stickers
+-------------------------------------------------------------------------------------------------*/
+.stickers {
+	cursor:pointer;
+	z-index:2; /* Make sure it's above the card */
+}
+
+.stickers_on_card {
+	position:absolute;
+	top:0px;
+	left:0px;
+	cursor:move;
+}
+
+
+/*-------------------------------------------------------------------------------------------------
+Message
+-------------------------------------------------------------------------------------------------*/
+#message-output {
+	text-align:center;
+	font-size:35px;
+	position:absolute;
+	top:100px;
+	height:50px;
+	width:100%;
+}
+
+
+/*-------------------------------------------------------------------------------------------------
+Recipient
+-------------------------------------------------------------------------------------------------*/
+#recipient-output {	
+	text-align:center;
+	font-size:30px;
+	width:100%;
+	position:absolute;
+	top:150px;
+}
+
+.error {
+	color:red;
+}
+
+
+

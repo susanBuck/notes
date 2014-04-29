@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<head>
+
+	<title>Fluid Layout Example</title>
+
+	<!-- This external stylesheet is just for styling purposes on the demo, you don't need it -->
+	<link rel="stylesheet" type="text/css" href="/storage/code/includes/code.css">
+
+	<style type='text/css'>
+	
+		body {
+			margin:0px; /* Browsers will set a margin > 0 by default, so reset it to 0 here */
+			background-color:#D1FFFE;
+		}
+	
+		/* We're giving all the divs a border just so they're easy to distinguish for this demo */
+		div {
+			border:1px dotted black;
+		}
+		
+		/* The header div will fill the screen 100% by default. Here we specify all text should be centered, and the height is 5em */
+		#header {
+			text-align:center;
+			font-size:20pt;
+			height:100px;
+		}
+		
+		/* The left column might contain something like a menu. It has a fixed width of 200px. Whether you want to set height is optional */
+		#left-column {		
+			float:left; /* This makes the right-column able to sit next to it */
+			width:200px;
+			height:200px;
+		}
+		
+		/* Right column has our content and basically fills out all the space we give it */
+		#right-column {
+			margin-left:200px; /* comment this out if you want your text to wrap around the box */
+		}
+	
+	</style>                                              
+	
+</head>
+<body>
+
+	<div id='header'>
+		#header
+	</div>
+	
+	<div id='left-column'>
+		#left-column
+	</div>
+	
+	<div id='right-column'>
+		#right-column <br><br>
+		
+		Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum.
+	</div>
+	
+</body>
+
+</html>

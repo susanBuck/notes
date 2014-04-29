@@ -1,0 +1,47 @@
+/*
+Theme Name:     Twenty Twelve Child
+Theme URI:      http://example.com/
+Description:    Child theme for the Twenty Twelve theme
+Author:         Susan Buck
+Author URI:     http://susanbuck.net
+Template:       twentytwelve                             
+Version:        0.1.0
+*/ 
+
+@import url("../twentytwelve/style.css");
+
+/* Make the logo centered in the h1 tag */
+.site-header h1 {
+	text-align:center;
+}
+
+/* Make the font size bigger on our home page */
+.entry-content {
+	font-size:2rem; /* 1=about 14px */
+}
+
+/* Disable the "Powered by WordPress" line in the footer */
+.site-info {
+	display:none;
+}
+
+/* Remove the white background on the main container */
+#page {
+	box-shadow:none;
+	background-color:transparent;
+}
+
+/* Turn off the various border dividers */
+footer[role="contentinfo"] {
+	border-top: 0px solid red;
+} 
+
+.site-content article {
+	border-bottom: 0px double green;
+}
+
+ .main-navigation div.nav-menu > ul {
+	border-bottom: 0px solid red;
+	border-top: 0px solid red;
+}
+

@@ -1,0 +1,126 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head> 
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+		<title>Send a Text Message Online</title> 
+	
+	<link href="style.css" rel="stylesheet" type="text/css" /> 
+	<script type="text/javascript">
+		<!-- domain represents the recepient's email address for the text message -->
+		var domain;
+		<!-- charlength keeps track of the length of the message -->
+		var charlength;
+		
+		<!-- Checks that the entered phone number is of length 10 and only consists of numbers -->
+		function numbersonly(formId){
+			var numericExpression = /^[0-9]+$/;
+			if (formId.value != ""){
+				if(formId.value.length > 10 ){
+					formId.value = formId.value.substring(0,10);
+					document.getElementById('pnumError').innerHTML = "";
+				}else if(!(formId.value.match(numericExpression))){
+					document.getElementById('pnumError').innerHTML = "*Invalid phone number";
+				}else{
+					document.getElementById('pnumError').innerHTML = "";
+				}
+				document.getElementById('screenNumber').innerHTML = "<span>To: &nbsp;</span>" + formId.value;
+			}else{
+				document.getElementById('pnumError').innerHTML = "";
+				document.getElementById('screenNumber').innerHTML = "<span>To: &nbsp;</span>" + formId.value;
+			}
+		}
+		
+		function maxlength(formId, max){
+			//var input = formId.value;
+			if(formId.value.length > max){
+				formId.value = formId.value.substring(0, max);
+				document.getElementById('msgError').innerHTML = "*Message is too long.";
+				charLength = formId.value.length;
+			}else{
+				document.getElementById('msgError').innerHTML = "";
+				charLength = formId.value.length;			
+			}
+			document.getElementById('screenMsg').innerHTML = "<span>Message:</span><br/>" + formId.value;
+		}
+		
+		function clearMessage(formId){
+			if (formId.value == "Enter a message here."){
+				formId.value = "";
+				document.getElementById('screenMsg').innerHTML = "<span>Message:</span><br/>";
+			}else{
+				return;
+			}
+		}
+		
+	</script>
+</head> 
+
+<body>
+<div id="container">
+	<div id="logo"></div>
+	<!-- RIGHT SIDE: Cell Phone/Blackberry ############################### -->
+	<div id="phone">
+		<div id="phoneScreen">
+			<!-- div id="screenCover"></div -->
+				<div id="screenNumber"><span>To:&nbsp;</span></div>
+				<div id="screenMsg"><span>Message:</span></div>
+			
+		</div>
+	</div>
+	<!-- RIGHT SIDE: Form/content ######################################### -->
+	<div id="content">
+		<div id="input">
+		
+			<form method="get" action="processForm.php">	
+				<table border="0">
+					<!-- Cell Phone Number  -->
+					<tr style="padding:0px;">
+						<td style="text-align:right"> <b>Recepient's <br/>Cell Number:</b></td>
+						<td><input id="num" name="number" value="" onkeyup="numbersonly(this.form.num)" onfocus="numbersonly(this.form.num)" type="text" onblur="numbersonly(this.form.num)"/></td>
+					</tr>
+					<!-- Print error message here if user enters an invalid phone number -->
+					<tr>
+						<td></td>
+						<td style="height:12px; margin:0px; padding:0px"><div id="pnumError"></div></td>
+					
+					<!-- Mobile Carrier  -->
+					<tr>
+						<td style="text-align:right"><b>Mobile Carrier:</b></td>
+						<td><select id="carrier" name='mobileCarrier'>
+							<option value="default" selected="selected" disabled="disabled">[Select a Provider]</option>
+							<option value='atandt'>AT&amp;T</option>
+							<option value='cricket'>Cricket</option>
+							<option value='sprint'>Sprint</option>
+							<option value='tmobile'>T-mobile</option>
+							<option value='verizon'>Verizon</option>
+							<option value='virgin'>Virgin</option>
+						</select></td>
+					</tr>
+					<tr></tr>
+					<tr></tr>
+					
+					<!-- Message  ############################################## -->
+					<tr>
+						<td style="text-align:right"><b>Message:</b></td>
+						<td><textarea id="enterMsg" name="msg" maxlength="160" onkeyup="maxlength(this.form.enterMsg, 160)" onfocus="maxlength(this.form.enterMsg, 160);clearMessage(this.form.enterMsg)" rows="5" cols="26" maxlength="160">Enter a message here.</textarea>
+					</tr>
+					
+					<!-- Print error message here if message is too long-->
+					<tr>
+						<td></td>
+						<td style="height:12px; margin:0px; padding:0px"><div id="msgError"></div></td>
+					
+				</table>
+				<br/>
+				
+				<!-- Submit -->
+				<input type="submit" id="submitButton" value="Send"/>
+			</form>
+		</div>
+			
+		
+	</div>
+</div>
+</body>
+</html>
+

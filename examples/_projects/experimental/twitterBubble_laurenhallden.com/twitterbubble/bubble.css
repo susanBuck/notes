@@ -1,0 +1,166 @@
+body {
+	margin: 0px;
+	overflow: hidden;
+	}
+
+img.bg {
+	/* Set rules to fill background */
+	min-width: 1024px;
+	
+	/* Set up proportionate scaling */
+	width: 100%;
+	height: auto;
+	
+	/* Set up positioning */
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	z-index:-1;
+	}
+
+@media screen and (max-width: 1024px){
+	img.bg {
+	left: 50%;
+	margin-left: -512px; }
+	}
+
+#background {
+	z-index: -1;
+	}
+	
+/* Logo position */
+	
+#centerLogo {
+	margin: 0px auto;
+	text-align:center;
+	}
+	
+#logo {
+	width: 615px;
+	height: 410px;
+	margin: 0px auto;
+	z-index: 4;
+	}
+	
+/*  Container divs to space the bubbles out across the page  */
+
+#container1 {
+	position: absolute;
+	top: 0px;
+	left: 192px;
+	width: 270px;
+	height: 100%;
+	overflow: hidden;
+	}
+
+#container2 {
+	position: absolute;
+	top: 0px;
+	left: 464px;
+	width: 270px;
+	height: 100%;
+	overflow: hidden;
+	}
+
+#container3 {
+	position: absolute;
+	top: 0px;
+	left: 736px;
+	width: 270px;
+	height: 100%;
+	overflow: hidden;
+	}
+
+#container4 {
+	position: absolute;
+	top: 0px;
+	left: 1004px;
+	width: 270px;
+	height: 100%;
+	overflow: hidden;
+	}
+	
+/*  Bubble Positions and Backgrounds  */
+	
+#bubble1 {
+	width: 230px;
+	height: 230px;	
+	position: relative; 
+	top: 1100px;
+	left: 20px;
+	background-image:url('images/bubble1.png');
+	z-index: 4;
+	margin: 0px;
+	text-align:center;
+	}
+	
+#bubble2 {
+	width: 230px;
+	height: 230px;	
+	position: relative; 
+	top: 1100px;
+	left: 20px;
+	background-image:url('images/bubble1.png');
+	z-index: 4;
+	margin: 0px;
+	text-align:center;
+	}
+
+#bubble3 {
+	width: 230px;
+	height: 230px;	
+	position: relative; 
+	top: 1100px;
+	left: 20px;
+	background-image:url('images/bubble1.png');
+	z-index: 4;
+	margin: 0px;
+	text-align:center;
+	}
+
+#bubble4 {
+	width: 230px;
+	height: 230px;	
+	position: relative; 
+	top: 1100px;
+	left: 20px;
+	background-image:url('images/bubble1.png');
+	z-index: 4;
+	margin: 0px;
+	text-align:center;
+	}
+	
+/*  Tweets inside bubbles  */
+
+#content1 {
+	width: 200px;
+	height: 150px;
+	position: relative;
+	top: 70px;
+	margin: 0px auto;
+	}	
+
+#content2 {
+	width: 200px;
+	height: 150px;
+	position: relative;
+	top: 70px;
+	margin: 0px auto;
+	}	
+	
+#content3 {
+	width: 200px;
+	height: 150px;
+	position: relative;
+	top: 70px;
+	margin: 0px auto;
+	}	
+	
+#content4 {
+	width: 200px;
+	height: 150px;
+	position: relative;
+	top: 70px;
+	margin: 0px auto;
+	}	
+/* Localized */

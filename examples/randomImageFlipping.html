@@ -1,0 +1,28 @@
+
+<script type='text/javascript'>
+
+function rollover(whichImage) {
+
+	var imageOptions = new Array();
+	
+	imageOptions[0] = "/upenn/classdemo/images/image0.jpg";
+	imageOptions[1] = "/upenn/classdemo/images/image1.jpg";
+	imageOptions[2] = "/upenn/classdemo/images/image2.jpg";
+	imageOptions[3] = "/upenn/classdemo/images/image3.jpg";
+	
+	var randomNumber = Math.floor(Math.random()*4);
+	
+	console.log(randomNumber);
+	
+	document.getElementById(whichImage).src = imageOptions[randomNumber];
+}
+ 
+
+</script>
+
+
+
+
+<img id='theImage1' src='images/image0.jpg' width=20% onMouseOver='rollover("theImage1")' onMouseOut='rollover("theImage1")'>
+
+<img id='theImage2' src='images/image1.jpg' width=20% onMouseOver='rollover("theImage2")' onMouseOut='rollover("theImage2")'>

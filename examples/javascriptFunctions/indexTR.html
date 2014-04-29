@@ -1,0 +1,112 @@
+<head>
+
+	<link rel="stylesheet" type="text/css" href="styles.css" />
+
+	<title>Class Demo</title>
+	
+	<script type='text/javascript'>
+	
+	/*-------------------------------------------------------------------------------------------------
+	changeColor()
+	-------------------------------------------------------------------------------------------------*/
+	function changeColor() {
+		document.getElementById("square").style.backgroundColor = "red";
+	}
+	
+	
+	/*-------------------------------------------------------------------------------------------------
+	toggleColor()
+	-------------------------------------------------------------------------------------------------*/
+	function toggleColor() {
+
+		var currentColor = document.getElementById("square").style.backgroundColor;
+		var newColor     = "";
+	
+		if(currentColor == "blue") {
+			newColor = "red";
+		}
+		else if(currentColor == "red") {
+			newColor = "orange";
+		}
+		else if(currentColor == "orange") {
+			newColor = "green";
+		}
+		else {
+			newColor = "black";
+		}
+		
+		document.getElementById("square").style.backgroundColor = newColor;
+	
+	}
+	
+	/*-------------------------------------------------------------------------------------------------
+	changePosition()
+	-------------------------------------------------------------------------------------------------*/
+	function changePosition() {
+	
+		// Grab values from the inputs
+		var topPos  = document.getElementById("topPos").value;
+		var leftPos = document.getElementById("leftPos").value;
+		
+		if((topPos == parseFloat(topPos)) && (leftPos == parseFloat(leftPos)) ) {
+			// Move box according to those values
+			document.getElementById("square").style.top = topPos;	
+			document.getElementById("square").style.left = leftPos;	
+		}
+		else {
+			alert("That is not a number!");
+		}
+	
+	}
+	
+	/*-------------------------------------------------------------------------------------------------
+	toggleOnAndOff()
+	-------------------------------------------------------------------------------------------------*/
+	function toggleOnAndOff() {
+	
+		// If the box is on
+		if(document.getElementById("square").style.display == "block") { 
+			// Turn it off
+			document.getElementById("square").style.display = "none";
+		}
+		// Otherwise...
+		else {
+			// Turn it on
+			document.getElementById("square").style.display = "block";
+		}
+	
+	}
+	
+	
+	
+	
+	</script>
+
+</head>
+
+
+<body>
+
+
+	<!-- The square -->
+	<div id='square' style='position:absolute; top:200px; left:500px; width:200px; height:200px; background-color:blue'>
+	Hello World
+	</div>
+	
+	<br/>
+	
+	Top: <input onClick='changeColor()' type='text' id='topPos' style='width:30px'><br/>
+	Left: <input type='text' id='leftPos' style='width:30px'><br/>
+
+	<br/>
+	
+	<input type='button' value='Change Color' onClick='changeColor()' style='font-size:16pt;'>
+	<input type='button' value='Toggle Color' onClick='toggleColor()'>
+	<input type='button' value='Change Position' onClick='changePosition()'>
+	<input type='button' value='Toggle on and Off' onClick='toggleOnAndOff()'>
+	<a href='javascript:void(0);' onClick='toggleOnAndOff()'>Toggle on or off</a>
+	
+	
+
+
+</body>

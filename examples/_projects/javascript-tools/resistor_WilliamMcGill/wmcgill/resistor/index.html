@@ -1,0 +1,438 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Resistor Value</title>
+
+<style type='text/css'>
+
+/*centering style for whole page*/
+
+body
+	{
+	background:#FF0000
+	font-family:Georgia, Times, serifs;
+	margin:0; padding:0;
+	height:100%;
+	width:100%;
+	}
+
+.floater
+	{
+	position:relative;
+	height:50%;	margin-bottom:-250px;
+	width:50%;
+	}
+ 
+.centered
+	{
+	position:relative;
+	clear:left;
+	top:0px;
+	height:500px;
+	width:80%; max-width:1100px; min-width:1024px;
+	margin:0 auto;
+	background:#FFFFFF;
+	border:0px solid #000000;
+	overflow:auto;
+	}
+	
+</style>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/mootools/1.3.0/mootools-yui-compressed.js"></script>
+
+<script type="text/javascript">
+	/*Change background color for band 1*/
+	function changeBackground1() {
+		
+		
+		var originalColor = $("band1").getStyle("backgroundColor");
+		
+		var input = $("Band1Color").value;
+		
+		if(input == "Color"){
+			alert("Pick A Color");
+		}
+		else{
+			var colors  = new Array();
+			colors['Black']  = "#000000";
+			colors['Brown']  = "#8B4513";
+			colors['Red']  = "#FF0000";
+			colors['Orange']  = "#FFA500";
+			colors['Yellow']  = "#FFFF00";
+			colors['Green']  = "#008000";
+			colors['Blue']  = "#0000FF";
+			colors['Purple']  = "#800080";
+			colors['Gray']  = "#808080";
+			colors['White']  = "#FFFFFF";
+			colors['Gold']  = "#FFD700";
+			colors['Silver']  = "#C0C0C0";
+			colors['None']  = "#BB9668";
+			
+			var value  = new Array();
+			value['Black']  = "0";
+			value['Brown']  = "1";
+			value['Red']  = "2";
+			value['Orange']  = "3";
+			value['Yellow']  = "4";
+			value['Green']  = "5";
+			value['Blue']  = "6";
+			value['Purple']  = "7";
+			value['Gray']  = "8";
+			value['White']  = "9";
+		
+			var newColor = colors[input];
+
+			$("band1").tween('background-color', [originalColor,newColor]);
+			
+			//var currentContent = document.$("ResistanceValue").innerHTML;
+			//var newContent = currentContent + value[input];
+			//document.$("ResistanceValue").innerHTML = newContent;
+			
+			// Morph
+			//$("band1").set('morph', {link: 'chain'})
+			//.morph({'opacity': .5})
+			//.morph({'top': '-100'})
+			//.morph({'background-color': [originalColor,newColor]})
+			//;
+		}
+	}
+	
+	/*Change background color for band 2*/
+	function changeBackground2() {
+		
+		
+		var originalColor = $("band2").getStyle("backgroundColor");
+		
+		var input = $("Band2Color").value;
+		
+		if(input == "Color"){
+			alert("Pick A Color");
+		}
+		else{
+		var colors  = new Array();
+		colors['Black']  = "#000000";
+		colors['Brown']  = "#8B4513";
+		colors['Red']  = "#FF0000";
+		colors['Orange']  = "#FFA500";
+		colors['Yellow']  = "#FFFF00";
+		colors['Green']  = "#008000";
+		colors['Blue']  = "#0000FF";
+		colors['Purple']  = "#800080";
+		colors['Gray']  = "#808080";
+		colors['White']  = "#FFFFFF";
+		colors['Gold']  = "#FFD700";
+		colors['Silver']  = "#C0C0C0";
+		colors['None']  = "#BB9668";
+		
+		var value  = new Array();
+			value['Black']  = "0";
+			value['Brown']  = "1";
+			value['Red']  = "2";
+			value['Orange']  = "3";
+			value['Yellow']  = "4";
+			value['Green']  = "5";
+			value['Blue']  = "6";
+			value['Purple']  = "7";
+			value['Gray']  = "8";
+			value['White']  = "9";
+
+		var newColor = colors[input];
+
+		$("band2").tween('background-color', [originalColor,newColor]);
+		}
+	}
+	
+	/*Change background color for band 3*/
+	function changeBackground3() {
+		
+		
+		var originalColor = $("band3").getStyle("backgroundColor");
+		
+		var input = $("Band3Color").value;
+
+		if(input == "Color"){
+			alert("Pick A Color");
+		}
+		else{
+		var colors  = new Array();
+		colors['Black']  = "#000000";
+		colors['Brown']  = "#8B4513";
+		colors['Red']  = "#FF0000";
+		colors['Orange']  = "#FFA500";
+		colors['Yellow']  = "#FFFF00";
+		colors['Green']  = "#008000";
+		colors['Blue']  = "#0000FF";
+		colors['Purple']  = "#800080";
+		colors['Gray']  = "#808080";
+		colors['White']  = "#FFFFFF";
+		colors['Gold']  = "#FFD700";
+		colors['Silver']  = "#C0C0C0";
+		colors['None']  = "#BB9668";
+		
+		var value  = new Array();
+			value['Black']  = "1";
+			value['Brown']  = "10";
+			value['Red']  = "100";
+			value['Orange']  = "1000";
+			value['Yellow']  = "10000";
+			value['Green']  = "100000";
+			value['Blue']  = "1000000";
+			value['Purple']  = "10000000";
+			value['Gray']  = "100000000";
+			value['White']  = "10000000000";
+
+		var newColor = colors[input];
+
+		$("band3").tween('background-color', [originalColor,newColor]);
+		}
+	}
+	
+	/*Change background color for band 4*/
+	function changeBackground4() {
+		
+		
+		var originalColor = $("band4").getStyle("backgroundColor");
+		
+		var input = $("Band4Color").value;
+		
+		if(input == "Color"){
+			alert("Pick A Color");
+		}
+		else{
+		var colors  = new Array();
+		colors['Black']  = "#000000";
+		colors['Brown']  = "#8B4513";
+		colors['Red']  = "#FF0000";
+		colors['Orange']  = "#FFA500";
+		colors['Yellow']  = "#FFFF00";
+		colors['Green']  = "#008000";
+		colors['Blue']  = "#0000FF";
+		colors['Purple']  = "#800080";
+		colors['Gray']  = "#808080";
+		colors['White']  = "#FFFFFF";
+		colors['Gold']  = "#FFD700";
+		colors['Silver']  = "#C0C0C0";
+		colors['None']  = "#BB9668";
+		
+		var value  = new Array();
+			value['Brown']  = "+/- 1 %";
+			value['Red']  = "+/- 2 %";
+			value['Green']  = "+/- 0.5 %";
+			value['Blue']  = "+/- 0.25 %";
+			value['Purple']  = "+/- 0.1 %";
+			value['Gray']  = "+/- 0.05 %";
+			value['Gold']  = "+/- 5 %";
+			value['Silver']  = "+/- 10 %";
+			value['None']  = "+/- 20 %";
+
+		var newColor = colors[input];
+
+		$("band4").tween('background-color', [originalColor,newColor]);
+		}
+	}
+	
+	/*Calculate resistance*/
+	function calculateResistance() {
+		
+		
+		if($("Band1Color").value == "Color"){
+			alert("Pick Band 1 Color");
+		}
+		else if($("Band2Color").value == "Color"){
+			alert("Pick Band 2 Color");
+		}
+		else if($("Band3Color").value == "Color"){
+			alert("Pick Band 3 Color");
+		}
+		else if($("Band4Color").value == "Color"){
+			alert("Pick Band 4 Color");
+		}
+		else{
+		var value  = new Array();
+			value['Black']  = "0";
+			value['Brown']  = "1";
+			value['Red']  = "2";
+			value['Orange']  = "3";
+			value['Yellow']  = "4";
+			value['Green']  = "5";
+			value['Blue']  = "6";
+			value['Purple']  = "7";
+			value['Gray']  = "8";
+			value['White']  = "9";
+			
+		var multiplier  = new Array();
+			multiplier['Black']  = " ";
+			multiplier['Brown']  = "0 ";
+			multiplier['Red']  = "00 ";
+			multiplier['Orange']  = " k";
+			multiplier['Yellow']  = "0 k";
+			multiplier['Green']  = "00 k";
+			multiplier['Blue']  = " M";
+			multiplier['Purple']  = "0 M";
+			multiplier['Gray']  = "00 M";
+			multiplier['White']  = " G";
+			multiplier['Gold']  = ".";
+			multiplier['Silver']  = ".";
+
+			
+		var tolerance  = new Array();
+			tolerance['Brown']  = "+/- 1 %";
+			tolerance['Red']  = "+/- 2 %";
+			tolerance['Green']  = "+/- 0.5 %";
+			tolerance['Blue']  = "+/- 0.25 %";
+			tolerance['Purple']  = "+/- 0.1 %";
+			tolerance['Gray']  = "+/- 0.05 %";
+			tolerance['Gold']  = "+/- 5 %";
+			tolerance['Silver']  = "+/- 10 %";
+			tolerance['None']  = "+/- 20 %";
+			
+			input1 = $("Band1Color").value
+			input2 = $("Band2Color").value
+			input3 = $("Band3Color").value
+			input4 = $("Band4Color").value
+
+			//alert(input3);
+			
+			//if(input3 == "Red"){
+			//var newContent = value[input1] + "." + value[input2] + multiplier[input3] + " Ohms " + tolerance[input4];
+			//document.getElementById("resistanceValue").innerHTML=newContent;
+			//}
+
+			if(input3 == "Gold"){
+			var newContent = value[input1] + multiplier[input3] + value[input2] + " Ohms " + tolerance[input4];
+			document.getElementById("resistanceValue").innerHTML=newContent;
+			}
+			else if(input3 == "Silver"){
+			var newContent = "0" + multiplier[input3] + value[input1] + value[input2] + " Ohms " + tolerance[input4];
+			document.getElementById("resistanceValue").innerHTML=newContent;
+			}
+			else{
+			var newContent = value[input1] + value[input2] + multiplier[input3] + "Ohms " + tolerance[input4];
+			document.getElementById("resistanceValue").innerHTML=newContent;
+			}
+			}
+	}
+	
+	</script>
+
+
+</head>
+ 
+<body>
+
+	<div id="floater">
+		<div id="centered">
+		
+		<!--Resistor Image-->
+			<img id='resistor' style='opacity:1' src="resistor.png" alt="picture" />  
+			
+			<!--Band 1-->
+            <div id='band1' style='position:absolute; top:0px; left:225px; height:500px; width:80px; background-color:#8B4513; z-index:-1;'>
+            </div>
+            <div id='band1Selection' style='position:absolute; top:425px; left:233px; height:25px; width:80px; background-color:#FFFFFF; z-index:1;'>
+  	          <select id="Band1Color" onchange='changeBackground1()'>
+				  <option>Color</option>
+ 				 <option>Brown</option>
+ 				 <option>Red</option>
+ 				 <option>Orange</option>
+                 <option>Yellow</option>
+                 <option>Green</option>
+                 <option>Blue</option>
+                 <option>Purple</option>
+                 <option>Gray</option>
+                 <option>White</option>
+				</select>
+			</div>
+            <!--<div id='band1Submit' style='position:absolute; top:460px; left:243px; height:25px; width:80px; background-color:#FFFFFF; z-index:1;'>
+            <input type="button" onClick='changeBackground1()'value='Enter'>
+            </div>-->
+            
+            
+            
+           <!--Band 2--> 
+            <div id='band2' style='position:absolute; top:0px; left:355px; height:500px; width:80px; background-color:#000000; z-index:-1;'>
+            </div>
+            <div id='band2Selection' style='position:absolute; top:425px; left:360px; height:25px; width:80px; background-color:#FFFFFF; z-index:1;'>
+  	          <select id="Band2Color" onchange='changeBackground2()'>
+				  <option>Color</option>
+                  <option>Black</option>
+ 				 <option>Brown</option>
+ 				 <option>Red</option>
+ 				 <option>Orange</option>
+                 <option>Yellow</option>
+                 <option>Green</option>
+                 <option>Blue</option>
+                 <option>Purple</option>
+                 <option>Gray</option>
+                 <option>White</option>
+				</select>
+			</div>
+            <!--<div id='band2Submit' style='position:absolute; top:460px; left:370px; height:25px; width:80px; background-color:#FFFFFF; z-index:1;'>
+            <input type="button" onClick='changeBackground2()' value='Enter'>
+            </div>-->
+            
+            
+            
+            <!--Band 3-->
+            <div id='band3' style='position:absolute; top:0px; left:500px; height:500px; width:80px; background-color:#000000; z-index:-1;'>
+            </div>
+            <div id='band3Selection' style='position:absolute; top:425px; left:505px; height:25px; width:80px; background-color:#FFFFFF; z-index:1;'>
+  	          <select id="Band3Color" onchange='changeBackground3()'>
+				  <option>Color</option>
+                  <option>Black</option>
+ 				 <option>Brown</option>
+ 				 <option>Red</option>
+ 				 <option>Orange</option>
+                 <option>Yellow</option>
+                 <option>Green</option>
+                 <option>Blue</option>
+                 <option>Purple</option>
+                 <option>Gray</option>
+                 <option>White</option>
+                 <option>Gold</option>
+                 <option>Silver</option>
+				</select>
+			</div>
+            <!--<div id='band3Submit' style='position:absolute; top:460px; left:515px; height:25px; width:80px; background-color:#FFFFFF; z-index:1;'>
+            <input type="button" onClick='changeBackground3()' value='Enter'>
+            </div>-->
+            
+            
+            
+            <!--Band 4-->
+            <div id='band4' style='position:absolute; top:0px; left:733px; height:500px; width:80px; background-color:#8B4513; z-index:-1;'>
+            </div>
+            <div id='band4Selection' style='position:absolute; top:425px; left:740px; height:25px; width:80px; background-color:#FFFFFF; z-index:1;'>
+  	          <select id="Band4Color" onchange='changeBackground4()'>
+				  <option>Color</option>
+ 				 <option>Brown</option>
+ 				 <option>Red</option>
+                 <option>Green</option>
+                 <option>Blue</option>
+                 <option>Purple</option>
+                 <option>Gray</option>
+                 <option>Gold</option>
+                 <option>Silver</option>
+                 <option>None</option>
+				</select>
+			</div>
+            <!--<div id='band4Submit' style='position:absolute; top:460px; left:745px; height:25px; width:80px; background-color:#FFFFFF; z-index:1;'>
+            <input type="button" onClick='changeBackground4()' value='Enter'>
+            </div>
+		</div>
+		
+		<!--Resistance-->
+		<div id='Resistance' style='position:absolute; top:525px; left:435px; height:25px; background-color:#FFFFFF; z-index:1; font-size:50px'>
+		Resistance
+		</div>
+		<div id='resistanceValue' style='position:absolute; top:600px; left:375px; height:25px; background-color:#FFFFFF; z-index:1; font-size:40px'>
+			
+		</div>
+		<div id='calculateResistance' style='position:absolute; top:500px; left:475px; height:25px; width:80px; background-color:#FFFFFF; z-index:1;'>
+            <input type="button" onClick='calculateResistance()' value='Calculate Resistance'>
+            </div>
+	</div>
+	</div>
+</body>
+</html>

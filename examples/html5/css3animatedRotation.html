@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<style type='text/css'>
+
+#littleBox {
+  /* Paramaters on how this div should rotate */
+  -webkit-transition: -webkit-transform 5s ease-in-out;
+  
+  position:absolute; 
+  top:100px;
+  left:100px;
+  width:50px; 
+  background-color:red; 
+  height:50px;
+ 
+}
+
+#littleBox.rotate {
+  -webkit-transform: rotateZ(-90deg);
+}
+
+</style>
+
+
+<script type='text/javascript'>
+
+	function rotate() {
+		document.getElementById("littleBox").className = "rotate";
+	}
+
+</script>
+
+
+<div id='littleBox' onClick='rotate()'>
+</div>

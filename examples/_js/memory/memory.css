@@ -1,0 +1,24 @@
+* {
+	font-family:consolas;
+}
+
+.card {
+	cursor:pointer;
+	width:60px;
+	font-size:25px;
+	height:65px;
+	background-color:#ED156C;
+	color:#ED156C;
+	float:left;
+	padding-top:25px;
+	margin-right:10px;
+	text-align:center;
+}
+
+.flipped {
+	color:black;
+}
+
+#scoreboard {
+	font-size:25px;
+}

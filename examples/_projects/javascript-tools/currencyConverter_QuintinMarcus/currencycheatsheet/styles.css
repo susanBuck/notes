@@ -1,0 +1,146 @@
+body{
+	background-image: url("images/bgtile.gif");
+	font            : 21pt Tahoma;
+	font-variant    : small-caps;
+}
+	
+#headerText{
+	position    : absolute;
+	right       : 0px;
+	margin-right: 22px;
+}
+
+#whereFrom{
+	position: absolute;
+	top     : 137px;
+	left    : 36px;
+}
+
+#whereTo{
+	position: absolute;
+	top     : 229px;
+	left    : 36px;
+}
+
+#howMuch{
+	position: absolute;
+	top     : 319px;
+	left    : 36px;
+}
+
+#generateButton{
+	position: absolute;
+	top     : 414px;
+	left    : 268px;
+}
+
+#printButton{
+	position    : absolute;
+	top         : 551px;
+	right       : 0px;
+	margin-right: 22px;
+}
+
+.conversionItemRight{
+	border-style    : solid;
+	border-width    : 1px;
+	border-color    : #000000;
+	background-color: #d1fcff;
+	height          : 34px;
+	width           : 141px;
+	position        : absolute;
+	right           : 0px;
+	top             : 111px;
+	margin-right    : 22px;
+	text-align      : center;
+	font-size       : 20pt;
+	vertical-align  : middle;
+}
+
+.conversionItemLeft{
+	border-style    : solid;
+	border-width    : 1px;
+	border-color    : #000000;
+	background-color: #d1fcff;
+	height          : 34px;
+	width           : 141px;
+	position        : absolute;
+	right           : 142px;
+	top             : 111px;
+	margin-right    : 22px;
+	text-align      : center;
+	font-size       : 20pt;
+	vertical-align  : middle;
+}
+
+#conversionTitle{
+	border-style    : solid;
+	border-width    : 1px;
+	border-color    : #000000;
+	background-color: #d1fcff;
+	height          : 34px;
+	width           : 273px;
+	position        : absolute;
+	right           : 0px;
+	top             : 66px;
+	margin-right    : 22px;
+	text-align      : center;
+	padding         : 5px;
+	font-size       : 21pt; 
+	font-weight     : bold;
+}
+
+.conversionItemRightSmall{
+	border-style    : solid;
+	border-width    : 1px;
+	border-color    : #000000;
+	background-color: #d1fcff;
+	height          : 19px;
+	width           : 76px;
+	position        : absolute;
+	left            : 78px;
+	top             : 33px;
+	text-align      : center;
+	font-size       : 10pt;
+	vertical-align  : middle;
+	font-weight     : bold;
+}
+
+.conversionItemLeftSmall{
+	border-style    : solid;
+	border-width    : 1px;
+	border-color    : #000000;
+	background-color: #d1fcff;
+	height          : 19px;
+	width           : 76px;
+	position        : absolute;
+	left            : 0px;
+	top             : 33px;
+	text-align      : center;
+	font-size       : 10pt;
+	vertical-align  : middle;
+	font-weight     : bold;
+}
+
+#conversionTitleSmall{
+	border-style    : solid;
+	border-width    : 1px;
+	border-color    : #000000;
+	background-color: #d1fcff;
+	height          : 22px;
+	width           : 144px;
+	position        : absolute;
+	top             : 0px;
+	left            : 0px;
+	text-align      : center;
+	padding         : 5px;
+	font-size       : 12pt; 
+	font-weight     : bold;
+}
+
+#errorMessage{
+	position : absolute;
+	top      : 455px;
+	left     : 36px;
+	color    : red;
+}

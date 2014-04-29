@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+
+<head>
+
+	<title>JS / jQuery effects</title>
+
+	<link rel="stylesheet" href="/storage/code/includes/code.css" type="text/css">
+
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+	
+	<style type='text/css'>
+	
+		div {
+			background-color:orange;
+			width:50px; 
+			height:50px;
+		}
+	
+	</style>
+
+	<script type='text/javascript'>
+		
+		$(document).ready(function() {
+		
+		
+			/* Fade out */
+			$('#fade-out-button').click(function() {
+				$("#fade-out").fadeOut();
+			});
+			
+					
+			/* Fade toggle */
+			$('#fade-toggle-button').click(function() {
+				$("#fade-toggle").fadeToggle();
+			});
+			
+			/* Fade toggle */
+			$('#slide-toggle-button').click(function() {
+				$("#slide-toggle").slideToggle();
+			});
+			
+			
+			/* Grow width */
+			$('#grow-width-button').click(function() {
+				$("#grow-width").animate({width:300},"slow");
+			});
+			
+			/* Grow width then height */
+			$('#grow-width-then-height-button').click(function() {
+				$("#grow-width-then-height").animate({width:300},"slow");
+				$("#grow-width-then-height").animate({height:300},"slow");
+			});
+			
+			/* Grow width AND height */
+			$('#grow-width-and-height-button').click(function() {
+				$("#grow-width-and-height").animate({width:300, height:300},"slow");
+			});
+			
+			/* Move to */
+			$('#move-to-button').click(function() {
+				$("#move-to").animate({top:100, left:100},"slow");
+			});
+			
+			
+			
+			
+		});
+		
+	</script>
+
+
+</head>
+
+
+<body>
+
+	<a href='http://www.w3schools.com/jquery/jquery_effects.asp'>W3Schools jQuery Effects</a><br>
+	<a href='http://api.jquery.com/category/effects/'>jQuery effects</a><br>
+	<a href='http://api.jquery.com/animate/'>jQuery Animate method</a><br>
+	
+	<br><br>
+	
+	<!-- Fade out -->
+	<input type='button' value='fade out' id='fade-out-button'>
+	<div id='fade-out'></div>
+	
+	<br><br>
+	
+	<!-- Fade toggle -->
+	<input type='button' value='fade toggle (click repeatedly)' id='fade-toggle-button'>
+	<div id='fade-toggle'></div>
+	
+	<br><br>
+	
+	<!-- Slide toggle -->
+	<input type='button' value='slide toggle (click repeatedly)' id='slide-toggle-button'>
+	<div id='slide-toggle'></div>
+	
+	<br><br>
+	
+	<!-- Grow width -->
+	<input type='button' value='grow width' id='grow-width-button'>
+	<div id='grow-width'></div>
+	
+	<br><br>
+	
+	<!-- Grow width then height -->
+	<input type='button' value='grow width then height' id='grow-width-then-height-button'>
+	<div id='grow-width-then-height'></div>
+
+	<br><br>
+
+	<!-- Grow width AND height -->
+	<input type='button' value='grow width and height' id='grow-width-and-height-button'>
+	<div id='grow-width-and-height'></div>
+	
+	<br><br>
+	
+	<!-- Move to -->
+	<input type='button' value='move 100 px down and over' id='move-to-button'>
+	<div id='move-to' style='position:relative'></div>
+	
+	
+</body>
+
+</html>

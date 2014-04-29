@@ -1,0 +1,59 @@
+/* The asterisks is a wildcard character, saying apply this style to everything */
+* {
+	font-family:georgia;
+}
+
+/* All inputs should have a font-size of 14pt */
+input {
+	font-size:14pt;
+} 
+
+/* Kill the default margin that the browser always gives our page */
+body {
+	margin:0px;
+}
+
+/* This contains all our content, making sure it's centered on the page */
+#wrapper {
+	position:relative;
+	margin:0px auto;
+	width:960px;
+	margin-top:30px;
+}
+
+/* Our form inputs exist here */
+#left-column {
+	float:left;
+}
+
+/* Our invitation exists here */
+#right-column {
+	float:right;
+	width:570px;
+	height:427px;
+	background-image:url('http://students.susanbuck.net/storage/code/invitation-generator/images/card-blue-zig-zags.jpg');
+}
+
+/* Because we're just entering a number in the guest count input, lets make it not so wide */
+#guest-count-input {
+	width:30px;
+}
+
+/* To start, all the guest inputs are not displayed */
+.guest-input {
+	display:none;
+}
+
+/* To start, don't display the error div */
+#error {
+	display:none;
+	color:red
+}
+
+/* The text of the invitation goes here */
+#invitation-content {
+	position:relative;
+	top:150px;
+	left:150px;
+	color:white;
+} 

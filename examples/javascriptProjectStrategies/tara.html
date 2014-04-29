@@ -1,0 +1,33 @@
+<script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/mootools/1.3.0/mootools-yui-compressed.js'>
+</script>
+
+
+<script type='text/javascript'>
+
+var counter = 0;
+var theTimer;
+
+function timer() {
+
+	counter++;
+	
+	if(counter == 3) {
+		console.log("Done!");
+		clearInterval(theTimer);
+	}
+	
+	console.log(counter);
+	
+}
+
+
+function start() {
+	theTimer = setInterval("timer()",1000);
+}
+
+
+</script>
+
+
+
+<input type='button' value='Start' onClick='start()'>

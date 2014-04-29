@@ -1,0 +1,66 @@
+<head>
+	
+	<title>Size Detection</title>
+	
+	<script type='text/javascript'>
+	
+	/*-------------------------------------------------------------------------------------------------
+	getBrowserSize()
+	-------------------------------------------------------------------------------------------------*/
+	function getBrowserSize() {
+		var myWidth = 0, myHeight = 0;
+		
+		if( typeof( window.innerWidth ) == 'number' ) {
+			//Non-IE
+			myWidth = window.innerWidth;
+			myHeight = window.innerHeight;
+		}
+		else if( 
+			document.documentElement && ( document.documentElement.clientWidth || document.documentElement.clientHeight ) ) {
+			//IE 6+ in 'standards compliant mode'
+			myWidth = document.documentElement.clientWidth;
+			myHeight = document.documentElement.clientHeight;
+		} 
+		
+		var sizes = new Array(myWidth,myHeight);
+		
+		return sizes;
+		
+	}
+	
+	
+	
+	/*-------------------------------------------------------------------------------------------------
+	resize()
+	-------------------------------------------------------------------------------------------------*/
+	function resize() {
+	
+		var sizes   = getBrowserSize();
+		
+		var myWidth  = sizes[0] / 2;
+		var myHeight = sizes[1] / 2;
+		
+		var results = "Browser size: " + myWidth + "px x " + myHeight + "px";
+		document.getElementById("printWidthAndHeight").innerHTML = results;
+		
+		// !! Change the size of the square div relative to the new browsers size
+		document.getElementById("square").style.width  = myWidth + "px";
+		document.getElementById("square").style.height = myHeight + "px";
+	
+	}
+	
+	
+	
+	</script>
+
+</head>
+
+<body onResize="resize();">
+
+	<div id='square' style='width:100px; height:100px; border:1px solid red;'></div>
+
+	<div id='printWidthAndHeight'></div>
+
+</body>
+
+

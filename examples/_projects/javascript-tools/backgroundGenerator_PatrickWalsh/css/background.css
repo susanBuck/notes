@@ -1,0 +1,193 @@
+* {
+  font-family:verdana;
+}
+
+#pane-preview {
+  width:750px;
+  height:425px;
+  border:1px solid black;
+  margin:0px auto;
+  margin-top: 190px;
+  background-color:#ffffff;
+  
+  -moz-box-shadow: 5px 5px rgba(0,0,0,0.5);
+  -webkit-box-shadow: 5px 5px rgba(0,0,0,0.5);
+  box-shadow: 5px 5px rgba(0,0,0,0.5);
+   
+  -moz-border-radius: 15px;
+  border-radius: 15px;
+}
+
+#tabs {
+  width:650px;
+  border:1px solid black;
+  margin:0px auto;
+  margin-top: 25px;
+}
+
+h1 {
+  text-align:center;
+  font-size:30px;
+  margin-top:25px;
+  margin-bottom:25px;
+}
+
+h2 {
+  font-family:Verdana;
+  font-size:15px;
+  margin-top:30px;
+  margin-bottom:5px;
+  border-bottom:1px dotted #ccc;
+}
+
+#disclaimer p {
+  font-family:Verdana;
+  font-size:12px;
+  text-align:center;
+}
+
+p {
+  font-family:Verdana;
+  font-size:12px;
+}
+
+#selection-options {
+  width:425px;
+  margin-right:50px;
+  float:left;
+}
+
+.color {
+  height:50px;
+}
+
+#square {
+  border:1px solid black;	
+  height:150px;
+  width:150px;
+  margin-top:20px;
+  margin-left:525px;
+}
+
+#texture-image {
+  width:150px;
+  height:150px;
+}
+
+#inner-image {
+  width:75px;
+  height:75px;
+  padding:38px;
+  position:absolute;
+}
+
+#swap {
+  font-family:Verdana;
+  font-size:12px;
+  margin-left:85px;
+  margin-bottom:10px;
+  margin-top:10px;
+}
+
+#reset_colors {
+  font-family:Verdana;
+  font-size:12px;
+  margin-left:15px;
+  margin-bottom:10px;
+  margin-top:10px;
+}
+
+#reset_textures {
+  font-family:Verdana;
+  font-size:12px;
+  margin-left:10px;
+  margin-top:77px;
+}
+
+.footer {
+  font-family:Verdana;
+  font-size:12px;
+  margin-top:25px;
+  margin-left:525px;
+}
+
+#submit1 {
+  padding-left:0px;
+  padding-right:0px;	
+}
+
+#submit2 {
+  padding-left:12px;
+  padding-right:12px;	
+}
+
+.texture-choice {
+  width:90px;
+  height:90px;
+  border:1px solid black;
+  float:left;
+  margin-right:4px;
+  margin-bottom:4px;
+}
+
+#texture_bottom {
+  float:left;
+}
+
+#image_bottom {
+  float:left;
+}
+
+#texture1 {
+  background-image:url(../images/texture_1.png);
+}
+
+#texture2 {
+  background-image:url(../images/texture_2.png);
+}
+
+#texture3 {
+  background-image:url(../images/texture_3.png);
+}
+
+#texture4 {
+  background-image:url(../images/texture_4.png);
+}
+
+#texture5 {
+  background-image:url(../images/texture_5.png);
+}
+
+#texture6 {
+  background-image:url(../images/texture_6.png);
+}
+
+#texture6 {
+  background-image:url(../images/texture_6.png);
+}
+
+.inner-image-choice {
+  width:70px;
+  height:70px;
+  border:1px solid black;
+  float:left;
+  margin-right:4px;
+  margin-bottom:4px;
+}
+
+#rotate_slider {
+  margin: 10px;
+}
+
+#texture_slider {
+  margin: 10px;
+}
+
+#image_slider {
+  margin: 10px;
+}
+
+#enlarge_slider {
+  margin: 10px;
+}
+/* Localized */

@@ -1,0 +1,63 @@
+<head>
+
+<title>jsAnim demo</title>
+
+<script type="text/javascript" src="jsAnim.js"></script>  
+
+<script type='text/javascript'>
+
+	var manager = new jsAnimManager(40);  
+	
+	function animate() {
+		
+		// Set things up to animate...
+		var anim       = manager.createAnimObject("square");  
+		animatedObject = document.getElementById("square");	
+		manager.registerPosition("square");  
+	
+		// Set the initial position of our object
+		// Our 50x50 box is in a 800x800 container so according to the jsAnim cord system, these values will position it in the top left
+		animatedObject.setPosition(-350,50);  
+		
+		
+		/*
+	
+		Below we setup our variables for the animation.
+		jsAnim allows a lot of properties to be animated -- from position to border to colors. See docs for full list.
+		
+		These prop's will allow for curved animation:
+		Prop.positionSemicircle(clockwise) 
+		Prop.positionCircle(clockwise)  
+	
+		*/
+		
+		anim.add({  
+			property: Prop.positionCircle(true), // How to animate
+			to: new Pos(50,50),
+			duration: 2000,  
+			ease: jsAnimEase.standard,  
+			loop: 2,
+			onLoop: function() {console.log('finished one loop')},  
+			onComplete: function() {console.log('done animating')}
+		}); 
+		
+	}
+
+</script>
+
+</head>
+
+<body style='margin:0px'>
+
+<a href='http://jsanim.com/'>http://jsanim.com/</a><br/>
+<a href='jsAnim.js'>Download the jsAnim.js</a>
+
+<div id='container' style='position:absolute; top:100px; left:100px;  border:1px solid black; width:800px; height:800px'>
+
+	<div id='square' style='position:absolute; width:50px; height:50px; background-color:red' onClick='animate()'></div>
+
+</div>
+
+</body>
+   
+   

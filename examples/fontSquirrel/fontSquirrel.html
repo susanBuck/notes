@@ -1,0 +1,90 @@
+<html>
+<head>
+	<title>Font Squirrel Demo</title>
+
+	<style type="text/css" media="screen">
+		 
+		.container {
+			width:800px;
+			margin:0px auto;
+			font-family:lucida sans;
+		} 
+		 
+		/* Setup our font */
+		@font-face {
+		    font-family: 'GoodDogRegular';
+		    src: url('GoodDog_font/GoodDog-webfont.eot');
+		    src: url('GoodDog_font/GoodDog-webfont.eot?iefix') format('eot'),
+		         url('GoodDog_font/GoodDog-webfont.woff') format('woff'),
+		         url('GoodDog_font/GoodDog-webfont.ttf') format('truetype'),
+		         url('GoodDog_font/GoodDog-webfont.svg#webfontFrKKDeui') format('svg');
+		    font-weight: normal;
+		    font-style: normal;
+		
+		}
+		
+		/* Use our font */
+		.header {font: 60px/68px 'GoodDogRegular', Arial, sans-serif; letter-spacing: 0;}
+
+		
+	</style>
+</head>
+ 
+<body>
+
+	<div class='container'>
+	
+		<!-- header -->
+		<div class="header">
+			Demo of <a href='http://www.fontsquirrel.com/fonts/GoodDog'>GoodDog</a> font from <a href='http://www.fontsquirrel.com'>Font Squirrel</a><br/>
+		</div>
+		
+		<br/><br/>
+		
+		<!-- step 1 -->
+		<div class='header'>Step 1:</div>
+		Find the font you like on Font Squirrel and download the <b>full font kit</b> (not just the .otf file).<br/><br/>
+		
+		The full kit will include all the file:<br/>
+		
+		<ul>
+		<li>TTF - Works in most browsers except IE and iPhone.
+		<li>EOT - IE only.
+		<li>WOFF - Compressed, emerging standard.
+		<li>SVG - iPhone/iPad.
+		</ul>
+		
+		Upload all these files to your directory; to keep things clean you should probably create a folder just for them.
+		
+		<br/><br/>
+		
+		<!-- step 2 -->
+		<div class='header'>Step 2:</div>
+		Include this snippet of CSS in your styles (replacing the names with your chosen font)
+		<pre>
+		@font-face {
+			    font-family: 'GoodDogRegular';
+			    src: url('GoodDog_font/GoodDog-webfont.eot');
+			    src: url('GoodDog_font/GoodDog-webfont.eot?iefix') format('eot'),
+			         url('GoodDog_font/GoodDog-webfont.woff') format('woff'),
+			         url('GoodDog_font/GoodDog-webfont.ttf') format('truetype'),
+			         url('GoodDog_font/GoodDog-webfont.svg#webfontFrKKDeui') format('svg');
+			    font-weight: normal;
+			    font-style: normal;
+			
+			}
+		</pre>
+		
+		<br/><br/>
+		
+		<!-- step 3 -->
+		<div class='header'>Step 3:</div>
+		Assign your new font to an element on your page. For example, we can create a header class and tell it to have the font:
+		<pre>.header {font: 60px/68px 'GoodDogRegular', Arial, sans-serif; letter-spacing: 0;}</pre>
+		
+		<br/><br/>
+		
+	</div>
+	
+</body>
+</html>

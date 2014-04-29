@@ -1,0 +1,106 @@
+<head>
+
+	<link rel="stylesheet" type="text/css" href="styles.css" />
+
+	<title>Javascript Functions</title>
+	
+	<script type='text/javascript'>
+	
+	
+	/*-------------------------------------------------------------------------------------------------
+	changeContent()
+	Grabs the values entered in the topPos and leftPos inputs and injects it into the DIV
+	------------------------------------------------------------------------------------*/
+	function changeContent() {
+	
+		// Grabbing info from the inputs
+		var topPos  = document.getElementById("topPos").value;
+		var leftPos = document.getElementById("leftPos").value;
+		
+		// Build the content I want to put in the box
+		var content  = "<b>Top pos:<\/b>" + topPos + "<br/>";
+		content     += "<b>Left pos:<\/b>" + leftPos;
+		
+		// Put the content in the box
+		document.getElementById("square").innerHTML = content;
+	
+	}
+	
+	/*-------------------------------------------------------------------------------------------------
+	changeColor() 
+	When the function is called it passes in the color
+	-------------------------------------------------------------------------------------------------*/
+	function changeColor(whichColor) {
+	
+		document.getElementById('square').style.backgroundColor = whichColor;
+		
+	}
+	
+	
+	/*-------------------------------------------------------------------------------------------------
+	turnOnOrOff()
+	Toggle the visibility of the object
+	block = on
+	none  = off
+	More info on the CSS "display" property: http://www.w3schools.com/css/pr_class_display.asp
+	-------------------------------------------------------------------------------------------------*/
+	
+	function turnOnOrOff() {
+		
+		// If it's off
+		if(document.getElementById('square').style.display == "none") {
+			// Turn on
+			document.getElementById('square').style.display = "block";
+		}
+		else {
+			// Turn off
+			document.getElementById('square').style.display = "none";
+		}
+		
+	}
+	
+	
+	/*-------------------------------------------------------------------------------------------------
+	moveIt()
+	Based on the values entered into the topPos and leftPos inputs
+	-------------------------------------------------------------------------------------------------*/
+	function moveIt() {
+	
+		// Find out where to move the box
+		var topPos  = document.getElementById("topPos").value;
+		var leftPos = document.getElementById("leftPos").value;
+		
+		// Move the box
+		document.getElementById('square').style.top  = topPos;
+		document.getElementById('square').style.left = leftPos;
+
+	}
+	
+	</script>
+
+</head>
+
+
+<body>
+
+
+	<!-- The square -->
+	<div id='square' style='position:absolute; top:200px; left:500px; width:200px; height:200px; background-color:blue'>
+	Hello World
+	</div>
+	
+	
+	<!-- Buttons -->
+	<input type='button' onClick='changeContent()' value='Change content'>
+	<input type='button' onClick='changeColor("red")' value='Change Color to red'>
+	<input type='button' onClick='changeColor("blue")' value='Change Color to blue'>
+	<input type='button' onClick='turnOnOrOff()' value='Turn on or off'>
+	<input type='button' onClick='moveIt()' value='Move it!'>
+	<br/><br/>
+	
+	<!-- Input -->
+	Top:<input style='width:30px' type='text' id='topPos'>
+	Left:<input style='width:30px' type='text' id='leftPos'>
+
+
+</body>

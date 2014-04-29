@@ -1,0 +1,215 @@
+<head>
+
+	<title>MooTools Example</title>
+	
+	<style type='text/css'>
+	
+	.squareStyle {
+		background-color:red;
+		width:50px;
+		height:50px;
+		position:relative;
+		left:0px;
+	}
+	
+	</style>
+	
+	
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/mootools/1.3.0/mootools-yui-compressed.js"></script>
+	
+	<script type="text/javascript">
+	
+	
+	/*-------------------------------------------------------------------------------------------------
+	fadeElement()
+	Tween is a MooTools method that lets us animate the changing of css properties
+	-------------------------------------------------------------------------------------------------*/
+	function fadeElement(whichElement) {
+	
+		// Change the opacity to 0
+		$(whichElement).tween('opacity', 0);
+		
+	}	
+	
+	
+	/*-------------------------------------------------------------------------------------------------
+	fadeElementSlow()
+	We can specify the speed of our tweens
+	-------------------------------------------------------------------------------------------------*/
+	function fadeElementSlow(whichElement) {
+	
+		// Set the speed
+		$(whichElement).set('tween', {duration: 2000});
+		
+		// Change the opacity to 0
+		$(whichElement).tween('opacity', 0);
+		
+	}	
+	
+	
+	/*-------------------------------------------------------------------------------------------------
+	changeBackground()
+	Note how we can use a "from" and "to" value with tweens 
+	by putting our value in brackets []
+	-------------------------------------------------------------------------------------------------*/
+	function changeBackground(whichElement) {
+		
+		$(whichElement).tween('background-color', ["FF0000","#000000"]);
+		
+	}
+	
+	
+	/*-------------------------------------------------------------------------------------------------
+	move()
+	Changing top, left, right and bottom values allows us to move things around the page
+	http://mootools.net/docs/core/Fx/Fx.Transitions
+	-------------------------------------------------------------------------------------------------*/
+	function move(whichElement) {
+				
+		$(whichElement).tween('left', 200);
+	
+	}	
+	
+	
+	/*-------------------------------------------------------------------------------------------------
+	moveWithEasing()
+	Changing top, left, right and bottom values allows us to move things around the page
+	http://mootools.net/docs/core/Fx/Fx.Transitions
+	-------------------------------------------------------------------------------------------------*/
+	function moveWithEasing(whichElement) {
+	
+		$(whichElement).set('tween', {transition: Fx.Transitions.Elastic.easeOut});
+		
+		$(whichElement).tween('left', 100);
+	
+	}
+	
+	/*-------------------------------------------------------------------------------------------------
+	move()
+	Changing top, left, right and bottom values allows us to move things around the page
+	http://mootools.net/docs/core/Fx/Fx.Transitions
+	-------------------------------------------------------------------------------------------------*/
+	function moveRelativeToCurrentPos(whichElement) {
+				
+		var curPos = parseFloat($(whichElement).getStyle("left"));
+		var newPos = curPos + 100;
+		
+		$(whichElement).tween('left', newPos);
+	
+	}
+	
+	
+	/*-------------------------------------------------------------------------------------------------
+	getBackgroundColor()
+	This demonstrates we can access styles even if they were set internally / externally (as opposed to inline)
+	-------------------------------------------------------------------------------------------------*/
+	function getBackgroundColor(whichElement) {
+	
+		var theColor = $(whichElement).getStyle("background-color");
+		alert(theColor);
+		
+	}
+	
+	
+	
+	/*-------------------------------------------------------------------------------------------------
+	bunchOfThingsAtOnce()
+	The morph function allows you to chain together multiple effects
+	-------------------------------------------------------------------------------------------------*/
+	function bunchOfThingsAtOnce(whichElement) {
+		
+		// Morph
+		$(whichElement).set('morph', {link: 'chain'})
+		.morph({'opacity': .5})
+		.morph({'top': '-100'})
+		.morph({'left': '100'})
+		.morph({'background-color': ['#FF0000','#000000']})
+		;
+	}
+	
+	/*-------------------------------------------------------------------------------------------------
+	effectWithOnComplete()
+	-------------------------------------------------------------------------------------------------*/
+	function effectWithOnComplete(whichElement) {
+		
+		// Set the options for our tween. Here we set the duration and assign a onComplete function
+		$(whichElement).set('tween', {
+		duration: 1000,
+		
+		onComplete: function(){
+        	alert("Done fading!"); // For testing purposes we'll just throw an alert, but we could also call another function here if we wanted to trigger it when this animation is done.
+		}
+
+		});
+
+		// Change the opacity
+		$(whichElement).tween('opacity', 0);
+			
+		alert("done fading");	
+			
+	}
+	
+	</script>
+
+</head>
+
+<body>
+
+	<!-- fadeElement -->
+		<div id='square0' class='squareStyle'></div>
+		<input type='button' onClick='fadeElement("square0")' value='fadeElement'>
+		
+		<br/><br/>
+	
+	
+	<!-- fadeElementSlow -->
+		<div id='square1' class='squareStyle'></div>
+		<input type='button' onClick='fadeElementSlow("square1")' value='fadeElementSlow'>
+		
+		<br/><br/>
+	
+	<!-- changeBackground -->
+		<div id='square2' class='squareStyle'></div>
+		<input type='button' onClick='changeBackground("square2")' value='changeBackground'>
+		
+		<br/><br/>
+	
+	<!-- move -->
+		<div id='square3' class='squareStyle'></div>
+		<input type='button' onClick='move("square3")' value='move'>
+		
+		<br/><br/>
+		
+	<!-- moveWithEasing -->
+		<div id='square4' class='squareStyle'></div>
+		<input type='button' onClick='moveWithEasing("square4")' value='moveWithEasing'>
+		
+		<br/><br/>
+		
+	<!-- moveRelativeToCurrentPos -->
+		<div id='square5' class='squareStyle'></div>
+		<input type='button' onClick='moveRelativeToCurrentPos("square5")' value='moveRelativeToCurrentPos (click multiple times)'>
+		
+		<br/><br/>		
+		
+	
+	<!-- getBackgroundColor -->
+		<div id='square6' class='squareStyle'></div>
+		<input type='button' onClick='getBackgroundColor("square6")' value='getBackgroundColor (That was set via a class!)'>
+		
+		<br/><br/>
+		
+	<!-- bunchOfThingsAtOnce -->
+		<div id='square7' class='squareStyle'></div>
+		<input type='button' onClick='bunchOfThingsAtOnce("square7")' value='bunchOfThingsAtOnce'>
+		
+		<br/><br/>
+		
+	<!-- effectWithOnComplete -->
+		<div id='square8' class='squareStyle'></div>
+		<input type='button' onClick='effectWithOnComplete("square8")' value='effectWithOnComplete (will popup alert when fade is done)'>	
+		
+		<br/><br/>
+		
+</body>
+	

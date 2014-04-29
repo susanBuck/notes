@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+
+<head>
+
+	<title></title>
+
+	<link rel="stylesheet" href="/storage/code/includes/code.css" type="text/css">
+
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+	<script type="text/javascript" src="jquery.ui.core.js"></script>
+	<script type="text/javascript" src="jquery.ui.widget.js"></script>
+	<script type="text/javascript" src="jquery.ui.mouse.js"></script>
+	<script type="text/javascript" src="jquery.ui.draggable.js"></script>
+	
+	<style type='text/css'>
+	
+	#wrapper {
+		width:960px;
+		height:900px;
+		border:1px dotted black;
+		margin:0px auto;
+		position:relative;
+	}
+	
+	.circle {
+		display: block;
+		width: 80px;
+		height: 80px;
+		-moz-border-radius: 40px;
+		-webkit-border-radius: 40px;
+		margin:20px auto;
+		cursor:pointer;
+		position:absolute;
+		border:2px dashed black;
+		text-align:center;
+	}
+	
+	.line {
+		position:absolute;
+	}
+	
+	.vertical {
+		border-left:2px dashed black;
+		width:2px;
+		height:200px;
+	}
+	
+	.horizontal {
+		border-top:2px dashed black;
+		height:2px;
+		width:200px;
+	}
+	
+	.cover {
+		z-index:999;
+		position:absolute;
+		background-color:white;
+		
+		/* When testing, uncomment the following two lines so you can see the covers */
+		/* opacity:.5; */
+		/* background-color:red; */
+		
+	}
+			
+	</style>
+
+	<script type='text/javascript'>
+		
+		$(document).ready(function() {
+		
+			// By making our elements draggable, it'll be easier to pin-point their initial x,y values. 
+			// We can just drag them where they should be, then use Firebug to find out the location
+			$('div').addClass('draggable');
+			$('.draggable').draggable();
+			
+			
+			
+			$('#circle1').click(function() {
+				$("#cover1").animate({"width": "0","marginLeft": $("#cover1").css("width")});			
+			});
+			
+			$('#circle2').click(function() {
+				$("#cover2").animate({"width": "0","marginLeft": $("#cover2").css("width")});			
+			});
+			
+			$('#circle3').click(function() {
+				$("#cover3").animate({"height": "0","marginTop": $("#cover3").css("height") });			
+			});
+			
+			$('#circle4').click(function() {
+				$("#cover4").animate({"width": "0","marginRight": $("#cover4").css("width")});			
+			});
+					
+		});
+		
+	</script>
+
+
+</head>
+
+
+<body>
+
+	<div id='wrapper'>
+	
+		<!-- Step 1: Circle1 reveals Circle2 -->
+		<div id='circle1' class="circle" style="left: 42px; top: 18px; ">1</div>
+			<div id='cover1' class='cover' style='width:285px; height:100px; left:126px; top:25px;'></div>
+			<div class="line horizontal" style="left: 126px; top: 77px; "></div>
+		
+		<div id='circle2' class="circle" style="left: 327px; top: 17px; ">2</div> 
+			<div id='cover2' class='cover' style='width:287px; height:100px; left: 411px; top: 25px;'></div>
+			<div class="line horizontal" style="left: 412px; top: 76px; "></div>
+				
+				
+		<div id='circle3' class="circle" style="left: 613px; top: 13px;">3</div>
+			<div id='cover3' class='cover' style='width:88px; height:290px; left: 610px; top: 118px;'></div>
+			<div class="line vertical" style="left: 653px; top: 118px; "></div>		
+	
+		<div id='circle4' class="circle" style="left: 610px; top: 300px;">4</div>
+			<div id='cover4' class='cover' style='width:287px; height:100px; left: 323px; top: 310px;'></div>
+		
+		<div id='circle5' class="circle" style="left: 329px; top: 303px; ">5</div>
+			<div class="line horizontal" style="left: 412px; top: 361px; "></div>
+		
+	</div>
+	
+</body>
+
+</html>

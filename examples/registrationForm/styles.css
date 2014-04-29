@@ -1,0 +1,76 @@
+body {
+	font-family:lucida sans;
+	font-size:10px;
+	background-color:#4694b5;
+}
+
+input {
+	width:150px;
+	border:1px solid #ccc;
+	background-color:white;
+}
+
+textarea {
+	width:250px;
+	height:50px;
+	border:1px solid #ccc;
+	font-family:lucida sans;
+	font-size:10px;
+}
+
+a {color:white}
+
+td {
+	vertical-align:top;
+}
+
+table {
+	border-collapse:collapse;
+}
+
+.error {
+	opacity:0;
+	color:#ff7d7d;
+	height:20px;
+	padding-top:3px;
+}	
+
+#submitButton {
+	float:right;
+	width:80px;
+}
+
+.container {
+	background-color:white;
+	padding:20px;
+	position:absolute;
+	top:100px; 
+	left:25px;
+	width:250px;
+}
+
+#header {
+	position:absolute;
+	top:50px;
+	left:25px;
+	color:white;
+	width:286px;
+	border:2px solid white;
+	text-align:center;
+	font-family: "Arial Black";
+	text-transform:uppercase;
+	font-size:31pt;
+	font-weight:800;
+}
+
+#charCountLabel {
+	color:#ccc;
+	font-size:10px;
+}
+
+#charCount {
+	color:#ccc;
+	border:0px; 
+	width:30px
+	font-size:10px;
+}

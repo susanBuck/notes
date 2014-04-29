@@ -1,0 +1,22 @@
+<title>Silhouette Rollver</title>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/mootools/1.3.0/mootools-yui-compressed.js"></script>
+
+<script type='text/javascript'>
+
+function rollover(opacity) {
+
+	$(theImage).tween('opacity', opacity);
+	
+}	
+
+
+
+</script>
+
+
+<div onMouseOver='rollover(0)' onMouseOut='rollover(1)' style='width:264px; height:282px; background-image:url(/upenn/examples/images/apple.jpg)'>
+
+	<img id='theImage' src='/upenn/examples/images/appleSilhouette.png'>
+
+</div>

@@ -1,0 +1,298 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+  
+<head>
+    
+<title>Tim Gunn Timer</title>
+    
+<meta name="description" content="Tim Gunn Timer"/>
+  
+<link rel="stylesheet" type="text/css" href="timgunntimer.css"/>
+
+  
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/mootools/1.3.0/mootools-yui-compressed.js">
+</script>
+	
+<script type="text/javascript">
+
+		var countdown;
+		var countdown_number;
+	
+	
+		//drops images into main DIV as body loads
+		function popImages() {
+			$("timConcerned").set('morph', {duration: 500});
+			$("typewriter").set('morph', {transition: Fx.Transitions.Elastic.easeOut,duration: 1500});
+			$("books").set('morph', {transition: Fx.Transitions.Elastic.easeOut,duration: 1500});
+			$("hand").set('morph', {transition: Fx.Transitions.Elastic.easeOut,duration: 1500});
+			$("stopwatch").set('morph', {transition: Fx.Transitions.Elastic.easeOut,duration: 3500});
+		
+			$("timConcerned").set("morph", {link:"chain"})
+			.morph({"top": 0})
+			$("typewriter").set("morph", {link:"chain"})
+			.morph({"top": 0})	
+			$("books").set("morph", {link:"chain"})
+			.morph({"top": 100})
+			$("hand").set("morph", {link:"chain"})
+			.morph({"top": 312})
+			$("stopwatch").set("morph", {link:"chain"})
+			.morph({"left": 900})
+			;
+		}
+			
+		
+		function playSound(wav) {
+			document.getElementById("wavLoader").innerHTML = "<embed src='" + wav + "' hidden=true autostart=true loop=false>";
+		}
+
+
+		//after 20 minutes
+		function timHappyAlarm () {
+			//sets the speed and type of transition for all of the image elements
+			$("timConcerned").set('morph', {duration: 400});
+			$("typewriter").set('morph', {duration: 400});
+			$("books").set('morph', {duration: 400});
+			$("hand").set('morph', {duration: 400});
+			$("stopwatch").set('morph', {duration: 400});
+			$("timerTitle").set('morph', {duration: 400});
+			$("timer").set('morph', {duration: 400});
+			$("timerDescription").set('morph', {duration: 400});
+			$("timClapping").set('morph', {duration: 500});
+			$("star1").set('morph', {transition: Fx.Transitions.Elastic.easeOut,duration: 7000});
+			$("star2").set('morph', {transition: Fx.Transitions.Elastic.easeOut,duration: 7000});
+			$("star3").set('morph', {transition: Fx.Transitions.Elastic.easeOut,duration: 7000});
+			$("star4").set('morph', {transition: Fx.Transitions.Elastic.easeOut,duration: 7000});
+			$("star5").set('morph', {transition: Fx.Transitions.Elastic.easeOut,duration: 7000});
+			$("star6").set('morph', {transition: Fx.Transitions.Elastic.easeOut,duration: 7000});
+			$("star7").set('morph', {transition: Fx.Transitions.Elastic.easeOut,duration: 7000});
+			
+			//all of the images that disappear
+			$("timConcerned").set("morph", {link:"chain"})
+			.morph({"opacity": 0})
+			$("typewriter").set("morph", {link:"chain"})
+			.morph({"opacity": 0})
+			$("books").set("morph", {link:"chain"})
+			.morph({"opacity": 0})
+			$("hand").set("morph", {link:"chain"})
+			.morph({"opacity": 0})
+			$("stopwatch").set("morph", {link:"chain"})
+			.morph({"opacity": 0})
+			$("timerTitle").set("morph", {link:"chain"})
+			.morph({"opacity": 0})
+			$("timer").set("morph", {link:"chain"})
+			.morph({"opacity": 0})
+			$("timerDescription").set("morph", {link:"chain"})
+			.morph({"opacity": 0})
+			
+			//all of the images that appear (clapping Tim and stars)
+			$("timClapping").set("morph", {link:"chain"})
+			.morph({"opacity": 1})
+			.morph({"top": 10})
+			$("star1").set("morph", {link:"chain"})
+			.morph({"top": 11})
+			$("star2").set("morph", {link:"chain"})
+			.morph({"top": 150})
+			$("star3").set("morph", {link:"chain"})
+			.morph({"top": 265})
+			$("star4").set("morph", {link:"chain"})
+			.morph({"top": 625})
+			$("star5").set("morph", {link:"chain"})
+			.morph({"top": 60})
+			$("star6").set("morph", {link:"chain"})
+			.morph({"top": 315})
+			$("star7").set("morph", {link:"chain"})
+			.morph({"top": 550})
+			;
+			
+		}
+		
+		
+		//after 25 minutes
+		function getBackToWork() {
+			$("timClapping").set('morph', {duration: 400});
+			$("star1").set('morph', {duration: 400});
+			$("star2").set('morph', {duration: 400});
+			$("star3").set('morph', {duration: 400});
+			$("star4").set('morph', {duration: 400});
+			$("star5").set('morph', {duration: 400});
+			$("star6").set('morph', {duration: 400});
+			$("star7").set('morph', {duration: 400});
+			$("getBack").set('morph', {duration: 600});
+			
+			//All the images that disappear
+			$("timClapping").set("morph", {link:"chain"})
+			.morph({"opacity": 0})
+			$("star1").set("morph", {link:"chain"})
+			.morph({"opacity": 0})
+			$("star2").set("morph", {link:"chain"})
+			.morph({"opacity": 0})
+			$("star3").set("morph", {link:"chain"})
+			.morph({"opacity": 0})
+			$("star4").set("morph", {link:"chain"})
+			.morph({"opacity": 0})
+			$("star5").set("morph", {link:"chain"})
+			.morph({"opacity": 0})
+			$("star6").set("morph", {link:"chain"})
+			.morph({"opacity": 0})
+			$("star7").set("morph", {link:"chain"})
+			.morph({"opacity": 0})
+			
+			//all the images that appear
+			$("typewriter").set("morph", {link:"chain"})
+			.morph({"opacity": 1})
+			.morph({"left": 0})
+			.morph({"top": 220})
+			$("books").set("morph", {link:"chain"})
+			.morph({"opacity": 1})
+			.morph({"left": 375})
+			.morph({"top": 200})
+			$("hand").set("morph", {link:"chain"})
+			.morph({"opacity":1})
+			.morph({"left": 700})
+			.morph({"top": 250})
+			$("getBack").set("morph", {link:"chain"})
+			.morph({"top": 570})
+			;
+			}
+		
+		//reloads page after end of alarm
+		function delayer(){
+	   	 window.location = "http://www.taralissmarino.com/timgunntimer";
+		}
+
+		
+		//timer 
+		function countdown_init() {
+			countdown_number=35;
+			$('timer').tween('left', '472');
+			playSound('tgConcerned.wav');
+			countdown_trigger();
+			setTimeout('delayer()', 1200000);
+		}
+		
+		
+		function countdown_trigger() {
+			if(countdown_number > 0) {
+				countdown_number--;
+				document.getElementById("howManyMinutes").innerHTML=countdown_number;
+				if(countdown_number>0) {
+					countdown = setTimeout ("countdown_trigger()", 200);
+				}
+			}
+			
+			//after 25 minutes
+			if(countdown_number == 14) {
+				playSound('tgThrilled.wav');
+				timHappyAlarm();
+			}
+	
+			//after 30 minutes--end of the alarm
+			if(countdown_number == 0) {
+				getBackToWork();
+				playSound('tgGetBack.wav');
+				clearTimeout(countdown);
+			}
+
+		}
+		
+		//stopwatch mouseover--yellow stopwatch
+		function mouseOver () {
+			document.getElementById("stopwatchpic").src ="/timgunntimer/images/stopwatch2.png";
+		}
+	
+		//stopwatch mouseout--regular stopwatch
+		function mouseOut () {
+			document.getElementById("stopwatchpic").src ="/timgunntimer/images/stopwatch.png";
+		}
+
+	
+	
+	</script>
+
+</head>
+
+
+<body onLoad="popImages()">
+<center>
+
+	<!--main DIV-->
+	<div id="main">
+	
+		<!--span for audio file-->
+		<span id="wavLoader" style="position:fixed; top:-100px;"></span>
+		
+		<div id="getBack">
+		Get Back to Work!
+		</div>
+		
+		<!--Tim Concerned, div on left-->
+		<div id="timConcerned">
+			<img alt="Tim Gunn" align="left" src="images/timConcerned.png" />
+		<!--ends timConcerned-->
+		</div>
+        
+        <!--typewriter div-->
+        <div id="typewriter">
+        </div>
+        
+        <!--books div-->
+        <div id="books">
+        </div>
+        
+        <!--hand and pen div-->
+        <div id="hand">
+        </div>
+		
+        <div id="timerTitle">
+		The Tim Gunn Timer
+		<!--ends timerTitle-->
+		</div>
+				
+		<div id="timer">
+		<span id="howManyMinutes"></span>
+		minutes left to Make It Work
+		</div>
+		
+		<div id="timerDescription">
+		Under the Gunn? Easily distracted? Procrastinating? Just click the stopwatch!
+		</div>
+				
+		<div id="stopwatch" onClick="countdown_init()" />
+		<img src="images/stopwatch.png" id="stopwatchpic" onmouseover="mouseOver()" onmouseout="mouseOut()"/>
+		</div>
+		
+		<div id="timClapping">
+		</div>
+		
+		<div id="star1">
+		</div>
+				
+		<div id="star2">
+		</div>
+		
+		<div id="star3">
+		</div>
+		
+		<div id="star4">
+		</div>
+		
+		<div id="star5">
+		</div>
+		
+		<div id="star6">
+		</div>
+		
+		<div id="star7">
+		</div>
+	
+	<!--end main DIV-->
+	</div>
+
+
+</center>
+</body>
+</html>
+
+
+<!-- Localized -->

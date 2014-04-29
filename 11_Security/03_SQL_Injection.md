@@ -1,0 +1,1 @@
+SQL Injection attacks were covered under the PHP Framework notes in the [DB Library & SQL section](/Framework/DB_Library_&_SQL).

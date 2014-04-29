@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<head>
+
+	<title>Float with Container</title>
+
+	<link rel="stylesheet" type="text/css" href="/storage/code/includes/code.css">
+	
+	<style type='text/css'>
+	
+	body {
+		margin:0px; /* Browsers will set a margin > 0 by default, so reset it to 0 here */
+		background-color:#D1FFFE;
+	}
+
+	div {
+		width:200px;
+	}
+
+	#wrapper {
+		width:600px;
+		border:1px solid black;
+		margin:0px auto;
+	}
+
+	#pink-box {
+		float:left;
+		background-color:#EB1A6D;
+	}
+	
+	#blue-box {
+		float:right;
+		background-color:#1A7BEB;
+	}
+	
+	#footer {
+		clear:both;
+	}
+	
+	
+		
+	</style>
+
+
+</head>
+
+
+<body>
+
+<div id='wrapper'>
+	<div id='pink-box'>
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+	</div>
+	
+	<div id='blue-box'>
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+	</div>
+	
+	<!-- This footer div, which we put in right before the end of the wrapper, will make sure the wrapper is tall enough to fit the two floated elements above -->
+	<div id='footer'>I'm the footer div!</div>
+	
+</div>
+	
+	
+</body>
+
+</html>

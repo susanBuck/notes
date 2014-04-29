@@ -1,0 +1,77 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"> 
+<html>
+
+<head>
+	<title>Currency Cheat Sheet Generator</title>
+	<script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/mootools/1.3.0/mootools-yui-compressed.js'> 
+	</script> 
+	<meta name="description" content="Currency Cheat Sheet Generator"/>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<!--Javascript goes here-->
+	<script type="text/javascript" src="javacode.js"></script>
+	<!--Javascript ends here-->
+</head>
+
+<body>
+	<!--Title Image-->
+	<div id = "headerText"><img src = "images/currencycheatsheetgenerator.png"/></div>
+	
+	<!--Where are you located?-->
+	<div id = "whereFrom">
+		<div><img src = "images/whereareyoulocated.png"/></div><div style = "height:10px"></div>
+		<div><input style = "font:tahoma; font-size:24pt; color:#e1e1e1; padding-left:5px;" type = "text" id = "thelocation" value = "Location..." onClick = "clearInput('thelocation')"></div>
+	</div>
+	
+	<!--Where are you going?-->
+	<div id = "whereTo">
+		<img src = "images/whereareyougoing.png"/><div style = "height:10px"></div>
+		<input style = "font:tahoma; font-size:24pt; color:#e1e1e1; padding-left:5px;" type = "text" id = "destination" value = "Destination..." onClick = "clearInput('destination')">
+	</div>
+	
+	<!--How much money will you have?-->
+	<div id = "howMuch">
+		<img src = "images/howmuchmoneywillyouhave.png"/><div style = "height:10px"></div>
+		<input style = "font:tahoma; font-size:24pt; color:#e1e1e1; padding-left:5px;" type = "text" id = "cash" value = "Amount..." onClick = "clearInput('cash')">
+	</div>
+	
+	<!--Generate Button-->
+	<div id = "generateButton"><img src = "images/generatebutton.png" onClick = "generate('thelocation', 'destination','cash')" style = "cursor:pointer;"/></div>
+	
+	<!--Error Message!-->
+	<div id = "errorMessage"></div>
+	
+	<!--Conversion Sheet-->
+	<div id = "conversionTitle">Conversion Sheet</div>
+						<!--LEFT SIDE-->
+	<div class = "conversionItemLeft" id = "left1"></div>
+	<div class = "conversionItemLeft" id = "left2" style = "top:146px"></div>
+	<div class = "conversionItemLeft" id = "left3" style = "top:181px"></div>
+	<div class = "conversionItemLeft" id = "left4" style = "top:216px"></div>
+	<div class = "conversionItemLeft" id = "left5" style = "top:251px"></div>
+	<div class = "conversionItemLeft" id = "left6" style = "top:286px"></div>
+	<div class = "conversionItemLeft" id = "left7" style = "top:321px"></div>
+	<div class = "conversionItemLeft" id = "left8" style = "top:356px"></div>
+	<div class = "conversionItemLeft" id = "left9" style = "top:391px"></div>
+	<div class = "conversionItemLeft" id = "left10" style = "top:426px"></div>
+	<div class = "conversionItemLeft" id = "left11" style = "top:461px"></div>
+	<div class = "conversionItemLeft" id = "left12" style = "top:496px"></div>
+						<!--RIGHT SIDE-->
+	<div class = "conversionItemRight" id = "right1"></div>
+	<div class = "conversionItemRight" id = "right2" style = "top:146px"></div>
+	<div class = "conversionItemRight" id = "right3" style = "top:181px"></div>
+	<div class = "conversionItemRight" id = "right4" style = "top:216px"></div>
+	<div class = "conversionItemRight" id = "right5" style = "top:251px"></div>
+	<div class = "conversionItemRight" id = "right6" style = "top:286px"></div>
+	<div class = "conversionItemRight" id = "right7" style = "top:321px"></div>
+	<div class = "conversionItemRight" id = "right8" style = "top:356px"></div>
+	<div class = "conversionItemRight" id = "right9" style = "top:391px"></div>
+	<div class = "conversionItemRight" id = "right10" style = "top:426px"></div>
+	<div class = "conversionItemRight" id = "right11" style = "top:461px"></div>
+	<div class = "conversionItemRight" id = "right12" style = "top:496px"></div>
+	
+	
+	<!--Print Button-->
+	<div id = "printButton"><img src = "images/printwalletsizebutton.png" onClick = "makePrintable()" style = "cursor:pointer;"/></div>
+</body>
+
+</html>

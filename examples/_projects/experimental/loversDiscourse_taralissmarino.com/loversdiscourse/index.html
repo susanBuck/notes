@@ -1,0 +1,1197 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+  
+<head>
+    
+	<title>A Lover's Discourse 2.0</title>
+	
+	<meta name="description" content="A Lover's Discourse 2.0"/>
+	
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/mootools/1.3.0/mootools-yui-compressed.js">
+	</script>
+	
+	<script type="text/javascript">
+	var delay=2000 
+	var curindex=0
+	
+	var randomimages=new Array()
+	
+		randomimages[0] = "/loversdiscourse/images/splash.jpg";
+		randomimages[1] = "/loversdiscourse/images/splash1.jpg";
+		randomimages[2] = "/loversdiscourse/images/splash2.jpg";
+		randomimages[3] = "/loversdiscourse/images/splash3.jpg";
+		randomimages[4] = "/loversdiscourse/images/splash4.jpg";
+		randomimages[5] = "/loversdiscourse/images/splash5.jpg";
+		randomimages[6] = "/loversdiscourse/images/splash6.jpg";
+		randomimages[7] = "/loversdiscourse/images/splash7.jpg";
+		randomimages[8] = "/loversdiscourse/images/splash8.jpg";
+		randomimages[9] = "/loversdiscourse/images/splash9.jpg";
+		randomimages[10] = "/loversdiscourse/images/splash10.jpg";
+		randomimages[11] = "/loversdiscourse/images/splash11.jpg";
+		randomimages[12] = "/loversdiscourse/images/splash12.jpg";
+		randomimages[13] = "/loversdiscourse/images/splash13.jpg";
+		randomimages[14] = "/loversdiscourse/images/splash14.jpg";
+		randomimages[15] = "/loversdiscourse/images/splash15.jpg";
+		randomimages[16] = "/loversdiscourse/images/splash16.jpg";
+		randomimages[17] = "/loversdiscourse/images/splash17.jpg";
+		randomimages[18] = "/loversdiscourse/images/splash18.jpg";
+		randomimages[19] = "/loversdiscourse/images/splash19.jpg";
+		randomimages[20] = "/loversdiscourse/images/splash20.jpg";
+		randomimages[21] = "/loversdiscourse/images/splash21.jpg";
+		randomimages[22] = "/loversdiscourse/images/splash22.jpg";
+		randomimages[23] = "/loversdiscourse/images/splash23.jpg";
+		randomimages[24] = "/loversdiscourse/images/splash24.jpg";
+		randomimages[25] = "/loversdiscourse/images/splash25.jpg";
+		randomimages[26] = "/loversdiscourse/images/splash26.jpg";
+		randomimages[27] = "/loversdiscourse/images/splash27.jpg";
+		randomimages[28] = "/loversdiscourse/images/splash28.jpg";
+		randomimages[29] = "/loversdiscourse/images/splash29.jpg";
+		randomimages[30] = "/loversdiscourse/images/splash20.jpg";
+		randomimages[31] = "/loversdiscourse/images/splash31.jpg";
+		randomimages[32] = "/loversdiscourse/images/splash32.jpg";
+		randomimages[33] = "/loversdiscourse/images/splash33.jpg";
+		randomimages[34] = "/loversdiscourse/images/splash34.jpg";
+		randomimages[35] = "/loversdiscourse/images/splash35.jpg";
+		randomimages[36] = "/loversdiscourse/images/splash36.jpg";
+		randomimages[37] = "/loversdiscourse/images/splash37.jpg";
+		randomimages[38] = "/loversdiscourse/images/splash38.jpg";
+		randomimages[39] = "/loversdiscourse/images/splash39.jpg";
+		randomimages[40] = "/loversdiscourse/images/splash40.jpg";
+		randomimages[41] = "/loversdiscourse/images/splash41.jpg";
+		randomimages[42] = "/loversdiscourse/images/splash42.jpg";
+		randomimages[43] = "/loversdiscourse/images/splash43.jpg";
+		randomimages[44] = "/loversdiscourse/images/splash44.jpg";
+		randomimages[45] = "/loversdiscourse/images/splash45.jpg";
+		randomimages[46] = "/loversdiscourse/images/splash46.jpg";
+		randomimages[47] = "/loversdiscourse/images/splash47.jpg";
+		randomimages[48] = "/loversdiscourse/images/splash48.jpg";
+		randomimages[49] = "/loversdiscourse/images/splash49.jpg";
+		randomimages[50] = "/loversdiscourse/images/splash50.jpg";
+		randomimages[51] = "/loversdiscourse/images/splash51.jpg";
+		randomimages[52] = "/loversdiscourse/images/splash52.jpg";
+		randomimages[53] = "/loversdiscourse/images/splash53.jpg";
+		randomimages[54] = "/loversdiscourse/images/splash54.jpg";
+		randomimages[55] = "/loversdiscourse/images/splash55.jpg";
+		randomimages[56] = "/loversdiscourse/images/splash56.jpg";
+		randomimages[57] = "/loversdiscourse/images/splash57.jpg";
+		randomimages[58] = "/loversdiscourse/images/splash58.jpg";
+		randomimages[59] = "/loversdiscourse/images/splash59.jpg";
+		randomimages[60] = "/loversdiscourse/images/splash60.jpg";
+		randomimages[61] = "/loversdiscourse/images/splash61.jpg";
+		randomimages[62] = "/loversdiscourse/images/splash62.jpg";
+		randomimages[63] = "/loversdiscourse/images/splash63.jpg";
+		randomimages[64] = "/loversdiscourse/images/splash64.jpg";
+		randomimages[65] = "/loversdiscourse/images/splash65.jpg";
+		randomimages[66] = "/loversdiscourse/images/splash66.jpg";
+		randomimages[67] = "/loversdiscourse/images/splash67.jpg";
+		randomimages[68] = "/loversdiscourse/images/splash68.jpg";
+		randomimages[69] = "/loversdiscourse/images/splash69.jpg";
+		randomimages[70] = "/loversdiscourse/images/splash70.jpg";
+		randomimages[71] = "/loversdiscourse/images/splash71.jpg";
+		randomimages[72] = "/loversdiscourse/images/splash72.jpg";
+		randomimages[73] = "/loversdiscourse/images/splash73.jpg";
+		randomimages[74] = "/loversdiscourse/images/splash74.jpg";
+		randomimages[75] = "/loversdiscourse/images/splash75.jpg";
+		randomimages[76] = "/loversdiscourse/images/splash76.jpg";
+		randomimages[77] = "/loversdiscourse/images/splash77.jpg";
+		randomimages[78] = "/loversdiscourse/images/splash78.jpg";
+		randomimages[79] = "/loversdiscourse/images/splash79.jpg";
+		randomimages[80] = "/loversdiscourse/images/splash80.jpg";
+		randomimages[81] = "/loversdiscourse/images/splash81.jpg";
+		randomimages[82] = "/loversdiscourse/images/splash82.jpg";
+		randomimages[83] = "/loversdiscourse/images/splash83.jpg";
+		randomimages[84] = "/loversdiscourse/images/splash84.jpg";
+		
+	
+	
+	var preload=new Array()
+	
+	for (n=0;n<randomimages.length;n++)
+	{
+		preload[n]=new Image()
+		preload[n].src=randomimages[n]
+	}
+	
+	
+	
+	function rotateimage(whichDiv) {
+		document.getElementById(whichDiv).innerHTML='<img name="defaultimage" src="'+randomimages[Math.floor(Math.random()*(randomimages.length))]+'">';
+		/*if (curindex==(tempindex=Math.floor(Math.random()*(randomimages.length)))){
+			curindex=curindex==0? 1 : curindex-1
+		}
+		else
+			curindex=tempindex
+			
+			document.images.defaultimage.src=randomimages[curindex]*/
+	}
+	
+	for (var i=1; i <81; i++) {
+	setInterval("rotateimage('pic"+i+"')",delay);
+	}
+	
+	
+	
+	
+	function rollover() {
+
+
+   		 if(document.getElementById("myImage").src == "http://taralissmarino.com/loversdiscourse/images/readon1.jpg") {
+        		document.getElementById("myImage").src = "http://taralissmarino.com/loversdiscourse/images/readon2.jpg";
+    	}
+    	else {
+        document.getElementById("myImage").src = "http://taralissmarino.com/loversdiscourse/images/readon1.jpg";
+    	}
+   
+   
+	}
+
+
+</script>
+
+<style type="text/css">
+
+body {
+		margin:  0px;
+		width:  2560px;
+		height:  1900px;
+		position: absolute;
+		top: 50%;
+		left:  50%;
+		margin-top: -950px;
+		margin-left:  -1280px;
+		overflow: hidden;
+		background-image:url("images/mainDivPaperBackground.jpg");*/
+	}
+	
+	/*center DIV
+		#main {
+		width:  2560px;
+		height:  1710px;
+		margin: 0px auto;
+		position: absolute;
+		overflow: hidden;
+		background-image:url("images/mainDivPaperBackground.jpg");
+	}*/
+
+	/*--Pictures numbered from left to right, top to bottom--*/
+	#pic1 {
+		width:  256px;
+		height: 190px;
+		position: absolute;
+		background-image:url("images/splash20.jpg");
+	}
+	
+	#pic2 {
+		width:  256px;
+		height: 190px;
+		position: absolute;
+		left:  256px;
+		background-image:url("images/splash64.jpg");
+	}
+	
+	#pic3 {
+		width:  256px;
+		height: 190px;
+		position: absolute;
+		left:  512px;
+		background-image:url("images/splash49.jpg");
+	}
+	
+	#pic4 {
+		width:  256px;
+		height: 190px;
+		position: absolute;
+		left:  768px;
+		background-image:url("images/splash36.jpg");
+	}
+	
+	#pic5 {
+		width:  256px;
+		height: 190px;
+		position: absolute;
+		left:  1024px;
+		background-image:url("images/splash37.jpg");
+	}
+	
+	#pic6 {
+		width:  256px;
+		height: 190px;
+		left:  1280px;
+		position: absolute;
+		background-image:url("images/splash56.jpg");
+	}
+	
+	#pic7 {
+		width:  256px;
+		height: 190px;
+		left: 1536px;
+		position: absolute;
+		background-image:url("images/splash59.jpg");
+	}
+	
+	#pic8 {
+		width:  256px;
+		height: 190px;
+		left:  1792px;
+		position: absolute;
+		background-image:url("images/splash51.jpg");
+	}
+	
+	#pic9 {
+		width:  256px;
+		height: 190px;
+		left:  2048px;
+		position: absolute;
+		background-image:url("images/splash46.jpg");
+	}
+	
+	#pic10 {
+		width:  256px;
+		height: 190px;
+		left:  2304px;
+		position: absolute;
+		background-image:url("images/splash33.jpg");
+	}
+	
+	#pic11 {
+		width:  256px;
+		height: 190px;
+		top:  190px;
+		position: absolute;
+		background-image:url("images/splash23.jpg");
+	}
+	
+	#pic12 {
+		width:  256px;
+		height: 190px;
+		position: absolute;
+		left:  256px;
+		top:  190px;
+		background-image:url("images/splash21.jpg");
+	}
+	
+	#pic13 {
+		width:  256px;
+		height: 190px;
+		position: absolute;
+		left:  512px;
+		top:  190px;
+		background-image:url("images/splash7.jpg");
+	}
+	
+	#pic14 {
+		width:  256px;
+		height: 190px;
+		position: absolute;
+		top:  190px;
+		left:  768px;
+		background-image:url("images/splash6.jpg");
+	}
+	
+	#pic15 {
+		width:  256px;
+		height: 190px;
+		position: absolute;
+		left:  1024px;
+		top:  190px;
+		background-image:url("images/splash79.jpg");
+	}
+	
+	#pic16 {
+		width:  256px;
+		height: 190px;
+		left:  1280px;
+		top:  190px;
+		position: absolute;
+		background-image:url("images/splash77.jpg");
+	}
+	
+	#pic17 {
+		width:  256px;
+		height: 190px;
+		top:  190px;
+		left: 1536px;
+		top:  190px;
+		position: absolute;
+		background-image:url("images/splash73.jpg");
+	}
+	
+	#pic18 {
+		width:  256px;
+		height: 190px;
+		left:  1792px;
+		top:  190px;
+		position: absolute;
+		background-image:url("images/splash69.jpg");
+	}
+	
+	#pic19 {
+		width:  256px;
+		height: 190px;
+		left:  2048px;
+		top:  190px;
+		position: absolute;
+		background-image:url("images/splash67.jpg");
+	}
+	
+	#pic20 {
+		width:  256px;
+		height: 190px;
+		left:  2304px;
+		top:  190px;
+		position: absolute;
+		background-image:url("images/splash63.jpg");
+	}
+	
+	#pic21 {
+		width:  256px;
+		height: 190px;
+		top:  380px;
+		position: absolute;
+		background-image:url("images/splash60.jpg");
+	}
+	
+	#pic22 {
+		width:  256px;
+		height: 190px;
+		position: absolute;
+		left:  256px;
+		top:  380px;
+		background-image:url("images/splash52.jpg");
+	}
+	
+	#pic23 {
+		width:  256px;
+		height: 190px;
+		position: absolute;
+		left:  512px;
+		top:  380px;
+		background-image:url("images/splash54.jpg");
+	}
+	
+	#pic24 {
+		width:  256px;
+		height: 190px;
+		position: absolute;
+		top:  380px;
+		left:  768px;
+		background-image:url("images/splash13.jpg");
+	}
+	
+	#pic25 {
+		width:  256px;
+		height: 190px;
+		position: absolute;
+		left:  1024px;
+		top:  380px;
+		background-image:url("images/splash15.jpg");
+	}
+	
+	#pic26 {
+		width:  256px;
+		height: 190px;
+		left:  1280px;
+		top:  380px;
+		position: absolute;
+		background-image:url("images/splash19.jpg");
+	}
+	
+	#pic27 {
+		width:  256px;
+		height: 190px;
+		left: 1536px;
+		top:  380px;
+		position: absolute;
+		background-image:url("images/splash22.jpg");
+	}
+	
+	#pic28 {
+		width:  256px;
+		height: 190px;
+		left:  1792px;
+		top:  380px;
+		position: absolute;
+		background-image:url("images/splash32.jpg");
+	}
+	
+	#pic29 {
+		width:  256px;
+		height: 190px;
+		left:  2048px;
+		top:  380px;
+		position: absolute;
+		background-image:url("images/splash42.jpg");
+	}
+	
+	#pic30 {
+		width:  256px;
+		height: 190px;
+		left:  2304px;
+		top:  380px;
+		position: absolute;
+		background-image:url("images/splash62.jpg");
+	}
+	
+	#pic31 {
+		width:  256px;
+		height: 190px;
+		top:  570px;
+		position: absolute;
+		background-image:url("images/splash72.jpg");
+	}
+	
+	#pic32 {
+		width:  256px;
+		height: 190px;
+		position: absolute;
+		left:  256px;
+		top:  570px;
+		background-image:url("images/splash82.jpg");
+	}
+	
+	#pic33 {
+		width:  256px;
+		height: 190px;
+		position: absolute;
+		left:  512px;
+		top:  570px;
+		background-image:url("images/splash92.jpg");
+	}
+	
+	#pic34 {
+		width:  256px;
+		height: 190px;
+		position: absolute;
+		top:  570px;
+		left:  768px;
+		background-image:url("images/splash80.jpg");
+	}
+	
+	#pic35 {
+		width:  256px;
+		height: 190px;
+		position: absolute;
+		left:  1024px;
+		top:  570px;
+		background-image:url("images/splash70.jpg");
+	}
+	
+	#pic36 {
+		width:  256px;
+		height: 190px;
+		left:  1280px;
+		top:  570px;
+		position: absolute;
+		background-image:url("images/splash60.jpg");
+	}
+	
+	#pic37 {
+		width:  256px;
+		height: 190px;
+		top:  190px;
+		left: 1536px;
+		top:  570px;
+		position: absolute;
+		background-image:url("images/splash50.jpg");
+	}
+	
+	#pic38{
+		width:  256px;
+		height: 190px;
+		left:  1792px;
+		top:  570px;
+		position: absolute;
+		background-image:url("images/splash40.jpg");
+	}
+	
+	#pic39 {
+		width:  256px;
+		height: 190px;
+		left:  2048px;
+		top:  570px;
+		position: absolute;
+		background-image:url("images/splash30.jpg");
+	}
+	
+	#pic40 {
+		width:  256px;
+		height: 190px;
+		left:  2304px;
+		top:  570px;
+		position: absolute;
+		background-image:url("images/splash20.jpg");
+	}
+	
+	#pic41 {
+		width:  256px;
+		height: 190px;
+		top:  760px;
+		position: absolute;
+		background-image:url("images/splash10.jpg");
+	}
+	
+	#pic42 {
+		width:  256px;
+		height: 190px;
+		position: absolute;
+		left:  256px;
+		top:  760px;
+		background-image:url("images/splash8.jpg");
+	}
+	
+	#pic43 {
+		width:  256px;
+		height: 190px;
+		position: absolute;
+		left:  512px;
+		top:  760px;
+		background-image:url("images/splash24.jpg");
+	}
+	
+	#pic44 {
+		width:  256px;
+		height: 190px;
+		position: absolute;
+		top:  760px;
+		left:  768px;
+		background-image:url("images/splash18.jpg");
+	}
+	
+	#pic45 {
+		width:  256px;
+		height: 190px;
+		position: absolute;
+		left:  1024px;
+		top:  760px;
+		background-image:url("images/splash29.jpg");
+	}
+	
+	#pic46 {
+		width:  256px;
+		height: 190px;
+		left:  1280px;
+		top:  760px;
+		position: absolute;
+		background-image:url("images/splash39.jpg");
+	}
+	
+	#pic47 {
+		width:  256px;
+		height: 190px;
+		top:  190px;
+		left: 1536px;
+		top:  760px;
+		position: absolute;
+		background-image:url("images/splash49.jpg");
+	}
+	
+	#pic48{
+		width:  256px;
+		height: 190px;
+		left:  1792px;
+		top:  760px;
+		position: absolute;
+		background-image:url("images/splash40.jpg");
+	}
+	
+	#pic49 {
+		width:  256px;
+		height: 190px;
+		left:  2048px;
+		top:  760px;
+		position: absolute;
+		background-image:url("images/splash28.jpg");
+	}
+	
+	#pic50 {
+		width:  256px;
+		height: 190px;
+		left:  2304px;
+		top:  760px;
+		position: absolute;
+		background-image:url("images/splash74.jpg");
+	}
+	
+	#pic51 {
+		width:  256px;
+		height: 190px;
+		top:  950px;
+		position: absolute;
+		background-image:url("images/splash87.jpg");
+	}
+	
+	#pic52 {
+		width:  256px;
+		height: 190px;
+		position: absolute;
+		left:  256px;
+		top:  950px;
+		background-image:url("images/splash97.jpg");
+	}
+	
+	#pic53 {
+		width:  256px;
+		height: 190px;
+		position: absolute;
+		left:  512px;
+		top:  950px;
+		background-image:url("images/splash98.jpg");
+	}
+	
+	#pic54 {
+		width:  256px;
+		height: 190px;
+		position: absolute;
+		top:  950px;
+		left:  768px;
+		background-image:url("images/splash86.jpg");
+	}
+	
+	#pic55 {
+		width:  256px;
+		height: 190px;
+		position: absolute;
+		left:  1024px;
+		top:  950px;
+		background-image:url("images/splash14.jpg");
+	}
+	
+	#pic56 {
+		width:  256px;
+		height: 190px;
+		left:  1280px;
+		top:  950px;
+		position: absolute;
+		background-image:url("images/splash18.jpg");
+	}
+	
+	#pic57 {
+		width:  256px;
+		height: 190px;
+		top:  190px;
+		left: 1536px;
+		top:  950px;
+		position: absolute;
+		background-image:url("images/splash61.jpg");
+	}
+	
+	#pic58 {
+		width:  256px;
+		height: 190px;
+		left:  1792px;
+		top:  950px;
+		position: absolute;
+		background-image:url("images/splash49.jpg");
+	}
+	
+	#pic59 {
+		width:  256px;
+		height: 190px;
+		left:  2048px;
+		top:  950px;
+		position: absolute;
+		background-image:url("images/splash47.jpg");
+	}
+	
+	#pic60 {
+		width:  256px;
+		height: 190px;
+		left:  2304px;
+		top:  950px;
+		position: absolute;
+		background-image:url("images/splash45.jpg");
+	}
+	
+	#pic61 {
+		width:  256px;
+		height: 190px;
+		top:  1140px;
+		position: absolute;
+		background-image:url("images/splash25.jpg");
+	}
+	
+	#pic62 {
+		width:  256px;
+		height: 190px;
+		position: absolute;
+		left:  256px;
+		top:  1140px;
+		background-image:url("images/splash35.jpg");
+	}
+	
+	#pic63 {
+		width:  256px;
+		height: 190px;
+		position: absolute;
+		left:  512px;
+		top:  1140px;
+		background-image:url("images/splash15.jpg");
+	}
+	
+	#pic64 {
+		width:  256px;
+		height: 190px;
+		position: absolute;
+		left: 768px;
+		top:  1140px;
+		background-image:url("images/splash12.jpg");
+	}
+	
+	#pic65 {
+		width:  256px;
+		height: 190px;
+		position: absolute;
+		left:  1024px;
+		top:  1140px;
+		background-image:url("images/splash11.jpg");
+	}
+	
+	#pic66 {
+		width:  256px;
+		height: 190px;
+		left:  1280px;
+		top:  1140px;
+		position: absolute;
+		background-image:url("images/splash62.jpg");
+	}
+	
+	#pic67 {
+		width:  256px;
+		height: 190px;
+		top:  190px;
+		left: 1536px;
+		top:  1140px;
+		position: absolute;
+		background-image:url("images/splash83.jpg");
+	}
+	
+	#pic68 {
+		width:  256px;
+		height: 190px;
+		left:  1792px;
+		top:  1140px;
+		position: absolute;
+		background-image:url("images/splash79.jpg");
+	}
+	
+	#pic69 {
+		width:  256px;
+		height: 190px;
+		left:  2048px;
+		top:  1140px;
+		position: absolute;
+		background-image:url("images/splash74.jpg");
+	}
+	
+	#pic70 {
+		width:  256px;
+		height: 190px;
+		left:  2304px;
+		top:  1140px;
+		position: absolute;
+		background-image:url("images/splash42.jpg");
+	}
+	
+	#pic71 {
+		width:  256px;
+		height: 190px;
+		top:  1320px;
+		position: absolute;
+		background-image:url("images/splash48.jpg");
+	}
+	
+	#pic72 {
+		width:  256px;
+		height: 190px;
+		position: absolute;
+		left:  256px;
+		top:  1320px;
+		background-image:url("images/splash2.jpg");
+	}
+	
+	#pic73 {
+		width:  256px;
+		height: 190px;
+		position: absolute;
+		left:  512px;
+		top:  1320px;
+		background-image:url("images/splash1.jpg");
+	}
+	
+	#pic74 {
+		width:  256px;
+		height: 190px;
+		position: absolute;
+		left: 768px;
+		top:  1320px;
+		background-image:url("images/splash6.jpg");
+	}
+	
+	#pic75 {
+		width:  256px;
+		height: 190px;
+		position: absolute;
+		left:  1024px;
+		top:  1320px;
+		background-image:url("images/splash17.jpg");
+	}
+	
+	#pic76 {
+		width:  256px;
+		height: 190px;
+		left:  1280px;
+		top:  1320px;
+		position: absolute;
+		background-image:url("images/splash9.jpg");
+	}
+	
+	#pic77 {
+		width:  256px;
+		height: 190px;
+		top:  190px;
+		left: 1536px;
+		top:  1320px;
+		position: absolute;
+		background-image:url("images/splash5.jpg");
+	}
+	
+	#pic78 {
+		width:  256px;
+		height: 190px;
+		left:  1792px;
+		top:  1320px;
+		position: absolute;
+		background-image:url("images/splash33.jpg");
+	}
+	
+	#pic79 {
+		width:  256px;
+		height: 190px;
+		left:  2048px;
+		top:  1320px;
+		position: absolute;
+		background-image:url("images/splash37.jpg");
+	}
+	
+	#pic80 {
+		width:  256px;
+		height: 190px;
+		left:  2304px;
+		top:  1320px;
+		position: absolute;
+		background-image:url("images/splash34.jpg");
+	}
+
+	
+	#bottomBand {
+		width:  2560px;
+		height: 770px;
+		position: fixed;
+		bottom: 0px;
+		z-index:  3;
+	}
+	
+	
+	
+	
+	#sheerwhitebox {
+		width:  2560px;
+		height:  1520px;
+		background-image:url("images/sheerwhitebox.png");
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		z-index: 3;
+	}
+	
+
+	a img {border: none;}
+
+</style>
+	
+		
+
+</head>
+
+<body>
+
+
+
+<div id="main">
+
+
+	
+	<!--sheer white box-->
+	<div id="sheerwhitebox">
+	</div>
+	
+		<div id="pic1"/>
+		<!--end pic1-->
+		</div>
+		
+		<div id="pic2">
+		<!--end pic2-->
+		</div>
+		
+		<div id="pic3">
+		<!--end pic3-->
+		</div>
+		
+		<div id="pic4">
+		<!--end pic4-->
+		</div>
+		
+		<div id="pic5">
+		<!--end pic5-->
+		</div>
+		
+		<div id="pic6">
+		<!--end pic6-->
+		</div>
+		
+		<div id="pic7">
+		<!--end pic7-->
+		</div>
+		
+		<div id="pic8">
+		<!--end pic8-->
+		</div>
+		
+		<div id="pic9">
+		<!--end pic9-->
+		</div>
+		
+		<div id="pic10">
+		</div>
+		
+		<div id="pic11">
+		</div>
+		
+		<div id="pic12">
+		</div>
+		
+		<div id="pic13"/>
+		</div>
+		
+		<div id="pic14">
+		</div>
+		
+		<div id="pic15">
+		</div>
+		
+		<div id="pic16">
+		</div>
+		
+		<div id="pic17">
+		</div>
+		
+		<div id="pic18">
+		</div>
+		
+		<div id="pic19">
+		</div>
+		
+		<div id="pic20">
+		</div>
+		
+		<div id="pic21">
+		</div>
+		
+		<div id="pic22">
+		</div>
+		
+		<div id="pic23">
+		</div>
+		
+		<div id="pic24">
+		</div>
+		
+		<div id="pic25">
+		</div>
+		
+		<div id="pic26">
+		</div>
+		
+		<div id="pic27">
+		</div>
+		
+		<div id="pic28">
+		</div>
+		
+		<div id="pic29">
+		</div>
+		
+		<div id="pic30">
+		</div>
+		
+		<div id="pic31">
+		</div>
+		
+		<div id="pic32">
+		</div>
+		
+		<div id="pic33">
+		</div>
+		
+		<div id="pic34">
+		</div>
+		
+		<div id="pic35">
+		</div>
+		
+		<div id="pic36">
+		</div>
+		
+		<div id="pic37">
+		</div>
+		
+		<div id="pic38">
+		</div>
+		
+		<div id="pic39">
+		</div>
+		
+		<div id="pic40">
+		</div>
+		
+		<div id="pic41">
+		</div>
+		
+		<div id="pic42">
+		</div>
+		
+		<div id="pic43">
+		</div>
+		
+		<div id="pic44">
+		</div>
+		
+		<div id="pic45">
+		</div>
+		
+		<div id="pic46">
+		</div>
+		
+		<div id="pic47">
+		</div>
+		
+		<div id="pic48">
+		</div>
+		
+		<div id="pic49">
+		</div>
+		
+		<div id="pic50">
+		</div>
+		
+		<div id="pic51">
+		</div>
+		
+		<div id="pic52">
+		</div>
+		
+		<div id="pic53">
+		</div>
+		
+		<div id="pic54">
+		</div>
+		
+		<div id="pic55">
+		</div>
+		
+		<div id="pic56">
+		</div>
+		
+		<div id="pic57">
+		</div>
+		
+		<div id="pic58">
+		</div>
+		
+		<div id="pic59">
+		</div>
+		
+		<div id="pic60">
+		</div>
+		
+		<div id="pic61">
+		</div>
+		
+		<div id="pic62">
+		</div>
+		
+		<div id="pic63">
+		</div>
+		
+		<div id="pic64">
+		</div>
+		
+		<div id="pic65">
+		</div>
+		
+		<div id="pic66">
+		</div>
+		
+		<div id="pic67">
+		</div>
+		
+		<div id="pic68">
+		</div>
+		
+		<div id="pic69">
+		</div>
+		
+		<div id="pic70">
+		</div>
+		
+		<div id="pic71">
+		</div>
+		
+		<div id="pic72">
+		</div>
+		
+		<div id="pic73">
+		</div>
+		
+		<div id="pic74">
+		</div>
+		
+		<div id="pic75">
+		</div>
+		
+		<div id="pic76">
+		</div>
+		
+		<div id="pic77">
+		</div>
+		
+		<div id="pic78">
+		</div>
+		
+		<div id="pic79">
+		</div>
+		
+		<div id="pic80">
+		</div>
+	
+	
+	
+	<div id="bottomBand">
+			
+			<center>
+			<a href="description.html">
+				<img src="images/fixedBottom.png" style="width: 2560px; height:770px"/>
+			</a>
+			</center>
+			
+		
+ 	</div>
+ 	
+ </div>
+		
+
+</body>
+
+</html>
+
+<!-- Localized -->

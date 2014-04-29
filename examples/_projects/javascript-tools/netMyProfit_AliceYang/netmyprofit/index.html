@@ -1,0 +1,297 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<title>Net My Profit: Find Out How Much You're Actually Making</title>
+<!--JAVASCRIPT STARTS HERE-->
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/mootools/1.3.0/mootools-yui-compressed.js"></script>
+<script type="text/javascript"> 
+
+
+
+//===== GLOBAL VARIABLES =====//
+
+//delivery confirmation via paypal is an extra 19 cents. 
+var dc = 0.19; 
+
+//USPS First class postage (delivery confirmation will be added)
+var postage = new Array();
+postage[0] = 0;
+postage[1] = 1.22 + dc;
+postage[2] = 1.39 + dc;
+postage[3] = 1.56 + dc;
+postage[4] = 1.73 + dc;
+postage[5] = 1.90 + dc;
+postage[6] = 2.07 + dc;
+postage[7] = 2.24 + dc;
+postage[8] = 2.41 + dc;
+postage[9] = 2.58 + dc;
+postage[10] = 2.75 + dc;
+postage[11] = 2.92 + dc;
+postage[12] = 3.09 + dc;
+postage[13] = 3.26 + dc;
+
+/*-------------------------------------------------------------------------------------------------
+ onHover(arg): changes the calculate button from grey to dark grey when mouse is hovering
+ -------------------------------------------------------------------------------------------------*/
+function onHover(arg){
+		$(arg).style.backgroundImage = "url(img/" + arg + "_onhover.png)";
+}
+
+/*-------------------------------------------------------------------------------------------------
+ onOut(arg): changes the calculate button back to original light grey color
+ -------------------------------------------------------------------------------------------------*/
+function onOut(arg){
+	$(arg).style.backgroundImage = "url(img/" + arg + ".png)";
+}
+
+/*-------------------------------------------------------------------------------------------------
+ onDown(arg): changes the calculate button to orange color when clicked
+ -------------------------------------------------------------------------------------------------*/
+function onDown(arg){
+	$(arg).style.backgroundImage = "url(img/" + arg + "_onclick.png)";
+	$("error").innerHTML = "&nbsp;&nbsp;&nbsp;"; //clear the error message on each calculate click
+}
+
+/*-------------------------------------------------------------------------------------------------
+ onDown(): calculates and inserts values in all necessary text inputs
+ -------------------------------------------------------------------------------------------------*/
+function onUp(arg){
+	//set the color back to original
+	$(arg).style.backgroundImage = "url(img/" + arg + ".png)";
+
+	
+	//declare local variables
+	var keep_calculating = true; //if we encounter an error we should stop calculating
+	var shipping_fee;
+	var sale_price;
+	var paypal_fee;
+	var base_cost;
+	var packaging;
+	var other;
+	var final_profit;
+	
+	//Process Sale Price
+	if(keep_calculating == true){
+		sale_price = $("salePrice").value;
+		if(sale_price == ""){
+			$("error").innerHTML = "Please enter a valid sale price";
+			keep_calculating = false;
+		}
+		else if(isNaN(sale_price) && keep_calculating == true){
+		$("error").innerHTML = "Please enter a numeric sale price";
+		keep_calculating = false;
+		}
+	}
+	
+	//Process Weight/Shipping Fees
+	var weight = $("weight").value;
+	//error checking:
+	if(weight ==  "" && keep_calculating == true){
+		$("error").innerHTML = "Please enter a valid weight";
+		keep_calculating = false;
+	}
+	else if(weight > 13 && keep_calculating == true){
+		$("error").innerHTML = "Please enter a weight of 13 ounces or less";
+		keep_calculating = false;
+		}
+	else if(isNaN(weight) && keep_calculating == true){
+		$("error").innerHTML = "Please enter a numeric weight value";
+		keep_calculating = false;
+	}
+	else if(keep_calculating == true){
+		shipping_fee = postage[weight];
+		shipping_fee = Math.round(shipping_fee * 100) / 100; //round to 2 decimal places (in case of floating point weirdness)
+		$("shipping").value = shipping_fee; //fill in shipping field
+	}
+	
+	//Calculate Paypal Fees
+	if(keep_calculating == true){
+		paypal_fee = sale_price * 0.029 + 0.3;
+		paypal_fee = Math.round(paypal_fee * 100) / 100; //round to 2 decimal places
+		$("paypalFee").value = paypal_fee;
+	}
+	
+	//Process Base Cost
+	if(keep_calculating == true){
+		base_cost = $("baseCost").value;
+		if(isNaN(base_cost) && keep_calculating == true){
+		$("error").innerHTML = "Please enter a numeric base cost";
+		keep_calculating = false;
+		}
+	}	
+	
+	//Process Packaging
+	if(keep_calculating == true){
+		packaging = $("packaging").value;
+		if(isNaN(packaging) && keep_calculating == true){
+		$("error").innerHTML = "Please enter a numeric packing value";
+		keep_calculating = false;
+		}
+	}
+	
+	//Process Other
+	if(keep_calculating == true){
+		other = $("other").value;
+		if(isNaN(other) && keep_calculating == true){
+		$("error").innerHTML = "Please enter a numeric other value";
+		keep_calculating = false;
+		}
+	}
+	
+	//Calculate Final Profit
+	if(keep_calculating == true){
+		final_profit = sale_price - shipping_fee - paypal_fee - base_cost - packaging - other;
+		final_profit = Math.round(final_profit * 100) / 100; //round to 2 decimal places
+		$("yourProfit").value = final_profit;
+	}
+}
+
+/*-------------------------------------------------------------------------------------------------
+ clearAll: clears all the text fields (not used currently)
+ -------------------------------------------------------------------------------------------------*/
+ function clearAll(arg){
+ 	//set the color back to original
+	$(arg).style.backgroundImage = "url(img/" + arg + ".png)";
+
+ 	$("salePrice").value = "";
+	$("paypalFee").value = "";
+	$("baseCost").value = "";
+	$("weight").value = "";
+	$("shipping").value = "";
+	$("packaging").value = "";
+	$("other").value = ""; 
+	$("yourProfit").value = "";
+ }
+ 
+ 
+ /*-------------------------------------------------------------------------------------------------
+ hideDivs: hides everything but the calculator div on page load
+ -------------------------------------------------------------------------------------------------*/
+ function hideDivs(){
+ 	$("FAQ").set('opacity', 0); 
+ }
+ 
+ 
+ /*-------------------------------------------------------------------------------------------------
+ about: tweens the opacity to hide the calculator div and display the FAQ div
+ -------------------------------------------------------------------------------------------------*/
+ function FAQ(){
+ 	$("calculator").set('opacity', 0);
+	$("FAQ").tween('opacity', 1);
+ }
+ 
+  /*-------------------------------------------------------------------------------------------------
+ FAW: tweens the opacity to hide the FAQ div and display the calculator div
+ -------------------------------------------------------------------------------------------------*/
+ function calculator(){
+ 	$("FAQ").set('opacity', 0); 
+ 	$("calculator").tween('opacity', 1);
+ }
+
+
+<!--END JAVASCRIPT-->
+</script>
+</head>
+
+
+<!--HTML STARTS HERE-->
+<body onload="hideDivs()">
+
+<!-- Content Div for Vertical Centering -->
+<div id = content>
+
+    <!--Header Code-->
+    <div id = header>
+        <div id = header_menu> <a href="javascript:void(0)" onclick="calculator();">calculator</a> • <a href="javascript:void(0)" onclick="FAQ();">FAQ</a> </div>
+    </div>
+    
+    <!-- Preload Rollover Images -->
+    <img src="img/calculate_onhover.png" style="display:none;" /> <img src="img/calculate_onclick.png" style="display:none;" /> <img src="img/clearAll_onhover.png" style="display:none;" /> <img src="img/clearAll_onclick.png" style="display:none;" />
+    
+    <!--Body Container Code-->
+    <div id = body_box>
+    
+        <!--Calculator Div -->
+        <div id = calculator>
+        
+            <!-- instructions at top (can be removed> -->
+            <div id = instructions> Fields marked with (*) must be filled out. Paypal fees and shipping will be automatically calculated. </div>
+            <!-- labels (left div) -->
+            <div id = labels> *sale price: &nbsp;&nbsp;&nbsp;
+                <input type="text" width="30px" id = "salePrice"/>
+                <br />
+                paypal fees:&nbsp;&nbsp;&nbsp;
+                <input type="text" width="30px" id = "paypalFee" readonly="readonly"/>
+                <br />
+                base cost:&nbsp;&nbsp;&nbsp;
+                <input type="text" width="30px" id = "baseCost"/>
+                <br />
+                *weight (oz):&nbsp;&nbsp;&nbsp;
+                <input type="text" width="30px" id = "weight"/>
+                <br />
+                shipping:&nbsp;&nbsp;&nbsp;
+                <input type="text" width="30px" id = "shipping" readonly="readonly"/>
+                <br />
+                packaging:&nbsp;&nbsp;&nbsp;
+                <input type="text" width="30px" id = "packaging"/>
+                <br />
+                other:&nbsp;&nbsp;&nbsp;
+                <input type="text" width="30px" id = "other"/>
+                <br />
+                
+                <!-- div to dispay an error message if necessary -->
+                <div id = error>
+                    <!-- ======================================================================== -->
+                    &nbsp;&nbsp;&nbsp; </div>
+                <font color="#FFB735"><strong>Your Profit:&nbsp;&nbsp;&nbsp; </strong></font>
+                <input type="text" width="30px" id = "yourProfit" 	readonly="readonly"/>
+            </div>
+            
+            <!-- calculate button -->
+            <div id = calculate onmouseover="onHover('calculate')" onmouseout="onOut('calculate')" onmousedown="onDown('calculate')" onmouseup="onUp('calculate')"> </div>
+            
+            <!-- clear all button -->
+            <div id = clearAll onmouseover="onHover('clearAll')" onmouseout="onOut('clearAll')" onmousedown="onDown('clearAll')" onmouseup="clearAll('clearAll')"> </div>
+            
+        </div>
+        <!-- End Calculator Div -->
+        
+        
+        <!--FAQ Section Div -->
+        <div id = FAQ>
+            <div class="header"> Frequently Asked Questions</div>
+            <br />
+            <div class="header1">How are Paypal fees calculated?</div>
+            <div class="text">Paypal fees are calculated using the standard rate of 2.9% + $0.30 USD. Please note that cross-border transactions may incur additional fees.</div>
+            <br />
+            <div class="header1">What shipping service does this use?</div>
+            <div class="text">USPS First Class Parcel Post</div>
+            <br />
+            <div class="header1">How is shipping calculated?</div>
+            <div class="text">Rates are referenced from http://www.usps.com/prices/first-class-mail-prices.htm <br />
+                A $0.19 delivery confirmation fee is automatically added to the total postage. Note that this assumes your are printing the shipping
+                label via Paypal. Delivery confirmation purchased at the post office is $0.80.</div>
+            <br />
+            <div class="header1">Why does shipping include a  Delivery Confirmation fee?</div>
+            <div class="text">It is good practice to purchase tracking for all packages invoiced via Paypal. Forgoing this leaves you vulnerable 		 	to fradulent item-not-recieved claims. For all Paypal transactions, Paypal will side with the buyer if no tracking number is 			 	provided, and the refund will be deducted from your account.</div>
+        </div>
+        <!-- End FAQ Div -->
+        
+        <!--Contact Section Div -->
+        <div id = contact> </div>
+        <!-- End Contact Div -->
+        
+    </div>
+    <!-- End body_box div -->
+    
+</div>
+<!-- End content div -->
+</body>
+</html>
+
+<!-- www.000webhost.com Analytics Code -->
+<script type="text/javascript" src="http://analytics.hosting24.com/count.php"></script>
+<noscript><a href="http://www.hosting24.com/"><img src="http://analytics.hosting24.com/count.php" alt="web hosting" /></a></noscript>
+<!-- End Of Analytics Code -->

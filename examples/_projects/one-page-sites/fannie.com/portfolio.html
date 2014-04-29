@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<head>
+	<link rel="stylesheet" href="style.css" type="text/css" />
+	<!--google web fonts-->
+	<link href='http://fonts.googleapis.com/css?family=Terminal+Dosis%7CComing+Soon' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:700' rel='stylesheet' type='text/css'>
+	<!--smoothscrolling-->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
+	<script>
+	$(function() {
+	
+		function filterPath(string) {
+			return string
+			.replace(/^\//,'')
+			.replace(/(index|default).[a-zA-Z]{3,4}$/,'')
+			.replace(/\/$/,'');
+		}
+	
+		var locationPath = filterPath(location.pathname);
+		var scrollElem = scrollableElement('html', 'body');
+	
+		// Any links with hash tags in them (can't do ^= because of fully qualified URL potential)
+		$('a[href*=#]').each(function() {
+	
+			// Ensure it's a same-page link
+			var thisPath = filterPath(this.pathname) || locationPath;
+			if (  locationPath == thisPath
+				&& (location.hostname == this.hostname || !this.hostname)
+				&& this.hash.replace(/#/,'') ) {
+	
+					// Ensure target exists
+					var $target = $(this.hash), target = this.hash;
+					if (target) {
+	
+						// Find location of target
+						var targetOffset = $target.offset().top;
+						$(this).click(function(event) {
+	
+							// Prevent jump-down
+							event.preventDefault();
+	
+							// Animate to target
+							$(scrollElem).animate({scrollTop: targetOffset}, 400, function() {
+	
+								// Set hash in URL after animation successful
+								location.hash = target;
+	
+							});
+						});
+					}
+			}
+	
+		});
+	
+		// Use the first element that is "scrollable"  (cross-browser fix?)
+		function scrollableElement(els) {
+			for (var i = 0, argLength = arguments.length; i <argLength; i++) {
+				var el = arguments[i],
+				$scrollElement = $(el);
+				if ($scrollElement.scrollTop()> 0) {
+					return el;
+				} else {
+					$scrollElement.scrollTop(1);
+					var isScrollable = $scrollElement.scrollTop()> 0;
+					$scrollElement.scrollTop(0);
+					if (isScrollable) {
+						return el;
+					}
+				}
+			}
+			return [];
+		}
+	
+	});
+	</script>
+
+</head>
+
+<body>
+
+	<!--sticky penguin menu-->
+	<div id="navigation">
+		<ul id="navbar">
+            <li><a href="#home" id="blue"><span>home</span></a></li>
+			<li><a href="#works" id="pink"><span>works</span></a></li>
+			<li><a href="#about" id="green"><span>about</span></a></li>
+			<li><a href="#contact" id="purple"><span>contact</span></a>
+		</ul>
+	</div>
+
+	<!--top page, doesn't actually have info-->
+	<div id="home">
+	<a name="home"></a>
+	</div>
+	
+	<!--portfolio section, javascript slideshow to be added later-->
+	<div id="works">
+	<a name="works"></a>
+		<div class="content">
+		<img src="images/cmingsoon.png">
+		<p>
+		This section will feature my digital and traditional artworks.
+		</p>
+		</div>
+	</div>
+	
+	<!--about me, will fill in with better info and link to resume or reel in the future-->
+	<div id="about">
+	<a name="about"></a>
+		<div class="content">
+			<h2>About:</h2>
+			<img src="images/fannbunny.png">
+			<p>
+			I am Fannie.
+			</p>
+			<p>
+			This is my website.
+			</p>
+			<p>
+			More information to be added later.
+			</p>
+		</div>
+	</div>
+	
+	<!--contact form&info, submitting form doesn't actually work at the moment-->
+	<div id="contact">
+	<a name="contact"></a>
+		<div class="content">
+			<table>
+			<tr>
+			<td>
+			<h2>CONTACT</h2>
+			<form>
+			name:<br/>
+			<input type="text" name="name" /><br/>
+			email:<br/>
+			<input type="email" name="email" /><br/>
+			subject:<br/>
+			<input type="text" name="subject" /><br/>
+			message:<br/>
+			<textarea name="message"></textarea><br/>
+			<button type="submit">submit</button>
+			</form>
+			</td>
+			<td style="padding-left: 200px;" valign="top">
+			<h2>INFO</h2>
+			<p>
+			Contact me at:
+			</p>
+			fannliu@seas.upenn.edu
+			<br/>
+			fanniefliu@gmail.com
+			</td>
+			</tr>
+			</table>
+		</div>
+			
+	</div>
+	
+</body>
+
+</html>
+<!-- Localized -->

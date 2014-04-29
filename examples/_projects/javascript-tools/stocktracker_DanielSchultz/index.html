@@ -1,0 +1,76 @@
+<!doctype html>
+
+<html>
+  <head>
+    <title>Stock Tracker</title>
+    <meta charset="utf-8"/>
+    <meta name="description" content="DWA P3" />
+
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
+    <!-- our main JS script -->
+    <script src = "scripts.js"></script>
+   
+
+
+    <script>
+
+      $(document).ready(function() {
+
+        // handler for get quote button
+        $('#checkBtn').click(function() {
+            get_quote($('#ticker').val());
+        });
+        
+        // disable the enterbutton so the user has to select a button
+        $('#ticker').keydown(function(e) {
+            if (e.keyCode == 13) {
+                return false;
+            }
+        });
+
+        // handler for add button
+        $('#addBtn').click(function() {
+            add_quote($('#ticker').val());
+        });
+     
+
+        // event handler for removing a stock
+        $('#clearBtn').click(function() {
+            delete_quote($('#ticker').val());
+        });
+
+
+        // print the portfolio 
+        print_portfolio();
+      
+      
+      });
+
+
+    </script>
+
+
+  </head>
+
+  <body>
+    <form id="checkStock" method="post" onsubmit="get_quote($('#ticker').val());" >
+    <input type="text" name="ticker" id="ticker" value=""
+    placeholder="enter ticker symbol"/>
+    <button id="checkBtn" type="button">Check Stock</button>
+    <button id="addBtn" type="button">Add Stock</button>
+    <button id="clearBtn" type="button">Remove Stock</button>
+    </form>
+
+    
+    <div id="stockInfo"></div>
+    
+    <div id="portfolio"></div>
+
+  </body>
+
+</html>
+
+

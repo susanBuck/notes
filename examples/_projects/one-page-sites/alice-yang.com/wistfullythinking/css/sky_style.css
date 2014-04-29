@@ -1,0 +1,13 @@
+@charset "utf-8";
+/* CSS Style Sheet for Wistfully Thinking, sky.php */
+
+body{
+	color:#FFFBF0;
+	/*background-color:#d1d0db;*/
+}
+
+.tip{
+	font-family:Arial, Helvetica, sans-serif;
+	color:#2A1FFF;
+}
+

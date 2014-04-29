@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+<head>
+
+	<link rel="stylesheet" href="/storage/code/includes/code.css" type="text/css">
+
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+	<script type="text/javascript" src="/storage/code/lightbox/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
+
+	<link rel="stylesheet" href="/storage/code/lightbox/fancybox/jquery.fancybox-1.3.4.css" type="text/css">
+	
+	<title>Lightbox</title>
+
+	<script type='text/javascript'>
+		
+		$(document).ready(function() {
+		
+			
+			/* Single image example, no settings */
+			$("a#single_image").fancybox();
+			
+			
+			/* HTML Comment + using custom settings */
+			$("a#inline").fancybox({
+				'hideOnContentClick': true
+			});
+		
+			/* Gallery with lots of custom settings */
+			$("a.grouped_elements").fancybox({
+				'transitionIn'	:	'elastic',
+				'transitionOut'	:	'elastic',
+				'speedIn'		:	600, 
+				'speedOut'		:	200, 
+			});
+			
+		});
+		
+	</script>
+
+
+</head>
+
+
+<body>
+
+	<!-- Explanation -->
+		
+		This page demonstrates <a href='http://fancybox.net/'>fancybox</a>, a lightbox plugin for jQuery.
+	
+		<br><br><br><br>
+	
+	
+	<!-- Single image example -->
+		
+		<a id="single_image" href="/storage/code/images/dino.jpg">Trigger a lightbox with an image</a>
+		<br><br>
+	
+	
+	<!-- HTML Content exampple -->
+		
+		<a id="inline" href="#data">Trigger a lightbox with HTML content</a>
+		
+		<div style="display:none">
+			<div id="data" style='width:500px; height:500px;'>
+				I can put any HTML content I want in here!
+			</div>
+		</div>
+	
+		<br><br>
+	
+	
+	<!-- Gallery -->
+		
+		Group together images into a gallery:<br>
+		<a class="grouped_elements" rel="group1" href="/storage/code/images/apple.jpg">Apple</a><br>
+		<a class="grouped_elements" rel="group1" href="/storage/code/images/puppy.jpg">Puppy</a><br>
+		<a class="grouped_elements" rel="group1" href="/storage/code/images/waldo.jpg">Waldo</a><br>
+
+
+
+</body>
+
+</html>

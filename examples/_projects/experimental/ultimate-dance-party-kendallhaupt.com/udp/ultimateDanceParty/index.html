@@ -1,0 +1,304 @@
+<html>
+<head>
+	
+<title>ULTIMATE DANCE PARTY</title>
+	
+<meta name="description" content="Kendall Haupt's Ultimate Dance Party" />
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-20207644-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+	
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/mootools/1.3.0/mootools-yui-compressed.js"></script>
+
+<script type= "text/javascript" src ="http://kendallhaupt.com/udp/dragMove/drag.js"></script>
+<script type= "text/javascript" src ="http://kendallhaupt.com/udp/dragMove/move.js"></script>
+
+<script type='text/javascript'>
+
+
+	function unhideElement(whichElement) {
+	
+		// Show element
+		$(whichElement).style.display = "block";
+		
+		
+		// Make it draggable
+		dragThis(whichElement);
+	
+	}
+	
+	function dragThis(whichDiv){
+	
+
+		var container = $('newdance');
+		var dragElement = $(whichDiv);
+		
+			new Drag.Move(dragElement, {
+				'newdance': container,	
+				onStart: function(el){
+		
+				}
+			});		
+	}
+	
+	function hideElement (whichElement) {
+	
+		$(whichElement).style.display = "none"; 
+	
+	}
+	
+	
+</script>
+
+<!---------------CSS STYLE------------------------------->
+
+
+<style type="text/css">
+
+.option {
+	width:300px; 
+	height:150px;
+	overflow:scroll;
+	overflow-x:hidden;
+	border: 1px solid black;
+	margin-left:auto;
+	margin-right:auto;
+	margin-bottom:10px; 
+	
+
+}
+
+</style>
+
+
+</head>
+
+<!---------------BODY------------------------------->
+
+
+<body style="background-image:url('../images/silverglitter.jpg');">
+
+<div id="header" style="height:120px; width:1000px; position:absolute; top:0px; margin:auto; align:center;">
+	<img src="../images/headerNEW3.png" alt="ultimate dance party"/>
+</div>
+
+<!---------------DANCE CONTAINER-------------------------------------------------->
+
+<div id="newdance" style="width:750px; position:absolute; height:550px; top:140px; left:50px; border:5px solid white; background-color:black; overflow: hidden;">
+		
+		
+		<div id="drag3b" style="display:none;"><img src="../images/smokingroom2.gif" alt="smokingroom"/></div>
+		
+		<div id="drag2b" style="display:none;"><img src="../images/moon2.gif" alt="moon"/></div>
+		
+		<div id="drag1b" style="display:none;"><img src="../images/dancefloor3.gif" alt="dancefloor"/></div>
+		
+		<div id="drag4b" style="display:none;"><img src="../images/jurassic2.jpg" alt="jurassic"/></div>
+		
+		<div id="drag6b" style="display:none;"><img src="../images/dinosaur.gif" alt="dinosaur"/></div>
+		
+		<div id="drag5b" style="display:none;"><img src="../images/monopolyman.gif" alt="monopolyman"/></div>
+		
+		<div id="drag7b" style="display:none;"><img src="../images/shaquilleoneal.gif" alt="shaquilleoneal.gif"/></div>
+		
+		<div id="drag10b" style="display:none;"><img src="../images/justinbieber.gif" alt="justinbieber"/></div>
+		
+		<div id="drag11b" style="display:none;"><img src="../images/johntravolta.gif" alt="johntravolta"/></div>
+		
+		<div id="drag8b" style="display:none;"><img src="../images/whiskey.gif" alt="whiskey"/></div>
+		
+		<div id="drag13b" style="display:none;"><img src="../images/glowsticks.gif" alt="glowsticks"/></div>
+		
+		<div id="drag14b" style="display:none;"><img src="../images/tiffanylamp2.gif" alt="lamp"/></div>
+		
+		<div id="drag15b" style="display:none;"><img src="../images/pinacolada.gif" alt="drank"/></div>
+		
+</div>
+
+
+<!---------------OPTIONS CONTAINER-------------------------------------------------->
+<div id="optionsContainer" style="position:absolute; left:840px; top:140px; border: 5px solid white; width:320px; height:820px; background-color:black; font-family:courier;">
+	
+<!---------------the scene--------------->
+	<p style="color:white; padding-left:15px;"><u>PICK A SCENE</u></p>
+	<div class="option">
+		<span id="drag1a" onClick='unhideElement("drag1b")'><img src="../images/dancefloorthumb.png" alt="dancefloor"/></span>
+		<span style="color:white; font-size:10pt; cursor:pointer;" onClick='hideElement("drag1b")'> /off </span>
+		
+		<span id="drag2a" onClick='unhideElement("drag2b")'><img src="../images/spacethumb.jpg" alt="moon"/></span>
+		<span style="color:white; font-size:10pt; cursor:pointer;" onClick='hideElement("drag2b")'> /off </span>
+		
+		<span id="drag3a" onClick='unhideElement("drag3b")'><img src="../images/smokingroomthumb.jpg" alt="smokingroom"/></span>
+		<span style="color:white; font-size:10pt; cursor:pointer;" onClick='hideElement("drag3b")'> /off </span>
+		
+		<span id="drag4a" onClick='unhideElement("drag4b")'><img src="../images/jurassicthumb.jpg" alt="jurassic"/></span>
+		<span style="color:white; font-size:10pt; cursor:pointer;" onClick='hideElement("drag4b")'> /off </span>
+		
+		
+		
+	</div>
+
+<!---------------music------------------>
+	<p style="color:white; padding-left:15px;"><u>PICK THE TUNES</u></p>
+	<div class="option" id="musicbox">
+	
+		<div id="stevie" style="color:white; font-size:16pt;">
+		&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Stevie remix
+		<object width="250" height="42">
+		<param name="src" value="LINKHERE">
+		<param name="autoplay" value="false">
+		<param name="controller" value="false">
+		<param name="bgcolor" value="#FFFFFF">
+		<embed src="http://kendallhaupt.com/udp/music/stevie.mp3" autostart="false" loop="false" width="250" height="20"
+		controller="true" bgcolor="#FFFFFF"></embed>
+		</object>
+		</div>
+		
+		<br>
+		<div id="jumparound" style="color:white; font-size:16pt;">
+		&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Jump Around
+		<object width="250" height="42">
+		<param name="src" value="LINKHERE">
+		<param name="autoplay" value="false">
+		<param name="controller" value="false">
+		<param name="bgcolor" value="#FFFFFF">
+		<embed src="http://kendallhaupt.com/udp/music/jumparound.mp3" autostart="false" loop="false" width="250" height="20"
+		controller="true" bgcolor="#FFFFFF"></embed>
+		</object>
+		</div>
+		
+		<br>
+		<div id="whatislove" style="color:white; font-size:16pt;">
+		&nbsp&nbsp&nbsp&nbsp&nbsp What is Love?
+		<object width="250" height="42">
+		<param name="src" value="LINKHERE">
+		<param name="autoplay" value="false">
+		<param name="controller" value="false">
+		<param name="bgcolor" value="#FFFFFF">
+		<embed src="http://kendallhaupt.com/udp/music/whatislove.m4a" autostart="false" loop="false" width="250" height="20"
+		controller="true" bgcolor="#FFFFFF"></embed>
+		</object>
+		</div>
+		
+		<br>
+		<div id="gimmemore" style="color:white; font-size:16pt;">
+		&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Gimme More
+		<object width="250" height="42">
+		<param name="src" value="LINKHERE">
+		<param name="autoplay" value="false">
+		<param name="controller" value="false">
+		<param name="bgcolor" value="#FFFFFF">
+		<embed src="http://kendallhaupt.com/udp/music/gimmemore.m4p" autostart="false" loop="false" width="250" height="20"
+		controller="true" bgcolor="#FFFFFF"></embed>
+		</object>
+		</div>
+		
+		<br>
+		<div id="deceptacon" style="color:white; font-size:16pt;">
+		&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Deceptacon
+		<object width="250" height="42">
+		<param name="src" value="LINKHERE">
+		<param name="autoplay" value="false">
+		<param name="controller" value="false">
+		<param name="bgcolor" value="#FFFFFF">
+		<embed src="http://kendallhaupt.com/udp/music/deceptacon.m4a" autostart="false" loop="false" width="250" height="20"
+		controller="true" bgcolor="#FFFFFF"></embed>
+		</object>
+		</div>
+		
+		<br>
+		<div id="superfreak" style="color:white; font-size:16pt;">
+		&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Superfreak
+		<object width="250" height="42">
+		<param name="src" value="LINKHERE">
+		<param name="autoplay" value="false">
+		<param name="controller" value="false">
+		<param name="bgcolor" value="#FFFFFF">
+		<embed src="http://kendallhaupt.com/udp/music/superfreak.mp3" autostart="false" loop="false" width="250" height="20"
+		controller="true" bgcolor="#FFFFFF"></embed>
+		</object>
+		</div>
+		
+				<br>
+		<div id="superfreak" style="color:white; font-size:16pt;">
+		&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Charleston
+		<object width="250" height="42">
+		<param name="src" value="LINKHERE">
+		<param name="autoplay" value="false">
+		<param name="controller" value="false">
+		<param name="bgcolor" value="#FFFFFF">
+		<embed src="http://kendallhaupt.com/udp/music/Charleston.m4a" autostart="false" loop="false" width="250" height="20"
+		controller="true" bgcolor="#FFFFFF"></embed>
+		</object>
+		</div>
+		
+		
+	</div>	
+	
+	
+<!---------------crew------------------>
+	<p style="color:white; padding-left:15px;"><u>PICK YOUR CREW</u></p>
+	
+	<div class="option">
+			
+			<span id="drag6a" onClick='unhideElement("drag6b")'><img src="../images/dinosaurthumb.png" alt="dinosaur"/></span>
+				<span style="color:white; font-size:10pt; cursor:pointer;" onClick='hideElement("drag6b")'> /off </span>
+			
+			<span id="drag10a" onClick='unhideElement("drag10b")'><img src="../images/justinbieberthumb.png" alt="justinbieber"/></span>
+				<span style="color:white; font-size:10pt; cursor:pointer;" onClick='hideElement("drag10b")'> /off </span>
+			
+			<span id="drag7a" onClick='unhideElement("drag7b")'><img src="../images/shaquilleonealthumb.png" alt="astronaut"/></span>
+				<span style="color:white; font-size:10pt; cursor:pointer;" onClick='hideElement("drag7b")'> /off </span>
+			
+			<span id="drag11a" onClick='unhideElement("drag11b")'><img src="../images/johntravoltathumb.png" alt="johntravolta"/></span>
+				<span style="color:white; font-size:10pt; cursor:pointer;" onClick='hideElement("drag11b")'> /off </span>
+				
+			<span id="drag5a" onClick='unhideElement("drag5b")'><img src="../images/monopolymanthumb.png" alt="monopolyman"/></span>
+				<span style="color:white; font-size:10pt; cursor:pointer;" onClick='hideElement("drag5b")'> /off </span>
+	
+	
+	
+	</div>
+
+
+<!---------------fun stuff------------------------------->
+	<p style="color:white; padding-left:15px;"><u>MISC</u></p>
+	
+	<div class="option">	
+	
+		<span id="drag13a" onClick='unhideElement("drag13b")'><img src="../images/glowsticksthumb.png" alt="glowsticks"/></span>
+			<span style="color:white; font-size:10pt; cursor:pointer;" onClick='hideElement("drag13b")'> /off </span>
+	
+		<span id="drag15a" onClick='unhideElement("drag15b")'><img src="../images/pinacoladathumb.png" alt="pinacolada"/></span>
+			<span style="color:white; font-size:10pt; cursor:pointer;" onClick='hideElement("drag15b")'> /off </span>
+		
+		<span id="drag8a" onClick='unhideElement("drag8b")'><img src="../images/whiskeythumb.png" alt="whiskey"/></span>
+			<span style="color:white; font-size:10pt; cursor:pointer;" onClick='hideElement("drag8b")'> /off </span>
+		
+		<span id="drag14a" onClick='unhideElement("drag14b")'><img src="../images/tiffanylampthumb.png" alt="tiffanylamp"/></span>
+			<span style="color:white; font-size:10pt; cursor:pointer;" onClick='hideElement("drag14b")'> /off </span>
+	
+	</div>
+
+
+</div> <!--(endofoptionsithink)-->
+
+
+
+
+<body>
+
+</body>
+</html>
+
+
+<!-- Localized -->

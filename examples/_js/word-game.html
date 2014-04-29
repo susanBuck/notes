@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<head>
+
+	<title>Word Game</title>
+	<link rel="stylesheet" href="styles.css" type="text/css">	
+	<style>
+		textarea {
+			font-size:1.5em;
+			width:10em;
+		}
+	</style>
+
+</head>
+
+<body>
+	
+	<h1>Word Game</h1>
+	The computer has chosen a random 5 letter noun.<br>
+	Try and guess what that word is in as few guesses as possible.<br>
+	For every guess you make, the computer will tell you how many letters in your word match the computer's word.<br>
+	The order of the letters is irrelevant.<br>
+	
+	<br>
+	<input type='text' name='guess' maxlength=5> <button>Submit Guess</button>
+	
+	<div id='results'></div>
+	
+	<div id='alphabet'></div>
+
+	Scratchpad:<br>
+	<textarea></textarea>
+	
+	<div id='guesses'></div>
+		
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	
+	<script>
+	
+	// Generate the alphabet on the page
+	// You could create an array of letters from A-Z, but here's a fun way to do it with a for loop
+	// 65 is the char code for A, 90 for Z
+	for(var i=65;i<=90;i++) {
+    	letter = String.fromCharCode(i);
+    	
+    	// Put each letter in a span so we can color it later
+		$('#alphabet').append('<span class="letter" id="'+letter+'">'+letter+'</span>');
+	}
+	
+	// Array of words the computer can pick
+	var words = new Array(
+		'apple', 
+		'heart', 
+		'stone', 
+		'store',
+		'stars',
+		'armor',
+		'chalk',
+		'squid',
+		'staff',
+		'sword'
+		);
+	
+	// Select the computer's word
+		// How many words are there?	
+		var word_count = words.length - 1;
+	
+		// Pick a random number, which will be used to pick a random word
+		var random_number = Math.floor((Math.random()*word_count)+0);
+				
+		// Using the random number, pull a word out of the array
+		var random_word = words[random_number];
+		
+		// To make sure all our letters are consistent, make all letters uppercase
+		random_word = random_word.toUpperCase();
+		
+		// Debugging
+		console.log("Computer's word:" + random_word);
+
+		// Right now all words are 5 characters long, but down the road they might be longer
+		var random_word_length = random_word.length;
+		
+		// Break the word into an array; each letter is an element in the array
+		var random_word_array  = random_word.split('');
+	
+	// Tabla rasa
+		var match_count = 0;
+		
+	// Play! 
+	$('button').click(function() {
+		
+		// What guess did the player make?
+		var guess = $('input[name=guess]').val();
+
+		// To make sure all our letters are consistent, make all letters uppercase
+		guess = guess.toUpperCase();
+		
+		// Break their word into an array; each letter is an element in the array
+		guess_array = guess.split('');
+		
+		// Tabla rasa
+		var match_count = 0;
+		
+		// Loop through the letters in their guess
+		for(i in guess_array) {
+		
+			// What letter are we looking at?
+			var this_letter = guess_array[i];
+			
+			// See if this letter exists in the array of letters of the computer's word
+			// This will return -1 if it does not exist, otherwise it returns the letters position
+			var letter_position = $.inArray(this_letter, random_word_array);
+			
+			// Letter's position is irrelevant; we just care that it exists, ie position is 0 or greater
+			if(letter_position >= 0) {
+				
+				// If this letter is a match, mark it green in the alphabet
+				//$('#' + this_letter).css('background-color','green');
+				// The above makes the game much easier; could be a fun feature to 
+				// add: a easy / difficult toggle on the game that would decide whether to enable this feature
+				
+				// Keep track of how many letter matches they have
+				match_count++;
+			}
+		
+		}
+		
+		// If match_count was 0 you should grey out all the
+		// letters in the alphabet because it means none of them match
+		if(match_count == 0) {
+			for(i in guess_array) {
+				var letter = guess_array[i];
+				$('#' + letter).css('color','#eee');
+			}
+		}
+		
+		// Print out their guess and how many letters matched
+		$('#guesses').prepend(guess + ' : ' + match_count + ' letters match<br>');
+				
+		// If their match count equals the the length of the computer's word, Winner! 
+		if(match_count == random_word_length) {
+			$("#results").html('You guessed the word correctly!');
+		}
+		
+	});
+	
+	
+	</script>
+
+<body>

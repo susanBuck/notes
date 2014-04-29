@@ -1,0 +1,48 @@
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/mootools/1.3.0/mootools-yui-compressed.js"></script>
+
+<style type='text/css'>
+
+#results {
+	width:40px; 
+	height:40px; 
+	border:1px solid black; 
+	padding:10px;
+	font-size:30pt;
+	text-align:center;
+}
+
+</style>
+
+<script type="text/javascript"> 
+		
+document.onkeypress = keyPressed;	
+	
+
+/*-------------------------------------------------------------------------------------------------
+keyPressed
+-------------------------------------------------------------------------------------------------*/
+function keyPressed(evt) {
+	
+	var characterCode;
+
+	if(!evt) {
+		characterCode = window.event.keyCode;
+	}
+	else {
+		if(evt && evt.which) characterCode = evt.which;
+		else characterCode = evt.event.charCode;
+	}
+
+	var keyThatWasPressed = String.fromCharCode(characterCode);
+	
+	$('results').innerHTML = keyThatWasPressed;
+	
+}
+	
+
+	
+ 
+</script> 
+Press some keys.<br/><br/>
+<div id='results'></div>
+ 

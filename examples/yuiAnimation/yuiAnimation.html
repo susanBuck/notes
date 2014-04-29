@@ -1,0 +1,52 @@
+<title>yuiAnimation.html</title>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/yui/2.8.2r1/build/yahoo-dom-event/yahoo-dom-event.js"></script> 
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/yui/2.8.2r1/build/animation/animation-min.js"></script> 
+
+<style type='text/css'>
+	body {
+		margin:0px;
+	}
+
+	#ball {
+		position:absolute;
+		display: block;
+		width: 80px; height: 80px;
+		top:20px; left:20px;
+		background: #E01B4C;
+		-moz-border-radius: 40px;
+		-webkit-border-radius: 40px;
+		
+		cursor:pointer;
+	}
+
+</style>
+
+
+
+<script type='text/javascript'>
+
+
+	function animateBall() {	
+		
+		// Path with 1 control point
+		//var attributes = { points: { to: [500, 500], control: [900, 250] } };
+		
+		// Path with 2 control points
+		var attributes = { points: { to: [900, 600], control: [[400, 550], [800, 00]] } };
+		
+		var anim       = new YAHOO.util.Motion('ball', attributes);
+		anim.duration  = 2; 
+		//anim.method    = YAHOO.util.Easing.backOut;	// http://developer.yahoo.com/yui/docs/YAHOO.util.Easing.html
+		anim.onComplete.subscribe(function () { nextStep() });
+		anim.animate();
+	}		
+	
+	function nextStep() {
+		// Do something here
+	}
+	
+
+</script>
+<a href='http://developer.yahoo.com/yui/examples/animation/control.html'>http://developer.yahoo.com/yui/examples/animation/control.html</a>
+<div id="ball" onClick='animateBall()'></div>

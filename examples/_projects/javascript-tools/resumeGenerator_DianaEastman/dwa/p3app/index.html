@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Easy CV</title>
+<meta charset="utf-8">
+
+<!--CSS-->
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.9.1/themes/base/jquery-ui.css" />
+<link href="assets/css/bootstrap.css" rel="stylesheet" />
+<link href="assets/css/styles.css" rel="stylesheet">
+
+
+<!-- JS -->
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
+<script src="assets/js/scripts.js"></script>
+<script src="assets/js/bootstrap.js"></script>
+
+
+<!--Webfonts-->
+<link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400,700,300,200' rel='stylesheet' type='text/css'>
+
+</head>
+<body>
+<div class="container">
+<div class="row">
+	<div class="span5"><h1>Easy CV</h1></div>
+    <div class="span7">
+    	<div class="align">
+    	<input type='button' id='print-button' value='Print' class='btn'>
+        <input type="button" id='reset' value='Reset Document' class='btn'>
+    	</div>
+        </div>
+    </div>
+<div class="row">
+	<div class="span12">
+	<p class="intro">Create a personalized CV in minutes! Type your credentials in the text areas below and watch the preview pane update dynamically.
+    Your Easy CV can contain up to two schools, two job-related experiences, and additional skills.
+    Each input field supports a limited number of characters, located in parentheses to the right of the field name. <br><br>
+    Use the print button to access a version of your CV that can be saved as a PDF document.  
+    </div>
+</div>
+    <div class="row first">
+    	<div class="span5">
+        	<div class="accordion" id="accordion2">
+				<div class="accordion-group"><!--Open Accordion Group-->
+					<div class="accordion-heading">
+					<a class="accordion-toggle  active" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne"><h4>CV Styles</h4></a>
+					</div>
+					<div id="collapseOne" class="accordion-body collapse in">
+					<div class="accordion-inner">
+                    <h5>Choose a font:</h5>
+                    	<form id="myform">
+    						<select id="fs"> 
+                            	<option value="Arial">Arial - Default</option>
+        						<option value="Georgia">Georgia</option>
+        						<option value="Helvetica">Helvetica</option>
+        						<option value="Tahoma">Tahoma</option>
+                                <option value="Times New Roman">Times New Roman</option>
+    						</select>
+                        </form>
+                    <h5>Choose the alignment of the heading area:</h5>
+					<p>(Centered by default) 
+                    	<input type="button" id="btnAlignment" value="Switch Alignment" class="btn" />
+					</div>
+					</div>
+				</div><!--Close Accordion Group-->
+                
+               <div class="accordion-group"><!--Open Accordion Group-->
+					<div class="accordion-heading">
+					<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo"><h4>Heading Information</h4></a>
+					</div>
+					<div id="collapseTwo" class="accordion-body collapse">
+					<div class="accordion-inner">
+                    <h5>Full Name (40 characters)</h5>
+					<input type='text' id='name' maxlength="40" class="js-key-up">
+                        
+        			<h5>Email Address (30 characters)</h5>
+                    <input type='text' id='email' maxlength="30" class="js-key-up">
+                           
+         			<h5>Street Address (50 characters)</h5>
+                    <input type='text' id='address' maxlength="50" class="js-key-up">
+                           
+        			<h5>Phone Number (20 characters)</h5>
+                    <input type='text' id='phone' maxlength="20" class="js-key-up">
+                    <div class='error' id='recipient-error'></div>
+               
+					</div>
+					</div>
+				</div><!--Close Accordion Group-->
+      
+				<div class="accordion-group"><!--Open Accordion Group-->
+                    <div class="accordion-heading"><a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseThree"><h4>Education</h4></a></div>
+                    <div id="collapseThree" class="accordion-body collapse">
+                    	<div class="accordion-inner">
+                    		<div id="education">
+                            	 <div id="edu1" class="education">
+                                     <h5>Name of School Attended (40 characters)</h5>
+                                        <input type='text' id='school1' class="js-key-up" maxlength="40">
+                                     <h5>Location (10 characters)</h5>
+                                        <input type='text' id='location1' class="js-key-up" maxlength="10">
+                                     <h5>Years Attended (4 characters)</h5>
+                                        <label class="control-label">From Year: </label>
+                                        <input type='text' id='start1' class="js-key-up date" maxlength="4">
+                                      
+                                        <label class="control-label">To Year: </label>
+                                        <input type='text' id='end1' class="js-key-up date" maxlength="4">
+                                        
+                                     <h5>Degree Obtained</h5>
+                                        <form id="myform1">
+                                        <select id="degree1" class="select"> 
+                                            <option value="">Select Degree</option>
+                                            <option value="BA">Bachelor of Arts</option>
+                                            <option value="BS">Bachelor of Science</option>
+                                            <option value="BFA">Bachelor of Fine Arts</option>
+                                            <option value="MA">Master of Arts</option>
+                                            <option value="MS">Master of Science</option>
+                                            <option value="MFA">Master of Fine Arts</option>
+                                            <option value="Phd">Doctor of Philosopshy</option>
+                                            <option value="JD">Juris Doctorate</option>
+                                            <option value="MD">Medical Doctor</option>
+                                            <option value="DDS">Doctor of Dental Surgery</option>
+                                            <option value="Pharm.D.">Doctor of Pharmacy</option>
+                                            
+                                        </select>
+                                    </form>
+                                    
+                                    <h5>Major (20 characters)</h5>
+                                    <input type='text' id='major1' maxlength="20"><br>
+                                    <button id="add1" value="Add to document">Add major to document</button><br><br>
+                                        
+                                  </div>
+                                  <a href="#" class="add">Add another school</a>
+                         	</div> 
+                        </div>
+                     </div>
+				</div><!--Close Accordion Group-->
+                 <div class="accordion-group"><!--Open Accordion Group-->
+					<div class="accordion-heading">
+					<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseFour"><h4>Work Experience</h4></a>
+					</div>
+					<div id="collapseFour" class="accordion-body collapse">
+					<div class="accordion-inner">
+                    	<div id="work">
+                        <div id="wrk" class="work">
+                        <h5>Company Name (40 characters)</h5>
+                        <input type='text' id='company1' maxlength="40" class="js-key-up">
+                            
+                        <h5>Position Held (40 characters)</h5>
+                        <input type='text' id='position1' maxlength="40" class="js-key-up">
+                               
+                        <h5>Location (10 characters)</h5>
+                        <input type='text' id='city1' maxlength="10" class="js-key-up">
+                               
+                        <h5>Years Held (4 characters)</h5>
+                        <label class="control-label">From Year: </label>
+                            <input type='text' id='start_job1' class="js-key-up date" maxlength="4">
+                                          
+                            <label class="control-label">To Year: </label>
+                            <input type='text' id='end_job1' class="js-key-up date" maxlength="4">
+                        
+                        <h5>Responsibilities</h5>
+                            <h6>Enter up to three different responsibilities at this position. <emphasis>Maximum length of each is 55 characters</emphasis></h6>
+                            1. <input type='text' id='respa_1' class="js-key-up" maxlength="55"><br>
+                            2. <input type='text' id='respb_1' class="js-key-up" maxlength="55"><br>
+                            3. <input type='text' id='respc_1' class="js-key-up" maxlength="55"><br>
+                        </div>
+                        <a href="#" class="add2">Add another work experience</a>
+                        </div>
+                        </div>
+                        </div>
+				</div><!--Close Accordion Group-->
+                <div class="accordion-group"><!--Open Accordion Group-->
+					<div class="accordion-heading">
+					<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseFive"><h4>Additional Skills</h4></a>
+					</div>
+					<div id="collapseFive" class="accordion-body collapse">
+					<div class="accordion-inner">
+                    <h5>List Additional Skills</h5>
+					<textarea class="js-key-up" id="skills" maxlength="150"></textarea>
+                    <div class="remaining"><strong>This section supports 150 characters. Characters remaining:</strong> <span class="count">150</span></div>
+               
+					</div>
+					</div>
+				</div><!--Close Accordion Group-->
+			</div><!--Close Accordion-->
+        </div>
+        <div class="span7">
+        <div id="class_box_shadow">
+        	<div id='cv'>
+				<div id='text'>
+                	<div id="heading" class="center">
+                 		<div id='name-in-document'>Leslie Knope</div>
+                       	<div id='email-in-document'></div>
+                        <div id='address-in-document'></div>
+                        <div id='phone-in-document'></div>
+					</div>
+                 	
+                    <div id="container" class="holder">
+                    <div class="subheading">EDUCATION</div>
+                    
+    					<div class="column-one even-height">
+                        	<div id='school1-in-document'>Indiana University Bloomington</div>
+                            <div id='degree1-in-document'>Bachelor of Arts in Political Science</div>
+                            
+                        
+                        	<div id='school2-in-document'></div>
+                            <div id='degree2-in-document'></div>
+                        </div><!--Close left column-->
+                        
+   						<div class="column-two even-height">
+                        	<div id="location1-in-document">Indiana</div>
+                        	<div id='start1-in-document'>1996</div>-<div id="end1-in-document">2000</div>
+                            
+                            <div id="location2-in-document"></div>
+           					<div id='start2-in-document'></div>-<div id="end2-in-document"></div>
+                         </div><!--Close right column-->
+                    
+                    <div style="clear:both;">   
+                    
+                    <div class="subheading">WORK EXPERIENCE</div>   
+                        	<div class="column-one even-height"> 
+                         	<div id='company1-in-document'>Pawnee City Parks and Recreation</div>
+                            <div id='position1-in-document'>Deputy Director</div>
+                            	<ul class="noindent">
+                                	<li><div id="respa_1-in-document">Recreational facilities and services</div></li>
+                                    <li><div id="respb_1-in-document">Community organizing</div></li>
+                                    <li><div id="respc_1-in-document">Maintaining a positive attitude at all times</div></li>
+                               </ul>
+                         	<div id='company2-in-document'> </div>
+                            <div id='position2-in-document'></div>
+                                <ul class="noindent">
+                                        <li><div id="respa_2-in-document"></div></li>
+                                        <li><div id="respb_2-in-document"></div></li>
+                                        <li><div id="respc_2-in-document"></div></li>
+                                   </ul>
+                        </div><!--Close left column-->
+                    
+                    <div class="column-two even-height">
+                        	<div id="city1-in-document"></div>
+                        	<div id='start_job1-in-document'></div>-<div id="end_job1-in-document"></div>
+                            
+                            <div id="city2-in-document"></div>
+           					<div id='start_job2-in-document'></div>-<div id="end_job2-in-document"></div>
+                    </div><!--Close right column-->
+                    
+                    <div style="clear:both;"> 
+                    
+                    <div class="subheading">SKILLS</div>  
+                    <div id="skills-in-document"></div> 
+        			
+                    </div><!--Close container--> 
+						</div>
+					</div>
+         		</div>
+         	</div>
+         </div>
+       </div><!--Close Span7-->
+	</div><!--Close Row -->
+</div><!--Close Container-->
+</body>
+</html>

@@ -1,0 +1,284 @@
+<html>
+
+<head>
+
+<title> Fluffy's Magic Choice Maker </title>
+
+<style type="text/css">
+body{
+	margin:0 auto;
+	background-color:#040203;
+}
+li{
+	font:15px/25px arial,sans-serif;
+}
+#container{
+	position:relative;
+	height:700px;
+	width:800px;
+	margin:0 auto;
+}
+.choiceSlip{
+	<!--background:url('') no-repeat;-->
+	position:relative;
+	background:url("../images/slip2.png") no-repeat;
+	height:40px;
+	width:250px;
+	margin-left:0 auto;
+	margin-right:0 auto;
+	margin-top:20px;
+	font:normal 20px times new roman;
+	text-align:center;
+	margin-left:55px;
+	padding-top:7px;
+	padding-right:20px;
+}
+#inputBoxBackground{
+	position:relative;
+	background:url('../images/banner2.png') no-repeat;
+	width:375px;
+	height:125px;
+	margin-top:20px;
+}
+#inputBox{
+	position:relative;
+	background:url('../images/inputbox.png') no-repeat;
+	height:40px;
+	width:160px;
+	padding-top:10px;
+	padding-left:10px;
+	margin-left:95px;
+	margin-top:10px;
+}
+#penBtn{
+	position:absolute;
+	background:url('../images/pen.png') no-repeat;
+	height:50px;
+	width:50px;
+	left:640px;
+	top:130px;
+	z-index:2;
+	cursor:pointer;
+}
+#choicesDiv{
+	float:right;
+	width:375px;
+	height:60px;
+}
+#bunnyHat{
+	position:fixed;
+	background:url('../images/bunnyouthat2.png') no-repeat;
+	width:315;
+	height:235;
+	bottom:0px;
+}
+#magicBtn{
+	position:relative;
+	background:url('../images/magicbtn.png') no-repeat;
+	cursor:pointer;
+	height:60px;
+	width:300px;
+	margin-left:90px;
+}
+#dispChoice{
+	position:fixed;
+	background:url('../images/dispchoice.png') no-repeat;
+	height:300px;
+	width:500px;
+	z-index:3;
+	top:50%;
+	left:50%;
+	margin-top:-150px;
+	margin-left:-200px;
+	padding-top:150px;
+	text-align:center;
+	display:none;
+	font:normal 24px times new roman;
+	cursor:pointer;
+}
+</style>
+
+<script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/mootools/1.3.0/mootools-yui-compressed.js'>
+</script>
+
+<script type="text/javascript">
+	var choices = new Array();  // Choice strings
+	var choicedivs = new Array(); // Used to clear divs
+	var numchoices = 0; // Number of choices inputted (easier looping)
+	var choice = ""; // The picked choice
+	var bunny = 0;
+	var t;
+	var dude = 0;
+	var picking = 0;
+	
+	function addChoice(object){
+	
+		if(picking)
+			return;
+	
+		// Input String
+		newChoice = document.getElementById(object).value;
+		
+		// Ensure there is user input
+		if(newChoice.length == 0){
+			console.log(newChoice.split(" "));
+			return;
+		}
+		
+		// Add to choices list
+		//choices.push(newChoice);
+		choices[numchoices] = newChoice;
+	
+		// Create a new div
+		var newdiv = document.createElement('div');
+		newdiv.setAttribute("class", "choiceSlip");
+		newdiv.id = "choice"+numchoices;
+		numchoices++;
+		
+		newdiv.innerHTML = newChoice;
+		newdiv.style.display="block";
+		choicedivs.push(newdiv);
+		
+		// Add div
+		$('choicesDiv').appendChild(newdiv);
+
+	}
+	
+	function disableAll(){
+	// Disables all buttons/textboxes, prevents strange user cases
+		picking = 1;
+		document.getElementById('inputtxt').value="Magically Choosing!";
+		document.getElementById('inputtxt').disabled = true;
+		
+	}
+	
+	function enableAll(){
+	// Re-enables all buttons/text boxes
+		picking = 0;
+		document.getElementById('inputtxt').value="";
+		document.getElementById('inputtxt').disabled = false;
+		
+	}
+	
+	function moveToHat(){
+	// Moves all choice slips into the hat
+		object = "choice"+dude;
+		
+		var thediv = document.getElementById(object);
+		
+		// Finds where hat is on screen
+		$(object).setStyle("position","absolute");
+		var tophat = $('bunnyHat').getStyle("top");
+		tophat.replace("px","");
+		tophat = parseInt(tophat) + 40;
+
+		// Moves all objects to that position
+		$(object).set('morph', {link: 'chain'})
+		.morph({'top': tophat})
+		.morph({'width':100})
+		.morph({'left': 15})
+		.morph({'opacity': 0})
+		;
+
+		// Ends an interval
+		dude++;
+		if (dude == numchoices){
+			clearInterval(t);
+			dude = 0;
+		}
+		
+	}
+	
+	function reset(){
+	// Resets all arrays, ints, and pictures to start over
+	
+		for(var i=0; i<numchoices; i++){
+			document.getElementById('choicesDiv').removeChild(choicedivs[i]);
+		}
+
+		choices = new Array();
+		choicedivs = new Array();
+		numchoices = 0;
+		choice = "";
+		document.getElementById('dispChoice').style.display = "none";
+		enableAll();
+		
+	}
+
+	function switchBunny(){
+	// Switches the bunny picture and handles displaying of the final choice
+		if(bunny){
+			document.getElementById('bunnyHat').style.width = "315";
+			document.getElementById('bunnyHat').style.background = "url('images/bunnyouthat2.png') no-repeat";
+			document.getElementById('dispChoice').innerHTML = "Fluffy Chooses: " + choice;
+			//console.log(choice);
+			document.getElementById('dispChoice').style.display= "block";
+		}
+		else{
+			document.getElementById('bunnyHat').style.width = "382";
+			document.getElementById('bunnyHat').style.background = "url('images/bunnyinhat2.png') no-repeat";
+		}
+			
+		bunny = 1-bunny;
+	}
+	
+	function pick(){
+	// Randomly makes a choice among the options
+	
+		// Does not work if there are no options, or if it's busy
+		if(numchoices==0 || picking==1){
+			return;
+		}
+		
+		// Ensure no interruptions
+		picking = 1;
+		disableAll();
+		
+		// Pick a random element
+		var num = choices.length + 1;
+		var rndnum = Math.floor(Math.random()*num);
+		var sel;
+		if(rndnum >= numchoices){
+			choice = choices[numchoices-1];
+		}
+		else{	
+			choice = choices[rndnum];
+		}
+
+		// Animate
+		t = setInterval("moveToHat()",100);
+		var wait = 2.7*(numchoices*100);
+		setTimeout("switchBunny()",wait);
+		setTimeout("switchBunny()",wait+4500);
+	}
+	
+	function clearinput(){
+	// Clears input text
+	document.getElementById('inputtxt').value="";
+	}
+	
+</script>
+
+</head>
+
+<body>
+
+<!--Primary Div to center everything-->
+<div id="container">
+	<!--Options Div, right hand side-->
+	<div id="choicesDiv">
+		<!--User inputs belong here-->
+		<div id="inputBoxBackground"></div>
+			<div id="inputBox">
+				<input id="inputtxt" onclick="clearinput()" style="border:none; font:normal 13px times new roman;" value="List Options..." type="text" maxlength=15 />
+			</div>
+			<div id="penBtn" onclick="addChoice('inputtxt')"></div>
+			<div id="magicBtn" onclick="pick()"></div>
+			<div id="dispChoice" onclick="reset()"></div>
+	</div>
+	<div id="bunnyHat"></div>
+</div>
+
+</body>
+</html>
+<!-- Localized -->

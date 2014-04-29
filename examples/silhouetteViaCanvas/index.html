@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+Click apple to make a silhouette version<br/>
+
+<img id="canvasSource" src="apple.jpg" style='cursor:pointer;' onClick='silhouetteImage()'/>
+
+<canvas id="area" width="264" height="282" ></canvas>
+	
+
+<!-- Javascript Code -->
+<script type="text/javascript">
+
+function silhouetteImage() {
+
+	var canvas  = document.getElementById("area");
+	var context = canvas.getContext("2d");
+	var image   = document.getElementById("canvasSource");
+	
+	context.drawImage(image, 0, 0);
+	
+	var blackpixel = 0;
+	
+	var imgd = context.getImageData(0, 0, 264, 282);
+	var pix  = imgd.data;
+	
+	for (var i = 0, n = pix.length; i < n; i += 4) {
+	
+		//console.log(pix[i], pix[i+1], pix[i+2]);
+		
+		if (i > 3) {
+		  
+		  if ((Math.abs(pix[i-3] - pix[i]) > 10) &&
+			   (Math.abs(pix[i-2] - pix[i+1]) > 10) &&
+			   (Math.abs(pix[i-1] - pix[i+2]) > 10)
+			) {
+		
+			   pix[i  ] = blackpixel;  
+			   pix[i+1] = blackpixel;  
+			   pix[i+2] = blackpixel;
+		
+		   }
+		}
+		else {
+		   if (pix[i] < 250 && pix[i+1] < 250 && pix[i+2] < 250) {
+			  pix[i  ] = blackpixel;  
+			  pix[i+1] = blackpixel;  
+			  pix[i+2] = blackpixel;
+		   }
+	}
+	
+	}
+	context.putImageData(imgd, 0, 0);       
+
+
+}
+    	
+	
+   
+</script>

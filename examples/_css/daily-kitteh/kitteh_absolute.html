@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+
+<head>
+
+	<title>The Daily Kitteh Report</title>
+
+	<style type='text/css'>
+		
+		* {
+			font-family:georgia;
+		}
+		
+		body {
+			/* give us some white space at the top and bottom of the page */
+			padding-bottom:50px;
+			padding-top:50px;
+		}
+		
+				
+		div#wrapper {
+			/* tile our background texture */
+			background-image:url('paper-tile.png');
+			
+			/* total width with padding = 960px */
+			width:900px;	
+			padding-left:30px;
+			padding-right:30px;
+			
+			/* some white space on the bottom */
+			padding-bottom:75px;
+			
+			/* Set a position so we can use absolute on the child items */
+			position:relative;
+			
+			/* center on page */
+			margin:auto;
+			
+			/* rounded edges ala http://css3please.com/ */		
+			-webkit-border-radius: 12px; 
+			-moz-border-radius: 12px; 
+			border-radius: 12px; 
+			-moz-background-clip: padding; -webkit-background-clip: padding-box; background-clip: padding-box; 
+		}
+		
+		div#header {
+			text-align:center;
+			font-family:georgia;
+			font-size:40pt;
+			font-weight:bold;
+			padding-top:20px;
+			padding-bottom:10px;
+		}
+		
+		div#date {
+			text-decoration:italic;
+			text-align:center;
+			padding-bottom:20px;
+		}
+		
+		div#feature-image {
+			border:2px solid black;
+			width:900px;
+			height:500px;
+			background-image:url('http://placekitten.com/900/500');
+		}
+		
+		div#feature-copy {
+			font-size:10pt;
+			text-align:right;
+			font-style:italic;
+		}
+		
+		div#left-column {
+			width:430px;
+			height:600px;
+		}
+		
+		div#right-column {
+			width:430px;
+			position:absolute; 
+			left:500px;
+			top:650px;
+			height:600px;
+		}
+	</style>
+
+	
+</head>
+
+
+<body>
+
+	<div id='wrapper'>
+	
+		<!-- HEADER + DATE -->
+			<div id='header'>
+				The Daily Kitteh Report
+			</div>
+			
+			<div id='date'>	
+				Tuesday September 27, 2011
+			</div>
+	
+		<!-- FEATURE IMAGE + COPY -->
+			<div id='feature-image'></div>
+			
+			<div id='feature-copy'>Kitteh ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</div>
+	
+		<!-- STORIES -->
+			<div id='left-column'>
+				<h1>Lead Story</h1>
+				Kitteh ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+		
+				<h1>Secondary Story</h1>
+				Kitteh ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+			</div>
+			
+			<div id='right-column'>
+				<h1>Another Story</h1>
+				Kitteh ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				<br><br>
+				Kitteh ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				<br><br>
+				Kitteh ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+			</div>
+			
+	</div>
+	
+</body>
+
+</html>
+

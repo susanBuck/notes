@@ -1,0 +1,183 @@
+
+  			
+  		body {
+			margin:  0px;
+			background-image:url("images/bodyBackground.jpg");
+			background-repeat: repeat-x;
+			font-family: "Garamond", serif;
+   			font-size: 45px;
+   			color:  black;
+		}
+		
+		/*center DIV*/
+		#main {
+			width:  1024px;
+			height:  768px;
+			position: relative;
+			background-image:url("images/centerDivBackground.jpg");
+			top:-1px;
+			overflow: hidden;
+		}
+
+		/*Tim Concerned*/
+		#timConcerned {
+			width:  503px;
+			height: 750px;
+			position: absolute;
+			top: -800px;
+		}
+		
+		/*Tim Gunn Timer Title*/
+		#timerTitle {
+			width: 500px;
+			height: 100px;
+			position:  absolute; 
+			left:  427px;
+			top:  556px;
+			font-weight: bold;
+		}
+		
+		/*Acutal Timer*/
+		#timer {
+			width:  430px;
+			height: 53px;
+			position: absolute;
+			font-size: 34px;
+			left:  1100px;
+			top: 613px;
+		}
+		
+		#timerDescription {
+			position: absolute;
+			font-size: 18px;
+			left: 472px;
+			top: 695px;
+		}
+		
+		/*stopwatch image*/
+		#stopwatch {
+			width:123px;
+			height: 147px;
+			position: absolute;
+			top:  527px;
+			left:  1050px;
+		}
+		
+		/*typewriter DIV*/
+		#typewriter {
+			width: 343px;
+			height: 245px;
+			position: absolute;
+			top: -250px;
+			left: 350px;
+			background-image: url("images/typewriter.png");
+			border: 1 px solid red;
+		}
+		
+		/*books DIV*/
+		#books {
+			width: 296px;
+			height: 252px;
+			position: absolute;
+			top:-400px;
+			left: 700px;
+			background-image: url("images/books.png");
+			border: 1 px solid red;
+		}
+		
+		/*hand and pen DIV*/
+		#hand {
+			width: 337px;
+			height: 193px;
+			position: absolute;
+			top:  -500px;
+			left: 458px;
+			background-image: url("images/handandpen.png");
+			border: 1 px solid red;
+		}
+		
+		/*DIV that comes in after alarm expires with Tim clapping*/
+		#timClapping {
+			background-image: url("images/timhappy.png");
+			height:  767px;
+			width: 683px;
+			top: 1000px;
+			left: 170px;
+			position: absolute;
+		}
+		
+		#star1 {
+			background-image: url("images/star1.png");
+			width:  91px;
+			height: 92px;
+			position: absolute;
+			top:-100px;
+			left: 700px;
+		}
+		
+		#star2 {
+			background-image: url("images/star2.png");
+			width:  138px;
+			height: 128px;
+			position: absolute;
+			top:-130px;
+			left: 825px;
+		}
+		
+		#star3 {
+			background-image: url("images/star3.png");
+			width:  188px;
+			height: 187px;
+			position: absolute;
+			top:-190px;
+			left: 680px;
+		}
+		
+		#star4 {
+			background-image: url("images/star4.png");
+			width:  189px;
+			height: 149px;
+			position: absolute;
+			top:-190px;
+			left: 800px;
+		}
+		
+		#star5 {
+			background-image: url("images/star5.png");
+			width:  208px;
+			height: 185px;
+			position: absolute;
+			top:-190px;
+			left: 50px;
+		}
+		
+		#star6 {
+			background-image: url("images/star6.png");
+			width:  148px;
+			height: 155px;
+			position: absolute;
+			top:-190px;
+			left: 25px;
+		}
+	
+		#star7 {
+			background-image: url("images/star7.png");
+			width:  273px;
+			height: 268px;
+			position: absolute;
+			top:-270px;
+			left: 50px;
+		}
+		
+		#getBack {
+			width: 1024px;
+			position: absolute;
+			top:-300px;
+			font-size: 60px;
+			font-weight: bold;
+		}
+		
+  		a img {border: none;}
+
+
+/* Localized */

@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Find Your Perfect Running Shoe</title>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/mootools/1.3.0/mootools-yui-compressed.js">
+</script>
+
+<script type="text/javascript">
+
+function shoeFinder(thewindow) {
+
+
+var shoeModels = new Array();
+
+shoeModels["malenarrowflat"] = "images/sampleresult.jpg";
+shoeModels["malenarrowhigh"] = "images/sampleresult2.jpg";
+
+// Pull info from the drop downs
+
+var gender = $("genderSelector").value;
+var width  = $("widthSelector").value;
+var arch   = $("archSelector").value;
+
+var shoeTypeCode = gender + width + arch; 
+var selectedShoe = shoeModels[shoeTypeCode];
+
+document.getElementById("thewindow").innerHTML='<img src='+selectedShoe+'>';
+
+}
+ 
+
+</script>
+
+</head>
+
+<body>
+
+<!--background div-->
+ <div style="position:absolute; top:10px; left:125px; width:1024px; height:768px; background-color:#999">
+
+	<!--opague div-->
+	<div style="position:absolute; top:70px; left:100px; width:830px; height:620px; background-color:#FF9; opacity:0.3;"></div>
+    
+    	<!--pea green div-->
+			<div style="position:absolute; top:130px; left:165px; width:700px; height:500px; background-color:#990;" >
+    		<img src="images/sneakerfinder.png" style="position:absolute; top: 10px; left:30px;">
+    	<p style="position:absolute; top:70px; left:150px; font-size:24px; font-family:Geneva, Arial, Helvetica, sans-serif;">FIND YOUR PERFECT RUNNING SHOE</p>
+        
+        		<!--top black div-->
+				<div style="position:absolute; top:140px; left:100px; width:500px; height:50px; background-color:#000;"></div>
+                	
+                    <!--white div-->
+					<div style="position:absolute; top:192px; left:100px; width:488px; height:170px; background-color:#FFF; border:solid 6px #666;">
+                		
+                        <!--dropdown div-->
+						<div style="position:absolute; width:180px; height: 157px; left:1px; top:5px; float:left;">
+                        <form name="gender" style="position:absolute; top:40px; left:10px; z-index:10;">
+                    		<font face="Arial, Helvetica, sans-serif"; font size="2";>Gender:</font>
+                            <select id="genderSelector" style="background-color:#CCC; position:absolute; right:-120px;">
+                    		<option selected>Select One</option>
+                            <option value="male">Male</option>
+                    		<option value="female">Female</option>
+                   			</select>
+                    	</form>
+                    
+                    	<form name="width" style="position:absolute; top:70px; left:10px; z-index:10;">
+                   		<font face="Arial, Helvetica, sans-serif"; font size="2";>Width:</font>
+                        	<select id="widthSelector" style="background-color:#CCC; position:absolute; right:-128px;">
+                    		<option selected>Select One</option>
+                            <option value="narrow">Narrow</option>
+                    		<option value="medium">Medium</option>
+                            <option value="wide">Wide</option>
+                    		</select>
+                    	</form>
+                    
+                    	<form name="arch" style="position:absolute; top:100px; left:10px; z-index:10;">
+                    	<font face="Arial, Helvetica, sans-serif"; font size="2";>Arch Type:</font>
+                        	<select id="archSelector" style="background-color:#CCC; position:absolute; right:-103px;">
+							<option value=>Select One</option>
+                            <option value="flat">Flat</option>
+                    		<option value="neutral">Neutral</option>
+                            <option value="high">High</option>
+							</select>
+                    	</form>
+                    	</div>
+                    	
+                        <!--sneaker image div-->
+						<div id="thewindow" style="position:absolute; width:280px; height: 157px; right:5px; top:5px; border: 1px solid #000; float:right;"><img src="images/shoeintro.gif"</div>
+                    
+                    </div>
+                    
+                    <!--bottom black div-->
+					<div style="position:absolute; top:376px; left:100px; width:500px; height:50px; background-color:#000;">
+                	<p style="font-family:Arial, Helvetica, sans-serif; font-size:x-small; font-weight:bold; color:#FFF; position:absolute; top:10px; right:20px;">NEW SEARCH</p>
+                    <input type="button" value="Find me a shoe" id="find" style="position:absolute; left:20px; top:15px; background-color:#FF3" onClick="shoeFinder('thewindow')"></input>
+                	</div>
+        </div>
+        
+        
+</div>
+
+</body>
+</html>

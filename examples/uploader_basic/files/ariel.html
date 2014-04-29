@@ -1,0 +1,219 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"> 
+ 
+<html> 
+ 
+<head> 
+ 
+ 
+ 
+<title>makebikecool</title> 
+<link rel="stylesheet" type="text/css" href="styles.css" /> 
+</style> 
+ 
+
+
+<script type='text/javascript'>
+
+function change(part,color) {
+	$(part).src = "img/"+part+"/"+color+".png";
+}
+
+</script>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/mootools/1.3.0/mootools-yui-compressed.js"> 
+ 
+</script> 
+ 
+</head> 
+ 
+ 
+ 
+<body> 
+ 
+<table width="356px" style="z-index:999; " cellspacing="10px"> 
+ 
+<tr><td colspan="2"><img src="mbc.png"></td></tr> 
+	<tr> 
+		<td><p class="parttype">frame</p></td> 
+		<td><p class="parttype">saddle</p></td> 
+	</tr> 
+	
+	<tr> 
+		<td> 
+					<table width="156px" height="58px"> 
+				<tr> 
+					<td><div name="frame" class="red"  onclick="change(frame,'red');" ></div></td> 
+					
+					<!-- This is the only operable div for script testing. Is it possible to access a div's name? Otherwise I could set these all as ID and make the image ID tags "frame2" "crank2" etc. --> 
+					<td><div name="frame" class="colorchoice pink"></div></td> 
+					<td><div class="colorchoice purple"></div></td> 
+					<td><div class="colorchoice navy"></div></td> 
+					<td><div class="colorchoice blue"></div></td> 
+					<td><div class="colorchoice cyan"></div></td> 
+					td><div class="colorchoice white"></div></td> 
+				</tr> 
+				<tr> 
+					<td><div class="colorchoice green"></div></td> 
+					<td><div class="colorchoice yellow"></div></td> 
+					<td><div class="colorchoice orange"></div></td> 
+					<td><div class="colorchoice brown"></div></td> 
+					<td><div class="colorchoice gold"></div></td> 
+					<td><div class="colorchoice gray"></div></td> 
+					<td><div class="colorchoice black"></div></td> 
+				</tr> 
+			</table> 
+		
+		</td> 
+		
+		<td> 
+							<table width="156px" height="58px"> 
+				<tr> 
+					<td><div class="colorchoice black"></div></td> 
+					<td><div class="colorchoice white"></div></td> 
+					<td><div class="colorchoice tan"></div></td> 
+					<td><div class="colorchoice brown"></div></td> 
+					<td><div class="colorchoice red"></div></td> 
+					<td><div class="colorchoice blue"></div></td> 
+					<td><div class="colorchoice gold"></div></td> 
+				</tr> 
+				<tr> 
+					<td><div class="colorchoice"></div></td> 
+					<td><div class="colorchoice"></div></td> 
+					<td><div class="colorchoice"></div></td> 
+					<td><div class="colorchoice"></div></td> 
+					<td><div class="colorchoice"></div></td> 
+					<td><div class="colorchoice"></div></td> 
+					<td><div class="colorchoice"></div></td> 
+				</tr> 
+			</table> 
+ 
+		</td> 
+	</tr> 
+	
+	
+		<tr> 
+		<td><p class="parttype">grips</p></td> 
+		<td><p class="parttype">crank</p></td> 
+	</tr> 
+	
+	<tr> 
+		<td> 
+					<table width="156px" height="58px"> 
+				<tr> 
+					<td><div class="colorchoice red"  onclick="Frame.src=loadFrame.src;"></div></td> 
+					<td><div class="colorchoice pink"  onclick="Frame.src=loadFrame.src;"></div></td> 
+					<td><div class="colorchoice purple"  onclick="Frame.src=loadFrame.src;"></div></td> 
+					<td><div class="colorchoice navy"></div></td> 
+					<td><div class="colorchoice blue"></div></td> 
+					<td><div class="colorchoice cyan"></div></td> 
+					<td><div class="colorchoice white"></div></td> 
+				</tr> 
+				<tr> 
+					<td><div class="colorchoice green"></div></td> 
+					<td><div class="colorchoice yellow"></div></td> 
+					<td><div class="colorchoice orange"></div></td> 
+					<td><div class="colorchoice brown"></div></td> 
+					<td><div class="colorchoice gold"></div></td> 
+					<td><div class="colorchoice gray"></div></td> 
+					<td><div class="colorchoice black"></div></td> 
+				</tr> 
+			</table> 
+		
+		</td> 
+		
+		<td> 
+							<table width="156px" height="58px"> 
+				<tr> 
+ 
+					<td><div class="colorchoice black"></div></td> 
+					<td><div class="colorchoice gray"></div></td> 
+					<td><div class="colorchoice"></div></td> 
+					<td><div class="colorchoice"></div></td> 
+					<td><div class="colorchoice"></div></td> 
+					<td><div class="colorchoice"></div></td> 
+					<td><div class="colorchoice"></div></td> 
+				</tr> 
+				<tr> 
+					<td><div class="colorchoice"></div></td> 
+					<td><div class="colorchoice"></div></td> 
+					<td><div class="colorchoice"></div></td> 
+					<td><div class="colorchoice"></div></td> 
+					<td><div class="colorchoice"></div></td> 
+					<td><div class="colorchoice"></div></td> 
+					<td><div class="colorchoice"></div></td> 
+				</tr> 
+			</table> 
+ 
+		</td> 
+	</tr> 
+	
+	
+		<tr> 
+		<td><p class="parttype">tires</p></td> 
+		<td><p class="parttype">rims</p></td> 
+	</tr> 
+	
+	<tr> 
+		
+		<td> 
+							<table width="156px" height="58px"> 
+				<tr> 
+					<td><div class="colorchoice black"></div></td> 
+					<td><div class="colorchoice white"></div></td> 
+					<td><div class="colorchoice tan"></div></td> 
+					<td><div class="colorchoice brown"></div></td> 
+					<td><div class="colorchoice red"></div></td> 
+					<td><div class="colorchoice blue"></div></td> 
+					<td><div class="colorchoice gold"></div></td> 
+				</tr> 
+				<tr> 
+					<td><div class="colorchoice"></div></td> 
+					<td><div class="colorchoice"></div></td> 
+					<td><div class="colorchoice"></div></td> 
+					<td><div class="colorchoice"></div></td> 
+					<td><div class="colorchoice"></div></td> 
+					<td><div class="colorchoice"></div></td> 
+					<td><div class="colorchoice"></div></td> 
+				</tr> 
+			</table> 
+ 
+		</td> 
+				<td> 
+					<table width="156px" height="58px"> 
+				<tr> 
+					<td><div class="colorchoice red"  onclick="Frame.src=loadFrame.src;"></div></td> 
+					<td><div class="colorchoice pink"  onclick="Frame.src=loadFrame.src;"></div></td> 
+					<td><div class="colorchoice purple"  onclick="Frame.src=loadFrame.src;"></div></td> 
+					<td><div class="colorchoice navy"></div></td> 
+					<td><div class="colorchoice blue"></div></td> 
+					<td><div class="colorchoice cyan"></div></td> 
+					<td><div class="colorchoice white"></div></td> 
+				</tr> 
+				<tr> 
+					<td><div class="colorchoice green"></div></td> 
+					<td><div class="colorchoice yellow"></div></td> 
+					<td><div class="colorchoice orange"></div></td> 
+					<td><div class="colorchoice brown"></div></td> 
+					<td><div class="colorchoice gold"></div></td> 
+					<td><div class="colorchoice gray"></div></td> 
+					<td><div class="colorchoice black"></div></td> 
+				</tr> 
+			</table> 
+		
+		</td> 
+		
+	</tr> 
+	
+</table> 
+ 
+<img id="base" src="img/bike.png" border=0 style="position:absolute; left:180px; top:355px; z-index:-5;"> 
+<img id="Crank" src="img/crank/black.png" border=0 style="position:absolute; left:393px; top:551px; z-index:-1;"> 
+<img id="Saddle" src="img/saddle/black.png" border="0" style="position:absolute; left:318px; top:355px; z-index: -1;"> 
+<img id="Grips" src="img/grips/rainbow.png" border="0" style="position:absolute; left:574px; top:380px; z-index: -1;"> 
+<img id="frame" src="img/frame/pink.png" border="0" style="position:absolute; left:295px; top:416px; z-index: -2;"> 
+<img id="Rims" src="img/rims/red.png" border="0" style="position:absolute; left:180px; top:456px; z-index: -3;"> 
+<img id="Tires" src="img/tires/tan.png" border="0" style="position:absolute; left:180px; top:455px; z-index: -4;"> 
+</body> 
+ 
+html>

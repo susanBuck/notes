@@ -1,0 +1,507 @@
+<head>
+
+	<title>JStool</title>
+	
+	<style type='text/css'>
+	
+	.endScreen{
+		position:absolute;
+		left:50%;
+		width:1280px;
+		height:960px;
+		margin-left:-640px;
+		margin-top:-30px;
+	}
+		
+	.loadingScreen{
+		position:absolute;
+		left:50%;
+		top:50%;
+		width:508px;
+		height:381px;
+		margin-left:-250px;
+		margin-top:-200px;
+	}
+	
+	/*---------------- Landing Arrows ----------------*/
+		
+	.arrow {
+		left:50%;
+		position:absolute;
+		top:110px;
+		display:none;
+		z-index:20;
+	}
+	
+	/*---------------- Stationary Arrows ----------------*/
+	
+	.arrows {
+		left:50%;
+		position:relative;
+		z-index:9;
+		display:none;
+	}
+	
+	/*---------------- Moving Arrows ----------------*/
+	
+	.arrowMoving {
+		top:390px;
+		position:absolute;
+		z-index:10;
+	}
+	
+	.movingSection {
+		left:50%;
+		position:relative;
+	}
+	
+	/*---------------- Combo Counter ----------------*/
+	
+	.comboC {
+		left:50%;
+		position:relative;
+		z-index:9;
+	}
+	
+	/*---------------- Removes Scroll Bars ----------------*/
+	
+	body {
+		overflow: -moz-scrollbars-vertical;
+		overflow-x: hidden;	
+		overflow-y: hidden;
+		}
+
+	a img {border: none; }
+
+	
+	</style>
+	
+	<!---------------------- Moo Tools ----------------------->
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/mootools/1.3.0/mootools-yui-compressed.js"></script> 
+	
+	<script type="text/javascript">
+		
+	/*---------------- Toggles element Display ----------------*/
+	
+	function changeDisplay(whichElement) {
+		var curDisplay = document.getElementById(whichElement);
+		if (curDisplay.style.display == 'block')
+			document.getElementById(whichElement).style.display = "none";
+		else
+			document.getElementById(whichElement).style.display = "block";
+	}
+	
+	/*---------------- Toggles element Opacity ----------------*/
+	
+	function changeOpacity(whichElement, speed) {
+		var curDisplay = document.getElementById(whichElement);
+		if (curDisplay.style.opacity == 1) {
+			$(whichElement).set('tween', {duration: speed});
+			$(whichElement).tween('opacity', 0);
+		}
+		else {
+			$(whichElement).set('tween', {duration: speed});
+			$(whichElement).tween('opacity', 1);
+		}
+	}
+	
+	/*---------------- Turns On and then Off display ----------------*/
+	
+	function fadeFast(whichElement) {
+		changeDisplay(whichElement);
+		setTimeout(function(){changeDisplay(whichElement)}, 100)
+	}
+	
+	/*---------------- Turns On display, fades Opacity, then turns display off ----------------*/
+	
+	function fadeFast2(whichElement) {
+		changeDisplay(whichElement);
+		setTimeout(function(){changeDisplay(whichElement)}, 250)
+		$(whichElement).set('tween', {duration: 200});
+		$(whichElement).tween('opacity', 0);
+	}
+	
+	
+	/*---------------- Background Image Changer ----------------*/
+	/* Not used due to performance hit
+	
+	var imagenum = 1;
+	var changingimages;
+	
+	function change_images() {
+		changingimages = setTimeout('change_images()', 20000);
+		if (imagenum == 1) {
+			imagenum++;
+			return;
+		}
+		if (imagenum == 2) {
+			changeDisplay('image2');
+			imagenum++;
+		}
+		else if (imagenum == 3) {
+			changeDisplay('image3');
+			imagenum++;
+		}
+		else if (imagenum == 4) {
+			changeDisplay('image4');
+			imagenum++;
+		}
+		else {
+			changeDisplay('image5');
+			imagenum++;
+			changingimages = clearTimeout(changingimages);
+		}
+	}
+	
+	function init_center() {
+		if (imagenum == 1) {
+			changeDisplay('image1');
+			changeDisplay('StdArrows');
+			change_images();
+		}
+	}
+	
+	*/
+	
+	/*---------------- Moving functions ----------------*/
+	
+	var ismoving = 0; // 1 means is moving, 0 not moving
+	var moving; // setInterval variable
+	
+	function toggleMoving(whichElement, ammount, speed) {
+		if (ismoving == 0) {
+			moving = setInterval(function(){moveRelativeToCurrentPos(whichElement, ammount)}, speed);
+			ismoving = 1;
+		}
+		else {
+			moving = clearInterval(moving);
+			ismoving = 0;
+		}
+	}
+	
+	function moveRelativeToCurrentPos(whichElement, ammount) {
+		var curPos = parseFloat($(whichElement).getStyle("top"));
+		var newPos = curPos - ammount;
+		$(whichElement).set('tween', {duration: 0});
+		$(whichElement).tween('top', newPos);
+	}
+	
+	/*---------------- Arrow Detecting Functions + Game Logic ----------------*/
+	
+	document.onkeydown = MonitorKeyDown;
+	
+	function MonitorKeyDown(e) {
+		if (!e) e=window.event;
+		var code;
+		var curPos = parseFloat($('section1').getStyle("top"));
+		//console.log(curPos);
+  		if ((e.charCode) && (e.keyCode==0))
+    		code = e.charCode
+  		else
+    		code = e.keyCode;
+		if (code == 38) {
+			hit_up(curPos);
+		}
+		if (code == 40) {
+			hit_down(curPos);
+		}
+		if (code == 37) {
+			hit_left(curPos);
+		}
+		if (code == 39) {
+			hit_right(curPos);
+		}
+		// Press P to Pause / Resume
+		if (code == 80) {
+			toggleMoving('section1', 23, 50);
+		}
+		// Press R to Pause / Reverse
+		if (code == 82) {
+			toggleMoving('section1', -23, 50);
+		}
+		return false;
+	}
+	
+	var totalhit = 0;
+	var combo = 0;
+	var maxcombo = 0;
+	var delta = 60;
+	var delta2 = 30;
+	
+	var aUp = [-480,-1350,-1480,-1970,-2480,-3360,-3480,-3980,-5370,-6370,-6490,-6730,-6990,-7240,-7490,-7990,-8990,
+	-9990,-10490,-10670,-10950,-11620,-11910,-12420,-12540,-12670,-12790,-13540,-13920,-15790,-16430,-16550,-16670,
+	-16800,-17550,-17920,-19800,-20310,-20420,-20930,-21930,-22430,-22920,-26920,-29850,-32620,-32860,-33360,-33610,
+	-33860,-35610]; //51
+	
+	function hit_up(curPos) {
+		for (i = 0; i < 51; i++) {
+			if (curPos <= aUp[i]+delta && curPos >= aUp[i]-delta) {
+				if (curPos <= aUp[i]+delta2 && curPos >= aUp[i]-delta2) {
+					fadeFast('MUarrow');
+					totalhit += 2;
+					combo++;
+					showCombo();
+					return;
+				}
+				fadeFast('GUarrow');
+				totalhit++;
+				combo++;
+				showCombo();
+				return;
+			}		
+		}
+		fadeFast('Uarrow');
+		combo = 0;
+		showCombo();
+	}
+	
+	var aDown = [-1100,-3110,-4620,-4870,-5120,-5610,-5860,-6110,-7740,-7860,-8230,-8360,-11620,-12170,-13780,-14290,-14420, 
+	-14540,-14660,-14790,-15540,-15910,-17800,-18300,-18430,-18550,-18680,-18800,-19550,-19930,-20680,-21180,-21680,-22180,-22680,
+	-23180,-23680,-26530,-27170,-27670,-28040,-28350,-28540,-28790,-29050,-29420,-29600,-30100,-30430,-30610,-30860,-31110,-31430,
+	-31610,-31860,-32110,-33120,-33240,-34110,-34240,-34490,-34730,-34990,-35860,-35120,-36240]; //66
+	
+	function hit_down(curPos) {
+		for (i = 0; i < 66; i++) {
+			if (curPos <= aDown[i]+delta && curPos >= aDown[i]-delta) {
+				if (curPos <= aDown[i] + delta2 && curPos >= aDown[i] - delta2) {
+					fadeFast('MDarrow');
+					totalhit += 2;
+					combo++;
+					showCombo();
+					return;
+				}
+				fadeFast('GDarrow');
+				totalhit++;
+				combo++;
+				showCombo();
+				return;
+			}		
+		}
+		fadeFast('Darrow');
+		combo = 0;
+		showCombo();
+	}
+	
+	var aLeft = [-600,-720,-840,-970,-1600,-1850,-2220,-2480,-3240,-3730,-4110,-4360,-4740,-5240,-5740,-6240,-6870,-7370,-8110,-8490, //20
+	-8870,-9110,-9370,-9610,-9740,-10250,-11140,-11430,-12280,-13160,-14900,-15030,-15290,-15420,-15670,-16040,-16170,-16930, //18
+	-17050,-17300,-17430,-17680,-18060,-18190,-19170,-20550,-21050,-21560,-22050,-22550,-22800,-23310,-23440,-23810,-23940,-24060, //18
+	-24190,-24310,-24440,-27290,-27410,-27540,-27790,-27910,-28420,-28920,-29480,-29980,-30360,-30740,-31230,-31350,-31730,-32240, //18
+	-32360,-32740,-33490,-33980,-34360,-34860,-35370,-35740,-35990]; //9 total = 83
+	
+	function hit_left(curPos) {
+		for (i = 0; i < 83; i++) {
+			if (curPos <= aLeft[i]+delta && curPos >= aLeft[i]-delta) {
+				if (curPos <= aLeft[i]+delta2 && curPos >= aLeft[i]-delta2) {
+					fadeFast('MLarrow');
+					totalhit += 2;
+					combo++;
+					showCombo();
+					return;
+				}
+				fadeFast('GLarrow');
+				totalhit++;
+				combo++;
+				showCombo();
+				return;
+			}		
+		}
+		fadeFast('Larrow');
+		combo = 0;
+		showCombo();
+	}
+	
+	var aRight = [-480,-1230,-1730,-2100,-2350,-2610,-2740,-2860,-2990,-3600,-3860,-4240,-4490,-4990,-5490,-5990,-6610,-7110,-7620, //19
+	-8610,-8740,-9240,-9490,-9870,-10120,-10370,-11140,-11430,-12030,-12910,-13040,-13280,-13420,-13660,-14040,-14170,-15170,-17180, //19
+	-18920,-19050,-19310,-19430,-19680,-20050,-20180,-20550,-20800,-21300,-21430,-21810,-22310,-22530,-23050,-23550,-23940,-24060, //18
+	-24250,-24380,-26290,-26420,-26670,-26790,-27040,-28160,-28290,-28670,-29170,-29300,-29740,-30230,-30480,-30980,-31490,-31990, //18
+	-32360,-32490,-32990,-33740,-34610,-35110,-35240,-35490,-36360,-36420]; //10 total = 84
+	
+	// total arrows = 284
+	
+	function hit_right(curPos) {
+		for (i = 0; i < 84; i++) {
+			if (curPos <= aRight[i]+delta && curPos >= aRight[i]-delta) {
+				if (curPos <= aRight[i]+delta2 && curPos >= aRight[i]-delta2) {
+					fadeFast('MRarrow');
+					totalhit += 2;
+					combo++;
+					showCombo();
+					return;
+				}
+				fadeFast('GRarrow');
+				totalhit++;
+				combo++;
+				showCombo();
+				return;
+			}		
+		}
+		fadeFast('Rarrow');
+		combo = 0;
+		showCombo();
+	}
+	
+	/*---------------- Refreshing Combo Counter ----------------*/
+	
+	function showCombo() {
+		if (combo > maxcombo) {
+			maxcombo = combo;
+		}
+		document.getElementById("comboCounter").innerHTML = combo;
+	}
+	
+	/*---------------- Ending Screen Functions ----------------*/
+	
+	function ending() {
+		changeDisplay('image1');
+		changeOpacity('image1', 1500);
+		setTimeout('showScore()', 2500);
+		setTimeout('showMaxCombo()', 3500);
+	}
+	
+	function showScore() {
+		var percent = totalhit/284*100;
+		var blah = percent.toPrecision(4);
+		var endTotal = "Score: " + blah + "%";
+		document.getElementById("endScore").innerHTML = endTotal;
+	}
+	
+	function showMaxCombo() {
+		var blah = "Max Combo: " + maxcombo;
+		document.getElementById("endCombo").innerHTML = blah;
+	}
+	
+	/*---------------- Plays Music ----------------*/
+	
+	function play() {
+		embed = document.createElement("embed");
+		embed.setAttribute("src", "HV.mp3");
+		embed.setAttribute("hidden", true);
+		embed.setAttribute("autostart", true);
+		document.body.appendChild(embed);
+	}
+		
+	/*---------------- On loading function ----------------*/
+		
+	window.onload = function(){
+		setTimeout(function(){changeDisplay('StdArrows')}, 2000);
+		setTimeout(function(){changeDisplay('image0')}, 2000);
+		setTimeout('play()', 2000);
+		setTimeout(function(){changeOpacity('section1', 1300)}, 3500);
+		setTimeout(function(){toggleMoving('section1', 6, 50)}, 5000);
+		setTimeout(function(){toggleMoving('section1', 6, 50)}, 9000);
+		setTimeout(function(){toggleMoving('section1', 21, 50)}, 9000);
+		setTimeout(function(){toggleMoving('section1', 21, 50)}, 97500);
+		setTimeout(function(){toggleMoving('section1', 5, 50)}, 97500);
+		setTimeout(function(){toggleMoving('section1', 5, 50)}, 103000);
+		setTimeout('ending()', 105000);
+		}
+
+	</script>
+	
+</head>
+
+
+<body>
+	<!---------------------- Loading Screen Image ----------------------->
+	
+	<div id='image0' style="display:block; z-index:0;" class='loadingScreen'>
+		<img src="Loading.gif" alt="Loading Screen" />
+	</div>
+	
+	<!---------------------- Ending Screen Background ----------------------->
+	
+	<div id='image1' style="opacity:0; z-index:29; display:none;" class='endScreen'>
+		<img src="cloud.jpg" alt="Ending Screen" />
+	</div>
+	
+	<!---------------------- Stationary Arrows ----------------------->
+
+	<div id='StdArrows' class='arrows' style="top:100px; margin-left:-325px;">
+		<img src="StandardArrows.gif" />
+	</div>
+	
+	
+	<!---------------------- Combo Image + Counter ----------------------->
+	
+	<div id='comboImage' class='comboC' style="top:-100px; margin-left:-175px; z-index:25;">
+		<img src="combo.gif" />
+		<div id='comboCounter' style="margin-left:240px; margin-top:-65px; font-size:60; color:#ff0055; font-family:Arial Black;">
+			0
+		</div>
+	</div>
+	
+	<!---------------------- Ending Screen Scores ----------------------->
+	
+	<div id='endScore' class='comboC' style="margin-left:-270px; z-index:30; top:-200px; font-size:60; color:#ff0055; font-family:Arial Black;"></div>
+	<div id='endCombo' class='comboC' style="margin-left:-290px; z-index:30; top:-200px; font-size:60; color:#ff0055; font-family:Arial Black;"></div>
+	
+	<!---------------------- Moving Arrows ----------------------->
+	
+	<div id='section1' class='movingSection' style="opacity:0;">
+		<div id='Move1' class='arrowMoving' style="margin-left:-276px; margin-top:0px; "><img src="Ult1.gif" /></div>
+		<div id='Move2' class='arrowMoving' style="margin-left:-276px; margin-top:5516px; "><img src="Ult2.gif" /></div>
+		<div id='Move3' class='arrowMoving' style="margin-left:-276px; margin-top:13443px; "><img src="Ult3.gif" /></div>
+		<div id='Move4' class='arrowMoving' style="margin-left:-276px; margin-top:21460px; "><img src="Ult4.gif" /></div>
+		<div id='Move5' class='arrowMoving' style="margin-left:-276px; margin-top:28951px; "><img src="Ult5.gif" /></div>
+	</div>
+	
+	
+	<!---------------------- Selection Arrow Images ----------------------->
+	
+	<div id='Uarrow' class='arrow' style="margin-left:-25px;">
+		<img src="SelUp.gif" />
+	</div>
+	<div id='Darrow' class='arrow' style="margin-left:-152px;">
+		<img src="SelDown.gif" />
+	</div>
+	<div id='Larrow' class='arrow' style="margin-left:-278px;">
+		<img src="SelLeft.gif" />
+	</div>
+	<div id='Rarrow' class='arrow' style="margin-left:100px;">
+		<img src="SelRight.gif" />
+	</div>
+	
+	<!---------------------- Landing Arrow Images ----------------------->
+	
+	<div id='GUarrow' class='arrow' style="margin-left:-278px;">
+		<img src="GreatUp.gif" />
+	</div>
+	<div id='GDarrow' class='arrow' style="margin-left:-278px;">
+		<img src="GreatDown.gif" />
+	</div>
+	<div id='GLarrow' class='arrow' style="margin-left:-278px;">
+		<img src="GreatLeft.gif" />
+	</div>
+	<div id='GRarrow' class='arrow' style="margin-left:-278px;">
+		<img src="GreatRight.gif" />
+	</div>
+	
+	<div id='MUarrow' class='arrow' style="margin-left:-286px;">
+		<img src="MarvUp2.gif" />
+	</div>
+	<div id='MDarrow' class='arrow' style="margin-left:-284px;">
+		<img src="MarvDown2.gif" />
+	</div>
+	<div id='MLarrow' class='arrow' style="margin-left:-282px;">
+		<img src="MarvLeft2.gif" />
+	</div>
+	<div id='MRarrow' class='arrow' style="margin-left:-288px;">
+		<img src="MarvRight2.gif" />
+	</div>
+	
+	
+	<!-- Embedding music
+		
+	<embed src="/jstool/LightPowered.mp3"
+ 		width="0" height="0"
+ 		autostart="false"
+ 		name="mymusic"
+ 		enablejavascript="true"/>
+	
+	-->
+
+
+		
+</body>
+	
+<!-- Localized -->

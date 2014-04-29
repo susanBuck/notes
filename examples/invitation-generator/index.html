@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+
+<head>
+
+	<title>Invitation Generator</title>
+
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+	
+	<style type='text/css'>
+		/* The asterisks is a wildcard character, saying apply this style to everything */
+		* {
+			font-family:georgia;
+		}
+		
+		/* All inputs should have a font-size of 14pt */
+		input {
+			font-size:14pt;
+		} 
+		
+		/* Kill the default margin that the browser always gives our page */
+		body {
+			margin:0px;
+		}
+		
+		/* This contains all our content, making sure it's centered on the page */
+		#wrapper {
+			position:relative;
+			margin:0px auto;
+			width:960px;
+			margin-top:30px;
+		}
+		
+		/* Our form inputs exist here */
+		#left-column {
+			float:left;
+		}
+		
+		/* Our invitation exists here */
+		#right-column {
+			float:right;
+			width:570px;
+			height:427px;
+			background-image:url('http://students.susanbuck.net/storage/code/invitation-generator/images/card-blue-zig-zags.jpg');
+		}
+			
+		/* The text of the invitation goes here */
+		#invitation-content {
+			position:relative;
+			top:150px;
+			left:150px;
+			color:white;
+		} 		
+	</style>
+
+	<script type='text/javascript'>
+		$(document).ready(function() {
+		
+		
+		});	
+	</script>
+
+
+</head>
+
+
+<body>
+
+<div id='wrapper'>
+
+
+	<div id='left-column'>
+		<h1>Invitation Generator</h1>
+	
+		
+			
+	</div>
+	
+
+	<div id='right-column'>
+	
+		<div id='invitation-content'>
+	
+			Dear <span id='guest-list'></span> <br><br>
+		
+			You are invited to my party. <br><br>
+			
+			&#9829;, <br>
+			
+			Me	
+		
+		</div>
+	</div>
+
+
+</div>
+
+	
+	
+</body>
+
+</html>

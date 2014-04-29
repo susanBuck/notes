@@ -1,0 +1,75 @@
+		body {
+			margin:  0px;
+			font-family: "Garamond", serif;
+   			font-size: 22px;
+   			color:  black; 
+		}
+	
+	
+		/*center DIV*/
+		#main {
+			width:  1024px;
+			height:  1226px;
+			position: absolute;
+			left: 50%;
+			top: 10px;
+			margin-left: -512px;
+			border: 1px solid black;
+		}
+			
+			
+		/*big header container with logo, name, and menu bar inside*/
+		#header {
+			width:  1024px;
+			height: 140px;
+			position:  relative;
+		}
+		
+		
+		/*left menu with word options*/
+		#leftMenu {
+			height:  1020px;
+			width:  280px;
+			margin:  30px;
+			float:  left;
+			text-align: left;
+			position:  relative;
+			border-right: 1px solid black;
+		}
+		
+		
+		/*google Image outter div*/
+		#rightTop {
+			height:  530px;
+			width:  680px;
+			padding:  15 px;
+			float:  right;
+			position: relative;
+		}
+		
+		
+		/*google Image inner div with actual picture*/
+		#rightTopInner {
+			height: 450px;
+			width: 450px;
+			overflow: hidden;
+			margin: 36px;
+		}	
+		
+		/*Twitter feed div*/
+		#rightBottom {
+			height:  500px;
+			width:  610px;
+			float: right;
+			margin: 10px 35px;
+		}
+		
+		
+		a:link {text-decoration:none; color:#000000;}
+		a:visited {font-size:130%;}
+		a:hover {font-size:130%; font-weight: bold;}
+		a:active {font-size:130%; font-weight: bold;}
+
+			
+		a img {border: none;}
+

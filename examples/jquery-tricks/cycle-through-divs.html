@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<head>
+
+	<title>Cycle through divs</title>
+	
+	<link rel="stylesheet" href="/storage/code/includes/code.css" type="text/css">
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+	
+	<style type='text/css'>
+	
+	.tip {
+		display:none;
+		cursor:pointer;
+		border:1px solid black;
+		padding:5px;
+		width:35px;
+		background-color:yellow;
+	}
+	
+	#start-tip {
+		display:block;
+	}
+	
+	</style>
+
+	<script type='text/javascript'>
+		
+		$(document).ready(function() {
+		
+			// Everytime any tip is clicked, fire this function
+			$('.tip').click(function() {
+			
+				// Hide the tip that was just clicked
+				$(this).hide();
+				
+				// Show the next tip
+				$(this).next().show();
+								
+				// If this was the last top, show the first tip				
+				if($(this).next().length == 0) {
+					$('#tips div:first-child').show();
+				}
+				
+			});
+					
+		});
+		
+	</script>
+
+
+</head>
+
+
+<body>
+
+	<div id='tips'>
+		<div class='tip' id='start-tip'>Tip 1</div>
+		<div class='tip'>Tip 2</div>
+		<div class='tip'>Tip 3</div>
+	</div>
+	
+</body>
+
+</html>

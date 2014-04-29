@@ -1,0 +1,55 @@
+<title>Forms</title>
+
+<style type='text/css'>
+
+body,form {
+	font-family: arial;
+}
+</style>
+
+<form method="get" action="processForm.php">
+
+	<!-- Name, Email -->
+		First Name:<input name="firstName" type="text"/><br/>
+		Last Name: <input name="lastName" type="text"/><br/>
+		Email: <input name="email" type="text"/>
+	
+		<br/><br/>
+	
+	<!-- Comments  -->
+		Comments:<br/>
+		<textarea name="comments">
+	
+		</textarea>
+	
+		<br/><br/>
+	
+	<!-- Misc -->
+		Favorite color?
+		<select name='colors'>
+			<option value='red'>Red</option>
+			<option value='blue'>Blue</option>
+		</select>
+		
+		<br/><br/>
+		
+		<input type='checkbox' name='subscribe' valign=middle/>Subscribe me to the mailing list
+		
+		<br/><br/>
+		
+		<input type='radio' name='yesOrNo' value='yes'>Yes<br/>
+		<input type='radio' name='yesOrNo' value='no'>No
+		
+		<br/><br/>
+	
+	<!-- Submit -->
+		<input type="submit" value="Send"/>
+
+</form>
+
+
+<br/><br/><br/><br/>
+
+
+
+

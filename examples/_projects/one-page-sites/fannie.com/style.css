@@ -1,0 +1,230 @@
+body {
+	position: relative;
+	margin: 0px auto;
+	height: 2794px;
+	width: 1245px;
+}
+
+/*********** NAVIGATION ************/
+#navigation {
+	position: fixed;
+	z-index: 1;
+	float: left;
+	width: 500px;
+	height: 66px
+	margin: 0px;
+	padding: 0px;
+	font-size: 20px;
+	font-family: 'Terminal Dosis', sans-serif;
+}
+
+#navbar li{
+	display: inline;
+	list-style: none;
+	padding: 5px;
+	position:relative;
+	float:left;
+}
+
+#navbar li span{
+	display:none;
+	position:absolute;
+	left: 6px;
+	line-height: 4px;
+}
+
+#navbar li a:hover span {
+	margin-top: 50px;
+	display:block;
+	color: #8895b8;
+	}
+
+#blue {
+	display: inline-block;
+	color: #fff;
+	text-decoration: none; 
+	background-image: url('images/bluepenguin.gif');
+	background-position: left;
+	width: 49px;
+	height: 41px;
+}
+
+#pink {
+	display: inline-block;
+	color: #fff;
+	text-decoration: none; 
+	background-image: url('images/pinkpenguin.gif');
+	background-position: left;
+	width: 49px;
+	height: 41px;
+}
+
+#green {
+	display: inline-block;
+	color: #fff;
+	text-decoration: none; 
+	background-image: url('images/greenpenguin.gif');
+	background-position: left;
+	width: 49px;
+	height: 41px;
+}
+
+#purple {
+	display: inline-block;
+	color: #fff;
+	text-decoration: none; 
+	background-image: url('images/purplepenguin.gif');
+	background-position: left;
+	width: 49px;
+	height: 41px;
+}
+
+#blue:hover {
+	background-image: url('images/bluepenguin-wave.gif');
+}
+
+#pink:hover {
+	background-image: url('images/pinkpenguin-wave.gif');
+}
+
+#green:hover {
+	background-image: url('images/greenpenguin-wave.gif');
+}
+
+#purple:hover {
+	background-image: url('images/purplepenguin-wave.gif');
+}
+
+#navbar li ul {
+	display: none; 
+	width: 14em; /* Width to help Opera out */
+
+}
+
+#navbar li:hover ul {
+	display: inline-block;
+	position: absolute;
+	z-index: 2;
+	margin: 0;
+	padding-top: 40px;
+	padding-left: 0px;
+}
+
+/*********** SECTIONS ************/
+#home {
+	background-image: url('images/fullmock_01.jpg');
+	position: absolute;
+	text-align: justify;
+	height: 694px;
+	width: 1245px;
+	margin: 0px;
+}
+
+/*********** WORKS ************/
+#works {
+	background-image: url('images/fullmock_02.jpg');
+	position: absolute;
+	height: 703px;
+	width: 1245px;
+	color: green;
+	margin-top: 694px;
+}
+
+#works .content {
+	text-align: justify;
+	padding-top: 200px;
+	padding-left: 420px;
+	width: 470px;
+	font-family: 'Coming Soon', cursive;
+	font-weight: bold;
+	font-size: 20px;
+	color: #20b8d4;
+}
+
+#works .content img {
+	margin-left: 10px;
+	border: 10px solid;
+	border-color: white;
+	border-radius: 10px;
+}
+
+/*********** ABOUT ************/
+#about {
+	background-image: url('images/fullmock_03.jpg');
+	position: absolute;
+	height: 698px;
+	width: 1245px;
+	margin-top: 1397px;
+}
+
+#about .content {
+	text-align: justify;
+	padding-top: 100px;
+	padding-left: 460px;
+	width:630px;
+	font-family : "Courier New", Courier, monospace ;
+	font-size: 25px;
+	font-weight: bold;
+	color: #84bd89;
+}
+
+#about .content h2 {
+	font-size: 40px;
+}
+
+#about .content img {
+	float: left;
+	margin-right: 30px;
+}
+
+/*********** CONTACT ************/
+#contact {
+	background-image: url('images/fullmock_04.gif');
+	position: absolute;
+	height: 699px;
+	width: 1245px;
+	color: #ab854a;
+	margin-top: 2095px;
+}
+
+#contact .content {
+	text-align: justify;
+	padding-top: 170px;
+	padding-left: 100px;
+	width: 700px;
+	font-size: 20px;
+	font-family: 'Terminal Dosis', sans-serif;
+}
+
+#contact .content input, textarea {
+	border: 0px;
+	border-radius: 15px;
+	padding: 7px;
+	background-color: #c4a16a;
+	height: 20px;
+	width: 600px;
+	margin-bottom: 5px;
+}
+
+#contact .content textarea {
+	height: 100px;
+}
+
+#contact .content h2 {
+	font-size: 40px;
+	font-weight: bold;
+	padding-bottom: 0px;
+	margin-bottom: 15px;
+	font-family: 'Open Sans', sans-serif;
+}
+
+#contact button {
+	background-color: #c4a16a;
+	color: #6a5027;
+	border: 0px;
+	border-radius: 15px;
+	padding: 5px;
+	margin: 10px;
+	width: 100px;
+	float: right;
+}

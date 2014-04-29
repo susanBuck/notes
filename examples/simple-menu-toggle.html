@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<head>
+
+	<title></title>
+
+	<link rel="stylesheet" href="/storage/code/includes/code.css" type="text/css">
+
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+	
+	<style type='text/css'>
+	
+		#menu-button {
+			background-color:#3B5998;
+			width:20px;
+			color:white;
+			cursor:pointer;
+			text-align:center;
+			margin:0px;
+		}
+	
+		#menu {
+			display:none;
+			border:1px solid black;
+			width:200px;
+			padding:10px;
+		}
+		
+	</style>
+
+	<script type='text/javascript'>
+		
+		$(document).ready(function() {
+		
+			$('#menu-button').click(function() {
+			
+				$('#menu').toggle();
+			
+			});
+					
+		});
+		
+	</script>
+
+
+</head>
+
+
+<body>
+
+	<div id='menu-button'>+</div>
+	
+	<div id='menu'>
+		Option 1<br>
+		Option 2<br>
+		Option 3<br>
+	</div>
+	
+</body>
+
+</html>

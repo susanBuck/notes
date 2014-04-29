@@ -1,0 +1,84 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<title>Smooth Scroll Example</title>
+
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/mootools/1.1.1/mootools-yui-compressed.js"></script>
+
+	<script type="text/javascript">	
+	
+		/*-------------------------------------------------------------------------------------------------
+		slide()
+		-------------------------------------------------------------------------------------------------*/
+		function slide(whichDiv,amount) {
+		
+			var targetDiv = new Fx.Style($(whichDiv),
+			"left", {duration: 400}).addEvent('onComplete', function() {
+				//console.log("slide is complete");
+			});
+			targetDiv.start(amount);
+			
+		}
+
+	</script>
+	
+	<style type='text/css'>
+	
+	
+		body {
+			font-family:arial;
+			font-size:20pt;
+			margin:0px;
+			//overflow-x: hidden;
+
+		}
+		
+		.section {
+			position:absolute;
+			text-align:center; 
+			padding:20px; 
+			width:1024px; 
+			height:300px;
+		}
+		
+		A:link {color:black;}
+		A:visited {color:black;}
+		A:active {color:black;}
+		A:hover {color:black;}
+		
+		a img {border: none; }
+		
+	</style>
+
+</head>
+
+
+<!-- MENU -->
+	<a href='javascript:void(0)' onClick="slide('container','0')">Section 1</a>
+	<a href='javascript:void(0)' onClick="slide('container','-1024')">Section 2</a>
+	<a href='javascript:void(0)' onClick="slide('container','-2048')">Section 3</a>
+	<a href='javascript:void(0)' onClick="slide('container','-3072')">Section 4</a>
+
+
+<!-- SECTIONS -->
+	<div id="container" style="width:6144px; height:400px; position:absolute; top:50px;">
+		
+		<div style='left:0px; background-color:#CCFF33;' class='section' id='section1'>
+			Section 1
+		</div>
+		
+		<div style='left:1024px; background-color:#FF0033;' class='section' id='section2'>
+			Section 2
+		</div>
+	
+		<div style='left:2048px; background-color:#CC3399;' class='section' id='section3'>
+			Section 3
+		</div>
+		
+		<div style='left:3072px; background-color:#FFCC33;' class='section' id='section4'>
+			Section 4
+		</div>
+		
+	</div>
+
+</html>

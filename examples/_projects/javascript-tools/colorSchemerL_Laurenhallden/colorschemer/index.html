@@ -1,0 +1,99 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<title>Color Schemer</title>
+	
+	<meta name="description" content="Helps visualize color schemes based on the color wheel"/>
+
+	<link rel="stylesheet" type="text/css" href="css/javaTool.css"/>
+
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/mootools/1.3.0/mootools-yui-compressed.js"></script>
+	<script type="text/javascript" src="java/colorJava.js"></script>
+	
+	<!-- Preload image rollovers -->
+	<img src="images/maroonL.jpg" style="display:none">
+	<img src="images/redL.jpg" style="display:none">
+	<img src="images/purpleL.jpg" style="display:none">
+	<img src="images/fuschiaL.jpg" style="display:none">
+	<img src="images/navyL.jpg" style="display:none">
+	<img src="images/blueL.jpg" style="display:none">
+	<img src="images/tealL.jpg" style="display:none">
+	<img src="images/aquaL.jpg" style="display:none">
+	<img src="images/greenL.jpg" style="display:none">
+	<img src="images/limeL.jpg" style="display:none">
+	<img src="images/oliveL.jpg" style="display:none">
+	<img src="images/yellowL.jpg" style="display:none">
+
+
+</head>
+
+<body>
+
+<div id="container">
+
+<!-- Colors to choose from !-->
+<div id="topBackground">
+
+	<div id="color1"><img src="images/maroon.jpg" width="80px" height="60px" alt="maroon" style="cursor:pointer" onMouseOver="this.src='/colorschemer/images/maroonL.jpg'" onMouseOut="this.src='/colorschemer/images/maroon.jpg'" onClick="clearIt(), fillColor('800000')"></div>
+	<div id="color7"><img src="images/red.jpg" width="80px" height="60px" alt="red" style="cursor:pointer" onMouseOver="this.src='/colorschemer/images/redL.jpg'" onMouseOut="this.src='/colorschemer/images/red.jpg'" onClick="clearIt(), fillColor('FF0000')"></div>
+	<div id="color2"><img src="images/purple.jpg" width="80px" height="60px" alt="purple" style="cursor:pointer" onMouseOver="this.src='/colorschemer/images/purpleL.jpg'" onMouseOut="this.src='/colorschemer/images/purple.jpg'" onClick="clearIt(), fillColor('800080')"></div>
+	<div id="color8"><img src="images/fuschia.jpg" width="80px" height="60px" alt="fuschia" style="cursor:pointer" onMouseOver="this.src='/colorschemer/images/fuschiaL.jpg'" onMouseOut="this.src='/colorschemer/images/fuschia.jpg'" onClick="clearIt(), fillColor('FF00FF')"></div>
+	<div id="color3"><img src="images/navy.jpg" width="80px" height="60px" alt="navy" style="cursor:pointer" onMouseOver="this.src='/colorschemer/images/navyL.jpg'" onMouseOut="this.src='/colorschemer/images/navy.jpg'" onClick="clearIt(), fillColor('000080')"></div>
+	<div id="color4"><img src="images/blue.jpg" width="80px" height="60px" alt="blue" style="cursor:pointer" onMouseOver="this.src='/colorschemer/images/blueL.jpg'" onMouseOut="this.src='/colorschemer/images/blue.jpg'" onClick="clearIt(), fillColor('0000FF')"></div>
+	<div id="color5"><img src="images/teal.jpg" width="80px" height="60px" alt="teal" style="cursor:pointer" onMouseOver="this.src='/colorschemer/images/tealL.jpg'" onMouseOut="this.src='/colorschemer/images/teal.jpg'" onClick="clearIt(), fillColor('008080')"></div>
+	<div id="color6"><img src="images/aqua.jpg" width="80px" height="60px" alt="auqa" style="cursor:pointer" onMouseOver="this.src='/colorschemer/images/aquaL.jpg'" onMouseOut="this.src='/colorschemer/images/aqua.jpg'" onClick="clearIt(), fillColor('00FFFF')"></div>
+	<div id="color9"><img src="images/green.jpg" width="80px" height="60px" alt="green" style="cursor:pointer" onMouseOver="this.src='/colorschemer/images/greenL.jpg'" onMouseOut="this.src='/colorschemer/images/green.jpg'" onClick="clearIt(), fillColor('008000')"></div>
+	<div id="color10"><img src="images/lime.jpg" width="80px" height="60px" alt="lime" style="cursor:pointer" onMouseOver="this.src='/colorschemer/images/limeL.jpg'" onMouseOut="this.src='/colorschemer/images/lime.jpg'" onClick="clearIt(), fillColor('00FF00')"></div>
+	<div id="color11"><img src="images/olive.jpg" width="80px" height="60px" alt="olive" style="cursor:pointer" onMouseOver="this.src='/colorschemer/images/oliveL.jpg'" onMouseOut="this.src='/colorschemer/images/olive.jpg'" onClick="clearIt(), fillColor('808000')"></div>
+	<div id="color12"><img src="images/yellow.jpg" width="80px" height="60px" alt="yellow" style="cursor:pointer" onMouseOver="this.src='/colorschemer/images/yellowL.jpg'" onMouseOut="this.src='/colorschemer/images/yellow.jpg'" onClick="clearIt(), fillColor('FFFF00')"></div>
+
+</div>
+
+<div id="commandText" class="text">Click a color to start</div>
+
+<!-- Pick a scheme !-->
+<div id="commands">
+	
+	<div id="command1"><input type="submit" class="commandButton" value="Complement" style="cursor:pointer" onMouseOver="this.style.backgroundColor='#8D929A'" onMouseOut="this.style.backgroundColor='#787C83'" onClick="getComplement()"/></div>
+	<div id="command2"><input type="submit" class="commandButton" value="Analogous" style="cursor:pointer" onMouseOver="this.style.backgroundColor='#8D929A'" onMouseOut="this.style.backgroundColor='#787C83'" onClick="getAnalogs()"/><br/></div>
+	<div id="command3"><input type="submit" class="commandButton" value="Triad" style="cursor:pointer" onMouseOver="this.style.backgroundColor='#8D929A'" onMouseOut="this.style.backgroundColor='#787C83'" onClick="getTriad()"/></div>
+	<div id="command4"><input type="submit" class="commandButton" value="Tetrad" style="cursor:pointer" onMouseOver="this.style.backgroundColor='#8D929A'" onMouseOut="this.style.backgroundColor='#787C83'" onClick="getTetrad()"/></div>
+	
+</div>
+
+<!-- Resulting colors !-->
+<div id="results">
+
+	<div id="fillColor1"></div>
+	<div id="complement"></div>
+	<div id="fillColor2"></div>
+	<div id="analog1"></div>
+	<div id="analog2"></div>
+	<div id="fillColor3"></div>
+	<div id="triad1"></div>
+	<div id="triad2"></div>
+	<div id="fillColor4"></div>
+	<div id="tetrad1"></div>
+	<div id="tetrad2"></div>
+	<div id="tetrad3"></div>
+	<div class="caption" id="fillCaption1"></div>
+	<div class="caption" id="complementCaption"></div>
+	<div class="caption" id="fillCaption2"></div>
+	<div class="caption" id="analogCaption1"></div>
+	<div class="caption" id="analogCaption2"></div>
+	<div class="caption" id="fillCaption3"></div>
+	<div class="caption" id="triadCaption1"></div>
+	<div class="caption" id="triadCaption2"></div>
+	<div class="caption" id="fillCaption4"></div>
+	<div class="caption" id="tetradCaption1"></div>
+	<div class="caption" id="tetradCaption2"></div>
+	<div class="caption" id="tetradCaption3"></div>
+
+<!-- End container divs that centers everything !-->	
+</div>
+
+</body>
+</html>
+
+<!-- Localized -->

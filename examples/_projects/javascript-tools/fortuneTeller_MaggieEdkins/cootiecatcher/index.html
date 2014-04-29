@@ -1,0 +1,254 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	
+	<title>Cootie Catcher</title>
+	
+	<meta name="Cootie Catcher" content="Find out your fortune with this online cootie catcher!" />
+	
+	<script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/mootools/1.3.0/mootools-yui-compressed.js'>
+	</script>
+
+<script type="text/javascript">
+
+//code for switching out the divs
+
+	var timer;
+	var counter     = 0;
+	var state       = "closed";
+	var turnCounter = 0;
+
+
+	function changeImage(howManyTimes) {
+
+			if(counter < howManyTimes) {
+		
+			
+					if(state == "closed") {
+					
+						state = "leftright";
+						
+						$('leftright').style.display = "block";
+						$('closed').style.display = "none";
+						$('updown').style.display = "none";
+					
+					
+					}
+					else if(state == "leftright") {
+						(state = "updown")
+					
+						$('leftright').style.display = "none";
+						$('closed').style.display    = "none";
+						$('updown').style.display    = "block";
+					
+					}
+					else {
+						(state = "leftright")
+					
+						$('leftright').style.display = "block";
+						$('closed').style.display    = "none";
+						$('updown').style.display    = "none";
+					
+					}
+				
+					counter++;
+				}
+				
+				else { 
+					clearInterval(timer); 
+					counter= 0;
+				}
+		
+		}
+	
+
+	function start(howManyTimes) {
+
+		turnCounter++;
+	
+		if(turnCounter < 3) {
+			timer=setInterval("changeImage(" + howManyTimes + ")",1000);
+		}
+		else {
+	
+			// SHOW DONE IMAGE
+			turnCounter = 0;
+		
+			$('leftright').style.display = "none";
+			$('closed').style.display    = "none";
+			$('updown').style.display    = "none";
+			$('finished').style.display  = "block";
+	
+		}
+
+	}
+
+//code for randomized images on the final page
+
+	var theImages = new Array()
+
+		theImages[0] = 'http://maggieedkins.com/cootie_images/openup.png'
+		theImages[1] = 'http://maggieedkins.com/cootie_images/openleft.png'
+		theImages[2] = 'http://maggieedkins.com/cootie_images/opendown.png'
+		theImages[3] = 'http://maggieedkins.com/cootie_images/openright.png'
+
+	var j = 0
+	var p = theImages.length;
+	var preBuffer = new Array()
+		for (i = 0; i < p; i++){
+ 		  preBuffer[i] = new Image()
+  		  preBuffer[i].src = theImages[i]
+		}
+	var whichImage = Math.round(Math.random()*(p-1));
+
+	function showImage(){
+	document.write('<img src="'+theImages[whichImage]+'">');
+	}
+
+</script>
+</head>
+<body>
+
+<style type='text/css'>
+	
+	#floater	{float:left; 
+				height:50%; 
+				margin-bottom:-384px;}
+				
+	#content	{clear:both;
+				background-color:none;
+				width:1024px;
+				height:768px; 
+				position:relative; 
+				margin:auto;
+				border:0px;
+				padding:0px;
+				}
+    
+    #closed 	{position:absolute;
+    			position:center;
+    			width:647px;
+    			height:594px;
+    			margin:0px;
+    			border:0px;
+    			top: 35px;
+    			left: 200px;
+    			z-index: 2}
+    			
+    #leftright 	{position:absolute;
+    			position:center;
+    			width:647px;
+    			height:594px;
+    			margin:0px;
+    			border:0px;
+    			top: 35px;
+    			left: 200px;
+    			z-index: 2}
+    
+    #updown 	{position:absolute;
+    			position:center;
+    			width:647px;
+    			height:594px;
+    			margin:0px;
+    			border:0px;
+    			top: 35px;
+    			left: 200px;
+    			z-index: 2}
+    			
+    #finished 	{position:absolute;
+    			position:center;
+    			width:538px;
+    			height:538px;
+    			margin:0px;
+    			border:0px;
+    			top: 75px;
+    			left: 225px;
+    			z-index: 2}
+    			
+    #tryagain 	{position:absolute;
+    			position:center;
+    			width:538px;
+    			height:538px;
+    			margin:0px;
+    			border:0px;
+    			top: 5px;
+    			left: 867px;
+    			z-index: 2}
+    
+    #background {position:fixed;
+    			position:center;
+    			width:1024px;
+    			height:768px;
+    			margin:0px;
+    			border:0px;
+    			z-index: 0}
+
+</style>
+
+<img src="../cootie_images/closed.png" style='display:none'>
+<img src="../cootie_images/leftright2.png" style='display:none'>
+<img src="../cootie_images/updown.png" style='display:none'>
+
+<link rel="stylesheet" type="text/css" href="../cootiecatcher.css" />
+
+<!--container div-->
+
+<div id="content">
+
+	<div id="floater">
+	</div>
+
+	<div id='closed'>
+		<img id="fortuneImage" img src="../cootie_images/closed.png" usemap="#pickColor" border="1">
+		<map name="pickColor">
+			<area shape="rect" coords="14,22,293,255" onClick="start(6)">
+			<area shape="rect" coords="332,38,564,265" onClick="start(5)">
+			<area shape="rect" coords="43,312,311,526" onClick="start(6)">
+			<area shape="rect" coords="315,289,592,531" onClick="start(4)"> 
+		</map>
+	</div>
+	
+	<div id='leftright' style='display:none'>
+		<img id="fortuneImage" img src="../cootie_images/leftright2.png" usemap="#leftright" border="0">
+			<map name="leftright">
+				<area shape="poly" coords="97,162,323,243,317,14" onClick="start(6)">
+				<area shape="poly" coords="328,9,331,247,542,157" onClick="start(8)">
+				<area shape="poly" coords="94,187,321,419,323,259" onClick="start(4)">
+				<area shape="poly" coords="333,263,331,417,557,191" onClick="start(6)"> 
+			</map>
+	</div>
+	
+	<div id='updown' style='display:none'>
+		<img id="fortuneImage" img src="../cootie_images/updown.png" usemap="#updown" border="0">
+			<map name="updown">
+				<area shape="poly" coords="109,289,341,305,301,489" onClick="start(5)">
+				<area shape="poly" coords="102,285,299,60,335,302" onClick="start(5)">
+				<area shape="poly" coords="331,77,351,302,545,292" onClick="start(7)">
+				<area shape="poly" coords="356,304,329,491,547,296" onClick="start(6)"> 
+			</map>
+	</div>
+	
+<!--finished id refers to the randomized images in the javascript code, a temporary solution
+to a rotating image map-->
+
+	<div id='finished' style='display:none'>
+		<script type="text/javascript">
+			showImage();
+		</script>
+	</div>
+	
+	<div id='background'>
+		<img src="../cootie_images/background.png">
+	</div>
+	
+	<div id='tryagain'>
+		<a href="index.html"> 
+			<img src="../cootie_images/tryagain.png"> 
+		</a>
+	</div>
+
+<!--closes container div-->
+</div>
+</body>
+</html>
+<!-- Localized -->

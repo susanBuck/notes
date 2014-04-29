@@ -1,0 +1,165 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+ 
+<html>
+<head>
+<title>Web 1:Pipeline Art Project - Project 4 </title>
+ 
+<script type="text/javascript" src='https://ajax.googleapis.com/ajax/libs/mootools/1.3.0/mootools-yui-compressed.js'> 
+</script>
+ 
+<script type="text/javascript"> 
+ 
+// Elements
+      	var elements = new Array ();
+      	elements[0] = "http://rebeccaudonald.com/pipeline/imagesWeb/star.png";
+      	elements[1] = "http://rebeccaudonald.com/pipeline/imagesWeb/squares.png";
+      	elements[2] = "http://rebeccaudonald.com/pipeline/imagesWeb/scribble.png";
+      	elements[3] = "http://rebeccaudonald.com/pipeline/imagesWeb/gradient.png";
+ 				elements[4] = "http://rebeccaudonald.com/pipeline/imagesWeb/circleCluster.png";
+        elements[5] = "http://rebeccaudonald.com/pipeline/imagesWeb/asterStarA.png";
+        elements[6] = "http://rebeccaudonald.com/pipeline/imagesWeb/asterStarB.png";
+        elements[7] = "http://rebeccaudonald.com/pipeline/imagesWeb/asterStarC.png";
+        elements[8] = "http://rebeccaudonald.com/pipeline/imagesWeb/asterStarGroup.png";
+ 				elements[9] = "http://rebeccaudonald.com/pipeline/imagesWeb/rectangle.png";
+        elements[10] = "http://rebeccaudonald.com/pipeline/imagesWeb/animRec.gif";
+        elements[11] = "http://rebeccaudonald.com/pipeline/imagesWeb/asterStars1.gif";
+        elements[12] = "http://rebeccaudonald.com/pipeline/imagesWeb/newRectangle.png";
+        
+// Sounds
+      	var sounds = new Array();
+      	sounds[0] = "http://rebeccaudonald.com/pipeline/sounds/typewriter.mp3";
+      	sounds[1] = "http://rebeccaudonald.com/pipeline/sounds/trumpet.mp3";
+      	sounds[2] = "http://rebeccaudonald.com/pipeline/sounds/synth.mp3";
+      	sounds[3] = "http://rebeccaudonald.com/pipeline/sounds/siren.mp3";
+      	sounds[4] = "http://rebeccaudonald.com/pipeline/sounds/heels.mp3";
+      	sounds[5] = "http://rebeccaudonald.com/pipeline/sounds/golf.mp3";
+      	sounds[6] = "http://rebeccaudonald.com/pipeline/sounds/drum.mp3";
+      	sounds[7] = "http://rebeccaudonald.com/pipeline/sounds/drawer.mp3";
+      	sounds[8] = "http://rebeccaudonald.com/pipeline/sounds/synthcurling.mp3";
+      	sounds[9] = "http://rebeccaudonald.com/pipeline/sounds/biscuit.mp3";
+      	sounds[10] = "http://rebeccaudonald.com/pipeline/sounds/beep.mp3";
+      	sounds[11] = "http://rebeccaudonald.com/pipeline/sounds/bass.mp3";
+        sounds[12] = "http://rebeccaudonald.com/pipeline/sounds/technoSound.mp3";
+ 
+ 
+ 
+function pickElement() {
+	
+       	// Random number to pick a random element
+       	var pickRandomElement = elements.length;
+       	var randomNumber      = Math.floor(pickRandomElement * Math.random());
+        
+        // Now we're going to inject the element into the canvas.
+        	
+        // First we need to grab what is already in the canvas so we don't loose it
+        var existingCanvas = $('canvas').innerHTML;
+        	
+        // Now let's prepare the new element by coming up with a unique id for it 	
+        var uniqueNumber = Date();
+        var uniqueId = "element_" + uniqueNumber;
+        	 
+        // Piece together the image we'll inject in the new canvas using our unique id.
+        // Also note that the position has to be absolute so we can later animate it
+       	var newCanvas = "<img id='" + uniqueId + "' style='position: absolute; top:0px; left:170px;' src='" + elements[randomNumber] + "'>";
+       	
+       	// Join together our existing canvas with the new canvas and inject it into the canvas
+       	$('canvas').innerHTML = existingCanvas + newCanvas;
+       	
+       	// Set our easing for the animation we're about to do
+       	$(uniqueId).set('morph', {transition: Fx.Transitions.Elastic.easeOut});
+       
+             
+       
+        /*------------------------------------------------------------------------------------------------
+      	getBrowserSize()
+      	--------------------------------------------------------------------------------------------
+      	function getBrowserSize() {
+        		var myWidth = 0, myHeight = 0;
+        		
+            		if( typeof( window.innerWidth ) == 'number' ) {
+            			//Non-IE
+            			myWidth = window.innerWidth;
+            			myHeight = window.innerHeight;
+            		}
+            		else if( 
+            			document.documentElement && ( document.documentElement.clientWidth || document.documentElement.clientHeight ) ) {
+            			//IE 6+ in 'standards compliant mode'
+            			myWidth = document.documentElement.clientWidth;
+            			myHeight = document.documentElement.clientHeight;
+            		} 
+        		
+        		var sizes = new Array(myWidth,myHeight);
+        		return sizes;
+      	}      
+      
+       	var pickRandomNumber = myHeight.length;
+       	var randomHeight     = Math.floor(Math.random()*pickRandomNumber);
+        
+        var pickRandomNumberW = myWidth.length;
+       	var randomWidth     = Math.floor(Math.random()*pickRandomNumberW);
+       
+        ---------------------------------------------------------------------------*/
+        
+        
+        var randomWidth = Math.floor(Math.random()*1000);
+       	var randomHeight = Math.floor(Math.random()*400);
+      
+        
+        
+       	$(uniqueId).set('morph', {link: 'chain'})
+        .morph({'top': randomHeight})
+        .morph({'left': randomWidth})
+       
+        ;
+       	
+        /*---------------------------
+        Random number to pick a random Sound
+        ---------------------------------*/
+       	var pickRandomSound = sounds.length;
+       	var randomSound     = Math.floor(pickRandomSound * Math.random());
+        
+       // First we need to grab what is already in the canvas so we don't loose it
+        var existingCanvasS = $('soundDiv').innerHTML;
+        	
+        // Now let's prepare the new element by coming up with a unique id for it 	
+        var uniqueNumber = Date();
+        var uniqueId1 = "sound_" + uniqueNumber;
+        	 
+        // Piece together the Sound we'll inject in the new canvas using our unique id.
+        // Also note that the position has to be absolute so we can later animate it
+       	var newCanvasS = "<embed id='" + uniqueId1 + "' loop='true'; controller='false' style='position: absolute; width:0px; height:0px; top:-100px; left:-100px;' src='" + sounds[randomNumber] + "'>";
+       	
+       	// Join together our existing canvas with the new canvas and inject it into the canvas
+       	$('soundDiv').innerHTML = existingCanvasS + newCanvasS;
+       	
+        
+        
+    } //this ends the whole function
+ 
+</script>
+
+
+</head>
+<body>  
+ 
+        <img src="images/drainPipeWeb.gif" alt="drainPipe" style="width:350px; height:210px; position:absolute; top:-70px; left:130px; z-index:2;">
+       
+        <img src="imagesWeb/button.png" alt="button" onclick='pickElement()'style="left:285px;top:25px; width:40px; position:absolute; z-index:3;">
+       
+      	<div id="canvas" style='position:absolute;top:100px;'></div>
+       
+     
+   <!--     <object id="technoSound" position="absolute" width="0" height="0"z-index="-200">
+             <param name="src" value="LINKHERE">
+             <param name="autoplay" value="true">
+             <param name="controller" value="false">
+             <param name="bgcolor" value="#FFFFFF">
+             <embed src="sounds/technoSound.mp3" autostart="true" loop="true" width="0" height="0"controller="false"</embed>
+        </object>
+       --> 
+        <object id="soundDiv" style="position:absolute; left:-1100px; top:-1100px;width:600px; height:600px "></object>
+ 
+</body>
+</html>
+
+<!-- Localized -->

@@ -1,0 +1,29 @@
+<html>
+
+<head>
+
+	<title>Play Sound Example</title>
+	
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+	
+	<script type='text/javascript'>
+	
+		$(document).ready(function() {
+	
+			$('#trigger-sound-button').click(function() {
+				$("#wavLoader").html("<embed src='ping.wav' hidden=true autostart=true loop=false>");
+			});
+	            
+	     }); // end doc ready 
+	</script>
+	
+</head>
+
+<body>
+
+	<!-- This div will hold our wav file; it's positioned off screen so we don't actually see it -->
+	<span id="wavLoader" style="position:fixed; top:-100px;"></span>
+
+	<input type='button' id='trigger-sound-button' value='Play Sound'>
+	
+</body>

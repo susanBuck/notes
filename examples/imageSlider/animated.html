@@ -1,0 +1,50 @@
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/mootools/1.1.1/mootools-yui-compressed.js"></script>
+
+<script type='text/javascript'>
+
+	/*-------------------------------------------------------------------------------------------------
+	slideImages
+	-------------------------------------------------------------------------------------------------*/
+	function slideImages(whichDirection,whichDiv,howMuch) {
+	
+		var currentPosition = parseInt(document.getElementById(whichDiv).style.left);
+	
+		if(whichDirection == "left") {
+			howMuch = -howMuch;
+		}
+		
+		var newPosition = currentPosition + howMuch;
+		
+		var targetDiv = new Fx.Style($(whichDiv),
+		"left", {duration: 400}).addEvent('onComplete', function() {
+			//console.log("slide is complete");
+		});
+		targetDiv.start(newPosition);
+		
+		setInterval("slideImages(\"left\",\"images\",404)", 2000);
+	
+	}
+
+</script>
+
+
+
+
+<div id='imageContainer' style='overflow:hidden; width:400px; height:350px; border:2px solid grey'>
+
+	<div id='images' style='position:relative; top:0px; left:0px; width:1650px;'>
+		<img src='clouds0.jpg'>
+		<img src='clouds1.jpg'>
+		<img src='clouds2.jpg'>
+		<img src='clouds3.jpg'>
+	</div>
+
+</div>
+
+<a href='javascript:void(0)' onClick='slideImages("left","images",404)'><< </a>
+
+&nbsp;&nbsp;&nbsp;&nbsp;
+
+<a href='javascript:void(0)' onClick='slideImages("right","images",404)'>>> </a>
+

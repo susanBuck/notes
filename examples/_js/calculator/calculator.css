@@ -1,0 +1,33 @@
+#wrapper {
+	width:147px;
+	border:1px solid black;
+	padding:10px;
+}
+
+#display {
+	border:1px solid black;
+	height:50px;
+	padding:5px;
+	font-family:consolas;
+}
+
+button {
+	text-align:center;
+	width:40px;
+	height:40px;
+	float:left;
+	cursor:pointer;
+	padding:10px;
+	border:1px solid black;
+	margin-right:9px;
+	margin-bottom:9px;
+}
+
+button:hover {
+	background-color:yellow;
+}
+
+.clear {
+	clear:both;
+}
+

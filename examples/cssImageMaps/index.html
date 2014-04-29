@@ -1,0 +1,65 @@
+<title>CSS Image Maps</title>
+
+<script type='text/javascript'>
+
+function test(whichOne) {
+	console.log("Hotspot hit: " + whichOne);
+}
+
+</script>
+
+
+<style type='text/css'>
+
+	/* Container with image as background */
+	#container { 
+		width: 1024px;
+		height: 768px;
+		background: url(waldo.jpg) no-repeat;
+		position:relative;
+	}
+	
+	/* Up state */
+	#container a {
+		border:5px solid green;
+	}
+	
+	/* Hover state */
+	#container a:hover {
+		border:5px solid yellow;
+	}
+	
+	/* Styles for all the hotspots */
+	.hotspots {
+		position:absolute;
+		width : 50px;
+		height: 71px;
+	}
+	
+	/* Placement of the individual hotspots */
+	#link1 {
+		left: 151px;
+		top: 130px;
+	}
+	#link2 { 
+		left: 311;
+		top: 126px;
+	}
+	#link3 { 
+		left: 537px;
+		top: 534px;
+	}
+
+</style>
+
+<center>
+
+<div id="container">
+
+	<a id="link1" class="hotspots" onClick='test(1)'></a>
+	
+	<a id="link2" class="hotspots" onClick='test(2)'></a>
+	
+	<a id="link3" class="hotspots" onClick='test(3)'></a>
+	
+</div>

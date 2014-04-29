@@ -1,0 +1,276 @@
+/* This will style all profit blocks */
+
+
+/*font styles overwriting*/
+h1 {
+	font-family:'Swanky and Moo Moo', cursive;
+	font-size:20pt;
+	color:#579c79;
+}
+
+h2 {
+	font-family:'Arvo',serif;
+	font-weight:400;
+	font-size:13pt;
+	padding-top:0px;
+	margin-left:8px;
+	color:#FFFFFF;
+}
+
+h3 {
+	font-family:'Arvo',serif;
+	font-weight:400;
+	font-size:16pt;
+	margin-left:5px;
+	margin-top:10px;
+}
+
+/* unvisited link */
+a:link {
+	color:#10663a;
+	font-family:'Arvo', serif;
+	font-weight:400;
+	text-decoration:none;
+}
+/* visited link */
+a:visited {
+	color:#10663a;
+}
+/* mouse over link */
+a:hover {
+	color:#4d3408;
+}
+/*active link */
+a:active {
+	color:#10663a;
+}
+
+
+/*LAYOUT BEGINS*/
+
+/*background info*/
+
+#background{
+	background-image:url('images/striped.png');
+	position:absolute;
+	top:0;
+	left:0;
+	min-width:100%;
+	min-height:100%;
+	font-family:'Arvo', sans-serif;
+	font-weight:400;
+	font-size:10pt;
+}
+
+#stain{
+	background-image:url('images/coffeestain.png');
+	position:relative;
+	margin:10px auto;
+	background-repeat:no-repeat;
+	width:960px;
+	height:960px;
+}
+
+/*menu bar*/
+#menu {
+	position:absolute;
+	min-width:100%;
+	margin-top:100px;
+	height:50px;
+	background:#4d3408;
+	color:#FFFFFF;
+	text-align:center;
+	font-size:14pt;
+}
+
+#menu ul {
+	position:relative;
+	margin: 12px auto;
+	padding: 0;
+	width:960px;
+	left:100px;
+}
+
+#menu ul li {
+	list-style-type: none;
+	float:left;
+	margin:0px auto;
+	padding: 0;
+}
+/*defining menu links*/
+#menu ul li a {
+	padding: 0px 15px;
+	margin:0px auto;
+	text-decoration: none;
+	color: #fff;
+	display:block;
+}
+
+#menu ul li a:hover {
+	color:#10663a;
+}
+
+
+/*anchored to menu*/
+
+#tagline{
+	width:830px;
+	position:absolute;
+	top:-70px;
+	left:-10px;
+}
+
+#menu-logo{
+	position:absolute;
+	top:-70px;
+	left:-220px;
+	z-index:999;
+}
+
+
+/*end of menu*/
+
+/*container*/
+
+#container{
+	width:880px;
+	padding-top:20px;
+	padding-bottom:20px;
+	background:#FFFFFF;
+	position:relative;
+	margin:150px auto;
+}
+
+/* left column content*/
+#left {
+	float:left;
+	margin-left:20px;
+	width:560px;
+}
+
+#left-bar{
+	height:25px;
+	background:#a48143;
+	position:relative;
+}
+
+#image-style{
+	margin:10px 5px;
+	width:550px;
+	height:339px;
+}
+
+#news-text {
+	margin-left:5px;
+	width:555px;
+}
+
+#date {
+	font-family:'Arvo', serif;
+	font-weight:400;
+	font-size:9pt;
+	color:#6f6f6f;
+	position:relative;
+	margin-left:225px;
+	float:left;
+}
+
+#previous {
+	font-size:9pt;
+	text-align:right;
+	position:relative;
+	margin-right:5px;
+	float:right;
+}
+
+
+/*end of left column*/
+
+/* right column content*/
+#right{
+	float:right;
+	margin-right:20px;
+	width:260px;
+}
+
+.right-bar{
+	height:25px;
+	background:#a48143;
+	position:relative;;
+}
+
+#caption{
+	position:relative;
+	margin:0px auto;
+	text-align:center;
+	font-size:8pt;
+}
+
+#event-links{
+	position:relative;
+	margin:10px 5px;
+}
+
+
+#logos {
+	position:absolute;
+	bottom:20px;
+	right:20px;
+	width:185px;
+}
+/*end of right container*/
+
+
+/*footers*/
+
+#address-footer{
+	margin:0px auto;
+	position:absolute;
+	bottom:-25px;
+	left:5px;
+	font-size:10pt;
+	color:#6f6f6f;
+}
+
+#login-footer{
+	margin:0px auto;
+	position:absolute;
+	bottom:-25px;
+	right:5px;
+	font-size:10pt;
+}
+
+
+#empty-footer{
+	clear:both;
+	height:5px;
+}
+
+/*gallery specific*/
+
+ul.slideshow {
+    list-style:none;
+    width:240px;
+    height:300px;
+    overflow:hidden;
+    position:relative;
+    margin-left:10px;
+    padding:0;
+     
+}   
+ 
+ul.slideshow li {
+    position:absolute;
+    left:0;
+    right:0;
+}
+ 
+ul.slideshow li.show {
+    z-index:500;    
+}
+ 
+ul img {
+    border:none;    
+}
+
+/* Localized */

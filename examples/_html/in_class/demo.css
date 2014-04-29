@@ -1,0 +1,19 @@
+body {
+	/*background-color:yellow;*/
+}
+
+/* Style all the divs */
+.profits {
+	color:green;
+}
+	
+div {
+	font-weight:bold;
+	font-family:Courier;
+	color:red;
+	border:1px solid black;
+} 
+	
+.expenses {
+	color:red;
+}

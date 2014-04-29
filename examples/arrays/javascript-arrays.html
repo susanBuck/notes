@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+
+<head>
+
+	<title></title>
+
+	<link rel="stylesheet" href="/storage/code/includes/code.css" type="text/css">
+
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+	
+	
+
+	<script type='text/javascript'>
+		
+		$(document).ready(function() {
+	
+			/*-------------------------------------------------------------------------------------------------
+			Build an array of adjectives we can pick from
+			-------------------------------------------------------------------------------------------------*/
+			var adjectives = new Array("spicy", "sweet", "tart", "fried", "salty", "buttery", "baked");
+	
+	
+			/*-------------------------------------------------------------------------------------------------
+			Click event for our "generate button"
+			-------------------------------------------------------------------------------------------------*/
+			$('#generate-button').click(function() {
+				
+				// Generate a random number from 0 to how big our adjectives array is
+				var max 		 = adjectives.length;
+				var randomNumber = Math.floor(Math.random()* max);
+				
+				// Pick a word from our adjectives array using that random number
+				var adjective = adjectives[randomNumber];
+				
+				// Find out what food the user entered
+				var food = $('#food').val();
+				
+				// Combine the adjective and the food
+				var result = "You should make some " + adjective + " " + food + ".";
+				
+				$('#result').html(result);
+				
+				
+			});
+		
+					
+		}); // end doc ready
+		
+	</script>
+
+
+</head>
+
+
+<body>
+
+	<!-- Input -->
+		Enter a food item:<input type='text' id='food'>
+	
+	<!-- Button -->
+		<br><br>
+		<input type='button' id='generate-button' value='Generate'>
+	
+	<!-- Results will go here -->
+		<br><br>
+		<div id='result'></div>
+	
+</body>
+
+</html>

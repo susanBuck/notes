@@ -1,0 +1,744 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	
+	<title>The Wear Your Words Project</title>
+	
+	<meta name="Six Word Memoirs With a Face" content="The Wear Your Words Project" />
+	
+	<link rel="stylesheet" type="text/css" href=http://maggieedkins.com/bigBackground.css />
+	
+	<script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/mootools/1.3.0/mootools-yui-compressed.js'>
+	</script>
+	
+	<script type="text/javascript" src="csspopup.js"></script>
+	
+	<script type='text/javascript'>
+
+	function loadImage(whichImage) {
+
+	document.getElementById("imageHolder").innerHTML = "<img src='portraits/" + whichImage + "'>";
+}
+
+	function loadThumbs() {
+var people = new Array();
+
+var i = 1;
+
+people[i] = "liz.png"; i++;
+people[i] = "ines.png"; i++;
+people[i] = "megha.png"; i++;
+people[i] = "kyle.png"; i++;
+people[i] = "katie.png"; i++;
+people[i] = "jordan.png" ; i++;
+people[i] = "casey.png" ; i++;
+people[i] = "megan2.png" ; i++;
+people[i] = "keyana.png" ; i++;
+people[i] = "sophia.png" ; i++;
+people[i] = "abby.png" ; i++;
+people[i] = "pat.png" ; i++;
+people[i] = "gma.png"; i++;
+people[i] = "phoebe.png"; i++;
+people[i] = "meg.png" ; i++;
+people[i] = "dan.png"; i++;
+people[i] = "megan.png" ; i++;
+people[i] = "craig.png" ; i++;
+people[i] = "brit.png" ; i++;
+people[i] = "bud.png" ; i++;
+people[i] = "ruby.png" ; i++;
+people[i] = "david.png" ; i++;
+people[i] = "sarah.png" ; i++;
+people[i] = "alex.png" ; i++;
+people[i] = "mom.png" ; i++;
+people[i] = "olivia.png" ; i++;
+people[i] = "sam.png" ; i++;
+people[i] = "colleen.png" ; i++;
+people[i] = "magill.png" ; i++;
+people[i] = "me.png"; i++;
+people[i] = "sarah2.png" ; i++;
+people[i] = "jared.png" ; i++;
+people[i] = "julia.png" ; i++;
+people[i] = "dad.png" ; i++;
+people[i] = "cariss.png" ; i++;
+people[i] = "kenny.png" ; i++;
+people[i] = "margo.png" ; i++;
+people[i] = "khrys.png" ; i++;
+people[i] = "emilee.png" ; i++;
+people[i] = "karish.png" ; i++;
+people[i] = "allyce.png" ; i++;
+people[i] = "lane.png" ; i++;
+people[i] = "alexa.png" ; i++;
+people[i] = "danica.png" ; i++;
+people[i] = "avery.png" ; i++;
+people[i] = "emily.png" ; i++;
+people[i] = "logan.png" ; i++;
+people[i] = "david2.png" ; i++;
+people[i] = "lisa.png" ; i++;
+people[i] = "julie.png" ; i++;
+people[i] = "noah.png" ; i++;
+people[i] = "rachel.png" ; i++;
+people[i] = "clare.png" ; i++;
+people[i] = "courtney.png" ; i++;
+people[i] = "becky.png" ; i++;
+people[i] = "tori.png" ; i++;
+people[i] = "madison.png" ; i++;
+
+var i = 1;
+
+var content = "";
+
+for(var i = 1; i < people.length; i++) {
+
+	content += "<img onClick='loadImage(\"" + people[i] + "\")' src='portraits/T_" + people[i] + " '/>";
+	
+	if(i % 5 == 0) { 
+		content += "<br>" + "<img src='/wearyourwords/images/bar2.png'>" + "<br>";
+	}
+	
+}
+
+document.getElementById("allThePeople").innerHTML = content;}
+
+
+include("/wearyourwords/form.php"); 
+require("/wearyourwords/form.php"); 
+
+</script>
+
+</head>
+
+<body onLoad='loadThumbs()'>
+
+
+
+<style type='text/css'>
+	
+	html,body	{overflow:hidden;
+				}
+	
+	img.clickimage {cursor:pointer;
+				}
+	
+	#headline	{position:absolute;
+    			width: 976px;
+    			height: 191px;
+    			left: 20px ;
+    			top: 0px;
+    			z-index: 2}
+    
+    #tapeleft	{position:absolute;
+    			width: 41px;
+    			height: 447px;
+    			left: 48px ;
+    			top: 174px;
+    			z-index: 3}
+    
+    #tapetop {position:absolute;
+    			width: 534px;
+    			height: 42px;
+    			left: 43px ;
+    			top: 175px;
+    			z-index: 3}
+    
+    #tapebottom	{position:absolute;
+    			width: 515px;
+    			height: 41px;
+    			left: 35px ;
+    			top: 595px;
+    			z-index: 3}
+    
+    #taperight	{position:absolute;
+    			width: 38px;
+    			height: 510px;
+    			left: 533px ;
+    			top: 154px;
+    			z-index: 1}
+    			
+    #allThePeople		{position:absolute;
+    			width: 494px;
+    			height: 402px;
+    			left: 69px ;
+    			top: 212px;
+    			z-index: 2;
+    			cursor:pointer;
+    			}
+    
+    #whitediv {position:absolute;
+    			width: 470px;
+    			height: 402px;
+    			color: #ffffff;
+    			left: 82px ;
+    			top: 212px;
+    			z-index: 0}
+    			
+    #polaroid		{position:absolute;
+    			width: 289px;
+    			height: 350px;
+    			left: 652px ;
+    			top: 190px;
+    			z-index: 0}
+    			
+    #polotape	{position:absolute;
+    			width: 258px;
+    			height: 56px;
+    			left: 668px ;
+    			top: 161px;
+    			z-index: 4}
+    			
+    #button_m	{position:absolute;
+    			width: 207px;
+    			height: 57px;
+    			left: 682px ;
+    			top: 553px;
+    			z-index: 2}
+    			
+    #button_s	{position:absolute;
+    			width: 206px;
+    			height: 57px;
+    			left: 761px ;
+    			top: 613px;
+    			z-index: 2}
+    
+    #imageHolder	{position:absolute;
+    				width: 289px;
+    				height: 250 px;
+    				left: 662px;
+    				top: 216px;}
+
+    
+	#blanket {
+			   background-color:#111;
+			   opacity: 0.65;
+			   position:absolute;
+			   z-index: 9001; /*ooveeerrrr nine thoussaaaannnd*/
+			   top:0px;
+			   left:0px;
+			   width:100%;
+			}
+	
+	#info {
+				position:absolute;
+				background-color:#eeeeee;
+				width: 249px;
+    			height: 258px;
+    			padding: 5px;
+    			left: 672px;
+    			top: 216px;
+    			font-family:futura, arial, veranda, sans-serif;
+    			color:red;
+    			display:none;
+				z-index: 9002; /*ooveeerrrr nine thoussaaaannnd*/
+				}
+				
+	#formpop {
+				position:absolute;
+				background-color:#eeeeee;
+				width: 249px;
+    			height: 258px;
+    			padding: 5px;
+    			left: 672px;
+    			top: 216px;
+    			font-family:futura, arial, veranda, sans-serif;
+    			color:red;
+    			display:none;
+				z-index: 9002; /*ooveeerrrr nine thoussaaaannnd*/
+				}
+				
+	#form		{
+				position:absolute;
+				width: 249px;
+    			height: 288px;
+    			left: 672px;
+    			top: 216px;
+    			font-family:futura, arial, veranda, sans-serif;
+    			color:red;
+    			display:none;
+				}
+    
+</style>
+
+	<img src="background.jpg" class="bg"/>
+	
+		<div id="content">
+			
+			<div id="headline">
+				<img src="http://maggieedkins.com/wearyourwords/images/headline.png">
+			</div>
+			
+			<div id="tapetop">
+				<img src="http://maggieedkins.com/wearyourwords/images/tapetop.png">
+			</div>	
+			
+			<div id="tapeleft">
+				<img src="http://maggieedkins.com/wearyourwords/images/tapeleft.png">
+			</div>	
+			
+			<div id="tapebottom">
+				<img src="http://maggieedkins.com/wearyourwords/images/tapebottom.png">
+			</div>	
+			
+			<div id="taperight">
+				<img src="http://maggieedkins.com/wearyourwords/images/taperight.png">
+			</div>	
+			
+			<div id="allThePeople" div style="overflow: auto; width: 494px; height: 402px;">
+				<script type= 'text/javacscript'>
+				</script>
+			</div>
+			
+			<div id="polaroid">
+				<img src="http://maggieedkins.com/wearyourwords/images/polaroid2.png">
+			</div>
+			
+			<div id="polotape">
+				<img src="http://maggieedkins.com/wearyourwords/images/poloroidtape.png">
+			</div>
+			
+			<div id="imageHolder">
+				<img src="portraits/liz.png">
+			</div>
+			
+			<div id="whitediv" div style="background-color: #ffffff">
+				<img src="images/whitediv.png">
+			</div>
+			
+			<div id="button_m">
+				<img src="http://maggieedkins.com/wearyourwords/images/m_button.png">
+			</div>
+			
+			<div id="form">
+				<a href="form.php">
+			</div>
+
+			<div id="button_s">
+				<img src="http://maggieedkins.com/wearyourwords/images/s_button.png">
+			</div>
+			
+			<div id="blanket" style="display:none;"></div>
+			<div id="info" style="display:none;">
+				<a href="#" onclick="popup('info')">
+					<img src="images/close.gif">
+				</a>
+				The Wear Your Words Project is compilation of six word memoirs that are proudly owned by the people who wrote them. 
+				Instead of throwing anonymous statements into cyberspace for others to read, this site is about believing in what 
+				you say about yourself enough to write it across your chest. By submitting your own, you become part of a community 
+				of people who are proud to be exactly who we are. 
+			</div>
+			
+			<a href="#" onclick="popup('info')">
+			 	<div id="button_m">
+					<img src="http://maggieedkins.com/wearyourwords/images/m_button.png">
+				</div>
+			</a>
+			
+			<div id="blanket" style="display:none;"></div>
+			<div id="formpop" style="display:none;">
+				<a href="#" onclick="popup('formpop')">
+					<img src="images/close.gif">
+				</a>
+				<style type='text/css'>
+
+					body{
+						margin-left: 18px;
+						margin-top: 18px;
+					}
+					
+					body{
+						font-family : Futura, Verdana, Arial, Helvetica, sans-serif;
+						font-size : 13px;
+						color : #474747;
+						background-color: transparent;
+					}
+					
+					select, option{
+						font-size:13px;
+					}
+					
+					ol.phpfmg_form{
+						list-style-type:none;
+						padding:0px;
+						margin:0px;
+					}
+					
+					ol.phpfmg_form li{
+						margin-bottom:5px;
+						clear:both;
+						display:block;
+						overflow:hidden;
+						width: 100%
+					}
+					
+					
+					.form_field, .form_required{
+						font-weight : bold;
+					}
+					
+					.form_required{
+						color:red;
+						margin-right:8px;
+					}
+					
+					.field_block_over{
+					}
+					
+					.form_submit_block{
+						padding-top: 3px;
+					}
+					
+					.text_box, .text_area, .text_select {
+						width:240px;
+					}
+					
+					.text_area{
+						height:80px;
+					}
+					
+					.form_error_title{
+						font-weight: bold;
+						color: red;
+					}
+					
+					.form_error{
+						background-color: #F4F6E5;
+						border: 1px dashed #ff0000;
+						padding: 10px;
+						margin-bottom: 10px;
+					}
+					
+					.form_error_highlight{
+						background-color: #F4F6E5;
+						border-bottom: 1px dashed #ff0000;
+					}
+					
+					div.instruction_error{
+						color: red;
+						font-weight:bold;
+					}
+					
+					hr.sectionbreak{
+						height:1px;
+						color: #ccc;
+					}
+					
+					
+					
+					
+					</style>
+					
+					</head>
+					
+					<body>
+					
+					<div class='form_description'>
+					
+					</div>
+					
+					<form name="frmFormMail" action='' method='post' enctype='multipart/form-data' onsubmit='return fmgHandler.onsubmit();'>
+					<input type='hidden' name='formmail_submit' value='Y'>
+					<div id='err_required' class="form_error" style='display:none;'>
+						<label class='form_error_title'>Please check the required fields</label>
+					</div>	
+								
+					<ol class='phpfmg_form' >
+					
+					<li class='field_block' id='field_0_div'><div class='col_label'>
+						<label class='form_field'>First Name:</label> <label class='form_required' >*</label> </div>
+						<div class='col_field'>
+						<input type="text" name="field_0"  id="field_0" value="" class='text_box'>
+						<div id='field_0_tip' class='instruction'></div>
+						</div>
+					</li>
+					
+					<li class='field_block' id='field_1_div'><div class='col_label'>
+						<label class='form_field'>Current location:</label> <label class='form_required' >*</label> </div>
+						<div class='col_field'>
+						<input type="text" name="field_1"  id="field_1" value="" class='text_box'>
+						<div id='field_1_tip' class='instruction'></div>
+						</div>
+					</li>
+					
+					<li class='field_block' id='field_2_div'><div class='col_label'>
+						<label class='form_field'>Your six words:</label> <label class='form_required' >*</label> </div>
+						<div class='col_field'>
+						<input type="text" name="field_2"  id="field_2" value="" class='text_box'>
+						<div id='field_2_tip' class='instruction'></div>
+						</div>
+					</li>
+					
+					<li class='field_block' id='field_3_div'><div class='col_label'>
+						<label class='form_field'>You, in a white shirt:</label> <label class='form_required' >*</label> </div>
+						<div class='col_field'>
+						<input type="file" name="field_3"  id="field_3" value="" class='text_box' onchange="fmgHandler.check_upload(this);">
+						<div id='field_3_tip' class='instruction'></div>
+						</div>
+					</li>
+					
+					
+								<li>
+								<div class='col_label'>&nbsp;</div>
+									<div class='form_submit_block col_field'>
+									<input type='submit' value='Submit' class='form_button'>
+									
+									<span id='phpfmg_processing' style='display:none;'>
+										<img id='phpfmg_processing_gif' src='admin-26954.php' border=0 alt='Processing...'> <label id='phpfmg_processing_dots'>
+									</label>
+									</span>
+								</div>
+								</li>
+								
+					</ol>
+								
+								
+					
+					
+					</form>
+					
+					
+					
+					
+					<script type="text/javascript">
+					
+					<?php 
+					if ($_POST["email"]<>'') { 
+						$ToEmail = 'wearyourwords.online@gamil.com'; 
+					?> 
+						Your message was sent
+					<?php 		
+					
+					
+					 function dd_change( n, max, prefix )
+					 
+					 
+					 {
+						if( n >= max-1 )
+							return; // the last dropdown, no need to query
+						
+						//var prefix = 'dd_' ;
+						// reset all other dropdown options
+						var next = n+1; 
+						for( var i = next; i < max; i ++ ){
+							var dd = document.getElementById(prefix +'_' + i );
+							if( dd && dd.length >= 1 ) dd.length = 1 ; // keep the first one '- select -'
+						};
+					
+					
+						// request drop down data from server
+						var me = this;
+						var http;
+						if(navigator.appName == "Microsoft Internet Explorer"){
+							me.http = new ActiveXObject("Microsoft.XMLHTTP");
+						}else{
+							me.http = new XMLHttpRequest();
+						};
+						
+						
+						// build query string
+						var lookup = [];
+						for( var i = 0; i < next; i ++ ){
+							lookup.push( "lookup[" + i + "]=" + document.getElementById(prefix +'_' +  i ).value )
+						};
+						lookup = lookup.join('&');
+						
+						var url = 'admin.php?mod=dd&func=lookup&n='+next+ '&field_name=' + prefix + '&' + lookup;
+						me.http.open('get', url);
+						me.http.onreadystatechange = function(){
+						
+							if( me.http.readyState == 4 ){
+								// rebuild the next dropdown options
+								var eNext = document.getElementById(prefix +'_' + next );
+								if( !eNext )
+									return;
+								
+								var data = me.http.responseText;    
+								var opts = String(data).split("\n");
+								for( var j = 0, J = opts.length; j < J; j ++ ){
+									eNext.options[ eNext.length ] = new Option( opts[j], opts[j], false, false );                
+								}; // for
+							}; //if
+							
+						}; 
+						me.http.send(null);
+					
+					 }
+					 
+						
+					function PHPFMG( formID ){
+						var frmID = formID;
+						var exts = {
+							'upload_control' : '',
+							'harmful_exts'  : '.php, .html, .css, .js, .exe, .com, .bat, .vb, .vbs, scr, .inf, .reg, .lnk, .pif, .ade, .adp, .app, .bas, .chm, .cmd, .cpl, .crt, .csh, .fxp, .hlp, .hta, .ins, .isp, .jse, .ksh, .Lnk, .mda, .mdb, .mde, .mdt, .mdw, .mdz, .msc, .msi, .msp, .mst, .ops, .pcd, .prf, .prg, .pst, .scf, .scr, .sct, .shb, .shs, .url, .vbe, .wsc, .wsf, .wsh',
+							'harmful_errmsg': "File is potential harmful. Upload is not allowed.",
+							'allow_exts'  : '.jpg, .gif, .png, .bmp',
+							'allow_errmsg': "Upload is not allowed. Please check your file type."
+						};
+					
+						function $( id ){
+							return document.getElementById(id);
+						}
+					
+						function get_form( id ){
+							var frm = 'object' == typeof($(id)) ? $(id) : eval( 'document.' + id ) ;
+							return frm ? frm : document.forms[0];
+						} 
+						
+						function file_ext( f ){
+							var n = f.lastIndexOf(".");
+							return -1 == n ? '' : f.substr( n ).toLowerCase();
+						}
+						
+						function addLabelEvents(){
+							var labels = document.body.getElementsByTagName('LABEL');
+							for( var i = 0, N = labels.length; i < N; i ++ ){
+								var e = labels[i];
+								if( -1 != String(e.className).indexOf('form_choice_text') ){
+									var oid = e.getAttribute('oid'); 
+									if( !oid ) continue;
+					
+									e.onmouseout = function(){ this.className = 'form_choice_text'; };
+									e.onmouseover = function(){ this.className = 'form_choice_text form_choice_over'; };
+									e.onclick = function(){
+										try{
+											var oid = this.getAttribute('oid'); 
+											var O = document.getElementById(oid);
+											O.checked = !O.checked;
+										}
+										catch(E){};
+									};
+								}; // if
+							}; // for
+						} 
+					
+					
+						function addFieldBlockEvents(){
+							var divs = document.body.getElementsByTagName('DIV');
+							for( var i = 0, N = divs.length; i < N; i ++ ){
+								var e = divs[i];
+								if( -1 != String(e.className).indexOf('field_block') ){
+									e.onmouseout = function(){  if( String(this.className).indexOf('form_error_highlight') == -1 ) this.className = 'field_block'; };
+									e.onmouseover = function(){ if( String(this.className).indexOf('form_error_highlight') == -1 ) this.className = 'field_block field_block_over'; };
+								}; // if
+							}; // for
+						} 
+					
+						function removeHighliht(){
+							var divs = document.body.getElementsByTagName('DIV');
+							for( var i = 0, N = divs.length; i < N; i ++ ){
+								var e = divs[i];
+								var cn = String(e.className);
+								if( -1 != cn.indexOf('form_error_highlight') ){
+									e.className = cn.replace('form_error_highlight','');
+								}; // if
+							}; // for
+						} 
+						
+						function showProcessing(){
+							try{
+								var E = $('phpfmg_processing');
+								if( !E ) return ;
+								if( -1 != navigator.userAgent.toLowerCase().indexOf('msie') ){
+									E.style.backgroundColor='#2960AF';
+									$('phpfmg_processing_gif').style.display = 'none';
+									setInterval( 'fmgHandler.dots()', 380 );
+								};
+								E.style.display = '' ;
+							}catch(e){};
+							
+						}
+						
+						
+						this.highlight_fields = function( fields ){
+							var A = fields.split(',');
+							for( var i = 0, N = A.length; i < N; i ++ ){
+								var E = $( A[i] + '_div' );
+								if( E ){
+									E.className += ' form_error_highlight'; 
+								};
+								var T = $( A[i] + '_tip' );
+								if( T ){
+									T.className += ' instruction_error'; 
+								};
+							};
+							if( A.length > 0 ) $('err_required').style.display='';
+						}
+						
+						this.choice_clicked = function( id ){
+							$(id).checked = !$(id).checked ;
+						}
+						
+						
+						this.init = function(){
+							//addLabelEvents();
+							addFieldBlockEvents();
+						}
+					
+						this.harmful = function(e){
+							if( 'deny' != exts['upload_control'] ){
+								return; 
+							};
+							
+							var ext = file_ext(e.value);
+							if( -1 != exts['harmful_exts'].toLowerCase().indexOf(ext) ){
+								alert( exts['harmful_errmsg'] );
+								e.value = '';
+							};
+						} 
+							
+						this.is_allow = function(e){
+							if( 'allow' != exts['upload_control'] ){
+								return; 
+							};
+							
+							var ext = file_ext(e.value);
+							if( -1 == exts['allow_exts'].toLowerCase().indexOf(ext) ){
+								alert( exts['allow_errmsg'] );
+								e.value = '';
+							};
+						} 
+					
+						this.check_upload = function(e){
+							if( '' == exts['upload_control'] )
+								return ;
+							else
+								return ( 'deny' == exts['upload_control'] ) 
+									   ? this.harmful(e) 
+									   : this.is_allow(e);
+						}
+					
+						this.dots = function(){
+							$('phpfmg_processing_dots').innerHTML += '.';
+							if( $('phpfmg_processing_dots').innerHTML.length >= 38 ) {
+								$('phpfmg_processing_dots').innerHTML = '.';
+							};
+						}
+						
+						this.onsubmit = function(){
+							showProcessing();
+							return true;
+						}
+						
+					
+					
+						var Form = null;
+						var err_fields=null;
+					}
+					var fmgHandler = new PHPFMG();
+					fmgHandler.init();
+					</script>
+			</div>
+				
+			
+			<a href="#" onclick="popup('formpop')">
+			 	<div id="button_s">
+					<img src="http://maggieedkins.com/wearyourwords/images/s_button.png">
+				</div>
+			</a>
+	
+
+</script>
+
+			</div>
+	
+		</div>
+	
+</body>
+<!-- Localized -->

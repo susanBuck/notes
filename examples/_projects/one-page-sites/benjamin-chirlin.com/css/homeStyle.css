@@ -1,0 +1,589 @@
+@charset "utf-8";
+/* CSS Document */
+
+<style>
+
+body{
+	background-color:#B7EFFF;
+	overflow:hidden;
+}
+	
+/*Main Page Styles*/
+
+#centered{
+	position:absolute;
+	top:0px;
+	left:50%;
+	width:950px;
+	height:100%;
+	margin-left:-475px;
+	border:0px;
+}
+
+.main{
+	overflow:hidden;
+	display:inline;
+	width:100%;
+	height:100%;
+	position:absolute;
+	top:0px;
+	left:0px;
+}
+
+.demoreel{
+	width: 100%;
+	height: 100%;
+	left: 0px;
+	top: 0px;
+	position: absolute;
+	overflow: hidden;
+	display:none;
+}
+
+.resume{
+	width: 100%;
+	height: 100%;
+	left: 0px;
+	top: 0px;
+	position: absolute;
+	overflow: hidden;
+	display:none;
+}
+
+.contact{
+	width: 100%;
+	height: 100%;
+	left: 0px;
+	top: 0px;
+	position: absolute;
+	overflow: hidden;
+	display:none;
+}
+
+.portfolio{
+	width: 100%;
+	height: 100%;
+	left: 0px;
+	top: 0px;
+	position: absolute;
+	overflow: hidden;
+	display:none;
+}
+
+.door{
+	z-index: 1;
+	position:absolute;
+	top: 0px;
+	left:50%;
+	margin-left:-245px;
+	background:url(../imgs/doorTile.png);
+	width:490px;
+	height:100%;
+	background-repeat:repeat-y;
+}
+
+.doorEnd{
+	z-index: 1;
+	position: absolute;
+	left: 50%;
+	margin-left: -245px;
+	height: 390px;
+	width: 490px;
+}
+
+.close{
+	opacity:0;
+	width:120px;
+	height:90px;
+	position: absolute;
+	left:50%;
+	margin-left:-60px;
+	top:0px;
+	z-index:1;
+}
+
+.about{
+	width:226px;
+	height:104px;
+	position: absolute;
+	left:50%;
+	margin-left:-113px;
+	top:310px;
+	z-index:1;
+}
+
+.aboutTile{
+	width:490px;
+	height: 100%;
+	position:absolute;
+	top:0px;
+	left:50%;
+	margin-left:-245px;
+	background-image:url(../imgs/paperTile.jpg);
+	background-repeat:repeat;
+}
+
+.aboutCont{
+	width:320px;
+	height:374px;
+	z-index:auto;
+	position:relative;
+	left:50%;
+	margin-left:-179px;
+	top:130px;
+	text-align:left;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:18px;
+}
+
+.head{
+	position:absolute;
+	bottom:0px;
+	left:50%;
+	width:515px;
+	height:280px;
+	margin-left:-258px;
+	z-index:5;
+	border:none;
+}
+	
+.centerImg{
+	text-align:center;
+	display:block;
+}
+
+.leftMenu{
+	position:absolute;
+	left:50%;
+	margin-left:-480px;
+	bottom:0px;
+	z-index:4;
+}
+
+.rightMenu{
+	position:absolute;
+	left:50%;
+	margin-left:205px;
+	bottom:0px;
+	z-index:4;
+}
+
+.menuBut{
+	z-index:4;
+	position:absolute;
+	border:0px;
+}
+
+.Rcol{
+	z-index: 3;
+	position:absolute;
+	right:-65px;
+	background:url(../imgs/bricks_Rtile.png);
+	height: 100%;
+	width:385px;
+	background-repeat:repeat-y;
+	background-position:0px -150px;
+}
+
+.Lcol{
+	z-index: 3;
+	position:absolute;
+	left:-65px;
+	background:url(../imgs/bricks_Ltile.png);
+	height: 100%;
+	width:385px;
+	background-repeat:repeat-y;
+}
+
+.contactPole{
+	z-index: 2;
+	position:absolute;
+	left:0px;
+	top:0px;
+	background:url(../imgs/poleTile.png);
+	height: 110%;
+	width:265px;
+	background-repeat:repeat-y;
+}
+
+.houses{
+	z-index: 0;
+	position:absolute;
+	left:0px;
+	bottom:0px;
+	background:url(../imgs/houseTile.png);
+	height: 400px;
+	width:100%;
+	background-position:0px 0px;
+	background-repeat:repeat-x;
+}
+
+.sticker{
+	width: 411px;
+	height: 289px;
+	position:absolute;
+	left:50%;
+	margin-left: -205px;
+	top: 14px;
+	z-index: 2;
+}
+
+
+/*Menu Walls Styles*/
+
+.wallL{
+	width: 75%;
+	height: 100%;
+	background: url(../imgs/brickTile.png);
+	background-repeat: repeat;
+	background-position:right top;
+	z-index: 1;
+	position: absolute;
+	top: 0px;
+}
+
+.wallR{
+	width: 75%;
+	height: 100%;
+	background: url(../imgs/brickTile.png);
+	background-repeat: repeat;
+	z-index: 1;
+	position: absolute;
+	top: 0px;
+}
+
+.wallEdgeL{
+	width: 196px;
+	height: 100%;
+	background: url(../imgs/brickTileEdgeL.png);
+	background-repeat: repeat-y;
+	z-index: 1;
+	position: absolute;
+	left:75%;
+	top: 0px;
+}
+
+.wallEdgeR{
+	width: 196px;
+	height: 100%;
+	background: url(../imgs/brickTileEdgeR.png);
+	background-repeat: repeat-y;
+	z-index: 1;
+	position: absolute;
+	right:75%;
+	top: 0px;
+}
+
+/*Resume Section Styles*/
+
+.pasted{
+	width:510px;
+	height:635px;
+	position:relative;
+	top:50%;
+	left:50%;
+	margin-left:-255px;
+	margin-top:-318px;
+	border:0px;
+	z-index:2;
+}
+
+/*Back Button Styles*/
+
+.backPoleL{
+	position:absolute;
+	top:0%;
+	right:10%;
+	z-index:4;
+}
+
+.backButtonL{
+	width:372px;
+	height:208px;
+	z-index: 4;
+	position:absolute;
+	top:0%;
+	right: 5%;
+}
+
+.backTileL{
+	width: 85px;
+	height: 100%;
+	background: url(../imgs/poleLtile.png);
+	background-repeat: repeat-y;
+	position:absolute;
+	top:208px;
+	right:5%;
+	z-index: 4;
+}
+
+.backHitL{
+	position:absolute;
+	width:265px;
+	height:72px;
+	top:59px;
+	left:15px;
+	z-index:5;	
+}
+
+.backButtonR{
+	width:372px;
+	height:208px;
+	z-index: 4;
+	position:absolute;
+	left: 5%;
+	top: 0%;
+}
+
+.backTileR{
+	width: 85px;
+	height: 100%;
+	background: url(../imgs/poleRtile.png);
+	background-repeat: repeat-y;
+	position:absolute;
+	top:208px;
+	left:5%;
+	z-index: 4;
+}
+
+.backHitR{
+	position:absolute;
+	width:265px;
+	height:72px;
+	top:59px;
+	right:15px;
+	z-index:5;
+}
+
+/*Portfolio Section Styles*/
+
+.portHead{
+	position:absolute;
+	width:645px;
+	height:120px;
+	top:0px;
+	left:0px;
+	z-index:2;
+}
+
+.portFrame{
+	position:absolute;
+	width:813px;
+	height:580px;
+	top:135px;
+	left:60%;
+	margin-left:-407px;
+	padding:0px;
+	background: url(../imgs/portfolio/windowFrame.png);
+	z-index:2;
+}
+
+.thumbFrame{
+	position:absolute;
+	top:29px;
+	left:26px;
+	width:145px;
+	height:533px;
+	overflow-y:hidden;
+}
+
+.imgFrame{
+	position:absolute;
+	top:32px;
+	left:214px;
+	width:570px;
+	height:528px;
+	overflow:hidden;
+}
+
+.imgCent{
+	border:none;
+	position:absolute;
+	left:50%;
+	top:50%;
+}
+
+.upArrow{
+	position:absolute;
+	width:40px;
+	height:27px;
+	top: -25px;
+	left:80px;
+	border:none;
+}
+
+.downArrow{
+	position:absolute;
+	width:40px;
+	height:27px;
+	bottom:-25px;
+	left:80px;
+	border:none;
+}
+
+.3d{
+}
+
+.traditional{
+	position:absolute;
+	width:190px;
+	height:45px;
+	top:55px;
+	left:200px;
+	z-index:3;
+}
+
+.interactive{
+}
+
+.design{
+	position:absolute;
+	width:106px;
+	height:45px;
+	top:10px;
+	left:200px;
+	z-index:3;
+}
+
+.graphics{
+	position:absolute;
+	width:141px;
+	height:45px;
+	top:10px;
+	left:350px;
+	z-index:3;
+}
+
+.web{
+	position:absolute;
+	width:79px;
+	height:45px;
+	top:55px;
+	left:420px;
+	z-index:3;
+}
+
+.thumbs{
+	position:relative;
+	height:144px;
+	width:144px;
+	margin-top:3px;
+	margin-bottom:3px;
+	left:0px;
+	z-index:4;
+}
+
+/*Contact Section Styles*/
+
+.contactSign{
+	position:absolute;
+	width: 727px;
+	height: 788px;
+	left: 45%;
+	top: 0%;
+	margin-left: -364px;
+	z-index: 7;
+}
+
+.contactForm{
+	position:absolute;
+	width: 540px;
+	height: 450px;
+	left: 45%;
+	top: 154px;
+	margin-left: -276px;
+	z-index: 8;
+}
+
+.contactPole{
+	position:absolute;
+	width: 265px;
+	height: 100%;
+	background: url(../imgs/contact/poletile.png);
+	background-repeat: repeat-y;
+	left: 45%;
+	margin-left: -138px;
+	top: 788px;
+	z-index:7;
+}
+
+.invisForm{
+	width: 540px;
+	background-color:transparent;
+	font-size:20px;
+	border: none;
+	font-family:Arial, Helvetica, sans-serif;
+	color:#1E1D23;
+	z-index:9;
+}
+
+.subBut{
+	position:absolute;
+	background:none;
+	width:133px;
+	height:65px;
+	top:460px;
+	left:415px;
+	margin:0px;
+	padding:0px;
+	border:none;
+	z-index:9;
+}
+
+.subImg{
+	position:absolute;
+	background:none;
+	width:129px;
+	height:61px;
+	top:460px;
+	left:415px;
+	margin:0px;
+	padding:0px;
+	border:none;
+	z-index:8;
+}
+
+.err{
+	position:absolute;
+	left:-10px;
+	background-color:#F00;
+	opacity:.4;
+	filter:alpha(opacity=40);
+	width:558px;
+	height:27px;
+	border:none;
+	z-index:8;
+	display:none;
+}
+
+.errText{
+	position:absolute;
+	width:540px;
+	height:27px;
+	text-align:right;
+	vertical-align:bottom;
+	font-size:24px;
+	font-family:Arial, Helvetica, sans-serif;
+	color:#A20009;
+	z-index:8;
+	display:none;
+}
+
+/*Demoreel Section Styles*/
+
+.demoFrame{
+	position:absolute;
+	width:698px;
+	height:443px;
+	left:50%;
+	top:50%;
+	margin-left:-349px;
+	margin-top:-222px;
+}
+
+a:link {color:#600; }
+a:visited {color:#600; }
+a:hover {color:#C30; }
+a:active {color:#600; }
+
+</style>

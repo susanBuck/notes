@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+<head>
+
+	<title>Collapsible Menus</title>
+
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+	
+	<style type='text/css'>
+	
+		/* All these styles are required for the collapsible menu */
+		#menu, #menu ul {	
+			padding:0px;
+			list-style : none;
+			width:200px;
+		}
+		#menu a {
+			background : #CCC;
+			display : block;
+			font-weight : bold;
+			padding : 0.5em 1em;
+			text-decoration: none;
+			
+		}
+		
+		#menu ul a {
+			background : #FFF;
+			font-weight : normal;
+			text-decoration: underline;
+		}
+		
+		#menu ul a:hover {
+			background : #EEE;
+			text-decoration: underline;
+			color : #000;
+		}
+		/* end collapsible menu */
+	
+	</style>
+
+	<script type='text/javascript'>
+		
+		$(document).ready(function() {
+		
+			// Collapse everything but the first menu:
+			$("#menu > li > a").find("+ ul").slideUp(1);
+						
+			// Expand or collapse:			
+			$("#menu > li > a").click(function() {
+				$(this).find("+ ul").slideToggle("fast");
+			});
+					
+		});
+		
+	</script>
+
+
+</head>
+
+
+<body>
+
+	<ul id="menu">
+		
+		<li><a href="#">Category 1</a>
+			<ul>
+				<li><a href="#">Link A</a></li>
+				<li><a href="#">Link B</a></li>
+			</ul>
+		</li>
+		
+		<li><a href="#">Category 2</a>
+			<ul>
+				<li><a href="#">Link A</a></li>
+				<li><a href="#">Link B</a></li>
+			</ul>
+		</li>
+		
+	</ul>
+
+</body>
+
+</html>

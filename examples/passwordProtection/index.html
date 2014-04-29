@@ -1,0 +1,62 @@
+<title>Password Protection</title>
+
+
+<script type='text/javascript'>
+
+
+function letMeIn() {
+	
+   var password = document.getElementById("thePassword").value;
+   
+   // Load the test page in the iframe
+   verifyFrame.location.href = password + "_verify.html";
+   
+   // Give it a second, then call the next function which will test and see if it loaded
+   timer = setTimeout("verify('" + password + "')",500); 
+}
+
+function verify(password){
+
+	// Did it load the page in the iframe?
+	// If yes, then it's ok to send them to the page
+	if(verifyFrame.keeperpasscheck) { 
+		location.href = password + ".html"; 
+	}
+	// Otherwise show error message
+    else { 
+    	document.getElementById("message").innerHTML = "FAIL!";
+    } 
+}
+
+
+</script>
+
+<center><br/><br/>
+
+<iframe src="" name="verifyFrame" style="display:none"></iframe>
+
+<input type='password' id='thePassword' style='font-size:16pt; width:200px;'>
+
+<input type='button' value='Let me in' onClick='letMeIn()' style='font-size:16pt;'>
+
+<br/><br/>
+<div id='message' style='color:red; height:30px; font-size:16pt;'></div>
+<br/>
+
+<div style='width:500px; text-align:left; font-family:courier'>
+This page will allow for password protection via JavaScript without having to reveal the password in your source code.
+<br/><br/>
+The password is set by the name of the file you're protecting. In this example we are protecting a file called topsecret.html so "topsecret" is the password.
+<Br/><br/>
+For this script to work you need to also create a file called topsecret_verify.html (where topsecret is the name of your protected page). The contents of that page should be the following code:
+<br/><br>
+<textarea style='width:500px; height:90px;'>
+<html>
+<script type="text/javascript">
+var keeperpasscheck = 1;
+</script>
+</html>
+</textarea>
+
+
+</div>

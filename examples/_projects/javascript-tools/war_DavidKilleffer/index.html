@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+<head>
+<title>CSCI-E 75: PS3 - WAR, The Card Game You Played As A Little Kid</title>
+<link rel="stylesheet" type="text/css" href="css/war-cards.css" />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/underscore-min.js"></script>
+<script type="text/javascript" src="js/handlebars-1.0.rc.1.js"></script>
+<script type="text/javascript" src="js/war-cards.js"></script>
+
+<!-- Handlebars templates for card divs; for more info, see the README.md -->
+<script id="card-template-2" type="text/x-handlebars-template">
+    <!-- {{cardName}} -->
+    <div class="card">
+        <div class="cardback {{cardColor}}">
+            <div class="index">{{cardRank}}<br />{{cardSuitSymbol}}</div>
+            <div class="spotB2">{{cardSuitSymbol}}</div>
+            <div class="spotB4">{{cardSuitSymbol}}</div>
+        </div>
+    </div>
+</script>
+
+<script id="card-template-3" type="text/x-handlebars-template">
+    <!-- {{cardName}} -->
+    <div class="card">
+        <div class="cardback {{cardColor}}">
+            <div class="index">{{cardRank}}<br />{{cardSuitSymbol}}</div>
+            <div class="spotA1">{{cardSuitSymbol}}</div>
+            <div class="spotB3">{{cardSuitSymbol}}</div>
+            <div class="spotC5">{{cardSuitSymbol}}</div>
+        </div>
+    </div>
+</script>
+
+<script id="card-template-4" type="text/x-handlebars-template">
+    <!-- {{cardName}} -->
+    <div class="card">
+        <div class="cardback {{cardColor}}">
+            <div class="index">{{cardRank}}<br />{{cardSuitSymbol}}</div>
+            <div class="spotA1">{{cardSuitSymbol}}</div>
+            <div class="spotA5">{{cardSuitSymbol}}</div>
+            <div class="spotC1">{{cardSuitSymbol}}</div>
+            <div class="spotC5">{{cardSuitSymbol}}</div>
+        </div>
+    </div>
+</script>
+
+<script id="card-template-5" type="text/x-handlebars-template">
+    <!-- {{cardName}} -->
+    <div class="card">
+        <div class="cardback {{cardColor}}">
+            <div class="index">{{cardRank}}<br />{{cardSuitSymbol}}</div>
+            <div class="spotA1">{{cardSuitSymbol}}</div>
+            <div class="spotA5">{{cardSuitSymbol}}</div>
+            <div class="spotB3">{{cardSuitSymbol}}</div>
+            <div class="spotC1">{{cardSuitSymbol}}</div>
+            <div class="spotC5">{{cardSuitSymbol}}</div>
+        </div>
+    </div>
+</script>
+
+<script id="card-template-6" type="text/x-handlebars-template">
+    <!-- {{cardName}} -->
+    <div class="card">
+        <div class="cardback {{cardColor}}">
+            <div class="index">{{cardRank}}<br />{{cardSuitSymbol}}</div>
+            <div class="spotA1">{{cardSuitSymbol}}</div>
+            <div class="spotA3">{{cardSuitSymbol}}</div>
+            <div class="spotA5">{{cardSuitSymbol}}</div>
+            <div class="spotC1">{{cardSuitSymbol}}</div>
+            <div class="spotC3">{{cardSuitSymbol}}</div>
+            <div class="spotC5">{{cardSuitSymbol}}</div>
+        </div>
+    </div>
+</script>
+
+<script id="card-template-7" type="text/x-handlebars-template">
+    <!-- {{cardName}} -->
+    <div class="card">
+        <div class="cardback {{cardColor}}">
+            <div class="index">{{cardRank}}<br />{{cardSuitSymbol}}</div>
+            <div class="spotA1">{{cardSuitSymbol}}</div>
+            <div class="spotA3">{{cardSuitSymbol}}</div>
+            <div class="spotA5">{{cardSuitSymbol}}</div>
+            <div class="spotB3">{{cardSuitSymbol}}</div>
+            <div class="spotC1">{{cardSuitSymbol}}</div>
+            <div class="spotC3">{{cardSuitSymbol}}</div>
+            <div class="spotC5">{{cardSuitSymbol}}</div>
+        </div>
+    </div>
+</script>
+
+<script id="card-template-8" type="text/x-handlebars-template">
+    <!-- {{cardName}} -->
+    <div class="card">
+        <div class="cardback {{cardColor}}">
+            <div class="index">{{cardRank}}<br />{{cardSuitSymbol}}</div>
+            <div class="spotA1">{{cardSuitSymbol}}</div>
+            <div class="spotA2">{{cardSuitSymbol}}</div>
+            <div class="spotA4">{{cardSuitSymbol}}</div>
+            <div class="spotA5">{{cardSuitSymbol}}</div>
+            <div class="spotC1">{{cardSuitSymbol}}</div>
+            <div class="spotC2">{{cardSuitSymbol}}</div>
+            <div class="spotC4">{{cardSuitSymbol}}</div>
+            <div class="spotC5">{{cardSuitSymbol}}</div>
+        </div>
+    </div>
+</script>
+
+<script id="card-template-9" type="text/x-handlebars-template">
+    <!-- {{cardName}} -->
+    <div class="card">
+        <div class="cardback {{cardColor}}">
+            <div class="index">{{cardRank}}<br />{{cardSuitSymbol}}</div>
+            <div class="spotA1">{{cardSuitSymbol}}</div>
+            <div class="spotA2">{{cardSuitSymbol}}</div>
+            <div class="spotA4">{{cardSuitSymbol}}</div>
+            <div class="spotA5">{{cardSuitSymbol}}</div>
+            <div class="spotB3">{{cardSuitSymbol}}</div>
+            <div class="spotC1">{{cardSuitSymbol}}</div>
+            <div class="spotC2">{{cardSuitSymbol}}</div>
+            <div class="spotC4">{{cardSuitSymbol}}</div>
+            <div class="spotC5">{{cardSuitSymbol}}</div>
+        </div>
+    </div>
+</script>
+
+<script id="card-template-10" type="text/x-handlebars-template">
+    <!-- {{cardName}} -->
+    <div class="card">
+        <div class="cardback {{cardColor}}">
+            <div class="index">{{cardRank}}<br />{{cardSuitSymbol}}</div>
+            <div class="spotA1">{{cardSuitSymbol}}</div>
+            <div class="spotA2">{{cardSuitSymbol}}</div>
+            <div class="spotA4">{{cardSuitSymbol}}</div>
+            <div class="spotA5">{{cardSuitSymbol}}</div>
+            <div class="spotB2">{{cardSuitSymbol}}</div>
+            <div class="spotB4">{{cardSuitSymbol}}</div>
+            <div class="spotC1">{{cardSuitSymbol}}</div>
+            <div class="spotC2">{{cardSuitSymbol}}</div>
+            <div class="spotC4">{{cardSuitSymbol}}</div>
+            <div class="spotC5">{{cardSuitSymbol}}</div>
+        </div>
+    </div>
+</script>
+
+<script id="card-template-J" type="text/x-handlebars-template">
+    <!-- {{cardName}} -->
+    <div class="card">
+        <div class="cardback {{cardColor}}">
+            <div class="index">{{cardRank}}<br />{{cardSuitSymbol}}</div>
+            <img class="face" src="graphics/jack.gif" alt="{{cardName}}" />
+            <div class="spotA1">{{cardSuitSymbol}}</div>
+            <div class="spotC5">{{cardSuitSymbol}}</div>
+        </div>
+    </div>
+</script>
+
+<script id="card-template-Q" type="text/x-handlebars-template">
+    <!-- {{cardName}} -->
+    <div class="card">
+        <div class="cardback {{cardColor}}">
+            <div class="index">{{cardRank}}<br />{{cardSuitSymbol}}</div>
+            <img class="face" src="graphics/queen.gif" alt="{{cardName}}" />
+            <div class="spotA1">{{cardSuitSymbol}}</div>
+            <div class="spotC5">{{cardSuitSymbol}}</div>
+        </div>
+    </div>
+</script>
+
+<script id="card-template-K" type="text/x-handlebars-template">
+    <!-- {{cardName}} -->
+    <div class="card">
+        <div class="cardback {{cardColor}}">
+            <div class="index">{{cardRank}}<br />{{cardSuitSymbol}}</div>
+            <img class="face" src="graphics/king.gif" alt="{{cardName}}" />
+            <div class="spotA1">{{cardSuitSymbol}}</div>
+            <div class="spotC5">{{cardSuitSymbol}}</div>
+        </div>
+    </div>
+</script>
+
+<script id="card-template-A" type="text/x-handlebars-template">
+    <!-- {{cardName}} -->
+    <div class="card">
+        <div class="cardback {{cardColor}}">
+            <div class="index">{{cardRank}}<br />{{cardSuitSymbol}}</div>
+            <div class="spotB3 aceicon">{{cardSuitSymbol}}</div>
+        </div>
+    </div>
+</script>
+</head>
+<body>
+
+    <header>
+        <h1>WAR, The Card Game You Played As A Little Kid</h1>
+        <p>This is a JavaScript and <a href="http://jquery.com/" target="_blank">jQuery</a> implementation of the
+            classic child's card game, War.  I wrote it to follow the basic rules of the game as written
+            <a href="http://www.pagat.com/war/war.html" target="_blank">here</a> (following the <i></i>"War
+            for two players"</i> rules, using draw variation 1).</p>
+        <p>JavaScript libraries used in this project include:
+            <ul>
+                <li><a href="http://jquery.org" target="_blank">jQuery</a></li>
+                <li><a href="http://underscorejs.org/" target="_blank">Underscore.js</a></li>
+                <li><a href="http://handlebarsjs.com/" target="_blank">Handlebars.js</a></li>
+                <li><a href="http://www.brainjar.com/js/cards/" target="_blank">Brainjar's JavaScript Card Objects (modified)</a></li>
+            </ul>
+        </p>
+        <p id="enableDebugging">Click <a href="index-25640.html">here</a> to play with debugging turned <b><i>ON</i></b>.</p>
+        <p id="disableDebugging">Click <a href="index.html">here</a> to play with debugging turned <b><i>OFF</i></b>.</p>
+        <p>If you know how to turn on your JavaScript console in your browser, you can see some
+            useful debugging output.  <a href="README.md">Here's a bit more info on the game.</a></p>
+    </header>
+
+    <!-- Opponent's area -->
+    <div id="opponent" class="playingField">
+        <div class="textBox name">Opponent's Cards</div>
+        <div id="opponentCards" class="cardArea"></div>
+    </div>
+
+    <!-- Battlefield area -->
+    <div id="battlefield" class="playingField">
+        <div id="battlefieldCards" class="cardArea">
+            <div class="leftColumn">
+                <div id="opponentBattlefieldTitle">Opponent Battle Cards</div>
+                <div id="opponentBattlefield"></div>
+            </div>
+            <div class="rightColumn">
+                <div id="playerBattlefieldTitle">Player Battle Cards</div>
+                <div id="playerBattlefield"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main player's area -->
+    <div id="player" class="playingField">
+        <div class="textBox name">Your Cards</div>
+        <div id="playerCards" class="cardArea"></div>
+    </div>
+
+    <!-- Game buttons -->
+    <form id="controls" action="">
+        <div id="controlsArea">
+            <input id="battleButton"  class="button" type="reset" value="Battle"   />
+            <input id="newGameButton" class="button" type="reset" value="New Game" />
+            <br />
+        </div>
+    </form>
+
+    <footer>
+        <h3>&copy; 2012 David Killeffer.  All Rights Reserved.</h3>
+    </footer>
+
+    <!-- this is where the main game logic resides -->
+    <script type="text/javascript" src="js/war-game-logic.js"></script>
+
+</body>
+</html>
+<!-- Localized -->

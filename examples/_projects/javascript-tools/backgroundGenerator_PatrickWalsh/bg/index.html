@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>P3 Background Generator</title>
+
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />	
+	
+	<!-- JS -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.23/jquery-ui.min.js"></script>
+    
+    <script src="http://code.jquery.com/jquery-1.8.2.js"></script>
+    <script src="http://code.jquery.com/ui/1.9.1/jquery-ui.js"></script>
+    
+    <script src="http://jqueryrotate.googlecode.com/svn/trunk/jQueryRotate.js"></script>
+	
+    <!-- CSS -->		
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.9.1/themes/base/jquery-ui.css" />
+    			
+	<!-- Controller Specific JS/CSS -->
+	<link rel="stylesheet" type="text/css" href="../css/background.css"/><script type="text/javascript" src="../js/background.js"></script><script type="text/javascript" src="../js/html2canvas.js"></script><script type="text/javascript" src="../js/html2canvas.min.js"></script><script type="text/javascript" src="../js/jquery.plugin.html2canvas.js"></script><script type="text/javascript" src="../js/jscolor.js"></script>	
+</head>
+
+<body>	
+
+	
+<div id='pane-preview'>
+
+    <div id='disclaimer'>
+    	<p>*Due to plug-in limitations, this project only works in Firefox/Mozilla browser and <br />rotation characteristics will not be included in background generation.</p>
+	</div>
+
+	<div id='tabs'>
+    	<ul>
+        	<li><a href="#tabs-1">Colors</a></li>
+        	<li><a href="#tabs-2">Canvas</a></li>
+        	<li><a href="#tabs-3">Image</a></li>
+            <li><a href="#tabs-4">Rotation</a></li>
+    	</ul>
+
+		<!-- USER SELECTIONS ON THE LEFT -->
+		<div id='selection-options'>
+        	<div id='tabs-1'>
+                <div>
+                	<p>Foreground: <input type='text' id='foreground' name='foreground' class="color {pickerPosition:'right', pickerClosable:true}"></p>
+                </div>
+				<div>
+                	<p>Background: <input type='text' id='background' name='background' class="color {pickerPosition:'right', pickerClosable:true}"></p>
+                    <p>(Re-click input boxes to apply selected colors in window.)</p>
+                </div>
+                <div>
+                	<button id='swap'>Swap Colors</button>
+                    <button id='reset_colors'>Reset Colors</button>
+                </div>      
+            </div>
+			<div id='tabs-2'>
+				<div class='texture-choice' id='texture1'></div>
+				<div class='texture-choice' id='texture2'></div>
+				<div class='texture-choice' id='texture3'></div>
+				<div class='texture-choice' id='texture4'></div>
+                <div class='texture-choice' id='texture5'></div>
+                <div class='texture-choice' id='texture6'></div>
+                <div><button id='reset_textures'>Reset</button></div>
+                <div id='texture_bottom'>
+                    <p>Drag slider to change texture opacity.</p>
+      				<div id='texture_slider'></div>
+                </div>
+			</div>
+			<div id='tabs-3'>
+				<div class='inner-image-choice' id='image_1'><img src="../images/image_1.png"></div>
+				<div class='inner-image-choice' id='image_2'><img src="../images/image_2.png"></div>
+                <div class='inner-image-choice' id='image_3'><img src="../images/image_3.png"></div>
+                <div class='inner-image-choice' id='image_4'><img src="../images/image_4.png"></div>
+                <div class='inner-image-choice' id='image_5'><img src="../images/image_5.png"></div>
+                <div class='inner-image-choice' id='image_6'><img src="../images/image_6.png"></div>
+                <div class='inner-image-choice' id='image_7'><img src="../images/image_7.png"></div>
+                <div class='inner-image-choice' id='image_8'><img src="../images/image_8.png"></div>
+                <div id='image_bottom'>
+                    <p>Drag slider to change image opacity.</p>
+      				<div id='image_slider'></div> 
+                    <p>Drag slider to change image size.</p>
+      				<div id='enlarge_slider'></div>   
+                </div>
+			</div>
+            <div id='tabs-4'>
+            	<p>Drag slider to rotate the image.</p>
+      			<div id='rotate_slider'></div>
+            </div>
+		</div>
+    </div>
+
+	<!-- PREVIEW SETTINGS ON THE RIGHT -->
+	<div id='square'>    
+        <div id='texture-image'>
+        	<div id='inner-image'><img src='../images/image_1.png' id='image' name='mainpic'></div>
+        </div>
+    </div>
+
+	<!-- FOOTER -->
+	<div class='footer'><button id='submit1'>Preview Background</button></div>
+    <div class='footer'><button id='submit2'>Download Image</button></div>
+
+</div> 
+
+</body>
+</html>
+<!-- Localized -->

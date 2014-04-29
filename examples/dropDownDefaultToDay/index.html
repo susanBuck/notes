@@ -1,0 +1,31 @@
+<title>Dropdown default to today</title>
+
+<script type='text/javascript'>
+
+// New date object
+	var today   = new Date() 
+
+// Pull todays day from it (returns number version. I.e 1=monday, 2=tuesday, etc.
+	var thisDay = today.getDay()
+
+// Array of all the days in english
+	var myDays  = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"]
+
+// Loop through all the days building a dropdown
+	var dropdown = "<select>";
+	
+	for (var i = myDays.length - 1; i >= 0; --i){
+	
+		// See if the day we're printing is today. If so, make it the default option
+		var selected = (myDays[i] == myDays[thisDay]) ? "SELECTED" : "";
+		dropdown     += "<option " + selected + ">" + myDays[i] + "</option>";
+	
+	} 
+	
+	dropdown += "</select>";
+
+// Write dropdown to the page
+	document.write(dropdown);
+
+</script>
+

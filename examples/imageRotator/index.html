@@ -1,0 +1,30 @@
+<title>Image Rotator</title>
+
+<head>
+
+	<script type='text/javascript'>
+	
+	// Put the images we want to rotate into an array
+	var images = new Array("clouds0.jpg","clouds1.jpg","clouds2.jpg","clouds3.jpg");
+	
+	// This function gets called when the page loads and it will start our rotator
+	function startRotator() {
+		var rotator = setInterval("rotateImage()",2000);
+	}
+	
+	// Picks a random image
+	function rotateImage() {
+		var randomNumber = Math.floor(Math.random()* images.length);
+		document.getElementById("theImage").src = "/upenn/examples/images/" + images[randomNumber];
+	}
+	
+	</script>
+
+</head>
+
+<body onLoad='startRotator()'>
+
+	<img id='theImage' src='/upenn/examples/images/clouds0.jpg'>
+
+
+</body>

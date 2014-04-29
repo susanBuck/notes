@@ -1,0 +1,48 @@
+	<style type='text/css'>
+	
+	body 		{margin: 0px 0px 0px 0px}
+	
+	img 		{border:0px;}
+	
+	#floater	{float:left; 
+				height:50%; 
+				margin-bottom:-384px;}
+				
+	#content	{clear:both;
+				background-color:none;
+				width:1024px;
+				height:768px; 
+				position:relative; 
+				margin:auto
+				}
+				
+	body {
+				text-align: center
+				background-image: url("cootie_images/background.png");
+  				background-position: 50% 50%;
+  				background-repeat: no-repeat;
+	}
+				#container {
+						width: 770px;
+						margin: 0 auto;
+						text-align: left
+				}
+    
+    #closed 	{position:absolute;
+    			position:center;
+    			width:647px;
+    			height:594px;
+    			margin:0px;
+    			border:0px;
+    			top: 35px;
+    			left: 200px;
+    			z-index: 2}
+    
+    #pickacolor	{position:absolute;
+    			position:center;
+    			width:223px;
+    			height:40px;
+    			top:635px;
+    			left:300px;
+    			z-index: 2}
+/* Localized */

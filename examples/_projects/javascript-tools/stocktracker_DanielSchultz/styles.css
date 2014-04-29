@@ -1,0 +1,17 @@
+/* Sortable Tables */
+
+table.sortable tbody {
+  background-color:#eee;
+  color:#666644
+  border-color:black;
+
+table.sortable thead {
+  background-color:#eee;
+  color:#666666;
+  font-weight: bold;
+}
+
+
+
+
+

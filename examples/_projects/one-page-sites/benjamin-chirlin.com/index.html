@@ -1,0 +1,723 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+<meta http-equiv="Content-Type" content="Benjamin Chiriln. Artist & Designer" name="Benjamin Chirlin's Portfolio" content="Portfolio" />
+<title>Benjamin Chirlin</title>
+
+<link rel="stylesheet" type="text/css" href=css/bigBackground.css />
+<link rel="stylesheet" type="text/css" href=css/homeStyle.css />
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" /> 
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/mootools/1.3.0/mootools-yui-compressed.js"></script>
+
+
+<script type="text/javascript">
+
+var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-21408311-2']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+
+// Detect if the browser is IE or not.
+// If it is not IE, we assume that the browser is NS.
+var IE = document.all?true:false
+
+// If NS -- that is, !IE -- then set up for mouse capture
+if (!IE) document.captureEvents(Event.MOUSEMOVE)
+
+//State vars
+var curImg = 2
+var doorOpen = false
+//0 = home, 1 = resume, 2 = portfolio, 3 = demoreel, 4 = contact
+var curMenu = 0
+
+// Set-up to use getMouseXY function onMouseMove
+if(curMenu == 0) document.onmousemove = getMouseXY;
+window.onresize = getSize;
+
+// Temporary variables to hold mouse x-y pos.s
+var winW = 0
+var winH = 0
+
+function getSize(){
+	if (parseInt(navigator.appVersion)>3) {
+	 if (navigator.appName=="Netscape") {
+	  winW = window.innerWidth;
+	  winH = window.innerHeight;
+	 }
+	 if (navigator.appName.indexOf("Microsoft")!=-1) {
+	  winW = document.body.offsetWidth;
+	  winH = document.body.offsetHeight;
+	 }
+	}
+	
+	/*$('ends').style.top = winH;
+	$('RESUME').style.left = -winW;
+	$('PORTFOLIO').style.left = -winW;
+	$('DEMOREEL').style.left = winW;
+	$('CONTECT').style.left = winW;*/
+}
+
+function getMouseXY(e) {
+  if(curMenu != 0) {
+	  return;
+  }
+  $('HOME').style.display = 'inline';
+  if (IE) { // grab the x-y pos.s if browser is IE
+    tempX = event.clientX + document.body.scrollLeft
+    tempY = event.clientY + document.body.scrollTop
+  } else {  // grab the x-y pos.s if browser is NS
+    tempX = e.pageX
+    tempY = e.pageY
+  }  
+  // catch possible negative values in NS4
+  if (tempX < 0){tempX = 0}
+  if (tempY < 0){tempY = 0}  
+  
+  var change = calImg(tempX, tempY);
+  
+  if(curImg != change) {
+	curImg =  change;
+	switch(change) {
+		case 0: 
+			changeImg('headsUp', 'imgs/head0.png');
+			break;
+		case 1:
+			changeImg('headsUp', 'imgs/head45.png');
+			break;
+		case 2:
+			changeImg('headsUp', 'imgs/head.png');
+			break;
+		case 3:
+			changeImg('headsUp', 'imgs/head135.png');
+			break;
+		case 4:
+			changeImg('headsUp', 'imgs/head180.png');
+			break;
+	}
+  }
+  
+  return true
+}
+
+//calculate the correct image for a given x and y location
+function calImg(x, y) {
+	//convert x and y into frame where origin is middle bottom (location of head)
+	x = x - (winW/2);
+	y = winH - y;
+	
+	//solve for angle to this coordinate (in degrees)
+	var ang = ((Math.atan2(y, x))/Math.PI)*180.0;
+	
+	if(ang <= 36) return 4;
+	else if(ang <= 72) return 3;
+	else if(ang <=108) return 2;
+	else if(ang <= 144) return 1;
+	else if(ang<= 180) return 0;
+	else return 2;
+}
+
+
+function changeImg(obj, imgName)
+	{
+		var check = document[obj].src;
+		document[obj].src = imgName;
+		check = document[obj].src;
+		check;
+	}
+	
+function slideDoor()
+	{
+		if(!doorOpen){
+		  doorOpen = true; 
+		  $('doors').tween('top', -winH-245);
+		  /*$('sticks').tween('top', -winH-245);
+		  $('abouts').tween('top', -winH-245);
+		  $('ends').tween('top', -245);*/
+		}
+	}
+	
+function closeDoor()
+	{
+		if(doorOpen) {
+		  doorOpen = false;
+		  $('doors').tween('top', 0);
+		  /*$('sticks').tween('top', 14);
+		  $('abouts').tween('top', 310);
+		  $('ends').tween('top', winH);*/
+		}
+	}
+	
+function demoPage()
+	{
+		$('DEMOREEL').style.left = winW+"px";
+		if(curMenu == 0) {
+			curMenu = 3;
+			$('DEMOREEL').style.display = 'inline';
+			$('HOME').set('tween', {duration:2000});
+			$('persp').set('tween', {duration:2000});
+			$('HOME').tween('left', -winW);
+			$('persp').tween('background-position', '-300px 0px');
+			
+			$('DEMOREEL').set('tween', {duration:2000});
+			$('DEMOREEL').tween('left', 0);
+			
+			var t = setTimeout("$('HOME').style.display = 'none'", 2001);
+		}
+	}
+	
+function resumePage()
+	{
+		$('RESUME').style.left = -winW+"px";
+		if(curMenu == 0) {			
+			curMenu = 1;
+			$('RESUME').style.display = 'inline';
+			$('HOME').set('tween', {duration:2000});
+			$('persp').set('tween', {duration:2000});
+			$('HOME').tween('left', winW);
+			$('persp').tween('background-position', '300px 0px');
+			
+			$('RESUME').set('tween', {duration:2000});
+			$('RESUME').tween('left', 0);
+			
+			var t = setTimeout("$('HOME').style.display = 'none'", 2001);
+		}
+	}
+
+function contactPage()
+	{
+		$('CONTACT').style.left = winW+"px";
+		if(curMenu == 0) {
+			curMenu = 4;
+			$('CONTACT').style.display = 'inline';
+			$('HOME').set('tween', {duration:2000});
+			$('persp').set('tween', {duration:2000});
+			$('HOME').tween('left', -winW);
+			$('persp').tween('background-position', '-300px 0px');
+			
+			$('CONTACT').set('tween', {duration:2000});
+			$('CONTACT').tween('left', 0);
+			
+			var t = setTimeout("$('HOME').style.display = 'none'", 2001);
+		}
+	}
+
+function portfolioPage()
+	{
+		$('PORTFOLIO').style.left = -winW+"px";
+		if(curMenu == 0) {
+			chooseSection('design');
+			curMenu = 2;
+			$('PORTFOLIO').style.display = 'inline';
+			$('HOME').set('tween', {duration:2000});
+			$('persp').set('tween', {duration:2000});
+			$('HOME').tween('left', winW);
+			$('persp').tween('background-position', '300px 0px');
+			
+			$('PORTFOLIO').set('tween', {duration:2000});
+			$('PORTFOLIO').tween('left', 0);
+			
+			var t = setTimeout("$('HOME').style.display = 'none'", 2001);
+		}
+	}
+	
+function backPress()
+	{
+		$('HOME').style.display = 'inline';
+		var type;
+		//0 = home, 1 = resume, 2 = portfolio, 3 = demoreel, 4 = contact
+		switch(curMenu) {
+			case 0:
+				return;
+			case 1:
+				type = 'RESUME';
+				$('RESUME').set('tween', {duration:2000});
+				$('RESUME').tween('left', -winW);
+				curMenu = 0;
+				break;
+			case 2:
+				type = 'PORTFOLIO';
+				$('PORTFOLIO').set('tween', {duration:2000});
+				$('PORTFOLIO').tween('left', -winW);
+				curMenu = 0;
+				break;
+			case 3:
+				type = 'DEMOREEL';
+				$('DEMOREEL').set('tween', {duration:2000});
+				$('DEMOREEL').tween('left', winW);
+				curMenu = 0;
+				break;
+			case 4:
+				type = 'CONTACT';
+				$('CONTACT').set('tween', {duration:2000});
+				$('CONTACT').tween('left', winW);
+				curMenu = 0;
+				break;
+		}
+		$('HOME').set('tween', {duration:2000});
+		$('persp').set('tween', {duration:2000});
+		$('HOME').tween('left', 0);
+		$('persp').tween('background-position', '0px 0px');
+	}
+	
+function chooseSection(sec)
+	{
+		var activeSection = document.getElementById("activeSection").value;
+		document.getElementById(activeSection).style.display = "none";
+		
+		document.getElementById(sec).style.display = "block";
+		
+		document.getElementById("activeSection").value = sec;	
+		document.getElementById('thumbSlide').style.top = 0;	
+	}
+	
+function thumbUp()
+	{
+		//Scroll thumbnail div 150px down, check bounds
+		var cur =  parseInt(document.getElementById('thumbSlide').style.top);
+				
+		var down = document.getElementById("arrowUp");
+		var store = down.onclick;
+		down.onclick = "";
+		
+		//if at top loop down
+		if (cur == 0) {
+			var act = document.getElementById("activeSection").value;
+			var lim = parseInt(document.getElementById(act+"Count").value);
+			$('thumbSlide').set('tween', {
+			duration:200,
+			
+			onComplete: function(){
+			down.onclick = store;
+			}
+			
+			});
+			
+			$('thumbSlide').tween('top', lim);
+			return;
+		}
+		
+		cur += 150;
+		
+		if(cur > 0){
+			$('thumbSlide').set('tween', {
+			duration:200,
+			
+			onComplete: function(){
+			down.onclick = store;
+			}
+			
+			});
+			
+			$('thumbSlide').tween('top', 0);
+			return;
+		}
+		
+		$('thumbSlide').set('tween', {
+		duration:400,
+		
+		onComplete: function(){
+		down.onclick = store;
+		}
+		
+		});
+		
+		$('thumbSlide').tween('top', cur);
+	}
+	
+function thumbDown()
+	{
+		//Scroll thumbnail div 150px up, check bounds
+		var cur =  parseInt(document.getElementById('thumbSlide').style.top);
+		//Fetch current thumb length
+		var act = document.getElementById("activeSection").value;
+		var lim = parseInt(document.getElementById(act+"Count").value);
+		
+		var down = document.getElementById("arrowDown");
+		var store = down.onclick;
+		down.onclick = "";
+		
+		cur -= 150;
+		
+		if(cur <= lim){
+			$('thumbSlide').set('tween', {
+			duration:500,
+			
+			onComplete: function(){
+			down.onclick = store;
+			}
+			
+			});
+			
+			$('thumbSlide').tween('top', 0);
+			return;
+		}
+		
+		$('thumbSlide').set('tween', {
+		duration:400,
+		
+		onComplete: function(){
+		down.onclick = store;
+		}
+		
+		});
+		
+		$('thumbSlide').tween('top', cur);
+	}
+	
+function loadimage(img, linkPath, width, height)
+	{
+		//Deactivate while loading
+		document.getElementById("imageLink").style.display = "none";
+		//Change large image to img
+		document.getElementById("imageViewer").src = img;
+		var newW = parseInt(-width/2);
+		var newH = parseInt(-height/2);
+		document.getElementById("imageViewer").style.marginLeft = newW.toString() + "px";
+		document.getElementById("imageViewer").style.marginTop = newH.toString() + "px";
+		//Change link to proper location
+		document.getElementById("imageLink").href = linkPath;
+		//After loaded up, activate
+		setTimeout("document.getElementById('imageLink').style.display = 'inline';",500);
+	}
+	
+function isImageOk(img) {
+		// During the onload event, IE correctly identifies any images
+		// that weren't downloaded as not complete. Others should too.
+		// Gecko-based browsers act like NS4 in that they report this
+		// incorrectly: they always return true.
+		if (!img.complete) {
+			return false;
+		}
+	
+		// However, they do have two very useful properties: naturalWidth
+		// and naturalHeight. These give the true size of the image. If
+		// it failed to load, either of these should be zero.
+		if (typeof img.naturalWidth != "undefined" && img.naturalWidth == 0) {
+			return false;
+		}
+	
+		// No other way of checking: assume it's ok.
+		return true;
+	}
+
+	
+function descCheck()
+	{
+		var dat = document.getElementById('mess').value;
+		var er = document.getElementById('messErr');
+		var err = document.getElementById('messTxt');
+		if(dat.length > 255){
+			er.style.display = "inline";
+			err.style.display = "inline";
+			document.getElementById('mess').value = dat.substring(0, 255);
+		}
+		else {
+			er.style.display = "none";
+			err.style.display = "none";
+			//Message there
+			if(dat.value != ""){
+				sendable();
+		   }		
+		}
+	}
+
+function mailCheck()
+	{
+	   var filter=/^.+@.+\..{2,4}$/
+	   var email = document.getElementById('address').value;
+	   var er = document.getElementById('emailErr');
+	   var err = document.getElementById('emailTxt');
+	   // Fail
+		if (!filter.test(email)) {
+			er.style.display = "inline";
+			err.style.display = "inline";
+	   }
+	   else {
+		   er.style.display = "none";
+			err.style.display = "none";
+		   //Proper Email 
+		   if(email.value != ""){
+			   sendable();
+		   }
+	   }
+	}
+
+//Check if all fields are valid, if so activate send button
+function sendable()
+	{
+		var er1 = document.getElementById('emailErr').style.display;
+		var er2 = document.getElementById('messErr').style.display;
+		var mail = document.getElementById('address').value;
+		var mess = document.getElementById('mess').value;
+		var nam = document.getElementById('userName').value;
+		if(er1 == "none" && er2=="none" && nam != "" && mess != "" && mail != ""){
+			document.getElementById('sendButton').disabled = "";
+		}
+		else{document.getElementById('sendButton').disabled = "disabled"}
+	}
+
+function emailSent()
+	{
+	}
+
+</script>
+
+<style>
+
+body{
+	background-color:#B7EFFF;
+	overflow:hidden;
+}
+</style>
+
+</head>
+
+<body onload="getSize()">
+
+<div style="display:none;">
+<!--Google Content-->
+Benjamin Chirlin: Artist & Designer. I am inspired by intuitive clean design and strive to master the many technologies that make modern interactive experiences possible. I am especially interested in web, video games, mobile and cutting edge interactive environment installations.
+</div>
+
+<!--Background Sky-->
+<img src="imgs/skies.png" class="bg" />
+
+<!--Background Houses-->
+<div class="houses" id="persp"></div>
+
+<!--HOME SCREEN-->
+<div class="main" id="HOME">
+<!--Main center div-->
+<div id="centered">
+	<!--Left Column-->
+	<div class="Lcol"></div>
+    <!--Right Column-->
+    <div class="Rcol"></div>
+    <!--Center Door-->
+    <div class="door" id="doors">
+        <!--Door End-->
+        <img src="imgs/doorEnd.png" class="doorEnd" id="ends" style="top:100%"/>
+        <!--Name sticker on door-->
+        <img src="imgs/sticker.png" class="sticker" id="sticks"/>
+         <img src="imgs/aboutSignUp.png" class="about" id="abouts" name="aboutBut" onmouseover="changeImg('aboutBut', 'imgs/aboutSignDown.png')" onmouseout="changeImg('aboutBut', 'imgs/aboutSignUp.png')" onclick="slideDoor()"/>
+    </div>
+    <!--About content background-->
+	<div class="aboutTile">
+    	<!--About text-->
+   	  	<img src="imgs/aboutContents.png" class="aboutCont"/>
+ 	</div>
+    <div class="close" name="closers" id="closer" onclick="closeDoor()"></div>	
+</div>
+<!--Head Image-->
+<img src="imgs/head.png" class="head" name = "headsUp" usemap="#headMap"/>
+<!--Image Map for Contact Shortcut-->
+<map name="headMap">
+	<area shape="circle" coords="260,250,250" href="javascript:contactPage()" alt="Contact Me" style="color:red"/>
+</map>
+<!--Left Menu-->
+<div id="leftMen" class="leftMenu">
+	<img src="imgs/leftButtons.png" />
+    <a onmouseover="changeImg('resBut', 'imgs/resumeDown.png')" onmouseout="changeImg('resBut', 'imgs/resumeUp.png')" onclick="resumePage()">
+    	<img src="imgs/resumeUp.png" width="213" height="123" class="menuBut" style="left: 15px; top: 50px;" name="resBut"/>
+    </a>
+    <a onmouseover="changeImg('portBut', 'imgs/portDown.png')" onmouseout="changeImg('portBut', 'imgs/portUp.png')" onclick="portfolioPage()">
+    	<img src="imgs/portUp.png" width="195" height="96" class="menuBut" style="left: 42px; top: 197px;" name="portBut"/>
+    </a>
+</div>
+<!--Right Menu-->
+<div id="rightMen" class="rightMenu">
+	<img src="imgs/rightButtons.png" />
+    <a onmouseover="changeImg('demoBut', 'imgs/demoDown.png')" onmouseout="changeImg('demoBut', 'imgs/demoUp.png')" onclick="demoPage()">
+    	<img src="imgs/demoUp.png" width="202px" height="89px" class="menuBut" style="left: 61px; top: 54px;" name="demoBut"/>
+    </a>
+    <a onmouseover="changeImg('contBut', 'imgs/contactDown.png')" onmouseout="changeImg('contBut', 'imgs/contactUp.png')" onclick="contactPage()">
+    	<img src="imgs/contactUp.png" width="199" height="87" class="menuBut" style="left: 40px; top: 243px;" name="contBut"/>
+    </a>
+</div>
+</div>
+
+<!--RESUME SCREEN-->
+<div class="resume" id="RESUME">
+	<div class="wallL">
+    	<img src="imgs/resume/resumeHead.png" style="position:absolute; left:0px; top:0px; width:322px; height:119px; z-index:6" />
+    	<a href="imgs/resume/Resume_Spring2011.pdf" target="_blank">
+        	<img class="pasted" src="imgs/resume/resumePasted.png" id="resumeImg"/>
+    	</a>
+    </div>
+    <div class="wallEdgeL"></div>
+    <!--Back Button Left-->
+    <div class="backButtonL">
+    	<a class="backHitL" onclick="backPress()" onmouseover="changeImg('resBackL', 'imgs/backLdown.png')" onmouseout="changeImg('resBackL', 'imgs/backL.png')"></a>
+        <img src="imgs/backL.png" name="resBackL"/>
+    </div>
+    <div class="backTileL"></div>
+</div>
+
+<!--DEMOREEL SCREEN-->
+<div class="demoreel" id="DEMOREEL">
+	<div class="wallR" style="right:0px;">
+    	<img src="imgs/demoreel/demoreelHead.png" style="position:absolute; right:0px; top:0px; width:327px; height:119px; z-index:6" />
+    	<img class="demoFrame" src="imgs/demoreel/demoFrame.png"/>
+    	<iframe title="Demoreel Player" width="640" height="390" src="http://www.youtube.com/embed/ZfSI_cs5Le0" frameborder="0" color1="#406D8E" color2="#284196" allowfullscreen style="position:absolute; left:50%; top:50%; margin-left:-321px; margin-top:-192px;"></iframe>
+    </div>
+    <div class="wallEdgeR"></div>
+    <!--Back Button Right-->
+    <div class="backButtonR">
+    	<a class="backHitR" onclick="backPress()" onmouseover="changeImg('demoBackR', 'imgs/backRdown.png')" onmouseout="changeImg('demoBackR', 'imgs/backR.png')"></a>
+        <img src="imgs/backR.png" name="demoBackR"/>
+    </div>
+    <div class="backTileR"></div>
+</div>
+
+<!--PORTFOLIO SCREEN-->
+<div class="portfolio" id="PORTFOLIO">
+	<div class="wallL">
+    	<img src="imgs/portfolio/header.png" class="portHead" />
+        <!--Design Section-->
+        <a onmouseover="changeImg('designTitle', 'imgs/portfolio/designDown.png')" onmouseout="changeImg('designTitle', 'imgs/portfolio/designUp.png')" onclick="chooseSection('design')">
+    		<img src="imgs/portfolio/designUp.png" class="design" name="designTitle"/>
+   		</a>
+        <!--Graphics Section-->
+        <a onmouseover="changeImg('graphicsTitle', 'imgs/portfolio/graphicsDown.png')" onmouseout="changeImg('graphicsTitle', 'imgs/portfolio/graphicsUp.png')" onclick="chooseSection('graphics')">
+    		<img src="imgs/portfolio/graphicsUp.png" class="graphics" name="graphicsTitle"/>
+   		</a>
+        <!--Traditional Section-->
+        <a onmouseover="changeImg('traditionalTitle', 'imgs/portfolio/traditionalDown.png')" onmouseout="changeImg('traditionalTitle', 'imgs/portfolio/traditionalUp.png')" onclick="chooseSection('traditional')">
+    		<img src="imgs/portfolio/traditionalUp.png" class="traditional" name="traditionalTitle"/>
+   		</a>
+        <!--Web Section-->
+        <a onmouseover="changeImg('webTitle', 'imgs/portfolio/webDown.png')" onmouseout="changeImg('webTitle', 'imgs/portfolio/webUp.png')" onclick="chooseSection('web')">
+    		<img src="imgs/portfolio/webUp.png" class="web" name="webTitle"/>
+   		</a>
+<div class="portFrame">
+        	<img src="imgs/portfolio/arrowUp.png" class="upArrow" onclick="thumbUp()" id="arrowUp"/>
+      		<img src="imgs/portfolio/arrowDown.png" class="downArrow" onclick="thumbDown()" id="arrowDown"/>
+            <!--Hidden input to store current section-->
+            <input type="hidden" id="activeSection" value="design"/>
+        	<div class="thumbFrame" id="thumbHolder">
+            
+            <div id = 'thumbSlide' style='position: absolute; top:0px; left:0px; width:144px; z-index:4;'><div id='web' style = 'position:absolute; top:0px; left:0px; display:none'>
+<img src='imgs/portfolio/images/thumbs/progFriend.jpg' class='thumbs' onClick='loadimage("imgs/portfolio/images/works/progFriend.jpg", "http://www.benjaminchirlin.com/compsciFriend", 570, 427)'/>
+<img src='imgs/portfolio/images/thumbs/noseySite.jpg' class='thumbs' onClick='loadimage("imgs/portfolio/images/works/noseySite.jpg", "http://www.benjaminchirlin.com/nosey", 570, 347)'/>
+<img src='imgs/portfolio/images/thumbs/wordItMock.jpg' class='thumbs' onClick='loadimage("imgs/portfolio/images/works/wordItMock.jpg", "http://benjaminchirlin.com/imgs/portfolio/images/hiRez/wordItMock.jpg", 570, 428)'/>
+<img src='imgs/portfolio/images/thumbs/oneWorldMockB.jpg' class='thumbs' onClick='loadimage("imgs/portfolio/images/works/oneWorldMockB.jpg", "http://www.benjaminchirlin.com/redesign/", 570, 428)'/>
+<img src='imgs/portfolio/images/thumbs/filmFads.jpg' class='thumbs' onClick='loadimage("imgs/portfolio/images/works/filmFads.jpg", "http://benjaminchirlin.com/imgs/portfolio/images/hiRez/notFound.jpg", 570, 428)'/>
+</div>
+<input type='hidden' id='webCount' value='-367'></input>
+<div id='traditional' style = 'position:absolute; top:0px; left:0px; display:none'>
+<img src='imgs/portfolio/images/thumbs/sanMarco.jpg' class='thumbs' onClick='loadimage("imgs/portfolio/images/works/sanMarco.jpg", "http://benjaminchirlin.com/imgs/portfolio/images/hiRez/sanMarco.jpg", 358, 528)'/>
+<img src='imgs/portfolio/images/thumbs/elements.jpg' class='thumbs' onClick='loadimage("imgs/portfolio/images/works/elements.jpg", "http://benjaminchirlin.com/imgs/portfolio/images/hiRez/elements.jpg", 371, 528)'/>
+<img src='imgs/portfolio/images/thumbs/selfPortrait2.jpg' class='thumbs' onClick='loadimage("imgs/portfolio/images/works/selfPortrait2.jpg", "http://benjaminchirlin.com/imgs/portfolio/images/hiRez/selfPortrait.jpg", 396, 528)'/>
+<img src='imgs/portfolio/images/thumbs/selfPortrait1.jpg' class='thumbs' onClick='loadimage("imgs/portfolio/images/works/selfPortrait1.jpg", "http://benjaminchirlin.com/imgs/portfolio/images/hiRez/selfPortrait1.jpg", 387, 528)'/>
+<img src='imgs/portfolio/images/thumbs/selfPortrait3.jpg' class='thumbs' onClick='loadimage("imgs/portfolio/images/works/selfPortrait3.jpg", "http://benjaminchirlin.com/imgs/portfolio/images/hiRez/selfPortrat3.jpg", 388, 528)'/>
+<img src='imgs/portfolio/images/thumbs/firenze_uffizi.jpg' class='thumbs' onClick='loadimage("imgs/portfolio/images/works/firenze_uffizi.jpg", "http://benjaminchirlin.com/imgs/portfolio/images/hiRez/firenze_uffizi.jpg", 342, 528)'/>
+<img src='imgs/portfolio/images/thumbs/santorini.jpg' class='thumbs' onClick='loadimage("imgs/portfolio/images/works/santorini.jpg", "http://benjaminchirlin.com/imgs/portfolio/images/hiRez/santorini.jpg", 363, 528)'/>
+<img src='imgs/portfolio/images/thumbs/january.jpg' class='thumbs' onClick='loadimage("imgs/portfolio/images/works/january.jpg", "http://benjaminchirlin.com/imgs/portfolio/images/hiRez/january.jpg", 463, 528)'/>
+<img src='imgs/portfolio/images/thumbs/nobel_edit.jpg' class='thumbs' onClick='loadimage("imgs/portfolio/images/works/nobel_edit.jpg", "http://benjaminchirlin.com/imgs/portfolio/images/hiRez/nobel_edit.jpg", 570, 519)'/>
+<img src='imgs/portfolio/images/thumbs/futurerebels.jpg' class='thumbs' onClick='loadimage("imgs/portfolio/images/works/futurerebels.jpg", "http://benjaminchirlin.com/imgs/portfolio/images/hiRez/futurerebels.jpg", 540, 528)'/>
+</div>
+<input type='hidden' id='traditionalCount' value='-1117'></input>
+<div id='graphics' style = 'position:absolute; top:0px; left:0px; display:none'>
+<img src='imgs/portfolio/images/thumbs/KK%20final.jpg' class='thumbs' onClick='loadimage("imgs/portfolio/images/works/KK final.jpg", "http://benjaminchirlin.com/imgs/portfolio/images/hiRez/KK final.jpg", 528, 528)'/>
+<img src='imgs/portfolio/images/thumbs/mockup_ext.jpg' class='thumbs' onClick='loadimage("imgs/portfolio/images/works/mockup_ext.jpg", "http://benjaminchirlin.com/imgs/portfolio/images/hiRez/mockup_ext.jpg", 528, 528)'/>
+<img src='imgs/portfolio/images/thumbs/mockup_int.jpg' class='thumbs' onClick='loadimage("imgs/portfolio/images/works/mockup_int.jpg", "http://benjaminchirlin.com/imgs/portfolio/images/hiRez/mockup-int.jpg", 570, 285)'/>
+<img src='imgs/portfolio/images/thumbs/Lorre%20Line.jpg' class='thumbs' onClick='loadimage("imgs/portfolio/images/works/Lorre Line.jpg", "http://benjaminchirlin.com/imgs/portfolio/images/hiRez/Lorre Line.jpg", 402, 528)'/>
+<img src='imgs/portfolio/images/thumbs/HeadPhones.jpg' class='thumbs' onClick='loadimage("imgs/portfolio/images/works/HeadPhones.jpg", "http://benjaminchirlin.com/imgs/portfolio/images/hiRez/HeadPhones.jpg", 407, 528)'/>
+</div>
+<input type='hidden' id='graphicsCount' value='-367'></input>
+<div id='design' style = 'position:absolute; top:0px; left:0px; display:none'>
+<img src='imgs/portfolio/images/thumbs/msLogo.jpg' class='thumbs' onClick='loadimage("imgs/portfolio/images/works/msLogo.jpg", "http://benjaminchirlin.com/imgs/portfolio/images/hiRez/msLogo.jpg", 302, 528)'/>
+<img src='imgs/portfolio/images/thumbs/spellGame.jpg' class='thumbs' onClick='loadimage("imgs/portfolio/images/works/spellGame.jpg", "http://benjaminchirlin.com/imgs/portfolio/images/hiRez/spellGame.jpg", 352, 528)'/>
+<img src='imgs/portfolio/images/thumbs/paraGame.jpg' class='thumbs' onClick='loadimage("imgs/portfolio/images/works/paraGame.jpg", "http://benjaminchirlin.com/imgs/portfolio/images/hiRez/paraGame.jpg", 352, 528)'/>
+<img src='imgs/portfolio/images/thumbs/pictGame.jpg' class='thumbs' onClick='loadimage("imgs/portfolio/images/works/pictGame.jpg", "http://benjaminchirlin.com/imgs/portfolio/images/hiRez/pictGame.jpg", 352, 528)'/>
+<img src='imgs/portfolio/images/thumbs/matchGame.jpg' class='thumbs' onClick='loadimage("imgs/portfolio/images/works/matchGame.jpg", "http://benjaminchirlin.com/imgs/portfolio/images/hiRez/matchGame.jpg", 352, 528)'/>
+<img src='imgs/portfolio/images/thumbs/sortGame.jpg' class='thumbs' onClick='loadimage("imgs/portfolio/images/works/sortGame.jpg", "http://benjaminchirlin.com/imgs/portfolio/images/hiRez/sortGame.jpg", 352, 528)'/>
+<img src='imgs/portfolio/images/thumbs/teachPet.jpg' class='thumbs' onClick='loadimage("imgs/portfolio/images/works/teachPet.jpg", "http://benjaminchirlin.com/imgs/portfolio/images/hiRez/teachPet.jpg", 373, 528)'/>
+<img src='imgs/portfolio/images/thumbs/supFriend.jpg' class='thumbs' onClick='loadimage("imgs/portfolio/images/works/supFriend.jpg", "http://benjaminchirlin.com/imgs/portfolio/images/hiRez/supFriend.jpg", 373, 528)'/>
+<img src='imgs/portfolio/images/thumbs/workBee.jpg' class='thumbs' onClick='loadimage("imgs/portfolio/images/works/workBee.jpg", "http://benjaminchirlin.com/imgs/portfolio/images/hiRez/workBee.jpg", 373, 528)'/>
+<img src='imgs/portfolio/images/thumbs/hiScore.jpg' class='thumbs' onClick='loadimage("imgs/portfolio/images/works/hiScore.jpg", "http://benjaminchirlin.com/imgs/portfolio/images/hiRez/hiScore.jpg", 352, 528)'/>
+<img src='imgs/portfolio/images/thumbs/pictPlay.jpg' class='thumbs' onClick='loadimage("imgs/portfolio/images/works/pictPlay.jpg", "http://benjaminchirlin.com/imgs/portfolio/images/hiRez/pictPlay.jpg", 352, 528)'/>
+<img src='imgs/portfolio/images/thumbs/pictList.jpg' class='thumbs' onClick='loadimage("imgs/portfolio/images/works/pictList.jpg", "http://benjaminchirlin.com/imgs/portfolio/images/hiRez/pictList.jpg", 352, 528)'/>
+<img src='imgs/portfolio/images/thumbs/pictPost.jpg' class='thumbs' onClick='loadimage("imgs/portfolio/images/works/pictPost.jpg", "http://benjaminchirlin.com/imgs/portfolio/images/hiRez/pictPost.jpg", 352, 528)'/>
+<img src='imgs/portfolio/images/thumbs/solarLogo.jpg' class='thumbs' onClick='loadimage("imgs/portfolio/images/works/solarLogo.png", "http://benjaminchirlin.com/imgs/portfolio/images/hiRez/solarLogo.png", 303, 528)'/>
+<img src='imgs/portfolio/images/thumbs/Poster_fin.jpg' class='thumbs' onClick='loadimage("imgs/portfolio/images/works/Poster_fin.JPG", "http://benjaminchirlin.com/imgs/portfolio/images/hiRez/Poster_fin.JPG", 408, 528)'/>
+<img src='imgs/portfolio/images/thumbs/poster-final.jpg' class='thumbs' onClick='loadimage("imgs/portfolio/images/works/poster-final.jpg", "http://benjaminchirlin.com/imgs/portfolio/images/hiRez/poster-final.jpg", 404, 528)'/>
+<img src='imgs/portfolio/images/thumbs/heyDay.jpg' class='thumbs' onClick='loadimage("imgs/portfolio/images/works/heyDay.jpg", "http://benjaminchirlin.com/imgs/portfolio/images/hiRez/heyDay.jpg", 413, 528)'/>
+<img src='imgs/portfolio/images/thumbs/flingShirt.jpg' class='thumbs' onClick='loadimage("imgs/portfolio/images/works/flingShirt.jpg", "http://benjaminchirlin.com/imgs/portfolio/images/hiRez/flingShirt.jpg", 408, 528)'/>
+<img src='imgs/portfolio/images/thumbs/ITA-shirt-color-1.jpg' class='thumbs' onClick='loadimage("imgs/portfolio/images/works/ITA-shirt-color-1.jpg", "http://benjaminchirlin.com/imgs/portfolio/images/hiRez/ITA-shirt-color-1.jpg", 408, 528)'/>
+<img src='imgs/portfolio/images/thumbs/ITA-shirt-color-2.jpg' class='thumbs' onClick='loadimage("imgs/portfolio/images/works/ITA-shirt-color-2.jpg", "http://benjaminchirlin.com/imgs/portfolio/images/hiRez/ITA-shirt-color-2.jpg", 408, 528)'/>
+<img src='imgs/portfolio/images/thumbs/ITA-shirt-color-3.jpg' class='thumbs' onClick='loadimage("imgs/portfolio/images/works/ITA-shirt-color-3.jpg", "http://benjaminchirlin.com/imgs/portfolio/images/hiRez/ITA-shirt-color-3.jpg", 408, 528)'/>
+</div>
+<input type='hidden' id='designCount' value='-2467'></input>
+</div>
+            
+            </div>
+
+		  <script>
+          /*$("thumbHolder").bind("mousewheel",function(ev, delta) {
+			  var scrollTop = $(window).scrollTop();
+			  $(window).scrollTop(scrollTop-Math.round(delta * 20));
+          });*/
+          </script>
+
+            
+        <a class="imgFrame" id="imageLink" href="" target="_blank" style="display:none; border:none;">
+           	<img src="" id="imageViewer" class = "imgCent" style="margin-left:0px; margin-top:0px;"/>
+        </a>
+      </div>
+    </div>
+    <div class="wallEdgeL"></div>
+    <!--Back Button Left-->
+    <div class="backButtonL">
+        <a class="backHitL" onclick="backPress()" onmouseover="changeImg('portBackL', 'imgs/backLdown.png')" onmouseout="changeImg('portBackL', 'imgs/backL.png')"></a>
+        <img src="imgs/backL.png" name="portBackL"/>
+    </div>
+    <div class="backTileL"></div>
+</div>
+
+<!--CONTACT SCREEN-->
+<div class="contact" id="CONTACT">
+	<div class="wallR" style="right:0px;">
+    	<img class="contactSign" src="imgs/contact/contactForm.png" />
+        <div class="contactForm">
+            <form style="position:absolute;" method="post">
+                <input type="text" name="fname" id="userName" class="invisForm"/>
+                <input type="text" name="email" onblur="mailCheck()" id="address" class="invisForm" style="position:absolute; top:92px; left:0px"/>
+                <textarea name="message" id="mess" onblur="descCheck()" onkeyup="descCheck()" class="invisForm" style="position:absolute; top:181px; left: 0px; height:264px;"></textarea>
+                <input type="submit" value="" id="sendButton" class="subBut" disabled="disabled" onmouseover="sendClick(0)" onmouseout="sendClick(1)"/>
+                <img src="imgs/contact/sendDown.png" class="subImg" name="submitter" onmouseover="changeImg('submitter', 'imgs/contact/sendUp.png')" onmouseout="changeImg('submitter', 'imgs/contact/sendDown.png')"/>
+            </form>
+            <!--Error Divs-->
+            <div id="emailErr" class="err" style="top:93px; display:none;"></div>
+            <div id="emailTxt" class="errText" style="top:91px;"><b>INVALID EMAIL</b></div>
+            <div id="messErr" class="err" style="height:267px; top:183px; display:none;"></div>
+            <div id="messTxt" class="errText" style="top:425px"><b>TOO LONG</b></div>
+        </div>
+        <div class="contactPole"></div>
+    </div>
+    <div class="wallEdgeR"></div>
+    <!--Back Button Right-->
+    <div class="backButtonR">
+    	<a class="backHitR" onclick="backPress()" onmouseover="changeImg('conBackR', 'imgs/backRdown.png')" onmouseout="changeImg('conBackR', 'imgs/backR.png')"></a>
+        <img src="imgs/backR.png" name="conBackR"/>
+    </div>
+    <div class="backTileR"></div>
+</div>
+
+<!--Heat Map-->
+<script type="text/javascript" src="http://benjaminchirlin.com/clickheat/js/clickheat.js"></script><noscript><p><a href="http://www.labsmedia.com/clickheat/index.html">Traffic analysis</a></p></noscript><script type="text/javascript"><!--
+clickHeatSite = 'www.benjaminchirlin.com';clickHeatGroup = 'homeSite';clickHeatQuota = 4;clickHeatServer = 'http://benjaminchirlin.com/clickheat/click.php';initClickHeat(); //-->
+</script>
+
+</body>
+</html>
+
+<!-- Localized -->

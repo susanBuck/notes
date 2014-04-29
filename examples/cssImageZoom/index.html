@@ -1,0 +1,89 @@
+<title>CSS Image Zoom</title>
+
+<style type='text/css'>
+
+	/* Use this class if you want to float left */
+	.CI-l { 
+		float:left; 
+		margin-right:10px; 
+	}
+	
+	/* Use this class if you want to float right */
+	.CI-r { 
+		float:right; 
+		margin-left:10px; 
+		direction:rtl; 
+	}
+	
+	.CIzoom a,.CIzoom a:visited { 
+		display:block;
+		padding:0; 
+		overflow:hidden; 
+		text-decoration:none;
+		height:100%; width:100%; 
+	}
+	
+	/* This styles the image */
+	.CIzoom a:hover { 
+		position:absolute;
+	  	z-index:999; 
+	  	padding:0; 
+	  	background:none;
+		cursor:default; 
+		height:auto; 
+		width:auto;
+	  	overflow:visible; 
+	  	margin:-1px 0 0 -1px; 
+	 }
+	 
+	.CIzoom a img { 
+		border:0; 
+		height:100%; 
+		width:100%; 
+	}
+	
+	.CIzoom a:hover img { 
+		height:auto; 
+		width:auto;
+	  	border:0;
+	 }
+	
+	/* This styles the caption */
+	a:hover .CIcap,
+	a:hover .CI1cap { 
+		display:block;
+	    background:#CCC; 
+	    color:#000;
+	  	padding:10px;
+	}
+
+</style>
+
+
+
+<div class="CIzoom CI-l Bdr Cap Lnk" style="width:210px; height:137px;">
+	
+	<a href="javascript:void(0)">
+	
+	<img src="puppy.jpg" alt="CI demo #2" title="" />
+	
+	<span class="CI1cap" style="width:479px;">
+	
+		The Puppy
+	
+	</span>
+	
+	</a>
+
+</div>
+
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultricies dictum tincidunt. Aliquam et ultricies erat. Aenean eu est ut nisl tincidunt accumsan eget id felis. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus eu tellus tortor. Aliquam erat volutpat. Pellentesque nec arcu velit, vitae pharetra eros. Vestibulum faucibus, diam nec dictum suscipit, eros diam tristique elit, id molestie odio elit ac massa. Maecenas posuere pellentesque tincidunt. Etiam quis ligula vitae orci pellentesque ullamcorper vitae in justo. Mauris eleifend hendrerit felis, quis condimentum turpis mattis vitae. Aenean mattis tincidunt commodo. Nunc non orci sapien, eu ultricies sapien. Vestibulum molestie quam eu nibh posuere tristique. Vestibulum ornare nisl quis elit auctor eu pulvinar neque elementum.
+<br/><br/>
+Morbi eget nulla nec metus viverra ultrices. Donec sed erat sit amet turpis vulputate ullamcorper. Morbi in massa risus. Maecenas molestie sodales libero a dictum. Aenean sed facilisis eros. Vestibulum quis diam porttitor sapien consequat dapibus. Fusce vel consequat erat. Sed accumsan cursus est, id consequat nulla semper quis. Donec sit amet mauris metus. Nullam pellentesque volutpat erat non sollicitudin. Duis placerat ante laoreet ligula semper ut euismod tellus tincidunt. Curabitur nunc lectus, egestas at hendrerit quis, euismod faucibus nulla. Maecenas ac neque lorem, eu lacinia dui. Pellentesque molestie est vitae diam laoreet dignissim. Quisque elementum massa ac dolor faucibus a consequat urna malesuada. Etiam pretium, dui sed faucibus aliquam, leo tortor dictum dolor, eu viverra ipsum arcu non diam. Integer ultrices convallis malesuada.
+<br/><br/>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultricies dictum tincidunt. Aliquam et ultricies erat. Aenean eu est ut nisl tincidunt accumsan eget id felis. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus eu tellus tortor. Aliquam erat volutpat. Pellentesque nec arcu velit, vitae pharetra eros. Vestibulum faucibus, diam nec dictum suscipit, eros diam tristique elit, id molestie odio elit ac massa. Maecenas posuere pellentesque tincidunt. Etiam quis ligula vitae orci pellentesque ullamcorper vitae in justo. Mauris eleifend hendrerit felis, quis condimentum turpis mattis vitae. Aenean mattis tincidunt commodo. Nunc non orci sapien, eu ultricies sapien. Vestibulum molestie quam eu nibh posuere tristique. Vestibulum ornare nisl quis elit auctor eu pulvinar neque elementum.
+<br/><br/>
+Morbi eget nulla nec metus viverra ultrices. Donec sed erat sit amet turpis vulputate ullamcorper. Morbi in massa risus. Maecenas molestie sodales libero a dictum. Aenean sed facilisis eros. Vestibulum quis diam porttitor sapien consequat dapibus. Fusce vel consequat erat. Sed accumsan cursus est, id consequat nulla semper quis. Donec sit amet mauris metus. Nullam pellentesque volutpat erat non sollicitudin. Duis placerat ante laoreet ligula semper ut euismod tellus tincidunt. Curabitur nunc lectus, egestas at hendrerit quis, euismod faucibus nulla. Maecenas ac neque lorem, eu lacinia dui. Pellentesque molestie est vitae diam laoreet dignissim. Quisque elementum massa ac dolor faucibus a consequat urna malesuada. Etiam pretium, dui sed faucibus aliquam, leo tortor dictum dolor, eu viverra ipsum arcu non diam. Integer ultrices convallis malesuada.
+
+

@@ -1,0 +1,239 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{
+	overflow:hidden;
+	margin: 0;
+	padding: 0;
+	color:#f8f8f8;
+	/*
+	text-shadow: -1px -1px white, 1px 1px #333;
+	text-shadow: 1px 1px white, -1px -1px #444
+	*/
+	font-family: "Lucida Grande", "Lucida Sans", Lucida, Verdana, Arial, Geneva, Helvetica, sans-serif;
+	line-height:25px;
+	font-size:17px;
+	text-align:justify;
+}
+
+/*menu*/
+#menu {
+	position:absolute;
+	color:#CCFFFF;
+	width: 254px;
+	height: 261px;
+	background-image:url(../img/menu.png);
+	top:550px;
+	left:40px;
+	text-align:center;
+	z-index:999; /*always on top*/
+}
+ 
+ /* view port; always browser size (using javascript) */
+#demo-wrapper {
+	overflow:hidden;
+	position: relative;
+	height: 768px;/*400px;*/
+	width: 1024px;/*800px;*/
+}
+ 
+ /* scrolling image; overflow the height so background doesn't show*/
+#demo-inner {
+	width: 6144px;
+	height: 1000px;
+	position: relative;
+}
+
+/*each menu header in the bubble*/
+.menu-item{
+	margin:0 auto;
+	cursor:pointer;
+	top:30px;
+	left:-25px;
+	padding:6px;
+	width:80px;
+	height:20px;
+	border: 1px;
+	z-index:4;
+}
+ 
+ /* each individual panel to be scrolled through */
+.scrolling-content {
+	clear:both;
+	position: relative;	
+	width: 1200px;/*139px;*/
+	height: 1100px;/*73px;*/
+}
+
+/* contains actual content in each section div */
+.inner-content{
+	border-radius: 4em 1em 4em 1em ;
+	-moz-border-radius: 4em 1em 4em 1em ;
+	background-image:url(../img/transparent_grey.png);
+	position:relative;
+	width:720px;
+	left:230px;
+	top: 130px;
+	padding-right:40px;
+	padding-left:70px;
+	padding-top:40px;
+	padding-bottom:40px;
+	border:1px;
+	z-index:2;
+}
+ 
+.scrolling-content h1 { 
+	color: #fff;
+	padding: 25px 0;
+	line-height:30px;
+}
+
+/*Menu Bubble Divs*/
+#link1{
+	position:relative;
+	background-image:url(../img/menuHome.png);
+	background-position:center;
+	background-repeat:no-repeat;
+}
+
+#link2{
+	position:relative;
+	background-image:url(../img/menuAbout.png);
+	background-position:center;
+	background-repeat:no-repeat;
+}
+ 
+ #link3{
+	position:relative;
+	background-image:url(../img/menuResume.png);
+	background-position:center;
+	background-repeat:no-repeat;
+}
+ 
+ #link4{
+	position:relative;
+	background-image:url(../img/menuWork.png);
+	background-position:center;
+	background-repeat:no-repeat;
+}
+ 
+ #link5{
+	position:relative;
+	background-image:url(../img/menuReel.png);
+	background-position:center;
+	background-repeat:no-repeat;
+}
+ 
+ #link6{
+	position:relative;
+	background-image:url(../img/menuContact.png);
+	background-position:center;
+	background-repeat:no-repeat;
+}
+ 
+ 
+/* Section Panels*/
+#home {
+	position:absolute;
+	background: url(../img/home.jpg) no-repeat;
+	left: 0px; 
+	top: 0px;
+}
+ 
+#about {
+	position:absolute;
+	background: url(../img/about.jpg) no-repeat;
+	left: 1200px;
+	top: 0px;
+}
+ 
+#resume {
+	position:absolute;
+	background: url(../img/resume.jpg) no-repeat;
+	left: 2400px; 
+	top: 0px;
+}
+ 
+#work {
+	position:absolute;
+	background: url(../img/work.jpg) no-repeat;
+	left:3600px; 
+	top: 0px;
+}
+
+#reel {
+	position:absolute;
+	background: url(../img/reel.jpg) no-repeat;
+	left: 4800px; 
+	top: 0px;
+}
+
+#contact{
+	position:absolute;
+	background: url(../img/contact.jpg) no-repeat;
+	left: 6000px; 
+	top: 0px;
+}
+
+#me{
+	position:relative;
+	height:225px;
+	float:left;
+	margin-top:10px;
+	margin-right:20px;	
+	padding: 5px;
+	border: 2px solid #ccc;
+}
+
+
+a{
+	text-decoration:none;
+	outline:none;
+	color:#FFBF00;
+}
+
+a:hover{
+	color:#AAFFFF;
+}
+
+a:active{
+	color:#23677b;
+	text-decoration:none;
+}
+
+/* Resume Sliding CSS */
+.resume-divs {
+	padding: 10px;
+	display:block;
+	overflow:auto;
+}
+
+.resume-titles {
+	font-size: 100%;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	margin-top: 10px;
+	margin-bottom: 0px;
+}
+
+#resume-education{
+	display:block;
+
+}
+
+#resume-work{
+	line-height:23px;
+
+}
+
+#resume-skills{
+
+}
+
+#resume-courses{
+
+}
+
+#work-content{
+	overflow:auto;
+}

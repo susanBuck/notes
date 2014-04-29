@@ -1,0 +1,62 @@
+<title>Javascript Demonstration</title>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/mootools/1.3.0/mootools-yui-compressed.js"></script>
+
+<style type='text/css'>
+
+body {
+	font-family:lucida sans;
+}
+
+.container {
+	border:1px solid #CCCCCC;
+	width:400px;
+	margin:50px;
+	padding:50px;
+}
+
+</style>
+
+<!-- Change styles -->
+<div class='container'>
+
+	<h2>Change CSS styles</h2>
+	<div style='background-color:blue; width:50px; height:50px;' id='square1'></div>
+	<br/><input type='button' onClick='document.getElementById("square1").style.backgroundColor="red";' value='Change colors'>
+	
+	<br/><br/>
+	<div style='background-color:blue; width:50px; height:50px;' id='square2'></div>
+	<br/><input type='button' onClick='document.getElementById("square2").style.display = "none";' value='Toggle visibility'>
+	
+</div>
+
+
+
+<!-- Animate elements -->
+<div class='container' style='position:relative;'>
+
+ 	<h2>Animate</h2>
+	<div id='square3' style='position:absolute; top:100px; left:400px; width:50px; height:50px; background-color:orange'></div>
+	
+	<input type='button' value='Animate elements' onClick='$("square3").tween("left", 200);'>
+
+</div>
+
+
+<!-- Inject content -->
+<div class='container'>
+
+	<h2>Inject content</h2>
+	<textarea id='myTextarea'>HELLO WORLD</textarea><br/><br/>
+
+	<div id='content' style='border:1px dotted #cccccc; height:20px; width:200px;'></div><br/>
+
+	<input type='button' onClick='document.getElementById("content").innerHTML = document.getElementById("myTextarea").value' value='Inject Content'>
+	
+</div>
+
+
+
+
+
+

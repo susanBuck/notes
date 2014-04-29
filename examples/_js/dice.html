@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+	<title>Dice</title>
+
+	<link rel="stylesheet" href="styles.css" type="text/css">
+
+	<style>
+	
+		.dice {
+			box-sizing:border-box;
+			width:50px;
+			height:50px;
+			margin-right:10px;
+			border-radius:10px;
+			border:1px solid #ccc;
+			text-align:center;
+			padding-top:13px;
+		}
+		
+	</style>
+		
+</head>
+
+<body>
+
+	<!-- November 20: TEMPORARILY DISABLED FOR LECTURE DEMONSTRATION -->
+	
+	<br><br>
+
+	To test, have a friend visit this page, or open the page up in a separate browser to play against yourself.
+	<br><br>
+	
+	<button id='roll'>Roll</button><br><br>
+
+	You:<br>
+	<div class='dice' id='you'></div><br>
+
+	Opponent:
+	<div class='dice' id='opponent'></div><br>
+	
+	<div id='output'></div>
+
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	
+	<!-- Pubnub JS Kit -->
+	<script src="http://cdn.pubnub.com/pubnub.js"></script>
+
+	<script>
+	
+		var this_player_id = new Date().getTime()
+		var opponent       = $('#opponent');
+		var you            = $('#you');
+		var output         = $('#output');
+
+				
+		// Sandbox credentials for pubnub.com; Sign-up for a free sandbox account to get your own credentials
+		var pubnub = PUBNUB.init({
+			publish_key: 'pub-c-a0df482f-383d-4f7f-ada5-cb67ea486648',
+			subscribe_key: 'sub-c-80afce3e-4c28-11e3-a95a-02ee2ddab7fe'
+		});
+		
+		
+		/*-------------------------------------------------------------------------------------------------
+		Subscribe to the channel
+		This is triggered after every turn, since the turn sends a message
+		-------------------------------------------------------------------------------------------------*/
+		pubnub.subscribe({
+			channel: 'game',
+			message: function(message){
+			
+				// Turn the string of JSON into an array
+				var results   = $.parseJSON(message);
+								
+				// Pull the player_id and roll out of the array
+				var player_id = results['player_id'];
+				var roll      = results['roll'];				
+				
+				// Play!
+				play(player_id,roll);
+			},
+			
+		});
+		
+		
+		/*-------------------------------------------------------------------------------------------------
+		You take a turn
+		-------------------------------------------------------------------------------------------------*/
+		$('#roll').click(function() {
+			
+			// What did you roll?
+			var random_number = Math.floor((Math.random()*5)+1);
+						
+			// Output
+			output.html('Waiting for an opponent to roll...<br>');
+			you.html(random_number);
+
+			// Data of player_id and roll
+			data = { 
+				'player_id' : this_player_id, 
+				'roll' : random_number 
+			}
+			
+			// Convert data to JSON string
+			var message = JSON.stringify(data);
+			
+			// Publish 
+			pubnub.publish({
+				channel: 'game',        
+				message: message,
+			});
+			
+			// Get rid of button so you can't roll again
+			$('button').hide();
+				
+		});
+	
+	
+		/*-------------------------------------------------------------------------------------------------
+		Called after someone rolls. Responsible for figuring out where we are in the game.
+		-------------------------------------------------------------------------------------------------*/	
+		function play(player_id, roll) {
+				
+			// Roll was by opponent, not you
+			if(player_id != this_player_id) {
+					
+				// Output
+				opponent.html(roll);
+				
+				// If your opponent has gone, but you have not
+				if(opponent.html() != '' && you.html() == '') {
+					output.html('An opponent is waiting for you to roll...<br>');	
+				}
+			}
+			
+			// End of game = both you and opponent have gone - see who won
+			if(opponent.html() != '' && you.html() != '') {
+				
+				// Clear the output
+				output.html('');	
+					
+				// Your opponents roll was higher than yours, you lost
+				if(opponent.html() == you.html()) {
+					output.append('A tie!<br>');	
+				}
+				else if(opponent.html() > you.html()) {
+					output.append('You lost :(<br>');	
+				}
+				// Your roll was higher than your opponents, you win
+				else {
+					output.append('You won! :)<br>');	
+				}
+				
+				output.append('Starting a new game in 3 seconds...<br>');	
+				
+				// Let them see the results for 3 seconds, then just refresh this page to start a new game
+				setTimeout(function(){
+					location.reload();
+				},3000);
+			}
+			
+			
+		}
+	
+	</script>
+	
+	
+</body>
+</html>

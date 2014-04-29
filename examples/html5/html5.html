@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	
+	<script type="text/javascript" src="modernizr-1.7.min.js"></script>
+			
+	<title>html5.html</title>
+
+	<style>
+	
+		#myCanvas {
+			border:1px dotted black;
+		}
+	
+	</style>
+	  
+	<script type='text/javascript'>
+		function fillCanvas() {
+		
+			if(Modernizr.canvas) {
+					
+				// Identify our canvas element
+				var myCanvas = document.getElementById('myCanvas').getContext('2d');
+				
+				// Pencil it in
+				myCanvas.moveTo(10,10);
+				myCanvas.lineTo(100,100);
+				myCanvas.lineTo(200,100);
+				myCanvas.strokeStyle = "#E01B4C";
+				
+				// Pen it in
+				myCanvas.stroke();
+				
+				// Pencil in a new line, that will be grey. Because we'll change the style we have to call beginPath
+				myCanvas.beginPath();
+				myCanvas.moveTo(200,100);
+				myCanvas.lineTo(300,300);
+				myCanvas.strokeStyle = "#CCCCCC";
+				
+				// Pen it in
+				myCanvas.stroke();
+				
+				// Draw some text
+				myCanvas.font = "bold 20px sans-serif";
+				myCanvas.fillText("Hello World", 50, 50);
+				 
+				// Draw a rectangle
+				myCanvas.fillRect(300, 100, 150, 150);
+				
+				// Draw a rectangle with a gradient fill
+				var myGradient = myCanvas.createLinearGradient(0, 0, 300, 0);
+				myGradient.addColorStop(0, "red");
+				myGradient.addColorStop(1, "white");
+				
+				myCanvas.fillStyle = myGradient;
+				myCanvas.fillRect(0, 200, 150, 150);
+				
+			}
+			else {
+				document.write("Canvas is not supported in this browser. :-(");
+			}
+		}
+	
+	</script>
+	  
+</head>
+  
+<body>
+ 
+	<input type='button' onClick='fillCanvas()' value='Fill Canvas'><br/>
+	
+	<!-- CANVAS -->
+	<canvas id="myCanvas" width="500" height="500"></canvas>
+	
+</body>
+
+
+</html>

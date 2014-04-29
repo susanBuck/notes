@@ -1,0 +1,13 @@
+#floater	{
+				float:right; 
+				height:100%; 
+				margin-bottom:400px;
+			}
+			
+			
+#content	{
+				clear:both; 
+				height:200px; 
+				position:absolute;
+				text-align:center;
+			}

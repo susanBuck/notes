@@ -1,0 +1,343 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="description" content="Hello, I'm Alice Yang, a programmer, artist, and slightly-obsessed cat lover. Creating pretty yet functional designs is what I like to do best." />
+
+<title>Alice Yang</title>
+
+	<link rel="stylesheet" type="text/css" href="css/final_style.css" />
+        
+	<!-- JAVASCRIPT STARTS HERE -->
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/mootools/1.1.1/mootools-yui-compressed.js"></script>
+    <script type="text/javascript" src="js/demos.js"></script> 
+    <script type="text/javascript" src="js/resize.js"></script>
+    <script type="text/javascript" src="js/sliders.js"></script>
+    <script type="text/javascript" src="js/miscEffects.js"></script>
+	<script type="text/javascript" src="clickheat/js/clickheat.js"></script><noscript><p><a href="http://www.labsmedia.com/clickheat/index.html">Open source traffic analysis</a></p></noscript><script type="text/javascript"><!--
+clickHeatSite = '';clickHeatGroup = encodeURIComponent(window.location.pathname+window.location.search);clickHeatServer = 'http://alice-yang.com/clickheat/click.php';initClickHeat(); //-->
+</script>
+    
+    <!-- Google Analytics -->
+    <script type="text/javascript">
+
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-20366927-1']);
+	  _gaq.push(['_trackPageview']);
+	
+	  (function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	
+	</script>
+    
+   <!-- Slimbox code -->
+   <script type="text/javascript" src="js/slimbox.js"></script>
+   <script type="text/javascript">//<![CDATA[
+	window.addEvent("domready", function() {
+		if (!/android|iphone|ipod|series60|symbian|windows ce|blackberry/i.test(navigator.userAgent)) {
+			$$($$("a").filter(function(el) {
+				return el.href && !el.href.indexOf("http://www.flickr.com/photos/") && el.firstChild && el.firstChild.src;
+			})).slimbox({
+				loop: true,
+				initialWidth: 1024,
+				initialHeight: 768,
+				overlayOpacity: 0.6,
+				overlayFadeDuration: 200,
+				resizeDuration: 1000,
+				resizeTransition: Fx.Transitions.Cubic.easeOut,
+				counterText: "This is image <strong>{x}</strong> on a total of <strong>{y}</strong> in this fabulous Flickr image gallery",
+				previousKeys: [37, 80, 16],
+				nextKeys: [39, 78, 17],
+			}, function(el) {
+				return [el.firstChild.src.replace(/_[mts]\.(\w+)$/, ".$1"),
+					(el.title || el.firstChild.alt) + '<br />Visit the <a href="' + el.href + '">site</a>'];
+			});
+		}
+		try {
+			_gat._getTracker("UA-760577-1")._trackPageview();
+		} catch(e) {}
+	});
+//]]></script>
+
+	<!-- Slimbox auxiliary CSS -->
+	<style type="text/css" media="screen">
+		@import url(css/slimbox.css);
+	
+		a img {
+			padding: 5px;
+			border: 1px solid #ccc;
+			margin: 4px;
+		}
+		
+		a img:hover{
+			background-color:#AAFFFF;
+			background-color:#81BCB6;
+			background-color:#8BC6C9;
+			background-color:#A0D1D3;
+			background-image:url(img/transparent_teal.gif);
+		}
+				
+		h1, h2 {
+		font-weight: normal;
+		font-family: "Century Gothic", "Trebuchet MS", Verdana, Arial, Geneva, Helvetica, sans-serif;
+		}
+	
+		h1 {
+			font-size: 200%;
+			margin: 20px 20px 0.5em 20px;
+		}
+	
+		h2 {
+			font-size: 125%;
+			text-transform: uppercase;
+			letter-spacing: 3px;
+			margin: 1em 20px 0.5em 20px;
+		}
+	
+		#footer {
+			font-family: Verdana, Arial, Geneva, Helvetica, sans-serif;
+			font-size: 10px;
+			margin-top: 2em;
+		}
+	</style>
+
+ 
+    <!--Sliding Code-->
+    <script type="text/javascript">
+		window.addEvent('domready', function(){
+			var scroll = new Fx.Scroll('demo-wrapper', {
+				wait: false,
+				duration: 2500, //2500
+				//offset: {'x': -200, 'y': -50},
+				offset:{'x':0, 'y':0},
+				transition: Fx.Transitions.Quad.easeInOut
+			});
+						
+			$('link1').addEvent('click', function(event) {
+				event = new Event(event).stop();
+				scroll.toElement('home');
+			});
+			
+			$('link2').addEvent('click', function(event) {
+				event = new Event(event).stop();
+				scroll.toElement('about');
+			});
+			
+			$('link3').addEvent('click', function(event) {
+				event = new Event(event).stop();
+				scroll.toElement('resume');
+			});
+			
+			$('link4').addEvent('click', function(event) {
+				event = new Event(event).stop();
+				scroll.toElement('work');
+			});
+			
+			$('link5').addEvent('click', function(event) {
+				event = new Event(event).stop();
+				scroll.toElement('reel');
+			});
+			$('link6').addEvent('click', function(event) {
+				event = new Event(event).stop();
+				scroll.toElement('contact');
+			});
+		}); 
+	</script>
+   
+
+
+
+</head>
+
+<!-- HTML STARTS HERE -->
+<body onload="resize(); initResumeSliders()" onresize="resize()">
+ 
+<!-- Menu Bubble -->
+<div id="menu">
+	<div id="link1" class="menu-item" href="#" onmouseover="shiftRight('link1')" onmouseout="shiftLeft('link1')"></div>
+    <div id="link2" class="menu-item" href="#" onmouseover="shiftRight('link2')" onmouseout="shiftLeft('link2')"></div> 
+	<div id="link3" class="menu-item" href="#" onmouseover="shiftRight('link3')" onmouseout="shiftLeft('link3')"></div> 
+	<div id="link4" class="menu-item" href="#" onmouseover="shiftRight('link4')" onmouseout="shiftLeft('link4')"></div> 
+	<div id="link5" class="menu-item" href="#" onmouseover="shiftRight('link5')" onmouseout="shiftLeft('link5')"></div> 
+    <div id="link6" class="menu-item" href="#" onmouseover="shiftRight('link6')" onmouseout="shiftLeft('link6')"></div>
+</div>
+ 
+<div id="demo-wrapper">
+	<div id="demo-inner">	<div id="home" class="scrolling-content">    
+		</div>
+ 
+ 		<!-- About Div -->
+		<div id="about" class="scrolling-content">
+			<div class="inner-content">
+            	<div id = me><img src="img/me.jpg" height="225"/></div>
+            	Hello, I'm Alice Yang, a programmer, artist, and slightly-obsessed cat lover. I'm currently studying <a href="http://cg.cis.upenn.edu/dmd/">Digital Media Design</a> at the University of Pennsylvania and I'm proud to be a member of the class of 2012. I will be entering UPenn's Computer Graphics and Game Technology program following graduation. 
+                <br /><br />
+                Creating pretty yet functional designs is what I like to do best. I love exploring the world of web design, and I'm on a  				quest to pick up as many languages as possible along the way (I'm looking at you Ruby on Rails!)
+                <br /><br />
+                In my free time I enjoy sketching and illustrating in Adobe Photoshop (some of my drawings can be found <a href="http://www.aliceyang.deviantart.com">here</a>). Other hobbies include playing the piano (which I studied for 14 years) and occasionally indulging in MMORPG's. 
+            </div>
+		</div>
+ 
+ 		<!-- Resume Div -->
+		<div id="resume" class="scrolling-content">
+			<div class="inner-content">
+            	<a href="docs/Resume.pdf"> <strong>Download PDF Version</strong> </a> 
+                <br />   
+               
+                <div class="resume-titles"> 
+                	<a href="javascript:void(0)" onclick="showResumeDiv('resume-education')"> Education </a>|
+                    <a href="javascript:void(0)" onclick="showResumeDiv('resume-work')"> Experience  </a>|
+                    <a href="javascript:void(0)" onclick="showResumeDiv('resume-skills')"> Skills  </a>|
+                    <a href="javascript:void(0)" onclick="showResumeDiv('resume-courses')"> Courses  </a>|
+                </div>
+                
+                <div id="resume-education" class="resume-divs">
+                        <b>University of Pennsylvania, Philadelphia, PA</b>  &nbsp;&nbsp; <em>2008 - Present</em><br />
+                        School of Engineering and Applied Science<br />
+                        Anticipated: Bachelor of Science in Engineering in May 2012<br />
+                        Major: Digital Media Design<br />
+                </div>
+                
+                <div id="resume-work" class="resume-divs">
+                		
+                        <b>University of Pennsylvania – SIG Center for Computer Graphics</b><br />
+                        <i>Research Assistant (January 2010 – present)</i><br />
+                        • Assisted in the study of directed crowd movement.<br />
+                        • Created art assets for various projects,  including a procedurally generated city 
+                        using Autodesk Maya and Procedural CityEngine.
+                        
+                         <br /><br />
+                         
+                        <b>University of Pennsylvania – SAAST Summer Program</b><br />
+                        <i>Residential Team Advisor (July 2010)</i><br />
+                        • Summer Academy of Applied Science and Technology<br />
+                        • Created assignments and course material for introductory programming class.<br />
+                        • Assisted participants with classroom activities and managed social outings.
+
+                        <br /><br />
+                         
+                        <b>University of Pennsylvania – Introduction to Computer Programming</b><br />
+                        <i>Mentor (January 2010 – May 2010); Teaching Assistant (September 2010 – present)</i><br />
+                        • Led discussion groups and lab sessions on a weekly basis.<br />
+                        • Graded tests;  held regular office hours and helped students debug code.
+
+                        <br /><br />
+                        
+                        <b>University Communications</b><br />
+                        <i>Web Assistant (September 2009 – May 2010)</i><br />
+                        • Assisted with maintaining digital asset management system.<br />
+                        • Edited and updated websites; analyzed web statistics.
+                        
+                        <br /><br />
+                        
+                        <b>8th-Circuit.com</b><br />
+                        <i>Senior Editor (January 2007 – January 2010)</i><br />
+                        • Designed business card; wrote and edited articles for movie, technology, software, and music reviews.<br />
+                       
+                        <br /><br />
+                        
+                        
+
+                </div>
+                
+                <div id="resume-skills" class="resume-divs">
+                	<strong>Web Design</strong>: HTML, CSS, Javascript, some PHP <br />
+					<strong>Programming</strong>: Java, C++ , Python, C,  Procedural CityEngine, some experience with 
+C# and Assembly (LC4)
+<br />
+                    <strong>Software</strong>: Adobe Photoshop, Illustrator, InDesign, Dreamweaver, Autodesk Maya, 
+Microsoft Office, Paint Tool SAI, some experience with Unix
+<br />
+                    <strong>Foreign Languages</strong>: Fluent in Chinese (Mandarin), Intermediate level Latin <br />
+
+                </div>
+                
+                <div id="resume-courses" class="resume-divs">
+                	•  Programming languages I & II <br />
+                    •  Math Foundations in Computer Science<br />
+                    •  Automata Computability & Complexity<br />
+                    •  Python Programming<br />
+                    •  Computer Graphics<br />
+                    •  Introduction to Computer Architecture<br />
+                    •  Digital Design Foundations<br />
+                    •  Figure Drawing <br />
+                    •  3D Computer Modeling<br />
+                    •  Web Design <br />
+                    •  Graphic Design<br />
+                    •  Visual Communication<br />
+                </div>         
+            </div>
+		</div>
+ 
+ 		<!-- Work Div -->
+		<div id="work" class="scrolling-content">
+			<div class="inner-content">
+            	<div id="work-content">
+                
+                <!-- Web section -->
+                <div class="web" id="work-web">
+                    <h2> Web </h2>
+                    <div>
+                    <a rel="lightbox-web" title="<a href='phuket/index.html'>Phuket.net</a>" href="img/portfolio/phuket.jpg"><img src="img/portfolio/phukett.jpg" alt="phuket" /></a><a rel="lightbox-web" title="<a href='wistfullythinking/index.html'> Wistfully Thinking</a>" href="img/portfolio/wistfullythinking.jpg"><img src="img/portfolio/wistfullythinkingt.jpg" alt="wistfullythinking" /></a><a rel="lightbox-web" title="<a href='http://netmyprofit.com'>Net My Profit</a>" href="img/portfolio/netmyprofit.jpg"><img src="img/portfolio/netmyprofitt.jpg" alt="netmyprofit" /></a><a rel="lightbox-web" title="<a href='index.html'>alice-yang.com</a>" href="img/portfolio/aliceyang.PNG"><img src="img/portfolio/aliceyangt.jpg" alt="alice-yang" /></a><a rel="lightbox-web" title="<a href='http://danielkim.net/web2/php/drinkme/'> Drink Me</a>" href="img/portfolio/DrinkMe.jpg"><img src="img/portfolio/DrinkMet.jpg" alt="Drink Me" /></a>
+                    </div>
+                </div>
+                <!-- End Web section -->
+                
+                
+                <!-- Infographics section -->
+                <div class="infographics" id="work-infographics">
+                    <h2> Infographics </h2>
+                    <div>
+                    <a rel="lightbox-infographics" title="<a href='http://codingtable.heroku.com'>Table of Coding Languages</a>" href="img/portfolio/CodingTable.jpg"><img src="img/portfolio/CodingTablet.jpg" alt="Coding Table" /></a><a rel="lightbox-infographics" title="<a href='img/portfolio/LifeHandoutLarge.jpg'>My Life in Pie Charts </a>" href="img/portfolio/LifeHandout.jpg"><img src="img/portfolio/LifeHandoutt.jpg" alt="Life in Pie Charts" /></a>
+                    
+                    </div>
+                </div>
+                <!-- End Infographics section -->
+                
+                <!-- Illustration section -->
+            	<div class="illustration" id="work-illustration">
+                    <h2> Illustration </h2>
+                    <div>
+                    <a rel="lightbox-illustration" title="Succubus" href="img/portfolio/Succubus.jpg"><img src="img/portfolio/Succubust.jpg" alt="Succubus" /></a><a rel="lightbox-illustration" title="Incubus" href="img/portfolio/Incubus.jpg"><img src="img/portfolio/Incubust.jpg" alt="Incubus" /></a><a rel="lightbox-illustration" title="Consumption" href="img/portfolio/Consumption.jpg"><img src="img/portfolio/Consumptiont.jpg" alt="Consumption" /></a><a rel="lightbox-illustration" title="Dream" href="img/portfolio/Dream.jpg"><img src="img/portfolio/Dreamt.jpg" alt="Dream" /></a><a rel="lightbox-illustration" title="Lolita" href="img/portfolio/Lolita.jpg"><img src="img/portfolio/Lolitat.jpg" alt="Lolita" /></a><a rel="lightbox-illustration" title="Nightmare on 6th Avenue" href="img/portfolio/Nightmare%20on%206th%20Avenue.jpg"><img src="img/portfolio/Nightmare-on-6th-Avenuet.jpg" alt="Nightmare on 6th Avenue" /></a><a rel="lightbox-illustration" title="Psyche" href="img/portfolio/Psyche.jpg"><img src="img/portfolio/Psychet.jpg" alt="Psyche" /></a><a rel="lightbox-illustration" title="Sound of Music" href="img/portfolio/Sound%20of%20Music.JPG"><img src="img/portfolio/Sound-of-Musict.jpg" alt="Sound of Music" /></a><a rel="lightbox-illustration" title="Beyond Wonderland" href="img/portfolio/Beyond-Wonderland.JPG"><img src="img/portfolio/Beyond-Wonderlandt.jpg" alt="Beyond-Wonderland" /></a><a rel="lightbox-illustration" title="Lace" href="img/portfolio/Lace.jpg"><img src="img/portfolio/Lacet.jpg" alt="Lace" /></a><a rel="lightbox-illustration" title="logocolor1" href="img/portfolio/logocolor1.jpg"><img src="img/portfolio/logocolor1t.jpg" alt="logocolor1" /></a><a rel="lightbox-illustration" title="logocolor2" href="img/portfolio/logocolor2.jpg"><img src="img/portfolio/logocolor2t.jpg" alt="logocolor2" /></a><a rel="lightbox-illustration" title="Phunk" href="img/portfolio/Phunk.JPG"><img src="img/portfolio/Phunkt.jpg" alt="Phunk" /></a>
+                    </div>
+    			</div>
+                <!-- End Illustration section -->
+                
+            </div>
+         </div>
+		</div>
+        
+        <!-- Reel Div -->
+        <div id="reel" class="scrolling-content">
+			<div class="inner-content">
+            	<iframe src="http://player.vimeo.com/video/17873769?color=59a5d1" width="700" height="394" frameborder="0"></iframe><p>Demo Reel from Winter 2009.</p>
+            </div>
+		</div>
+        
+        <!-- Contact Div -->
+        <div id="contact" class="scrolling-content">
+			<div class="inner-content">
+                	 Email me at: yangalice2008 [at] gmail [dot] com<br /><br />
+                     Or find me at:<br />
+                     <a href="http://twitter.com/#!/tofuglory"><img src="img/twittericon.png" width="65" border="0" title="tofuglory@twitter"/></a>
+                     <a href="http://y-alice.blogspot.com/"><img src="img/bloggericon.png" width="64" border="0" title="y-alice@blogspot" /></a>
+          
+            </div>
+		</div>
+	</div>
+</div>
+ 
+ 
+ <!-- HTML ENDS HERE -->
+</body>
+</html>
+
+<!-- www.000webhost.com Analytics Code -->
+<script type="text/javascript" src="http://analytics.hosting24.com/count.php"></script>
+<noscript><a href="http://www.hosting24.com/"><img src="http://analytics.hosting24.com/count.php" alt="web hosting" /></a></noscript>
+<!-- End Of Analytics Code -->
+
+<!-- Localized -->

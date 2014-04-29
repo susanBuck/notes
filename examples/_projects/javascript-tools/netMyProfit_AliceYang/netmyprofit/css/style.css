@@ -1,0 +1,181 @@
+@charset "utf-8";
+/* Alice Yang
+	CSS Style Sheet for NetMyProfit
+ */
+ 
+body{
+ 	margin: 0px;
+	background-image:url(../img/bg.jpg);
+}
+
+div#content{
+	position: absolute;
+    height: 720px;
+	width: 70%;
+    left: 0;
+	bottom: 0;
+	right: 0;
+    top: 0;
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+}
+
+div#header{
+	position:relative;
+	top:20px;
+	bottom:0px;
+	left:0px;
+	right:0px;
+	width:819px;
+	height:126px;
+	margin: 0 auto;
+	background-image:url(../img/header.png);
+	background-repeat:no-repeat;
+	z-index:2;
+}
+
+div#header_menu{
+	position:relative;
+	float:right;
+	top:95px;
+	right:20px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:23px;
+	color:#FFFFFF;
+}
+
+div#body_box{
+	clear:both;
+	position:relative;
+	top:-100px;
+	bottom:0px;
+	left:7px;
+	right:0px;
+	width:864px;
+	height:684px;
+	margin:0 auto;
+	background-image:url(../img/body_box.png);
+	background-repeat:no-repeat;
+	border: 1px ;
+	z-index:1;
+}
+
+div#instructions{
+	color:#C8C8C8;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:15px;
+	text-align:center;
+	position:relative;
+	top:150px;
+	z-index:3;
+	border:1px ;
+}
+
+div#labels{
+	color:#A0A0A4;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:25px;
+	text-align:right;
+	line-height:40px;
+
+	position:relative;
+	width:400px;
+	top:160px;
+	left:180px;
+	z-index:3;
+	border:1px  ;	
+}
+
+div#calculate{
+	background-image:url(../img/calculate.png);
+	background-repeat:no-repeat;
+	width:276px;
+	height:38px;
+	top:180px;
+	left:290px;
+	position:relative;
+	z-index:3;
+	border:1px  ;
+}
+
+div#clearAll{
+	background-image:url(../img/clearAll.png);
+	background-repeat:no-repeat;
+	width:276px;
+	height:38px;
+	top:190px;
+	left:290px;
+	position:relative;
+	z-index:3;
+	border:1px  ;
+}
+
+div#error{
+	color:#FF0000;
+	font-size:12px;
+	text-align:center;
+	left:48px;
+	position:relative;
+	height:30px;
+	padding:0;
+	
+	border:1px;
+}
+
+div#calculator{
+	display:inherit;
+}
+
+div#FAQ{
+	display:inherit;
+	color:#A0A0A4;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:18px;
+	text-align:left;
+	line-height:20px;
+
+	position:relative;
+	width:700px;
+	top:-280px;
+	left:70px;
+	z-index:3;
+	border:1px ;	
+}
+
+/* LINK AND FONT STYLES */
+a{
+	outline:0;
+	text-decoration:none;
+	color:#FFFFFF;
+}
+
+a:hover{
+	background-color:#A0A0A4;
+}
+
+.header{
+	color:#FFB735;
+	font-size:25px;
+}
+
+.header1{
+	position:relative;
+	top:10px;
+	color:#808080;
+	font-size:18px;
+	margin:0;
+	border:1px ;	
+}
+
+.text{
+	position:relative;
+	top:15px;
+	color:#A0A0A4;
+	font-sze:12px;
+	margin:0;
+	border:1px ;
+}
+
+

@@ -1,0 +1,29 @@
+<script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/mootools/1.3.0/mootools-yui-compressed.js'>
+</script>
+
+
+<script type='text/javascript'>
+
+
+function pickColor(whichColor) {
+
+	var colors = new Array();
+	
+	colors["red"]   = "images/redLivingRoom.jpg";
+	colors["green"] = "images/greenKitchen.jpg";
+	colors["blue"]  = "images/blueLivingRoom.jpg'";
+	
+	
+	//var colorChoiceByUser = $('colorChoice').value;
+	
+	var image = colors[whichColor];
+	
+	$('results').innerHTML = "<img src='" + image  +"'>"
+
+}
+
+</script>
+
+
+
+<input type='button' value='Generate Printable Version' onClick='generatePrintableVersion()'>

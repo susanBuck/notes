@@ -1,0 +1,174 @@
+@charset "UTF-8";
+/* CSS Document */
+
+
+h1, h2 {
+	font-family: 'Yanone Kaffeesatz', serif;
+	font-weight: normal;
+	letter-spacing: 1.5px;
+	padding-bottom: 20px;
+}
+
+h4 {
+	margin: 0;
+	padding: 0;
+}
+
+h3, h4, h5, body  { font-family: Helvetica, sans-serif;}
+
+body { 
+	font-size: 14px;
+    padding-top: 60px;
+    padding-bottom: 40px;
+	letter-spacing: 1.0px;
+	line-height: 22px;
+}
+
+p.intro {
+	margin-bottom: 25px;
+}
+
+.align {
+	float: right;
+	padding-right: 29px;
+	margin-top: 40px;
+}
+
+.active {
+	background-color: #000;
+	color: #FFF;
+}
+
+.container h1 {
+	margin-top: 20px;
+	margin-bottom: 20px;
+	font-size: 70px;
+}
+
+.container h2 {
+	margin-top: 15px;
+	margin-bottom: 20px;
+}
+
+.container h3 {
+	margin: 0;
+	padding: 0;
+}
+
+#class_box_shadow{
+    background: #ccc;
+    border: 5px solid white;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.75);
+	width: 500px;
+}
+
+#cv {
+	width:500px;
+	height:647px;
+	position:relative;
+	overflow:hidden;
+	line-height: 16px;
+	font-family: Arial, Helvetica, sans-serif;
+	background: url(../images/cream_dust.png) repeat;
+}
+
+#text {
+	width: 426.5px;
+	margin: 0 auto;
+	height: 600px;
+}
+
+#heading.center {
+	text-align: center;
+	width:100%;
+	padding-bottom: 20px;
+}
+
+#heading.left {
+	text-align: left;
+	width:100%;
+	padding-bottom: 20px;
+}
+
+#name-in-document {
+	width:100%;
+	padding-top:30px;
+	font-size:20px;
+	z-index:999;
+	font-weight: 700;
+}
+
+#email-in-document {
+	width:100%;
+	font-size:12px;
+	z-index:999;
+}
+
+.subheading {
+	border-bottom: 1px solid black;
+	margin-bottom: 8px;
+	letter-spacing: 1.5px;
+	margin-top: 10px;
+	padding-bottom: 2px;
+}
+
+#address-in-document, #phone-in-document {
+	width:100%;
+	font-size:12px;
+	z-index:999;
+	margin-top:-4px;
+}
+
+#school1-in-document, #school2-in-document, #company1-in-document, #company2-in-document {
+	width:100%;
+	font-size:14px;
+	font-weight: bold;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+
+#degree1-in-document, .major1-in-document, #degree2-in-document, .major2-in-document, #position1-in-document, #position2-in-document  {
+	font-size: 12px;
+}
+
+.major1-in-document, .major2-in-document {
+	display: inline-block;
+}
+
+.date {
+    width: 50px;
+}
+
+#start1-in-document, #end1-in-document, #start2-in-document, #end2-in-document, #start_job1-in-document, #end_job1-in-document,  
+#start_job2-in-document, #end_job2-in-document
+{
+	display: inline-block;
+	font-style:italic;
+	font-size: 10px;
+}
+
+#location1-in-document, #location2-in-document, #city1-in-document, #city2-in-document {
+	font-style: italic;
+	font-size: 10px;
+}
+
+.holder { overflow: hidden; clear:both; }
+.holder .even-height { float: left; padding-bottom: 100000px; margin-bottom: -100000px; }
+.column-one { width: 80%; }
+.column-two { width: 20%; }
+
+
+ul.noindent {
+	margin: 0;
+	padding-top: 6px;
+}
+
+ul.noindent li {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	font-size: 11px;
+	line-height: 14px;
+}

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+
+<head>
+
+	<title>Fixed Layout w/ Absolute Content</title>
+
+	<link rel="stylesheet" type="text/css" href="/storage/code/includes/code.css">
+
+	<style type='text/css'>
+	
+	body {
+		margin:0px; /* Browsers will set a margin > 0 by default, so reset it to 0 here */
+		background-color:#D1FFFE;
+	}
+
+	/* We're giving all the divs a border just so they're easy to distinguish for this demo */
+	div {
+		border:1px dotted black;
+	}
+	
+	/* The wrapper for all elements on the page */
+	#wrapper {
+		/* These two lines are the magic that makes sure this is always centered on the page */
+		position:relative;
+		margin:0px auto;
+		/* end magic */
+		
+		width:960px;
+		height:600px;
+		border:2px solid black;
+	}
+	
+	/* All of the following boxes are absolutely positioned somewhere within our wrapper div */
+	#header {
+		position:absolute;
+		top:100px;
+		left:175px;
+		width:100px;
+		height:200px;
+	}
+	
+	#random-box-b {
+		position:absolute;
+		bottom:5px;
+		right:5px;
+		width:200px;
+		height:100px;
+	}
+	
+	#random-box-c {
+		position:absolute;
+		top:50px;
+		left:50px;
+		width:100px;
+		height:200px;
+	}
+
+	#random-box-d {
+		position:absolute;
+		top:50px;
+		right:100px;
+		width:300px;
+		height:200px;
+	}
+
+
+	
+	</style>
+		
+</head>
+
+
+
+
+<body>
+
+
+<div id='wrapper'>
+
+	<div id='random-box-a'>#random-box-a</div>
+	
+	<div id='random-box-b'>#random-box-b</div>
+	
+	<div id='random-box-c'>#random-box-c</div>
+	
+	<div id='random-box-d'>#random-box-d</div>
+
+</div>
+
+
+
+
+</body>
+
+
+
+
+
+</html>

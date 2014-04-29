@@ -1,0 +1,44 @@
+[06-Jul-2012 17:43:01 UTC] PHP Fatal error:  Uncaught exception 'TwitterException' with message 'Not authorized' in /home/webstart/public_html/students.susanbuck.net/storage/code/twitter/twitter.php:556
+Stack trace:
+#0 /home/webstart/public_html/students.susanbuck.net/storage/code/twitter/twitter.php(981): Twitter->doCall('statuses/user_t...', Array, true)
+#1 /home/webstart/public_html/students.susanbuck.net/storage/code/twitter/demos.php(50): Twitter->statusesUserTimeline()
+#2 {main}
+  thrown in /home/webstart/public_html/students.susanbuck.net/storage/code/twitter/twitter.php on line 556
+[26-Nov-2012 05:29:55 UTC] PHP Fatal error:  Uncaught exception 'TwitterException' with message 'Not authorized' in /home/webstart/public_html/students.susanbuck.net/storage/code/twitter/twitter.php:556
+Stack trace:
+#0 /home/webstart/public_html/students.susanbuck.net/storage/code/twitter/twitter.php(981): Twitter->doCall('statuses/user_t...', Array, true)
+#1 /home/webstart/public_html/students.susanbuck.net/storage/code/twitter/inClass.php(16): Twitter->statusesUserTimeline()
+#2 {main}
+  thrown in /home/webstart/public_html/students.susanbuck.net/storage/code/twitter/twitter.php on line 556
+[12-Dec-2012 09:48:49 UTC] PHP Fatal error:  Uncaught exception 'TwitterException' with message 'Not authorized' in /home/webstart/public_html/students.susanbuck.net/storage/code/twitter/twitter.php:556
+Stack trace:
+#0 /home/webstart/public_html/students.susanbuck.net/storage/code/twitter/twitter.php(981): Twitter->doCall('statuses/user_t...', Array, true)
+#1 /home/webstart/public_html/students.susanbuck.net/storage/code/twitter/demos.php(50): Twitter->statusesUserTimeline()
+#2 {main}
+  thrown in /home/webstart/public_html/students.susanbuck.net/storage/code/twitter/twitter.php on line 556
+[12-Dec-2012 09:48:57 UTC] PHP Fatal error:  Uncaught exception 'TwitterException' with message 'Failed_to_validate_oauth_signature_and_token' in /home/webstart/public_html/students.susanbuck.net/storage/code/twitter/twitter.php:2532
+Stack trace:
+#0 /home/webstart/public_html/students.susanbuck.net/storage/code/twitter/authorize.php(25): Twitter->oAuthRequestToken('http://susanbuc...')
+#1 {main}
+  thrown in /home/webstart/public_html/students.susanbuck.net/storage/code/twitter/twitter.php on line 2532
+[12-Dec-2012 09:49:16 UTC] PHP Fatal error:  Uncaught exception 'TwitterException' with message '<?xml_version' in /home/webstart/public_html/students.susanbuck.net/storage/code/twitter/twitter.php:2532
+Stack trace:
+#0 /home/webstart/public_html/students.susanbuck.net/storage/code/twitter/authorize.php(25): Twitter->oAuthRequestToken('http://susanbuc...')
+#1 {main}
+  thrown in /home/webstart/public_html/students.susanbuck.net/storage/code/twitter/twitter.php on line 2532
+[12-Dec-2012 10:13:23 UTC] PHP Warning:  require_once(twitter.php) [<a href='function.require-once'>function.require-once</a>]: failed to open stream: No such file or directory in /home/webstart/public_html/students.susanbuck.net/storage/code/twitter/authorize.php on line 10
+[12-Dec-2012 10:13:23 UTC] PHP Fatal error:  require_once() [<a href='function.require'>function.require</a>]: Failed opening required 'twitter.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/webstart/public_html/students.susanbuck.net/storage/code/twitter/authorize.php on line 10
+[12-Dec-2012 10:14:32 UTC] PHP Fatal error:  Class 'Twitter' not found in /home/webstart/public_html/students.susanbuck.net/storage/code/twitter/authorize.php on line 17
+[12-Dec-2012 10:14:45 UTC] PHP Fatal error:  Uncaught exception 'Exception' with message '<?xml_version' in /home/webstart/public_html/students.susanbuck.net/storage/code/twitter/Twitter.php:2835
+Stack trace:
+#0 /home/webstart/public_html/students.susanbuck.net/storage/code/twitter/authorize.php(25): Twitter->oAuthRequestToken('http://susanbuc...')
+#1 {main}
+  thrown in /home/webstart/public_html/students.susanbuck.net/storage/code/twitter/Twitter.php on line 2835
+[12-Dec-2012 10:15:02 UTC] PHP Parse error:  syntax error, unexpected $end, expecting ')' in /home/webstart/public_html/students.susanbuck.net/storage/code/twitter/Twitter.php on line 2106
+[12-Dec-2012 10:15:07 UTC] PHP Warning:  Unterminated comment starting line 2767 in /home/webstart/public_html/students.susanbuck.net/storage/code/twitter/Twitter.php on line 2767
+[12-Dec-2012 10:15:07 UTC] PHP Parse error:  syntax error, unexpected $end, expecting T_FUNCTION in /home/webstart/public_html/students.susanbuck.net/storage/code/twitter/Twitter.php on line 2771
+[12-Dec-2012 10:15:11 UTC] PHP Fatal error:  Uncaught exception 'Exception' with message '<?xml_version' in /home/webstart/public_html/students.susanbuck.net/storage/code/twitter/Twitter.php:2835
+Stack trace:
+#0 /home/webstart/public_html/students.susanbuck.net/storage/code/twitter/authorize.php(25): Twitter->oAuthRequestToken('http://susanbuc...')
+#1 {main}
+  thrown in /home/webstart/public_html/students.susanbuck.net/storage/code/twitter/Twitter.php on line 2835

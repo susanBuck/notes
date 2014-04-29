@@ -1,0 +1,47 @@
+<html>
+
+<head>
+	
+	<title>Sample JavaScript using While</title>
+	
+	<script type='text/javascript'>
+	
+		i       = 1;
+		sum     = 0;
+		counter = 1;
+		max     = 3;
+		
+		while(counter <= max) {
+		
+			mark = window.prompt("Enter mark #" + i++);
+			
+			// If they entered a value mark will not be "null"… go ahead and add it to our average
+			if(mark != null) {
+				sum     = sum + parseInt(mark);
+				counter = counter + 1;
+			}
+			// Else if they didn't enter a value (they hit cancel) break out of this loop
+			else {
+				avg = sum / counter;
+				break;
+			}
+			
+		}
+		
+		avg = sum / max;
+		
+		document.writeln("<H2> Average mark is " + avg + "</H2>");
+		
+		
+	</script>
+</head>
+
+<body>
+
+	<h2 align="center">
+		<font face="Arial">Sample JavaScript using While</font>
+	</h2>
+
+</body>
+
+</html>

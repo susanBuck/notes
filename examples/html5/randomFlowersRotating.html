@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/mootools/1.3.0/mootools-yui-compressed.js"></script> 
+	
+
+<style type='text/css'>
+
+.flower {
+	width:200px; 
+	height:200px;
+	background-image:url('flower.gif');
+	position:absolute; 
+}
+
+#flower1 {
+	top:100px;
+	left:100px;
+}
+
+#flower2 {
+	top:300px;
+	left:300px;
+}
+
+</style>
+
+
+<script type='text/javascript'>
+
+	function rotate(whichFlower) { 
+	
+		// Pick a random number to rotate to
+		var randomDegree = Math.floor(Math.random()*360);
+		
+		// Decide if we should go left or right
+		var randomPosOrNeg = Math.floor(Math.random()*2);
+		if(randomPosOrNeg == 1) randomDegree = -randomDegree;
+	
+		// Pick a random speed (max 5 seconds)
+		var randomSpeed = Math.floor(Math.random()*5);
+	
+		// Do the rotation
+		$(whichFlower).style.webkitTransition = "-webkit-transform " + randomSpeed + "s ease-in-out";
+		$(whichFlower).style.webkitTransform = "rotate(-" + randomDegree + "deg)";
+		
+	}
+
+</script>
+
+
+<div class='flower' id='flower1' onMouseOver='rotate("flower1")'>
+</div>
+
+
+<div class='flower' id='flower2' onMouseOver='rotate("flower2")'>
+</div>
+
+

@@ -1,0 +1,201 @@
+
+<!-- Project 3 -->
+<!-- Javascript Tool -->
+<!-- Nicole Yulo -->
+<!-- Novemberr. 7, 2010 -->
+
+<!--Art Plotter: is a tool that allows artists and art enthusiasts to measure/visualize dimensions of art or canvases in real space-->
+<!--Requires numerical values from 1-99 + has appropriate error messages built in-->
+
+<!--REVISION:-->
+<!--I went back in and tweaked some aesthetic things, positioning of the inputs, font sixe, letter arrangement, etc. as well as redesigned
+the 'submit' button so that it didn't meld into the background.--->
+<!--After much deliberation though, I have decided NOT to change the appearance of the transparent box (that is created as a result of
+the inputs). I came to this decision 1) because it did everything I needed it to do. I needed it to have corners and to be fully filled-in
+so as to really get a sense of the dimensions and surface to work with (the main point of the tool) 2) I wanted to keep it transparent. 
+Any pattern, border or image I fiddled with just proved faulty and distracting. 3) wanted it to look clean and have a clear distinction 
+between the blue (this is working!) and red (error message) boxes. 4) I couldn't really add element outside of the box because
+the box expands to input I cannot predict. Larger sizes would push designs against the edge or bleed off and smaller sizes would never
+be consistent.-->
+
+
+<html>
+
+	<!--HEAD------------------------------------------------------------------------------------------------------------------------------>
+	
+	<!------------------------------------------------------------------------------------------------------------------------------------>
+	<head>
+		<title>Art Plotter</title>
+
+			<!--preload images-->
+				<img src="images/11.jpg" style="display:none;">
+				<img src="images/22.jpg" style="display:none;">
+				<img src="images/33.jpg" style="display:none;">
+				<img src="images/44.jpg" style="display:none;">
+				<img src="images/55.jpg" style="display:none;">
+				<img src="images/66.jpg" style="display:none;">
+
+			<!--calling mootools-->
+				<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/mootools/1.3.0/mootools-yui-compressed.js"></script>
+		
+			<!--CSS-->
+				<style type='text/css'>
+	
+					body {
+								font-family:arial;
+								font-size:20pt;
+								margin:0px;
+						 }
+		
+					.section {
+								position:absolute;
+								text-align:left; 
+								padding:0px; 
+								width:918px; 
+								height:764px;
+								font-family:arial;
+								font-size:18px;
+							}
+					
+					.section2 {
+								position:absolute;
+								text-align:left; 
+								padding:0px; 
+								width:834px; 
+								height:762px;
+								font-family:arial;
+								font-size:18px;
+							  }
+							  
+					 .section3 {
+								position:absolute;
+								text-align:left; 
+								padding:0px; 
+								width:3700px; 
+								height:12px;
+							  }
+					
+					.squareStyle {
+								background-color:white;
+								width:900px;
+								height:200px;
+								position:relative;
+								display:none;
+								}
+
+		
+					A:link {color:black;}
+					A:visited {color:black;}
+					A:active {color:black;}
+					A:hover {color:black;}
+		
+					a img {border: none; }
+		
+			</style>
+
+		<!--Javascript-->
+		<script type="text/javascript">
+
+			//isInteger()=determines if input is integer function.//
+			function isInteger(s) {
+ 									 return (s.toString().search(/^-?[0-9]+$/) == 0);
+								  }
+
+			//changeBox()=creates div according to dimensions inputed.//
+			function changeBox() {
+
+				//calls on values inputed and stores them in new variables.
+				var enteredHeight = $('whatHeight').value;
+				var enteredWidth = $('whatWidth').value;
+				//takes new variables and puts them into an equation that = 1 inch/6.75 px.
+				var newHeight = enteredHeight * 5.389;
+				var newWidth = enteredWidth * 5.389;
+    
+   			 //If statements to verify if inputed values are correct + respective actions or error message.//
+				
+				//Correct//
+				if( isInteger(enteredHeight) == true && isInteger(enteredWidth) == true) {
+					// Morph//
+					$("square").set('morph', {link: 'chain'})
+					.morph({'height': newHeight})
+					.morph({'width': newWidth})
+					.morph({'background-color': ['#a0a0ff']});
+					//Makes the error words go away -- resets box//
+					$("square").innerHTML = "";
+				}
+				//Incorrect//
+				else {
+					$("square").set('morph', {link: 'chain'})
+					.morph({'height': '80'})
+					.morph({'width': '340'})
+					.morph({'background-color': ['#ff0000']});
+					//error message.//
+					$("square").innerHTML = "Please refresh the page and enter numerical values.";
+					 }
+				//closes if statement.//
+				 }
+		//end of javascript.//
+		</script>
+
+	</head>
+	<!--END-of-HEAD----------------------------------------------------------------------------------------------------------------------->
+	
+	<!--calls the style sheet-->
+	<link rel="stylesheet" type="text/css" href="css/align.css" />
+	
+	
+	<!--BODY------------------------------------------------------------------------------------------------------------------------------>
+	
+	<!------------------------------------------------------------------------------------------------------------------------------------>
+	<!--turns on x scroll bar and off y scrollbar-->
+	<body style="overflow-y:hidden; overflow-x:scroll; background-color:black;">
+		<!-- SECTIONS -->
+		<!-- each section of the layout-->
+			<!--1-->
+				<div style='left:0px; background-image:url(images/11.jpg); background-repeat: no-repeat; position:absolute;' class='section' id=''>		
+					<!--positioning.-->
+					<div id="floater"> </div>	
+				
+						<!--calls on div #content-->
+						<div id="content" style='left:170px; top:359px; font-size:12px;'>
+							<div>
+								Min: 1 in. 
+								Max: 99 in.
+								</br>
+								</br>
+								Height (in.):
+								<input type='text' id='whatHeight' maxlength='2' size='1'>
+								</br>
+								</br>
+								Width (in.):
+								<input type='text' id='whatWidth' maxlength='2' size='1'>
+								</br>
+								</br>
+								</br>
+								</br>
+								</br>
+								</br>
+								<input type="image" src="images/submitbutton.png"  style='width:95px; height:95px;' alt="Submit" name="Submit" onClick='changeBox(); isInteger(); scrollTo(made);'>
+							</div>
+						</div>
+					</div>		
+			<!--2-->
+				<div style='top:12px; left:724px; background-image:url(images/22.jpg); background-repeat: no-repeat;' class='section' id=''></div>
+			<!--3-->
+				<div style='top:12px; left:1430px; background-image:url(images/33.jpg); background-repeat: no-repeat;' class='section' id=''></div>
+			<!--4-->
+				<div style='top:12px; left:2137px; background-image:url(images/44.jpg); background-repeat: no-repeat;' class='section' id=''></div>
+			<!--5-->
+				<div style='top:12px; left:2843px; background-image:url(images/55.jpg); background-repeat: no-repeat;' class='section' id=''></div>
+			<!--6-->
+				<div style='top:12px; left:3550px; background-image:url(images/66.jpg); background-repeat: no-repeat;' class='section2' id=''>
+					<!--square div + opacity setting-->
+					<div id='square' style='width:2px; height:2px; background-color:white; position:fixed; bottom:37px; left:850px;  opacity: 0.5; 
+   					 filter: progid:DXImageTransform.Microsoft.Alpha(opacity=50);'></div>
+				</div>		
+			<div style='top:0px; left:724px; width:3660px; background-color:white;' class='section3' id=''></div>
+	</body>
+	
+	<!--END-of-BODY-------------------------------------------------------------------------------------------------------------------------->
+</html>
+<!-- Localized -->

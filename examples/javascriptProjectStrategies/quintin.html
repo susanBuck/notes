@@ -1,0 +1,40 @@
+<script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/mootools/1.3.0/mootools-yui-compressed.js'>
+</script>
+
+
+<script type='text/javascript'>
+
+
+
+
+function generatePrintableVersion() {
+
+
+	// Calculate conversion
+	
+	
+	
+	
+
+	var generator = window.open('','name','height=400,width=500');
+	generator.document.write("<table>");
+	generator.document.write("<tr><th>Dollar<\/th><th>Peso<\/th>");
+	generator.document.write("<tr><td>1<\/td><td>"+ calculateVar1 +"<\/td>");
+	generator.document.write("<tr><td>4<\/td><td>"+ calculateVar4+"<\/td>");
+	generator.document.write("<tr><td>19<\/td><td>492<\/td>");
+	generator.document.write("<tr><td>25<\/td><td>492<\/td>");
+	generator.document.write("<tr><td>35<\/td><td>492<\/td>");
+	generator.document.write("<tr><td>45<\/td><td>492<\/td>");
+	generator.document.write("<\/table>");
+ 
+ //generator.document.close();
+
+	
+}
+
+
+</script>
+
+
+
+<input type='button' value='Generate Printable Version' onClick='generatePrintableVersion()'>

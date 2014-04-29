@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<head>
+
+	<title></title>
+
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+	<script type="text/javascript" src="rotate.js"></script>
+	<script type="text/javascript" src="transform.js"></script>
+	
+	
+	<style type='text/css'>
+	
+		div {
+			background-color:red;
+			width:100px;
+			height:100px;
+		}
+	
+	</style>
+
+	<script type='text/javascript'>
+		
+		$(document).ready(function() {
+		
+			$('#box').click(function() {
+				//$(this).rotate('45deg');	
+				$(this).animate({rotate: '45deg'}, 1000);
+			});
+					
+		});
+		
+	</script>
+
+
+</head>
+
+
+
+<body>
+
+	<a href='http://www.zachstronaut.com/posts/2009/08/07/jquery-animate-css-rotate-scale.html'>Documentation</a><br>
+	Requires: <a href='rotate.js'>rotate.js</a> and <a href='transform.js'>transform.js</a><br><br>
+	<div id='box'></div>
+	
+</body>
+
+</html>

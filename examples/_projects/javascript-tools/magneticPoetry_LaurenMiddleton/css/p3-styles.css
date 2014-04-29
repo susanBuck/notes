@@ -1,0 +1,158 @@
+/*P3 Styles*/
+html {
+  font-family: "Century Gothic", "Arial", "Helvetica", sans-serif;
+}
+h1 {
+  font-size: 2em;
+}
+.hidden {
+  display: none;
+}
+#container {
+  background-color: white;
+  height: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  width: 1040px;
+}
+#header {
+  background-color: white;
+  border: solid 1px grey;
+  /*color: grey;*/
+
+  padding: 5px;
+}
+#left {
+  background-color: white;
+  float: left;
+  height: 540px;
+  width: 310px;
+}
+#right {
+  background-color: white;
+  border-bottom: solid 1px grey;
+  border-right: solid 1px grey;
+  float: left;
+  height: 539px;
+  width: 729px;
+}
+#canvas {
+  background-color: #efefef;
+  border-bottom: solid 1px grey;
+  height: 490px;
+}
+#trash {
+  background-color: #efefef;
+  color: white;
+  float: right;
+  height: 60px;
+  padding: 5px;
+  width: 60px;
+}
+#copyright {
+  font-size: 11px;
+  text-align: right;
+}
+#print-btn {
+  float: left;
+  margin: 10px;
+}
+#clear-btn {
+  float: right;
+  margin: 10px;
+}
+a.btn {
+  background-color: #efefef;
+  border: solid 1px grey;
+  color: black;
+  display: inline-block;
+  padding: 5px;
+}
+a.btn:hover {
+  background-color: grey;
+  color: black;
+  cursor: pointer;
+}
+.accordion-btn-default {
+  background-color: #efefef;
+  border: solid 1px grey;
+  border-top: none;
+  cursor: pointer;
+  padding: 10px;
+}
+.accordion-btn-hover {
+  background-color: grey;
+}
+.accordion-btn-clicked {
+  background-color: white;
+  border: solid 1px grey;
+  border-bottom: none;
+  border-top: none;
+  padding: 10px;
+}
+.accordion-content {
+  background-color: white;
+  border: solid 1px grey;
+  border-top: none;
+  height: 345px;
+  overflow: auto;
+  padding: 5px;
+}
+.word {
+  display: inline-block;
+  font-size: 11px;
+  height: auto;
+  margin: 2px;
+  padding-bottom: 7px;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 7px;
+  width: auto;
+}
+.noun {
+  background-color: #f7b3da;
+  border-bottom: solid 3px black;
+  border-left: solid 1px grey;
+  border-right: solid 3px black;
+  border-top: solid 1px grey;
+}
+.verb {
+  background-color: #90ee90;
+  border-bottom: solid 3px black;
+  border-left: solid 1px grey;
+  border-right: solid 3px black;
+  border-top: solid 1px grey;
+}
+.adj {
+  background-color: #c3e4ed;
+  border-bottom: solid 3px black;
+  border-left: solid 1px grey;
+  border-right: solid 3px black;
+  border-top: solid 1px grey;
+}
+.helper {
+  background-color: #fef1b5;
+  border-bottom: solid 3px black;
+  border-left: solid 1px grey;
+  border-right: solid 3px black;
+  border-top: solid 1px grey;
+}
+.punctuation {
+  background-color: #cc99cc;
+  border-bottom: solid 3px black;
+  border-left: solid 1px grey;
+  border-right: solid 3px black;
+  border-top: solid 1px grey;
+}
+a.draggable:hover {
+  background-color: white;
+  border-bottom: solid 3px black;
+  border-left: solid 1px grey;
+  border-right: solid 3px black;
+  border-top: solid 1px grey;
+  cursor: move;
+}
+a.placed:hover {
+  cursor: move;
+}

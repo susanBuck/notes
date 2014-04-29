@@ -1,0 +1,63 @@
+<script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/mootools/1.3.0/mootools-yui-compressed.js'>
+</script>
+
+
+<script type='text/javascript'>
+
+function goToNextQuestion(onQuestion, offQuestion) {
+
+	$(onQuestion).style.display  = "block";
+	$(offQuestion).style.display = "none";
+	
+
+}
+
+</script>
+
+
+<div id="q1" style='border:1px solid blue; padding:20px; width:200px; height:50px'>
+
+<span id="q1o1" onClick='goToNextQuestion("q2","q3")' style='cursor:pointer; border:1px solid black'>Forever</span>
+<span id="q1o2" onClick='goToNextQuestion("q3","q2")' style='border:1px solid black'>Few hours</span>
+
+</div>
+
+
+
+<div id="q2" style='display: none; border:1px solid blue; padding:20px; width:200px; height:50px'>
+
+Where do you live?
+<span id="q2o1" onClick='goToNextQuestion()' style='border:1px solid black'>Above 40th st</span>
+<span id="q2o2" onClick='goToNextQuestion()' style='border:1px solid black'>Below 40th st.</span>
+
+</div>
+
+
+
+
+
+<div id="q3" style='position:absolute; left:300px; display: none; border:1px solid blue; padding:20px; width:200px; height:50px'>
+
+
+<span id="q3o1" onClick='goToNextQuestion()' style='border:1px solid black'>Between class</span>
+<span id="q3o2" onClick='goToNextQuestion()' style='border:1px solid black'>From home</span>
+
+</div>
+
+
+
+
+
+
+
+<!-- HOW TO MAKE THE LINES -->
+
+<div id='question' style='position:absolute;'>
+
+	<img src='line.jpg' style='position:absolute; top:-200px; left:-30px'>
+
+	<div id='o1'></div>
+	<div id='o1'></div>
+
+</div>
+
