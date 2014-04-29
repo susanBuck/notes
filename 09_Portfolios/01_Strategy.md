@@ -1,9 +1,6 @@
 <!--
 Intros
 White board role of each person
--->
-
-<!--
 examples
 specifics: from copy to presentation
 resources: site resources
@@ -31,14 +28,16 @@ __Portfolios__
 __Getting Hired__
 
 1. Target your content.
-2. Do something different; advertise yourself.
-3. Cast a wide net; don't just look for openings&mdash; look for where you want to work
+2. Do something different; advertise yourself: [2004-2009 Reel](http://susanbuck.net/reel/index.php)
+3. Cast a wide net; don't just look for openings&mdash; look for where you want to work.
 4. Keep track, follow up.
 
 
 __Hiring__
 
-Writers, Software developers, Content developers, Marketers. Summary: Hiring stinks.
+Writers, Software developers, Content developers, Marketers. 
+
+Summary: Hiring is burdensome.
 
 
 
@@ -64,7 +63,6 @@ Elements should it have
 What mistakes?
 * Obscure
 * Dated
-
 -->
 
 ## Planning
@@ -101,7 +99,6 @@ pixelpharmacy.com
 The focus is on the work; the portfolio itself is subtle and lets the content shine.
 
 * [Valerie Jar](http://valeriejar.com/)
-* [Rob Young](http://eisforeffort.com/)
 * [Hick Design](http://www.hicksdesign.co.uk)
 
 ###  Hybrid
@@ -113,7 +110,7 @@ The focus is on the work; the portfolio itself is subtle and lets the content sh
 ### Identity (Virtual Business Card)
 
 * [Amit Gupta](http://amitgupta.com)
-* [Sam Mearns](http://sammearns.co.uk/)
+* [Rob Young](http://eisforeffort.com/)
 * [Petra Sell](http://www.volpelino.com/)
 
 
@@ -121,7 +118,7 @@ The focus is on the work; the portfolio itself is subtle and lets the content sh
 
 Your work alone does not always get you the job. You could have the most fantastic work, but if you can't apply that work to the context in which you're aiming for, you're not going to stand out. Aim to show your target how your skills and experience can work for them.
 
-* [Loren wants to work at AirBnB](http://lorenburton.com)
+* [Loren wants to work at AirBnB](https://web.archive.org/web/20140103122327/http://lorenburton.com/)
 
 
 

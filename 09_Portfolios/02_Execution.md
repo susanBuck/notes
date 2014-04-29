@@ -1,7 +1,7 @@
 
 
 
-## Execution
+## Basic pointers
 
 <!--
 Good thumbnail ex, site is down tho: [The Big Pugh](http://thebigpugh.com)
@@ -11,21 +11,26 @@ Good thumbnail ex, site is down tho: [The Big Pugh](http://thebigpugh.com)
 * Show the work that represents the work you want to get.
 * Useful thumbnails:
 	* Bad thumbnail examples: [Winstowd](http://www.winstonwd.com/webdesign/portfolio.php)
-	* Good thumbnail examples: [Daniel Stenberg](http://www.danielstenberg.com/portfolio2010/), [Indubitablee](http://www.indubitablee.com/)
+	* Good thumbnail examples: [Indubitablee](http://www.indubitablee.com/)
 * Avoid excessively flashy navigation techniques: [OneOver.com](http://www.oneover.com/)
 * Find creative ways to showcase your work: [Carbon Design](http://www.cardondesign.com/work_d.html)
 * Focusing on your specialty: [Dan Gilroy Websites for Lawyers](http://www.dangilroy.com/portfolio.htm), [Ann Reynolds Food Stylist](http://www.ann-reynolds.com/home-economist-food-stylist.php)
-* <strike>Impress</strike> Connect with the viewer within the first seconds
 * Allow the viewer to reach your goal (make sure you know what that goal is).
-* Content that can supplement work:
-	* Brief description 
-	* Your role in the project (if it wasn't 100% you)
-	* Information on the benefits the project might have had for the customer
-	* Testimonials
-	* Process breakdown (sketches, iterations)
-		* [Jen Hayden logo iterations](http://blog.imbreannarose.com/process-01-jen-hayden/)
-		* [The Seed](https://vimeo.com/242561)
-		* [Chad Pugh's Science Machine](https://vimeo.com/927062)
+* The quicker your site loads, the better.
+* Avoid Flash.
+* Downloadable resumes: Use formats like .pdf and avoid formats like .doc; keep file size less than 2mb.
+
+
+## Supplement
+
+* Brief description 
+* Your role in the project (if it wasn't 100% you)
+* Information on the benefits the project might have had for the customer
+* Testimonials
+* Process breakdown (sketches, iterations)
+	* [Jen Hayden logo iterations](http://blog.imbreannarose.com/process-01-jen-hayden/)
+	* [Chad Pugh's Science Machine](https://vimeo.com/927062)
+	* [Book: Show Your Work](http://www.amazon.com/Show-Your-Work-Creativity-Discovered-ebook/dp/B00GU2RGGI/ref=sr_1_1?ie=UTF8&qid=1398806408&sr=8-1&keywords=show+your+work)
 
 
 
@@ -64,18 +69,18 @@ vs.
 
 
 
+## Contact info
+* Always: Email.
+* Avoid contact Forms
+* Maybe? Phone number
+* Social Networks (if you feel comfortable; just note they're going to search for you anyway)
 
 
 
 
 
 
-
-## Technicalities
-
-Build something you can maintain and keep fresh.
-
-### No coding experience required
+## No coding required
 * <a href='http://carbonmade.com/'>Carbonmade</a>  
 Free: 5 projects, 35 images (ads)
 $12/mo: 50 projects, 500 images, custom domain
@@ -96,27 +101,24 @@ Make it easy for people to learn about you (more of an online business card than
 Free; Mostly a blogging-esque platform, but very efficient for sharing content.
 
 
-### Build your own
-
-Domain names: [NameCheap](http://namecheap.com)
-
-[Custom domain email hosting](http://web.appstorm.net/roundups/email-roundups/the-best-places-to-host-your-email-with-your-own-domain/)
-
-Hosting: [SiteGround](http://goo.gl/473OyI)
-
-WordPress: [WordPress](http://wordpress.com)
-
-* The quicker your site loads, the better.
-* Avoid Flash.
-* Downloadable resumes: Use formats like .pdf and avoid formats like .doc; keep file size less than 2mb.
-* Increase search engine traffic: [Google SEO Starter Guide](http://static.googleusercontent.com/external_content/untrusted_dlcp/www.google.com/en/us/webmasters/docs/search-engine-optimization-starter-guide.pdf).
 
 
-### Contact info
-* Always: Email.
-* Avoid contact Forms
-* Maybe? Phone number
-* Social Networks (if you feel comfortable; just note they're going to search for you anyway)
+## Build your own
+
+* Domain names: [NameCheap](http://namecheap.com)
+* [Custom domain email hosting](http://web.appstorm.net/roundups/email-roundups/the-best-places-to-host-your-email-with-your-own-domain/)
+* Hosting: [SiteGround](http://goo.gl/473OyI)
+* WordPress: [WordPress](http://wordpress.com)
+
+
+
+
+## SEO
+
+Increase search engine traffic: [Google SEO Starter Guide](http://static.googleusercontent.com/external_content/untrusted_dlcp/www.google.com/en/us/webmasters/docs/search-engine-optimization-starter-guide.pdf).
+
+
+
 
 
 
