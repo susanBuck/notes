@@ -2,17 +2,17 @@
 
 Packages can be found from [Packagist](https://packagist.org/). 
 
-Let's practice with a helpful debugging package called Krumo which will allow you to pretty print arrays, objects, etc.
+Let's practice with a helpful debugging package called Pre which will allow you to pretty print arrays, objects, etc.
 
-Visit the Packagist page for Krumo: <https://packagist.org/packages/oodle/krumo>
+Visit the Packagist page for Pre: <https://packagist.org/packages/paste/pre>
 
-Note the require line it gives you: `"oodle/krumo": "dev-master"`
+Note the require line it gives you: `"paste/pre": "dev-master"`
 
 In `/composer.json` add this line, ex:
 
 	"require": {
 			"laravel/framework": "4.1.*",
-			"oodle/krumo": "dev-master"
+			"paste/pre": "dev-master"
 	},
 
 Run this to verify your json is okay:
@@ -27,15 +27,53 @@ Update composer.lock file:
 
 	$ composer update
 	
-This will add the following directory: `/vendor/oodle/krumo/`
+This will add the following directory: `/vendor/paste/pre/`
 
-Test it out in your practice route:
+## Usage
 
-	# Print an example array
-	$example = Array('Apples', 'Oranges', 'Pears');
-	krumo::dump($example);
+### Method 1) Include the namespace in each call
+
+	Route::get('/practice', function() {
+		
+		$fruit = Array('Apples', 'Oranges', 'Pears');
+		
+		echo Paste\Pre::render($fruit,'Fruit');
+		
+	});
+
+### Method 2) Specify the namespace ahead of time
+
+	use Paste\Pre;
 	
-	# Print all your configurations
-	krumo::dump(Config::getItems());
-	
-TODO: Create an alias for this
+	Route::get('/practice', function() {
+		
+		$fruit = Array('Apples', 'Oranges', 'Pears');
+		
+		echo Pre::render($fruit,'Fruit');
+		
+	});
+
+### Method 3) Add an alias so no namespace is required
+
+In `/app/config/app.php` add Pre to the `aliases` array:
+
+	'aliases' => array(
+
+		'App'             => 'Illuminate\Support\Facades\App',
+		'Artisan'         => 'Illuminate\Support\Facades\Artisan',
+		[...]
+		'Pre'			  => 'Paste\Pre',
+
+	),
+
+Now you can just call Pre with no namespace:
+
+	Route::get('/practice', function() {
+		
+		$fruit = Array('Apples', 'Oranges', 'Pears');
+		
+		echo Pre::render($fruit,'Fruit');
+		
+	});
+
+
