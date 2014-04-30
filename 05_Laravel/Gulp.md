@@ -21,7 +21,7 @@ Start off your `package.json` file as a blank slate:
 	
 	}
 
-Now install gulp as part of your app's depndencies:
+Now install gulp as part of your app's dependencies:
 
 	$ npm install gulp --save-dev
 
@@ -49,41 +49,33 @@ Create a new file called `gulpfile.js` in the root of your app and fill it with 
 	var gulp      = require('gulp');
 	var minifycss = require('gulp-minify-css');
 	
-	// Set up common paths in your app
-	var paths = {
-	  css: 'public/css/*.css',
-	  images: ''
-	};
-	
 	// Set up task for the css minification called 'css'
 	gulp.task('css', function() {
-		
-		// Fetch source file
-		// pipe it through to minifycss()
-		// pipe it through to the distnation
-		return gulp.src('public/css/*.css')
-			.pipe(minifycss())
-			.pipe(gulp.dest('public/css/min'));
-		
+	
+	// Fetch source files
+	// pipe them through to minifycss()
+	// pipe them through to the distnation
+	return gulp.src('public/css/*.css')
+		.pipe(minifycss())
+		.pipe(gulp.dest('public/css/min'));
 	});
 	
-	// Specify what your default tasks are... 
-	// i.e what should run when you run 'gulp' in CL
+	// Specify what your default tasks are... i.e what should run when you run 'gulp' in CL
 	// Our tasks here are 'css' and 'watch'
 	gulp.task('default', ['css','watch']);
-	
 	
 	// Set up watch task
 	gulp.task('watch', function() {
 	
-		// Watch the css folder, and upon updates run the css task
-		gulp.watch(paths.css, ['css']);
+	// Watch the css folder, and upon updates run the css task
+	gulp.watch(paths.css, ['css']);
 	
 	});
-	
+		
 Read through the comments to understand what that file is doing.
 
-To run your tasks and start and watches just run gulp:	
+To run your tasks and start and watches just run gulp:
+
 	$ gulp
 	
 This should:
@@ -93,17 +85,17 @@ This should:
 
 If you had any .css files already in `public/css/` there should now be a minified copy of them in `public/css/min/`. If you didn't have any files to start, create one...
 
-In `public/css/example.css':
-
-	body {
-		color:red;
-	}
-
-Upon creating this file, and making any updates to it, it will re-generate itself as a minified version in `public/css/min`. 
+Make an edit to one of your .css files, and you should note the minified version gets updated.
 
 Remember that gulp has to be running in CL in order for this watcher to keep working.
 
 
-Tip: you can also run just individual tasks from gruntfile.js:
+# Tips:
+
+You can run individual tasks from gruntfile.js:
 
 	$ gulp css
+	
+You can throw `console.logs` into your gulpfile.js for debugging. Example:
+
+	console.log('Minified CSS...');
