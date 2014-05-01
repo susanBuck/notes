@@ -1,9 +1,12 @@
 ## Gulp Taskrunner
 
 Resources:
-	* <https://laracasts.com/lessons/gulp-this>
-	* <https://github.com/gulpjs/gulp>
-	* <https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md#getting-started>
+	* [Laracasts: Gulp This](https://laracasts.com/lessons/gulp-this)
+	* [Gulp on Github](https://github.com/gulpjs/gulp)
+	* [Gulp Getting Started](https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md#getting-started)
+	* [Gulp.js Plugins Search](http://gulpjs.com/plugins/)
+
+Assumptions: You've already installed Node and have access to npm
 
 Gulp is a Taskrunner (another popular Taskrunner you may have heard of is Grunt).
 
@@ -24,6 +27,9 @@ Start off your `package.json` file as a blank slate:
 Now install gulp as part of your app's dependencies:
 
 	$ npm install gulp --save-dev
+	
+The `--save-dev` flag indicates we only need this dependency for development, i.e. we don't need it on our production server.
+This will add it in devDependencies in `package.json`
 
 You should now see a folder called `node_modules/` in your app's route.
 
@@ -37,7 +43,10 @@ Your `package.json` will also be updated to look like this:
 
 This tells Node that your app depends on gulp.
 	
-Let's install a plugin: a tool to minify CSS:
+	
+		
+## Plugins
+Let's install a plugin to practice with; we'll use a minification plugin that we'll use to minify CSS files: <https://www.npmjs.org/package/gulp-minify-css/>
 
 	$ npm install gulp-minify-css --save-dev
 	
@@ -99,3 +108,4 @@ You can run individual tasks from gruntfile.js:
 You can throw `console.logs` into your gulpfile.js for debugging. Example:
 
 	console.log('Minified CSS...');
+	

@@ -33,7 +33,8 @@ FYI: Regular old jQuery should be all the way at the top.
 
 You can also browse for packages ala <http://bower.io/search/>
 
-Before you install anything, lets tell bower where to put stuff. In the root of your Laravel app create a file called `.bowerrc` and fill it with this JSON:
+Before you install anything, let's tell bower where to put stuff. 
+In the root of your Laravel app create a file called `.bowerrc` and fill it with this JSON:
 
 	{
 	
@@ -60,7 +61,6 @@ In your master view, you can now link in jQuery in the head of the page:
 
 	<script src='/components/jquery/dist/jquery.min.js' type='text/javascript'></script>
 
-
 Tip: for future packages, if you want to skip the step of manually editing `bower.json` you can just run a command like this:
 
 	$ bower install jquery -S
@@ -73,8 +73,13 @@ If you want to remove a package:
 	
 Again, the -S flag here makes sure it not only deletes the jquery files but also updates your `bower.json` file.
 
-At this point, you might want to make sure Git doesnt track your componenets by adding `/public/components/` to your `.gitignore` file. This is similar how we don't want Composer's `vendor/` directory to be tracked in Version Control, since the server (and any teammates) will run `composer install` and get the needed dependencies.
 
-*However*, Pagoda doesn't currently support Node so we can't actually run Bower there. Given that, we're going to take things one step further and use a tool to concatenate and minify all our client-side assets together and then track those assets in Version Control. This way, the necessary client-side files will just travel with the app - rather than being managed independently per system.
 
-To do this, keep reading to the next section...
+
+## Production
+
+If you're working on a production server that supports Node/npm you'd want to tell git to ignore the `public/componenents/` so your components aren't transferred via Git. 
+
+This is similar how we don't want Composer's `vendor/` directory to be tracked in Version Control, since the server (and any teammates) will run `composer install` and get the needed dependencies.
+
+*However*, Pagoda doesn't currently support Node so we can't actually run Bower there. Given that, we'll let all the components travel with Git.
