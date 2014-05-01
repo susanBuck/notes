@@ -10,7 +10,7 @@ This is all great, assuming your live server host has Git installed, or at the v
 
 Dploy is a promising service that makes it easy to sync up a repository with a server via FTP/SFTP.
 
-More details: <https://dploy.io>
+More details: <http://dploy.io>
 
 
 
