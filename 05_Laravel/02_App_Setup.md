@@ -94,7 +94,6 @@ Create this file in the root of your app project and fill it with this code (edi
 	    - zip
 	    - pdo_mysql
 	    - mcrypt
-	    - eaccelerator
 	    - memcached
 	  after_deploy:
 	    - "rm -f app/storage/cache/*"
