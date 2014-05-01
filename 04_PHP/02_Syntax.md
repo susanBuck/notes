@@ -1,7 +1,5 @@
 ## PHPiggy Bank
 
-<img src='http://thewc.co.s3.amazonaws.com/challenges/php-phpiggy-bank.png'>
-
 Create a file callde **bank.php** and fill it with the following code, then load bank.php in your browser.
 
 	<!DOCTYPE html>
@@ -48,70 +46,30 @@ Create a file callde **bank.php** and fill it with the following code, then load
 
 * PHP code is written in a text file that is saved with a .php extension. 
 * A .php file is like a super-powered .html file because it can process both HTML code and PHP code.
-* PHP code is always surrounded by a start PHP tag and an end PHP tag. `<?php ?>`.
+* PHP code is always surrounded by a start PHP tag `<?php` and an end PHP tag `?>`.
 * Every command in PHP should end with a semi-colon.
 
-## Variables
-
-Variables are used to store information so that it can easily be retrieved and manipulated.
-
-Examples of different variable types:
-
-* Strings <small>(always surrounded in quotes)</small>
-* Ints
-* Floats
-* Booleans
-
-What are some examples of each?
-
-<small>Unlike numerous other programming languages, PHP is <em>loosely typed</em>, which means when you're declaring a variable you don't have to specify the type.</small>
-
-## Syntax for variables in PHP
-
-In PHP the name of a variable is always preceded by a dollar sign `$`.
-	
-	<?php
-	$favorite_color = 'red';
-	?>
-	
-Variable names should start with a letter or underscore, followed by any number of letters, numbers, or underscores.
-
-## Displaying variables
-
-Long form:
-
-	<?php echo $favorite_color;?>
-
-Shortcut: 
-
-	<?=$favorite_color?>
-
-Note we omitted the final semi-colon in the shortcut version; this is okay to do right before a closing `?>`
 
 
-## Math with variables
 
-Numeric variables (floats or ints), can be calculated together.
+## Error Reporting
 
-logic.php:
+[php.net error reporting](http://www.php.net/manual/en/function.error-reporting.php)
+
+Add as the very first thing on your page:
 
 	<?php
-	$quarter = .25;
-	$dime    = .10;
-	$nickel  = .05;
-        
-	$calculate_total = ($quarter * 3) + ($dime * 4) + ($nickle * 1);
+	error_reporting(-1); # Report all PHP errors
+	ini_set('display_errors', 1);
 	?>
 
-In the `<body>` of demo.php :
-
-	I have this much money: <?=$calculate_total?>
 
 
 ## Comments
 
 [php.net Comments](http://us1.php.net/manual/en/language.basic-syntax.comments.php)
 
+	<?php
 	// This is a single line comment
 	
 	/* This is a multi-line comment

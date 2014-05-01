@@ -1,4 +1,4 @@
-HTML code is fairly brainless; what you type is what you get. With PHP, however, you can write code that allows your program to "think" using [control structures](http://us1.php.net/manual/en/language.control-structures.php) like the [if construct](http://us1.php.net/manual/en/control-structures.if.php).
+HTML code is fairly brainless; what you type is what you get. With PHP, however, you can write code that allows your program to &ldquo;think&rdquo; using [control structures](http://us1.php.net/manual/en/language.control-structures.php) like the [if construct](http://us1.php.net/manual/en/control-structures.if.php).
 
 To demonstrate, we want to add a feature to the PHPiggy Bank which will report back to the user whether they've met a savings goal, depending on how much money they have.
 

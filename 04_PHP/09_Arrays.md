@@ -1,15 +1,20 @@
-## Key values
 [php.net Arrays](http://php.net/manual/en/language.types.array.php)
 
 <img src='http://making-the-internet.s3.amazonaws.com/php-arrays.png'>
 
-Variables are useful for storing single bits of information, but sometimes you need to store multiple bits of information together; enter arrays.
+Variables are useful for storing single bits of information, but sometimes you need to organize multiple bits of information together; enter arrays. Arrays organize information using **keys** and **values**.
 
-Arrays organize information using **keys** and **values**
+To practice with arrays and some other upcoming material, we're going to build a **simple raffle application** that will randomly choose winners from a list of contestants.
 
-Let's look at how we can create and use an array. 
+## File Setup
 
-Starting now, we're going to be working towards building a simple __Raffle App__, so for our example, let's create an array of contestants that will play our game.
+	/raffle/
+		index.php
+		logic.php 
+
+
+
+## Contestants setup
 
 logic.php:
 
@@ -18,14 +23,14 @@ logic.php:
 	$contestants["Eliot"] = "loser";
 	$contestants["Liz"]   = "winner";
 	$contestants["Max"]   = "loser";
-	?>
-
-
+	
+<img src='http://thewc.co.s3.amazonaws.com/challenges/php-array-parts.png'>
+	
 In this example, the name of our array is `$contestants`
 
-The __keys__ are Sam, Eliot, Liz and Max. You can think of keys as an index, or position holder in an array.
+The **keys** are Sam, Eliot, Liz and Max. You can think of keys as an index, or position holder in an array.
 
-The __values__ are loser,loser,winner and loser...respectively. 
+The **values** are loser, loser, winner and loser. Sam is a loser, Eliot is a loser, Liz is a winner, and Max is a loser.
 
 At this point, we've hard-coded our value, but we'll work towards making those values randomly generated later.
 
@@ -40,7 +45,7 @@ At this point, we've hard-coded our value, but we'll work towards making those v
 
 Here's we'll call upon the [foreach](http://www.php.net/manual/en/control-structures.foreach.php) construct, which is a loop designed to work specifically with arrays.
 
-In the `<body>` of demo.php:
+In the `<body>` of `raffle/index.php`
 
 	<h1>Contestants</h1>
 	
@@ -56,6 +61,7 @@ For example, the first time `$key` will be `"Sam"` and `$value` will be `"loser"
 The second time, `$key` will be `"Eliot"` and `$value` will be `"loser"`
 ...So on until we reach the end of the loop.
 
+
 ### Quick and dirty array printing
 If you need to quickly see the contents of an array, you can use the [print_r()](http://www.php.net/manual/en/function.print-r.php) function.
 
@@ -66,6 +72,9 @@ If you need to quickly see the contents of an array, you can use the [print_r()]
 Wrapping the call in the `<pre>` tag just makes it display nicer (try it with and without to see the difference). 
 
 Even with the `<pre>` tag, this is still just a trick you only want to use for development purposes/debugging. 
+
+
+
 
 ## Writing arrays
 
@@ -78,7 +87,9 @@ So far our arrays were written using the **square bracket syntax**. Alternativel
 		'Max'   => 'loser'
 		);
 		
-### Integer keys
+		
+		
+### Numeric keys
 So far, our arrays keys have been strings. Often times, you'll see integer keys. Here's an example using square bracket notation:	
 	
 	$shopping_list[0] = 'Apples';
@@ -99,22 +110,6 @@ When using numeric keys that start at 0 and count up, specifying the key is opti
 	
 By default, Apples is at key position 0, Oranges at 1, Milk at 2.
 
-### Multi-dimensional arrays
-You can have arrays within arrays, for example:
-
-	$shopping_lists['supermarket']    = Array('Apples','Oranges','Milk');
-	$shopping_lists['hardware_store'] = Array('Hammer','Nails','Paint');
-	$shopping_lists['pharmacy']       = Array('Bandaids','Tylenol');
-
-That could also be written like this
-
-	$shopping_lists = Array(
-		'supermarket'    => Array('Apples','Oranges','Milk'),
-		'hardware_store' => Array('Hammer','Nails','Paint'),
-		'pharmacy'       => Array('Bandaids','Tylenol'),
-		);
-
-
 
 
 
@@ -134,10 +129,9 @@ Etc...
 
 
 
+## Scenario
+Imagine you're building an ecommerce application. Which of the following pieces of this app might be stored in an array?
 
-
-
-## Exercise
-The `foreach` is perfect for looping through arrays, but you could also write a plain `for` loop to do the same thing. What would this code look like?
-
-Hint: You'll want to check out the [count()](http://www.php.net/manual/en/function.count.php) method.
+* A true/false variable indicating whether a user is logged in
+* The items in a user's cart
+* The total of all the items in a user's cart

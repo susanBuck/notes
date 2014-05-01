@@ -47,9 +47,9 @@ If a function doesn't need arguments, then the parentheses would be left empty. 
 	$new_user = add_new_user();
 	
 ## Return
-Some functions may return values upon completion. For example, in the previous challenge, we could turn our "Is the savings goal met?" logic into a function called `get_goal_image` that would return the appropriate image name.
+Some functions may return values upon completion. For example, in the previous challenge, we could turn our *"Is the savings goal met?"* logic into a function called `get_goal_image` that would return the appropriate image name.
 
-Try it...what would a get_goal_image function look like?
+Try it...what would a `get_goal_image()` function look like?
 
 
 ## Built-in functions
