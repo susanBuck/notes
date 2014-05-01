@@ -86,7 +86,7 @@ __Identify your audience__
 ### Form focused
 The portfolio itself is the star; the work becomes almost secondary to the presentation of it. Often, very experimental:
 
-* [rleonardi](http://www.rleonardi.com/interactive-resume/)
+* [rleonardi](http://www.rleonardi.com/)
 * [sagmeister.com - Live view of office](http://www.sagmeisterwalsh.com/)
 
 <!--
