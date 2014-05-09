@@ -15,17 +15,32 @@ If your user visits your page between 5am and 10:59am in the morning, they shoul
 <img src='http://thewc.co.s3.amazonaws.com/challenges/php-morning.png' style='width:300px'>
 
 
+
+
 If they visit between 11am and 3:59pm in the afternoon, they should see this image:
 
 	http://thewc.co.s3.amazonaws.com/challenges/php-afternoon.png
 	
 <img src='http://thewc.co.s3.amazonaws.com/challenges/php-afternoon.png' style='width:300px'>
 
+
+
+
 If they visit between 4pm and 7:59pm in the evening, they should see this image:
 
-	http://thewc.co.s3.amazonaws.com/challenges/php-afternoon.png
+	http://thewc.co.s3.amazonaws.com/challenges/php-evening.png
 
 <img src='http://thewc.co.s3.amazonaws.com/challenges/php-evening.png' style='width:300px'>
+
+
+
+If they visit between 8pm and 4:59am in the evening, they should see this image:
+
+	http://thewc.co.s3.amazonaws.com/challenges/php-night.png
+
+<img src='http://thewc.co.s3.amazonaws.com/challenges/php-night.png' style='width:300px'>
+
+
 
 ## Background color
 

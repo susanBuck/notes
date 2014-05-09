@@ -1,5 +1,3 @@
-## Alternative syntax
-
 [php.net Alternative syntax](http://us1.php.net/manual/en/control-structures.alternative-syntax.php)
 
 Compare and contrast the following code:
@@ -62,5 +60,6 @@ For example, here's a HTML form wrapped in a if statement:
 		
 	<?php endif; ?>
 
-**Note: This alternative structure is only recommended for your display PHP pages, *not* your logic PHP pages. In the display pages, HTML should reign; in the logic page, PHP should reign.**
+__Note:__ 
+This alternative structure is only recommended for your display PHP pages, *not* your logic PHP pages. In the display pages, HTML should reign; in the logic page, PHP should reign.
 	

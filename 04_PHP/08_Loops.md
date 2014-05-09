@@ -16,7 +16,7 @@ Imagine you were creating a digital version of the Memory Game and needed your a
 		logic.php
 	
 
-## Step 2) A couple hard-coded boxes
+## Step 2) Hard-coded boxes
 
 In the `<head>` of `index.php`:
 
@@ -38,7 +38,7 @@ In the `<body>` of `index.php`:
 	<div class='box'>2</div>
 
 
-## Step 3) Lots and lots of boxes
+## Step 3) Lots of boxes
 
 In `logic.php`:
 
@@ -63,7 +63,12 @@ How would you edit the above to get 100 boxes? 1000 boxes?
 <img src='http://thewc.co.s3.amazonaws.com/challenges/php-for-loop-breakdown.png'>
 
 
-## Practice 
+
+
+
+## Challenge
+ 
 Adapt the one of the loops above to make each box have a random size.
+
 PHP can help you generate random numbers using the [rand()](http://php.net/manual/en/function.rand.php) function.
 

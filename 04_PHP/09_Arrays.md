@@ -39,7 +39,7 @@ At this point, we've hard-coded our value, but we'll work towards making those v
 
 ### Print one value from the array:
 
-	Liz is a <?=$contestants['liz']?>
+	Liz is a <?php echo $contestants['liz']?>
 	
 ### Print all the values from an array:		
 
@@ -55,10 +55,12 @@ In the `<body>` of `raffle/index.php`
 	}
 	?>		
 		
-This loop will work it's way through the `$contestants` array, one value at a time. Each iteration through, the `$key` and `$value` variables will represent where we're at in the array.
+This loop will work its way through the `$contestants` array, one value at a time. Each iteration through, the `$key` and `$value` variables will represent where we're at in the array.
 
 For example, the first time `$key` will be `"Sam"` and `$value` will be `"loser"`
+
 The second time, `$key` will be `"Eliot"` and `$value` will be `"loser"`
+
 ...So on until we reach the end of the loop.
 
 

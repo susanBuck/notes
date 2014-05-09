@@ -2,7 +2,8 @@ Let's put our `$contestants` array to use for our raffle app.
 
 Here are the specifications of this app:
 
-* You have the same 4, hard-coded contestants every time (we'll improve on this in v2). Your contestant names are Sam, Eliot, Liz and Max.
+* You have the same 4, hard-coded contestants every time (we'll improve on this in v2).
+* Your contestant names are Sam, Eliot, Liz and Max.
 * Every time the browser refreshes, the program will randomly determine whether each contestant is either a loser or winner.
 * It's okay to have more than one winner or loser at a time.
 * Use PHP's [__rand()__](http://us2.php.net/rand) function to help pick your winner(s).
@@ -16,7 +17,7 @@ Here are the specifications of this app:
 
 
 
-## Bonus Features
+## Challenge
 If you're looking for an extra challenge, you can try adding these features to your app:
 
 * If no winner was selected, print a message that says `<em>No winners this round :(</em>`

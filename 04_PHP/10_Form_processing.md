@@ -26,14 +26,12 @@ In the `<body>` of index.php:
 
 The method attribute for forms can be either [POST](http://php.net/manual/en/reserved.variables.post.php) or [GET](http://www.php.net/manual/en/reserved.variables.get.php) which are two different ways to pass information over your server. 
 
-<small>
 * GET data is passed via the URL with a Query String. Ex: `http://domain.com/form.php?first_name=joe&last_name=smith`
 * Because of the above point GET data is not suggested for sensitive data, but is suggested if you need to link to the results. For example, if you're processing a form that filters a search result, it'd be useful to be able to bookmark that link.
 * GET is limited to 2083 characters (give or take, depends on the browser) whereas POST is only limited by server configuration. Given that, if you're submitting a large amount of data (for example, a blog post), POST is recommended.
 * If your form submission is modifying some state of data, use POST. For example, if you're submitting a form to sign-up on a site, that creates a new row in the database. You would not want to pass this information via the URL (GET), because the user could refresh the page which would attempt to add the user again.
-[Comprehensive breakdown on the differences between POST/GET](http://www.diffen.com/difference/Get_vs_Post)
-</small>
 
+[Comprehensive breakdown on the differences between POST/GET](http://www.diffen.com/difference/Get_vs_Post)
 
 The __action__ attribute specifies what page will process our form when we submit it; in this example, we're having our page call *itself* as the processing page. Therefor, the action is also `index.php`.
 

@@ -14,7 +14,7 @@ The warning may look something like this:
 
 What's going on here and how could you prevent this warning?
 
-## Bonus Challenges
+## Challenges
 
 2. When you enter 5 contestants and hit submit it works, but then the form inputs are blank again. It'd be more elegant if they still had the names in the fields. How could you do this?
 
