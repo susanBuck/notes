@@ -1,17 +1,16 @@
-## Environments
-
-### Reference
+## Reference
 * <http://laravel.com/docs/configuration#environment-configuration>
 * <https://laracasts.com/lessons/environments-and-configuration>
 
-### Environment configurations
+## Cascading
 
 Configurations in Laravel **cascade**. This means that there are a default set of configurations which live in `app/config`, but you can overwrite them based on specific environments.
 
 This is done by creating new directories for each environment in `app/config`.
 
-Start by creating a directory called `development` and one called `production`. 
-In *both* of these directories, create a file called `app.php` and paste in the following array:
+
+## Development environment
+Start by creating a directory called `development` and in this directory create a file called `app.php` with the following array:
 
 ````
 <?php
@@ -29,17 +28,29 @@ return array(
 	*/
 
 	'url' => 'http://localhost',
+	'debug' => true,
 	
 );
 ````
 
-Change the URL respectively...i.e. perhaps `http://foobar.dev` in local and `http://foobar.pagodabox.com` in production
+Make sure the URL matches however your access your app locally, for example `http://localhost` or `http://foobar.dev`
 
-This setting will now overwrite the default url set in `app/config/app.php`. 
+Now, whenever you're in *development* mode, these settings will overwrite the default settings in `app/config/app.php`. 
 
-Note how you don't have to replicate everything in `app/config/app.php`, just the values you wish to overwrite.
+Note that not everything in `app/config/app.php` is overwritten, just the values you wish to overwrite (right now, that's just `url` and `debug`).
 
-### How does Laravel know which environment you're working from?
+
+## Production environment
+
+Duplicate the above steps to set up a production environment.
+
+1. Create a new folder called `production` inside `app/config`
+2. Within this new folder, create a new file called `app.php`
+3. Within this new file, copy the above array but set `url` to be your site's live URL, and set `debug` to be `false` (you don't want debugging information to display on your live site)
+
+
+
+## How does Laravel know which environment you're working from?
 
 Environment detection operates from `bootstrap/start.php`; by default Laravel assumes the `production` environment but you can make Laravel detect environments based on hosts.
 
@@ -104,35 +115,15 @@ Next, in `bootstrap/start.php` make your detectEnvironment closure look like thi
 	});
 
 
-Summary: Each machine that runs your could should be able to set what environment it wants your Laravel app to run in.
+Summary: Each machine that runs your code should be able to set what environment it wants your Laravel app to run in.
 
 **Tip:** to easily **mimic different environments** on your local machine, just change the value in `environment.php`. 
 
 
 
 
-
-
-
-
-### Defining environments
-In `boostrap/start` define the hostname of your local server (the CL command `hostname` will tell you what this is).
+## Which environment?
 
 To test and see what environment you're in you can run `echo App::environment();` in a practice Route.
 
 
-
-### Turn off error details on production
-
-As an example of an environment specific configuration, let's look at how you can turn off error reporting for your production environment. This is highly suggested because you don't want errors to be displayed to your live users.
-
-In `app/config/production/app.php` add a the `debug` value to your array and set the value to be `false`:
-
-```
-<?php
-
-return array(
-	'url' => 'http://foobar.pagodabox.com',
-	'debug' => false,
-);
-```
