@@ -1,12 +1,8 @@
-## Command Line
-
-Windows users, download cmder: <http://bliker.github.io/cmder/>
-
 
 ## Local Server
 
-* MAMP
-* Virtual Hosts
+MAMP
+
 
 
 ## Set up Composer
