@@ -15,3 +15,7 @@ ref: http://stackoverflow.com/questions/20678360/laravel-blank-white-screen
 Ensure that all the storage directories (`app/storage/*`) are writable by the web server
 
 	chmod -R 777 app/storage
+	
+## General error: 14 unable to open database file	
+	
+	chmod -R 777 app/database/

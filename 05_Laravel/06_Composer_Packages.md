@@ -52,6 +52,7 @@ This will add the following directory: `/vendor/paste/pre/`
 		echo Pre::render($fruit,'Fruit');
 		
 	});
+	
 
 ### Method 3) Add an alias so no namespace is required
 

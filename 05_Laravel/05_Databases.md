@@ -1,7 +1,9 @@
 ## Databases
 
 ## Create the Eloquent models
-p36
+
+
+
 
 ## Build the database schema
 Laravel migrations/schema builder
@@ -20,3 +22,10 @@ Set up your up() and down() then run the migration
 
 	$ php aritsan migrate
 	
+
+
+
+
+## Live, Local, Testing Database
+
+`app/config/local`, `app/config/testing` and `app/config/local` should each have a database.php file that fills in the correct connection information
