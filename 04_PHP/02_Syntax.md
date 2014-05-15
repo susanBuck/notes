@@ -56,13 +56,17 @@ Create a file callde **bank.php** and fill it with the following code, then load
 
 [php.net error reporting](http://www.php.net/manual/en/function.error-reporting.php)
 
-Add as the very first thing on your page:
+To make sure *Errors*, *Warnings* and *Notices* are displayed (regardless of server configuration),
+add the following code at the *very top* of your display page (before the doctype).
 
 	<?php
 	error_reporting(-1); # Report all PHP errors
 	ini_set('display_errors', 1);
 	?>
 
+* Difference between *Errors*, *Warnings* and *Notices*.
+* The above level/method of error reporting is only suggested for development purposes, supress all errors when in production.
+* We're making this adjustment on a code level, but it can also be done on a server configuration level.
 
 
 ## Comments
