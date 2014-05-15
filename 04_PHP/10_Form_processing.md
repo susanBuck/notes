@@ -31,7 +31,7 @@ The method attribute for forms can be either [POST](http://php.net/manual/en/res
 * GET is limited to 2083 characters (give or take, depends on the browser) whereas POST is only limited by server configuration. Given that, if you're submitting a large amount of data (for example, a blog post), POST is recommended.
 * If your form submission is modifying some state of data, use POST. For example, if you're submitting a form to sign-up on a site, that creates a new row in the database. You would not want to pass this information via the URL (GET), because the user could refresh the page which would attempt to add the user again.
 
-[Comprehensive breakdown on the differences between POST/GET](http://www.diffen.com/difference/Get_vs_Post)
+[Comprehensive breakdown of the differences between POST/GET](http://www.diffen.com/difference/Get_vs_Post)
 
 The __action__ attribute specifies what page will process our form when we submit it; in this example, we're having our page call *itself* as the processing page. Therefor, the action is also `index.php`.
 
@@ -72,7 +72,7 @@ Note how the index (contestant1, contestant2, etc.) corresponds to the name attr
 
 	<input type='text' name='contestant1'><br>
 
-Ok, so far so good. At this point should have a $_POST array full of contestants names.
+Ok, so far so good. At this point you should have a $_POST array full of contestant's names.
 
 For the next exercise, you'll work on using this information to display your results.
 <hr>

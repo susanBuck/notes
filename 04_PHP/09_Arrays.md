@@ -43,7 +43,7 @@ At this point, we've hard-coded our value, but we'll work towards making those v
 	
 ### Print all the values from an array:		
 
-Here's we'll call upon the [foreach](http://www.php.net/manual/en/control-structures.foreach.php) construct, which is a loop designed to work specifically with arrays.
+A [foreach](http://www.php.net/manual/en/control-structures.foreach.php) loop is used to iterate through arrays.
 
 In the `<body>` of `raffle/index.php`
 

@@ -6,13 +6,7 @@ How can you adapt Raffle v1 so it's picking winners/losers and displaying the re
 
 <img src='http://making-the-internet.s3.amazonaws.com/php-raffle-v2.png'>
 
-Because we're using the same page to accept and process the information, you might run into a warning in your code when you first land on the page. This is occurring because your processing code is attempting to run before there is anything to run.
 
-The warning may look something like this:
-
-	Warning: Invalid argument supplied for foreach() in...
-
-What's going on here and how could you prevent this warning?
 
 ## Challenges
 
