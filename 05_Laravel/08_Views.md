@@ -20,3 +20,9 @@ Setting the `<title>`
 		Foobar
 	
 	@stop
+
+
+## Organizing view files
+
+"controller/action.php" 
+use folders like "layouts" (or templates) or "partials"
