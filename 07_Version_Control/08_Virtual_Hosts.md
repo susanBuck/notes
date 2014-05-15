@@ -25,7 +25,7 @@ At the bottom of this file add a new host:
 
 	127.0.0.1 javabeans.loc
 	
-This is telling your Mac that whenever you enter `http://p2.yourdomain.loc` it should map to the given IP address (that of your local server).
+This is telling your Mac that whenever you enter `http://javabeans.loc` it should map to the given IP address (that of your local server).
 	
 Next, you need to tell your local server how to handle this request via a Virtual Host entry.
 
