@@ -10,6 +10,14 @@ wp-admin gives you access to the following things:
 
 **To-do:** Re-organize dashboard.
 
+
+
+
+## Settings
+
+
+
+
 ## Appearance
 This is where you customize your site...
 
@@ -21,3 +29,5 @@ This is where you customize your site...
 * Editor
 
 **To-do:** Remove extra Widgets.
+
+

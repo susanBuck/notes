@@ -17,8 +17,8 @@ Pros of One-click:
 Cons of One-click: 
 
 * Harder to troubleshoot when you run into problems.
-* You won't know how to install WP on servers that don't have a One-click install feature.
-* You won't understand the underlying structure of WP as well, which will make migrations and backups a little trickier.
+* Not all servers have a One-click install feature.
+* You won't understand the underlying structure of WP as well, which will make migrations and backups trickier.
 
 
 

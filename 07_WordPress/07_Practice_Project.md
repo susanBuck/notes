@@ -1,15 +1,13 @@
-## Spec
-
 <img style='width:50%' src='http://making-the-internet.s3.amazonaws.com/wp-graphics-by-liz-header.png?@2x'>
 
-### Who is Liz?
+## Who is Liz?
 
 * Illustrator / graphic designer
 * Working on a freelance business
 * Fun design aesthetic
 
 
-### Liz's Goals
+## Liz's Goals
 * Clean and simple landing page that shows:
 
 	* What she does
@@ -21,7 +19,7 @@
 
 
 
-### The Plan
+## The Plan
 
 1. Find and install a theme for Liz's site.
 2. Create the pages Liz needs: **About**, **Contact**, **Portfolio**, and **Blog**.

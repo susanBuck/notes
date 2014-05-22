@@ -19,7 +19,7 @@ Maintained by a community with about 6 core developers.
 
 <img src='http://making-the-internet.s3.amazonaws.com/wp-com-vs-org.png?@2x' style='width:50%'>
 
->> WordPress.com is a blog web hosting service provider owned by Automattic, and powered by the open source WordPress software. It provides free blog hosting for registered users and is financially supported via paid upgrades, "VIP" services and advertising.
+>> WordPress.com is a blog web hosting service provider owned by Automattic, and powered by the open source WordPress software. It provides free blog hosting for registered users and is financially supported via paid upgrades, &ldquo;VIP&rdquo; services, and advertising.
 
 [Comparison of the wordpress.com plans](http://store.wordpress.com/bundles/)
 
@@ -65,7 +65,7 @@ Examples:
 
 
 ## View Source
-To tell if a site is running WP, use *View Source* and look for any instances of `wp` or `wordpress`.
+To tell if a site is running WP, use *View Source* and look for any instances of `wp/` or `wordpress/`.
 
 
 
@@ -101,7 +101,7 @@ Found a theme that looks about 80% right and plugins that do 80% of what you nee
 
 
 
-## Levels WP Users
+## Levels of WP Users
 
 ### How to be a happy, average WordPress user
 * Stick in GUI-land. Don't try and pop the hood.

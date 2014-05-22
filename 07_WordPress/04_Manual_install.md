@@ -1,6 +1,6 @@
-## Cheat Sheets:
+## Cheat Sheets
 * [WordPress Credentials Cheat Sheet](http://thewc.co.s3.amazonaws.com/challenges/wp-credentials-cheat-sheet.pdf)
-* [WordPress Installation Cheat Sheet](http://thewc.co.s3.amazonaws.com/challenges/wp-installation-cheat-sheet.png)
+* [WordPress Installation Cheat Sheet](http://thewc.co.s3.amazonaws.com/challenges/wp-installation-cheat-sheet.pdf)
 
 
 
@@ -15,9 +15,8 @@
 
 
 ## Step 1: Download WP
-Visit the WordPress download page to grab the latest version: <http://wordpress.org/download/>
+Visit <http://wordpress.org/download/> and click the big blue button to download a `.zip` copy of the latest version of WordPress.
 
-The `.zip` version offered by the big blue button is fine. Ignore the `.tar.gz` option.
 
 
 
@@ -27,17 +26,37 @@ Log into cPanel using the details found at <http://thewc.co/hosting>.
 
 Once in cPanel, find the **File Manager** option.
 
+<img src='http://making-the-internet.s3.amazonaws.com/wp-filemanager-in-cpanel.png?@2x' style='width:75%; max-width:879px'>
+
 When it asks you which directory to open in, the default option (*Web Root*) is fine.
+<img src='http://making-the-internet.s3.amazonaws.com/wp-filemanager-directory.png?@2x' style='width:75%; max-width:433px;'>
 
-Once in the File Manager, find the **Upload** button and proceed to upload the `wordpress-3.9.1.zip` file you downloaded in the first step.
 
-Once the zip file is uploaded, return to the file manager. 
+
+Once in the File Manager, click **Upload**.
+
+<img src='http://making-the-internet.s3.amazonaws.com/wp-filemanager-upload.png?@2x' style='width:75%; max-width:938px;'>
+
+Then proceed to upload the `wordpress-3.9.1.zip` file you downloaded.
+
+<img src='http://making-the-internet.s3.amazonaws.com/wp-filemanager-choose-file.png?@2x' style='width:75%; max-width:938px;'>
+
+
+
+
+
+Once the zip file is uploaded, return to the File Manager. 
 
 Find the newly uploaded zip file and click it, then click the **Extract** Icon.
+<img src='http://making-the-internet.s3.amazonaws.com/wp-filemanager-extract.png?@2x' style='width:75%; max-width:938px;'>
+
+
 When it asks you for the extract path, leave the default as is (`/public_html`).
+<img src='http://making-the-internet.s3.amazonaws.com/wp-filemanager-default-path.png?@2x' style='width:75%; max-width:510px;'>
+
 
 When it's all done, you should have a directory called `wordpress` amongst your files.
-
+<img src='http://making-the-internet.s3.amazonaws.com/wp-filemanager-extraction-complete.png@2x' style='width:75%; max-width:1074px;'>
 
 
 
