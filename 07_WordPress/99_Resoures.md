@@ -6,7 +6,7 @@
 
 ### Cheat Sheets:
 * [WordPress Credentials Cheat Sheet](http://thewc.co.s3.amazonaws.com/challenges/wp-credentials-cheat-sheet.pdf)
-* [WordPress Installation Cheat Sheet](http://thewc.co.s3.amazonaws.com/challenges/wp-installation-cheat-sheet.pdf)
+* [WordPress Installation Cheat Sheet](http://thewc.co.s3.amazonaws.com/challenges/wp-installation-cheat-sheet.png)
 
 ### Learn more:
 * [WPBeginner](http://www.wpbeginner.com/)

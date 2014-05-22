@@ -1,6 +1,6 @@
 ## Spec
 
-<img style='width:50%' src='http://thewc.co/images/tasks/wordpress-graphics-by-liz.png'>
+<img style='width:50%' src='http://making-the-internet.s3.amazonaws.com/wp-graphics-by-liz-header.png?@2x'>
 
 ### Who is Liz?
 
@@ -23,6 +23,6 @@
 
 ### The Plan
 
-1. Find and install a theme for Liz's site
-2. Create the pages Liz needs: About, Contact, Portfolio, and Blog
-3. Customize the theme a bit so it fits Liz's style
+1. Find and install a theme for Liz's site.
+2. Create the pages Liz needs: **About**, **Contact**, **Portfolio**, and **Blog**.
+3. Customize the theme a bit so it fits Liz's style.

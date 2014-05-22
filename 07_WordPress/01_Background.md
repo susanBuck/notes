@@ -1,27 +1,23 @@
 ## What is WordPress?
 
-### WordPress is a Swiss Army Knife:
+<img src='http://making-the-internet.s3.amazonaws.com/wp-knife-comparison.png?@2x' style='width:50%'>
 
-* At the very least, it's a blogging platform; a simple knife that cuts things. 
-* At its very most, its a multi-function Content Management System (CMS) with knives, corkscrews, screwdrivers, scissors, toothpicks, etc.
+Package of code written in *HTML*, *CSS*, *JavaScript* and *PHP*.
 
-### Technically speaking:
-250mb file of PHP/CSS/HTML code.
+Open source software, co-founded by Matt Mullenweg and Mike Little. 
 
-### Creators:
-* Co-founded by Matt Mullenweg and Mike Little.
-* Open source software
-* Community that contributes to and tests WordPress, with about 6 core developers.
+Maintained by a community with about 6 core developers.
 
 
 
 
 
-## com vs org
+## .com vs .org
 
-Downloading WordPress from [wordpress.**org**](http://wordpress.org) to is completely free.
-You have to have your own host to run it on.
-This is different from the hosted version of WordPress from [wordpress.**com**](http://wordpress.com)
+[wordpress.**org**](http://wordpress.org)
+[wordpress.**com**](http://wordpress.com)
+
+<img src='http://making-the-internet.s3.amazonaws.com/wp-com-vs-org.png?@2x' style='width:50%'>
 
 >> WordPress.com is a blog web hosting service provider owned by Automattic, and powered by the open source WordPress software. It provides free blog hosting for registered users and is financially supported via paid upgrades, "VIP" services and advertising.
 
@@ -58,7 +54,6 @@ Examples:
 
 ### Basic blogs: 
 * <http://code.flickr.com>
-* <http://content.photojojo.com>
 
 ### Site as a whole:
 * <http://franklinfountain.com>
@@ -66,20 +61,26 @@ Examples:
 ### Hybrid site / blog
 * <http://biritemarket.com>
 
-To tell if a site is running WP, use View Source and look for any instances of `wp` or `wordpress`
+
+
+
+## View Source
+To tell if a site is running WP, use *View Source* and look for any instances of `wp` or `wordpress`.
+
+
 
 
 ## Benefits
 * An abundance of plugins.
 * The most popular blogging system out there; manages 22% of new websites.
-* Its popularity makes it easier to get support when you need it, because so many developers know how to work with it. 
+* Easy to get support because it's so ubiquitous. 
 * Comes off the shelf with good usability and SEO.
 
 
 
 
 ## Downsides
-* Because it's so popular, has a bit of a reputation of getting hacked (we'll show you some precautionary steps to prevent that).
+* Because it's so popular, it's a desirable target for hackers.
 * Because anyone can create themes and plugins, you can sometimes get junk work.
 * See next point...
 
@@ -87,11 +88,11 @@ To tell if a site is running WP, use View Source and look for any instances of `
 
 
 ## Easyhard
-WordPress is simultaneously easy and difficult, and a lot of it depends on your relative experience as well as your expectations/needs.
+Depends on your relative experience and your expectations/needs.
 
-WordPress is easy because there are so many plugins you can fire up with just a few clicks.
+Easy because there are so many plugins you can fire up with just a few clicks.
 
-But WordPress is also challenging because getting these plugins to do what you want can be tricky, and can require experience with HTML/CSS/PHP/JavaScript.
+Challenging because getting these plugins to do what you want can be tricky, and can require advanced experience with HTML/CSS/PHP/JavaScript.
 
 Find a theme that looks exactly how you want and the prefect plugins that operate exactly how you want? **WordPress is easy**.
 
@@ -100,14 +101,12 @@ Found a theme that looks about 80% right and plugins that do 80% of what you nee
 
 
 
-
-## Levels of know-how
+## Levels WP Users
 
 ### How to be a happy, average WordPress user
 * Stick in GUI-land. Don't try and pop the hood.
-* Play with plugins and themes, using what the authors give 'ya.
+* Play with plugins and themes, using what the authors give you.
 * Have low expectations of what you can control. 
-* Recite the serenity prayer repeatedly.
 
 ### How to be a better than average WordPress user
 * Learn the basics of HTML and CSS. Get a general understanding of PHP and JavaScript.
