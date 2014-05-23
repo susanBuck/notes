@@ -107,12 +107,16 @@ Next, in `bootstrap/start.php` make your detectEnvironment closure look like thi
 		}
 		# Otherwise, defer to this machine's environment file to return 
 		# the environment (i.e. 'local' or 'production')
-		else 
+		else if(file_exists(__DIR__.'/../environment.php')) 
 		{
 			return require __DIR__.'/../environment.php';
 		}
+		else {
+			dd('Missing LARAVEL_ENV or environment.php file');
+		}
 		
 	});
+
 
 
 Summary: Each machine that runs your code should be able to set what environment it wants your Laravel app to run in.
