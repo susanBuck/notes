@@ -19,15 +19,17 @@ Run this to verify your json is okay:
 
 	$ composer validate
 	
-Install the new dependency
+Install the new dependency:
 
 	$ composer install
 
-Update composer.lock file:
+Update the `composer.lock` file:
 
 	$ composer update
 	
 This will add the following directory: `/vendor/paste/pre/`
+
+Learn more about any of the above composer commands here: <https://getcomposer.org/doc/>
 
 ## Usage
 

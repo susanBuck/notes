@@ -1,26 +1,18 @@
-## Blank white screen
+## Storage permissions issue
 
-	chmod -R o+w app/storage/
+Symptoms:
 
-ref: http://stackoverflow.com/questions/20678360/laravel-blank-white-screen
-
-
-## Bus watch error on Mac Mavericks
-
-<http://stephentvedt.com/2013/11/16/grunt-js-watch-bus-error/>
-
-
-## "Error in exception handler" when running brand new Laravel App
+* *Error in exception handler* when running brand new Laravel App
+* Blank white screen
 
 Ensure that all the storage directories (`app/storage/*`) are writable by the web server
 
-	sudo chmod -R 777 app/storage
+	chmod -R 755 app/storage
 	
-## General error: 14 unable to open database file	
+## Unable to open database file	
+	chmod -R 755 app/database/
 	
-	sudo chmod -R 777 app/database/
-	
-
 ## Class not found
 
 	composer dump-auto
+	
