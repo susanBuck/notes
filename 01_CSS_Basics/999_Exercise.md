@@ -1,6 +1,6 @@
 Recreate the following page:
 
-<img src='http://making-the-internet.s3.amazonaws.com/css-basics-exercise.png?2x' width='500' style='border:1px solid black'>
+<img src='http://making-the-internet.s3.amazonaws.com/css-basics-exercise.png?@2x' width='500' style='border:1px solid black'>
 
 ### Specifications:
 
