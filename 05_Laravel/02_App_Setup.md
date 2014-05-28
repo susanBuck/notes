@@ -7,7 +7,6 @@ Use composer to create a new Larval project in that directory:
 	$ composer create-project laravel/laravel placecoder --prefer-dist
 	
 FYI: Download will take a little bit of time.	
-
 Move into the project directory
 
 	$ cd placecoder
@@ -118,7 +117,7 @@ For more information on the Boxfile, check out [Pagoda's guide](http://help.pago
 
 In addition to having a repository of your code at Pagoda, you'll also store a repository at Github. This will make it easy to share your work.
 
-Create a new, public repostiory at Github. When doing this, do *not* initialize the repository with a README file, since you'll be working with a repository that has already been initialized.
+Create a new, public repostiory at Github. When doing this, do *not* initialize the repository with a `README.md` file, since you'll be working with a repository that has already been initialized.
 
 Note the SSH URL, for example, `git@github.com:username/foobar.git`
 

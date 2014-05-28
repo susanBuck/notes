@@ -1,20 +1,7 @@
-
-## Local Server
-
-MAMP
-
-
-
 ## Set up Composer
 
-References:
-
-* [Laracast: Laravel Installation for Newbs](https://laracasts.com/lessons/laravel-installation-for-newbs)
-* [Laracast: From Zero to Deploy with Fortrabbit](https://laracasts.com/lessons/from-zero-to-deploy-with-fortrabbit)
-* Chapter 2: Composer All Over
-
-
 Move into your bin directory
+
 Mac: Paths are set in /etc/paths
 	
 	$ cd /usr/local/bin

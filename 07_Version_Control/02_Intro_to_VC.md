@@ -1,10 +1,10 @@
 This isn't just about Version Control / Git; it's about optimizing your web development workflow and how to tie together the following pieces:
 
-+ your local development environment
-+ your version control repository
-+ your live server
++ Your local development environment
++ Your version control repository
++ Your live server
 
-The challenge ahead: Lots of different variables
+The challenge ahead: Lots of different variables...
 
 + Software (versions, OS's, code editors, etc.)
 + Servers
@@ -55,8 +55,12 @@ Pros/Cons?
 
 ### What other workflows have you used?
 
+
+
+
+
 ## Introducing Version Control (VC)
-We're going to remove FTP from the workflow picture and replace it with version control.
+We're going to remove FTP from the workflow picture and replace it with Version Control.
 
 __Version control is a system of tracking changes to your code over time.__
 
@@ -67,13 +71,14 @@ There are different VC systems (ex: Subversion) but for this class we'll be usin
 >> Git is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency. Git is easy to learn and has a tiny footprint with lightning fast performance.
 
 
+
+
 ## Benefits of Version Control
 
 [Github.com preview]
 
 ### Workflow enhancement
 + Because Git keeps a running history of your changes, you can quickly revert to a previous state of your code if you mess something up. Think cmd+z for programming.
-
 + Ability to create *branches* of your code for working on new features, starting on different versions, etc.
 
 ### Teamwork
@@ -99,6 +104,8 @@ Each collaborator that is working with you on a project will also have a copy of
 __The second copy will be the main repository__, and, for this course, it will be stored at Github.com.
 
 __The third copy of your site is the code that runs on your live server__; this is what the rest of the world sees.
+
+
 
 
 ## The basic version control workflow looks like this

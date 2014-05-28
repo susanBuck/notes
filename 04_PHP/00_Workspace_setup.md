@@ -1,6 +1,8 @@
 ## Mac
 
-Download and install MAMP: <https://www.mamp.info/en/>
+Download and install MAMP: <https://www.mamp.info/en/>.
+
+Note: The download includes both free MAMP and MAMP Pro (paid version). You'll only need to use the free MAMP version in this class.
 
 Create a new directory in your `Documents` folder called `Sites`
 
