@@ -4,53 +4,68 @@ Move into the directory where you want to create your project.
 
 Use composer to create a new Larval project in that directory:
 
-	$ composer create-project laravel/laravel placecoder --prefer-dist
+	$ composer create-project laravel/laravel foobar --prefer-dist
 	
 FYI: Download will take a little bit of time.	
 Move into the project directory
 
-	$ cd placecoder
+	$ cd foobar
 	
-Point your local server to the `public/` directory within your new app.
+Point your local server's document root to the `public/` directory within your new app.
+
+
+
+## Git
+
+In your app directory, initiate a new Git repository:
+
+	$ git init
+	
+### Github
+Create a new, public repostiory at Github. When doing this, do *not* initialize the repository with a `README.md` file, since you'll be working with a repository that has already been initialized.
+
+Note the SSH URL, for example, `git@github.com:username/foobar.git`
+
+In your project directory, add a new remote origin, for example:
+
+	$ git remote add github git@github.com:username/foobar.git	
+	
+### First commit
+Run git status to see all your untracked files:
+
+	$ git status
+	
+Add all your files for comitting:
+
+	$ git add .
+	
+Commit these changes:
+
+	$ git commit -m 'your commit message'
+
+Push your project up to github:
+
+	$ git push github master
+
+When you visit your repository on Github you should see all your changes there. 
+
 
 
 ## Create a new app at Pagoda 
 
+TODO: SSH Key at pagoda
+
 When given the option, start your app as an **Empty Repo** (there are Laravel QuickStart options, but we want to set it up ourselves).
 
-### SSH Key at pagoda
+Under your App's Admin section in Pagoda, find the Git Clone URL, for example `git@git.pagodabox.com:foobar.git`
 
-
-## Connect to Pagoda
-
-While in your apps folder, initiate a new git repository:
-
-	$ git init
-	
-Run git status to see all your untracked files
-
-	$ git status
-	
-Add all your files for comitting
-
-	$ git add .
-	
-Commit these changes
-
-	$ git commit -m 'your commit message'
-	
-Set your Pagoda git clone url 
-<small>(FYI This is where you'd start if you were working on an existing project that was already set up with a repo)</small>
+On your computer, in your app's root, add this new remote.
 
 	$ git remote add pagoda git@git.pagodabox.com:placecoder.git
-	
-(FYI, this URL can be found in your App's Administration Settings too)
 
-You can double check these settings via:
+Note: You now have *2 remotes*: one for github and one for pagoda.
 
-	$ git config -l
-	
-First push/deploy!
+Push/Deploy your project to Pagoda:
 
 	$ git push pagoda master
 	
@@ -64,13 +79,17 @@ Give it some time to work...
 
 Note that by default, Pagoda apps are set to *Automatically deploy on git push*, which is why you only have to push to Pagoda and not do any other actions for deployment. This can be toggled off in Pagoda via the Admin panel.
 
-So now your app is deployed but when you go to your app's url on Pagoda, you'll see a directory listing ([screenshot](http://making-the-internet.s3.amazonaws.com/laravel-home-directory-not-set-on-pagoda.png)).
+So now your app is deployed but when you go to your app's url on Pagoda, you'll see a directory listing ([screenshot](http://making-the-internet.s3.amazonaws.com/laravel-home-directory-not-set-on-pagoda.png)). 
 
-This is because Pagoda is not pointing to your `public/` directory.
+This is because Pagoda is not pointing to your `public/` directory, and can be fixed with a boxfile...
 
-To fix this, you need to create a [Boxfile](http://help.pagodabox.com/customer/portal/articles/175475) (capital B, no extension) which contains all configurations (in [yaml](http://en.wikipedia.org/wiki/YAML)) related to your app's deployment for Pagoda. 
 
-The key configuration we need is `document_root: public` but we'll also set up a variety of other configurations as well.
+
+
+## Pagoda Boxfile
+A Pagoda [Boxfile](http://help.pagodabox.com/customer/portal/articles/175475) (capital B, no extension) is a file you create which contains all configurations (in [yaml](http://en.wikipedia.org/wiki/YAML)) related to your app's deployment for Pagoda. 
+
+The key configuration we need to first set is `document_root: public` but we'll also set up a variety of other configurations as well.
 
 Create this file in the root of your app project and fill it with this code (edit `name:` to match your app name):
 	
@@ -113,25 +132,6 @@ Note: You don't have to run `composer install` on Pagoda after adding Packages b
 For more information on the Boxfile, check out [Pagoda's guide](http://help.pagodabox.com/customer/portal/articles/1142671)
 
 
-## Github
-
-In addition to having a repository of your code at Pagoda, you'll also store a repository at Github. This will make it easy to share your work.
-
-Create a new, public repostiory at Github. When doing this, do *not* initialize the repository with a `README.md` file, since you'll be working with a repository that has already been initialized.
-
-Note the SSH URL, for example, `git@github.com:username/foobar.git`
-
-In your project directory, add a new remote origin, for example:
-
-	$ git remote add github git@github.com:username/foobar.git
-	
-Push your project up to github:
-
-	$ git push github master
-
-When you visit your repository on Github you should see all your changes there. 
-
-Note you wow have **two** remote origins: `pagoda` and `github`, so make sure to push to both of these when checking in work.
 
 
 ## Set up a real domain
