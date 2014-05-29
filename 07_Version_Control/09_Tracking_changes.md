@@ -1,4 +1,4 @@
-With your repository set up and plugged into Github.com, you're ready to start tracking changes on your project.
+With your repository set up and plugged into Github.com, you're ready to start tracking changes on your project. Everything we have done to this point has been setup-related changes that you only do once when starting a new project. Everything that follows reflects the kind of Git work you'll do on a day-to-day basis.
 
 Within your `hello-world` directory, run `git status` to see what changes git has tracked:
 

@@ -6,22 +6,17 @@ A common development workflow looks like this
 
 This is all great, assuming your live server host has Git installed, or at the very least allows you SSH access and the ability to install it yourself. With many shared servers, though, this isn't always the case. 
 
-## dploy.io
-
-Dploy is a promising service that makes it easy to sync up a repository with a server via FTP/SFTP.
-
-More details: <http://dploy.io>
-
+In this set of notes, we'll look at an alternative method of deploying using Rsync...
 
 
 ## RSync
 
->> rsync is a utility software and network protocol for Unix-like systems (with a port to Microsoft Windows) that synchronizes files and directories from one location to another while minimizing data transfer by using delta encoding when appropriate. - [source](http://en.wikipedia.org/wiki/Rsync)
+>> rsync is a utility software and network protocol for Unix-like systems (with a port to Microsoft Windows) that synchronizes files and directories from one location to another while minimizing data transfer by using delta encoding when appropriate. - [Wikipedia: Rsync](http://en.wikipedia.org/wiki/Rsync)
 
-Another option for keeping your environments in sync is using RSync, which would involve this procedure:
+Using Rsync, your workflow process would like this:
 
 1. Make your edits on your local copy of your project
-2. Push those edits to an online repository somewhere, i.e. Github.com
+2. Push those edits Github.com
 3. Rsync your changes from your local server to your live server
 
 In order to accomplish Step #3, we'll use the rsync command:

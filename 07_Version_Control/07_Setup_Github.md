@@ -22,7 +22,7 @@ Windows:
 
 	$ cd C:\Users\YourName\.ssh
 
-Generate a new SSH key in this direcotry with the following command:
+Generate a new SSH key in this directory with the following command:
 
 	$ ssh-keygen -t rsa -C "your_email@example.com"
 	
@@ -32,11 +32,14 @@ When it asks you for a passphrase you can either create one or leave it blank. R
 
 At this point, if you list the contents of you .ssh directory you should see two new files: `id_rsa` and `id_rsa.pub`.
 	
-Add your new key to the ssh-agent:
+(Mac users only) Add your new key to the ssh-agent:
  
 	ssh-add id_rsa	
 
-### Add SSH key at Github.com
+
+
+
+## Add SSH key at Github.com
 
 Reference: [Github.com: Generating SSH keys](https://help.github.com/articles/generating-ssh-keys)
 
@@ -87,6 +90,6 @@ If all went well, you should see this message:
 	
 If that username is yours, you've successfully set up your SSH key.
 
-If you receive a message about *access denied,* you can read [these instructions for diagnosing the issue](https://help.github.com/articles/error-permission-denied-publickey).
+If you receive a message saying access or permisssion is denied you can read [these instructions for diagnosing the issue](https://help.github.com/articles/error-permission-denied-publickey).
 
 
