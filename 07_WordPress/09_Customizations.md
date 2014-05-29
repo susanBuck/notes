@@ -24,7 +24,7 @@ Disable comments on pages via a page's *Quick Edit* section.
 
 ## Customize Theme
 * Clear out widgets for minimal look ala *Appearance :: Widgets*
-* Upload a header via *Appearance :: Header* <http://thewc.co/images/tasks/wordpress-graphics-by-liz.png>
+* Upload a header via *Appearance :: Header* <http://making-the-internet.s3.amazonaws.com/wp-graphics-by-liz-header.png>
 * Uncheck *Show header text with your image.*
 * Set background color to white via *Appearance :: Background*
 
