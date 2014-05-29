@@ -1,71 +1,64 @@
+With your repository set up and plugged into Github.com, you're ready to start tracking changes on your project.
 
-## Tracking changes
-Let's check the work we just did (new index.html) into your repository.
+Within your `hello-world` directory, run `git status` to see what changes git has tracked:
 
-Via command line, navigate inside of your `hello-world/` directory.
+	$ git status
 
-Run the following command to see what has changed in our project so far:
+At this point, you should have one untracked file&mdash; the `README.md` file.
 
-	git status
+<img src='http://making-the-internet.s3.amazonaws.com/vc-git-status.png?@2x' class='' style='max-width:520px; width:75%' alt=''>
 
-<img src='http://making-the-internet.s3.amazonaws.com/vc-first-git-status.png'>
+Stage (aka `add`) this new file with the following command:
 
-Just as expected, Git has detected a new (i.e. untracked) file called `index.html`.
-
-Stage (aka add) this new file with the following command:
-
-	git add index.html
+	$ git add README.md
 
 Now, try `git status` again, and you should see you have a file waiting to be committed:
 
-	git status
+	$ git status
 	
-<img src='http://making-the-internet.s3.amazonaws.com/vc-git-add.png'>
+<img src='http://making-the-internet.s3.amazonaws.com/vc-git-add.png?@2x' class='' style='max-width:589px; width:75%' alt=''>
+ 
+Next, commit this change using the `commit` command, plus the `-m` switch which indicates we'll also be including a commit message:
 
-Now, let's commit this change using the commit command, plus the `-m` switch which indicates we'll also be including a commit message:
+	$ git commit -m "Added readme file" 
 
-	git commit -m "Added main index page"
+<img src='http://making-the-internet.s3.amazonaws.com/vc-git-commit.png?@2x' class='' style='max-width:589px; width:75%' alt=''>
+
+Finally, push this change to Github.com. 
+
+	$ git push github master
 	
-<img src='http://making-the-internet.s3.amazonaws.com/vc-git-commit.png'>
+<img src='http://making-the-internet.s3.amazonaws.com/vc-git-push.png?@2x' class='' style='max-width:589px; width:75%' alt=''>
 
-Finally, let's push this change to Github.com. You'll be asked for your Github.com credentials in order to do this.
+To double check your commit made it to Github.com, look for your new README.md file on Github.com:
 
-	git push origin master
-	
-<img src='http://making-the-internet.s3.amazonaws.com/vc-git-push.png'>
-
-Your remote repository (what's on Github.com) is referred to as *origin*. 
-The default branch name in Git is *master*.
-
-So if we say git push origin master, we're saying push to our remote repository our master branch.
-
-
-To double check your commit made it to Github.com, look for your new index.html file on Github.com:
-
-<img src='http://making-the-internet.s3.amazonaws.com/vc-first-commit-in-github.png'>
+<img src='http://making-the-internet.s3.amazonaws.com/vc-first-commit-in-github.png?@2x' class='' style='max-width:822px; width:75%' alt=''>
 
 
 
 
 ## Practice
-Let's do a practice change before we move on.
-Edit your `index.html` file on your computer to have multiple exclamation points at the end.
 
-After you save this change, run `git status` to see that Git has picked up on this change:
+Make a change to your README.md file and add a new file called `index.html`. 
 
-For fun, have git tell you more about this change with the `git diff `command
+Stage and commit these changes:
 
-	git diff index.html
+	$ git add README.md
+	$ git add index.html
+	$ git commit -m "Updated readme file; added index file"
+	$ git push github master
 
-Let's stage these changes:
 
-	git add index.html
 
-And commit:
 
-	git commit -m "Added more emphasis"
+## Tips
 
-And finally, push:
+* `git status` is a command you should take advantage of frequently; it will give you a sense of what's going on your repository: what has changed, if any files are untracked, etc.
 
-	git push origin master
+* `git diff` is another useful command that will tell you what differences exist in a file that have changed. To use: `git diff filename` where `filename` is the file you wish to inspect.
 
+* If you ever want to undo any changes made to a file that haven't yet been added, you can use the `git checkout` command. To use: `git checkout filename`.
+
+* If you ever delete a file from a project, you'll use the `git rm` command instead of `git add`.
+
+* Whether you're tracking a brand new file, or just staging changes to an existing file, you'll use the `git add` command.

@@ -43,6 +43,8 @@ After your repository is created, copy the SSH URL for your repository at Github
 <img src='http://making-the-internet.s3.amazonaws.com/vc-get-repo-url.png?@2x' style='max-width:812px; width:75%'>
 
 
+
+
 ## Connect your local repo and your remote repo
 
 Returning to CL on your computer, run this command, replacing the SSH URL with the one you copied in the above step:
