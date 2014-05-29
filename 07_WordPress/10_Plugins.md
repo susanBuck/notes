@@ -9,8 +9,6 @@
 
 
 
-
-
 ## Example: NextGen Gallery
 
 <http://wordpress.org/plugins/nextgen-gallery/>
@@ -21,11 +19,12 @@
 
 ## Auto install
 
-* *Plugins :: Add New* 
-* Search or browse for NextGen Gallery
-* Click *Install Now*
-* After it's installed click *Activate Plugin*
-* Note the *Gallery* icon it adds to your sidebar
+* *Plugins :: Add New*.
+* Search or browse for NextGen Gallery.
+* Click *Install Now*.
+* After it's installed click *Activate Plugin*.
+* Note the *Gallery* icon it adds to your sidebar.
+
 
 
 
@@ -33,9 +32,9 @@
 
 Useful if...
 
-* Plugin is not available via wp-admin
-* You've built the plugin yourself
-* If your server prevents automatic installation
+* Plugin is not available via wp-admin.
+* You've built the plugin yourself.
+* If your server prevents automatic installation.
 
 Procedure:
 
@@ -44,7 +43,9 @@ Procedure:
 * FTP into your server and move the unzipped nextgen-gallery folder into your `/wp-content/plugins/` directory.
 
 
-## Set up
+
+
+## To Do: Set up
 
 Remember to activate your plugin before getting started!
 
@@ -72,35 +73,31 @@ Copy the gallery shortcode into the contents of your Portfolio page.
 
 ## Suggested plugins
 <br><br>
-### WP Super Cache
 
-<http://wordpress.org/extend/plugins/wp-super-cache/>
-
+### [WP Super Cache](http://wordpress.org/extend/plugins/wp-super-cache/)
 Generates a static HTML file of your website to help make it run faster for your visitors. Use this plugin once your site is complete to ensure that your images and content will be displayed quickly with minimal load time for your visitors.
 <br><br>
-### Google Analytics for WordPress
 
-<http://wordpress.org/extend/plugins/google-analytics-for-wordpress/>
 
+### [Google Analytics for WordPress](http://wordpress.org/extend/plugins/google-analytics-for-wordpress/)
 Inserts your Google Analytics tracking code in your site files, easily enabling data collection. Allows you to control which users and which activities are tracked on your site.
 <br><br>
-### TinyMCE Advanced
 
-<http://wordpress.org/extend/plugins/tinymce-advanced/>
-Adds buttons to your page/post editing toolbar, making it easier to create content and edit posts and pages. Pick the buttons you need with easy drag and drop settings.
+
+### [Ultimate Coming Soon Page](http://wordpress.org/extend/plugins/ultimate-coming-soon-page/)
+Perfect for a new site that is still in development. Allows you to set a Coming Soon page to block site visitors from seeing your site while you're working on it. Also includes a Maintenance Mode option, handy for times when you want to test new tricks on your site without affecting visitors.
 <br><br>
-### Ultimate Coming Soon Page
 
-<http://wordpress.org/extend/plugins/ultimate-coming-soon-page/>
-Perfect for a new site that is still in development. Allows you to set a Coming Soon page to block site visitors from seeing your site while you’re working on it. Also includes a Maintenance Mode option, handy for times when you want to test new tricks on your site without affecting visitors.
-<br><br>
-### WP Google Fonts
 
-<http://wordpress.org/extend/plugins/wp-google-fonts/>
-Easy access to the Google Font directory from within your WordPress dashboard. Allows you to use Google fonts on your WordPress site, with the ability to assign the Google fonts to specific CSS elements of your site.
-<br><br>
-### Yoast SEO
-
+### [Yoast SEO](http://wordpress.org/plugins/wordpress-seo/)
 WordPress is very Search Engine friendly out of the box, but the Yoast SEO (Search Engine Optimization) plugin really fine tunes your site for best optimization with Google, Bing, etc.
-<http://wordpress.org/plugins/wordpress-seo/>
 
+
+### [WooCommerce](http://wordpress.org/plugins/woocommerce/)
+This plugin is something to check out if ever have a need to sell something via your WordPress site.
+<br><br>
+
+
+### [Contact Form](http://wordpress.org/plugins/contact-form-plugin/)
+Giving visitors a way to get in touch with you is a fundamental need for any web site, and this plugin makes implementing a contact form easy as pie.
+<br><br>

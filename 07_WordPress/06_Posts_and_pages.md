@@ -1,3 +1,5 @@
+<img src='http://making-the-internet.s3.amazonaws.com/wp-posts-and-pages.png?@2x' class='' style='max-width:822px; width:75%' alt=''>
+
 ## Posts
 Blog entries
 
@@ -11,16 +13,16 @@ Blog entries
 ## Pages
 Pages on your site
 
-* Pages on your site. Ex: About Page, Portfolio Page, Contact page. 
-* Unlike posts which you might be creating on a regular basis, pages are pretty static.
+* Pages on your site. Ex: *About* page, *Portfolio* page, *Contact* page. 
+* Unlike posts which you might be creating on a regular basis, pages are mostyle static.
 
 
 
 
 ## Other differences 
 * Posts are included in the RSS feed WordPress generates for your site.
-* Pages can be nested. Example: Within a page called Portfolio, you may nest a page for Illustration, Photography, Video, etc. (It's like WordPress inception.)
-* You can have a page that displays posts. For example, you might want to create a page called Top 5 that shows your top 5 blog posts of all time.
+* Pages can be nested. Example: Within a page called *Portfolio*, you may nest a page for *Illustration*, *Photography*, *Video*, etc.
+* You can have a page that displays posts. For example, you might want to create a page called *Top 5* that shows your top 5 blog posts of all time.
 
 
 
@@ -29,4 +31,4 @@ Pages on your site
 
 * Add a new post.
 * Edit the permalinks.
-* Look at Publish Options, Post Types and Featured Image options.
+* Look at *Publish Options*, *Post Types* and *Featured Image* options.
