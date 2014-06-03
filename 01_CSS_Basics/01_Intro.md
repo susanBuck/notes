@@ -64,7 +64,7 @@ To see what style tags you have at your disposal, here's a full reference from t
 
 ## Internal CSS
  
-In the above method we were *inline* CSS (we were writing it inline with the HTML), which works, but an even better way is to separate your CSS from the HTML.
+In the above method we were using *inline* CSS (we were writing it inline with the HTML), which works, but an even better way is to separate your CSS from the HTML.
 
 Internal CSS is placed in the `<head>` of your HTML document.
 

@@ -17,15 +17,15 @@ Some values can include multiple bits of information:
 
 	border:3px solid green;
 
-All of these quirky little rules are outlined in the reference for each style you're working with, so don't worry about memorizing every little detail.
+All of these quirky little rules are outlined in the [reference](https://developer.mozilla.org/en/CSS/CSS_Reference) for each style you're working with, so don't worry about memorizing every little detail.
 
 
 
 
 ## Links
-HTML Selectors might also have what are called CSS pseudo-classes. Links are a good example of this as they use the following pseudo-classes for their four different states: link, visited, hover, active.
+HTML Selectors might also have pseudo-classes. Links are a good example of this as they use the following pseudo-classes for their four different states: link, visited, hover, active.
 
-This is how you can add pseudo-classes to style the `<a>` selector:
+This is how you can add pseudo-classes to style the `<a>` element:
 
 	a:link {
 		color:#000000;
