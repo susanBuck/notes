@@ -44,7 +44,10 @@ The `$*` at the end tells the alias to also accept any argument variables.
 
 
 ## Tips
-* If you get a message saying *openssl* is not enabled, open the `php.ini` file you're using and look for the following line:
+
+`alias` is a command specific to Cmder. Open the file `c:\Program Files\config\aliases` to edit any existing aliases.
+
+If you get a message saying *openssl* is not enabled, open the `php.ini` file you're using and look for the following line:
 
 	extension=php_openssl.dll
 
@@ -52,4 +55,3 @@ If this line has a semi-colon in front of it, it means the openssl extension is 
 
 See the notes in SysAdmin/PHP_From_CL if you need more assistance with PHP CL's php.ini file.
 
-* `alias` is a command specific to Cmder. Open the file `c:\Program Files\config\aliases` to edit any existing aliases.

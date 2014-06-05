@@ -1,4 +1,4 @@
-## Create new Laraval project
+## Create a new Laraval app
 
 Move into the directory where you want to create your project.
 
@@ -22,19 +22,19 @@ If all went well, you should see Laravel's default welcome page when you hit `ht
 <img src='http://making-the-internet.s3.amazonaws.com/laravel-app-setup-success.png?@2x' class='' style='max-width:506px; width:75%' alt=''>
 
 ### Tips
-* If http://localhost doesn't work, check what your *Ports* are set to in MAMP. The Apache port has to be 80 for `http://localhost` to work. Otherwise, you have to specify the specific port, for example `http://localhost:8888`
+* If `http://localhost` doesn't work, check what your *Ports* are set to in MAMP. The Apache port has to be 80 for `http://localhost` to work. Otherwise, you have to specify the specific port, for example `http://localhost:8888`
 
 
 
 
-## Git
+## Version Control your new app
 
 In your app directory, initiate a new Git repository:
 
 	$ git init
 	
 ### Github
-Create a new, public repository at Github. When doing this, do *not* initialize the repository with a `README.md` file, since you'll be working with a repository that has already been initialized.
+Create a new repository at Github. When doing this, do *not* initialize the repository with a `README.md` file, since you'll be working with a repository that has already been initialized.
 
 Note the SSH URL, for example, `git@github.com:username/foobar.git`
 
@@ -53,7 +53,7 @@ Add all your files for comitting:
 	
 Commit these changes:
 
-	$ git commit -m "your commit message"
+	$ git commit -m "First commit"
 
 Push your project up to github:
 
@@ -79,7 +79,7 @@ Once your app is deployed, when you go to your app's url on Pagoda, you'll see a
 
 <img src='http://making-the-internet.s3.amazonaws.com/laravel-home-directory-not-set-on-pagoda.png' class='' style='max-width:415px; width:75%' alt=''> 
 
-This is because Pagoda is not pointing to your `public/` directory, and can be fixed with a boxfile...
+This is because Pagoda is not pointing to your `public/` directory. This can be fixed with a Boxfile...
 
 
 
@@ -88,7 +88,7 @@ This is because Pagoda is not pointing to your `public/` directory, and can be f
 
 A Pagoda [Boxfile](http://help.pagodabox.com/customer/portal/articles/175475) (capital B, no extension) is a file you create which contains all configurations (in [yaml](http://en.wikipedia.org/wiki/YAML)) related to your app's deployment for Pagoda. 
 
-The key configuration we need to first set is `document_root: public` but we'll also set up a variety of other configurations as well.
+The key configuration you need to set is `document_root: public` but you'll also set up a variety of other configurations as well.
 
 Create this file in the root of your app project and fill it with this code (edit `name: foobar` to match your app name):
 	
@@ -141,10 +141,14 @@ The above Boxfile was designed specifically to work with Laravel. In addition to
 + Sets an environment called `LARAVEL_ENV`. to `production`.
 + Runs `composer install` after each deployment.
 + Makes sure the directories that Laravel needs to be writable are writable.
++ Set the `document_root` to `public`
++ Specify the PHP version to use. As of this writing, the newest version Pagoda has is 5.4.14, which supports the Laravel requirement of being > 5.4.0.
 + Clears any caches.
 + Loads the necessary php extensions.
 
-For more information on the Boxfile, check out [Pagoda's guide](http://help.pagodabox.com/customer/portal/articles/1142671)
+Some of the above won't make sense yet, but you'll be using it as we move along.
+
+For more information on the Boxfile, check out [Pagoda's guide](http://help.pagodabox.com/customer/portal/articles/1142671).
 
 
 
