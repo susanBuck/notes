@@ -22,7 +22,7 @@ Windows: `c:/Windows/System32/drivers/etc/hosts`
 
 
 
-## Mac CLI Text Editing
+## Mac CL Text Editing
 
 If you open Finder and attempt to locate `/private/etc/hosts` you'll run into problems because it's in hidden directories. There are ways to toggle hidden files on, but rather than do that, we'll look at how we can edit `hosts` using the CL editor *nano*:
 
@@ -60,7 +60,7 @@ With this method, you still get the benefits of using `sudo`, and you still can 
 
 
 
-## Windows CLI Text Editing
+## Windows CL Text Editing
 
 By default, Windows doesn't come with any of the good CL editors like nano (even if you're using *Cmder*).
 

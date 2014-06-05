@@ -8,6 +8,7 @@ In this section we'll look at an example of how you would deploy to a **PaaS**. 
 
 
 ## Pagoda setup
+
 Create a new account at [PagodaBox](https://pagodabox.com/).
 
 In your user settings, find the option to add a SSH key. You can copy the same `id_rsa.pub` key you created when you configured Github.

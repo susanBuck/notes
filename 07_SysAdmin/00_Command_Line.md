@@ -4,12 +4,17 @@
 - [General Mac CL commands](http://www.pixelbeat.org/cmdline.html)
 - [Git Specific](http://www.git-tower.com/files/cheatsheet/Git_Cheat_Sheet_grey.pdf)
 
+
+
+
 ## What is the Command Line?
 The **Command Line Interface (CLI)** is a means of interacting with your computer via text commands. While it seems that the CLI is archaic compared to GUIs (Graphical User Interfaces) it's actually a very powerful method for interacting with files and programs.
 
 The application where you type your commands (and see any results of those commands) is called a *shell*. There are different types of shells, but the most common is the **Bash shell** which is what Linux and Mac systems use, via the application called **Terminal**.
 
 Windows systems includes the limited **Command Prompt** application, which has nowhere near the power of *Bash*. Given this, we're going to use a console emulator called **Cmder** which will allow you to *mostly* replicate anything you'd do in a Bash shell.
+
+
 
 
 ## Programs
@@ -44,7 +49,7 @@ Download from <http://bliker.github.io/cmder/> (Make sure you download the **ful
 | Remove a directory | `rm -R foobar/`   
 | Create a new text-based file | `touch foobar.txt`
 | Re-enter previous commands | Up arrow 
-
+| Abort | ctrl + c
 
 
 
