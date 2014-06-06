@@ -45,7 +45,11 @@ The `$*` at the end tells the alias to also accept any argument variables.
 
 ## Tips
 
+__Alias__
+
 `alias` is a command specific to Cmder. Open the file `c:\Program Files\config\aliases` to edit any existing aliases.
+
+__openssl__
 
 If you get a message saying *openssl* is not enabled, open the `php.ini` file you're using and look for the following line:
 

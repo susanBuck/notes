@@ -1,12 +1,10 @@
-## Reference
-* <http://laravel.com/docs/configuration#environment-configuration>
-* <https://laracasts.com/lessons/environments-and-configuration>
-
 ## Cascading
 
 Configurations in Laravel **cascade**. This means that there are a default set of configurations which live in `app/config`, but you can overwrite them based on specific environments.
 
 This is done by creating new directories for each environment in `app/config`.
+
+
 
 
 ## Development environment
@@ -33,11 +31,14 @@ return array(
 );
 ````
 
-Make sure the URL matches however your access your app locally, for example `http://localhost` or `http://foobar.dev`
+Make sure the URL matches however your access your app locally, for example `http://localhost` or `http://foobar.dev`.
 
 Now, whenever you're in *development* mode, these settings will overwrite the default settings in `app/config/app.php`. 
 
 Note that not everything in `app/config/app.php` is overwritten, just the values you wish to overwrite (right now, that's just `url` and `debug`).
+
+
+
 
 
 ## Production environment
@@ -47,6 +48,7 @@ Duplicate the above steps to set up a production environment.
 1. Create a new folder called `production` inside `app/config`
 2. Within this new folder, create a new file called `app.php`
 3. Within this new file, copy the above array but set `url` to be your site's live URL, and set `debug` to be `false` (you don't want debugging information to display on your live site)
+
 
 
 
@@ -66,7 +68,7 @@ $env = $app->detectEnvironment(array(
 ));
 ```
 
-Note that `your-machine-name` can be retreived by running `hostname` from command line. For reference, on a Mac your hostname might look something like this: `Jane-Doe-MacBook-Air.local`.
+`your-machine-name` can be retreived by running `hostname` from the command line. For an example, on a Mac your hostname might look something like this: `Jane-Doe-MacBook-Air.local`.
 
 This is the method suggested in the Laravel Docs ([ref](http://laravel.com/docs/configuration#environment-configuration)) and it works okay if you're working on your app independently, but it will be a problem if you have teammates running your code because their machine name will be different than yours.
 
@@ -126,7 +128,7 @@ Summary: Each machine that runs your code should be able to set what environment
 
 
 
-## Which environment?
+## Tip
 
 To test and see what environment you're in you can run `echo App::environment();` in a practice Route.
 

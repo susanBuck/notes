@@ -11,6 +11,32 @@ Move into the project directory
 
 	$ cd foobar
 	
+Once in this directory, run `ls -la` command; you should see all the Laravel related files in there.
+
+<img src='http://making-the-internet.s3.amazonaws.com/laralve-fresh-install.png?@2x' class='' style='max-width:839px; width:75%' alt=''>
+
+Laravel needs to have the ability to write to the storage directory, so set that permission:
+
+	$ chmod -R 777 app/storage
+
+
+
+
+## Environment setting
+By default Laravel runs in `production` mode which supresses errors. Because we're just getting started out, we want all errors to show to help with debugging, so let's make the default environment mode `local`.
+
+Open `/bootstrap/start.php` and replace the word `homestead` with an asterisk `*`:
+
+	$env = $app->detectEnvironment(array(
+
+		'local' => array('*'),
+
+	));
+
+This is a quicky and dirty fix for now. Later we'll spend an entire section on configuring environments.
+
+
+## Point local server to your new app
 Point your local server's document root to the `public/` directory within your new app, for example:
 
 	c:\MAMP\htdocs\foobar\public
