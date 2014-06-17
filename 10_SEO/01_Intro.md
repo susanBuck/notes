@@ -63,82 +63,25 @@ Example:
 [Google Infographic: How Search Works](http://www.google.com/insidesearch/howsearchworks/thestory/)
 
 
-## Getting to the top
 
-* No "get rich quick / shed 50 lbs. in 30 days" solutions to SEO
+
+## Building SEO
+
 * Good organization and HTML practices
 * Quality content
 * Time and patience
+
+
 
 
 ## Keywords
 * Words and phrases
 * Start with a brainstorm
 * 1-10 primary target
-* 10-20 being your secondary target
+* 10-20 secondary target
 * [Bella Balloons Example Keyword Brainstorm](http://codagogy.com/images/tasks/seo-whiteboard.jpg)
 * Google Adword's Keywords Planner <https://adwords.google.com>
 
 
 
-
-## HTML Elements
-
-### Title Element
-
-`<title>`
-
-* In head of your HTML document; describes the content of the page
-* Google uses the title for context and to label your results
-
-<img src='http://making-the-internet.s3.amazonaws.com/seo-title-tag.png'>
-
-* Use different titles for different pages - don't just repeat across your site
-
-* Be descriptive yet concise; you have about **60-70 characters** to convey your message.
-
-* Incorporate keywords you want people to use to find you.
-
-* Don't waste space: "Official website", "very", "best", "really"
-
-* Whether you include your name / company name depends on your audience target
-
-### Meta Elements
-
-* Also in the head of the your document
-* Never displayed on the page
-* Different meta tags, including description:
-
-```html
-<meta name="description" content="Bella Balloons provides Ohio Hot Air Balloon Rides, Cincinnati Hot Air Balloon Rides, and Dayton Hot Air Balloon Rides.">
-```
-
-* Usually the summary listed under your headline in search results
-* Have about **130-155 characters** to work with
-* Use different descriptions for each page, be descriptive yet concise, incorporate keywords
-* Short descriptions can easily get lost, so always aim for two lines of text
-* Occasionally search engines will override your description
-* Search terms found in your description will be bolded in results
-* Keywords meta tag is no longer used
-
-
-### Headings Elements
-
-* Heading elements (`<h1>`, `<h2>`, etc.) - not just for styling
-* Clue to search engine what your site is about
-* Like title and meta tags, you want to be sure your headings include relevant keywords where necessary
-
-### Links
-
-<img src='http://making-the-internet.s3.amazonaws.com/seo-good-bad-links.png'>
-
-* Never say "Click here"&mdash; waste of link power 
-* Links are how Google bots crawl through your site
-* Google pays a lot of attention to anchor text
-* [Remove `www` from URLs](https://gist.github.com/susanBuck/9240424)
-
-
-### Images
-* Use alt attributes for all your non-decorative images.
-* Use descriptive file names: `logo4.jpg` vs. `bella-balloons-logo.jpg`
 

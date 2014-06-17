@@ -9,6 +9,9 @@ Take a look at your web directory
 	$ cd /var/www
 	$ ls
 
+
+
+
 ## Install Git
 
 Run apt-get update to make sure that you download the most recent packages to your VPS.
@@ -22,6 +25,8 @@ Get dependencies:
 Install Git with apt-get
 
 	$ sudo apt-get update
+
+
 
 
 ## SSH Key for Github
@@ -56,6 +61,8 @@ Finally, clone your repository
 	$ git@github.com:username/reponame.git
 	
 
+
+
 ## Composer
 
 Download:
@@ -69,6 +76,9 @@ Make global:
 Test:
 
 	$ composer
+
+
+
 	
 ## Laravel specific
 
@@ -89,6 +99,33 @@ Make the storage dir writable
 	$ sudo chmod -R 777 app/storage
 
 
+
+
+## Subdomains 	
+
+In Namecheap use external nameserver.
+
+In `/etc/apache2/httpd.conf`:
+
+	<VirtualHost *:80>
+	  ServerName yourdomain.com
+	  DocumentRoot "/var/www/"
+	  <Directory "/var/www//">
+	    AllowOverride all
+	  </Directory>
+	</VirtualHost>	
+			
+	<VirtualHost *:80>
+	  ServerName p1.yourdomain.com
+	  DocumentRoot "/var/www/p1.yourdomain.com/public/"
+	  <Directory "/var/www/p1.yourdomain.com/public/">
+	    AllowOverride all
+	  </Directory>
+	</VirtualHost>
+
+
+
+
 ## Tips 
 Check your version of PHP
 
@@ -104,33 +141,7 @@ Apache error log: `/var/log/apache2/error.log`
 Apache configuration: `/etc/apache2/httpd.conf`
 
 
-## Subdomains 	
-
-In Namecheap use external nameserver
-
-In `/etc/apache2/httpd.conf`:
-
-<VirtualHost *:80>
-  ServerName yourdomain.com
-  DocumentRoot "/var/www/"
-  <Directory "/var/www//">
-    AllowOverride all
-  </Directory>
-</VirtualHost>	
-		
-<VirtualHost *:80>
-  ServerName p1.yourdomain.com
-  DocumentRoot "/var/www/p1.yourdomain.com/public/"
-  <Directory "/var/www/p1.yourdomain.com/public/">
-    AllowOverride all
-  </Directory>
-</VirtualHost>
-			
-	
-	
-https://digitalocean.com/community/articles/how-to-set-up-apache-virtual-hosts-on-ubuntu-12-04-lts
 
 
-## Transfer snapshots
-
-https://www.digitalocean.com/company/blog/easily-transfer-snapshots-between-accounts/
+## Reference
+* [Transfering Digital Ocean snapshots between accounts](https://www.digitalocean.com/company/blog/easily-transfer-snapshots-between-accounts/)

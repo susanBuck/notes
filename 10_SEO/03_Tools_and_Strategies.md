@@ -199,3 +199,5 @@ Having 25 links from 1 site is not as good as having 25 links from 25 different 
 **Velocity**
 
 Building your backlinks is something that should happen naturally over time; if you get a mass amount of links too soon search engines can hold this against you because it's usually a sign of fishy business such as buying links.
+
+

@@ -88,9 +88,13 @@ Push your project up to github:
 When you visit your repository on Github you should see all your changes there. 
 
 
+
+
 ## Update your `readme.md` file.
 
 By default, Laravel has a lot of Laravel-specific info in your new app's `README.md` file. Replace this with a description of your project and commit the changes.
+
+
 
 
 ## Get your app online (Pagoda Box)
