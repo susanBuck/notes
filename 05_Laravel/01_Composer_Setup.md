@@ -23,7 +23,7 @@ Test it works:
 
 Move into your Program Files directory where you'll install Composer:
 
-	$ mv c:\Program Files
+	$ cd c:\Program Files
 	
 Download and install composer.phar:
 
