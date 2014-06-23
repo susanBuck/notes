@@ -2,8 +2,8 @@
 
 * As a guiding principle for your URLs, aim to always make your URLs friendly for the user. This practice will also be optimal for search engines.
 * It's debatable in the SEO community about how much Google pays attention to keywords in URL's, but it certainly can't hurt. 
-* Hyphens > underscores as word separators
-* CMS such as WordPress, Drupal, etc., make friendly URLs easy
+* Hyphens are the preferred symbol for separating words in URLs.
+* CMS such as WordPress, make friendly URLs easy.
 * Custom sites:
 
 Clean folder / file name structure:
@@ -26,17 +26,19 @@ Rules placed in `.htaccess` file in root of your site. Example:
 * Keyword stuffing
  
 
-## Google Webmaster Tools
+## Webmaster Tools
 
 <http://google.com/webmasters>
-
+<http://www.bing.com/toolbox/webmaster>
 
 ### Add your URL / Verify ownership
 
-* Upload a file they give you to your server, then they look for that file
-* Add a meta tag to your site that they look for
-* Add a DNS record that they look for
-* Connect via your Google Analytics account
+Webmaster provides the following methods for authenticating you're the owner of your site:
+
+* Upload a special file.
+* Add a special meta tag to the head of your page.
+* Add a DNS record in your domain settings.
+* Connect via your Google Analytics account.
 
 
 ### Sitemaps
@@ -46,9 +48,9 @@ Rules placed in `.htaccess` file in root of your site. Example:
 
 
 ### Crawler access / robots.txt
-The robots.txt file is a file you put in the root of your site; it gives special instructions to crawlers about what they can and can not access.
+The `robots.txt` file is a file you put in the root of your site; it gives special instructions to crawlers about what they can and can not access.
 
-Without any exclusions, your robots.txt would look like this:
+Without any exclusions, your `robots.txt` would look like this:
 
 	User-agent: *
 	Allow: /
@@ -56,6 +58,8 @@ Without any exclusions, your robots.txt would look like this:
 If you wanted to exclude a path you would add:
 
 	Disallow: /pathname/
+
+
 
 ### Sitelinks
 [Sitelinks](https://support.google.com/webmasters/bin/answer.py?hl=en&answer=47334) are the extra links that sometimes show below search results; these are picked automatically by Google and while we have no say over what they pick, we do have the option to exclude links by "demoting" them.
@@ -76,10 +80,10 @@ Use this tool to see what your site looks like to the crawlers.
 
 [Website Optimization Techniques for Local Businesses](http://webdesign.tutsplus.com/articles/seo-for-local-businesses--webdesign-10507)
 
-* Connect your site/business with Google+
-* Make sure your business address is clearly indicated on your site
-* Include microdata tags with your business address
-* Have other sites link to you using location info in the anchor text (Yellow Pages, Yelp, FourSquare for example)
+* Connect your site/business with Google+.
+* Make sure your business address is clearly indicated on your site.
+* Include microdata tags with your business address.
+* Have other sites link to you using location info in the anchor text (Yellow Pages, Yelp, FourSquare for example).
 
 
 
@@ -139,7 +143,7 @@ Yoast:
 >> Make pages primarily for users, not for search engines. 
 - [Google Webmaster Guidelines](https://support.google.com/webmasters/answer/35769?hl=en)
 
-**The most important part of getting search engine traffic to your site: your content**
+**The most important part of getting search engine traffic to your site: your content.**
 
 Analyzing your site and content:
 
@@ -201,3 +205,8 @@ Having 25 links from 1 site is not as good as having 25 links from 25 different 
 Building your backlinks is something that should happen naturally over time; if you get a mass amount of links too soon search engines can hold this against you because it's usually a sign of fishy business such as buying links.
 
 
+## Further Reading
+* [(PDF) Google Search Engine Optimization Starter Guide](https://static.googleusercontent.com/external_content/untrusted_dlcp/www.google.com/en/us/webmasters/docs/search-engine-optimization-starter-guide.pdf)
+* [Google Webmaster Guidelines](https://support.google.com/webmasters/answer/35769)
+* [Hiring a Search Engine Optimizer](https://support.google.com/webmasters/answer/35291)
+* [Moz Beginner's Guide to SEO](http://moz.com/beginners-guide-to-seo)
