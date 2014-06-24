@@ -6,24 +6,24 @@ Project Scenario: Local Sports League Site
 
 Phase 1: Client side capabilities only
 
-* A main landing page with the logo and description of the league
-* A schedule of games for the current season (Fall or Spring) for the three participating teams
-* A link to a PDF registration form that players can download and fax in
-* Basic contact information for the league organizers
+* A main landing page with the logo and description of the league.
+* A schedule of games for the current season for the three participating teams.
+* A link to a PDF registration form that players can download and fax in.
+* Basic contact information for the league organizers.
 
 Phase 2: Client and server side capabilities
 
-* A main landing page with the league Logo and description of the league
+* A main landing page with the league logo and description of the league.
 * A player interface where users can a) register, b) pay dues, c) see what upcoming games they have, etc.
-* An admin interface where the UFL owners can administer a) teams, b) league standings, c) who has paid their dues, etc.
+* An admin interface where the league owners can administer a) teams, b) league standings, c) who has paid their dues, etc.
 
 ## Server side capabilities
-* Manipulate (create, read, update, delete) information from a database
+* Manipulate (create, read, update, delete) information from a database.
 * Maintain users / logins; remember information across sessions.
-* Execute standard programming paradigms: __If...else statements__, __For loops__, __While loops__
-* Send email
-* Upload and manipulate files on a server
-* Communicate with other sites
+* Utilize programming paradigms: __If...else statements__, __For loops__, __While loops__
+* Send email.
+* Upload and manipulate files on a server.
+* Communicate with other sites.
 * Etc.
 
 ## Pros & Cons

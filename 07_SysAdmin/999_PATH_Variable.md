@@ -9,7 +9,7 @@ Mac users, this command will show you your PATH variable:
 
 	echo $PATH
 	
-Windows users, this command will show you your PATH variables.
+Windows/Cmder users, this command will show you your PATH variables.
 
 	PATH
 
