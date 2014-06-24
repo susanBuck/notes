@@ -16,11 +16,11 @@ Download and install MAMP: <https://www.mamp.info/en/>.
 
 <small>Note: The download includes both free *MAMP* and *MAMP Pro* (paid version). You'll only need to use the free MAMP version in this class.</small>
 
-Create a new directory in your `Documents` folder called `Sites`
+Create a new directory in your `Documents` folder called `Sites`:
 
 <img src='http://note.io/1ie3glN' style='width:300px'>
 
-In MAMP preferences, set your *document root* to this new directory:
+In MAMP preferences, set your *document root* aka *root* to this new directory:
 
 <img src='http://note.io/1ie3vwY' style='width:300px'>
 
@@ -41,11 +41,11 @@ Load your helloworld.php file in your browser ala `http://localhost/helloworld.p
 
 Download and install MAMP for Windows: <http://www.mamp.info/en/mamp_windows_beta.html>
 
-Create a new file in your code editor and save it as `helloworld.php` in `c:\MAMP\htdocs`
+Create a new file in your code editor and save it as `helloworld.php` in `c:\MAMP\htdocs`. This directory, `c:\MAMP\htdocs` is your *document root* aka *root*.
 
 Fill your `helloworld.php` file with the code below.
 
-Load your helloworld.php file in your browser ala `http://localhost/helloworld.php`
+Load your `helloworld.php` file in your browser ala `http://localhost/helloworld.php`
 
 
 
