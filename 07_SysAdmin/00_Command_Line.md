@@ -44,7 +44,7 @@ Download from <http://bliker.github.io/cmder/> (Make sure you download the **ful
 | Find out which directory you're in <br> (Present working directory) | `pwd`
 | Go home | `cd ~`
 | List the contents of the current directory | `ls` 
-| List contents with hidden files & permissions | `ls -a` 
+| List contents with hidden files & permissions | `ls -la` 
 | Change to a directory | `cd /path/to/foobar` 
 | Go back one directory | `cd ../`   
 | Go back two directories | `cd ../../`   
