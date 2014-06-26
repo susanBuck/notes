@@ -24,7 +24,7 @@ If you're succesful in SSH'ing in, run the git command to see if Git is installe
 If you see a readout of a bunch of commands, it means Git is installed 
 and you're good to go.
 
-If, however, you see an error telling you the command `git` is not recognized or not found, you may have hit a deadend. At this point you can either try to install Git yourself (this is often impossible on a shared host because of limited priveleges) or contact your host's support team to see if they can install it for you.
+If, however, you see an error telling you the command `git` is not recognized or not found, you may have hit a dead end. At this point you can either try to install Git yourself (this is often impossible on a shared host because of limited priveleges) or contact your host's support team to see if they can install it for you.
 
 Resources if you want to attempt installing Git on your server yourself:
 
@@ -67,7 +67,7 @@ In your Github.com account settings, add a new SSH key and fill it with the cont
 
 
 ## Configure
-Again, like on our local systems, you need to configure your git user.name and user.email key.
+Again, like on our local systems, you need to configure your git `user.name` and `user.email` key.
 
 For your live server, you may want to set the name to be `Live Server` rather than your own name. This way, when commits come from the live server, you can identify them.
 
@@ -86,7 +86,7 @@ Also, add the configuration to make sure git output is color-coded:
 
 Change directories into your `public_html` (aka `www`) directory (this is where the web accessible part of your server lives).
 
-At this point, you're ready to clone your hello-world repository into your live server but you have to decide *where* you want to clone it. There are two options here. Read through both options before deciding which route you'd like to go.
+At this point, you're ready to clone your `hello-world` repository into your live server but you have to decide *where* you want to clone it. There are two options here. Read through both options before deciding which route you'd like to go.
 
 ### Option 1) Clone into the `public_html` directory.
 

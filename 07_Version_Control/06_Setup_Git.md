@@ -1,7 +1,7 @@
 ## Git via Command Line
 Git can be operated via either a GUI app or via the Command Line.
 
-We're going to start with CL because this gives you the most powerful and consistent access to Git.
+We're going to CL because this gives you the most powerful and consistent access to Git.
 
 Once you get the hang of CL you can explore some visual apps.
 
