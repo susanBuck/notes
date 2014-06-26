@@ -43,13 +43,13 @@ At this point, if you list the contents of you .ssh directory you should see two
 
 Reference: [Github.com: Generating SSH keys](https://help.github.com/articles/generating-ssh-keys)
 
-In Github.com, goto **Account Settings** (little scredriver/wrench icon on the top left).
+In Github.com, goto **Account Settings** (little screwdriver/wrench icon on the top left).
 
 Find the **SSH Keys** section.
 
 Click **Add SSH Key**.
 
-In the *Title* field, add a descriptive label for the new key. For example, if you're using a personal Mac, you might call this key "Personal MacBook Air".
+In the *Title* field, add a descriptive label for the new key. For example, if you're using a personal Mac, you might call this key *Personal MacBook Air"*.
 
 For the *Key* field, you want to paste the contents of the `id_rsa.pub` file that was generated on your computer in the above step.
 
@@ -90,6 +90,6 @@ If all went well, you should see this message:
 	
 If that username is yours, you've successfully set up your SSH key.
 
-If you receive a message saying access or permisssion is denied you can read [these instructions for diagnosing the issue](https://help.github.com/articles/error-permission-denied-publickey).
+If you receive a message saying access or permission is denied you can read [these instructions for diagnosing the issue](https://help.github.com/articles/error-permission-denied-publickey).
 
 
