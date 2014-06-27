@@ -57,3 +57,8 @@ Let's do one more configuration which will make any Git input color coded (i.e. 
 	git config --global color.ui true
 
 That's it! Git is installed and you're ready for the next steps.
+
+## Tips:
+
+* Find out what version of git you're running: `git --version`
+* Find out where git is installed: Mac: `which git`, Windows/Cmder: `where.exe git`
