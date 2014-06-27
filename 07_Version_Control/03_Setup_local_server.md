@@ -1,6 +1,6 @@
 In this class we're using what's commonly referred to as the LAMP stack:
 
-+ The __L__ stands for __Linx__ - which is a common OS used for web servers. Your live servers will run on some flavor of Linux, but your local servers will actually run on Mac or Windows (more on that later).
++ The __L__ stands for __Linux__ - which is a common OS used for web servers. Your live servers will run on some flavor of Linux, but your local servers will actually run on Mac or Windows (more on that later).
 + The __A__ stands for __Apache__ - Open-source web server.
 + The __M__ stands for __MySQL__ - Open-source database server.
 + The __P__ stands for __PHP__ - Web scripting language.
