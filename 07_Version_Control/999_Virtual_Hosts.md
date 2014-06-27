@@ -46,7 +46,7 @@ On Windows, if you're using *Cmder* it should be running as Administrator by def
 
 	$ notepad c:/Windows/System32/drivers/etc/hosts
 
-Read [*Editing text files in Command Line*](/Version_Control/Editing_text_files_in_CL) if you need a refresher on editing files from the command line.
+Read [*Editing text files in Command Line*](https://github.com/susanBuck/notes/blob/master/07_SysAdmin/999_Editing_text_files_in_CL.md) if you need a refresher on editing files from the command line.
 
 At the bottom of your hosts file, add a new host:
 
