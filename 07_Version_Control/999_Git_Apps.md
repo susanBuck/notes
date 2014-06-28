@@ -8,7 +8,7 @@ There are many different kinds of Git Apps ([some examples](http://git-scm.com/d
 
 
 ## Setup
-1. Download the Gitub app: [Mac Version](http://mac.github.com/) | [Windows Version](http://windows.github.com/)
+1. Download the GitHub app: [Mac Version](http://mac.github.com/) | [Windows Version](http://windows.github.com/)
 
 Install:
 
