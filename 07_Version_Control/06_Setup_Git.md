@@ -40,6 +40,13 @@ Now, try the `git` command again. Do you see a bunch of instructions and command
 
 If you don't&mdash; are you sure you completely closed and re-opened your CL shell? 
 
+Tip for users on older operating systems: 
+
+## Tips:
+* If you're running an older operating system and the latest Git build doesn't work, you may have to try an older version of git. [You can find older builds of git here.](https://code.google.com/p/git-osx-installer/)
+* Find out what version of git you're running: `git --version`
+* Find out where git is installed: Mac: `which git`, Windows/Cmder: `where.exe git`
+
 
 
 
@@ -58,7 +65,3 @@ Let's do one more configuration which will make any Git input color coded (i.e. 
 
 That's it! Git is installed and you're ready for the next steps.
 
-## Tips:
-
-* Find out what version of git you're running: `git --version`
-* Find out where git is installed: Mac: `which git`, Windows/Cmder: `where.exe git`
