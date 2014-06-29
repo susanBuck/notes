@@ -30,7 +30,7 @@ When it asks you for the filename, just hit Enter (it will default it `id_rsa`).
 
 When it asks you for a passphrase you can either create one or leave it blank. Regardless, hit Enter when you're done. Same for when it asks you to confirm your passphrase.
 
-At this point, if you list the contents of you .ssh directory you should see two new files: `id_rsa` and `id_rsa.pub`.
+At this point, if you list the contents of your .ssh directory you should see two new files: `id_rsa` and `id_rsa.pub`.
 	
 (Mac users only) Add your new key to the ssh-agent:
  
