@@ -1,8 +1,48 @@
+## Preflight check
+
+The Laravel framework has a few system requirements:
+
+* PHP >= 5.4
+* MCrypt PHP Extension
+
+To confirm your system meets these requirements, find out what install of `php.exe` command line is using when you use the `php` command...
+
+Mac:
+
+	$ which php
+	
+Windows/Cmder:
+
+	$ where.exe php
+	
+<img src='http://making-the-internet.s3.amazonaws.com/laravel-confirm-php@2x.png' class='' style='max-width:951px; width:100%' alt='Laravel confirm PHP'>
+
+The results above indicate the `php` command is using MAMP's install of PHP. Also, the version number is > 5.4.
+
+You can also confirm your version number with this command:
+
+	$ php -v
+	
+If the above test reveals you're not using MAMP's PHP, you can switch it following the [PHP for CL doc](https://github.com/susanBuck/notes/blob/master/07_SysAdmin/999_PHP_from_CL.md) which covers how to add MAMP's PHP to your PATH.
+
+If you're using MAMP's php.exe, the **MCrypt extension** required by Laravel will be installed by default. If you use a different php.exe, though, you'll need to make sure that extension is running.
+
+### Tips / Notes
+
+* It's not absolutely necessary that you use MAMP's php.exe. You may already have another build of PHP on your system that you wish to use. The above outline is suggested for beginner users; advanced users are welcome to configure your systems however you'd like.
+
+* The `php --info` will dump out all sorts of info about your php install, including version number and active extensions. This command is the equivalent to running `phpinfo();` in a PHP script.
+
+
+
+
 ## Create a new Laraval app
+
+With PHP configured and Composer installed, it's time to spawn your first Laravel app.
 
 Move into the directory where you want to create your project.
 
-Use composer to create a new Laravel project in that directory (replace `foobar` with the name of your project):
+Use the `composer` command to create a new Laravel project in that directory (replace `foobar` with the name of your project):
 
 	$ composer create-project laravel/laravel foobar --prefer-dist
 	
@@ -23,7 +63,7 @@ Laravel needs to have the ability to write to the storage directory, so set that
 
 
 ## Environment setting
-By default Laravel runs in `production` mode which supresses errors. Because we're just getting started out, we want all errors to show to help with debugging, so let's make the default environment mode `local`.
+By default Laravel runs in `production` mode which suppresses errors. Because we're just getting started out, we want all errors to show to help with debugging, so let's make the default environment mode `local`.
 
 Open `/bootstrap/start.php` and replace the word `homestead` with an asterisk `*`:
 
@@ -36,12 +76,17 @@ Open `/bootstrap/start.php` and replace the word `homestead` with an asterisk `*
 This is a quicky and dirty fix for now. Later we'll spend an entire section on configuring environments.
 
 
+
+
+
 ## Point local server to your new app
 Point your local server's document root to the `public/` directory within your new app, for example:
 
 	c:\MAMP\htdocs\foobar\public
 
 <img src='http://making-the-internet.s3.amazonaws.com/laravel-app-setup-document-root.png?@2x' class='' style='max-width:664px; width:75%' alt=''>
+
+While you're in your MAMP settings, confirm it's set to a version >= PHP 5.4.
 
 If all went well, you should see Laravel's default welcome page when you hit `http://localhost` in your browser:
 
