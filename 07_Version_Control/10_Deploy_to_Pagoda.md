@@ -1,8 +1,13 @@
+**Note 6/30/14**
+Students have been reporting issues with launching new Pagoda apps. Given this, we're going to switch directions to a different suggested PaaS called Jumpstarter. 
+
+---
+
 So far, you've got the flow set up between your local computer and your repo at Github, but there's one more piece of the puzzle: deploying your changes to your live server.
 
 In this section we'll look at an example of how you would deploy to a **PaaS** (Platform as a Service) which is just one kind of server you might use to publish work online. 
 
-We'll use [PagodaBox](https://pagodabox.com/) because it supports PHP and provides free applications we can experiment with.
+In this doc we'll use [PagodaBox](https://pagodabox.com/).
 
 [Read more on the difference between a PaaS and traditional/shared hosting...](http://www.brmullikin.com/web-development).
 
@@ -24,7 +29,9 @@ Windows:
 	
 <img src='http://making-the-internet.s3.amazonaws.com/vc-pagoda-add-ssh-key@2x.png' class='' style='max-width:1113px; width:75%' alt=''>
 
+<small>
 Note: Instead of using your Github key, you could have generated a unique one for Jumpstarter. This latter technique is more secure and suggested for projects beyond the scope of this class.
+</small>
 
 
 

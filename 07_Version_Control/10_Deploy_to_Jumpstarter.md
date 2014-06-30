@@ -4,19 +4,25 @@ So far, you've got the flow set up between your local computer and your repo at 
 
 In this section we'll look at an example of how you would deploy to a **PaaS** (Platform as a Service) which is just one kind of server you might use to publish work online. 
 
-In this doc we'll use [Jumpstarter](https://jumpstarter.io).
-
 [Read more on the difference between a PaaS and traditional/shared hosting...](http://www.brmullikin.com/web-development).
 
+In this doc we'll use [Jumpstarter](https://jumpstarter.io), which has the following benefits:
 
++ Clean and friendly interface.
++ The option to deploy via Git.
++ PHP 5.5, Composer and Git installed and ready to go.
++ A free plan with unlimited apps.
 
-## Jumpstarter setup
+Jumpstarter's free plan's only limiting factor is 5,000 http requests per month. If you exceed this, you'll want to upgrade to their $7/mo 100,000 requests plan.
+Requests are easily monitored from your dashboard, so it's easy to see where you stand.
+
+## Jumpstarter setup and SSH Key
 
 Create a new account at [Jumpstarter](https://jumpstarter.io/).
 
-After setting up your account, the first thing you'll want to do is **set up a SSH key**. This will prevent you from having to enter your password everytime you communicate with Jumpstarter from your command line.
+After setting up your account, the first thing you'll want to do is **set up a SSH key**. This will prevent you from having to enter your password every time you communicate with Jumpstarter from your command line.
 
-In your Jumpstarter user settings, find the option to add a *SSH key* (drop down menu on the top right). 
+In your Jumpstarter user settings (drop down menu on the top right), find the option to add a *SSH key*. 
 
 You can copy the same `id_rsa.pub` key you created when you configured Github. Use the `cat` command to open this file, then copy its contents. 
 
@@ -30,7 +36,7 @@ Windows:
 
 Back in Jumpstarter, paste in the key and give it a descriptive name.
 
-<img src='http://making-the-internet.s3.amazonaws.com/version-control-jumpstarter-add-ssh-key@2x.png' class='' style='max-width:966px; width:75%' alt=''>
+<img src='http://making-the-internet.s3.amazonaws.com/version-control-jumpstarter-add-ssh-key@2x.png' class='' style='max-width:966px; width:100%' alt=''>
 
 <small>
 Note: Instead of using your Github key, you could have generated a unique one for Jumpstarter. This latter technique is more secure and suggested for projects beyond the scope of this class.
@@ -87,3 +93,18 @@ Finally, push to this new remote:
 	$ git push jumpstarter master
 
 When the push is complete, refresh your Jumpstarter URL to make sure you're seeing the contents of your hello-world app.
+
+
+## Moving forward
+From now on, whenever you want to deploy changes to this app, you just need to stage changed files, commit, and push to your jumpstarter remote.
+
+	$ git push jumpstarter master
+	
+	
+## Tips
+
+* Projects can rebooted from the *Settings* tab.
+
+* Jumpstarter allows SSH (Secure Shell) access to your server which allows you to connect to your server via command line. Check for the necessary credentials under the *Files* tab. 
+
+* Don't ever SFTP into your Jumpstarter project. There's no need to given the git and SSH access, and making changes via SFTP may interfere with your git deployment.
