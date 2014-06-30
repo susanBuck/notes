@@ -79,7 +79,7 @@ The `$*` at the end tells the alias to also accept any argument variables.
 
 __Alias__
 
-`alias` is a command specific to Cmder. Open the file `c:\Program Files\config\aliases` to edit any existing aliases.
+`alias` is a command specific to Cmder. Open the file `c:\Program Files\cmder\cmder\config\aliases` to edit any existing aliases.
 
 __openssl__
 
