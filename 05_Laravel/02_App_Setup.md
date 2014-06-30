@@ -150,7 +150,7 @@ When you visit your repository on Github you should see all your changes there.
 
 ## Get your app online (Jumpstarter)
 
-Follow the instructions in [Version Control: Deploy to Jumpstarer](https://github.com/susanBuck/notes/blob/master/07_Version_Control/10_Deploy_to_Jumpstarter.md) to deploy your new app to Pagoda. 
+Follow the instructions in [Version Control: Deploy to Jumpstarer](https://github.com/susanBuck/notes/blob/master/07_Version_Control/10_Deploy_to_Jumpstarter.md) to deploy your new app to Jumpstarter. 
 
 Summary of the steps you'll take:
 
