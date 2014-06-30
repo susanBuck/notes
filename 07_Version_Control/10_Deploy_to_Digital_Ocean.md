@@ -1,10 +1,23 @@
-## New droplet
+## DigitalOcean
 
-Create a new *Droplet* on [Digital Ocean](http://digitalocean.com) with these options:
+Digital Ocean is a simple, developer friendly VPS server provider. To get started, head over to <https://digitalocean.com> and create a new account.
+
+
+## New Droplet
+
+DigitalOcean calls their virtual servers, **Droplets**; each Droplet that you spin up is a new virtual server for your personal use.
+
+In this course, you'll use **one single Droplet** to host all of your class projects. 
+
+The base plan which costs $5/mo should be enough to serve your needs, but if you need more you can always upgrade to the $10/mo plan
+
+From your DigitalOcean dashboard, find the big green button labeled *Create* to initiate a new Droplet.
+
+On the screen that follows, make your Droplet settings match the following options:
 
 <img src='http://making-the-internet.s3.amazonaws.com/version-control-digital-ocean-new-droplet@2x.png' class='' style='max-width:860px; width:100%' alt=''>
 
-Check your email for a confirmation from Digital Ocean which will include your droplets IP address and the root password.
+Check your email for a confirmation from DigitalOcean which will include your droplets IP address and the root password.
 
 
 
@@ -14,7 +27,7 @@ From your local command line, SSH into your Digital Ocean droplet:
 
 	$ ssh root@your-digital-ocean-ip-address
 	
-When prompted, use the root password you received in the abovementioned meail.
+When prompted, use the root password you received in the abovementioned email.
 
 Take a look at your web directory:
 
@@ -39,7 +52,7 @@ Confirm it's working:
 	
 ## SSH Key for Github
 
-In order to communicate between your Digital Ocean droplet and Github, you need to set up a SSH key.
+In order to communicate between your DigitalOcean droplet and Github, you need to set up a SSH key.
 
 
 While SSH'd in to your server, generate a new SSH key:
@@ -74,11 +87,13 @@ Add this new key via your [Github SSH settings](https://github.com/settings/ssh)
 
 ## Clone a repository
 
-With your SSH key setup and Git installed, you're ready to clone your hello-world Github repository to your Digital Ocean droplet.
+With your SSH key setup and Git installed, you're ready to clone your hello-world Github repository to your DigitalOcean Droplet.
 
 	$ git clone git@github.com:username/reponame.git
 	
+Now, when you visit your Digital Ocean IP address you should see your hello-world project:
 
+<img src='http://making-the-internet.s3.amazonaws.com/version-control-hello-world-on-digital-ocean@2x.png' class='' style='max-width:688px; width:100%' alt=''>
 
 
 	
@@ -86,23 +101,23 @@ With your SSH key setup and Git installed, you're ready to clone your hello-worl
 
 ## Domain setup
 
-Right now you can access your Digital Ocean droplet by typing its IP address into your browser. This works but is obviously hard to remember, and it'd also be nice to run several apps on your one droplet, each with a unique subdomain.
+Right now you can access your DigitalOcean droplet by typing its IP address into your browser. This works but is obviously hard to remember, and it'd also be nice to run several apps on your one Droplet, each with a unique subdomain.
 
-To set this up, we're going to configure using custom domains for Digital Ocean.
+To set this up, we're going to configure a domain and subdomains for use with DigitalOcean.
 
 Start by creating a new domain name via a service like [Namecheap](https://www.namecheap.com/). 
 
-This should cost $10 bucks for the year, give or take depending on the extension you buy. If you have an existing domain you'd like to use, you're welcome to do so - your instructions just might vary from ours if you're using a different domain company.
+This should cost $10 bucks for the year, give or take depending on the extension you buy. If you have an existing domain you'd like to use, you're welcome to do so- your instructions just might vary from ours if you're using a different domain company.
 
-After your create your domain, find your DNS settings. Here, you'll want to make sure both your `@` and `www` hostname is pointing to your Digital Ocean IP address.
+After your create your domain, find your DNS settings. Here, you'll set both your `@` and `www` hostname to your DigitalOcean IP address.
 
-Also, add a subdomain called `helloworld` which also points to the same IP.
+Also, while you're there, add a subdomain called `helloworld` which also points to the same IP.
 
 <img src='http://making-the-internet.s3.amazonaws.com/version-control-namecheap-dns@2x.png' class='' style='max-width:916px; width:100%' alt='Namecheap DNS'>
 
-Give the above settings a few minutes to take effect, then test out your domain. You should see a directory listing, including your `hello-world` directory.
+Give the above settings a few minutes to take effect, then test out your domain. You should see the same results you saw above when you tested your IP address, but this time it's loaded via your domain name:
 
-<img src='http://making-the-internet.s3.amazonaws.com/version-control-namecheap-domain-first-working@2x.png' class='' style='max-width:688px; width:75%' alt=''>
+<img src='http://making-the-internet.s3.amazonaws.com/version-control-namecheap-domain-first-working@2x.png' class='Test new domain' style='max-width:688px; width:75%' alt=''>
 
 If you don't yet see the above, try the following:
 
@@ -119,22 +134,27 @@ Try again. Still not loading?
 
 With your primary domain working, now lets get your subdomain working.
 
-On your Digital Ocean server, add the following Virtual Host block to the bottom of `/etc/apache2/sites-enabled/000-default.conf`:
+On your DigitalOcean server, add the following Virtual Host block to the bottom 
+of `/etc/apache2/sites-enabled/000-default.conf`:
 
-<VirtualHost *:80>
-  ServerName helloworld.dwa15-practice.biz
-  DocumentRoot "/var/www/html/hello-world"
-  <Directory "/var/www/html/hello-world">
-    AllowOverride all
-  </Directory>
-</VirtualHost>	
+	<VirtualHost *:80>
+	  ServerName helloworld.dwa15-practice.biz
+	  DocumentRoot "/var/www/html/hello-world"
+	  <Directory "/var/www/html/hello-world">
+	    AllowOverride all
+	  </Directory>
+	</VirtualHost>	
 
 Be sure to change the `ServerName` to match your domain. 
+
 Also, adjust the `DocumentRoot` and `Directory` to point to your `hello-world` directory.
 
-To make these changes take effect, goto your Digital Ocean droplet settings and find the option to **Power Cylce**.
+To make these changes take effect, goto your DigitalOcean Droplet settings and find the option to **Power Cycle**.
 
-Once your droplet is restarted, test out your subdomain and make sure it's directly loading your hello world app.
+Once your Droplet is restarted, test out your subdomain `helloworld.yourdomain.com`.
+
+<img src='http://making-the-internet.s3.amazonaws.com/version-control-subdomain-good@2x.png' class='' style='max-width:688px; width:75%' alt=''>
+
 
 
 
@@ -160,4 +180,5 @@ Apache error log location: `/var/log/apache2/error.log`
 
 Apache configuration location: `/etc/apache2/httpd.conf`
 
-Ref: [Transfering Digital Ocean snapshots between accounts](https://www.digitalocean.com/company/blog/easily-transfer-snapshots-between-accounts/)
+* [Transferring Digital Ocean snapshots between accounts](https://www.digitalocean.com/company/blog/easily-transfer-snapshots-between-accounts/)
+* [How To Create Your First DigitalOcean Droplet Virtual Server](https://www.digitalocean.com/community/tutorials/how-to-create-your-first-digitalocean-droplet-virtual-server)
