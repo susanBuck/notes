@@ -6,7 +6,7 @@ In this section we'll look at an example of how you would deploy to a **PaaS** (
 
 [Read more on the difference between a PaaS and traditional/shared hosting...](http://www.brmullikin.com/web-development).
 
-In this doc we'll use [Jumpstarter](https://jumpstarter.io), which has the following benefits:
+In this doc we'll use [Jumpstarter](http://jumpstarter.io), which has the following benefits:
 
 + Clean and friendly interface.
 + The option to deploy via Git.
@@ -18,7 +18,7 @@ Requests are easily monitored from your dashboard, so it's easy to see where you
 
 ## Jumpstarter setup and SSH Key
 
-Create a new account at [Jumpstarter](https://jumpstarter.io/).
+Create a new account at [Jumpstarter](http://jumpstarter.io/).
 
 After setting up your account, the first thing you'll want to do is **set up a SSH key**. This will prevent you from having to enter your password every time you communicate with Jumpstarter from your command line.
 
