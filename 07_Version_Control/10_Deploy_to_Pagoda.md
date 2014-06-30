@@ -1,5 +1,5 @@
 **Note 6/30/14**
-Students have been reporting issues with launching new Pagoda apps. Given this, we're going to switch directions to a different suggested PaaS called Jumpstarter. 
+Students have been reporting issues with launching new Pagoda apps. Given this, we're going to switch directions to a different suggested PaaS called Jumpstarter. [The docs for Jumpstarter can be found here](https://github.com/susanBuck/notes/blob/master/07_Version_Control/10_Deploy_to_Jumpstarter.md).
 
 ---
 
