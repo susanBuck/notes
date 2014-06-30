@@ -1,6 +1,6 @@
 So far, you've got the flow set up between your local computer and your repo at Github, but there's one more piece of the puzzle: deploying your changes to your live server.
 
-In this section we'll look at an example of how you would deploy to a **PaaS** (Platform as a service) which is just one kind of server you might use to publish work online. 
+In this section we'll look at an example of how you would deploy to a **PaaS** (Platform as a Service) which is just one kind of server you might use to publish work online. 
 
 We'll use [PagodaBox](https://pagodabox.com/) because it supports PHP and provides free applications we can experiment with.
 
@@ -16,13 +16,15 @@ In your user settings, find the option to add a SSH key. You can copy the same `
 
 Mac: 
 
-	$ edit /Users/YourName/.ssh/id_rsa.pub
+	$ cat /Users/YourName/.ssh/id_rsa.pub
 
 Windows:
 
-	$ notepad C:\Users\YourName\.ssh\id_rsa.pub
+	$ cat C:\Users\YourName\.ssh\id_rsa.pub
 	
 <img src='http://making-the-internet.s3.amazonaws.com/vc-pagoda-add-ssh-key@2x.png' class='' style='max-width:1113px; width:75%' alt=''>
+
+Note: Instead of using your Github key, you could have generated a unique one for Jumpstarter. This latter technique is more secure and suggested for projects beyond the scope of this class.
 
 
 
@@ -35,10 +37,6 @@ Start your app with an **Empty Repo**. Give your new app a name; you can't call 
 Click **Launch Application** to initiate your new app.
 
 <img src='http://making-the-internet.s3.amazonaws.com/vc-new-app-on-pagoda@2x.png' class='' style='max-width:981px; width:75%' alt=''>
-
-<small>
-Side note: Because we already have our hello-world project setup up in Github.com we could have chosen the *Clone an Existng Repo* option. Going this route would change our upcoming steps slightly, but the end result is the same either way.
-</small>
 
 On the next screen, choose Git as your deployment method. Pagoda will also give you a series of CL commands. Because your repository is already initiated you only need to run the 4th line which will add Pagoda as a new remote.
 
