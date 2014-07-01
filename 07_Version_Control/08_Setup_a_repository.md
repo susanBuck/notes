@@ -75,3 +75,6 @@ This should yield a bunch of lines, including the github remote:
 * All the git configurations for a given repository are stored in this `.git` directory, in a filed called `config`. You can edit your configurations via git commands, or by editing this file directly.
 
 * Need to "un-git* a directory? All you have to do is delete the `.git` directory.
+
+* If you get a message about `src refspec master does not match any.` after trying to push&mdash; it means you have not yet done a commit.
+
