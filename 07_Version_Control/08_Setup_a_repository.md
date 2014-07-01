@@ -64,12 +64,14 @@ This should yield a bunch of lines, including the github remote:
 
 ## Tips
 
+* If you decide to remove an existing remote use this command: `git remote remove name-of-remote`.
+
+* If you decide to update the URL for an existing remote, use this command: `git set-url name-of-remote new-remote-url`.
+
 * You can tell if a directory is a git repository if it contains a hidden directory called `.git`:
 
 <img src='http://making-the-internet.s3.amazonaws.com/vc-how-to-tell-if-a-dir-is-version-controlled.png?@2x' style='max-width:520px; width:75%'>
 
-* All the git configurations for a given repository are stored in this .git directory, in a filed called `config`. You can edit your configurations via git commands, or by editing this file directly.
+* All the git configurations for a given repository are stored in this `.git` directory, in a filed called `config`. You can edit your configurations via git commands, or by editing this file directly.
 
 * Need to "un-git* a directory? All you have to do is delete the `.git` directory.
-
-* If you came across an existing public repository you want to work with, you can run this command: `git clone git@github.com:username/repo-name.git`.
