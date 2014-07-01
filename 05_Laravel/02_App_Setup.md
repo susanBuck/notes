@@ -196,7 +196,6 @@ Push to Jumpstarter:
 	$ git push jumpstarter master
 
 
-Note how you have **two remotes** for your app: One at Github and one at Jumpstarter. Make sure you push to both when committing changes. (Alternatively, [you can create a remote that pushes to multiple URLs](http://stackoverflow.com/a/5785618/59479).)
 
 
 ## Tips / Notes

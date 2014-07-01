@@ -61,7 +61,7 @@ In a few seconds, your new project should be online. Note how Jumpstarter create
 
 <img src='http://making-the-internet.s3.amazonaws.com/version-control-jumpstarter-project-created@2x.png' class='' style='max-width:958px; width:100%' alt=''>
 
-At this point, when you visit the URL of your new project you should see a phpinfo report:
+At this point, when you visit the URL of your new project you should see a phpinfo report. The reason you're seeing this is because Jumpstarter puts a `index.php` file with a call to `phpinfo()` in every new project by default. You'll overwrite it in the next step when you deploy your own code.
 
 <img src='http://making-the-internet.s3.amazonaws.com/version-control-jumpstarter-project-first-visit@2x.png' class='' style='max-width:834px; width:100%' alt=''>
 
@@ -92,13 +92,21 @@ Finally, push to this new remote:
 
 	$ git push jumpstarter master
 
-When the push is complete, refresh your Jumpstarter URL to make sure you're seeing the contents of your hello-world app.
+When the push is complete, refresh your Jumpstarter URL to make sure you're seeing the contents of your hello-world app:
+
+<img src='http://making-the-internet.s3.amazonaws.com/version-control-jumpstarter-hello-world-final@2x.png' class='' style='max-width:577px; width:75%' alt=''>
+
+If you're still seeing the phpinfo report, check that your `hello-world` repository has an `index.php` file, commit it and do another push to the Jumpstarter remote. This will overwrite Jumpstarter's default `index.php` file with your own.
+
+
 
 
 ## Moving forward
 From now on, whenever you want to deploy changes to this app, you just need to stage changed files, commit, and push to your jumpstarter remote.
 
 	$ git push jumpstarter master
+	
+Also remember: you now have **two remotes**&mdash; one for Github.com and one for Jumpstarter. Be sure to push to both after committing code changes. (Alternatively, [you can create a remote that pushes to multiple URLs](http://stackoverflow.com/a/5785618/59479).)
 	
 	
 ## Tips
