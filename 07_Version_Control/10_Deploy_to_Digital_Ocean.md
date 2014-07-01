@@ -3,6 +3,27 @@
 Digital Ocean is a simple, developer friendly VPS server provider. To get started, head over to <https://digitalocean.com> and create a new account.
 
 
+## SSH Key: Your computer <-> DigitalOcean
+
+After setting up your account, the first thing you'll want to do is **set up a SSH key**. This will prevent you from having to enter your password every time you communicate with DigitalOcean from your command line. It will also prevent DigitalOcean from sending you server passwords via email, which is insecure.
+
+You can use the same `id_rsa.pub` key you created when you configured Github. Use the `cat` command to open this file, then copy its contents. 
+
+Mac: 
+
+	$ cat /Users/YourName/.ssh/id_rsa.pub
+
+Windows:
+
+	$ cat C:\Users\YourName\.ssh\id_rsa.pub
+
+Back in DigitalOcean, find the menu on the left for **SSH Keys** in order to add a new key. Paste in the key and give it a descriptive name.
+
+<small>
+Note: Instead of using your Github key, you could have generated a unique one for DigitalOcean. This latter technique is more secure and suggested for projects beyond the scope of this class.
+</small>
+
+
 ## New Droplet
 
 DigitalOcean calls their virtual servers, **Droplets**; each Droplet that you spin up is a new virtual server for your personal use.
@@ -27,7 +48,7 @@ From your local command line, SSH into your Digital Ocean droplet:
 
 	$ ssh root@your-digital-ocean-ip-address
 	
-When prompted, use the root password you received in the abovementioned email.
+If your SSH key is set up properly, you should not be prompted to enter a password and you should automatically get logged in.
 
 Take a look at your web directory:
 
@@ -48,9 +69,9 @@ Confirm it's working:
 	$ git --version
 	
 
-	
-	
-## SSH Key for Github
+
+
+## SSH Key: DigitalOcean <-> Github.com
 
 In order to communicate between your DigitalOcean droplet and Github, you need to set up a SSH key.
 
@@ -83,11 +104,15 @@ Run the `cat` command to view the contents of the `id_rsa.pub` file.
 Copy the contents of `id_rsa.pub`
 
 Add this new key via your [Github SSH settings](https://github.com/settings/ssh).
-	
+
+
+
 
 ## Clone a repository
 
-With your SSH key setup and Git installed, you're ready to clone your hello-world Github repository to your DigitalOcean Droplet.
+With your SSH key setup and Git installed, you're ready to clone your `hello-world` Github repository to your DigitalOcean Droplet.
+
+In the `/var/www/html` directory on DigitalOcean, run this command:
 
 	$ git clone git@github.com:username/reponame.git
 	
