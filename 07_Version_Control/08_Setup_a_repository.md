@@ -68,6 +68,8 @@ This should yield a bunch of lines, including the github remote:
 
 * If you decide to update the URL for an existing remote, use this command: `git set-url name-of-remote new-remote-url`.
 
+* To see a list of all current remotes use this command: `git remote -v`
+
 * You can tell if a directory is a git repository if it contains a hidden directory called `.git`:
 
 <img src='http://making-the-internet.s3.amazonaws.com/vc-how-to-tell-if-a-dir-is-version-controlled.png?@2x' style='max-width:520px; width:75%'>

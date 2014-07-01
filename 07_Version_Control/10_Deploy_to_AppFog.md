@@ -1,5 +1,4 @@
-Note: AppFog is not suggested for Laravel applications because their default build of PHP is not up to date enough to run Laravel. If you're looking to run Laravel apps, Jumpstarter is reccomended instead. 
-[Instructions for setting up Jumpstarter can be found here](https://github.com/susanBuck/notes/blob/master/07_Version_Control/10_Deploy_to_Jumpstarter.md).
+Note: AppFog is not suggested for Laravel applications because their default build of PHP is not up to date enough to run Laravel. 
 
 ---
 

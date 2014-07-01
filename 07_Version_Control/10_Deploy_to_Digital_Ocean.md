@@ -121,6 +121,18 @@ Now, when you visit your Digital Ocean IP address you should see your hello-worl
 <img src='http://making-the-internet.s3.amazonaws.com/version-control-hello-world-on-digital-ocean@2x.png' class='' style='max-width:688px; width:100%' alt=''>
 
 
+
+## Deployment process
+
+Deployment is the process of moving your application to production.
+
+For other PaaS's we've looked at (Pagoda, Jumpstarter, etc.), all you had to do to deploy new code changes was push code to a remote url they gave you.
+
+By default, you don't have this option with DigitalOcean, so you'll need to SSH in to your droplet, move into your project's directory and do a `git pull` whenever you want to sync new changes.
+
+Alternatively, you can follow [these instructions to set up automatic deployment with git](https://www.digitalocean.com/community/tutorials/how-to-set-up-automatic-deployment-with-git-with-a-vps).
+
+
 	
 
 
@@ -157,7 +169,7 @@ Try again. Still not loading?
 
 ## Virtual Host setup
 
-With your primary domain working, now lets get your subdomain working.
+Your primary domain is working, now lets get your subdomain working.
 
 On your DigitalOcean server, add the following Virtual Host block to the bottom 
 of `/etc/apache2/sites-enabled/000-default.conf`:
@@ -185,25 +197,52 @@ Once your Droplet is restarted, test out your subdomain `helloworld.yourdomain.c
 
 ## Tips / Notes
 
-Find out the nameserver of a domain:
+
+&bullet; SSH Keys between your computer and DigitalOcean will only work on Droplets that were created *after* you set up the key. To set up a key for an existing Droplet, navigate into your computer's .ssh directory and run this command:
+
+	cat id_rsa.pub | ssh root@[your.ip.address.here] "cat >> ~/.ssh/authorized_keys"
+	
+<--
+&bullet; Need help from a TA? Ask them to generate a public key file called `[TA-name]_id_rsa.pub` and send it to you. Put this file in your computer's .ssh directory and make sure you're cd'd into that directory. 
+
+Now, you can then add their pub key to your Droplet's list of authorized keys with the following command:
+
+	cat [TA-name]_id_rsa.pub | ssh root@[your.ip.address.here] "cat >> ~/.ssh/authorized_keys"`
+
+The given TA should now be able to SSH into your Droplet to poke around and help you out. 
+-->
+
+
+&bullet; Find out the IP address of a domain:
+
+	$ ping domain.com
+
+&bullet; Find out the nameserver of a domain:
 
 	$ dig +short NS domain.com
 
-Check your version of PHP
+&bullet; Check the version of PHP
 
 	$ php -v
 	
-See what PHP modules are installed
+&bullet; See what PHP modules are installed
 
 	$ php -m
 	
-Check Apache configurations
+&bullet; Check Apache configurations:
 
 	$ apache2ctl -S
 
-Apache error log location: `/var/log/apache2/error.log`
+&bullet; Apache error log location: `/var/log/apache2/error.log`
 
-Apache configuration location: `/etc/apache2/httpd.conf`
+&bullet; Apache configuration location: `/etc/apache2/httpd.conf`
+
+
+
+## Reference
 
 * [Transferring Digital Ocean snapshots between accounts](https://www.digitalocean.com/company/blog/easily-transfer-snapshots-between-accounts/)
+
 * [How To Create Your First DigitalOcean Droplet Virtual Server](https://www.digitalocean.com/community/tutorials/how-to-create-your-first-digitalocean-droplet-virtual-server)
+
+* [How To Use SSH Keys with DigitalOcean Droplets](https://www.digitalocean.com/community/tutorials/how-to-use-ssh-keys-with-digitalocean-droplets)
