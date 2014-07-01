@@ -1,7 +1,7 @@
 ## Git via Command Line
 Git can be operated via either a GUI app or via the Command Line.
 
-We're going to CL because this gives you the most powerful and consistent access to Git.
+We're going to use CL because this gives you the most powerful and consistent access to Git.
 
 Once you get the hang of CL you can explore some visual apps.
 
@@ -13,8 +13,7 @@ First, let's see if your computer already has Git installed by running the `git`
 	$ git
 
 
-If you see a readout of a bunch of commands, it means Git is installed 
-and you're good to go; skip down to the section titled *Initial Git Configuration*.
+If you see a readout of a bunch of commands, it means Git is installed and you're good to go; skip down to the section titled *Initial Git Configuration*.
 
 *Git is installed:*
 <img src='http://making-the-internet.s3.amazonaws.com/vc-git-success.png'> 

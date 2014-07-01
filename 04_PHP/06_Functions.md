@@ -4,7 +4,7 @@
 
 [Functions](http://us1.php.net/manual/en/language.functions.php) are bits of reusable code that you can either create yourself, or exist already in PHP.
 
-Repeat tasks without repeating code.
+Functions allow you to easily repeat tasks without repeating code.
 
 Example: 
 

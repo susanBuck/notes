@@ -1,13 +1,14 @@
+Note: AppFog is not suggested for Laravel applications because their default build of PHP is not up to date enough to run Laravel. 
+
+---
+
 So far, you've got the flow set up between your local computer and your repo at Github, but there's one more piece of the puzzle: deploying your changes to your live server.
 
 In this section we'll look at how you would deploy to a **PaaS** (Platform as a service) which is just one kind of server you might use to publish work online. 
 
-We'll use [AppFog](https://appfog.com/).
+In this doc we'll use we'll use [AppFog](https://appfog.com/). 
 
 [Read more on the difference between a PaaS and traditional/shared hosting...](http://www.brmullikin.com/web-development).
-
-
-
 
 ## AppFog account
 

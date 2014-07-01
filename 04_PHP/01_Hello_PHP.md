@@ -30,6 +30,8 @@ Phase 2: Client and server side capabilities
 
 <img src='http://thewc.co.s3.amazonaws.com/challenges/php-graph.png'>
 
+[source](http://w3techs.com/technologies/overview/programming_language/all)
+
 * **Low barrier to entry:** Relative to other languages, PHP is super easy to dig into and start working with.
 * **Market leader:** according to W3Techs, of sites using server-side languages, about 80% are using PHP.
 * **Availability:** Because of PHP's dominance on the market, it is available on almost all common web hosting platforms.
