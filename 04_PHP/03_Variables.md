@@ -1,6 +1,8 @@
 Variables are used to store information so that it can easily be retrieved and manipulated in your scripts.
 
 In PHP the name of a variable is always preceded by a dollar sign `$`.
+
+You assign values to variables using the *assignment operator* which is just an equal sign `=`. 
 	
 	<?php
 	$favorite_color = 'red';
@@ -11,6 +13,35 @@ PHP variables don't have to be declared before they're used. Setting a variable 
 Variable names should start with a letter or underscore, followed by any number of letters, numbers, or underscores.
 
 
+## Assignment methods
+
+### Assignment by value
+
+When you assign one variable to another, it **copies** the original value to the new one. 
+
+This means that any changes to the new variable will not affect the original.
+
+Example:
+
+	$foo = 1;
+	$bar = $foo;
+	$bar = 2;
+	echo $foo; # Outputs 1.
+
+### Assignment by reference
+
+When assigning a variable *by reference*, both variables will point to the same data; nothing is copied.
+
+Assigning a variable by reference is done with an ampersand.
+
+Example:
+
+	$foo = 1;
+	$bar = &$foo;
+	$bar = 2;
+	echo $foo; # Outputs 2
+	
+Below we'll talk more about how you can pass variables to functions by reference.
 
 
 ## Displaying variables
@@ -57,7 +88,7 @@ In PHP you don't have to explicitly set a variable's data type; instead, PHP wil
 
 PHP doesn't support explicit variable typing. 
 
-The downside of this is it's not always clear what you intend a variable to be used for. For example, when defining class attributes, it'd be useful to indicate to other developers what kind of data type should be used for a given attribute. One way to address this is to use [PHPDocs](http://en.wikipedia.org/wiki/PHPDoc) style commenting and indicate in your comments what variable type you're expecting.
+The downside of this is it's not always clear what kind of data you expect to be stored in a variable. For example, when defining class attributes, it'd be useful to indicate to other developers what kind of data type should be used for a given attribute. One way to address this is to use [PHPDocs](http://en.wikipedia.org/wiki/PHPDoc) style commenting and indicate in your comments what variable type you're expecting.
 
 For example:
 
@@ -116,7 +147,6 @@ In order to make a global variable visible in a function, you have to use the **
 You could fix the above code like this: 
 
 	function report_votes() {
-	
 		global $votes; 	# Makes the global variable $votes visible inside this function
 		echo "Vote count:".$votes;
 	}
@@ -143,13 +173,9 @@ Static variables are used in functions, and visible only in functions; they are 
 Example:
 
 	function upvote() {
-
 		static $votes = 99;
-	
 		$votes++;
-	
 		echo $votes.'<br>';
-	
 	}
 
 	upvote(); # Outputs 100
@@ -164,11 +190,8 @@ Function variables are defined via the parameters of a function call, and are lo
 Example:
 
 	function upvote($votes) {
-
 		$votes++;
-		
 		echo $votes.'<br>';
-		
 	}
 
 	upvote(99); # Outputs 100
@@ -179,7 +202,9 @@ Example:
 
 ## Variable References
 
-If you pass a variable *by reference* to a function, that function has the ability to modify the variable you're passing.
+We already talked about assigning variables by reference, now let's look at how they're used in functions...
+
+If you pass a variable **by reference** to a function, **that function has the ability to modify the variable you're passing**.
 
 For example, let's start with a scenario where the parameter passed to a function is *not* passed by reference:
 
@@ -204,8 +229,6 @@ Now let's look at that same function, but this time the parameter *is* passed by
 	upvote($votes); 
 	echo $votes.'<br>'; # Outputs 51
 	
-
-
 This time, the end result is 51 because the *global* `$votes` variable was passed by reference, allowing it to be updated locally in the function.
 
 
