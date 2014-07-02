@@ -37,7 +37,7 @@ To adjust these settings, track down the `php.ini` file and change `display_erro
 
 ### Error
 
-*You are something so wrong the script will terminate.*
+*You are doing something so wrong the script will terminate.*
 
 	echo "foo
 	echo "bar";
