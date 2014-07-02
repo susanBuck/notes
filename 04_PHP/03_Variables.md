@@ -50,7 +50,7 @@ One way to output variables from your script, is to use the `echo` construct.
 
 	<?php
 	$age = 50;
-	echo $50; # Outputs 50
+	echo $age; # Outputs 50
 	?>
 
 When outputting variables in HTML, you'll typically see code written in a more compact fashion:
