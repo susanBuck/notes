@@ -62,7 +62,7 @@ Next, tell your local server how to handle requests to `http://foobar.loc` via a
 * Mac: `/Applications/MAMP/conf/apache/extra/httpd-vhosts.conf`
 * Windows: `c:\MAMP\bin\apache\conf\extra\httpd-vhosts.conf`
 
-At the bottom of this file you'll see two example virtual host blocks, one for `dummy-host.example.com` and another for `dummy-host.example.com`. Delete these.
+At the bottom of this file you'll see two example virtual host blocks, one for `dummy-host.example.com` and another for `dummy-host2.example.com`. Delete these.
 
 <img src='http://making-the-internet.s3.amazonaws.com/vc-vhost-examples@2x.png' class='' style='max-width:728px; width:75%' alt=''>
 
