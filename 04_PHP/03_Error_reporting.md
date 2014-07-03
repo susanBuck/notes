@@ -35,6 +35,8 @@ To adjust these settings, track down the `php.ini` file and change `display_erro
 
 ## Error Levels
 
+<img src='http://making-the-internet.s3.amazonaws.com/php-errors-warning-notices@2x.png' class='' style='max-width:676px; width:100%' alt='PHP Error Levels'>
+
 ### Error
 
 *You are doing something so wrong the script will terminate.*

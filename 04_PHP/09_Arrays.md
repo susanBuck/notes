@@ -6,7 +6,7 @@ Variables are useful for storing single pieces of information, but sometimes you
 
 In PHP, arrays organize information using **keys** and **values**.
 
-To practice with arrays and some other upcoming material, we're going to build a **simple raffle application** that will randomly choose winners from a list of contestants.
+To practice with arrays and some other upcoming material, we're going to build a simple **Raffle** application that will randomly choose winners from a list of contestants.
 
 ## File Setup
 
@@ -28,7 +28,7 @@ logic.php:
 	
 <img src='http://thewc.co.s3.amazonaws.com/challenges/php-array-parts.png'>
 	
-In this example, the name of our array is `$contestants`
+In this example, the name of the array is `$contestants`
 
 The **keys** are Sam, Eliot, Liz and Max. You can think of keys as an index, or position holder in an array.
 
@@ -100,7 +100,7 @@ Alternatively, arrays can be created using the [array()](http://us1.php.net/manu
 		
 		
 ### Numeric keys
-So far, our arrays keys have been Strings. Instead of strings, you can also use integers. Here's an example using square bracket notation:	
+So far, our arrays keys have been Strings. Instead of Strings, you can also use integers. Here's an example using square bracket notation:	
 	
 	$shopping_list[0] = 'Apples';
 	$shopping_list[1] = 'Oranges';

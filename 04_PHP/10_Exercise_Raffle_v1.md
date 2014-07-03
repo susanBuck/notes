@@ -1,4 +1,4 @@
-Let's put our `$contestants` array to use for the aforementioned raffle application.
+Let's put our `$contestants` array to use for the aforementioned Raffle app.
 
 Here are the specifications of this app:
 

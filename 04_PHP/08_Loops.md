@@ -60,8 +60,7 @@ How would you edit the above to get 100 boxes? 1000 boxes?
 
 [php.net for control structure](http://us3.php.net/manual/en/control-structures.for.php)
 
-<img src='http://thewc.co.s3.amazonaws.com/challenges/php-for-loop-breakdown.png'>
-
+<img src='http://making-the-internet.s3.amazonaws.com/php-for-loop-breakdown@2x.png' class='' style='max-width:815px; width:100%' alt=''>
 
 
 
