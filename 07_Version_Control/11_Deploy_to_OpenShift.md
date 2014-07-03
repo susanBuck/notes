@@ -1,4 +1,4 @@
-<!-- 
+<!--
 * Hit memory limit when running `composer update` on live server; going to have to put "vendors" in VC?
 
 * TODO: What about database migrations?
@@ -43,9 +43,9 @@ When logged into OpenShift, find the **Settings** tab up top.
 
 On the page that follows, find the option to add a new SSH key.
 
-You can use the same `id_rsa.pub` key on your computer that you created when you configured Github. Use the `cat` command to open this file, then copy its contents. 
+You can use the same `id_rsa.pub` key on your computer that you created when you configured Github. Use the `cat` command to open this file, then copy its contents.
 
-Mac: 
+Mac:
 
 	$ cat /Users/YourName/.ssh/id_rsa.pub
 
@@ -61,7 +61,7 @@ That should do it. After your create your first OpenShift app, we'll test that t
 
 <small>
 Note: Instead of using your Github key, you could have generated a unique one for OpenShift. This latter technique is more secure and suggested for projects beyond the scope of this class.
-</small> 
+</small>
 
 
 
@@ -91,7 +91,7 @@ If you wanted to create a new, bare application, you'd leave this field blank. H
 
 Enter the *https* URL for the Github repository you want to connect this app to. This is simply the URL you see in your browser when you're viewing your app in Github.com.
 
-You can leave the branch field empty, because it will default to the `master` branch which is all we have worked with so far. 
+You can leave the branch field empty, because it will default to the `master` branch which is all we have worked with so far.
 
 <img src='http://making-the-internet.s3.amazonaws.com/vc-openshift-set-git-url@2x.png' class='' style='max-width:780px; width:75%' alt=''>
 
@@ -115,7 +115,7 @@ Click on your app's URL to check it out in the browser for the first time.
 
 ## SSH Into your app
 
-On the overview page, find the link on the bottom right that asks **&ldquo;Want to log into your application?&rdquo;**. 
+On the overview page, find the link on the bottom right that asks **&ldquo;Want to log into your application?&rdquo;**.
 
 When you click this link, it'll reveal a SSH command which you should copy.
 
@@ -139,10 +139,10 @@ Also within `app-root` is a `repo` directory; this is where your code lives. Bec
 
 While you can see your code, avoid making any changes to it here. You want to make all your code changes locally and then push them up to OpenShift.
 
->> All OpenShift applications are built around a Git source control workflow - you code locally, then push your changes to the server. 
+>> All OpenShift applications are built around a Git source control workflow - you code locally, then push your changes to the server.
 
 
-	
+
 
 
 ## Deploying to OpenShift via Git
@@ -158,15 +158,15 @@ Back on your local computer, navigate into your app directory via command line. 
 First, see what existing remote(s) you have set up:
 
 	$ git remote --v
-	
+
 Now, add the OpenShift remote (replace with your own url you copied above):
-	
+
 	$ git remote add openshift ssh://234890230@helloworld-dwa15sb.rhcloud.com/~/git/helloworld.git/
 
 Test it out:
 
 	$ git push openshift master
-	
+
 If you haven't committed any changes since you first created your OpenShift app, this should just tell you that everything is up to date. Let's actually make a change and confirm you can get it up to OpenShift.
 
 Open `index.php` file and make some change, then stage and commit the change.
@@ -177,10 +177,10 @@ Open `index.php` file and make some change, then stage and commit the change.
 Finally, push:
 
 	$ git push openshift master.
-	
+
 This will push your commits up to OpenShift and it will also trigger your application to re-deploy. Given this, it may take a little longer than your standard push.
 
->> All OpenShift applications are built around a Git source control workflow - you code locally, then push your changes to the server. The server then runs a number of hooks to build and configure your application, and finally restarts your application. 
+>> All OpenShift applications are built around a Git source control workflow - you code locally, then push your changes to the server. The server then runs a number of hooks to build and configure your application, and finally restarts your application.
 
 When it's all done - refresh your app in the browser. Is your change there?
 
@@ -191,18 +191,18 @@ When it's all done - refresh your app in the browser. Is your change there?
 
 From now on, whenever you want to deploy changes to your application, you just need to stage changed files, commit, and push to your OpenShift remote.
 
-	$ git push open shift master
-	
+	$ git push openshift master
+
 Also remember: you now have **two remotes**&mdash; one for Github.com and one for OpenShift. Be sure to push to both after committing code changes. (Alternatively, [you can create a remote that pushes to multiple URLs](http://stackoverflow.com/a/5785618/59479).)
 
 
 
-	
+
 ## RHC
 
 OpenShift has a Ruby-based command line utility called RHC. This utility isn't required, but it has some useful tools that you may appreciate when working with your OpenShift apps.
 
-To install RHC, follow OpenShift's instructions: 
+To install RHC, follow OpenShift's instructions:
 <https://www.openshift.com/developers/rhc-client-tools-install>
 
 For an example of what RHC can do, check out `tail`; this command will let you see a live stream of the logs for a given application.
@@ -210,13 +210,13 @@ For an example of what RHC can do, check out `tail`; this command will let you s
 	$ rhc tail app-name
 
 [You can learn more about what you can do with RHC here.](https://www.openshift.com/blogs/using-rhc-to-manage-paas-apps)
-	
 
 
- 
+
+
 
 <!--
-## Laravel specific 
+## Laravel specific
 
 Create a new PHP 5.3 app
 
@@ -228,12 +228,12 @@ SSH into your app to remove the default 'php' folder. This will allow the public
 
 The DocumentRoot is chosen by the cartridge control script logic depending on conditions in the following order:
 
-IF php/ dir exists THEN DocumentRoot=php/  
-ELSE IF public/ dir exists THEN DocumentRoot=public/  
-ELSE IF public_html/ dir exists THEN DocumentRoot=public_html/  
-ELSE IF web/ dir exists THEN DocumentRoot=web/  
-ELSE IF www/ dir exists THEN DocumentRoot=www/  
-ELSE DocumentRoot=/ 
+IF php/ dir exists THEN DocumentRoot=php/
+ELSE IF public/ dir exists THEN DocumentRoot=public/
+ELSE IF public_html/ dir exists THEN DocumentRoot=public_html/
+ELSE IF web/ dir exists THEN DocumentRoot=web/
+ELSE IF www/ dir exists THEN DocumentRoot=www/
+ELSE DocumentRoot=/
 
 TO DO: Add a .openshift directory
 -->
