@@ -191,7 +191,7 @@ When it's all done - refresh your app in the browser. Is your change there?
 
 From now on, whenever you want to deploy changes to your application, you just need to stage changed files, commit, and push to your OpenShift remote.
 
-	$ git push open shift master
+	$ git push openshift master
 	
 Also remember: you now have **two remotes**&mdash; one for Github.com and one for OpenShift. Be sure to push to both after committing code changes. (Alternatively, [you can create a remote that pushes to multiple URLs](http://stackoverflow.com/a/5785618/59479).)
 
