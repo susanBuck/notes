@@ -54,4 +54,4 @@ The final step is to push to Pagoda, which is what you'll do whenever you have c
 
 <img src='http://making-the-internet.s3.amazonaws.com/vc-git-push-pagoda-master.png?@2x' class='' style='max-width:582px; width:75%' alt=''>
 
-After your first deployment, you should now be able to access your app via `http://hello-world-yourname.gopagoda.com`. You can also manage your app from it's dashbaord on Pagoda.
+After your first deployment, you should now be able to access your app via `http://hello-world-yourname.gopagoda.com`. You can also manage your app from its dashboard on Pagoda.

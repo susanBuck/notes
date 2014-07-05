@@ -27,7 +27,7 @@ Find in `/Users/ComputerName/Applications/Utilities/` or just type `Terminal` in
 
 ### Windows - **Cmder** 
 
-Cmderer is a Windows frontend for the standard Windows Command Shell (aka `cmd.exe`)
+Cmder is a Windows frontend for the standard Windows Command Shell (aka `cmd.exe`)
 
 Download from <http://bliker.github.io/cmder/> (Make sure you download the **full version** of Cmder, not the mini version.)
 
