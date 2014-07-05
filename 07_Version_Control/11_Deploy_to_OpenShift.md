@@ -41,7 +41,7 @@ After setting up your account, the first thing you'll want to do is **set up a S
 
 When logged into OpenShift, find the **Settings** tab up top.
 
-On the page that follows, find the option to add a new SSH key.
+On the page that follows, find the **Public Keys** section.
 
 You can use the same `id_rsa.pub` key on your computer that you created when you configured Github. Use the `cat` command to open this file, then copy its contents. 
 
@@ -53,9 +53,10 @@ Windows:
 
 	$ cat C:\Users\YourName\.ssh\id_rsa.pub
 
-Back in OpenShift, paste in the key and give it a descriptive name, and click *Create*.
+Back in OpenShift, paste in the key and click *Create*.
 
-<img src='http://making-the-internet.s3.amazonaws.com/vc-openshift-add-ssh-key@2x.png' class='' style='max-width:604px; width:100%' alt=''>
+<!-- TODO: Replace with new screenshot at https://dl.dropboxusercontent.com/u/22812541/vc-openshift-public-keys.png -->
+<!-- <img src='http://making-the-internet.s3.amazonaws.com/vc-openshift-add-ssh-key@2x.png' class='' style='max-width:604px; width:100%' alt=''> -->
 
 That should do it. After your create your first OpenShift app, we'll test that this is working.
 
@@ -68,7 +69,7 @@ Note: Instead of using your Github key, you could have generated a unique one fo
 
 ## New Application
 
-From the top menu, find the **Applications** tab, then click **Add Application**.
+From the top menu, find the **Applications** tab, then click **Create your first application now**.
 
 
 ### Choose a cartridge
@@ -113,7 +114,7 @@ Click on your app's URL to check it out in the browser for the first time.
 <img src='http://making-the-internet.s3.amazonaws.com/vc-open-shift-visit-your-new-app@2x.png' class='' style='max-width:1180px; width:100%' alt=''>
 
 
-## SSH Into your app
+## SSH into your app
 
 On the overview page, find the link on the bottom right that asks **&ldquo;Want to log into your application?&rdquo;**. 
 
@@ -141,8 +142,7 @@ While you can see your code, avoid making any changes to it here. You want to ma
 
 >> All OpenShift applications are built around a Git source control workflow - you code locally, then push your changes to the server. 
 
-
-	
+Type `exit` to disconnect from the OpenShift Shell and return to the command line on your local computer.	
 
 
 ## Deploying to OpenShift via Git
@@ -176,13 +176,13 @@ Open `index.php` file and make some change, then stage and commit the change.
 
 Finally, push:
 
-	$ git push openshift master.
+	$ git push openshift master
 	
 This will push your commits up to OpenShift and it will also trigger your application to re-deploy. Given this, it may take a little longer than your standard push.
 
 >> All OpenShift applications are built around a Git source control workflow - you code locally, then push your changes to the server. The server then runs a number of hooks to build and configure your application, and finally restarts your application. 
 
-When it's all done - refresh your app in the browser. Is your change there?
+When it's all done, refresh your app in the browser. Is your change there?
 
 
 
@@ -193,7 +193,7 @@ From now on, whenever you want to deploy changes to your application, you just n
 
 	$ git push openshift master
 	
-Also remember: you now have **two remotes**&mdash; one for Github.com and one for OpenShift. Be sure to push to both after committing code changes. (Alternatively, [you can create a remote that pushes to multiple URLs](http://stackoverflow.com/a/5785618/59479).)
+Also remember: you now have **two remotes**&mdash;one for Github.com and one for OpenShift. Be sure to push to both after committing code changes. (Alternatively, [you can create a remote that pushes to multiple URLs](http://stackoverflow.com/a/5785618/59479).)
 
 
 
