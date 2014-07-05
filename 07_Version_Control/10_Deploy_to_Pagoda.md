@@ -1,8 +1,3 @@
-**Note 6/30/14**
-Students have been reporting issues with launching new Pagoda apps. Given this, we're going to switch directions to a different suggested PaaS called Jumpstarter. [The docs for Jumpstarter can be found here](https://github.com/susanBuck/notes/blob/master/07_Version_Control/10_Deploy_to_Jumpstarter.md).
-
----
-
 So far, you've got the flow set up between your local computer and your repo at Github, but there's one more piece of the puzzle: deploying your changes to your live server.
 
 In this section we'll look at an example of how you would deploy to a **PaaS** (Platform as a Service) which is just one kind of server you might use to publish work online. 
