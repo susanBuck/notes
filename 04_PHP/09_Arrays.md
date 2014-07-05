@@ -43,7 +43,7 @@ At this point the values are hard-coded; we'll make them randomly generated in a
 
 ### Print one value from the array:
 
-	Liz is a <?php echo $contestants['liz']?>
+	Liz is a <?php echo $contestants['Liz']?>
 	
 ### Print all the values from an array:		
 
