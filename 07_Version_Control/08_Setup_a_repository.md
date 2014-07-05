@@ -5,8 +5,7 @@ For the following scenario, we're going to create a new project called `hello-wo
 
 ## Set up your practice project
 
-Create a new directory in the document root of your local server
-(`/Users/YourName/Documents/Sites` on the Mac, `c:\WAMP\` on Windows) called `hello-world`. 
+Create a new directory in the document root of your local server called `hello-world`. 
 
 Within this directory, create a new file called `README.md` with the following contents:
 
@@ -17,7 +16,7 @@ Within this directory, create a new file called `README.md` with the following c
 
 ## Initiate your repository
 
-From CL, within your hello-world directory, run the command `git init`. 
+From CL, within your `hello-world` directory, run the command `git init`. 
 
 For example:
 
@@ -65,10 +64,19 @@ This should yield a bunch of lines, including the github remote:
 
 ## Tips
 
+* If you decide to remove an existing remote use this command: `git remote remove name-of-remote`.
+
+* If you decide to update the URL for an existing remote, use this command: `git set-url name-of-remote new-remote-url`.
+
+* To see a list of all current remotes use this command: `git remote -v`
+
 * You can tell if a directory is a git repository if it contains a hidden directory called `.git`:
 
 <img src='http://making-the-internet.s3.amazonaws.com/vc-how-to-tell-if-a-dir-is-version-controlled.png?@2x' style='max-width:520px; width:75%'>
 
-* All the git configurations for a given repository are stored in this .git directory, in a filed called `config`. You can edit your configurations via git commands, or by editing this file directly.
+* All the git configurations for a given repository are stored in this `.git` directory, in a filed called `config`. You can edit your configurations via git commands, or by editing this file directly.
 
 * Need to "un-git* a directory? All you have to do is delete the `.git` directory.
+
+* If you get a message about `src refspec master does not match any.` after trying to push&mdash; it means you have not yet done a commit.
+

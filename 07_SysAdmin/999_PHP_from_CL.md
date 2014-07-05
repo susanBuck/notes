@@ -50,7 +50,7 @@ Each path in your PATH variable is separated by a semi-colon. Here's an example:
 
 	%SystemRoot%\system32;%SystemRoot%;%SystemRoot%\System32\Wbem;%SYSTEMROOT%\System32\WindowsPowerShell\v1.0\;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;
 
-Since you now know that there's a `php.exe` in `C:\MAMP\bin\php\php5.5.7\` you want to add this path to your PATH variable:
+Since you now know that there's a `php.exe` in `C:\MAMP\bin\php\php5.5.7\` you want to add this directory to your PATH variable:
 
 <img src='http://making-the-internet.s3.amazonaws.com/laravel-setting-path-variable-on-windows.png?@2x' class='' style='max-width:1371px; width:75%' alt=''>
 
@@ -72,7 +72,7 @@ You should now see version information about PHP; you have confirmed that you ca
 
 ## Specify your php.ini file
 
-To see what php.ini file CL is using when running php, run this command:
+To see what `php.ini` file CL is using when running php, run this command:
 
 	$ php --ini
 	
@@ -96,7 +96,7 @@ Now check again what your ini settings are:
 
 	$ php --ini
 	
-<img src='http://making-the-internet.s3.amazonaws.com/sysadmin-php-from-command-line-ini-location-set.png?@2x' class='' style='max-width:469px; width:75%' alt=''>
+<img src='http://making-the-internet.s3.amazonaws.com/sysadmin-php-from-command-line-ini-location-set.png?@2x' class='' style='max-width:469px; width:1' alt=''>
 
 
 

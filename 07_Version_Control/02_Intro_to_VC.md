@@ -58,7 +58,6 @@ Pros/Cons?
 
 
 
-
 ## Introducing Version Control (VC)
 We're going to remove FTP from the workflow picture and replace it with Version Control.
 
@@ -93,7 +92,10 @@ There are different VC systems (ex: Subversion) but for this class we'll be usin
 
 
 ## How it works
-<img src='http://making-the-internet.s3.amazonaws.com/vc-local-main-git-users.png'>
+<img src='http://making-the-internet.s3.amazonaws.com/vc-local-to-git-and-live-server@2x.png' style='max-width:540px;'>
+
+<a href='http://making-the-internet.s3.amazonaws.com/vc-local-to-git-and-live-server-alternative@2x.png'>Alternative flow</a>
+
 
 Working with VC/Git, you'll end up with at least three copies of your code base.
 
@@ -119,7 +121,7 @@ When everything is set and you're ready to go live...
 
 4. __Stage__ individual files that have changed
 5. __Commit__ everything you staged
-6. __Push__ your commits to Github
-7. Deploy: __Pull__ your changes from Github to your live server for the world to see.
+6. __Push__ your commits to Github and/or your live server
+7. __Deploy__ your changes to your live server.
 
 We'll be digging into all these steps in the following steps.

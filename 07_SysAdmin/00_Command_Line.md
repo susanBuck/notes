@@ -1,4 +1,5 @@
 ## Resources:
+- [LPTHW: Command Line Crash Course](http://learnpythonthehardway.org/book/appendixa.html)
 - [Tutsplus: 7 Simple and Useful Command-Line Tips](http://code.tutsplus.com/tutorials/7-simple-and-useful-command-line-tips--net-11608)
 - [ExplainShell.com](http://explainshell.com/) fantastic tool; type in any command and it will break down each piece.
 - [General Mac CL commands](http://www.pixelbeat.org/cmdline.html)
@@ -12,7 +13,9 @@ The **Command Line Interface (CLI)** is a means of interacting with your compute
 
 The application where you type your commands (and see any results of those commands) is called a *shell*. There are different types of shells, but the most common is the **Bash shell** which is what Linux and Mac systems use, via the application called **Terminal**.
 
-Windows systems includes the limited **Command Prompt** application, which has nowhere near the power of *Bash*. Given this, we're going to use a console emulator called **Cmder** which will allow you to *mostly* replicate anything you'd do in a Bash shell.
+Windows systems includes the limited **Command Prompt** application, which has nowhere near the power of *Bash*. Windows also has **PowerShell**, but the commands are different than what is used in th Bash shell.
+
+Given this, we're going to use a console emulator called **Cmder** which will allow you to *mostly* replicate anything you'd do in a Bash shell.
 
 
 
@@ -39,8 +42,9 @@ Download from <http://bliker.github.io/cmder/> (Make sure you download the **ful
 | Description        | Command
 | ------------- |:-------------:| 
 | Find out which directory you're in <br> (Present working directory) | `pwd`
+| Go home | `cd ~`
 | List the contents of the current directory | `ls` 
-| List contents with hidden files & permissions | `ls -a` 
+| List contents with hidden files & permissions | `ls -la` 
 | Change to a directory | `cd /path/to/foobar` 
 | Go back one directory | `cd ../`   
 | Go back two directories | `cd ../../`   

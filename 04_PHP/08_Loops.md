@@ -1,11 +1,11 @@
 ## for loops
-[php.net Control structors - for loops](http://php.net/manual/en/control-structures.for.php)
+[php.net: Control structors - for loops](http://php.net/manual/en/control-structures.for.php)
 
 In addition to making decisions with __If...Else__ statements, you can also get your code to do things repeatedly via a loop.
 
-There are different kinds of loops, but let's start with the __for__ loop. 
+There are different kinds of loops, but let's start with the __for loop__. 
 
-Imagine you were creating a digital version of the Memory Game and needed your application to print out a lot of uniform boxes on the page:
+To work with the *for loop*, let's imagine we were going to create a web-based version of the child's game *Memory* and we needed our page to display numerous uniform boxes on the page:
 
 <img src='http://thewc.co.s3.amazonaws.com/challenges/php-memory-game.png'>
 
@@ -60,8 +60,7 @@ How would you edit the above to get 100 boxes? 1000 boxes?
 
 [php.net for control structure](http://us3.php.net/manual/en/control-structures.for.php)
 
-<img src='http://thewc.co.s3.amazonaws.com/challenges/php-for-loop-breakdown.png'>
-
+<img src='http://making-the-internet.s3.amazonaws.com/php-for-loop-breakdown@2x.png' class='' style='max-width:815px; width:100%' alt=''>
 
 
 

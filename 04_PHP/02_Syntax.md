@@ -1,6 +1,6 @@
 ## PHPiggy Bank
 
-Create a file callde **bank.php** and fill it with the following code, then load bank.php in your browser.
+Create a file called **bank.php** and fill it with the following code, then load bank.php in your browser.
 
 	<!DOCTYPE html>
 	<html>
@@ -31,7 +31,7 @@ Create a file callde **bank.php** and fill it with the following code, then load
 		
 	<body>
 		
-		<img alt='PHPiggy Bank Logo' src='http://thewc.co.s3.amazonaws.com/challenges/php-phpiggy-bank.png'>
+		<img alt='PHPiggy Bank Logo' src='http://making-the-internet.s3.amazonaws.com/php-phpiggy-bank.png'>
 		
 		<p>
 		 You have $<?php echo $total; ?> in your piggy bank.
@@ -44,12 +44,10 @@ Create a file callde **bank.php** and fill it with the following code, then load
 	
 ## PHP Syntax
 
-* PHP code is written in a text file that is saved with a .php extension. 
-* A .php file is like a super-powered .html file because it can process both HTML code and PHP code.
+* PHP code is written in a text file that is saved with a `.php` extension. 
+* `.php` files can process both HTML code and PHP code.
 * PHP code is always surrounded by a start PHP tag `<?php` and an end PHP tag `?>`.
 * Every command in PHP should end with a semi-colon.
-
-
 
 
 
@@ -69,4 +67,12 @@ Create a file callde **bank.php** and fill it with the following code, then load
 	// Coments can be used to leave notes to yourself, or disable lines of code
 	// echo $results;
 
+
+
+
+
 ## View Source
+
+Note how when you *View Source* on a page in your browser, you never see the PHP code.
+
+Why is this?

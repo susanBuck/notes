@@ -39,13 +39,17 @@ To double check your commit made it to Github.com, look for your new README.md f
 
 ## Practice
 
-Make a change to your README.md file and add a new file called `index.html`. 
+Make a change to your README.md file.
+
+Add a new file called `index.php` and include this code:
+
+	<h1>Hello World!</h1>
 
 Stage and commit these changes:
 
 	$ git add README.md
-	$ git add index.html
-	$ git commit -m "Updated readme file; added index file"
+	$ git add index.php
+	$ git commit -m "Updated readme file; added index file."
 	$ git push github master
 
 

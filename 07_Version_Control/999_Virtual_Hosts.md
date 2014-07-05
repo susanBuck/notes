@@ -1,40 +1,77 @@
-Within your local system, you'll eventually want to work on many different apps, sometimes even at the same time. Given this, it can be a drag to have to reconfigure your Document Root for localhost every time you want to switch between apps.
+Within your local system, you'll eventually want to work on many different apps, sometimes even at the same time. Given this, it can be a drag to have to reconfigure your Document Root for http://localhost every time you want to switch between apps.
 
-In the following notes we'll set up Virtual Hosts for individual apps so that you can have local URLS specific to local apps.
+In the following notes we'll set up Virtual Hosts for individual apps so that you can have local URLs specific to each app you're working on.
 
-For example, if you had a site called `http://javabeans.com`, you could set it up so your local version was accessible via `http://javabeans.loc`.
+For example, if you had a site called `http://foobar.com`, you could set it up so your local version was accessible via `http://foobar.loc`.
 
-We'll use `javabeans` in the following examples, so **be sure to change it to match your actual app**.
+We'll use an app called `foobar.com` in the following examples.
 
-## Virtual hosts on Mac/MAMP
-First, open `/Applications/MAMP/conf/apache/httpd.conf` and make sure the line including httpd-vhosts.conf is *not* commented out.
 
-Before:
+## 1. Tell Apache to use the virtual hosts file
 
-	# Virtual hosts
-	#Include /Applications/MAMP/conf/apache/extra/httpd-vhosts.conf
+First, locate `httpd.conf`, your MAMP Apache configuration file.
 
-After:
-	
+* Mac: `/Applications/MAMP/conf/apache/httpd.conf`
+* Windows: `c:\MAMP\conf\apache\httpd.conf`
+
+In the `httpd.conf` file, make sure the line including `httpd-vhosts.conf` is *not* commented out by removing the pound sign from the start of the `Include` (if there is one):
+
+Mac:
+
 	# Virtual hosts
 	Include /Applications/MAMP/conf/apache/extra/httpd-vhosts.conf
 
-Next, in terminal, open your hosts file: `/private/etc/hosts`. Read [*Editing text files in Command Line*](/Version_Control/Editing_text_files_in_CL) if you need help making edits to this file.
-
-At the bottom of this file add a new host:
-
-	127.0.0.1 javabeans.loc
+Windows:
 	
-This is telling your Mac that whenever you enter `http://javabeans.loc` it should map to the given IP address (that of your local server).
-	
-Next, you need to tell your local server how to handle this request via a Virtual Host entry.
+	# Virtual hosts
+	Include conf/extra/httpd-vhosts.conf
 
-At the bottom of `/Applications/MAMP/conf/apache/extra/httpd-vhosts.conf` add these lines:
+
+## 2. Create a new host
+
+Next, open your computer's hosts file. This file can be used to route domains to an IP address of your choice. 
+
+* Mac: `/private/etc/hosts`
+* Windows: `c:/Windows/System32/drivers/etc/hosts`
+
+(Note, there's no extension on this file.)
+
+The hosts file is protected, so you'll need to open it with administrator privileges. 
+
+On the Mac, you can use the `sudo` command and nano to get this done:
+
+	$ sudo nano /private/etc/hosts
+
+On Windows, if you're using *Cmder* it should be running as Administrator by default, so you should be able open up the file in Notepad:
+
+	$ notepad c:/Windows/System32/drivers/etc/hosts
+
+Read [*Editing text files in Command Line*](https://github.com/susanBuck/notes/blob/master/07_SysAdmin/999_Editing_text_files_in_CL.md) if you need a refresher on editing files from the command line.
+
+At the bottom of your hosts file, add a new host:
+
+	127.0.0.1 foobar.loc
+	
+This is telling your computer that whenever you access `http://foobar.loc` from your computer, it should map to the ip address `127.0.0.1` (the IP address of your local server).
+	
+
+## 3. Virtual Host entry
+
+Next, tell your local server how to handle requests to `http://foobar.loc` via a Virtual Host entry. Open your `httpd-vhosts.conf` file.
+
+* Mac: `/Applications/MAMP/conf/apache/extra/httpd-vhosts.conf`
+* Windows: `c:\MAMP\bin\apache\conf\extra\httpd-vhosts.conf`
+
+At the bottom of this file you'll see two example virtual host blocks, one for `dummy-host.example.com` and another for `dummy-host2.example.com`. Delete these.
+
+<img src='http://making-the-internet.s3.amazonaws.com/vc-vhost-examples@2x.png' class='' style='max-width:728px; width:75%' alt=''>
+
+Now, add your own virtual host block:
 
 	<VirtualHost *:80>
-		ServerName javabeans.loc
-		DocumentRoot /Users/YourUsername/Sites/javabeans.com
-		<Directory /Users/YourUsername/Sites/javabeans.com/>
+		ServerName foobar.loc
+		DocumentRoot /Users/Documents/Sites/foobar.com
+		<Directory /Users/Documents/Sites/foobar.com>
 			Options Indexes FollowSymLinks MultiViews
 			AllowOverride All
 			Order allow,deny
@@ -45,17 +82,26 @@ At the bottom of `/Applications/MAMP/conf/apache/extra/httpd-vhosts.conf` add th
 
 Be sure to change the following:
 
-1. Server name (use .loc)
-2. DocumentRoot (change to whatever your local directory name is for your app)
-3. Directory (change to whatever your local directory name is for your app)
+1. `ServerName` (use `.loc` or `.dev` to distinguish it from the live TLD)
+2. `DocumentRoot` (point it to the app directory in your document root)
+3. `Directory` (same as `DocumentRoot`)
 
-Note, the above assumes you're running on port 80. If you're running on something else, make that edit.
+Note, the above assumes you're running on Port 80 (`*:80`). If you're running your local Apache on a different port, make that edit.
 
-Restart WAMP and test out your local URL. 
+This is what your `httpd-vhosts.conf` file should look like when you're done:
+
+<img src='http://making-the-internet.s3.amazonaws.com/vc-vhosts-done@2x.png' class='' style='max-width:726px; width:75%' alt=''>
+
+**Restart your local server** and test out your local URL. 
+
+Make sure you explicitly type in `http://foobar.loc` with `http://` at the beginning. If you don't, your browser may just try and do a web search for `foobar.loc` because it does not recognize `.loc` as a domain extension. 
 
 ### Summary (to be repeated every time you want to add a new app):
-1. Add a new local URL in `/private/etc/hosts`
-2. Add a new VirtualHost record in `/Applications/MAMP/conf/apache/extra/httpd-vhosts.conf`
++ Add a new local URL in your computer's `host` file.
++ Add a new `<VirtualHost>` record block in MAMP/Apache's `httpd-vhosts.conf` file.
+
+Note how it's only Steps 2 and 3 above that need to be repeated for any new apps. Step 1 is a one time deal to get virtual hosts working.
+
 
 ### Tips
 * Make shortcuts to `httpd-vhosts.conf` and `hosts` for quick access in the future.
@@ -64,59 +110,3 @@ Restart WAMP and test out your local URL.
 
 
 
-## Virtual hosts on Windows/WAMP
-
-[Open httpd.conf](http://making-the-internet.s3.amazonaws.com/vc-open-httpd-conf.png) and look for the section labeled *Virtual Hosts*. There you'll see an include for `httpd-vhosts.conf` which is commented out. Remove the # at the start of the line to uncomment it.
-
-Before:
-
-	# Virtual hosts
-	# Include conf/extra/httpd-vhosts.conf":
-
-After:
-
-	# Virtual hosts
-	Include conf/extra/httpd-vhosts.conf":
-
-Next, open your hosts file located here:
-
-	c:/Windows/System32/drivers/etc/hosts
-
-And added the following line to the end:
-
-	127.0.0.1 javabeans.loc
-	
-That says that the url `javabeans.loc` should point to the server `127.0.0.1` (your localhost)
-
-Next, open your virtual hosts file:
-
-	c:/wamp/bin/apache/ApacheX.X.X/conf/extra/httpd.vhosts.conf
-
-And add this to the bottom:
-
-	<VirtualHost *:80>
-		ServerName javabeans.loc
-		DocumentRoot c:/wamp/www/javabeans.com
-		<Directory c:/wamp/www/javabeans.com/>
-			Options Indexes FollowSymLinks MultiViews
-			AllowOverride All
-			Order allow,deny
-			allow from all
-		</Directory>
-	</VirtualHost>
-
-This is instructions for what localhost needs to do when a request comes in for `javabeans.loc`.
-
-<small>If you're running Windows Vista, when you attempt to save the above changes, you may be told you don't have permissions. Read [*Editing text files in Command Line*](/Version_Control/Editing_text_files_in_CL) to get around this.
-</small>
-
-Restart WAMP and test out your new local URL. If you run into any problems, check your Apache error log.
-
-### Summary (to be repeated every time you want to add a new app):
-1. Add a new local URL in `c:/Windows/System32/drivers/etc/hosts`
-2. Add a new VirtualHost record in `c:/wamp/bin/apache/ApacheX.X.X/conf/extra/httpd.vhosts.conf`
-
-### Tips:
-* Make shortcuts to `httpd.vhosts.conf` and `hosts` for quick access in the future.
-* If you run into any problems, check your Apache error log.
-* [HostsMan](http://www.abelhadigital.com/hostsman) is a free little app that makes it easier to manage your hosts file.
