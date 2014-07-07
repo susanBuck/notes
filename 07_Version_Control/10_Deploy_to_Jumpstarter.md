@@ -1,3 +1,7 @@
+**Note: Jumpstarter is shutting down as of July 31, 2014. Given this, you're advised to choose one of the other live server options such as DigitalOcean or OpenShift**
+
+---
+
 ## Jumpstarter
 
 So far, you've got the flow set up between your local computer and your repo at Github, but there's one more piece of the puzzle: deploying your changes to your live server.
