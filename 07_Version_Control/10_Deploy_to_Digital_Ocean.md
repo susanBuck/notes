@@ -55,8 +55,18 @@ Take a look at your web directory:
 	$ cd /var/www/html
 	$ ls
 
+You should see two files:
 
+* `index.html`
+* `info.php`
 
+If you access your site in the browser (via the IP address DigitalOcean gives you), you should see the contents of `index.html` which looks like this:
+
+<img src='http://making-the-internet.s3.amazonaws.com/vc-digital-ocean-default-index@2x.png' class='' style='max-width:883px; width:100%' alt=''>
+
+You can replace the contents of this `index.html` file if you'd like:
+
+<img src='http://making-the-internet.s3.amazonaws.com/vc-digital-ocean-new-index@2x.png' class='' style='max-width:580px; width:100%' alt=''>
 
 ## Install Git
 
@@ -116,9 +126,17 @@ In the `/var/www/html` directory on DigitalOcean, run this command:
 
 	$ git clone git@github.com:username/reponame.git
 	
-Now, when you visit your Digital Ocean IP address you should see your hello-world project:
 
-<img src='http://making-the-internet.s3.amazonaws.com/version-control-hello-world-on-digital-ocean@2x.png' class='' style='max-width:688px; width:100%' alt=''>
+Now when you view the contents of your html folder you should see:
+
+* `hello-world`
+* `index.html`
+* `info.php`
+
+When you visit your DigitalOcean IP and tack on the `hello-world` subdirectory, 
+you should see your hello-world project:
+
+<img src='http://making-the-internet.s3.amazonaws.com/version-control-hello-world-on-digital-ocean@2x.png' class='' style='max-width:580px; width:100%' alt=''>
 
 
 
@@ -142,7 +160,7 @@ Right now you can access your DigitalOcean droplet by typing its IP address into
 
 To set this up, we're going to configure a domain and subdomains for use with DigitalOcean.
 
-Start by creating a new domain name via a service like [Namecheap](https://www.namecheap.com/). 
+Start by creating a new domain name via a service like [Namecheap](https://www.namecheap.com/).
 
 This should cost $10 bucks for the year, give or take depending on the extension you buy. If you have an existing domain you'd like to use, you're welcome to do so- your instructions just might vary from ours if you're using a different domain company.
 
@@ -154,7 +172,7 @@ Also, while you're there, add a subdomain called `helloworld` which also points 
 
 Give the above settings a few minutes to take effect, then test out your domain. You should see the same results you saw above when you tested your IP address, but this time it's loaded via your domain name:
 
-<img src='http://making-the-internet.s3.amazonaws.com/version-control-namecheap-domain-first-working@2x.png' class='Test new domain' style='max-width:688px; width:75%' alt=''>
+<img src='http://making-the-internet.s3.amazonaws.com/version-control-namecheap-domain-first-working@2x.png' class='Test new domain' style='max-width:588px; width:100%' alt=''>
 
 If you don't yet see the above, try the following:
 
@@ -190,7 +208,7 @@ To make these changes take effect, goto your DigitalOcean Droplet settings and f
 
 Once your Droplet is restarted, test out your subdomain `helloworld.yourdomain.com`.
 
-<img src='http://making-the-internet.s3.amazonaws.com/version-control-subdomain-good@2x.png' class='' style='max-width:688px; width:75%' alt=''>
+<img src='http://making-the-internet.s3.amazonaws.com/version-control-subdomain-good@2x.png' class='' style='max-width:588px; width:75%' alt=''>
 
 
 
@@ -202,17 +220,6 @@ Once your Droplet is restarted, test out your subdomain `helloworld.yourdomain.c
 
 	cat id_rsa.pub | ssh root@[your.ip.address.here] "cat >> ~/.ssh/authorized_keys"
 	
-<--
-&bullet; Need help from a TA? Ask them to generate a public key file called `[TA-name]_id_rsa.pub` and send it to you. Put this file in your computer's .ssh directory and make sure you're cd'd into that directory. 
-
-Now, you can then add their pub key to your Droplet's list of authorized keys with the following command:
-
-	cat [TA-name]_id_rsa.pub | ssh root@[your.ip.address.here] "cat >> ~/.ssh/authorized_keys"`
-
-The given TA should now be able to SSH into your Droplet to poke around and help you out. 
--->
-
-
 &bullet; Find out the IP address of a domain:
 
 	$ ping domain.com
