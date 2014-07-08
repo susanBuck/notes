@@ -46,7 +46,7 @@ When you access your OpenShift app URL are you seeing the same Laravel welcome s
 
 With setup complete, here are the two steps you'll take whenever you want update your live app with code changes:
 
-1. From local, push to your `open shift` remote
+1. From local, push to your `openshift` remote
 2. If you made any changes to your dependencies, SSH in and run `composer update --prefer-dist`
 
 ---
@@ -99,7 +99,7 @@ When you access your DigitalOcean subdomain are you seeing the same Laravel welc
 
 ### Moving forward:
 
-With setup complete, here are the two steps you'll take whenever you want update your live app at DigitalOcean with code changes:
+With setup complete, here are two steps you'll take whenever you want update your live app at DigitalOcean with code changes:
 
 1. From local, push to your `github` remote.
 2. SSH into your DigitalOcean droplet and navigate into your app folder, then run `git pull`.

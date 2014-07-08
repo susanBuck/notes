@@ -1,6 +1,8 @@
+## Reference 
+
 * <http://daylerees.com/codebright/basic-routing>
 * <http://laravel.com/docs/routing>
----
+
 
 Routes are declared using the `Route` class in `app/routes.php`
 
@@ -18,9 +20,9 @@ Here's an example route for the foobooks app:
 	    return 'Here are all the books...';
 	}); 
 
-The first parameter that gets passed to the method will specify what URL will trigger this route; in this case that's `/books`. I.e if the user goes to `http://localhost/books` it should trigger this route.
+The **first parameter** specifies what URL will trigger this route; in this case that's `/books`. I.e if the user goes to `http://localhost/books` it will trigger this route.
 
-The second parameter the Route method gets is a function which will specify what the app should do when this route is triggered.
+The **second parameter** is a function which will specify what the app should do when this route is triggered.
 
 In this example, we're passing a closure (aka *anonymous* function).
 
@@ -94,7 +96,3 @@ For our first example of what Artisan can do, have it tell you what routes are s
 
 Note: The artisan command must always be run from *within* your application.
 
-	
-## Passing data
-
-Sessions, Flash messages, Input
