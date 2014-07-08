@@ -3,6 +3,7 @@
 * <http://daylerees.com/codebright/basic-routing>
 * <http://laravel.com/docs/routing>
 
+---
 
 Routes are declared using the `Route` class in `app/routes.php`
 
