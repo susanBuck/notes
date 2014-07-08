@@ -1,4 +1,13 @@
-Prologue: Before digging into this doc, confirm you're logged into Windows as a user with **Administrator privileges**. This can generally be configured via *Control Panel > User Accounts*, but it may vary across different Windows versions and you may have to search around Google for further guidance.
+## Composer
+
+* Dependency Manager for PHP
+* Command Line utility
+* Similar to Node's NPM and Ruby's Bundler
+* Installs dependencies on a project by project basis, all configured by `composer.json`
+* Powers autoloading
+* Docs <https://getcomposer.org/doc/>
+* Packagist <http://packagist.org>
+
 
 ## Install Composer on Mac
 
@@ -23,7 +32,8 @@ That's it for Mac users. You can move on to the next steps. Window's users, keep
 
 ## Install Composer on Windows
 
-First things first: **make sure you are logged into Windows as a user with Administrator privileges**. 
+*Before digging into these instructions, confirm you're logged into Windows as a user with **Administrator privileges**. This can generally be configured via Control Panel > User Accounts. However, it may vary across different Windows versions and you may have to search around Google for further guidance.*
+
 
 ### Check PHP for CL
 Composer is a PHP command line tool. Given that, before you install Composer on Windows, you'll need to get your configurations right for running PHP from command line. 

@@ -82,7 +82,7 @@ If you compare the contents of your local app to your live app, you'll notice th
 
 Given this, you need to have Composer build your vendor's directory with this command:
 
-	$ composer update --prefer-dist
+	$ composer install --prefer-dist
 	
 When that command is complete, if you view the contents of your live app, you should now see a `vendors/` directory.
 
@@ -103,7 +103,7 @@ With setup complete, here are two steps you'll take whenever you want update you
 
 1. From local, push to your `github` remote.
 2. SSH into your DigitalOcean droplet and navigate into your app folder, then run `git pull`.
-2. Also while SSH'd in to your app folder, run `composer update --prefer-dist` to update any dependencies.
+2. Also while SSH'd in to your app folder, run `composer install --prefer-dist` to install any dependencies.
 
 
 

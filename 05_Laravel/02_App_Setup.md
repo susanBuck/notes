@@ -33,7 +33,7 @@ If you're using MAMP's php.exe, the **MCrypt extension** required by Laravel wil
 
 * It's not absolutely necessary that you use MAMP's php.exe. You may already have another build of PHP on your system that you wish to use. The above outline is suggested for beginner users; advanced users are welcome to configure your systems however you'd like.
 
-* The `php --info` will dump out all sorts of info about your php install, including version number and active extensions. This command is the equivalent to running `phpinfo();` in a PHP script.
+* The command `php --info` will dump out all sorts of info about your php install, including version number and active extensions. This command is the equivalent to running `phpinfo();` in a PHP script.
 
 
 
@@ -56,7 +56,7 @@ When composer is done working, move into the newly created project directory:
 	
 Once in this directory, run `ls -la` command; you should see all the Laravel related files in there.
 
-<img src='http://making-the-internet.s3.amazonaws.com/laravel-fresh-install.png?@2x' class='' style='max-width:780px; width:100%' alt='Laravel fresh install'>
+<img src='http://making-the-internet.s3.amazonaws.com/laravel-fresh-install@2x.png' class='' style='max-width:780px; width:100%' alt='Laravel fresh install'>
 
 **IMPORTANT**: Laravel needs to have the ability to write to the **storage** directory, so set that permission:
 
@@ -108,7 +108,6 @@ If all went well, you should see Laravel's default welcome page when you hit `ht
 <img src='http://making-the-internet.s3.amazonaws.com/laravel-app-setup-success.png?@2x' class='' style='max-width:506px; width:75%' alt=''>
 
 ### Tips
-* If `http://localhost` doesn't work, check what your *Ports* are set to in MAMP. The Apache port has to be 80 for `http://localhost` to work. Otherwise, you have to specify the specific port, for example `http://localhost:8888`
 
 * Whenever configuring a server to run Laravel, always remember the document root has to point to the `public/` folder within your app directory.
 
@@ -152,7 +151,7 @@ Push your project up to github:
 
 When you visit your repository on Github you should see all your changes there. 
 
-
+Your app is now set up locally and ready for development. In the next section, we'll cover the procedure for deploying your app to a live server.
 
 
 
