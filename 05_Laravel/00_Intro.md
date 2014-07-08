@@ -5,21 +5,21 @@ A framework is a package of code.
 Included in this package is a bunch of libraries which power the essentials of application development, for example:
 
 * Routing
-* View generation
+* Environment management
 * Database interaction
 * User authentication
-* Environment management
 * etc.
 
 With all this taken care of, it frees you up to start building the functionality of *your* application. 
-
-In addition to this, a framework provides a **skeleton** in which to build your application.
 
 Most PHP frameworks follow the **MVC Pattern**:
 
 * Model
 * View
 * Controller
+
+In addition to this, a framework provides a **skeleton** in which to build your application.
+
 
 **Benefits of working with a framework:**
 
@@ -53,11 +53,12 @@ Most PHP frameworks follow the **MVC Pattern**:
 	* Seeding
 * Clear documentation and supportive community
 
-## Documentation:
+## Documentation
 
 * Docs: <http://laravel.com/docs>
 * API: <http://laravel.com/api/> or <http://devdocs.io/laravel/>
-
+* CodeBright: <http://daylerees.com/codebright/getting-started>
+* Cheat Sheet: <http://cheats.jesse-obrien.ca/>
 
 
 ## Starting assumptions
