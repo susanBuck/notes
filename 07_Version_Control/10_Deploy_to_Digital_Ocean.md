@@ -24,6 +24,9 @@ Note: Instead of using your Github key, you could have generated a unique one fo
 </small>
 
 
+
+
+
 ## New Droplet
 
 DigitalOcean calls their virtual servers, **Droplets**; each Droplet that you spin up is a new virtual server for your personal use.

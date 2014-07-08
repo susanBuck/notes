@@ -36,13 +36,13 @@ First, where is CL PHP? It should be pointing to a php.exe in MAMP.
 
 	$ where.exe php
 	
-<img src='http://making-the-internet.s3.amazonaws.com/laravel-where-php@2x.png' class='' style='max-width:886px; width:100%' alt=''>
+<img src='http://making-the-internet.s3.amazonaws.com/laravel-where-php@2x.png' class='' style='max-width:520px; width:100%' alt=''>
 	
 Second, what `php.ini` file is CL PHP using? It should be in `c:\Windows\php.ini`
 
 	$ php --ini
 
-<img src='http://making-the-internet.s3.amazonaws.com/sysadmin-php-from-command-line-ini-location-set.png?@2x' class='' style='max-width:886px; width:100%' alt=''>
+<img src='http://making-the-internet.s3.amazonaws.com/sysadmin-php-from-command-line-ini-location-set@2x.png' class='' style='max-width:533px; width:100%' alt=''>
 
 If either of the above tests failed, revisit the **[PHP from CL](https://github.com/susanBuck/notes/blob/master/07_SysAdmin/999_PHP_from_CL.md)** doc.
 
