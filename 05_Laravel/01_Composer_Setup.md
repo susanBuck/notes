@@ -1,3 +1,5 @@
+Prologue: Before digging into this doc, confirm you're logged into Windows as a user with **Administrator privileges**. This can generally be configured via *Control Panel > User Accounts*, but it may vary across different Windows versions and you may have to search around Google for further guidance.
+
 ## Install Composer on Mac
 
 Move into your bin directory:
@@ -16,70 +18,60 @@ Test it works:
 
 	$ composer
 	
-
+That's it for Mac users. You can move on to the next steps. Window's users, keep reading.
 
 
 ## Install Composer on Windows
 
+First things first: **make sure you are logged into Windows as a user with Administrator privileges**. 
+
 ### Check PHP for CL
-Composer is a PHP command line tool. Given that, before you install Composer on Windows, you'll need to get your configurations right for running PHP from command line. To do this, **follow [these instructions](https://github.com/susanBuck/notes/blob/master/07_SysAdmin/999_PHP_from_CL.md)**.
+Composer is a PHP command line tool. Given that, before you install Composer on Windows, you'll need to get your configurations right for running PHP from command line. 
 
-To confirm you're ready for the next steps, test this command:
+To do this, follow these instructions: **[PHP from CL](https://github.com/susanBuck/notes/blob/master/07_SysAdmin/999_PHP_from_CL.md)**.
 
-	$ php -v
+Let's make sure everything is set up as it should be.
+
+First, where is CL PHP? It should be pointing to a php.exe in MAMP.
+
+	$ where.exe php
 	
-If this outputs info about your PHP installation including version number, you're good to move on. 
-
-<img src='http://making-the-internet.s3.amazonaws.com/sysadmin-php-v@2x.png' class='' style='max-width:892px; width:75%' alt=''>
-
-
-### Check for admin privileges
-Next, you're going to need to make sure you're running Cmder as *Administrator*  in order to install Composer in your *Program Files* directory.
-
-If you're logged in as an Administrator already, you'll be good to go. Here's how to test&mdash; run this command...
-
-	$ net session
-
-And compare your results with this screenshot:
+<img src='http://making-the-internet.s3.amazonaws.com/laravel-where-php@2x.png' class='' style='max-width:886px; width:100%' alt=''>
 	
-<img src='http://making-the-internet.s3.amazonaws.com/laravel-windows-admin-test@2x.png' class='' style='max-width:586px; width:75%' alt=''>
+Second, what `php.ini` file is CL PHP using? It should be in `c:\Windows\php.ini`
 
-If you're *not* running as Admin, locate the Cmder app in your Program Files, right click it, and choose *Run as Administrator*. 
+	$ php --ini
 
-<img src='http://making-the-internet.s3.amazonaws.com/laravel-run-cmdr-as-admin@2x.png' class='' style='max-width:869px; width:75%' alt=''>
+<img src='http://making-the-internet.s3.amazonaws.com/sysadmin-php-from-command-line-ini-location-set.png?@2x' class='' style='max-width:886px; width:100%' alt=''>
 
-If you need more assistance with running apps as admin (including details on how to do it from the Windows App screen, via a pinned program, etc. [check out these instructions](http://www.eightforums.com/tutorials/9564-run-administrator-windows-8-a.html).)
+If either of the above tests failed, revisit the **[PHP from CL](https://github.com/susanBuck/notes/blob/master/07_SysAdmin/999_PHP_from_CL.md)** doc.
 
-Alternatively, instead of running just Cmder as an admin, you can switch Windows users to one with administrator privileges. Then everything you do will  be done as an admin.
+No matter which php.exe you use, the key thing you need to know is what `php.ini` file is being used when running PHP from the CL. That way, if you run into any issues, you know where to find your configurations. 
+
+Also, it should be noted that the `php.ini` file we gave you has `openssl` enabled by default, which is an extension Composer is going to require.
+
+
 
 ### Install
-With PHP for CL set up and admin privileges confirmed, you're ready to install Composer. Move into your *Program Files* directory where you'll install Composer:
 
-	$ cd c:\Program Files
-	
-Download and install `composer.phar`:
+There's a handy installer for Window's Composer, which you can download here: <https://getcomposer.org/Composer-Setup.exe>.
 
-	$ curl -sS https://getcomposer.org/installer | php	
-Test it out:
+Running through the installer, you should see the following screens. 
 
-	$ php composer.phar
-	
-You should see a bunch of details about Composer.
+Make sure the `php.exe` path on the **third screen** matches the same MAMP php.exe you set up in the above steps. This way you know what PHP Composer is using, and you know it's using a `php.ini` file with `openssl` enabled.
 
-This works, but it only works because you're in the `c:\Program Files` directory. Create an alias so you can call it from anywhere:
+<img src='http://making-the-internet.s3.amazonaws.com/laravel-composer-install-on-windows@2x.png' class='' style='max-width:928px; width:100%' alt=''>
 
-	$ alias composer=php C:\PROGRA~1\composer.phar $*
-	
-FYI: Note how the path is `PROGRA~1` instead of `Program Files`? This is the shortfilename ([8.3 filename](http://en.wikipedia.org/wiki/8.3_filename)), which must be used since `Program Files` has a space in the name.
+When the installer is complete, close and restart Cmder. 
 
-The `$*` at the end tells the alias to also accept any argument variables.
+Now, you should be able to run the `composer` command from within any directory. This works because the installer updated your PATH variable for you.
+
+<img src='http://making-the-internet.s3.amazonaws.com/laravel-windows-composer-confirm@2x.png' class='' style='max-width:888px; width:100%' alt=''>
+
+That's it! Composer is installed and ready to go.
 
 
 ## Tips
-
-__Alias__
-
-`alias` is a command specific to Cmder. Open the file `c:\Program Files\cmder\cmder\config\aliases` to edit any existing aliases.
 
 __openssl__
 

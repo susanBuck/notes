@@ -148,57 +148,49 @@ When you visit your repository on Github you should see all your changes there.
 
 
 
-## Get your app online (Jumpstarter)
-
-Follow the instructions in [Version Control: Deploy to Jumpstarer](https://github.com/susanBuck/notes/blob/master/07_Version_Control/10_Deploy_to_Jumpstarter.md) to deploy your new app to Jumpstarter. 
-
-Summary of the steps you'll take:
-
-1. Create a new project on Jumpstarter.
-2. In your local project directory, set Jumpstarter as a remote: `git remote add jumpstarter username-projectsubdomain@ssh.jumpstarter.io:/var/www-git/repo.git`
-3. Deploy by pushing the master branch: `git push jumpstarter master`
-
-Once your app is deployed, when you go to your app's url on Jumpstarter, you'll  still see the phpinfo file you see by default with new Jumpstarter projects.
-
-To fix this, you need to update your server's root so that it points to the `public/` folder in your Laravel app.
-
-You can do this under *Settings* by adding `public` to your root:
-
-<img src='http://making-the-internet.s3.amazonaws.com/laravel-jumpstarter-set-root@2x.png' class='' style='max-width:415px; width:75%' alt=''> 
-
-**IMPORTANT:** After you save the above settings, click **Reboot Server**.
+## Get your app online
+[Rough outline, TODO: Hash out in more detail]
 
 
+### OpenShift
+First time:
+1. Create a new OpenShift app
+2. Create a remote on your local project for this new OpenShift app
+3. Push to this remote
+4. SSH into OpenShift app and navigate to your app root, then and run `composer update --prefer-dist` to update your vendors. 
+5. Make sure your storage folder is writable: `chmod -R 777 app/storage`
+
+Moving forward:
+1. Push to OpenShift remote
+2. SSH in and run `composer update --prefer-dist`
+
+TODO: Create a git hook to take care of this.
+
+### DigitalOcean
+First time:
 
 
-## Moving forward
+1. SSH into DigitalOcean
+2. Git clone the app
+3. Run `composer update --prefer-dist`
+4. Make sure your storage folder is writable: `chmod -R 777 app/storage`
+5. Set up a subdomain for your new app; make sure the VirtualHost entry is pointing to the `/public` directory.
 
-Now that your project is set up on Jumpstarter and your remotes are all configured, your process for checking in code might look something like this:
+Moving forward:
 
-See what has changed:
+1. SSH into DigitalOcean
+2. Git pull
+2. Run `composer update --prefer-dist`
 
-	$ git status
-
-Stage all changes:
-
-	$ git add --all
-	
-Commit:
-
-	$ git commit -m "Describe the changes you're checking in"
-	
-Push to Github: 
-
-	$ git push github master
-
-Push to Jumpstarter:
-	
-	$ git push jumpstarter master
-
+TODO: Create a git hook to take care of this.
 
 
 
 ## Tips / Notes
+
+* If you're seeing a **blank white screen**, make sure your `vendors/` directory exists. It should exist by default on your local app, because it comes with laravel by default. It won't exist on your live app, however, because `vendors` is set to be ignored in version control via `.gitignore`. To build/update the vendors directory, SSH into your live server and run `composer update --prefer-dist`.
+
+
 
 * When using the `composer create-project` command, we added the `--prefer-dist ` flag. You can read more about `--prefer-dist` and how it differs from `--prefer-source` [here](https://getcomposer.org/doc/03-cli.md#install).
 
