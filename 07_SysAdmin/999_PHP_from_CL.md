@@ -79,9 +79,13 @@ This command will tell you where PHP is loading from:
 
 	$ which.exe php
 	
+<img src='http://making-the-internet.s3.amazonaws.com/laravel-where-php@2x.png' class='' style='max-width:520px; width:100%' alt=''>
+	
 And this command will tell you what version of PHP you're running
 
 	$ php -v
+	
+<img src='http://making-the-internet.s3.amazonaws.com/laravel-php-v@2x.png' class='' style='max-width:520px; width:100%' alt=''>
 	
 If the above two commands work, you have confirmed that you can execute PHP from the command line.
 
@@ -95,7 +99,7 @@ To see what `php.ini` file CL is using when running PHP from CL, run this comman
 	
 You should see that it's looking in `c:\Windows` by default:
 
-<img src='http://making-the-internet.s3.amazonaws.com/sysadmin-php-from-command-line-ini-location.png?@2x' class='' style='max-width:387px; width:75%' alt=''>
+<img src='http://making-the-internet.s3.amazonaws.com/sysadmin-php-from-command-line-ini-location@2x.png' class='' style='max-width:520px; width:100%' alt=''>
 
 Let's create a `php.ini` file there for it to use:
 
@@ -109,11 +113,11 @@ Copy the contents of [this file](https://gist.github.com/susanBuck/73f7ca0334433
 
 Save.
 
-Now check your ini settings again and confirm it's loading `c:\Windows\php.ini`:
+Now check your ini settings again and confirm the *Loaded Configuration File* is `c:\Windows\php.ini`:
 
 	$ php --ini
 	
-<img src='http://making-the-internet.s3.amazonaws.com/sysadmin-php-from-command-line-ini-location-set.png?@2x' class='' style='max-width:886px; width:100%' alt=''>
+<img src='http://making-the-internet.s3.amazonaws.com/sysadmin-php-from-command-line-ini-location-set@2x.png' class='' style='max-width:533px; width:100%' alt=''>
 
 Moving forward, remember that whenever you use PHP from the CL it's loading this particular configuration file. 
 
