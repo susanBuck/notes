@@ -159,7 +159,7 @@ Create a file called `Boxfile` in the root of your app project and fill it with 
 	    - /app/storage/sessions
 	    - /app/storage/views
 	  document_root: public
-	  php_version: 5.3.10
+	  php_version: 5.4.14
 	  php_extensions:
 	    - zip
 	    - pdo_mysql
