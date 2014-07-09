@@ -117,7 +117,7 @@ If all went well, you should see Laravel's default welcome page when you hit `ht
 
 ## Version Control your new app
 
-In your app directory, initiate a new Git repository:
+In your project, initiate a new Git repository:
 
 	$ git init
 	
