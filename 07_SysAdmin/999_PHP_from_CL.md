@@ -1,4 +1,6 @@
-Prologue: Before digging into this doc, confirm you're logged into Windows as a user with **Administrator privileges**. This can generally be configured via *Control Panel > User Accounts*, but it may vary across different Windows versions and you may have to search around Google for further guidance.
+*Before digging into these instructions, confirm you're logged into Windows as a user with **Administrator privileges**. This can generally be configured via Control Panel > User Accounts. However, it may vary across different Windows versions and you may have to search around Google for further guidance.*
+
+
 
 
 ## Is PHP for CL set up?
@@ -101,19 +103,17 @@ You should see that it's looking in `c:\Windows` by default:
 
 <img src='http://making-the-internet.s3.amazonaws.com/sysadmin-php-from-command-line-ini-location@2x.png' class='' style='max-width:520px; width:100%' alt=''>
 
-Let's create a `php.ini` file there for it to use:
+Given this, you need to create a `php.ini` file in `c:\Windows`. 
 
-	$ touch c:\Windows\php.ini
+For the contents of this file, copy the text from our example: [php.ini template](https://gist.github.com/susanBuck/73f7ca03344331fb9edf)
 
-Load this new `php.ini` file in Notepad:
+If you have any access issues creating your `php.ini` file in `c:\Windows`, you can try the following workarounds:
 
-	$ notepad c:\Windows\php.ini	
+1. Create the `php.ini` file in a place you have access, like your Documents folder, then *move* it into `c:\Windows`.
 
-Copy the contents of [this file](https://gist.github.com/susanBuck/73f7ca03344331fb9edf) and paste it in your php.ini file. 
+2. Right click on Notepad and choose the option to *Open as Administrator*. Once you're running Notepad as an admin, you should be able to save the file with `c:\Windows`.
 
-Save.
-
-Now check your ini settings again and confirm the *Loaded Configuration File* is `c:\Windows\php.ini`:
+Once you've got `c:\Windows\php.ini` created and saved, check your ini settings again and confirm the *Loaded Configuration File* is `c:\Windows\php.ini`:
 
 	$ php --ini
 	
