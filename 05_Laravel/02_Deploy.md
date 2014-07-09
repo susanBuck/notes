@@ -41,6 +41,22 @@ When that command is complete, if you view the contents of your app, you should 
 When you access your OpenShift app URL are you seeing the same Laravel welcome screen you saw on your local server? If yes, you're good to go!
 
 
+### A note on document root on OpenShift
+
+When you set up Laravel locally, you had to specifically point your document root to the `public/` folder. Similarly, if you skim the deployment instructions for the other live servers, you'll notice a step outlining how to point your live document root to `public/`.
+
+With OpenShift, you don't have to take this step because by default, OpenShift will look for a directory called `public/` to act as the document root. Convenient, right?
+
+For reference, here's the logic OpenShift uses to determine what your DocumentRoot should be:
+
+	IF php/ dir exists THEN DocumentRoot=php/  
+	ELSE IF public/ dir exists THEN DocumentRoot=public/  
+	ELSE IF public_html/ dir exists THEN DocumentRoot=public_html/  
+	ELSE IF web/ dir exists THEN DocumentRoot=web/  
+	ELSE IF www/ dir exists THEN DocumentRoot=www/  
+	ELSE DocumentRoot=/  
+	
+([ref](https://www.openshift.com/blogs/openshift-online-march-2014-release-blog))
 
 ### Moving forward:
 
