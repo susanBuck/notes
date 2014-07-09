@@ -30,8 +30,11 @@ Test it works:
 
 	$ composer
 	
-That's it for Mac users. You can move on to the next steps. Window's users, keep reading.
+That's it for Mac users. You can move on to the next steps. Window's users, keep reading. 
 
+If the above procedure doesn't work, scroll down to see if your issue is listed in the *Common Problems* section.
+
+---
 
 ## Install Composer on Windows
 
@@ -59,9 +62,10 @@ Second, what `php.ini` file is CL PHP using? It should be in `c:\Windows\php.ini
 
 If either of the above tests failed, revisit the **[PHP from CL](https://github.com/susanBuck/notes/blob/master/07_SysAdmin/999_PHP_from_CL.md)** doc.
 
-No matter which php.exe you use, the key thing you need to know is what `php.ini` file is being used when running PHP from the CL. That way, if you run into any issues, you know where to find your configurations. 
+No matter which `php.exe` you use, the key thing you need to know is *which* `php.ini` file is being used when running PHP from the CL. That way, if you run into any issues, you know where to find your configurations. 
 
-Also, it should be noted that the `php.ini` file we gave you has `openssl` enabled by default, which is an extension Composer is going to require.
+Also, it should be noted that the `php.ini` file we gave you has `openssl` enabled by default, which is an extension you're going to need.
+
 
 
 
@@ -83,20 +87,56 @@ Now, you should be able to run the `composer` command from within any directory.
 
 That's it! Composer is installed and ready to go.
 
+If the above procedure doesn't work, scroll down to see if your issue is listed in the *Common Problems* section.
 
-## Tips
 
-__openssl__
 
-If you get a message saying *openssl* is not enabled, first identify what `php.ini` file you're using with this command:
+
+## Common Issues
+
+*The following is a work in progress and will be updated to reflect common issues and solutions as identified in Piazza.*.
+
+### Issue: openssl
+
+__Symptoms:__ You get a message saying *openssl* is not enabled.
+
+__Solution:__ Identify what `php.ini` file you're using with this command:
 
 	$ php --ini
 	
-Open the indicated `php.ini` file you're using and look for the following line:
+Open the indicated `php.ini` file and make sure the following line is not commented out (i.e. it does *not* have a semi-colon in front of it:
 
 	extension=php_openssl.dll
 
-If this line has a semi-colon in front of it, it means the openssl extension is disabled; remove the semi-colon to enable and try again ([ref](http://stackoverflow.com/questions/14291151/you-must-enable-the-openssl-extension-to-download-files-via-https)).
 
-See the notes in [PHP from CL](https://github.com/susanBuck/notes/blob/master/07_SysAdmin/999_PHP_from_CL.md) if you need more assistance with PHP CL's `php.ini` file.
+
+
+### Issue: SSL Certificate problem
+
+__Symptoms:__ (Mac) When downloading Composer (via the `curl -sS https://getcomposer.org/installer | php` command), you receive an error regarding SSL certificates:
+
+	curl: (60) SSL certificate problem: unable to get local issuer certificate
+	More details here: http://curl.haxx.se/docs/sslcerts.html
+	curl performs SSL certificate verification by default, using a "bundle"
+	 of Certificate Authority (CA) public keys (CA certs). If the default
+	 bundle file isn't adequate, you can specify an alternate file
+	 using the --cacert option.
+	If this HTTPS server uses a certificate signed by a CA represented in
+	 the bundle, the certificate verification probably failed due to a
+	 problem with the certificate (it might be expired, or the name might
+	 not match the domain name in the URL).
+	If you'd like to turn off curl's verification of the certificate, use
+	 the -k (or --insecure) option.
+
+__Solution__: [[Pending](https://piazza.com/class/ht1cmoh734q7lz?cid=83)] 
+
+
+### Issue: Permission Denied
+
+__Symptoms:__ (Mac) You're in your `/usr/local/bin` directory and you run the command to download Composer (`curl -sS https://getcomposer.org/installer | php`). The download fails citing *failed to open stream: Permission denied*.
+
+__Solution:__ [[Pending](https://piazza.com/class/ht1cmoh734q7lz?cid=79)]
+
+
+
 

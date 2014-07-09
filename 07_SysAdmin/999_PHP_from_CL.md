@@ -1,8 +1,3 @@
-*Before digging into these instructions, confirm you're logged into Windows as a user with **Administrator privileges**. This can generally be configured via Control Panel > User Accounts. However, it may vary across different Windows versions and you may have to search around Google for further guidance.*
-
-
-
-
 ## Is PHP for CL set up?
 
 Let's see if you already have the ability to run PHP from CL.
@@ -17,6 +12,8 @@ If, however, it says the command is not found, you have some configuring to do.
 
 The following instructions are Windows-centric, as PHP is installed by default on Mac computers.
 
+*Before digging into these instructions, confirm you're logged into Windows as a user with **Administrator privileges**. This can generally be configured via Control Panel > User Accounts. However, it may vary across different Windows versions and you may have to search around Google for further guidance.*
+
 
 
 
@@ -29,7 +26,7 @@ To test this out, try the `-v` flag again, this time specifying the full path to
 
 If this doesn't report back on the version of PHP, dig around your `C:\MAMP\bin\php` folder for a copy of `php.exe`.
 
-Now that you know where `php.exe` lives, you can add it's directory to your *PATH variable*...
+Now that you know where `php.exe` lives, you can add its directory to your *PATH variable*...
 
 
 
@@ -93,6 +90,8 @@ If the above two commands work, you have confirmed that you can execute PHP from
 
 
 
+
+
 ## Specify your php.ini file
 
 To see what `php.ini` file CL is using when running PHP from CL, run this command:
@@ -120,6 +119,9 @@ Once you've got `c:\Windows\php.ini` created and saved, check your ini settings 
 <img src='http://making-the-internet.s3.amazonaws.com/sysadmin-php-from-command-line-ini-location-set@2x.png' class='' style='max-width:533px; width:100%' alt=''>
 
 Moving forward, remember that whenever you use PHP from the CL it's loading this particular configuration file. 
+
+
+
 
 
 ## Tips:
