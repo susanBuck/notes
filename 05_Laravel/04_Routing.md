@@ -34,7 +34,7 @@ Whatever response is returned from the second parameter will be displayed in the
 
 
 ## Route Paramaters
-You can expand on this example by making the URL more flexible with route parameters. These parameters act as placeholders that will detect patterns.
+You can expand on this example by making the URI more flexible with route parameters. These parameters act as placeholders that will detect patterns.
 
 For example:
 
@@ -107,7 +107,7 @@ Note: The artisan command must always be run from *within* your application.
 
 >> Facades provide a "static" interface to classes that are available in the application's IoC container. Laravel ships with many facades, and you have probably been using them without even knowing it! Laravel "facades" serve as "static proxies" to underlying classes in the IoC container, providing the benefit of a terse, expressive syntax while maintaining more testability and flexibility than traditional static methods. -[src](http://laravel.com/docs/facades#facade-class-reference)
 
-[List of facades and their underlying class](http://laravel.com/docs/facades#facade-class-reference)
+[List of facades and their underlying class](http://laravel.com/docs/facades#facade-class-reference). 
 
 [API: Router](http://devdocs.io/laravel/api/4.2/illuminate/routing/router) >
 [API: Router get](http://devdocs.io/laravel/api/4.2/illuminate/routing/router#method_get)

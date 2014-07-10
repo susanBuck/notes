@@ -4,11 +4,11 @@
 
 ## Foobooks Spec
 
-Create a web application called Foobooks to manage a collection of the books.
+Create a web application called Foobooks to manage a collection of books.
 
 The homepage should include the following:
 
-+ A logo
++ A logo ([laravel-foobooks-logo@2x.png](http://making-the-internet.s3.amazonaws.com/laravel-foobooks-logo@2x.png))
 + A search box
 + A link to view all books
 + A link to add a new book
@@ -36,7 +36,7 @@ On the regular HTML output, next to each book listing there should be a link to 
 
 
 ## Procedure
-
+0. Create a To-do list
 1. Define Routes
 2. Set up data source ([books.json](https://gist.github.com/susanBuck/1e46ca463e6d15ffa1b1)) with a practice route `/data`.
 3. Packages: Pretty debugging with "Pre"
@@ -54,6 +54,6 @@ On the regular HTML output, next to each book listing there should be a link to 
 + [Composer Packages](https://github.com/susanBuck/notes/blob/master/05_Laravel/06_Composer_Packages.md)
 + [Views and Blade](https://github.com/susanBuck/notes/blob/master/05_Laravel/08_Views.md)
 + [Object Oriented Programming](https://github.com/susanBuck/notes/blob/master/05_Laravel/999_OOP_Summary.md)
-+ Responses
-+ Filters
-+ Forms and Request Data
++ Responses (See Codebright/Laravel Docs)
++ Filters (See Codebright/Laravel Docs)
++ Forms and Request Data (See Codebright/Laravel Docs)

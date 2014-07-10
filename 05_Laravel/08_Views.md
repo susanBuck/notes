@@ -7,6 +7,9 @@
 ---
 
 ## Organizing Views / View Inheritance
+
+<img src='http://making-the-internet.s3.amazonaws.com/laravel-view-inheritance@2x.png' class='' style='max-width:742px; width:100%' alt=''>
+
 + Laravel uses the [Blade templating language](http://laravel.com/docs/templates#blade-templating).
 + Views should live in `/app/views/`
 + Files should end with the `.blade.php` extension.
@@ -53,9 +56,7 @@ Example of a view which extends this master template:
 	@stop
 	
 	@section('content')
-	
 		<h1>Welcome!</h1>
-	
 	@stop
 	
 	@section('footer')

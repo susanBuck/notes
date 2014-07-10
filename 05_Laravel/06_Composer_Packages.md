@@ -28,6 +28,11 @@ This will add the following directory: `/vendor/paste/pre/`
 Learn more about any of the above Composer commands here: <https://getcomposer.org/doc/>
 
 
+## Tip:
+
+* Use `composer update` on your development environment(s) so it grabs the versions according to your `composer.json` file and updates your `composer.lock` file.
+* Use `composer install` on your production environment(s) so it grabs the versions according to your `composer.lock` file (i.e. mirror the versions exactly as they are on the development environment).
+
 
 
 ## Usage
