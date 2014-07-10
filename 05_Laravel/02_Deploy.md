@@ -1,6 +1,6 @@
 With your Laravel app up and running locally, let's look at the procedure for getting it running on a live server.
 
-The following instructions covers deploying to **OpenShift**, **DigitalOcean** and **PagodaBox**. Skip to the one that matches the server you're deploying to.
+The following instructions cover deploying to **OpenShift**, **DigitalOcean** and **PagodaBox**. Skip to the one that matches the server you're deploying to.
 
 
 

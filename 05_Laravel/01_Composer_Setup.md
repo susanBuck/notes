@@ -30,7 +30,7 @@ Test it works:
 
 	$ composer
 	
-That's it for Mac users. You can move on to the next steps. Window's users, keep reading. 
+That's it for Mac users. You can move on to the next steps. Windows users, keep reading. 
 
 If the above procedure doesn't work, scroll down to see if your issue is listed in the *Common Problems* section.
 
