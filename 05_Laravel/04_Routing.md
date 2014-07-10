@@ -33,6 +33,21 @@ Whatever response is returned from the second parameter will be displayed in the
 <img src='http://making-the-internet.s3.amazonaws.com/laravel-route-breakdown@2x.png' class='' style='max-width:861px; width:100%' alt='Route breakdown'>
 
 
+## Tip if your routes aren't working
+
+If your main route (`/`) works, but all other routes result in a 404 error, try the following configuration adjustment:
+
+Open your Apache configuration file: `C:\MAMP\conf\apache\httpd.conf`.
+
+Find the line that says `# This should be changed to whatever you set DocumentRoot to.`
+
+In the `<directory>` block that follows, replace `AllowOverride None` with `AllowOverride All`
+
+AllowOverride controls what directives can be used in the `.htaccess` file; if it's disabled then the pretty URL rewriting that Laravel does doesn't work.
+
+<img src='http://making-the-internet.s3.amazonaws.com/laravel-allow-override-all@2x.png' class='' style='max-width:787px; width:100%' alt=''>
+
+
 ## Route Paramaters
 You can expand on this example by making the URI more flexible with route parameters. These parameters act as placeholders that will detect patterns.
 

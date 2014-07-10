@@ -103,6 +103,8 @@ Once you've determined your path, make the change in MAMP:
 
 While you're in your MAMP settings, confirm your PHP version is set to something >= PHP 5.4.
 
+__Save all changes and restart your server.__
+
 If all went well, you should see Laravel's default welcome page when you hit `http://localhost` in your browser:
 
 <img src='http://making-the-internet.s3.amazonaws.com/laravel-app-setup-success.png?@2x' class='' style='max-width:506px; width:75%' alt=''>
