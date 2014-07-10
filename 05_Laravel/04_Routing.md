@@ -47,9 +47,12 @@ AllowOverride controls what directives can be used in the `.htaccess` file; if i
 
 <img src='http://making-the-internet.s3.amazonaws.com/laravel-allow-override-all@2x.png' class='' style='max-width:787px; width:100%' alt=''>
 
+__Save your changes and restart your server.__
+
 
 ## Route Paramaters
-You can expand on this example by making the URI more flexible with route parameters. These parameters act as placeholders that will detect patterns.
+
+You can make route URI's more flexible with route parameters. These parameters act as placeholders that will detect patterns.
 
 For example:
 
@@ -59,6 +62,9 @@ For example:
 	
 
 ## Post example
+
+You can have two routes with the same URI that react to different http methods.
+
 
 	Route::get('/new', function() {
 		
@@ -76,6 +82,9 @@ For example:
 		print_r($input);
 		
 	});
+
+
+
 
 
 ## Set up a practice route
@@ -105,6 +114,7 @@ For example, if we say:
 
 
 
+
 ## Artisan routes
 
 Artisan is a PHP command line tool that ships with Laravel and provides many shortcuts and utilities for working with your app.
@@ -113,16 +123,21 @@ For our first example of what Artisan can do, have it tell you what routes are s
 
 	$ php artisan routes
 
-Note: The artisan command must always be run from *within* your application.
+Note: The `php artisan` command must always be run from *within* your application.
+
+
 
 
 ## Digging Deeper: Facades and reading the API
 
-<img src='http://making-the-internet.s3.amazonaws.com/laravel-route-breakdown@2x.png' class='' style='max-width:861px; width:100%' alt='Route breakdown'>
+Laravel makes frequent use of Facades:
 
 >> Facades provide a "static" interface to classes that are available in the application's IoC container. Laravel ships with many facades, and you have probably been using them without even knowing it! Laravel "facades" serve as "static proxies" to underlying classes in the IoC container, providing the benefit of a terse, expressive syntax while maintaining more testability and flexibility than traditional static methods. -[src](http://laravel.com/docs/facades#facade-class-reference)
 
 [List of facades and their underlying class](http://laravel.com/docs/facades#facade-class-reference). 
+
+For example:
+`Route` is a Facade for the `Router` class. Once you know that, it makes finding information in the API docs easier.
 
 [API: Router](http://devdocs.io/laravel/api/4.2/illuminate/routing/router) >
 [API: Router get](http://devdocs.io/laravel/api/4.2/illuminate/routing/router#method_get)
