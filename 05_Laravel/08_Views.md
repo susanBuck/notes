@@ -1,8 +1,20 @@
-Laravel uses the [Blade templating language](http://laravel.com/docs/templates#blade-templating).
+## Reference 
 
-Name files with a `.blade.php` extension.
+* <http://daylerees.com/codebright/blade>
+* <http://laravel.com/docs/responses>
+* <http://laravel.com/docs/templates>
 
-Create a master template/layout file, for example `/app/views/master.blade.php`:
+---
+
+## Organizing Views / View Inheritance
++ Laravel uses the [Blade templating language](http://laravel.com/docs/templates#blade-templating).
++ Views should live in `/app/views/`
++ Files should end with the `.blade.php` extension.
++ Divide your Views into master templates and child views.
++ `@section('foobar') ... @stop` is used to define sections in your child views.
++ `@yield('foobar')` is in the master templates to output sections defined in the child views
+
+Example of a master template:
 
 	<!DOCTYPE html>
 	<html>
@@ -28,7 +40,7 @@ Create a master template/layout file, for example `/app/views/master.blade.php`:
 	</body>
 	</html>
 
-Now, let's create a view that will *extend* (i.e. use) this layout.
+Example of a view which extends this master template:
 	
 	@extends('master')
 	
@@ -49,6 +61,63 @@ Now, let's create a view that will *extend* (i.e. use) this layout.
 	@section('footer')
 		<script src="/js/hello-world.js"></script>
 	@stop
-	
 
-## Organizing View files
+
+
+## Returning / Passing Data to Views
+
+Use the `with` method to pass data to a view:
+
+	Route('/profile/{user_id}', function($user_id) {
+	
+		$user = User::get($user_id);
+
+		return View::make('profile')
+			->with('user', $user);
+
+	});
+
+Then, in the View, you have access to that data:
+
+	Hello {{ $user['name'] }}!
+
+
+	
+## Blade
+
+Output any PHP using double curly brackets
+
+	<h1>Hello {{ $name! }}</h1>
+	
+If you're outputting data that was entered by a user, use trouble curly brackets to escape any nefarious-XSS characters:
+
+	<h1>Hello {{{ $name! }}}</h1>
+	
+You can use PHP control structures in Blade; just prefix with a `@`. No semi-colons or colons required.
+
+For example, an if statement:
+
+	@if(isset($name))
+		<h1>Hello {{{ $name! }}}</h1>	
+	@endif
+
+And a foreach statement:
+	
+	@foreach($users as $key => $value) 
+		{{ $key }} : {{ $value }}
+	@endforeach;	
+
+
+
+
+## Assets
+
+The `URL` method `asset()` can help generate URLs to static site assets such as images, CSS files, or JS files.
+
+For example, loading CSS:
+
+	<link rel="stylesheet" href="{{ URL::asset('styles/master.css') }}" type="text/css">
+	
+Loading an image:
+
+	<img src=' {{ URL::asset('images/logo.png') }} ' alt='Company Logo'>

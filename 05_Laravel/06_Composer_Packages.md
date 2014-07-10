@@ -15,21 +15,20 @@ In `/composer.json` add this line, ex:
 			"paste/pre": "dev-master"
 	},
 
-Run this to verify your json is okay:
+Run this to verify your json is valid:
 
 	$ composer validate
 	
-Install the new dependency:
-
-	$ composer install
-
-Update the `composer.lock` file:
+Install the dependency and update the `composer.lock` file:
 
 	$ composer update
 	
 This will add the following directory: `/vendor/paste/pre/`
 
-Learn more about any of the above composer commands here: <https://getcomposer.org/doc/>
+Learn more about any of the above Composer commands here: <https://getcomposer.org/doc/>
+
+
+
 
 ## Usage
 
