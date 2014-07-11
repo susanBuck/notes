@@ -8,7 +8,7 @@
 
 
 ## What is HTML?
-* **H**yper**T**ext **M**arkup **L**anguage
+* HyperText Markup Language
 * Put together and maintained by the [W3 Consortium](http://www.w3.org/)
 * Looking towards HTML5
 * The role of CSS
