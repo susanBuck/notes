@@ -51,9 +51,10 @@ On the regular HTML output, next to each book listing there should be a link to 
 
 ## Topics covered
 
-+ [Composer Packages](https://github.com/susanBuck/notes/blob/master/05_Laravel/06_Composer_Packages.md)
-+ [Views and Blade](https://github.com/susanBuck/notes/blob/master/05_Laravel/08_Views.md)
-+ [Object Oriented Programming](https://github.com/susanBuck/notes/blob/master/05_Laravel/999_OOP_Summary.md)
++ Composer Packages ([notes]())
++ Views and Blade ([notes]())
++ Object Oriented Programming ([notes]())
 + Responses (See Codebright/Laravel Docs)
 + Filters (See Codebright/Laravel Docs)
 + Forms and Request Data (See Codebright/Laravel Docs)
++ 
