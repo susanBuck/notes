@@ -23,9 +23,8 @@ What these databases have in common: **SQL**.
 
 
 ## SQL (Structured Query Language)
-**SQL (Structured Query Language)** is a language designed for interacting with relational database management systems (RDBMS).
 
-SQL is used to interact with your databases.
+**SQL (Structured Query Language)** is a language designed for interacting with Relational Database Management Systems (RDBMS).
 
 Here's an example of an SQL command to create a new table:
 
@@ -38,7 +37,7 @@ Here's an example of an SQL command to create a new table:
 		    purchase_link VARCHAR(255)
 		);
 
-And here's an example of how you'd create a row in that resulting table:
+And here's an example of how you'd create rows in that resulting table:
 
 	INSERT INTO books SET
 			title = 'The Great Gatsby',
@@ -47,24 +46,26 @@ And here's an example of how you'd create a row in that resulting table:
 			cover = 'http://img2.imagesbn.com/p/9780743273565_p0_v4_s114x166.JPG',
 			purchase_link = 'http://www.barnesandnoble.com/w/the-great-gatsby-francis-scott-fitzgerald/1116668135?ean=9780743273565';
 
+
+
 These statements can be run via command line using MySQL, or directly from your PHP scripts using [PHP's mysqli extension](http://php.net/manual/en/mysqli.quickstart.statements.php).
 
 Here's an example of a PHP script that connects to a database and then does a query on said database:
 
 	# Connect to the database
-		$mysqli = new mysqli("localhost", "root", "root", "foobooks");
-		if ($mysqli->connect_errno) {
-	    	echo "Failed to connect to MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
+	$mysqli = new mysqli("localhost", "root", "root", "foobooks");
+	if ($mysqli->connect_errno) {
+    	echo "Failed to connect to MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
 		}
-		
-		# Run a query
-		$books = $mysqli->query("SELECT * FROM books");
-		
-		# Loop through results
-		$books->data_seek(0);
-		while ($book = $books->fetch_assoc()) {
-	    	echo $book['title']." was written by ".$book['author']."<br>";
-		} 
+	
+	# Run a query
+	$books = $mysqli->query("SELECT * FROM books");
+	
+	# Loop through results
+	$books->data_seek(0);
+	while ($book = $books->fetch_assoc()) {
+    	echo $book['title']." was written by ".$book['author']."<br>";
+   } 
 
 If you want to brush up on SQL basics, here's a good place to start:
 
@@ -79,10 +80,10 @@ Everything described thus far is what you'd do if you were interacting with a da
 
 Laravel is going to abstract all of this. This has several benefits:
 
-+ Easily switch between databases
-+ Manage different databases depending on your environment
-+ Don't worry about SQL syntax and compatibility with different database types
-+ Escapes incoming data to prevent SQL Injection attacks
++ Easily switch between databases.
++ Manage different databases depending on your environment.
++ Don't worry about SQL syntax and compatibility with different database types.
++ Escapes incoming data to prevent SQL Injection attacks:
 	
 <a href='http://xkcd.com/327/'><img src='http://imgs.xkcd.com/comics/exploits_of_a_mom.png'></a>
 
@@ -91,7 +92,7 @@ Laravel is going to abstract all of this. This has several benefits:
 
 Before we can start digging into Laravel's database capabilities, we need to create a database to work with.
 
-We'll do this via command line, so start by initiating mysql:
+We'll do this via command line, which can be done by initiating MAMP's MySQL executable:
 
 Windows:
 	
@@ -101,7 +102,7 @@ Mac:
 
 	/Applications/MAMP/Library/bin/mysql --host=localhost -uroot -proot
 	
-<small>Pro-tip: Add MAMP's path to mysql to your system's PATH so you don't have to run the full path every time.</small>
+<small>Pro-tip: Add MAMP's path to mysql to your [system's PATH](https://github.com/susanBuck/notes/blob/master/07_SysAdmin/999_PATH_Variable.md) so you don't have to run the full path every time.</small>
 
 Once you're in mysql mode you should see a prompt that looks like this:
 
@@ -119,15 +120,27 @@ Now create a database:
 
 Run the `SHOW DATABASES;` command again to confirm your new database has been added. 
 
-Hit CTRL-C when you're done to exit mysql mode.
+Hit CTRL-C when you're done to exit MySQL.
 
 
+## phpMyAdmin and other MySQL managers
+
+In addition to working with your databases via command lone, you can also use the web-based MySQL database manager, phpMyAdmin. This package comes with MAMP by default, and is a common tool on shared web servers.
+
+Find the link to phpMyAdmin from your MAMP Start page under **Tools**.
+
+<img src='http://making-the-internet.s3.amazonaws.com/laravel-find-phpmyadmin@2x.png' class='' style='max-width:1033px; width:100%' alt=''>
+
+For a stand-alone database manager, here are some suggestions:
+
++ Mac: [SequelPro](http://www.sequelpro.com/)
++ Windows: [HeidiSQL](http://www.heidisql.com/)
 
 ## Configuration
 
 With your database created, you now need to give your Laravel app some basic configurations it'll need to connect to your database using the host name, database name, username and password.
 
-This information can be found on your MAMP Start Page (http://localhost/MAMP) and should be as follows:
+This information can be found on your MAMP Start Page (`http://localhost/MAMP`) and should be set to the following defaults:
 
 + Host: `localhost`
 + User: `root`
@@ -152,6 +165,20 @@ Update the `database`, `username`, and `password` values:
 				'prefix'    => '',
 			),
 
+If you open `app/config/database.php` you'll see `mysql` is the default database connection Laravel will use, so there's nothing you need to change here:
+	
+	/*
+	|--------------------------------------------------------------------------
+	| Default Database Connection Name
+	|--------------------------------------------------------------------------
+	|
+	| Here you may specify which of the database connections below you wish
+	| to use as your default connection for all database work. Of course
+	| you may use many connections at once using the Database library.
+	|
+	*/
+
+	'default' => 'mysql',
 
 
 ## Test your connection
@@ -168,5 +195,7 @@ Here's some code to test that your database connection is working:
 	});
 
 When you visit this route, it should output a list of all your databases, including the one you created in the previous step.
+
+With your database setup and your connection confirmed, you're ready to move on to Migrations in order to build your tables.
 
 
