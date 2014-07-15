@@ -37,15 +37,28 @@ Here's an example of an SQL command to create a new table:
 		    purchase_link VARCHAR(255)
 		);
 
-And here's an example of how you'd create rows in that resulting table:
+And here's examples of how you'd create rows in that resulting table:
 
 	INSERT INTO books SET
-			title = 'The Great Gatsby',
-			author = 'F. Scott Fitzgerald',
-			published = 1925,
-			cover = 'http://img2.imagesbn.com/p/9780743273565_p0_v4_s114x166.JPG',
-			purchase_link = 'http://www.barnesandnoble.com/w/the-great-gatsby-francis-scott-fitzgerald/1116668135?ean=9780743273565';
-
+		title = 'The Great Gatsby',
+		author = 'F. Scott Fitzgerald',
+		published = 1925,
+		cover = 'http://img2.imagesbn.com/p/9780743273565_p0_v4_s114x166.JPG',
+		purchase_link = 'http://www.barnesandnoble.com/w/the-great-gatsby-francis-scott-fitzgerald/1116668135?ean=9780743273565';
+		
+	INSERT INTO books SET
+		title = 'The Bell Jar',
+		author = 'Sylvia Path',
+		published = 1963,
+		cover = 'http://img1.imagesbn.com/p/9780061148514_p0_v2_s114x166.JPG',
+		purchase_link = 'http://www.barnesandnoble.com/w/bell-jar-sylvia-plath/1100550703?ean=9780061148514';
+		
+	INSERT INTO books SET
+		title = 'I Know Why the Caged Bird Sings',
+		author = 'Maya Angelou',
+		published = 1969,
+		cover = 'http://img1.imagesbn.com/p/9780345514400_p0_v1_s114x166.JPG',
+		purchase_link = 'http://www.barnesandnoble.com/w/i-know-why-the-caged-bird-sings-maya-angelou/1100392955?ean=9780345514400';
 
 
 These statements can be run via command line using MySQL, or directly from your PHP scripts using [PHP's mysqli extension](http://php.net/manual/en/mysqli.quickstart.statements.php).
@@ -55,23 +68,24 @@ Here's an example of a PHP script that connects to a database and then does a qu
 	# Connect to the database
 	$mysqli = new mysqli("localhost", "root", "root", "foobooks");
 	if ($mysqli->connect_errno) {
-    	echo "Failed to connect to MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
-		}
-	
+	 	echo "Failed to connect to MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
+			}
+
 	# Run a query
 	$books = $mysqli->query("SELECT * FROM books");
-	
+
 	# Loop through results
 	$books->data_seek(0);
 	while ($book = $books->fetch_assoc()) {
-    	echo $book['title']." was written by ".$book['author']."<br>";
-   } 
+	 	echo $book['title']." was written by ".$book['author']."<br>";
+	   } 
 
 If you want to brush up on SQL basics, here's a good place to start:
 
 * [SQL for Beginners Part 1](http://net.tutsplus.com/tutorials/databases/sql-for-beginners)
 * [SQL for Beginners Part 2](http://net.tutsplus.com/tutorials/databases/sql-for-beginners-part-2/)
 * [SQL for Beginners Part 3](http://net.tutsplus.com/tutorials/databases/sql-for-beginners-part-3/)
+* [SQL Cheat sheet](http://www.sql.su/)
 
 
 ## Enter Laravel
@@ -125,7 +139,7 @@ Hit CTRL-C when you're done to exit MySQL.
 
 ## phpMyAdmin and other MySQL managers
 
-In addition to working with your databases via command lone, you can also use the web-based MySQL database manager, phpMyAdmin. This package comes with MAMP by default, and is a common tool on shared web servers.
+In addition to examining your databases via command line, you can also use the web-based MySQL database manager, phpMyAdmin. This package comes with MAMP by default, and is a common tool on shared web servers.
 
 Find the link to phpMyAdmin from your MAMP Start page under **Tools**.
 
