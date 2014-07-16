@@ -54,9 +54,9 @@ Syntax for instantiating (creating) a new Object from a Class:
 	class User {
 
 		// Properties
-		var $name;
-		var $email;
-		var $logged_in = false;
+		public $name;
+		public $email;
+		public $logged_in = false;
 		
 		// Methods
 
@@ -78,9 +78,9 @@ Most Classes will start off with getter/setter methods that allow access to the 
 	class User {
 
 		// Properties
-		var $name;
-		var $email;
-		var $logged_in = false;
+		public $name;
+		public $email;
+		public $logged_in = false;
 		
 		// Methods
 		public function get_name() {
@@ -99,5 +99,5 @@ Most Classes will start off with getter/setter methods that allow access to the 
 	 + **public** : method is accessible inside and outside the object
 	 + **private** : method is only accessible inside the object
 	 + **protected** : method is accessible inside the object and any objects which inherit this object
-	 + **static** : method is accessible and no object instantiation is needed; can be called directly on the class.
-		 + **NOTE** : a property or method can be declared both static AND public/private/protected.  The access modifier (public/private/protected) will apply the same way as listed above, but the method or property will be accessed by using the class name (or self if from within the class itself)
+	 + **static** : no object instantiation is needed; can be called directly on the class. This modifier can be added in addition to the `public`, `private` or `protected` modifiers. For example, you can say: `public static foobar() {}` to declare that a method is both `static` *and* `public`.
+	 	
