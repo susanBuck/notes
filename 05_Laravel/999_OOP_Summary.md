@@ -100,3 +100,4 @@ Most Classes will start off with getter/setter methods that allow access to the 
 	 + **private** : method is only accessible inside the object
 	 + **protected** : method is accessible inside the object and any objects which inherit this object
 	 + **static** : method is accessible and no object instantiation is needed; can be called directly on the class.
+		 + **NOTE** : a property or method can be declared both static AND public/private/protected.  The access modifier (public/private/protected) will apply the same way as listed above, but the method or property will be accessed by using the class name (or self if from within the class itself)
