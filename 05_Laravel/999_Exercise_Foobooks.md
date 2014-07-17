@@ -47,17 +47,21 @@ On the regular HTML output, next to each book listing there should be a link to 
 8. OOP: Library Class
 9. Filters: Making data available to multiple routes
 10. Forms: Search ([pre-built search methods](<https://gist.github.com/susanBuck/9e259e2aeb457085177a>))
-11. Create and populate a books database
+11. Migrations / Schema: Create and populate a books table
+12. Build the *Add a book*
+13. Build the *Edit a book*
 
 
 ## Topics covered
 
 + Composer Packages ([notes](https://github.com/susanBuck/notes/blob/master/05_Laravel/04_Composer_Packages.md))
-+ Views and Blade ([notes](https://github.com/susanBuck/notes/blob/master/05_Laravel/05_Views.md))
++ Views (and Blade) ([notes](https://github.com/susanBuck/notes/blob/master/05_Laravel/05_Views.md))
 + Object Oriented Programming ([notes](https://github.com/susanBuck/notes/blob/master/05_Laravel/999_OOP_Summary.md))
 + Responses (See Codebright/Laravel Docs)
 + Filters (See Codebright/Laravel Docs)
 + Forms and Request Data (See Codebright/Laravel Docs)
-+ Databases - Intro and configuration ([notes](https://github.com/susanBuck/notes/blob/master/05_Laravel/06_Databases.md))
-+ Database Migrations and Schema building ([notes](https://github.com/susanBuck/notes/blob/master/05_Laravel/07_Databases_Schemas_Migrations.md))
++ Databases: SQL Primer ([notes]())
++ Databases: Configuration ([notes]())
++ Databases: Schemas & Migrations ([notes]())
++ Databases: Eloquent ORM ([notes]())
 
