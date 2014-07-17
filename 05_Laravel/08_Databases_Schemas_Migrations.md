@@ -136,7 +136,6 @@ public function up() {
 		// The rest of our fields...
 		$table->string('title');
 		$table->string('author');
-		$table->integer('published');
 		$table->string('cover');
 		$table->string('purchase_link');
 
