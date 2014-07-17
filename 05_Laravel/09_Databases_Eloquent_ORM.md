@@ -141,6 +141,18 @@ Route::get('/practice-reading', function() {
 });
 ```
 
+Same idea, but this time get one specific book:
+
+```php
+Route::get('/practice-reading-one-book', function() {
+	
+	$book = Book::where('author', 'LIKE', '%Scott%')->first();
+	
+	return $book->title;
+
+});
+```
+
 
 ## CRUD - Updating
 
