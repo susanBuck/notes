@@ -26,7 +26,7 @@ For example, here's how you would grab a single book from the `books` table usin
 ```php
 $books = DB::table('books')->get();
 
-foreach ($books as $books) {
+foreach ($book as $books) {
     var_dump($book->title);
 }
 ```
