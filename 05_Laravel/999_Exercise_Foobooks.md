@@ -60,8 +60,8 @@ On the regular HTML output, next to each book listing there should be a link to 
 + Responses (See Codebright/Laravel Docs)
 + Filters (See Codebright/Laravel Docs)
 + Forms and Request Data (See Codebright/Laravel Docs)
-+ Databases: SQL Primer ([notes]())
-+ Databases: Configuration ([notes]())
-+ Databases: Schemas & Migrations ([notes]())
-+ Databases: Eloquent ORM ([notes]())
++ Databases: SQL Primer ([notes](https://github.com/susanBuck/notes/blob/master/05_Laravel/06_Databases_SQL_Primer.md))
++ Databases: Configuration ([notes](https://github.com/susanBuck/notes/blob/master/05_Laravel/07_Databases_Configuration.md))
++ Databases: Schemas & Migrations ([notes](https://github.com/susanBuck/notes/blob/master/05_Laravel/08_Databases_Schemas_Migrations.md))
++ Databases: Eloquent ORM ([notes](https://github.com/susanBuck/notes/blob/master/05_Laravel/09_Databases_Eloquent_ORM.md))
 
