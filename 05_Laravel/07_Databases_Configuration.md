@@ -84,16 +84,18 @@ For our examples we'll be using the MySQL database that comes with MAMP so find 
 
 Update the `database`, `username`, and `password` values:
 
-	'mysql' => array(
-				'driver'    => 'mysql',
-				'host'      => 'localhost',
-				'database'  => 'foobooks',
-				'username'  => 'root',
-				'password'  => 'root',
-				'charset' => 'utf8',
-				'collation' => 'utf8_unicode_ci',
-				'prefix'    => '',
-			),
+```php
+'mysql' => array(
+	'driver'    => 'mysql',
+	'host'      => 'localhost',
+	'database'  => 'foobooks',
+	'username'  => 'root',
+	'password'  => 'root',
+	'charset' => 'utf8',
+	'collation' => 'utf8_unicode_ci',
+	'prefix'    => '',
+),
+```
 
 If you open `/app/config/database.php` you'll see `mysql` is the default database connection Laravel will use, so there's nothing you need to change there.
 
@@ -102,7 +104,7 @@ If you open `/app/config/database.php` you'll see `mysql` is the default databas
 
 ## Test your connection
 
-Here's a Route you can throw your `routes.php` file to test that your database connection is working:
+Here's a route you can throw in your `routes.php` file to test that the database connection is working:
 
 ```php
 Route::get('mysql-test', function() {
