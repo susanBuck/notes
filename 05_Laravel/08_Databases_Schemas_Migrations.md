@@ -25,29 +25,62 @@ Laravel's command line utility, Artisan, will help you take care of migration ta
 
 ## Generate a new migration
 
-First, let's have Artisan generate a new migration file for you:
+First, let's have Artisan generate a new migration file:
 
 	$ php artisan migrate:make create_books_table
 	
-The migration name (`create_books_table`) should reflect what you're doing.
+The migration name (`create_books_table`) should reflect what you're doing. In this example we're creating a table called `books`.
 
 Naming conventions:
 
 + Tables and field names are written in `snake_case`.
 + Table names are plural.
 
-This command will generate a new file in `/app/database/migrations/`. 
+The `migrate:make` command will generate a new file in `/app/database/migrations/` and the filename will look something like this: `2014_07_17_022948_create_books_table.php`.
 
-Note the filename has a unique timestamp. This insures migrations are run in the same order in which they were created.
+Note the generated filename is prefixed with a unique timestamp. This insures migrations are run in the same order in which they were created.
 
-Open it up. Every migration has some boilerplate code with a `up()` and `down()` method. In the `up()` method you'll describe some change to the database (adding a new table, adding fields to a table, etc.), and in the `down()` method you'll reverse any changes made in the `up()` method.
+Open up your newly generated migration, and you should see something like this:
+
+	<?php
+	use Illuminate\Database\Schema\Blueprint;
+	use Illuminate\Database\Migrations\Migration;
+	
+	class AddPurchaseLinkFieldToBooks extends Migration {
+	
+		/**
+		 * Run the migrations.
+		 *
+		 * @return void
+		 */
+		public function up() {
+			
+		}
+	
+		/**
+		 * Reverse the migrations.
+		 *
+		 * @return void
+		 */
+		public function down() {
+			
+		}
+	
+	}
 
 
-## Design our table
+Every generated migration has this boilerplate code with a `up()` and `down()` method. 
 
-Before writing any code in the `up()` method to build our table, we have to decide what fields our table will need, and what MySQL data type each field should be.
+In the `up()` method you'll describe some change to the database (adding a new table, adding fields to a table, etc.), and in the `down()` method you'll reverse any changes made in the `up()` method.
 
-To do this, we looked at our existing `books.json` data and mapped the book parameters to the appropriate MySQL field type. 
+
+
+
+## Design the books table
+
+Before writing any code in the `up()` method, we have to decide what fields the table will need, and what MySQL data type each field in the table should be.
+
+To do this, we looked at the existing `books.json` data and mapped the book parameters to the appropriate MySQL field type. 
 
 <img src='http://making-the-internet.s3.amazonaws.com/laravel-books-table-design@2x.png' class='' style='max-width:983px; width:100%' alt=''>
 
@@ -105,6 +138,8 @@ Here's an example of a `up()` method to create the `books` table:
 			$table->integer('published');
 			$table->string('cover');
 			$table->string('purchase_link');
+			
+			// FYI: We're skipping the 'tags' field for now; more on that later.
 
 		});
 	}
@@ -124,6 +159,9 @@ The &ldquo;undo&rdquo; action for creating a new table is really simple&mdash; j
 	Schema::drop('books');
 
 
+
+
+
 ## Run your migrations
 
 When you've completed writing the code for your migration, you'll use Artisan to run it:
@@ -141,9 +179,7 @@ That should do the trick. Examine your new `books` table in phpMyAdmin or MySQL 
 
 In the above example, we forgot the `published` field for our `books` table; let's add that now.
 
-Any alterations to an existing table should be done in a new migration. 
-
-Let's add a `published` field to the existing `books` table. Create a new migration:
+Any alterations to an existing table should be done in a new migration, so let's generate a new migration:
 
 	$ php artisan migrate:make add_published_to_books
 
@@ -174,5 +210,27 @@ If you wanted to "go back to the beginning" and revert all migrations you could 
 For a full list of Artisan commands (including migration related commands):
 
 	$ php artisan list
-	
 
+
+
+
+
+## Your first migrations
+
+Getting your migration code right the first time can be challenging, especially if you're starting a new project with a whole bunch of new tables.
+
+When starting with a brand new app, it's okay to bend the rules a little and rebuild and rerun an existing migration to get your table right.
+
+For example, in the case above when we forgot the `published` field, rather than creating a new migration, it would have been nice to add the field to the original migration that created the table. 
+
+Then, we could have run `php artisan migrate:refresh` to reset and re-run all migrations.
+
+At this point, this procedure is acceptable because you're the only one running your migrations since the project hasn't been shared with anyone.
+
+It's only once your project has been shared with teammates/other servers that you want to make sure even granular changes are put in new migrations rather than added to existing ones. If you do the latter, you run the risk that those using your codebase won't re-run the existing migration and as a result their database schemas will get out of sync.
+
+
+Syntax highlighting test:
+```php
+$foo = 'bar';
+```
