@@ -42,32 +42,33 @@ Note the generated filename is prefixed with a unique timestamp. This insures mi
 
 Open up your newly generated migration, and you should see something like this:
 
-	<?php
-	use Illuminate\Database\Schema\Blueprint;
-	use Illuminate\Database\Migrations\Migration;
-	
-	class AddPurchaseLinkFieldToBooks extends Migration {
-	
-		/**
-		 * Run the migrations.
-		 *
-		 * @return void
-		 */
-		public function up() {
-			
-		}
-	
-		/**
-		 * Reverse the migrations.
-		 *
-		 * @return void
-		 */
-		public function down() {
-			
-		}
-	
+```
+<?php
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
+
+class AddPurchaseLinkFieldToBooks extends Migration {
+
+	/**
+	 * Run the migrations.
+	 *
+	 * @return void
+	 */
+	public function up() {
+		
 	}
 
+	/**
+	 * Reverse the migrations.
+	 *
+	 * @return void
+	 */
+	public function down() {
+		
+	}
+
+}
+```
 
 Every generated migration has this boilerplate code with a `up()` and `down()` method. 
 
@@ -228,9 +229,3 @@ Then, we could have run `php artisan migrate:refresh` to reset and re-run all mi
 At this point, this procedure is acceptable because you're the only one running your migrations since the project hasn't been shared with anyone.
 
 It's only once your project has been shared with teammates/other servers that you want to make sure even granular changes are put in new migrations rather than added to existing ones. If you do the latter, you run the risk that those using your codebase won't re-run the existing migration and as a result their database schemas will get out of sync.
-
-
-Syntax highlighting test:
-```php
-$foo = 'bar';
-```
