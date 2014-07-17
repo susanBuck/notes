@@ -91,7 +91,7 @@ Update the `database`, `username`, and `password` values:
 	'database'  => 'foobooks',
 	'username'  => 'root',
 	'password'  => 'root',
-	'charset' => 'utf8',
+	'charset'   => 'utf8',
 	'collation' => 'utf8_unicode_ci',
 	'prefix'    => '',
 ),

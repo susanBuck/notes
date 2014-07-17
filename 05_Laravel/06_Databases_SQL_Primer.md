@@ -9,7 +9,7 @@ Laravel makes it convenient to connect to a variety of database types:
 
 ([Here's a great article on the differences between these database types](https://www.digitalocean.com/community/tutorials/sqlite-vs-mysql-vs-postgresql-a-comparison-of-relational-database-management-systems))
 
-What these databases have in common: **SQL (Structured Query Language**.
+What these databases have in common: **SQL (Structured Query Language)**.
 
 In the following notes, we're going to look how you'd go about using SQL to talk to a MySQL database from PHP. This is all done outside the context of Laravel to give you an overview of the underlying work Laravel will be helping you accomplish. Don't worry about executing any of the code in this note set&mdash; there are more concrete examples coming up.
 
@@ -21,31 +21,40 @@ In the following notes, we're going to look how you'd go about using SQL to talk
 
 For an example, here's an SQL command to create a new table called `books`:
 
-	CREATE TABLE books (
-		    id INT AUTO_INCREMENT PRIMARY KEY,
-		    title VARCHAR(255),
-		    author VARCHAR(255),
-		    published INT(4),
-		    cover VARCHAR(255),
-		    purchase_link VARCHAR(255)
-		);
+```sql
+CREATE TABLE books (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(255),
+    author VARCHAR(255),
+    published INT(4),
+    cover VARCHAR(255),
+    purchase_link VARCHAR(255)
+);
+```
 
 Here's an SQL command to add a new row in the `books` table:
 
-	INSERT INTO books SET
-		title = 'The Great Gatsby',
-		author = 'F. Scott Fitzgerald',
-		published = 1925,
-		cover = 'http://img2.imagesbn.com/p/9780743273565_p0_v4_s114x166.JPG',
-		purchase_link = 'http://www.barnesandnoble.com/w/the-great-gatsby-francis-scott-fitzgerald/1116668135?ean=9780743273565';
+```sql
+INSERT INTO books SET
+	title = 'The Great Gatsby',
+	author = 'F. Scott Fitzgerald',
+	published = 1925,
+	cover = 'http://img2.imagesbn.com/p/9780743273565_p0_v4_s114x166.JPG',
+	purchase_link = 'http://www.barnesandnoble.com/w/the-great-gatsby-francis-scott-fitzgerald/1116668135?ean=9780743273565';
+```	
 		
 Here's an SQL command that would fetch all the rows in the `books` table:
 
-	SELECT * FROM books
+```sql
+SELECT * FROM books
+```
 
 Finally, here's an SQL command that would fetch all the rows from the `books` table where the author name included the word &ldquo;Scott&rdquo;:
 
-	SELECT * FROM books WHERE author LIKE '%Scott%'		
+```sql
+SELECT * FROM books WHERE author LIKE '%Scott%'
+```
+		
 These commands are pretty human readable, so you should get the gist of what they're doing, but take a moment to skim over this [SQL Cheat Sheet](http://www.sql.su/) to see the variety of commands that SQL has.
 
 
