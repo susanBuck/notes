@@ -57,21 +57,22 @@ The above statements can be run via command line using MySQL, or directly from y
 
 Here's an example of a PHP script that connects to a database (`foobooks`) and then runs a SQL query against a table in this database (`SELECT * FROM books`):
 
-	# Connect to the database
-	$mysqli = new mysqli("localhost", "root", "root", "foobooks");
-	if ($mysqli->connect_errno) {
-	 	echo "Failed to connect to MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
-			}
+```php
+# Connect to the database
+$mysqli = new mysqli("localhost", "root", "root", "foobooks");
+if ($mysqli->connect_errno) {
+ 	echo "Failed to connect to MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
+}
 
-	# Run a query
-	$books = $mysqli->query("SELECT * FROM books");
+# Run a query
+$books = $mysqli->query("SELECT * FROM books");
 
-	# Loop through results
-	$books->data_seek(0);
-	while ($book = $books->fetch_assoc()) {
-	 	echo $book['title']." was written by ".$book['author']."<br>";
-	   } 
-
+# Loop through results
+$books->data_seek(0);
+while ($book = $books->fetch_assoc()) {
+ 	echo $book['title']." was written by ".$book['author']."<br>";
+} 
+```
 
 
 

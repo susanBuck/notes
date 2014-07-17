@@ -76,7 +76,7 @@ This information can be found on your MAMP Start Page (`http://localhost/MAMP`) 
 
 With this information gathered, open up your **local** database configuration in `/app/config/local/database.php`.
 
-***Common Problem Alert:** There may be several `database.php` files on your `/app/config` folder. Starting out, there should be one at `/app/config/database.php` and one in `/app/config/local/database.php`. Because we're working in the **local** environment right now, make sure you're editing `/app/config/local/database.php`.*
+***Common Problem Alert:** There may be several `database.php` files on your `/app/config` folder. Starting out, there should be one at `/app/config/database.php` and one at `/app/config/local/database.php`. Because we're working in the **local** environment right now, make sure you're editing `/app/config/local/database.php`.*
 
 
 
@@ -95,21 +95,7 @@ Update the `database`, `username`, and `password` values:
 				'prefix'    => '',
 			),
 
-If you open `/app/config/database.php` you'll see `mysql` is the default database connection Laravel will use, so there's nothing you need to change here:
-	
-	/*
-	|--------------------------------------------------------------------------
-	| Default Database Connection Name
-	|--------------------------------------------------------------------------
-	|
-	| Here you may specify which of the database connections below you wish
-	| to use as your default connection for all database work. Of course
-	| you may use many connections at once using the Database library.
-	|
-	*/
-
-	'default' => 'mysql',
-
+If you open `/app/config/database.php` you'll see `mysql` is the default database connection Laravel will use, so there's nothing you need to change there.
 
 
 
@@ -118,15 +104,17 @@ If you open `/app/config/database.php` you'll see `mysql` is the default databas
 
 Here's a Route you can throw your `routes.php` file to test that your database connection is working:
 
-	Route::get('mysql-test', function() {
+```php
+Route::get('mysql-test', function() {
 
-		# Use the DB component to select all the databases
-		$results = DB::select('SHOW DATABASES;');
+	# Use the DB component to select all the databases
+	$results = DB::select('SHOW DATABASES;');
 
-		# If the "Pre" package is not installed, you should output using print_r instead
-		return Pre::render($results);
-		
-	});
+	# If the "Pre" package is not installed, you should output using print_r instead
+	return Pre::render($results);
+	
+});
+```
 
 When you visit this route (`http://localhost/mysql-test`), it should output a list of all your databases, including the one you created in the previous step.
 

@@ -23,17 +23,21 @@ The query builder is a Laravel component (accessed by the `DB` Facade) which mak
 
 For example, here's how you would grab a single book from the `books` table using the DB `get()` method:
 
-	$books = DB::table('books')->get();
+```php
+$books = DB::table('books')->get();
 
-	foreach ($books as $books) {
-	    var_dump($book->title);
-	}
+foreach ($books as $books) {
+    var_dump($book->title);
+}
+```
 
 There are tons of methods within the query builder to help you build any query imaginable (check the above-linked docs to see what we mean).
 
 Or maybe you're an SQL wiz and you don't want any help from the query builder. In this case, you could use the `statement()` method to run any raw SQL statement:
 
-	DB::statement('SELECT * FROM books WHERE author LIKE "%Scott%"');
+```php
+DB::statement('SELECT * FROM books WHERE author LIKE "%Scott%"');
+```
 
 (Of course, if you're running queries like this, you should be aware of any SQL injection points...)
 
@@ -71,9 +75,11 @@ We already created the `books` table in a previous step, so we can dig right int
 
 All your app's models are stored in `/app/models/` so create a new file, `app/models/Book.php` with this stub of code:
 
-	class Book extends Eloquent {
+```php
+class Book extends Eloquent {
 	
-	}
+}
+```
 	
 There are a few expectations Eloquent has in order to work:
 
@@ -92,24 +98,26 @@ There's not much going on in our model class so far, but that's really all you n
 
 Let's test this out. Create a practice route in your `routes.php` file:
 
-	Route::get('/practice-creating', function() {
+```php
+Route::get('/practice-creating', function() {
 
-		# Instantiate a new Book model class
-		$book = new Book();
+	# Instantiate a new Book model class
+	$book = new Book();
 
-		# Set 
-		$book->title = 'The Great Gatsby';
-		$book->author = 'F. Scott Fiztgerald';
-		$book->published = 1925;
-		$book->cover = 'http://img2.imagesbn.com/p/9780743273565_p0_v4_s114x166.JPG';
-		$book->purchase_link = 'http://www.barnesandnoble.com/w/the-great-gatsby-francis-scott-fitzgerald/1116668135?ean=9780743273565';
+	# Set 
+	$book->title = 'The Great Gatsby';
+	$book->author = 'F. Scott Fiztgerald';
+	$book->published = 1925;
+	$book->cover = 'http://img2.imagesbn.com/p/9780743273565_p0_v4_s114x166.JPG';
+	$book->purchase_link = 'http://www.barnesandnoble.com/w/the-great-gatsby-francis-scott-fitzgerald/1116668135?ean=9780743273565';
 
-		# This is where the Eloquent ORM magic happens
-		$book->save();
+	# This is where the Eloquent ORM magic happens
+	$book->save();
 
-		return 'A new book has been added! Check your database to see...';
+	return 'A new book has been added! Check your database to see...';
 
-	});
+});
+```
 
 Go ahead and hit this route (`http://localhost/practice-adding-a-book`), then check your database to confirm there's a new row in your `books` table.
 
@@ -119,51 +127,56 @@ Go ahead and hit this route (`http://localhost/practice-adding-a-book`), then ch
 
 With some rows in your table, we can now look at retrieving data from a table.
 
-	Route::get('/practice-reading', function() {
-		
-		# The all() method will fetch all the rows from a Model/table
-		$books = Book::all();
-		
-		# Typically we'd pass $books to a View, but for quick and dirty demonstration, let's just output from the route...
-		foreach($books as $book) {
-			echo $book->title.'<br>';
+```
+Route::get('/practice-reading', function() {
+	
+	# The all() method will fetch all the rows from a Model/table
+	$books = Book::all();
+	
+	# Typically we'd pass $books to a View, but for quick and dirty demonstration, let's just output from the route...
+	foreach($books as $book) {
+		echo $book->title.'<br>';
 		}
 
-	});
+});
+```
 
 
 ## CRUD - Updating
 
-	Route::get('/practice-updating', function() {
-		
-		# First get a book to update
-		$book = Book::where('author', 'LIKE', '%Scott%')->first();
-		
-		# Give it a different title
-	    $book->title = 'The Really Great Gatsby';
-	   
-		# Save the changes
-	    $book->save();
-	    
-		return "Update complete; check the database to see if your update worked...";
-		
-	});
+```
+Route::get('/practice-updating', function() {
+	
+	# First get a book to update
+	$book = Book::where('author', 'LIKE', '%Scott%')->first();
+	
+	# Give it a different title
+    $book->title = 'The Really Great Gatsby';
+   
+	# Save the changes
+    $book->save();
+    
+	return "Update complete; check the database to see if your update worked...";
+	
+});
+```
 
 
 ## CRUD - Deleting
 
-	Route::get('/practice-deleting', function() {
-			
-		# First get a book to delete
-		$book = Book::where('author', 'LIKE', '%Scott%')->first();
-			
-		# Goodbye!
-		$book->delete();
-		   
-		return "Deletion complete; check the database to see if it worked...";
-			
-	});
-
+```
+Route::get('/practice-deleting', function() {
+		
+	# First get a book to delete
+	$book = Book::where('author', 'LIKE', '%Scott%')->first();
+		
+	# Goodbye!
+	$book->delete();
+	   
+	return "Deletion complete; check the database to see if it worked...";
+		
+});
+```
 
 
 
