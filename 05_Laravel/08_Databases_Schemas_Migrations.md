@@ -5,7 +5,7 @@ Reference:
 + <http://daylerees.com/codebright/schema>
 + <http://daylerees.com/codebright/migrations>
 + <http://laravel.com/docs/artisan>
-	 
+
 ---
 
 <img src='http://making-the-internet.s3.amazonaws.com/laravel-migration-summary@2x.png' class='' style='max-width:903px; width:100%' alt=''>
@@ -28,7 +28,7 @@ Laravel's command line utility, Artisan, will help you take care of migration ta
 First, let's have Artisan generate a new migration file:
 
 	$ php artisan migrate:make create_books_table
-	
+
 The migration name (`create_books_table`) should reflect what you're doing. In this example we're creating a table called `books`.
 
 Naming conventions:
@@ -55,7 +55,7 @@ class AddPurchaseLinkFieldToBooks extends Migration {
 	 * @return void
 	 */
 	public function up() {
-		
+
 	}
 
 	/**
@@ -64,13 +64,12 @@ class AddPurchaseLinkFieldToBooks extends Migration {
 	 * @return void
 	 */
 	public function down() {
-		
-	}
 
+	}
 }
 ```
 
-Every generated migration has this boilerplate code with a `up()` and `down()` method. 
+Every generated migration has this boilerplate code with a `up()` and `down()` method.
 
 In the `up()` method you'll describe some change to the database (adding a new table, adding fields to a table, etc.), and in the `down()` method you'll reverse any changes made in the `up()` method.
 
@@ -81,7 +80,7 @@ In the `up()` method you'll describe some change to the database (adding a new t
 
 Before writing any code in the `up()` method, we have to decide what fields the table will need, and what MySQL data type each field in the table should be.
 
-To do this, we looked at the existing `books.json` data and mapped the book parameters to the appropriate MySQL field type. 
+To do this, we looked at the existing `books.json` data and mapped the book parameters to the appropriate MySQL field type.
 
 <img src='http://making-the-internet.s3.amazonaws.com/laravel-books-table-design@2x.png' class='' style='max-width:983px; width:100%' alt=''>
 
@@ -121,31 +120,33 @@ With the `books` table design in mind, it's time to write the Schema building co
 
 Here's an example of a `up()` method to create the `books` table:
 
-	public function up() {
+```php
+public function up() {
 
-		Schema::create('books', function($table) {
+	Schema::create('books', function($table) {
 
-			// Increments method will make a Primary, Auto-Incrementing field. 
-			// Most tables start off this way
-			$table->increments('id');
-			
-			// This generates two columns: `created_at` and `updated_at` to 
-			// keep track of changes to a row
-			$table->timestamps();
-			
-			// The rest of our fields...
-			$table->string('title');
-			$table->string('author');
-			$table->integer('published');
-			$table->string('cover');
-			$table->string('purchase_link');
-			
-			// FYI: We're skipping the 'tags' field for now; more on that later.
+		// Increments method will make a Primary, Auto-Incrementing field.
+		// Most tables start off this way
+		$table->increments('id');
 
-		});
-	}
+		// This generates two columns: `created_at` and `updated_at` to
+		// keep track of changes to a row
+		$table->timestamps();
 
-Noe how the Laravel `Schema` component is used to create the `books` table. 
+		// The rest of our fields...
+		$table->string('title');
+		$table->string('author');
+		$table->integer('published');
+		$table->string('cover');
+		$table->string('purchase_link');
+
+		// FYI: We're skipping the 'tags' field for now; more on that later.
+
+	});
+}
+```
+
+Noe how the Laravel `Schema` component is used to create the `books` table.
 
 We've commented the `Schema` methods we're using, but be sure to read the [Schema Documentation](http://laravel.com/docs/schema) for full details.
 
@@ -157,8 +158,9 @@ We've commented the `Schema` methods we're using, but be sure to read the [Schem
 
 The &ldquo;undo&rdquo; action for creating a new table is really simple&mdash; just drop the table:
 
-	Schema::drop('books');
-
+```php
+Schema::drop('books');
+```
 
 
 
@@ -188,20 +190,24 @@ Edit the resulting migration:
 
 Up...
 
-	Schema::table('books',function($table) {
-			$table->integer('published');
-	});
-	
+```php
+Schema::table('books',function($table) {
+		$table->integer('published');
+});
+```
+
 Down...
 
-	Schema::table('books', function($table) {
-		$table->dropColumn('published');
-	}
+```php
+Schema::table('books', function($table) {
+	$table->dropColumn('published');
+}
+```
 
 Run it:
 
-	$ php artisan migrate 
-	
+	$ php artisan migrate
+
 Note how Artisan only runs this latest migration. Any time you call `artisan migrate` it will only run migrations that have not already been run.
 
 If you wanted to "go back to the beginning" and revert all migrations you could use this command:
@@ -214,15 +220,13 @@ For a full list of Artisan commands (including migration related commands):
 
 
 
-
-
 ## Your first migrations
 
 Getting your migration code right the first time can be challenging, especially if you're starting a new project with a whole bunch of new tables.
 
 When starting with a brand new app, it's okay to bend the rules a little and rebuild and rerun an existing migration to get your table right.
 
-For example, in the case above when we forgot the `published` field, rather than creating a new migration, it would have been nice to add the field to the original migration that created the table. 
+For example, in the case above when we forgot the `published` field, rather than creating a new migration, it would have been nice to add the field to the original migration that created the table.
 
 Then, we could have run `php artisan migrate:refresh` to reset and re-run all migrations.
 
