@@ -76,9 +76,7 @@ This information can be found on your MAMP Start Page (`http://localhost/MAMP`) 
 
 With this information gathered, open up your **local** database configuration in `/app/config/local/database.php`.
 
-***Common Problem Alert:** There may be several `database.php` files on your `/app/config` folder. Starting out, there should be one at `/app/config/database.php` and one at `/app/config/local/database.php`. Because we're working in the **local** environment right now, make sure you're editing `/app/config/local/database.php`.*
-
-
+**Common Problem Alert:** There may be several `database.php` files on your `/app/config` folder. Starting out, there should be one at `/app/config/database.php` and one at `/app/config/local/database.php`. Because we're working in the **local** environment right now, make sure you're editing `/app/config/local/database.php`.
 
 For our examples we'll be using the MySQL database that comes with MAMP so find `mysql` in the `connections` array. 
 

@@ -31,7 +31,7 @@ foreach ($book as $books) {
 }
 ```
 
-There are tons of methods within the query builder to help you build any query imaginable (check the above-linked docs to see what we mean).
+There are many methods within the query builder to help you build any query imaginable (check the above-linked docs for a full reference).
 
 Or maybe you're an SQL wiz and you don't want any help from the query builder. In this case, you could use the `statement()` method to run any raw SQL statement:
 
@@ -69,11 +69,11 @@ With the big idea of ORM behind us, let's look at the nitty gritty of using it..
 
 ## Create an Eloquent model
 
-An Eloquent model is a Class that represents an entity of your application. For Foobooks, our most obvious entity to start with is the Book entity.
+An Eloquent model is a class that represents an entity of your application. For Foobooks, the most obvious entity to start with is the Book entity.
 
 We already created the `books` table in a previous step, so we can dig right into building the corresponding Book model.
 
-All your app's models are stored in `/app/models/` so create a new file, `app/models/Book.php` with this stub of code:
+All of your applications's models should be saved in `/app/models/` so create a new file, `app/models/Book.php`, with this stub of code:
 
 ```php
 class Book extends Eloquent {
@@ -119,24 +119,24 @@ Route::get('/practice-creating', function() {
 });
 ```
 
-Go ahead and hit this route (`http://localhost/practice-adding-a-book`), then check your database to confirm there's a new row in your `books` table.
+Go ahead and hit this route (`http://localhost/practice-creating`), then check your database to confirm there's a new row in your `books` table.
 
 
 
 ## CRUD - Reading
 
-With some rows in your table, we can now look at retrieving data from a table.
+With some rows in your table, you can retrieve data:
 
-```
+```php
 Route::get('/practice-reading', function() {
 	
 	# The all() method will fetch all the rows from a Model/table
 	$books = Book::all();
 	
-	# Typically we'd pass $books to a View, but for quick and dirty demonstration, let's just output from the route...
+	# Typically we'd pass $books to a View, but for quick and dirty demonstration, let's just output here...
 	foreach($books as $book) {
 		echo $book->title.'<br>';
-		}
+	}
 
 });
 ```
@@ -144,7 +144,7 @@ Route::get('/practice-reading', function() {
 
 ## CRUD - Updating
 
-```
+```php
 Route::get('/practice-updating', function() {
 	
 	# First get a book to update
@@ -164,7 +164,7 @@ Route::get('/practice-updating', function() {
 
 ## CRUD - Deleting
 
-```
+```php
 Route::get('/practice-deleting', function() {
 		
 	# First get a book to delete
@@ -191,7 +191,7 @@ For example, here's a sampling of the kind of database tasks you could end up do
 + Retrieve all the books in alphabetical order by title.
 + Retrieve all the books in descending order according to published date
 + Find any books by the author `Bell Hooks` and update the author name to be `bell hooks` (lowercase).
-+ Remove any books by the author &ldquo;John Grisham&rdquo;
++ Remove any books by the author &ldquo;John Grisham&rdquo;.
 
 
 Building the Eloquent queries to accomplish tasks like these is almost an art form, and like most art forms, you'll have to study and practice with it to get more fluent over time.
