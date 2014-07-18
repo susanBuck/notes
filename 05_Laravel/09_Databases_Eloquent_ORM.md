@@ -21,7 +21,7 @@ At this point, if you're already somewhat comfortable with SQL you could hit the
 
 The query builder is a Laravel component (accessed by the `DB` Facade) which makes it easy to create and run database queries. 
 
-For example, here's how you would grab a single book from the `books` table using the DB `get()` method:
+For example, here's how you would grab all the rows from the `books` table using the DB `get()` method:
 
 ```php
 $books = DB::table('books')->get();
