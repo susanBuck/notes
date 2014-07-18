@@ -133,7 +133,7 @@ public function up() {
 		// keep track of changes to a row
 		$table->timestamps();
 
-		// The rest of our fields...
+		// The rest of the fields...
 		$table->string('title');
 		$table->string('author');
 		$table->integer('published');
@@ -180,11 +180,12 @@ That should do the trick. Examine your new `books` table in phpMyAdmin or MySQL 
 
 ## Altering tables
 
-In the above example, we forgot the `published` field for our `books` table; let's add that now.
 
-Any alterations to an existing table should be done in a new migration, so let's generate a new migration:
+Any alterations to an existing table should be done in a new migration. 
 
-	$ php artisan migrate:make add_published_to_books
+For example, let's imagine you wanted to add a `page_count` field to the books table. Start with a new migration:
+
+	$ php artisan migrate:make `add_page_count_field_to_books_table`
 
 Edit the resulting migration:
 
@@ -192,7 +193,7 @@ Up...
 
 ```php
 Schema::table('books',function($table) {
-		$table->integer('published');
+		$table->integer('page_count');
 });
 ```
 
@@ -200,24 +201,29 @@ Down...
 
 ```php
 Schema::table('books', function($table) {
-	$table->dropColumn('published');
+	$table->dropColumn('page_count');
 }
 ```
 
 Run it:
 
-	$ php artisan migrate
+```bash
+$ php artisan migrate
+```
 
 Note how Artisan only runs this latest migration. Any time you call `artisan migrate` it will only run migrations that have not already been run.
 
 If you wanted to "go back to the beginning" and revert all migrations you could use this command:
 
-	$ php artisan migrate:refresh
+```bash
+$ php artisan migrate:refresh
+```
 
 For a full list of Artisan commands (including migration related commands):
 
-	$ php artisan list
-
+```bash
+$ php artisan list
+```
 
 
 ## Your first migrations
