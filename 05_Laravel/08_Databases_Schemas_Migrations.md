@@ -47,7 +47,7 @@ Open up your newly generated migration, and you should see something like this:
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddPurchaseLinkFieldToBooks extends Migration {
+class CreateBooksTable extends Migration {
 
 	/**
 	 * Run the migrations.
