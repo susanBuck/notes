@@ -42,7 +42,7 @@ Note the generated filename is prefixed with a unique timestamp. This insures mi
 
 Open up your newly generated migration, and you should see something like this:
 
-```lang-php
+```php
 <?php
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
