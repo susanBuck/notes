@@ -17,20 +17,20 @@ The relationship amongst these tables could be described as follows:
 
 __[One to One](http://laravel.com/docs/eloquent#one-to-one)__
 
-+ Each book has one author
 + Book *belongs to* Author
++ Each book has one author
 
 __[One to Many](http://laravel.com/docs/eloquent#one-to-many)__
 
-+ Each author may have many books
 + Author *has many* Books
++ Each author may have many books
 
 __[Many to Many](http://laravel.com/docs/eloquent#many-to-many)__
 
-+ Each book may have many tags
-+ Each tag may belong to many books
 + Tags *belongs to many* Books
 + Books *belongs to many* Tags
++ Each book may have many tags
++ Each tag may belong to many books
 
 The relationships between tables are created using **foreign keys** (FK).
 
@@ -52,7 +52,7 @@ For example, the `books` table has a foreign key field `author_id` which connect
 
 When building your migrations, there are two things you'll need to know (in addition to what you already know about schemas) to set up your relationships:
 
-__First:__ If a column is going to be a FK that connects to an auto-incrementing column on another table, it must be `unsigned`.
+__First:__ If a column is going to be a FK that connects to an auto-incrementing column on another table (common), it must be `unsigned`.
 
 	$table->integer('author_id')->unsigned();
 
@@ -68,49 +68,57 @@ __Second:__ Here's the syntax for defining a FK:
 
 Relationships amongst tables need to be defined in their corresponding Models via relationship methods.
 
-For example, the Author class should have a method called `book()` which returns an Eloquent relationship [hasMany](http://devdocs.io/laravel/api/4.2/illuminate/database/eloquent/model#method_hasMany):
+For example, the Author class should have a method called `book()` which returns the Eloquent relationship [hasMany](http://devdocs.io/laravel/api/4.2/illuminate/database/eloquent/model#method_hasMany):
 
-	class Author extends Eloquent { 
-	
-   		public function book() {
-			return $this->hasMany('Book');
+```php
+class Author extends Eloquent { 
+
+  		public function book() {
+		return $this->hasMany('Book');
    		}
-   	}
+}
+```
    	
-On the flip side, the Book class should have a method called `author()` which returns an Eloquent relationship [belongsTo](http://devdocs.io/laravel/api/4.2/illuminate/database/eloquent/model#method_belongsTo):
+On the flip side, the Book class should have a method called `author()` which returns the Eloquent relationship [belongsTo](http://devdocs.io/laravel/api/4.2/illuminate/database/eloquent/model#method_belongsTo):
 
-	class Book extends Eloquent { 
+```php
+class Book extends Eloquent { 
 
-		public function author() {
-			return $this->belongsTo('Author');
-		}
+	public function author() {
+		return $this->belongsTo('Author');
 	}
+}
+```
 	
 The Tag model should indicate that a tag [belongsToMany](http://devdocs.io/laravel/api/4.2/illuminate/database/eloquent/model#method_belongsToMany) books:
 
-	class Tag extends Eloquent { 
-		
-	    public function books() {
-		    return $this->belongsToMany('Book');
-	    }
-	    
+```php
+class Tag extends Eloquent { 
+	
+	public function books() {
+		return $this->belongsToMany('Book');
 	}
+    
+}
+```
 	
 Likewise, the Book model should indicate that a tag belongsToMany book [belongsToMany](http://devdocs.io/laravel/api/4.2/illuminate/database/eloquent/model#method_belongsToMany) tags:
 
-	class Book extends Eloquent { 
-		
-	    public function author() {
-		    return $this->belongsTo('Author');
-	    }
-	    
-	    public function tags() {
-	        return $this->belongsToMany('Tag');
-	    }
-	    
-	}
+```php
+class Book extends Eloquent { 
+	
+    public function author() {
+	    return $this->belongsTo('Author');
+	 }
+    
+    public function tags() {
+        return $this->belongsToMany('Tag');
+	 }
+    
+}
+```
 
-Once these relationship methods are created, you can put them to use...
+Once these relationships are created, you can put them to use...
 
 
 ## Associate an author with a book
@@ -119,96 +127,107 @@ Every book should be associated with an author...
 
 For example, you could create a new author:
 
-	$author = new Author;
-	$author->name = 'F. Scott Fiztgerald';
-	$author->birth_date = '1896-09-24';
-	$author->save();
+```php
+$author = new Author;
+$author->name = 'F. Scott Fiztgerald';
+$author->birth_date = '1896-09-24';
+$author->save();
+```
 	
-And then you could creat a new book, associating it with the author:
+And then you could create a new book, associating it with the author:
 
-	$book = new Book;
-	$book->title = 'The Great Gatsby';
-	$book->published = 1925;
-	$book->cover = 'http://img2.imagesbn.com/p/9780743273565_p0_v4_s114x166.JPG';
-	$book->purchase_link = 'http://www.barnesandnoble.com/w/the-great-gatsby-francis-scott-fitzgerald/1116668135?ean=9780743273565';
-	$book->author()->associate($author);
-	$book->save();
+```php
+$book = new Book;
+$book->title = 'The Great Gatsby';
+$book->published = 1925;
+$book->cover = 'http://img2.imagesbn.com/p/9780743273565_p0_v4_s114x166.JPG';
+$book->purchase_link = 'http://www.barnesandnoble.com/w/the-great-gatsby-francis-scott-fitzgerald/1116668135?ean=9780743273565';
+$book->author()->associate($author); # <--- Associate the author with this book
+$book->save();
+```
 	
-The key line in the above statement is this one:
-
-	$book->author()->associate($author);
-
-Note how this line is called *before* the `save()` method. This is because `associate` is setting the `author_id` field on the books row; that setting should happen before the row is created.
+Note how the `associate()` method is called *before* the `save()` method. This is because `associate` is setting the `author_id` field on the books row; that setting should happen before the row is created.
 
 
 ## Attach a tag to a book
 
 Assuming you've created a tag...
 
-	$tag = new Tag;
-	$tag->name = 'novel';
-	$tag->save();
+```php
+$tag = new Tag;
+$tag->name = 'novel';
+$tag->save();
+```
 	
 You can now create a book and attach a tag to it:
 
-	$book = new Book;
-	$book->title = 'The Great Gatsby';
-	$book->published = 1925;
-	$book->cover = 'http://img2.imagesbn.com/p/9780743273565_p0_v4_s114x166.JPG';
-	$book->purchase_link = 'http://www.barnesandnoble.com/w/the-great-gatsby-francis-scott-fitzgerald/1116668135?ean=9780743273565';
-	$book->author()->associate($fitzgerald); # <-----
-	$book->save();
-	$book->tags()->attach($tag); 
-
-The key line in the above statement is this one:
-
-	$book->tags()->attach($tag); 
+```php
+$book = new Book;
+$book->title = 'The Great Gatsby';
+$book->published = 1925;
+$book->cover = 'http://img2.imagesbn.com/p/9780743273565_p0_v4_s114x166.JPG';
+$book->purchase_link = 'http://www.barnesandnoble.com/w/the-great-gatsby-francis-scott-fitzgerald/1116668135?ean=9780743273565';
+$book->author()->associate($fitzgerald); 
+$book->save();
+$book->tags()->attach($tag); # <-----
+```
 
 Unlike `associate()`, `attach()` needs to happen *after* the `save()` method. This is because it's creating a row in the `book_tag` pivot table and it needs a `book_id` to do so. The `book_id` won't exist until after the book as been added.
+
+
+
 
 
 ## Querying with relationships
 
 Once your Models have been programmed with relationships, it's easy join data amongst multiple tables.
 
-For example, if you're querying for all books, you may want to join in the related author data. This can be done via the [with](http://devdocs.io/laravel/api/4.2/illuminate/database/eloquent/model#method_with) method and is referred to as **eager loading**:
+For example, if you're querying for all books, you may want to join in the related author data. This can be done via the [with()](http://devdocs.io/laravel/api/4.2/illuminate/database/eloquent/model#method_with) method and is referred to as **eager loading**:
 
-	$books = Book::with('author')->get(); 
+```php
+// Eager load the authors with the books
+$books = Book::with('author')->get(); 
 
-	foreach($books as $book) {
-		echo $book->author->name.' wrote '.$book->title.'<br>';
-	}
+foreach($books as $book) {
+	echo $book->author->name.' wrote '.$book->title.'<br>';
+}
+```
 	
 Same idea, but with tags:
 
-	$books = Book::with('tags')->get(); 
+```php
+// Eager load the tags with the books
+$books = Book::with('tags')->get(); 
 
-	foreach($books as $book) {
-		
-		echo $book->title."<br>";
-		foreach($book->tags as $tag) {
-			echo $tag->name.", ";
-		}
-		
-		echo "<br><br>";
-		
+foreach($books as $book) {
+	
+	echo $book->title."<br>";
+	foreach($book->tags as $tag) {
+		echo $tag->name.", ";
 	}
+	
+	echo "<br><br>";
+	
+}
+```
 
 Or maybe you want the author *and* tags:
 
-	$books = Book::with('tags','author')->get(); 
+```php
+# Eager load tags and authors with the books
+$books = Book::with('tags','author')->get(); 
 
-	foreach($books as $book) {
-		
-		echo $book->title.' by '.$book->author->name.'<br>';
-		foreach($book->tags as $tag) {
-			echo $tag->name.", ";
+foreach($books as $book) {
+	
+	echo $book->title.' by '.$book->author->name.'<br>';
+	foreach($book->tags as $tag) {
+		echo $tag->name.", ";
 		}
-		
-		echo "<br><br>";
-		
-	}
-
+	
+	echo "<br><br>";
+	
+}
+```
 
 
 ## Tips:
@@ -239,14 +258,16 @@ To get around this, you can disable foreign key checks.
 
 Here's a quick and dirty route to clear a bunch of tables, which you can adapt to match your own tables:
 
-	Route::get('/truncate', function() {
-		
-		# Clear the tables to a blank slate
-		DB::statement('SET FOREIGN_KEY_CHECKS=0'); # Disable FK constraints so that all rows can be deleted, even if there's an associated FK
-		DB::statement('TRUNCATE books');
-		DB::statement('TRUNCATE authors');
-		DB::statement('TRUNCATE tags');
-		DB::statement('TRUNCATE book_tag');
-	}
+```php
+Route::get('/truncate', function() {
+	
+	# Clear the tables to a blank slate
+	DB::statement('SET FOREIGN_KEY_CHECKS=0'); # Disable FK constraints so that all rows can be deleted, even if there's an associated FK
+	DB::statement('TRUNCATE books');
+	DB::statement('TRUNCATE authors');
+	DB::statement('TRUNCATE tags');
+	DB::statement('TRUNCATE book_tag');
+}
+```
 	
 Obviously, you'll want to make sure this route is removed from your codebase before launching your live site; you don't want anyone to accidentally stumble on this route and wipe out your data.

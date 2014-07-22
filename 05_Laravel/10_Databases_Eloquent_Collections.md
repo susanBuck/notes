@@ -15,42 +15,50 @@ The data is stored as **items** in the Collection.
 
 
 ## Collection Magic 
-Collections have some magic that lets them adapt to what you need them to do.
+Collections come built in with some magical methods that lets them adapt to what you need them to do.
 
-For example, if you try and `echo` a Collection, it will transform itself into a JSON string.
+For example, if you treat a Collection like a string (e.g. you `echo` it), it will transform itself into a JSON string.
 
-	$collection = Book::all();
+```php
+$collection = Book::all();
 
-	// This will output a JSON string
-	echo $collection;	
+# This will output a JSON string
+echo $collection;	
+```
 	
-This works because the Collection class contains the [__toString](http://php.net/manual/en/language.oop5.magic.php#object.tostring) magic method which outputs a JSON string.
+This works because the Collection class contains the [__toString](http://php.net/manual/en/language.oop5.magic.php#object.tostring) magic method which is programmed to output a JSON string.
 
-Or you can loop through a Collection like an array:
+You can also treat a Collection like an array:
 
-	$collection = Book::all();
+```php
+$collection = Book::all();
 
-	// You can loop through the Collection and access just the data
-	foreach($collection as $book) {
-		echo $book['title']."<br>";
-	}
-	
+# loop through the Collection and access just the data
+foreach($collection as $book) {
+	echo $book['title']."<br>";
+}	
+```
+
 This works because the Collection class implements PHP's [IteratorAggregate](http://php.net/manual/en/class.iteratoraggregate.php) interface.
 	
 Or, if you prefer object notation...
 
-	$collection = Book::all();
+```php
+$collection = Book::all();
 
-	foreach($collection as $book) {
-		echo $book->title."<br>";
-	}
+foreach($collection as $book) {
+	echo $book->title."<br>";
+}
+```
 	
 Because of the above points, you can pass a Collection to a View and have that View iterate through the Collection as if it were a regular array.
 
-If for some reason, you want just a "pure" array, use can use the [toArray()](http://devdocs.io/laravel/api/4.2/illuminate/support/collection#method_toArray) Collection method:
+If for some reason, you want just a &ldquo;pure&rdquo; array of the data in your Collection, use can use the [toArray()](http://devdocs.io/laravel/api/4.2/illuminate/support/collection#method_toArray) method:
 
-	$collection = Book::all();
-	var_dump($collection->toArray());
+```php
+$collection = Book::all();
+var_dump($collection->toArray());
+```
 
 ## Collection Methods
 
@@ -83,33 +91,40 @@ Some of these method names may be familiar, as they also exist as query builder 
 
 ## Query Responsibility
 
-When building a web application, it's good practice to try and minimize the number of queries you're making to the database, as excess database calls can slow down your page load speed.
+When building a web application, it's good practice minimize the number of queries you're making to the database, as excess database calls can slow down site's load time.
 
-One way you can optimize your app is to fetch data from an existing Collection, rather than making another round-trip query on the database.
+One way you can optimize your application is to fetch data from an existing Collection, rather than making another round-trip query on the database.
 
 For example, imagine at the top of a script you call upon the `all()` fetch method to grab all the books for displaying on a table in your View:
 
-	$books = Books::all();
+```php
+$books = Books::all();
+```
 	
 Within the View, you also want to display the first book that was added to the collection.
 
 To gather this info, you could run this query:
 
-	$first = Books::first();
+```php
+$first = Books::first();
+```
 	
 This would work, but it'd run a new SQL query to find the first book. The better solution would to fetch the needed info from the *existing* Collection (stored in the `$books` variable).
 
-	$first = $books->first();
+```php
+$first = $books->first();
+```
 	
 In summary:
 
-	# 2 queries:
-	$books = Book::all(); 
-	$first_book = Book::first();
-	
-	# 1 query:
-	$books = Book::all();
-	$first_book = $books->first();
-	
+```php
+# 2 queries:
+$books = Book::all(); 
+$first_book = Book::first();
+
+# 1 query (better):
+$books = Book::all();
+$first_book = $books->first();
+```
 
 

@@ -142,7 +142,7 @@ Route::get('/practice-reading', function() {
 
 });
 ```
-
+ 
 Same idea, but this time get one specific book:
 
 ```php
