@@ -83,9 +83,11 @@ class Book extends Eloquent {
 	
 There are a few expectations Eloquent has in order to work:
 
++ Your model class should *extend* the `Eloquent` class; this will allow your class to inherit the magical functionality provided by Eloquent ORM.
 + Your model's class name should be the singular version of the corresponding table name, and it should be capitalized. Given this, our model class name is `Book` and our table name is `books`.
-+ All model classes need to *extend* the `Eloquent` class; this will allow your class to inherit the magical functionality provided by Eloquent ORM.
 + All tables must have an auto-incremental, unique primary key column named `id`. In other words, when building your Migrations make sure you have a `$table->increments('id')`. 
+
+The latter two points can be configured if needed&mdash; for example, if you're working with an existing table which you don't have structural control over. If you're starting fresh, though, it's best to follow these conventions.
 
 With this infrastructure in place, let's put Eloquent to work with some fundamental CRUD operations...
 
@@ -190,6 +192,10 @@ Route::get('/practice-deleting', function() {
 });
 ```
 
+
+## Structure of an Eloquent Query
+
+<img src='http://making-the-internet.s3.amazonaws.com/laravel-eloquent-query-structure@2x.png' class='' style='max-width:1368px; width:100%' alt=''>
 
 
 ## What else can you do with Eloquent?
