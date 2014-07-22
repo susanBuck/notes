@@ -47,7 +47,7 @@ Or, if you prefer object notation...
 	
 Because of the above points, you can pass a Collection to a View and have that View iterate through the Collection as if it were a regular array.
 
-If for some reason, you want just a "pure" array, use can use the `toArray()` Collection method:
+If for some reason, you want just a "pure" array, use can use the [toArray()](http://devdocs.io/laravel/api/4.2/illuminate/support/collection#method_toArray) Collection method:
 
 	$collection = Book::all();
 	var_dump($collection->toArray());

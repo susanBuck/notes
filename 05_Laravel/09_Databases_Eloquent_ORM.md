@@ -193,9 +193,14 @@ Route::get('/practice-deleting', function() {
 ```
 
 
-## Structure of an Eloquent Query
+## Query Structure
+
+All ORM queries are made up of *constraints* (optional) and a *fetch* method.
 
 <img src='http://making-the-internet.s3.amazonaws.com/laravel-eloquent-query-structure@2x.png' class='' style='max-width:1368px; width:100%' alt=''>
+
+Eloquent queries return a Collection, which is covered in more detail in the next doc.
+
 
 
 ## What else can you do with Eloquent?
@@ -216,7 +221,7 @@ Building the Eloquent queries to accomplish tasks like these is almost an art fo
 
 We're not going to comprehensively cover all the Eloquent query capabilities, because it's already well-documented in CodeBright and the Laravel documentation.
 
-Be sure you study following pages:
+Be sure to study following pages:
 
 + <http://daylerees.com/codebright/eloquent-queries>
 + <http://daylerees.com/codebright/eloquent-collections>
