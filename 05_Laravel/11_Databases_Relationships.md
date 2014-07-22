@@ -13,24 +13,17 @@ For example, imagine the `Foobooks` example expanded to include a `authors`, and
 
 <img src='http://making-the-internet.s3.amazonaws.com/laravel-foobooks-final-db-schema@2x.png' class='' style='max-width:1264px; width:100%' alt=''>
 
-The relationship amongst these tables could be described as follows:
-
-__[One to One](http://laravel.com/docs/eloquent#one-to-one)__
-
-+ Book *belongs to* Author
-+ Each book has one author
+Foobooks implements two relationship types:
 
 __[One to Many](http://laravel.com/docs/eloquent#one-to-many)__
 
 + Author *has many* Books
-+ Each author may have many books
++ Inverse: Books *belongs to* Author
 
 __[Many to Many](http://laravel.com/docs/eloquent#many-to-many)__
 
 + Tags *belongs to many* Books
 + Books *belongs to many* Tags
-+ Each book may have many tags
-+ Each tag may belong to many books
 
 The relationships between tables are created using **foreign keys** (FK).
 
@@ -191,9 +184,28 @@ Unlike `associate()`, `attach()` needs to happen *after* the `save()` method. Th
 
 ## Querying with relationships
 
-Once your Models have been programmed with relationships, it's easy join data amongst multiple tables.
+Once your Models have been programmed with relationships, it's easy join data amongst multiple tables using [dynamic properties](http://laravel.com/docs/eloquent#dynamic-properties).
 
-For example, if you're querying for all books, you may want to join in the related author data. This can be done via the [with()](http://devdocs.io/laravel/api/4.2/illuminate/database/eloquent/model#method_with) method and is referred to as **eager loading**:
+>> Eloquent allows you to access your relations via *dynamic properties*. Eloquent will automatically load the relationship for you, and is even smart enough to know whether to call the get (for one-to-many relationships) or first (for one-to-one relationships) method. It will then be accessible via a dynamic property by the same name as the relation.
+
+
+```php
+# Get the first book
+$book = Book::first();
+	
+# Get the tags from this book using the "tags" dynamic property
+# The name "tags" corresponds to the the relationship method defined in the Book model
+$tags = $book->tags; 
+	
+foreach($tags as $tag) {
+	echo $tag->name."<br>";
+}
+```
+
+
+### Eager Loading
+
+If you're querying for all books, you may want to join in the related author data with that query. This can be done via the [with()](http://devdocs.io/laravel/api/4.2/illuminate/database/eloquent/model#method_with) method and is referred to as **eager loading**:
 
 ```php
 # Eager load the authors with the books
