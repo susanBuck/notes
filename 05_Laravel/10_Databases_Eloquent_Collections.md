@@ -6,11 +6,11 @@
 
 An Eloquent query returns an object of the [Collection](http://devdocs.io/laravel/api/4.2/illuminate/support/collection) class.
 
-This object includes not only the data you queried for, but a bunch of methods for working with the data.
+This object is a wrapper for an Array called **items** which contains all the data of your query.
 
-The data is stored as **items** in the Collection.
+<img src='http://making-the-internet.s3.amazonaws.com/laravel-collection@2x.png' class='' style='max-width:946px; width:100%' alt='Eloquent queries return Collections'>
 
-
+Not only does the Collection object contain your data, it also contains a bunch of methods for working with the data.
 
 
 

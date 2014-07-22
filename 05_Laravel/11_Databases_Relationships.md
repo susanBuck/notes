@@ -42,10 +42,10 @@ For example, the `books` table has a foreign key field `author_id` which connect
 
 ## Pivot Tables
 
-+ Table that links the two tables together using foreign keys.
++ A pivot table links two tables together using foreign keys.
 + Also known as: &ldquo;lookup table&rdquo;, &ldquo;join table&rdquo;. 
 + A primary key is not needed on a pivot table.
-+ Naming: Use singular version of the name of the two tables it's joining, separate with underscore, list in alphabetical order. Ex: If you're joining the `books` table with the `tags` table, the resulting pivot table name would be `book_tag`.
++ Naming: Use the singular version of the name of the two tables you're joining, separated with an underscore, in alphabetical order. Ex: If you're joining the `books` table with the `tags` table, the resulting pivot table name would be `book_tag`.
 
 
 ## Schema for relationships
@@ -74,7 +74,8 @@ For example, the Author class should have a method called `book()` which returns
 class Author extends Eloquent { 
 
   		public function book() {
-		return $this->hasMany('Book');
+			# Author has many Books
+			return $this->hasMany('Book');
    		}
 }
 ```
@@ -85,6 +86,7 @@ On the flip side, the Book class should have a method called `author()` which re
 class Book extends Eloquent { 
 
 	public function author() {
+		# Book belongs to Author
 		return $this->belongsTo('Author');
 	}
 }
@@ -96,6 +98,7 @@ The Tag model should indicate that a tag [belongsToMany](http://devdocs.io/larav
 class Tag extends Eloquent { 
 	
 	public function books() {
+		# Tags belong to many Books
 		return $this->belongsToMany('Book');
 	}
     
@@ -107,13 +110,15 @@ Likewise, the Book model should indicate that a tag belongsToMany book [belongsT
 ```php
 class Book extends Eloquent { 
 	
-    public function author() {
-	    return $this->belongsTo('Author');
-	 }
+	public function author() {
+		# Book belongs to Author
+    	return $this->belongsTo('Author');
+	}
     
-    public function tags() {
-        return $this->belongsToMany('Tag');
-	 }
+	public function tags() {
+   		# Books belong to many Tags 	
+		return $this->belongsToMany('Tag');
+	}
     
 }
 ```
@@ -148,6 +153,12 @@ $book->save();
 	
 Note how the `associate()` method is called *before* the `save()` method. This is because `associate` is setting the `author_id` field on the books row; that setting should happen before the row is created.
 
+Another way to look at the `associate()` method is that it's doing this:
+
+```php
+$book->author_id = $author->id;
+```
+
 
 ## Attach a tag to a book
 
@@ -172,7 +183,7 @@ $book->save();
 $book->tags()->attach($tag); # <-----
 ```
 
-Unlike `associate()`, `attach()` needs to happen *after* the `save()` method. This is because it's creating a row in the `book_tag` pivot table and it needs a `book_id` to do so. The `book_id` won't exist until after the book as been added.
+Unlike `associate()`, `attach()` needs to happen *after* the `save()` method. This is because it's creating a new row in the `book_tag` pivot table and it needs a `book_id` to do so. The `book_id` won't exist until after the book as been added.
 
 
 
@@ -185,7 +196,7 @@ Once your Models have been programmed with relationships, it's easy join data am
 For example, if you're querying for all books, you may want to join in the related author data. This can be done via the [with()](http://devdocs.io/laravel/api/4.2/illuminate/database/eloquent/model#method_with) method and is referred to as **eager loading**:
 
 ```php
-// Eager load the authors with the books
+# Eager load the authors with the books
 $books = Book::with('author')->get(); 
 
 foreach($books as $book) {
@@ -196,7 +207,7 @@ foreach($books as $book) {
 Same idea, but with tags:
 
 ```php
-// Eager load the tags with the books
+# Eager load the tags with the books
 $books = Book::with('tags')->get(); 
 
 foreach($books as $book) {
@@ -270,4 +281,4 @@ Route::get('/truncate', function() {
 }
 ```
 	
-Obviously, you'll want to make sure this route is removed from your codebase before launching your live site; you don't want anyone to accidentally stumble on this route and wipe out your data.
+Obviously, **you'll want to make sure this route is removed from your codebase before launching your live site**; you don't want anyone to accidentally stumble on this route and wipe out your data.
