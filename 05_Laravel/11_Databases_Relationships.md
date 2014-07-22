@@ -7,6 +7,15 @@
 
 ---
 
+## Summary
+1. Identify the necessary tables and their relationships.
+2. Define the relationships in the Models.
+3. Define the relationships in the structure of the tables (using FKs).
+4. Utilize the relationships when adding data.
+5. Utilize the relationships when querying for data.
+
+----
+
 A web application often contains multiple database tables, and those tables often relate to one another in some way. 
 
 For example, imagine the `Foobooks` example expanded to include a `authors`, and `tags` table, in addition to the original `books` table.
