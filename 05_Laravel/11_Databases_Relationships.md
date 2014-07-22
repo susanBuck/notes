@@ -41,19 +41,6 @@ For example, the `books` table has a foreign key field `author_id` which connect
 + Naming: Use the singular version of the name of the two tables you're joining, separated with an underscore, in alphabetical order. Ex: If you're joining the `books` table with the `tags` table, the resulting pivot table name would be `book_tag`.
 
 
-## Schema for relationships
-
-When building your migrations, there are two things you'll need to know (in addition to what you already know about schemas) to set up your relationships:
-
-__First:__ If a column is going to be a FK that connects to an auto-incrementing column on another table (common), it must be `unsigned`.
-
-	$table->integer('author_id')->unsigned();
-
-__Second:__ Here's the syntax for defining a FK:
-
-	$table->foreign('author_id')->references('id')->on('authors'); 
-
-[Here's the Schema building for all of the Foobooks tables](https://gist.github.com/susanBuck/992b1323f6cc0f68427d).
 
 
 
@@ -116,7 +103,34 @@ class Book extends Eloquent {
 }
 ```
 
-Once these relationships are created, you can put them to use...
+
+
+
+
+## Identifying Relationships in Table Structure
+
+When building your migrations, there are two things you'll need to know (in addition to what you already know about schemas) to set up your relationships:
+
+__First:__ If a column is going to be a FK that connects to an auto-incrementing column on another table (common), it must be `unsigned`.
+
+	$table->integer('author_id')->unsigned();
+
+__Second:__ Here's the syntax for defining a FK:
+
+	$table->foreign('author_id')->references('id')->on('authors'); 
+
+[Here's the migration for all of the Foobooks tables](https://gist.github.com/susanBuck/992b1323f6cc0f68427d).
+
+
+
+## Recap so far
+So far we have:
+
+1. Identified the necessary tables and their relationships.
+2. Defined the relationships in the Models.
+3. Defined the relationships in the structure of the tables (using FKs).
+
+Now, we can start implementing these relationships in the application and its data...
 
 
 ## Associate an author with a book
@@ -188,7 +202,21 @@ Once your Models have been programmed with relationships, it's easy join data am
 
 >> Eloquent allows you to access your relations via *dynamic properties*. Eloquent will automatically load the relationship for you, and is even smart enough to know whether to call the get (for one-to-many relationships) or first (for one-to-one relationships) method. It will then be accessible via a dynamic property by the same name as the relation.
 
+For example, you can fetch a book and have access to its author info...
 
+```php
+# Get the first book as an example
+$book = Book::first();
+		
+# Get the author from this book using the "author" dynamic property
+# "author" corresponds to the the relationship method defined in the Book model
+$author = $book->author; 
+	
+# Print results
+echo $book->title." was written by ".$author->name;
+```
+
+Or its tags...
 ```php
 # Get the first book
 $book = Book::first();
