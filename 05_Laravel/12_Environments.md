@@ -14,7 +14,7 @@ This means that, by default, this Laravel app will have debugging disabled. It's
 
 However, you'll also notice there's another `app.php` inside `/config/local/`, and inside this file `debug` is set to `true`:
 
-``php
+```php
 'debug' => true,
 ```
 
