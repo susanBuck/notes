@@ -70,21 +70,20 @@ Refer to the [Collection API docs for a full list](http://devdocs.io/laravel/api
 
 | Method   |      Usage      |
 |----------|-------------|
-| `all()` |  Retrieve the internal array used by the Collection object. |
-| `first()` | Retrieve the first element in the set. This will be the first element contained within the collections internal array. |
-| `last()` | Opposite of `first()` |
-| `shift()` | Just like `first()` but in addition to retrieving the first element, it'll remove it. |
-| `pop()` | Just like `shift()` but takes from the end. |
-| `each()` | Loop through a collection. Can be used as an alternative to a regular `foreach`. | 
-| `map()` | Loop through a collection, returning a new collection as a result. Good for copying and editing a collection.
-| `filter()` | Loop through a collection, returning true/false as you go. What is true stays, what is false gets removed.
-| `sort()` | Sorts a collection.
-| `reverse()` | Reverses a collection.
-| `merge()` | Merge two collections.
-| `isEmpty()` | Returns a boolean as to whether the given collection is empty or not.
-| `toArray()` | Returns the internal array of the collection.
-| `toJson()` | Returns a JSON string of the internal array of the collection.
-| `count()` | Returns how many instances are in the Collection.
+| [`all()`](http://devdocs.io/laravel/api/4.2/illuminate/support/collection#method_all) |  Get all of the items in the collection. |
+| [`first()`](http://devdocs.io/laravel/api/4.2/illuminate/support/collection#method_first) | Get the first item from the collection. |
+| [`last()`](http://devdocs.io/laravel/api/4.2/illuminate/support/collection#method_last) | Get the last item from the collection. |
+| [`shift()`](http://devdocs.io/laravel/api/4.2/illuminate/support/collection#method_shift) | Get and remove the first item from the collection. |
+| [`pop()`](http://devdocs.io/laravel/api/4.2/illuminate/support/collection#method_pop) | Get and remove the last item from the collection. |
+| [`each()`](http://devdocs.io/laravel/api/4.2/illuminate/support/collection#method_each) | Loop through each item in a collection. Can be used as an alternative to a regular `foreach`. | 
+| [`map()`](http://devdocs.io/laravel/api/4.2/illuminate/support/collection#method_map) | Loop through a collection, returning a new collection as a result. Good for copying and editing a collection.
+| [`filter()`](http://devdocs.io/laravel/api/4.2/illuminate/support/collection#method_filter) | Loop through a collection, returning true/false as you go. What is true stays, what is false gets removed.
+| [`sort()`](http://devdocs.io/laravel/api/4.2/illuminate/support/collection#method_sort) | Sort through each item with a callback.
+| [`reverse()`](http://devdocs.io/laravel/api/4.2/illuminate/support/collection#method_reverse) | Reverses a collection.
+| [`isEmpty()`](http://devdocs.io/laravel/api/4.2/illuminate/support/collection#method_isEmpty) | Determine if the collection is empty or not.
+| [`toArray()`](http://devdocs.io/laravel/api/4.2/illuminate/support/collection#method_toArray) | Get the collection of items as a plain array.
+| [`toJson()`](http://devdocs.io/laravel/api/4.2/illuminate/support/collection#method_toJson) | Get the collection of items as JSON.
+| [`count()`](http://devdocs.io/laravel/api/4.2/illuminate/support/collection#method_count) | Count the number of items in the collection. |
 
 Some of these method names may be familiar, as they also exist as query builder methods. So what's the difference? Read on...
 	
