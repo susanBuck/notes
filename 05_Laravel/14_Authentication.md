@@ -11,18 +11,18 @@ The request lifecycle of a webpage is stateless. This means if you need to track
 
 >> *A session is a little text payload with an associated browser cookie that will allow PHP and Laravel to remember your user between requests.* - CodeBright, Authentication
 
-Example of said &ldquo;little text payload:&rdquo;
+Example of said *little text payload*:
 ```
 a:4:{s:6:"_token";s:40:"M4KdHqhUCn3y3gA2wN72ovHpJz6wgXLwORCWb45x";s:22:"PHPDEBUGBAR_STACK_DATA";a:0:{}s:5:"flash";a:2:{s:3:"old";a:0:{}s:3:"new";a:0:{}}s:9:"_sf2_meta";a:3:{s:1:"u";i:1406109856;s:1:"c";i:1406108609;s:1:"l";s:1:"0";}}
 ```
 
-Where Sessions are stored depends on what Session driver your server is using, here are the options (all supported by Laravel):
+Where Sessions are stored depends on what Session driver your server is using. Here are the options (all supported by Laravel):
 
-+ **file** - sessions will be stored in app/storage/sessions.
++ **file** - sessions will be stored in `/app/storage/sessions`.
 + **cookie** - sessions will be stored in secure, encrypted cookies.
 + **database** - session will be stored in database (by default in table `sessions`).
 + **memcached / redis** - sessions will be stored in one of these fast, cached based stores.
-+ **array** - sessions will be stored in a simple PHP array and will not be persisted across requests.
++ **array** - sessions will be stored in a simple PHP array and will not be persisted across requests; useful for Unit Testing.
 
 By default, Laravel uses the `file` Session driver, but this can be changed in `app/config/session.php`.
 
@@ -74,14 +74,15 @@ Look good? Run your migration to build the user's table:
 
 ## User Model
 
-Because working with users is such a common task, Laravel ships with a boilerplate User Model. Check it out in `/app/models/User.php`.
+Because working with users is such a common task, Laravel ships with a boilerplate User Model. 
+
+Check it out in `/app/models/User.php`.
 
 
 
 ## Sign up
 
 Create a View which has a form for users to sign up:
-
 ```html
 <!-- /app/views/signup.blade.php -->
 <h1>Sign up</h1>
@@ -104,7 +105,6 @@ We're using the Form helper to generate the form tags which has a couple useful 
 + If we send the user back to this page because of a failed sign-up, the email field will automatically pre-fill with their last entry. For security reasons, this does not happen in the password field.
 
 Create a **get** route to display the sign up form:
-
 ```php
 // app/routes.php`:
 
@@ -114,7 +114,6 @@ Route::get('/signup', function() {
 ```
 
 Create a **post** route to process the sign up form:
-
 ```php
 Route::post('/signup', 
 	array(
@@ -147,7 +146,7 @@ Route::post('/signup',
 
 Notes:
 
-+ Note the usage of the `before` = `csrf` filter. This ensures that the CSRF token in our form is legit and screens against cross site forgery requests. If you haven't already explored filters, you can read more here: [CodeBright: Filters](http://daylerees.com/codebright/filters).
++ The `before = csrf` filter ensures that the CSRF token in the submitted form is legit, screening against Cross Site Forgery Requests. If you haven't already explored filters, you can read more here: [CodeBright: Filters](http://daylerees.com/codebright/filters).
 + The `Hash::make()` method is used to hash the password; this is good because you never want to store plain-text passwords in your database.
 + We're using a [PHP try catch Exception](http://php.net/manual/en/language.exceptions.php) to handle failed login attempts.
 + If a login fails, the user is redirected back to the sign-up page with a flash_message (more on that below).
@@ -158,9 +157,15 @@ Notes:
 ### Flash messages
 In both the redirects above, we're passing along a value `flash_message`. 
 
-A flash message is a message that appears on page for a single request life cycle and is useful for displaying temporary messages to the user.
+A flash message is technique used to display a message on a page for a single request lifecycle. For our authentication system, we'll use flash messages for the following purposes:
 
-A flash message is something you may want to use on numerous pages, so set up some code in your master template file to echo out the flash message if it exists:
+	+ Let the user know if there was a problem with sign up
+	+ Let the user know if there was a problem with log in
+	+ Let the user know if sign up was succesful
+	+ Let the user know if log in was successful
+
+
+A flash message is something you'll likely want to use on numerous pages through your application, so set up some code in your master template file to echo out the flash message if it exists:
 
 ```html
 <body>
@@ -172,7 +177,13 @@ A flash message is something you may want to use on numerous pages, so set up so
 
 We added a class `flash-message` so we could style it via CSS to make it stand out. If you're familiar with Twitter Bootstrap, the [Alert component](http://getbootstrap.com/2.3.2/components.html#alerts) can be useful for displaying flash messages.
 
+In these examples we're creating the flash messages by passing data on our redirects with the `with()` method. You can also set flash data using `Session::flash()`:
 
+```php
+Session::flash('flash_message', 'Hello!');
+```
+
+Read more: [Laravel Docs: Flash Data]((http://laravel.com/docs/session#flash-data))
 
 
 
@@ -206,6 +217,7 @@ Route::get('/login', function() {
 });
 ```
 
+All of the above is pretty similar to the sign up form.
 
 Create a **post** route to process the login form:
 
@@ -231,11 +243,12 @@ Route::post('/login',
 ```
 
 Notes:
-+ Logging in a user entails passing an array of credentials to the `Auth::attempt()` method. 
-+ You don't have to encrypt the password, Auth will take care of that for you.
++ Logging in a user entails passing an array of credentials to the [`Auth::attempt()`](http://devdocs.io/laravel/api/4.2/illuminate/auth/guard#method_attempt) method. 
++ We're defaulting `remember` to be true so the user will be logged in indefinitely or until they log out. Alternatively, you could include a checkbox in your form that lets the user specify whether they want to be remembered.
++ You don't have to hash the password, Auth will take care of that for you.
 + Because `Auth::attempt()` returns a nice boolean value of whether a login was successful, we used an *if else* statement here instead of a *try catch*.
 + On success, `Redirect::intended('/')` will send the user back to the last page they were at before they were sent to the login page. If there is no previous page, it goes to the specified default (in this case that's the homepage via `/`).
-
++ FYI: Once a user is authenticated, you can pull out user info from the model like this `$email = Auth::user()->email;`
 
 
 ## Logout
@@ -258,7 +271,7 @@ Route::get('/logout', function() {
 Notes:
 
 + No special forms needed here, just a simple call to `Auth::logout()`.
-+ All a user has to do to logout is hit this route; given that it makes sense to display a *logout* link somewhere on your site that will send your user to this route.
++ All a user has to do to logout is visit this route; given that it makes sense to display a *logout* link somewhere on your site that will send your user to this route.
 + Upon logging out, the user is redirected to the homepage.
 
 
@@ -303,7 +316,7 @@ Route::get('/list/{format?}',
 );
 ```
 
-The `auth` filter is one that comes baked into Laravel by default. Open `/app/filters.php` to explore its contents. In summary, when you apply this filter it checks to see if the user is a guest (i.e. not logged in) and if they are, it redirects them to your login page.
+The `auth` filter is one that comes baked into Laravel by default. Open `/app/filters.php` to explore its contents. In summary: when you apply this filter it checks to see if the user is a guest (i.e. not logged in) and if they are, it redirects them to your login page.
 
 
 
