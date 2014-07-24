@@ -1,6 +1,7 @@
 ## Reference
 + <http://laravel.com/docs/session>
 + <http://laravel.com/docs/security>
++ <http://machinesaredigging.com/2013/10/29/how-does-a-web-session-work/>
 + CodeBright: Authentication
 
 ---
@@ -108,10 +109,19 @@ Create a **get** route to display the sign up form:
 ```php
 // app/routes.php`:
 
-Route::get('/signup', function() {
-	return View::make('signup');
-});
+Route::get('/signup',
+	array(
+		'before' => 'guest',
+		function() {
+	    	return View::make('signup');
+		}
+	)
+);
 ```
+
+The only thing new about the above code is the `'before' => 'guest'` filter which will prevent already-logged in users from accessing this route. The `guest` filter comes pre-baked into `/app/filters.php` and it will redirect users who are already logged in back to your application's homepage.
+
+If you haven't already explored filters, you can read more here: [CodeBright: Filters](http://daylerees.com/codebright/filters).
 
 Create a **post** route to process the sign up form:
 ```php
@@ -146,7 +156,7 @@ Route::post('/signup',
 
 Notes:
 
-+ The `before = csrf` filter ensures that the CSRF token in the submitted form is legit, screening against Cross Site Forgery Requests. If you haven't already explored filters, you can read more here: [CodeBright: Filters](http://daylerees.com/codebright/filters).
++ The `before = csrf` filter ensures that the CSRF token in the submitted form is legit, screening against Cross Site Forgery Requests. This `csrf` filter comes pre-baked into the `/app/filters.php` file.
 + The `Hash::make()` method is used to hash the password; this is good because you never want to store plain-text passwords in your database.
 + We're using a [PHP try catch Exception](http://php.net/manual/en/language.exceptions.php) to handle failed login attempts.
 + If a login fails, the user is redirected back to the sign-up page with a flash_message (more on that below).
@@ -159,10 +169,11 @@ In both the redirects above, we're passing along a value `flash_message`.
 
 A flash message is technique used to display a message on a page for a single request lifecycle. For our authentication system, we'll use flash messages for the following purposes:
 
-	+ Let the user know if there was a problem with sign up
-	+ Let the user know if there was a problem with log in
-	+ Let the user know if sign up was succesful
-	+ Let the user know if log in was successful
+Let the user know if...
++ there was a problem with sign up
++ there was a problem with log in
++ sign up was succesful
++ log in was successful
 
 
 A flash message is something you'll likely want to use on numerous pages through your application, so set up some code in your master template file to echo out the flash message if it exists:
@@ -173,6 +184,8 @@ A flash message is something you'll likely want to use on numerous pages through
 	@if(Session::get('flash_message'))
 		<div class='flash-message'>{{ Session::get('flash_message') }}</div>
 	@endif
+	
+	[... Rest of your page ...]
 ```
 
 We added a class `flash-message` so we could style it via CSS to make it stand out. If you're familiar with Twitter Bootstrap, the [Alert component](http://getbootstrap.com/2.3.2/components.html#alerts) can be useful for displaying flash messages.
@@ -183,7 +196,9 @@ In these examples we're creating the flash messages by passing data on our redir
 Session::flash('flash_message', 'Hello!');
 ```
 
-Read more: [Laravel Docs: Flash Data]((http://laravel.com/docs/session#flash-data))
+Read more: 
++ [Laravel Docs: Flash Data]((http://laravel.com/docs/session#flash-data).
++ [Flash message package to implement success, error or warning flash messages](https://github.com/laracasts/flash)
 
 
 
@@ -211,10 +226,14 @@ Create a View which has a form for users to log in:
 Create a **get** route to display the log in form:
 
 ```php
-// app/routes.php`:
-Route::get('/login', function() {
-	return View::make('login');
-});
+Route::get('/login',
+	array(
+		'before' => 'guest',
+		function() {
+			return View::make('login');
+		}
+	)
+);
 ```
 
 All of the above is pretty similar to the sign up form.
@@ -302,7 +321,7 @@ Now that you have login functionality, you can use it to secure pages that shoul
 
 For example, let's make the `list` route (the one that shows all the books) a page that can only be viewed by authenticated users.
 
-To do this, instead of passing a closure to the Route, you should pass an array so you can specify a `before` Filter, which should be set to `auth`.
+To do this, add a `'before' => 'auth'` filter:
 
 ```php
 # /app/routes.php
@@ -319,7 +338,9 @@ Route::get('/list/{format?}',
 The `auth` filter is one that comes baked into Laravel by default. Open `/app/filters.php` to explore its contents. In summary: when you apply this filter it checks to see if the user is a guest (i.e. not logged in) and if they are, it redirects them to your login page.
 
 
+## More...
 
+That's it for a basic authentication system. If you want to dig deeper, you can implement [password reminders and resets](http://laravel.com/docs/security#password-reminders-and-reset).
 
 
 
