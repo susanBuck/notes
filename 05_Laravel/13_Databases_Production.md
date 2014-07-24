@@ -79,7 +79,7 @@ The procedure for setting up your live server database will look something like 
 
 1. Create a new MySQL database.
 2. Locate the following MySQL credentials:
-	1. hostname
+	1. host
 	2. username
 	3. password
 3. Plug these credentials into your production `database.php` configuration file.
@@ -126,9 +126,6 @@ return array(
 );
 ```
 
-Save, add and commit your changes then push them to your PagodaBox remote.
-
-
 __Migrations:__
 To set up migrations on PagodaBox, open the `Boxfile` located in the root of your project. If you'll recall from when you first set up deployment to PagodaBox, the `Boxfile` is a PagodaBox-specific configuration file.
 
@@ -141,12 +138,12 @@ after_deploy:
 	- "php artisan migrate"
 ```
 
-This will run your database migrations on PagodaBox after each deployment. This is necessary because SSH does not allow SSH access to manually run this command yourself.
+This will run your database migrations on PagodaBox after each deployment. This is necessary because PagodaBox does not allow SSH access to manually run this command yourself.
 
-Save, add, commit and push your changes to Pagoda once again. Pay attention to the output Pagoda gives you in command line as it re-deploys because there may be valuable debugging info if a problem occurs.
+Save, add, commit and push your changes to Pagoda. Pay attention to the output Pagoda gives you as it re-deploys because there may be valuable debugging info if a problem occurs.
 
 __Test it:__
-Finally, test things out: hit the debug route described at the top of this doc. If you see the green bar telling you your connection is confirmed, you're good to go and you can scroll down to the end of this doc for details on loading data. If you see a red bar, you've got some debugging to do.
+Visit the debug route described at the top of this doc. If you see the green bar telling you your connection is confirmed, you're good to go and you can scroll down to the end of this doc for details on loading data. If you see a red bar, you've got some debugging to do.
 
 
 
@@ -161,23 +158,25 @@ Add a new **MySQL Cartridge** on your OpenShift application:
 
 <img src='http://making-the-internet.s3.amazonaws.com/laravel-openshift-mysql@2x.png' class='' style='max-width:1346px; width:100%' alt=''>
 
-Make note of the MySQL `Root User` and `Root Password` credentials it gives you.
+Make note of the MySQL `Root User` and `Root Password` credentials it gives you (these values can also be retrieved at any time from your application's dashboard).
 
-You also need to locate the host name for your MySQL database on  the `host` value. This can be found by SSH'ing into your OpenShift server and running the export command which will print out all your OpenShift environment variables:
+Next, you need to locate the host name your OpenShift MySQL database uses. This can be found by SSH'ing into your OpenShift server and running the export command which will print out a list of environment variables.
 
 ```bash
 $ export
 ```
 
-Your MySQL `host` is the IP address listed next to the  `OPENSHIFT_MYSQL_DB_HOST` variable.
+The value you're looking for is the IP address listed to the right of `OPENSHIFT_MYSQL_DB_HOST`.
 
 <img src='http://making-the-internet.s3.amazonaws.com/laravel-openshift-export-environment-variables@2x.png' class='' style='max-width:1039px; width:100%' alt=''>
 
-With your credentials on hand, it's time to plug them in.
+With your credentials gathered, it's time to plug them in.
 
 Locally, open (or create if it doesn't exist) `/app/config/production/database.php`.
 
-The array that this file returns need to include an index `connections` that includes an array of `mysql` credentials like the code that follows. Update `database` and `username` to match the `Root User` and `Root Password` PagodaBox gave you in the above step.
+The array that this file returns need to include an index `connections` that includes an array of `mysql` credentials like the code that follows. 
+
+Update `host`, `database`, `username` and `password` to be the values you gathered in the above steps.
 
 ```php
 <?php
@@ -215,7 +214,7 @@ $ php artisan migrate
 
 
 __Test it:__
-Finally, test things out: hit the debug route described at the top of this doc. If you see the green bar telling you your connection is confirmed, you're good to go and you can scroll down to the end of this doc for details on loading data. If you see a red bar, you've got some debugging to do.
+Visit the debug route described at the top of this doc. If you see the green bar telling you your connection is confirmed, you're good to go and you can scroll down to the end of this doc for details on loading data. If you see a red bar, you've got some debugging to do.
 
 
 
@@ -301,7 +300,7 @@ $ php artisan migrate
 
 
 __Test it:__
-Finally, test things out: hit the debug route described at the top of this doc. If you see the green bar telling you your connection is confirmed, you're good to go and you can scroll down to the end of this doc for details on loading data. If you see a red bar, you've got some debugging to do.
+Visit the debug route described at the top of this doc. If you see the green bar telling you your connection is confirmed, you're good to go and you can scroll down to the end of this doc for details on loading data. If you see a red bar, you've got some debugging to do.
 
 
 
