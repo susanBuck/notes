@@ -51,7 +51,7 @@ Route::get('/debug', function() {
 });
 ```
 
-If you get stuck in the following steps, hit this route to make sure you're working in the correct environment using the correct database settings.
+If you get stuck in the following steps, visit this route in your browser to make sure you're working in the correct environment using the correct database settings.
 
 The output will look something like this:
 
