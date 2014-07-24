@@ -188,7 +188,7 @@ A flash message is something you'll likely want to use on numerous pages through
 	[... Rest of your page ...]
 ```
 
-We added a class `flash-message` so we could style it via CSS to make it stand out. If you're familiar with Twitter Bootstrap, the [Alert component](http://getbootstrap.com/2.3.2/components.html#alerts) can be useful for displaying flash messages.
+We added a class `flash-message` so we could style it via CSS to make it stand out. If you're familiar with Twitter Bootstrap, the [Alert component](http://getbootstrap.com/2.3.2/components.html#alerts) can be useful for styling flash messages.
 
 In these examples we're creating the flash messages by passing data on our redirects with the `with()` method. You can also set flash data using `Session::flash()`:
 
@@ -197,7 +197,7 @@ Session::flash('flash_message', 'Hello!');
 ```
 
 Read more: 
-+ [Laravel Docs: Flash Data]((http://laravel.com/docs/session#flash-data).
++ [Laravel Docs: Flash Data](http://laravel.com/docs/session#flash-data).
 + [Flash message package to implement success, error or warning flash messages](https://github.com/laracasts/flash)
 
 
