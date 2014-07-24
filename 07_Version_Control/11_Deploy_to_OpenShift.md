@@ -142,7 +142,13 @@ While you can see your code, avoid making any changes to it here. You want to ma
 
 >> All OpenShift applications are built around a Git source control workflow - you code locally, then push your changes to the server. 
 
-Type `exit` to disconnect from the OpenShift Shell and return to the command line on your local computer.	
+To see all your OpenShift environment variables, run this command:
+
+```bash
+$ export
+```
+
+Run the `exit` command to disconnect from the OpenShift Shell and return to the command line on your local computer.	
 
 
 ## Deploying to OpenShift via Git

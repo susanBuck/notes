@@ -1,4 +1,4 @@
-With your Laravel app up and running locally, let's look at the procedure for getting it running on a live server.
+With your Laravel app up and running locally, let's look at the procedure for getting it running on a production (aka live) server.
 
 The following instructions cover deploying to **OpenShift**, **DigitalOcean** and **PagodaBox**. Skip to the one that matches the server you're deploying to.
 
@@ -32,14 +32,15 @@ If you compare the contents of your local app to your live app, you'll notice th
 
 Given this, you need to have Composer build your vendor's directory with this command:
 
-	$ composer update --prefer-dist
+	$ composer install
 	
-When that command is complete, if you view the contents of your app, you should now see a `vendors/` directory.
+Be patient with this process&mdash; it can take upwards of 10+ minutes depending on how many dependencies have to be loaded.
+
+When the Composer install is complete, run `ls` to view the contents of your project; you should now see a `vendors/` directory.
 
 ### Test it out
 
-When you access your OpenShift app URL are you seeing the same Laravel welcome screen you saw on your local server? If yes, you're good to go!
-
+When you access your OpenShift application URL are you seeing the same Laravel welcome screen you saw on your local server? If yes, you're good to go!
 
 ### A note on document root on OpenShift
 
@@ -63,16 +64,17 @@ For reference, here's the logic OpenShift uses to determine what your DocumentRo
 With setup complete, here are the two steps you'll take whenever you want update your live app with code changes:
 
 1. From local, push to your `openshift` remote
-2. If you made any changes to your dependencies, SSH in and run `composer update --prefer-dist`
+2. If you made any changes to your dependencies, SSH in and run `composer install`
 
 ---
 
 
+
+
+
 ### DigitalOcean
 
-By the time you get to this doc, you should already have a DigitalOcean droplet created (assuming you used DigitalOcean as your live server for the `hello-world` exercise). Given that, you don't need to create a new Droplet for this app; instead your new Laravel app will sit parallel to any other applications you may already have on your droplet.
-
-Steps 1-3 above are covered in detail in the **[Deploy to DigitalOcean doc](https://github.com/susanBuck/notes/blob/master/07_Version_Control/10_Deploy_to_Digital_Ocean.md)**, so if you need a refresher, go there.
+By the time you get to this doc, you should already have a DigitalOcean droplet created (assuming you used DigitalOcean as your production server for the `hello-world` exercise). Given that, you don't need to create a new Droplet for this app; instead your new Laravel app will sit parallel to any other applications you may already have on your droplet.
 
 __Step 1)__ SSH into your DigitalOcean Droplet and navigate into your web accessible directory at `/var/www/html`.
 
@@ -88,22 +90,55 @@ __Step 3)__ Create a new subdomain and VirtualHost to access your new Laravel Ap
 		ServerName foobook.dwa15-practice.biz
 		DocumentRoot "/var/www/html/foobook/public"
 		<Directory "/var/www/html/foobook/public">
-			AllowOverride all
+			AllowOverride All
 		 </Directory>
 	</VirtualHost>	
 
-__Step 4)__ 
+__Step 4)__ If you haven't already installed Composer on your Droplet, you'll need to do that now. 
+
+Here's a summary of the commands ([full details here](https://github.com/susanBuck/notes/blob/master/05_Laravel/01_Composer_Setup.md#install-composer-on-mac)):
+
+```bash
+$ cd /usr/local/bin
+$ curl -sS https://getcomposer.org/installer | php 
+$ mv composer.phar composer
+$ composer
+```
+
+__Step 5)__ 
  
-If you compare the contents of your local app to your live app, you'll notice the live app is missing a `vendor/` directory. This is because vendors are managed by Composer and not version controlled (if you open `.gitignore` you'll see `vendor/` there).
+If you compare the contents of your local application files to your production application files on DigitalOcean, you'll notice the DigitalOcean version is missing a `vendor/` directory. This is because vendors are managed by Composer and not version controlled (if you open `.gitignore` you'll see `vendor/` there).
 
 Given this, you need to have Composer build your vendor's directory with this command:
 
-	$ composer install --prefer-dist
+```bash
+$ composer install --prefer-dist
+```
 	
 When that command is complete, if you view the contents of your live app, you should now see a `vendors/` directory.
 
+
+__Step 6)__
+Laravel requires the PHP extension mcrypt so run this command to make sure it's enabled:
+
+```bash
+$ sudo php5enmod mcrypt
+```
+
+You should also make sure Apache mod_rewrite is enabled since Laravel needs that for routing:
+
+```bash
+$ a2enmod rewrite
+```
+
+Restart Apache to make these two change take effect:
+
+```bash
+$ sudo service apache2 restart
+```
+
 __Step 5)__
-Just like on your local server, Laravel needs write access to the storage directory on your live server; run this command to make that happen:
+Just like on your local server, Laravel needs write access to the storage directory on your production server; run this command to make that happen:
 
 	$ chmod -R 777 app/storage
 
@@ -115,31 +150,35 @@ When you access your DigitalOcean subdomain are you seeing the same Laravel welc
 
 ### Moving forward:
 
-With setup complete, here are two steps you'll take whenever you want update your live app at DigitalOcean with code changes:
+With setup complete, here are two steps you'll take whenever you want update your production application at DigitalOcean with code changes:
 
 1. From local, push to your `github` remote.
 2. SSH into your DigitalOcean droplet and navigate into your app folder, then run `git pull`.
-2. Also while SSH'd in to your app folder, run `composer install --prefer-dist` to install any dependencies.
+2. Also while SSH'd in to your app folder, run `composer install` to install any dependencies.
 
 ---
 
-## Pagoda
 
-All the details for getting an app online at Pagoda are covered in the **[Deploy to Pagoda doc](https://github.com/susanBuck/notes/blob/master/07_Version_Control/10_Deploy_to_Pagoda.md)**. Go there and follow the instructions for pushing your new Laravel app up to Pagoda.
+
+
+
+## PagodaBox
+
+All the details for getting an app online at PagodaBox are covered in the **[Deploy to Pagoda doc](https://github.com/susanBuck/notes/blob/master/07_Version_Control/10_Deploy_to_Pagoda.md)**. Go there and follow the instructions for pushing your new Laravel app up to PagodaBox.
 
 Here's a summary of the steps:
 
-1. Create a new Pagoda application.
+1. Create a new PagodaBox application.
 2. Create a remote on your local project for this new pagoda app.
 3. Push to this remote.
 
-At this point, your code is deployed but when you go to your app's url on Pagoda, you'll see a directory listing.
+At this point, your code is deployed but when you go to your app's url on PagodaBox, you'll see a directory listing.
 
 <img src='http://making-the-internet.s3.amazonaws.com/laravel-home-directory-not-set-on-pagoda.png' class='' style='max-width:580px; width:100%;' alt='Document root not set on pagoda'>
 
-This is because Pagoda is not pointing to your `public/` directory, which Laravel requires.
+This is because PagodaBox is not pointing to your `public/` directory, which Laravel requires.
 
-To fix this, you need to create a [Boxfile](http://help.pagodabox.com/customer/portal/articles/175475-understanding-the-boxfile) (capital B, no extension) which contains all configurations (in [yaml](http://en.wikipedia.org/wiki/YAML)) related to your app's deployment for Pagoda. 
+To fix this, you need to create a [Boxfile](http://help.pagodabox.com/customer/portal/articles/175475-understanding-the-boxfile) (capital B, no extension) which contains all configurations (in [yaml](http://en.wikipedia.org/wiki/YAML)) related to your app's deployment for PagodaBox. 
 
 The key configuration we need is `document_root: public` but we'll also set up a variety of other configurations as well.
 

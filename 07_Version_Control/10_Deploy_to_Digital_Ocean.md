@@ -199,7 +199,7 @@ of `/etc/apache2/sites-enabled/000-default.conf`:
 	  ServerName helloworld.dwa15-practice.biz
 	  DocumentRoot "/var/www/html/hello-world"
 	  <Directory "/var/www/html/hello-world">
-	    AllowOverride all
+	    AllowOverride All
 	  </Directory>
 	</VirtualHost>	
 
@@ -207,9 +207,13 @@ Be sure to change the `ServerName` to match your domain.
 
 Also, adjust the `DocumentRoot` and `Directory` to point to your `hello-world` directory.
 
-To make these changes take effect, goto your DigitalOcean Droplet settings and find the option to **Power Cycle**.
+To make these changes take effect, restart Apache:
 
-Once your Droplet is restarted, test out your subdomain `helloworld.yourdomain.com`.
+```bash
+$ sudo service apache2 restart
+```
+
+Once the restart is complete, test out your subdomain `helloworld.yourdomain.com`.
 
 <img src='http://making-the-internet.s3.amazonaws.com/version-control-subdomain-good@2x.png' class='' style='max-width:588px; width:75%' alt=''>
 
