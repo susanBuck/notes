@@ -129,7 +129,7 @@ return array(
 __Migrations:__
 To set up migrations on PagodaBox, open the `Boxfile` located in the root of your project. If you'll recall from when you first set up deployment to PagodaBox, the `Boxfile` is a PagodaBox-specific configuration file.
 
-At the end of the Boxfile, in the section under `after_deploy:` add the `php artisan migrate command`
+At the end of the Boxfile, in the section under `after_deploy:` add the `php artisan migrate` command.
 
 ```
 after_deploy:
@@ -160,7 +160,7 @@ Add a new **MySQL Cartridge** on your OpenShift application:
 
 Make note of the MySQL `Root User` and `Root Password` credentials it gives you (these values can also be retrieved at any time from your application's dashboard).
 
-Next, you need to locate the host name your OpenShift MySQL database uses. This can be found by SSH'ing into your OpenShift server and running the export command which will print out a list of environment variables.
+Next, you need to locate the host name your OpenShift MySQL database uses. This can be found by SSH'ing into your OpenShift server and running the `export` command, which will print out a list of environment variables.
 
 ```bash
 $ export
