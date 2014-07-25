@@ -299,7 +299,7 @@ Notes:
 
 Somewhere on your site (perhaps in the master template so it's available on every page) you can use the `Auth::check()` method to determine if a user is logged in. 
 
-If they are, you can display a link to the login route.
+If they are, you can display a link to the logout route.
 
 If they are not, you can display links to sign up or log in.
 
