@@ -114,3 +114,50 @@ View:
 
 [...Form for adding a user goes here...]
 ```
+
+
+## Catching Errors
+In addition to the basic form validation described above, there are other fail points that may exist in your application.
+
+For example, here's a show action for a Foobooks Tag:
+
+```php
+public function show($id) {
+	
+	$tag = Tag::find($id);
+		
+	return View::make('tag_show')->with('tag', $tag);
+}
+```
+
+This action would be called via the URL `http://localhost/tag/{tag_id}`.
+
+But what happens if this route is called with a tag id that doesn't exist?
+
+When debugging is turned on, the error will trickle down into the View when it first attempts to use the `$tag` collection:
+
+```php
+Trying to get property of non-object (View: /Users/Susan/Sites/dwa15-summer2014/foobooks/app/views/tag_show.blade.php)
+```
+
+When debugging is turned off, the user will see a generic error message.
+
+We can improve upon this via two steps:
+
+1. Replace the `find()` method with `findOrFail()` which will return an exception if the tag is not found.
+2. Use a PHP [try catch](http://php.net/manual/en/language.exceptions.php) to handle the exception.
+
+```php
+public function show($id) {
+	
+		try {
+			$tag = Tag::findOrFail($id);
+		}
+		catch(Exception $e) {
+			return Redirect::to('/tag')->with('flash_message', 'Tag not found');
+		}
+							
+		return View::make('tag_show')->with('tag', $tag);
+	}
+```
+
