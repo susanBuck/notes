@@ -233,11 +233,13 @@ According to REST conventions, your Routes would be defined like this:
 Route::get('/tag', 'TagController@index');
 Route::get('/tag/create', 'TagController@create');
 Route::post('/tag', 'TagController@store');
-Route::get('/tag/{book_id}', 'TagController@show');
-Route::get('/tag/{book_id}/edit', 'TagController@edit');
-Route::put('/tag/{book_id}', 'TagController@update');
-Route::delete('/tag/{book_id}', 'TagController@destroy');
+Route::get('/tag/{tag_id}', 'TagController@show');
+Route::get('/tag/{tag_id}/edit', 'TagController@edit');
+Route::put('/tag/{tag_id}', 'TagController@update');
+Route::delete('/tag/{tag_id}', 'TagController@destroy');
 ```
+
+[You can see a table of these routes in the Laravel docs](http://laravel.com/docs/controllers#resource-controllers)
 
 Note how some of the URI's are the same; this is okay because they use different HTTP requests.
 

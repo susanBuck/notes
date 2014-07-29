@@ -44,10 +44,12 @@ For a full list and description of available rules, see [Laravel Docs: Available
 
 ## Step 2) Run the rules and your data through the Validator
 
-`Validator::make()` accepts two params:
+[`Validator::make()`](http://devdocs.io/laravel/api/4.2/illuminate/validation/validator#method___construct) accepts the following parameters:
 
-1. The data
-2. The array of rules
+1. **Array of data** to validate
+2. **Array of rules** to validate against
+3. Array of custom messages (optional, not included in this example)
+4. Array of custom attributes (optional, not included in this example)
 
 ```php
 $validator = Validator::make(Input::all(), $rules);
@@ -97,7 +99,7 @@ $validator = Validator::make(Input::all(), $rules);
 if($validator->fails()) {
 	
 	return Redirect::to('/signup')
-		->with('flash_message', 'Sign up failed; please try again.')
+		->with('flash_message', 'Sign up failed; please fix the errors listed below.')
 		->withInput()
 		->withErrors($validator);
 }
@@ -107,7 +109,7 @@ if($validator->fails()) {
 
 
 View:
-```
+```php
 @foreach($errors->all() as $message) 
 	<div class='error'>{{ $message }}</div>
 @endforeach
@@ -116,7 +118,8 @@ View:
 ```
 
 
-## Catching Errors
+
+## Validating URL Input
 In addition to the basic form validation described above, there are other fail points that may exist in your application.
 
 For example, here's a show action for a Foobooks Tag:
