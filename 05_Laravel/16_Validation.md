@@ -34,9 +34,9 @@ $rules = array(
 
 Rules are defined in an array:
 
-+ The **key** of the array matches the **name of the field(s)** you're validating (in this case, `email` and `password`)
-+ The **values** are the **rule** you're validating against.
-+ You can apply multiple rules to the same field, by separating them with a pipe `|` (ex. `email|unique:users,email` 
++ The **key** of the array matches the **name of the field(s)** you're validating (in this case, `email` and `password`).
++ The **values** are the **rule(s)** you're validating against.
++ You can apply multiple rules to the same field, by separating them with a pipe (ex. `email|unique:users,email`). 
 + Some rules include values, which are indicated with a colon (ex. `min:6`).
 
 For a full list and description of available rules, see [Laravel Docs: Available Validation Rules](http://laravel.com/docs/validation#available-validation-rules)

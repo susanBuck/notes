@@ -7,7 +7,7 @@
 
 + Controllers make up the **C** of the **MVC** structure; they take care of all the logic of your application, acting as the glue between the request, the Model and the resulting View (or data).
 
-+ For tiny applications it's convenient to throw all your logic into closures in your routes, as things grow, however, this becomes messy and hard to test.
++ For tiny applications it's convenient to throw all your logic into closures in your routes. As things grow, however, this becomes messy and hard to test.
 
 + Controllers offer a way to organize your routing logic.
 
@@ -17,9 +17,9 @@
 
 + Put controller files `/app/controllers/`. This directory is classmap file loaded in `composer.json`, so anything you put here will be readily available.
 
-+ You can call the class whatever you want, but it's a convention to suffix it with `Controller`.
++ You can call the class whatever you want, but it's a convention to suffix it with `Controller` (ex: `BookController`).
 
-+ Your controller class should extend Laravel's `BaseController`, which also exists in `/app/controllers/`. This is where you should put common logic shared by all your controllers.
++ Your controller class should extend Laravel's `BaseController`, which also exists in `/app/controllers/`. This is where you can put common logic shared by all your controllers.
 
 + Within your Controller class you'll have public functions which represent the **actions** of your Controller.
 
@@ -35,8 +35,7 @@ class UserController extends BaseController {
 	
 	
 	public function __construct() {
-		# Put anything here that should happen before 
-		# any of the other actions.
+		# Put anything here that should happen before any of the other actions
 	}
 	
 	# This is an action...
