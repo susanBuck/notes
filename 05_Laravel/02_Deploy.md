@@ -18,6 +18,10 @@ Here's a summary of the steps:
 
 Once you've completed the steps above, which are standard procedure for getting any application on OpenShift, there are two additional steps you need to take that are Laravel specific:
 
+
+
+
+
 __Make sure your storage folder is writable:__
 
 While SSH'd into your OpenShift app, navigate to your document root (`/app-root/repo`). If you list the contents of this directory, you should see all your app files, since it was tapped into your github.com repository.
@@ -25,18 +29,23 @@ While SSH'd into your OpenShift app, navigate to your document root (`/app-root/
 Laravel needs write access to the storage directory so set that now:
 
 	$ chmod -R 777 app/storage
-
-__Download dependences (aka build `vendor/` directory)__
- 
-If you compare the contents of your local app to your live app, you'll notice the live app is missing a `vendor/` directory. This is because vendors are managed by Composer and not version controlled (if you open `.gitignore` you'll see `vendor/` there).
-
-Given this, you need to have Composer build your vendor's directory with this command:
-
-	$ composer install
 	
-Be patient with this process&mdash; it can take upwards of 10+ minutes depending on how many dependencies have to be loaded.
+	
+__Auto-run `composer install` on deployment__
 
-When the Composer install is complete, run `ls` to view the contents of your project; you should now see a `vendors/` directory.
+Every time you push new code to OpenShift, you'll want to run `composer install` to make sure your dependencies are up to date. You could manually SSH in and run this, or you can configure OpenShift to manually do it whenever you deploy changes.
+
+This is done with what OpenShift calls [**Markers**](http://openshift.github.io/documentation/oo_cartridge_guide.html#php-markers). Locally, in the *root of your application* create the following directory/file:
+
+`.openshift/markers/use_composer`
+
+The file you're creating (`use_composer`) is empty and does not need an extension&mdash; just its existence will signal to OpenShift that it needs to run `composer install`.
+
+Add, commit and push this change to your OpenShift remote. 
+
+From now on, whenever you push changes to OpenShift, `composer install` will automatically be run for you.
+
+Be patient with the deployment process after making this change&mdash; it can take upwards of 10+ minutes to complete the `composer install` depending on how many dependencies have to be loaded.
 
 ### Test it out
 
@@ -67,6 +76,9 @@ With setup complete, here are the two steps you'll take whenever you want update
 2. If you made any changes to your dependencies, SSH in and run `composer install`
 
 ---
+
+
+
 
 
 

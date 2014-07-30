@@ -114,6 +114,9 @@ Click on your app's URL to check it out in the browser for the first time.
 <img src='http://making-the-internet.s3.amazonaws.com/vc-open-shift-visit-your-new-app@2x.png' class='' style='max-width:1180px; width:100%' alt=''>
 
 
+
+
+
 ## SSH into your app
 
 On the overview page, find the link on the bottom right that asks **&ldquo;Want to log into your application?&rdquo;**. 
@@ -149,6 +152,9 @@ $ export
 ```
 
 Run the `exit` command to disconnect from the OpenShift Shell and return to the command line on your local computer.	
+
+
+
 
 
 ## Deploying to OpenShift via Git
@@ -193,13 +199,6 @@ When it's all done, refresh your app in the browser. Is your change there?
 
 
 
-## Moving forward
-
-From now on, whenever you want to deploy changes to your application, you just need to stage changed files, commit, and push to your OpenShift remote.
-
-	$ git push openshift master
-	
-Also remember: you now have **two remotes**&mdash;one for Github.com and one for OpenShift. Be sure to push to both after committing code changes. (Alternatively, [you can create a remote that pushes to multiple URLs](http://stackoverflow.com/a/5785618/59479).)
 
 
 
