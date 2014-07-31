@@ -20,6 +20,8 @@ Getting your Laravel application to work with Ajax is not actually that differen
 
 That being said, lets dig in with an example. We're going to build a dedicated search feature into *Foobooks* that's powered by Ajax.
 
+**Final Demo: <http://foobooks-dwa15sb.rhcloud.com/book/search>**
+
 To start, we'll need two new routes:
 
 ```php
@@ -301,7 +303,7 @@ And here's the View which reads the variables...
 @stop
 ```
 
-
+**You can see this in action here: <http://foobooks-dwa15sb.rhcloud.com/demo/js-vars>**
 
 
 	
