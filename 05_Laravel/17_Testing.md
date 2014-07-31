@@ -20,7 +20,7 @@ function generate_password($input) {
 
 What might a test of this function look like?
 
-```
+```php
 $input = 'Hello World';
 
 $expectation = 'dlrowolleh123';
@@ -140,7 +140,7 @@ On top of that, we also recommend **Codeception** (<http://codeception.com>) whi
 
 >> *Codeception is PHPUnit on steroids.* -<http://codeception.com>
 
-Codeception follows a more **Behavioral Driven Development (BDD)** testing style&mdash; which simply means  tests are written in a very descriptive manner with a focus on behavior. BDD tests read like stories and tend to be more readable than PHPUnit tests, especially to non-programmers.
+Codeception follows a **Behavioral Driven Development (BDD)** testing style&mdash; which simply means  tests are written in a very descriptive manner with a focus on behavior. BDD tests read like stories and tend to be more readable than PHPUnit tests, especially to non-programmers.
 
 Codeception works with these kinds of tests:
 
@@ -215,7 +215,7 @@ UnitTester.php generated successfully. 15 methods added
 Bootstrap is done. Check out /tests directory
 ```
 
-Next, we need to do a bit of re-arranging. Because you'll be running tests from the root of our Laravel project, we need to move the main Codeception configuration file (`codeception.yml`) out of the `app` folder.
+Next, we need to do a bit of re-arranging. Because we'll be running tests from the root of our Laravel project, we need to move the main Codeception configuration file (`codeception.yml`) out of the `app` folder.
 
 From the root of your project, that can be done with this command:
 
@@ -345,44 +345,41 @@ Codeception structures tests around this idea of a person or actor who is using 
 $I = new AcceptanceTester($scenario);
 ```
 
-Here are the possible Actor classes you can use:
+Here are the possible Codeception Actor classes you can use:
 
 + `UnitTester`, who executes functions and tests the code. 
-+ F`unctionalTester`, a qualified tester, who tests the application as a whole, with knowledge of its internals. 
++ `FunctionalTester`, a qualified tester, who tests the application as a whole, with knowledge of its internals. 
 + `AcceptanceTester`, a user who works with our application through an interface that we provide.
 
 Once the actor is defined, you put that actor through the paces of testing a feature. 
 
 Along the way, the Actor will make comments about what they want to do...
-
 ```php
 $I->wantTo('Sign up');
 ```
-where they are...
 
+where they are...
 ```php
 $I->amOnPage('/signup');
 ```
 
 what they're going to do...
-
 ```php
 $I->amGoingTo('Fill in the sign up form with valid values');
 ```
 
-what they do...
+what they actually do...
 ```php
 $I->fillFiled('email', 'test@gmail.com');
 $I->fillFiled('password', 'foobar12345');
 ```
 
 and what they click...
-
 ```php
 $I->click('Submit');
 ```
 
-At the end (and sometimes along the way) they'll make **assertions**. Assertions compare an expected outcome or value with an actual outcome or value.
+At the end (and sometimes along the way) your actor will make **assertions**. Assertions compare an expected outcome or value with an actual outcome or value.
 
 ```php
 $I->see('Welcome to Foobooks!');
@@ -404,7 +401,7 @@ We could spend a whole semester on the ins-and-outs of testing, so consider this
 
 
 ### Laravel Specific
-+ [Laravel Docs: Testing](http://laravel.com/docs/testing): Laravel comes with PHPUnit built in; this doc covers basic PHPUnit functionality as it applies to Laravel
++ [Laravel Docs: Testing](http://laravel.com/docs/testing): Laravel comes with PHPUnit built in; this doc covers basic PHPUnit functionality as it applies to Laravel.
 
 + [Laravel Testing Decoded by Jeffery Way](http://www.amazon.com/Laravel-Testing-Decoded-Jeffrey-Way-ebook/dp/B00D8O19O6/ref=sr_1_1?ie=UTF8&qid=1406620301&sr=8-1&keywords=laravel+testing) Full book on testing as it applies to Laravel. Highly recommended if you really want to move towards mastering testing.
 
@@ -413,7 +410,7 @@ We could spend a whole semester on the ins-and-outs of testing, so consider this
 
 ### Codeception Specific
 
-+ [Codeception guide on Functional tests](http://codeception.com/docs/05-FunctionalTests): Functional tests are very similar to Acceptance Tests with some key differences: rather than running the tests on a web server, Codeception will mimic http requests to your application. This means you can't test JavaScript or Ajax calls, but your tests will run much quicker.
++ [Codeception guide to Functional tests](http://codeception.com/docs/05-FunctionalTests): Functional tests are very similar to Acceptance Tests with some key differences: rather than running the tests on a web server, Codeception will mimic http requests to your application. This means you can't test JavaScript or Ajax calls, but your tests will run much quicker.
 
 + [Codeception guide to Unit tests](http://codeception.com/docs/06-UnitTests): Unit Tests are geared less at how your application as a whole is used and more how your code itself is used. When writing Unit Tests you'll make assertions about how your controllers, models, etc. are supposed to behave.
 

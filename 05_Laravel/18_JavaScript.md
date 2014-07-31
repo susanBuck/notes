@@ -18,19 +18,17 @@ Getting your Laravel application to work with Ajax is not actually that differen
 2. Your route responds with data (in the form of JSON or even a HTML View).
 3. JavaScript receives the response and injects it into the page.
 
-That being said, lets dig in with an example. We're going to build a dedicated search feature into *Foobooks* that's powered by Ajax.
+For an example, we're going to build a dedicated search feature into *Foobooks* that's powered by Ajax.
 
 **Final Demo: <http://foobooks-dwa15sb.rhcloud.com/book/search>**
 
 To start, we'll need two new routes:
-
 ```php
-Route::get('/book/search', 'BookController@getSearch');
-Route::post('/book/search', 'BookController@postSearch');
+Route::get('/book/search', 'BookController@getSearch');   # Display the search
+Route::post('/book/search', 'BookController@postSearch'); # Process the search
 ```
 
-The GET `/book/search` route is straightforward, it just displays a View:
-
+The GET `/book/search` route is straightforward&mdash; it displays a View with the inputs for performing the search:
 ```php
 public function getSearch() {
 	return View::make('book_search');	
@@ -55,10 +53,7 @@ In the `book_search.blade.php` View, we built a text input for the query and two
 ```
 There's no need for a Form tag here, because we're not actually submitting a Form as we traditionally would. Instead, we'll write JavaScript to work with the inputs.
 
-At the bottom of `book_search.blade.php` we added a `footer` section, which was yielded in the master layout after `content` and right before the closing `</body>` tag. This is generally the ideal spot for JavaScript code.
-
-In the footer, we included two javascript files: jQuery and a `search.js` file we created which will hold all our JavaScript functionality for making the Ajax call.
-
+At the bottom of `book_search.blade.php` we added a `footer` section:
 ```php
 @section('footer')
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
@@ -66,8 +61,11 @@ In the footer, we included two javascript files: jQuery and a `search.js` file w
 @stop
 ```
 
-Here's the contents of `/public/js/search.js`:
+Note that this footer is yielded in the the master layout right before the closing `</body>` tag. This is generally the ideal spot for JavaScript code.
 
+In the above footer code, we included two javascript files: jQuery and a `search.js` file that will house our JavaScript code.
+
+Here's the contents of `/public/js/search.js`:
 ```js
 /*-------------------------------------------------------------------------------------------------
 Demo 1) Getting JSON data as a result and letting JS decide where to put the data on the page
@@ -124,18 +122,18 @@ We've got two buttons on our page, one with the id `#search-json` and one with t
 Each button has been wired to trigger an ajax call via POST to the url `/book/search/`; as part of that call it passes two pieces of data:
 
 1. `format` (`json` or `html`)
-2. `query` (whatever the user typed into the input.
+2. `query` (whatever the user typed into the input).
 
 This is where Laravel steps in because your `/book/search` route should be programmed to receive this POST call and return the appropriate results.
 
 That looks like this:
 
-```
+```php
 # /app/controllers/BookController.php
 
 /*-------------------------------------------------------------------------------------------------
 http://localhost/book/search
-Demonstrate of Ajax
+Demonstration of Ajax
 -------------------------------------------------------------------------------------------------*/
 public function postSearch() {
 	
@@ -190,7 +188,7 @@ In the Ajax example, data was passed between the server *after* the page load us
 Perhaps more importantly, why might you want to do this?
 
 Here's a scenario:
->> You're building an online store and you want to offer a 20% off discount to new users (i.e. users who have signed up in the last 7 days). You don't want the discount to be offered until after they've been browsing the site for at least 25 minutes. In short, the discount should act as an enticement for the hesitant shopper.
+You're building an online store and you want to offer a 20% off discount to new users (i.e. users who have signed up in the last 7 days). You don't want the discount to be offered until after they've been browsing the site for at least 25 minutes. In short, the discount should act as an enticement for the hesitant shopper.
 
 To build this functionality, you'll want to trigger a JavaScript function to start a counter on page load. After 25 minutes, JavaScript should display a banner on the page giving them a 20% off coupon code.
 
@@ -229,7 +227,6 @@ Open this file up and you'll see two configuration options.
 The first configuration, `bind_js_vars_to_this_view`, specifies which view the JavaScript variables should be binded to. Binding to your master template is a good idea because then the variables will be available to any view that extends the master template.
 
 Given that, we changed the default view from `hello` to `_master` (the name of our master template):
-
 ```php
 
 <?php
@@ -254,7 +251,9 @@ return [
 
 With the package set up, you can start passing variables from routes/actions to JavaScript using this syntax:
 
-	JavaScript::put(['foo' => 'bar'])
+```php
+JavaScript::put(['foo' => 'bar'])
+```
 
 As an example, here's a Controller action that will bind two JS variables (`foo` and `email`):
 
@@ -272,8 +271,7 @@ public function jsVars() {
 }
 ```
 
-And here's the View which reads the variables...
-
+And here's the View which uses the variables...
 ```php
 @extends('_master')
 
