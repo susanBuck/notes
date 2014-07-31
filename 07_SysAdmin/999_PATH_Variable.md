@@ -15,7 +15,7 @@ Windows/Cmder users, this command will show you your PATH variables.
 
 ## Edit your PATH
 
-Mac users, follow these instructions: [Mac OSX Change Path Variables](http://www.tech-recipes.com/rx/2621/os_x_change_path_environment_variable/).
+Mac users, follow these instructions: [Mac OSX Change Path Variables](http://architectryan.com/2012/10/02/add-to-the-path-on-mac-os-x-mountain-lion/#.U9nTwIBs9vI).
 
 Windows users, to edit your PATH variables goto *My Computer* > *Properties* > *Advanced* > *Environment Variables* > *Path*.
 

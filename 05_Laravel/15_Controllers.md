@@ -2,6 +2,7 @@
 
 + <http://laravel.com/docs/controllers>
 + <http://daylerees.com/codebright/controllers>
++ <http://culttt.com/2013/07/01/setting-up-your-first-laravel-4-controller/>
 
 ## What are Controllers?
 
@@ -243,7 +244,7 @@ Route::delete('/tag/{tag_id}', 'TagController@destroy');
 
 Note how some of the URI's are the same; this is okay because they use different HTTP requests.
 
-You could explicitly define all of your REST routes like above, or you can do it all in one shot with Route's `resource()` method:
+You could explicitly define all of your REST routes like above, *or* you can do it all in one shot with Route's `resource()` method:
 
 ```php
 Route::resource('tag', 'TagController');
@@ -282,7 +283,7 @@ Accessing the destroy action is a little funny, because in most cases you just w
 To get around this, you'll have to create a mini-form with the DELETE method. Inside the form, you can embed a link that will submit the form (shown here with inline JS for simplicty):
 
 ```php
-{{ Form::model($tag, array('method' => 'DELETE', 'action' => ['TagController@destroy', $tag->id])) }}
+{{ Form::open(['method' => 'DELETE', 'action' => ['TagController@destroy', $tag->id]]) }}
 	<a href='javascript:void(0)' onClick='parentNode.submit();return false;'>Delete</a>
 {{ Form::close() }}
 ```
