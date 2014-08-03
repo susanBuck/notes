@@ -90,7 +90,7 @@ Output any PHP using double curly brackets
 
 	<h1>Hello {{ $name! }}</h1>
 	
-If you're outputting data that was entered by a user, use trouble curly brackets to escape any nefarious-XSS characters:
+If you're outputting data that was entered by a user, use triple curly brackets to escape any nefarious-XSS characters:
 
 	<h1>Hello {{{ $name! }}}</h1>
 	
