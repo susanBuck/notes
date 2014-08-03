@@ -142,7 +142,7 @@ Route::get('/practice-reading', function() {
 
 });
 ```
-
+ 
 Same idea, but this time get one specific book:
 
 ```php
@@ -197,9 +197,9 @@ Route::get('/practice-deleting', function() {
 
 All ORM queries are made up of *constraints* (optional) and a *fetch* method.
 
-<img src='http://making-the-internet.s3.amazonaws.com/laravel-eloquent-query-structure@2x.png' class='' style='max-width:1368px; width:100%' alt=''>
+<img src='http://making-the-internet.s3.amazonaws.com/laravel-eloquent-query-structure@2x.png' class='' style='max-width:1335px; width:100%' alt=''>
 
-Eloquent queries return a Collection, which is covered in more detail in the next doc.
+Eloquent queries return a Collection object, which is covered in more detail in the next doc.
 
 
 
