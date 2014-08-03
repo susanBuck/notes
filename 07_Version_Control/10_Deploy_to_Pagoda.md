@@ -25,7 +25,7 @@ Windows:
 <img src='http://making-the-internet.s3.amazonaws.com/vc-pagoda-add-ssh-key@2x.png' class='' style='max-width:1113px; width:75%' alt=''>
 
 <small>
-Note: Instead of using your Github key, you could have generated a unique one for Jumpstarter. This latter technique is more secure and suggested for projects beyond the scope of this class.
+Note: Instead of using your Github key, you could have generated a unique one for Pagoda. This latter technique is more secure and suggested for projects beyond the scope of this class.
 </small>
 
 
