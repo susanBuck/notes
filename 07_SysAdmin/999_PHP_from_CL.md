@@ -12,7 +12,7 @@ If, however, it says the command is not found, you have some configuring to do.
 
 The following instructions are Windows-centric, as PHP is installed by default on Mac computers.
 
-*Before digging into these instructions, confirm you're logged into Windows as a user with **Administrator privileges**. This can generally be configured via Control Panel > User Accounts. However, it may vary across different Windows versions and you may have to search around Google for further guidance.*
+Before digging into these instructions, confirm you're logged into Windows as a user with **Administrator privileges**. This can generally be configured via *Control Panel > User Accounts*. However, it may vary across different Windows versions and you may have to search around Google for further guidance.
 
 
 
@@ -76,7 +76,7 @@ Test it out:
 
 This command will tell you where PHP is loading from:
 
-	$ which.exe php
+	$ where.exe php
 	
 <img src='http://making-the-internet.s3.amazonaws.com/laravel-where-php@2x.png' class='' style='max-width:520px; width:100%' alt=''>
 	
@@ -96,7 +96,9 @@ If the above two commands work, you have confirmed that you can execute PHP from
 
 To see what `php.ini` file CL is using when running PHP from CL, run this command:
 
-	$ php --ini
+```bash
+$ php --ini
+```
 	
 You should see that it's looking in `c:\Windows` by default:
 
@@ -104,7 +106,7 @@ You should see that it's looking in `c:\Windows` by default:
 
 Given this, you need to create a `php.ini` file in `c:\Windows`. 
 
-For the contents of this file, copy the text from our example: [php.ini template](https://gist.github.com/susanBuck/73f7ca03344331fb9edf)
+For the contents of this file, copy the text from our example: [php.ini template](https://gist.github.com/susanBuck/73f7ca03344331fb9edf). This `php.ini` file has a variable called `extension_dir` which is set to `C:\MAMP\bin\php\php5.5.7\ext\`; if you're using a different PHP version you should update it accordingly.
 
 If you have any access issues creating your `php.ini` file in `c:\Windows`, you can try the following workarounds:
 
@@ -114,7 +116,9 @@ If you have any access issues creating your `php.ini` file in `c:\Windows`, you 
 
 Once you've got `c:\Windows\php.ini` created and saved, check your ini settings again and confirm the *Loaded Configuration File* is `c:\Windows\php.ini`:
 
-	$ php --ini
+```bash
+$ php --ini
+```
 	
 <img src='http://making-the-internet.s3.amazonaws.com/sysadmin-php-from-command-line-ini-location-set@2x.png' class='' style='max-width:533px; width:100%' alt=''>
 
@@ -127,8 +131,16 @@ Moving forward, remember that whenever you use PHP from the CL it's loading this
 ## Tips:
 All PHP info (equivalent of `phpinfo()`)
 
-	$ php -i
+```bash
+$ php -i
+````
 
+Use *grep* to search for something specific in PHP info:
+For example, search for &ldquo;php.ini&rdquo;:
+
+```bash
+$ php -i | grep php.ini
+```
 
 
 
