@@ -16,11 +16,15 @@ In your user settings, find the option to add a SSH key. You can copy the same `
 
 Mac: 
 
-	$ cat /Users/YourName/.ssh/id_rsa.pub
+```bash
+$ cat /Users/YourName/.ssh/id_rsa.pub
+```
 
 Windows:
 
-	$ cat C:\Users\YourName\.ssh\id_rsa.pub
+```bash
+$ cat C:\Users\YourName\.ssh\id_rsa.pub
+```
 	
 <img src='http://making-the-internet.s3.amazonaws.com/vc-pagoda-add-ssh-key@2x.png' class='' style='max-width:1113px; width:75%' alt=''>
 
@@ -44,7 +48,9 @@ On the next screen, choose Git as your deployment method. Pagoda will also give 
 
 <img src='http://making-the-internet.s3.amazonaws.com/vc-pagoda-choose-deployment-method@2x.png' class='' style='max-width:541px; width:75%' alt=''>
 
-	$ git remote add pagoda git@git.pagodabox.com:hello-world-yourname.git
+```bash
+$ git remote add pagoda git@git.pagodabox.com:hello-world-yourname.git
+```
 
 
 
@@ -54,7 +60,9 @@ On the next screen, choose Git as your deployment method. Pagoda will also give 
 
 The final step is to push to Pagoda, which is what you'll do whenever you have changes you're ready to go live with changes.
 
-	$ git push pagoda master
+```bash
+$ git push pagoda master
+```
 
 <img src='http://making-the-internet.s3.amazonaws.com/vc-git-push-pagoda-master@2x.png' class='' style='max-width:582px; width:75%' alt=''>
 

@@ -11,11 +11,15 @@ To confirm your system meets these requirements, find out what PHP executable yo
 
 Mac:
 
-	$ which php
+```php
+$ which php
+```
 	
 Windows/Cmder:
 
-	$ where.exe php
+```php
+$ where.exe php
+```
 	
 <img src='http://making-the-internet.s3.amazonaws.com/laravel-confirm-php@2x.png' class='' style='max-width:951px; width:100%' alt='Laravel confirm PHP is installed'>
 
@@ -23,7 +27,9 @@ The results above indicate the `php` command is using MAMP's install of PHP and 
 
 You can also confirm your version number with this command:
 
-	$ php -v
+```
+$ php -v
+```
 	
 If the above test reveals you're not using MAMP's php.exe, you can switch it following the [PHP for CL doc](https://github.com/susanBuck/notes/blob/master/07_SysAdmin/999_PHP_from_CL.md) which covers how to add MAMP's PHP to your PATH.
 
@@ -44,15 +50,20 @@ With PHP configured and Composer installed, it's time to spawn your first Larave
 	
 Change directories into your local document root and use the `composer create-project` command to create a new Laravel app. 
 
-For our demonstrations, we're going to work towards building a little application to manage a collection of books, so our application name will be `foobook`. Adjust this line to match the name of the app you're building.
+For our demonstrations, we're going to build an application called *Foobooks* which will manage a library of books. Given that, our application name will be `foobook`. Adjust this line to match what you're building.
 
-	$ composer create-project laravel/laravel foobook --prefer-dist
+```bash
+$ composer create-project laravel/laravel foobook --prefer-dist
+```
 	
 FYI: Download will take a little bit of time.
 
 When composer is done working, move into the newly created project directory:
 
-	$ cd foobook
+```bash
+$ cd foobook
+
+```
 	
 Once in this directory, run `ls -la` command; you should see all the Laravel related files in there.
 
@@ -60,7 +71,9 @@ Once in this directory, run `ls -la` command; you should see all the Laravel rel
 
 **IMPORTANT**: Laravel needs to have the ability to write to the **storage** directory, so set that permission:
 
-	$ chmod -R 777 app/storage
+```bash
+$ chmod -R 777 app/storage
+```
 
 (If you want to learn more about permissions, [go here](https://github.com/susanBuck/notes/blob/master/07_SysAdmin/999_Permissions.md))
 
@@ -72,11 +85,13 @@ By default Laravel runs in `production` mode which suppresses errors. Because we
 
 Open `/bootstrap/start.php` and replace the word `homestead` with an asterisk `*`:
 
-	$env = $app->detectEnvironment(array(
+```php
+$env = $app->detectEnvironment(array(
 
-		'local' => array('*'),
+	'local' => array('*'),
 
-	));
+));
+```
 
 This is a quick and dirty fix for now. Later we'll spend an entire section on configuring environments.
 
@@ -90,18 +105,18 @@ To view your new Laravel app on your browser, you'll need to point your localhos
 The paths will look something like this (adjust accordingly to match your system):
 
 Mac:
-	
-	/Users/YourName/Documents/Sites/foobook/public
+```
+/Users/YourName/Documents/Sites/foobook/public
+```
 
 Windows: 
-
-	c:\MAMP\htdocs\foobook\public
+```
+c:\MAMP\htdocs\foobook\public
+```
 
 Once you've determined your path, make the change in MAMP:
 
 <img src='http://making-the-internet.s3.amazonaws.com/laravel-app-setup-document-root@2x.png' class='' style='max-width:558px; width:75%' alt=''>
-
-While you're in your MAMP settings, confirm your PHP version is set to something >= PHP 5.4.
 
 __Save all changes and restart your server.__
 
@@ -109,10 +124,7 @@ If all went well, you should see Laravel's default welcome page when you hit `ht
 
 <img src='http://making-the-internet.s3.amazonaws.com/laravel-app-setup-success.png?@2x' class='' style='max-width:506px; width:75%' alt=''>
 
-### Tips
-
-* Whenever configuring a server to run Laravel, always remember the document root has to point to the `public/` folder within your app directory.
-
+Whenever configuring a server to run Laravel, always remember ***the document root has to point to the `public/` folder within your app directory**.
 
 
 
@@ -121,10 +133,13 @@ If all went well, you should see Laravel's default welcome page when you hit `ht
 
 In your project, initiate a new Git repository:
 
-	$ git init
+```bash
+$ git init
+```
 	
 ### Github
-Create a new repository at Github.com. When doing this, do *not* initialize the repository with a `README.md` file, since you'll be working with a repository that has already been initialized.
+
+Create a new repository at Github.com. When doing this, do *not* initialize the repository with a `README.md` file because you'll be working with a repository that has already been initialized.
 
 <img src='http://making-the-internet.s3.amazonaws.com/laravel-foobook-repo@2x.png' class='' style='max-width:835px; width:100%' alt=''>
 
@@ -132,24 +147,34 @@ Note the Git SSH URL, for example, `git@github.com:username/foobook`
 
 In your project directory, add a new remote origin called `github`, for example:
 
-	$ git remote add github git@github.com:username/foobook.git	
+```bash
+$ git remote add github git@github.com:username/foobook.git	
+```
 	
 ### First commit
 Run git status to see all your untracked files:
 
-	$ git status
+```bash
+$ git status
+```
 	
 Add all your files for committing:
 
-	$ git add --all
+```bash
+$ git add --all
+```
 	
 Commit these changes:
 
-	$ git commit -m "First commit"
+```bash
+$ git commit -m "First commit"
+```
 
-Push your project up to github:
+Push your project up to Github:
 
-	$ git push github master
+```bash
+$ git push github master
+```
 
 When you visit your repository on Github you should see all your changes there. 
 

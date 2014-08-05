@@ -4,7 +4,9 @@ Let's see if you already have the ability to run PHP from CL.
 
 Mac or Windows, run this command:
 
-	$ php -v
+```php
+$ php -v
+```
 	
 If it reports back on the version of PHP, you're all set and you don't need to do anything else in this doc.
 
@@ -18,11 +20,14 @@ Before digging into these instructions, confirm you're logged into Windows as a 
 
 
 ## Where is php.exe?
+
 First: Locate a copy of `php.exe`. Assuming you have MAMP installed, you should find one in `C:\MAMP\bin\php\php5.5.7\` (replace the version number with whichever you want to use). 
 
 To test this out, try the `-v` flag again, this time specifying the full path to php:
 
-	$ C:\MAMP\bin\php\php5.5.7\php.exe -v
+```php
+$ C:\MAMP\bin\php\php5.5.7\php.exe -v
+```
 
 If this doesn't report back on the version of PHP, dig around your `C:\MAMP\bin\php` folder for a copy of `php.exe`.
 
@@ -40,11 +45,15 @@ Given this, when you add a new executable, you may need to specify its directory
 
 Mac users, this command will show you your PATH variable:
 
-	$ echo $PATH
+```php
+$ echo $PATH
+```
 	
 Windows users, this command will show you your PATH variable:
 
-	$ PATH
+```php
+$ PATH
+```
 
 To edit your PATH variable on a Mac, follow these instructions: [Mac OSX Change Path Variables](http://www.tech-recipes.com/rx/2621/os_x_change_path_environment_variable/).
 
@@ -70,19 +79,23 @@ Make sure you end your path with a trailing backslash. The idea is to point to t
 
 Ok/Save your changes.
 
-Restart your Cmder.
+Restart *Cmder*.
 
-Test it out:
+Test it out...
 
 This command will tell you where PHP is loading from:
 
-	$ where.exe php
+```bash
+$ where.exe php
+```
 	
 <img src='http://making-the-internet.s3.amazonaws.com/laravel-where-php@2x.png' class='' style='max-width:520px; width:100%' alt=''>
 	
 And this command will tell you what version of PHP you're running
 
-	$ php -v
+```bash
+$ php -v
+```
 	
 <img src='http://making-the-internet.s3.amazonaws.com/laravel-php-v@2x.png' class='' style='max-width:520px; width:100%' alt=''>
 	
@@ -129,17 +142,17 @@ Moving forward, remember that whenever you use PHP from the CL it's loading this
 
 
 ## Tips:
-All PHP info (equivalent of `phpinfo()`)
+All CL PHP info (equivalent of `phpinfo()`)
 
 ```bash
 $ php -i
 ````
 
-Use *grep* to search for something specific in PHP info:
+Use *[grep](http://ss64.com/bash/grep.html)* to search for something specific in PHP info:
 For example, search for &ldquo;php.ini&rdquo;:
 
 ```bash
-$ php -i | grep php.ini
+php -i | grep --ignore-case --color --line-number php.ini
 ```
 
 

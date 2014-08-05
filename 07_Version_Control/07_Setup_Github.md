@@ -22,21 +22,29 @@ Via CL, move into your `.ssh` directory:
 
 Mac: 
 
-	$ cd /Users/YourName/.ssh
+```bash
+$ cd /Users/YourName/.ssh
+```
 
 Windows:
 
-	$ cd C:\Users\YourName\.ssh
+```bash
+$ cd C:\Users\YourName\.ssh
+```
 	
-If this `.ssh` directory does not exist, it's okay - the next step will generate it for you.
+If this `.ssh` directory does not exist, it's okay&mdash; the next step will generate it for you.
 
 Generate a new SSH key with the following command:
 
-	$ ssh-keygen -t rsa -C "your_email@example.com"
+```bash
+$ ssh-keygen -t rsa -C "your_email@example.com"
+```
 	
 When it asks you for the filename, hit Enter (it will default it `id_rsa`).
 
-	Enter file in which to save the key (/Users/YourName/.ssh/id_rsa): [Press enter]
+```bash
+Enter file in which to save the key (/Users/YourName/.ssh/id_rsa): [Press enter]
+```
 
 When it asks you for a passphrase you can either create one or leave it blank. Regardless, hit Enter when you're done. 
 Same for when it asks you to confirm your passphrase.
@@ -50,7 +58,9 @@ At this point, if you list the contents in the `.ssh` directory you should see t
 	
 (Mac users only) Add your new key to the ssh-agent:
  
-	ssh-add id_rsa
+```bash
+$ ssh-add id_rsa
+```
 
 
 
@@ -63,7 +73,7 @@ Find the **SSH Keys** section.
 
 Click **Add SSH Key**.
 
-In the *Title* field, add a descriptive label for the new key. For example, if you're using a personal Mac, you might call this key *Personal MacBook Air"*.
+In the *Title* field, add a descriptive label for the new key. For example, if you're using a personal Mac, you might call this key *"Personal MacBook Air"*.
 
 For the *Key* field, you want to paste the contents of the `id_rsa.pub` file that was generated on your computer in the above step.
 
@@ -71,11 +81,15 @@ To quickly open this file to copy it's contents, use the following commands...
 
 Mac:
 
-	$ edit id_rsa.pub
+```bash
+$ edit id_rsa.pub
+```
 
 Windows:
 
-	$ notepad id_rsa.pub
+```bash
+$ notepad id_rsa.pub
+```
 	
 *Copying the contents of id_rsa.pub on Windows:*
 <img src='http://making-the-internet.s3.amazonaws.com/vc-copy-id-rsa-pub-on-windows.png?@2x' style='max-width:1153px; width:75%'>
@@ -88,19 +102,25 @@ Finally, click **Add key**.
 
 To test your new SSH key, run the following command to connect to Github over SSH:
 
-	$ ssh -T git@github.com
+```bash
+$ ssh -T git@github.com
+```
 
 You may see this warning:	
 
-	The authenticity of host 'github.com (207.97.227.239)' can't be established.
-	# RSA key fingerprint is 16:27:ac:a5:76:28:2d:36:63:1b:56:4d:eb:df:a6:48.
-	# Are you sure you want to continue connecting (yes/no)?
+```bash
+The authenticity of host 'github.com (207.97.227.239)' can't be established.
+# RSA key fingerprint is 16:27:ac:a5:76:28:2d:36:63:1b:56:4d:eb:df:a6:48.
+# Are you sure you want to continue connecting (yes/no)?
+```
 	
 Type `yes` and hit enter.
 
 If all went well, you should see this message:
 
-	Hi username! You've successfully authenticated, but GitHub does not provide shell access.
+```bash
+Hi username! You've successfully authenticated, but GitHub does not provide shell access.
+```
 	
 If that username is yours, you've successfully set up your SSH key.
 

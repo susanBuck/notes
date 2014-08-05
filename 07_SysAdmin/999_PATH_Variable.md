@@ -7,11 +7,15 @@ When you run a command in the CL, it looks for the executable files using the di
 
 Mac users, this command will show you your PATH variable:
 
-	echo $PATH
+```bash
+$ echo $PATH
+```
 	
 Windows/Cmder users, this command will show you your PATH variables.
 
-	PATH
+```bash
+$ PATH
+```
 
 ## Edit your PATH
 
@@ -37,7 +41,9 @@ Restart your Command Line.
 
 Test it out:
 
-	php -v
+```php
+$ php -v
+```
 	
 You should now see version information about PHP; you have confirmed that you can execute PHP from the command line.
 

@@ -10,25 +10,31 @@ Note the require line it gives you: `"paste/pre": "dev-master"`
 
 In `/composer.json` add this line, ex:
 
-	"require": {
-			"laravel/framework": "4.1.*",
-			"paste/pre": "dev-master"
-	},
+```php
+"require": {
+		"laravel/framework": "4.1.*",
+		"paste/pre": "dev-master"
+},
+```
 
 Run this to verify your json is valid:
 
-	$ composer validate
+```bash
+$ composer validate
+```
 	
 Install the dependency and update the `composer.lock` file:
 
-	$ composer update
+```bash
+$ composer update
+```
 	
 This will add the following directory: `/vendor/paste/pre/`
 
 Learn more about any of the above Composer commands here: <https://getcomposer.org/doc/>
 
 
-## Tip:
+## Tips
 
 * Use `composer update` on your development environment(s) so it grabs the versions according to your `composer.json` file and updates your `composer.lock` file.
 * Use `composer install` on your production environment(s) so it grabs the versions according to your `composer.lock` file (i.e. mirror the versions exactly as they are on the development environment).
@@ -39,48 +45,55 @@ Learn more about any of the above Composer commands here: <https://getcomposer.o
 
 ### Method 1) Include the namespace in each call
 
-	Route::get('/practice', function() {
-		
-		$fruit = Array('Apples', 'Oranges', 'Pears');
-		
-		echo Paste\Pre::render($fruit,'Fruit');
-		
-	});
+```php
+Route::get('/practice', function() {
+	
+	$fruit = Array('Apples', 'Oranges', 'Pears');
+	
+	echo Paste\Pre::render($fruit,'Fruit');
+	
+});
+```
 
 ### Method 2) Specify the namespace ahead of time
 
-	use Paste\Pre;
+```php
+use Paste\Pre;
+
+Route::get('/practice', function() {
 	
-	Route::get('/practice', function() {
-		
-		$fruit = Array('Apples', 'Oranges', 'Pears');
-		
-		echo Pre::render($fruit,'Fruit');
-		
-	});
+	$fruit = Array('Apples', 'Oranges', 'Pears');
+	
+	echo Pre::render($fruit,'Fruit');
+	
+});
+```
 	
 
 ### Method 3) Add an alias so no namespace is required
 
 In `/app/config/app.php` add Pre to the `aliases` array:
 
-	'aliases' => array(
+```php
+'aliases' => array(
 
-		'App'             => 'Illuminate\Support\Facades\App',
-		'Artisan'         => 'Illuminate\Support\Facades\Artisan',
-		[...]
-		'Pre'			  => 'Paste\Pre',
+	'App'             => 'Illuminate\Support\Facades\App',
+	'Artisan'         => 'Illuminate\Support\Facades\Artisan',
+	[...]
+	'Pre'			  => 'Paste\Pre',
 
-	),
+),
+```
 
 Now you can just call Pre with no namespace:
 
-	Route::get('/practice', function() {
-		
-		$fruit = Array('Apples', 'Oranges', 'Pears');
-		
-		echo Pre::render($fruit,'Fruit');
-		
-	});
-
+```php
+Route::get('/practice', function() {
+	
+	$fruit = Array('Apples', 'Oranges', 'Pears');
+	
+	echo Pre::render($fruit,'Fruit');
+	
+});
+```
 

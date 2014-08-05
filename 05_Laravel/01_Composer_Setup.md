@@ -16,29 +16,45 @@
 
 Move into your bin directory:
 	
-	$ cd /usr/local/bin
+```bash
+$ cd /usr/local/bin
+```
 	
 Download and install composer.phar:
 
-	$ curl -sS https://getcomposer.org/installer | php 
+```bash
+$ curl -sS https://getcomposer.org/installer | php 
+```
+
+>> *The phar extension provides a way to put entire PHP applications into a single file called a "phar" (PHP Archive) for easy distribution and installation.* -[source](http://php.net/manual/en/intro.phar.php)
 
 Rename `composer.phar` to `composer` so it's easier to call:
 
-	$ mv composer.phar composer
+```bash
+$ mv composer.phar composer
+```
 
 Test it works:
 
-	$ composer
+```bash
+$ composer
+```
 	
 That's it for Mac users. You can move on to the next steps. Windows users, keep reading. 
 
 If the above procedure doesn't work, scroll down to see if your issue is listed in the *Common Problems* section.
 
----
 
+
+
+ 
 ## Install Composer on Windows
 
-*Before digging into these instructions, confirm you're logged into Windows as a user with **Administrator privileges**. This can generally be configured via Control Panel > User Accounts. However, it may vary across different Windows versions and you may have to search around Google for further guidance.*
+Before digging into these instructions, confirm you're logged into Windows as a user with **Administrator privileges**. This can generally be configured via *Control Panel > User Accounts*. However, it may vary across different Windows versions and you may have to search around Google for further guidance.
+
+In addition to logging in to Windows as an administrator, you may have to explicitly load Cmder as an admin. To do this, right click the Cmder icon and choose *Run as Administrator*. 
+
+<img src='http://making-the-internet.s3.amazonaws.com/laravel-run-cmder-as-admin@2x.png' class='' style='max-width:869px; width:100%' alt='Run Cmder as Administrator'>
 
 
 ### Check PHP for CL
@@ -50,13 +66,17 @@ Let's make sure everything is set up as it should be.
 
 First, where is CL PHP? It should be pointing to a php.exe in MAMP.
 
-	$ where.exe php
+```bash
+$ where.exe php
+```
 	
 <img src='http://making-the-internet.s3.amazonaws.com/laravel-where-php@2x.png' class='' style='max-width:520px; width:100%' alt=''>
 	
 Second, what `php.ini` file is CL PHP using? It should be in `c:\Windows\php.ini`
 
-	$ php --ini
+```bash
+$ php --ini
+```
 
 <img src='http://making-the-internet.s3.amazonaws.com/sysadmin-php-from-command-line-ini-location-set@2x.png' class='' style='max-width:533px; width:100%' alt=''>
 
@@ -64,7 +84,19 @@ If either of the above tests failed, revisit the **[PHP from CL](https://github.
 
 No matter which `php.exe` you use, the key thing you need to know is *which* `php.ini` file is being used when running PHP from the CL. That way, if you run into any issues, you know where to find your configurations. 
 
-Also, it should be noted that the `php.ini` file we gave you has `openssl` enabled by default, which is an extension you're going to need.
+Whichever `php.ini` file you're using, make sure it has `openssl` enabled as that module will be needed to install Composer.
+
+You can confirm this by looking at the list of installed modules:
+
+```bash
+$ php -m
+```
+
+Also, here's a [grep](http://ss64.com/bash/grep.html) command to find instances of &ldquo;openssl&rdquo; in your php.ini file:
+
+```
+$ php -i | grep --ignore-case --color --line-number openssl
+```
 
 
 
@@ -79,7 +111,7 @@ Make sure the `php.exe` path on the **third screen** matches the same MAMP php.e
 
 <img src='http://making-the-internet.s3.amazonaws.com/laravel-composer-install-on-windows@2x.png' class='' style='max-width:928px; width:100%' alt=''>
 
-When the installer is complete, close and restart Cmder. 
+When the installer is complete, **close and restart Cmder**. 
 
 Now, you should be able to run the `composer` command from within any directory. This works because the installer updated your PATH variable for you.
 
@@ -93,8 +125,6 @@ If the above procedure doesn't work, scroll down to see if your issue is listed 
 
 
 ## Common Issues
-
-*The following is a work in progress and will be updated to reflect common issues and solutions as identified in Piazza.*.
 
 ### Issue: openssl
 
@@ -128,14 +158,36 @@ __Symptoms:__ (Mac) When downloading Composer (via the `curl -sS https://getcomp
 	If you'd like to turn off curl's verification of the certificate, use
 	 the -k (or --insecure) option.
 
-__Solution__: [[Pending](https://piazza.com/class/ht1cmoh734q7lz?cid=83)] 
+__Solution__: 
+Run the curl command somewhere outside of `/usr/local/bin` (for example, in your documents folder) and when it's done, move the resulting `composer.phar` into `/usr/local/bin`.
+
 
 
 ### Issue: Permission Denied
 
 __Symptoms:__ (Mac) You're in your `/usr/local/bin` directory and you run the command to download Composer (`curl -sS https://getcomposer.org/installer | php`). The download fails citing *failed to open stream: Permission denied*.
 
-__Solution:__ [[Pending](https://piazza.com/class/ht1cmoh734q7lz?cid=79)]
+__Solution:__ 
+
+Run the command using `sudo`:
+
+```bash
+$ curl -sS https://getcomposer.org/installer | sudo php -d detect_unicode=Off
+```
+
+[source](http://stackoverflow.com/questions/14437588/having-trouble-installing-composer)
+
+Similarly, if you get a *Permission denied* error when trying to move `composer.phar` you can also use sudo:
+
+```bash
+$ sudo mv composer.phar composer
+```
+
+<-- 
+https://piazza.com/class/ht1cmoh734q7lz?cid=79 
+-->
+
+
 
 
 

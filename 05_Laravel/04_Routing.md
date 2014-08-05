@@ -16,13 +16,15 @@ Among other things, `Route` gives you access to HTTP requests:
 
 Here's an example route for the *foobooks* app:
 
-	Route::get('/books', function() {
-	    return 'Here are all the books...';
-	}); 
+```php
+Route::get('/books', function() {
+    return 'Here are all the books...';
+}); 
+```
 
 The **first parameter** is a URI String that will trigger this route; in this case that's `/books`. 
 
-I.e if the user goes to `http://localhost/books` it will trigger this route.
+I.e. if a user goes to `http://localhost/books` it will trigger this route.
 
 The **second parameter** can be a *Closure* or a *Controller action*. We'll get to Controllers later, so for now we're passing a Closure (aka Anonymous function).
 
@@ -56,33 +58,34 @@ You can make route URI's more flexible with route parameters. These parameters a
 
 For example:
 
-	Route::get('/books/{category}', function($category) {
-		    return 'Here are all the books in the category of '.$category;
-	}); 
-	
+```php
+Route::get('/books/{category}', function($category) {
+	    return 'Here are all the books in the category of '.$category;
+}); 
+```
 
 ## Post example
 
 You can have two routes with the same URI that react to different http methods.
 
+```php
+Route::get('/new', function() {
+	
+	$view  = '<form method="POST">';
+	$view .= 'Title: <input type="text" name="title">';
+	$view .= '<input type="submit">';
+	$view .= '</form>';
+	return $view;
+	
+});
 
-	Route::get('/new', function() {
-		
-		$view  = '<form method="POST">';
-		$view .= 'Title: <input type="text" name="title">';
-		$view .= '<input type="submit">';
-		$view .= '</form>';
-		return $view;
-		
-	});
-
-	Route::post('/new', function() {
-		
-		$input =  Input::all();
-		print_r($input);
-		
-	});
-
+Route::post('/new', function() {
+	
+	$input =  Input::all();
+	print_r($input);
+	
+});
+```
 
 
 
@@ -91,13 +94,15 @@ You can have two routes with the same URI that react to different http methods.
 
 In `/app/routes.php` define a practice route:
 
-	Route::get('/practice', function() {
-		
-		echo 'Hello World!';
-				
-	});
+```php
+Route::get('/practice', function() {
+	
+	echo 'Hello World!';
+			
+});
+```
 
-Load this route ala `http://foobar.dev/practice` and make sure you see *Hello World* on the screen.
+Load this route ala `http://localhost/practice` and make sure you see *Hello World* on the screen.
 
 For now on, whenever these notes say *"try this in your testing route"* we mean running the code in this route closure.
 
@@ -107,10 +112,11 @@ For example, if we say:
 
 ...we're expecting you to do this:
 
-	Route::get('/practice', function() {
-		echo App::environment();
-	});
-
+```php
+Route::get('/practice', function() {
+	echo App::environment();
+});
+```
 
 
 
@@ -121,7 +127,9 @@ Artisan is a PHP command line tool that ships with Laravel and provides many sho
 
 For our first example of what Artisan can do, have it tell you what routes are set up in your application:
 
-	$ php artisan routes
+```bash
+$ php artisan routes
+```
 
 Note: The `php artisan` command must always be run from *within* your application.
 

@@ -1,15 +1,8 @@
 <!-- 
-* Hit memory limit when running `composer update` on live server; going to have to put "vendors" in VC?
-
-* TODO: What about database migrations?
-
-* Notes online indicate Laravel has to be started first on 5.3 then 5.4 because their build of 5.4 is missing mcrypt. This doesn't make much sense. In my tests their 5.4 cartridge did work, so it's a moot point.
-
 http://blog.alan-zhang.com/how-to-run-laravel-4-on-openshift
 http://thewavetech.com/set-laravel-openshift/
 https://github.com/muffycompo/openshift-laravel4-quickstart-app
 https://www.openshift.com/developers/deploying-and-building-applications
-
 -->
 
 
@@ -19,12 +12,12 @@ https://www.openshift.com/developers/deploying-and-building-applications
 
 So far, you've got the flow set up between your local computer and your repo at Github, but there's one more piece of the puzzle: deploying your changes to your live server.
 
-In this section we'll look at an example of how you would deploy to RedHat's [OpenShift](https://www.openshift.com/)&mdash; an &ldquo;*Open Hybrid Cloud Application Platform*&rdquo;.
+In this section we'll look at an example of how you would deploy to RedHat's [OpenShift](https://www.openshift.com/)&mdash; an &ldquo;*Open Hybrid Cloud Application Platform*.&rdquo;
 
 For the sake of this course and PHP/Laravel development, here are the some reasons OpenShift is a good option:
 
 + Built-in Git source code repository making it easy to deploy via Git.
-+ Availability of PHP 5.4 (required for Laravel)
++ Availability of PHP 5.4 (required for Laravel).
 + Free subdomains, with the option to set up your own domains.
 + A free plan for experimentation.
 
@@ -47,16 +40,19 @@ You can use the same `id_rsa.pub` key on your computer that you created when you
 
 Mac: 
 
-	$ cat /Users/YourName/.ssh/id_rsa.pub
+```bash
+$ cat /Users/YourName/.ssh/id_rsa.pub
+```
 
 Windows:
 
-	$ cat C:\Users\YourName\.ssh\id_rsa.pub
+```bash
+$ cat C:\Users\YourName\.ssh\id_rsa.pub
+```
 
 Back in OpenShift, paste in the key and click *Create*.
 
-<!-- TODO: Replace with new screenshot at https://dl.dropboxusercontent.com/u/22812541/vc-openshift-public-keys.png -->
-<!-- <img src='http://making-the-internet.s3.amazonaws.com/vc-openshift-add-ssh-key@2x.png' class='' style='max-width:604px; width:100%' alt=''> -->
+<img src='http://making-the-internet.s3.amazonaws.com/vc-openshift-add-ssh-key@2x.png' class='' style='max-width:604px; width:100%' alt='New SSH Key on OpenShift'>
 
 That should do it. After your create your first OpenShift app, we'll test that this is working.
 
@@ -72,13 +68,15 @@ Note: Instead of using your Github key, you could have generated a unique one fo
 From the top menu, find the **Applications** tab, then click **Create your first application now**.
 
 
-### Choose a cartridge
+__Choose a cartridge:__
+
 On the page that follows, you'll see a whole bunch of *cartridges* (managed runtime for your application) to choose from. Find the one for **PHP 5.4**.
 
 <img src='http://making-the-internet.s3.amazonaws.com/vc-openshift-new-php-app@2x.png' class='' style='max-width:573px; width:100%' alt=''>
 
 
-### Choose a URL
+__Choose a URL:__
+
 The first configuration on the next screen is the **Public URL** for your app. In the left field, enter the name for your app (no spaces, no special characters).
 
 The field on the right is a namespace for *all* your apps on OpenShift. Because this is your first app, it's not yet set.
@@ -87,7 +85,8 @@ The namespace will be included on all your OpenShift domains, so pick something 
 
 <img src='http://making-the-internet.s3.amazonaws.com/vc-openshift-name-first-app@2x.png' class='' style='max-width:931px; width:100%' alt=''>
 
-### Source Code
+__Source Code:__
+
 If you wanted to create a new, bare application, you'd leave this field blank. However, you're already set up with an existing repository that's on Github, so let's connect this new app with that.
 
 Enter the *https* URL for the Github repository you want to connect this app to. This is simply the URL you see in your browser when you're viewing your app in Github.com.
@@ -96,7 +95,7 @@ You can leave the branch field empty, because it will default to the `master` br
 
 <img src='http://making-the-internet.s3.amazonaws.com/vc-openshift-set-git-url@2x.png' class='' style='max-width:780px; width:75%' alt=''>
 
-### Finish
+__Finish: __
 You can leave the remaining fields as their defaults; to finish click **Create Application**. In our tests, it typically took a few minutes for the application process to complete, so don't be surprised if your browser hangs for a little while.
 
 When it's done, you'll see a confirmation with some instructions on what to do next:
@@ -169,26 +168,36 @@ Back on your local computer, navigate into your app directory via command line. 
 
 First, see what existing remote(s) you have set up:
 
-	$ git remote --v
-	
+```bash
+$ git remote --v
+```	
+
 Now, add the OpenShift remote (replace with your own url you copied above):
-	
-	$ git remote add openshift ssh://234890230@helloworld-dwa15sb.rhcloud.com/~/git/helloworld.git/
+
+```bash
+$ git remote add openshift ssh://234890230@helloworld-dwa15sb.rhcloud.com/~/git/helloworld.git/
+```
 
 Test it out:
 
-	$ git push openshift master
+```bash
+$ git push openshift master
+```
 	
 If you haven't committed any changes since you first created your OpenShift app, this should just tell you that everything is up to date. Let's actually make a change and confirm you can get it up to OpenShift.
 
 Open `index.php` file and make some change, then stage and commit the change.
 
-	$ git add --all
-	$ git commit -m "Just a small change to test deployment to OpenShift"
+```bash
+$ git add --all
+$ git commit -m "Small change to test deployment to OpenShift"
+```bash
 
 Finally, push:
 
-	$ git push openshift master
+```bash
+$ git push openshift master
+```
 	
 This will push your commits up to OpenShift and it will also trigger your application to re-deploy. Given this, it may take a little longer than your standard push.
 
@@ -212,7 +221,9 @@ To install RHC, follow OpenShift's instructions:
 
 For an example of what RHC can do, check out `tail`; this command will let you see a live stream of the logs for a given application.
 
-	$ rhc tail app-name
+```bash
+$ rhc tail app-name
+```
 
 [You can learn more about what you can do with RHC here.](https://www.openshift.com/blogs/using-rhc-to-manage-paas-apps)
 	

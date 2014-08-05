@@ -2,8 +2,10 @@
 
 If you ever find yourself backed into a corner with lots of merges and conflicts you're unsure how to resolve, there's a last-resort solution with the following commands:
 
-	git fetch --all
-	git reset --hard origin/master
+```bash
+$ git fetch --all
+$ git reset --hard origin/master
+```
 	
 git fetch downloads the latest from remote without trying to merge. 
 
@@ -39,16 +41,6 @@ To see this folder, though, you have to make sure your system is showing hidden 
 
 Alternatively, you could just run the `git status` command and it will let you know if the current directory is/is not a repo.
 
-## How to delete a repo @ Github.com
+## Delete a repo @ Github.com
 Go to that repo's page and click the Admin button ([screenshot](http://content.screencast.com/users/susanBuck/folders/Jing/media/f29dc9eb-9d96-4e95-8463-9528eb8e0033/00002850.png)). From there, scroll down and you'll see the option under the heading "Danger Zone".
 
-## Cache your password on your live server with github.com so you don't have to repeatedly enter it
-Cache it for 15 minutes:
-
-	git config --global credential.helper cache
-
-Cache it for an hour:
-
-	git config --global credential.helper 'cache --timeout=3600'
-
-See the section on *Password Caching* in this [Set Up Git](https://help.github.com/articles/set-up-git) article for more details.

@@ -11,11 +11,15 @@ You can use the same `id_rsa.pub` key you created when you configured Github. Us
 
 Mac: 
 
-	$ cat /Users/YourName/.ssh/id_rsa.pub
+```bash
+$ cat /Users/YourName/.ssh/id_rsa.pub
+```
 
 Windows:
 
-	$ cat C:\Users\YourName\.ssh\id_rsa.pub
+```bash
+$ cat C:\Users\YourName\.ssh\id_rsa.pub
+```
 
 Back in DigitalOcean, find the menu on the left for **SSH Keys** in order to add a new key. Paste in the key and give it a descriptive name.
 
@@ -41,7 +45,7 @@ On the screen that follows, make your Droplet settings match the following optio
 
 <img src='http://making-the-internet.s3.amazonaws.com/version-control-digital-ocean-new-droplet@2x.png' class='' style='max-width:860px; width:100%' alt=''>
 
-Check your email for a confirmation from DigitalOcean which will include your droplets IP address and the root password.
+Check your email for a confirmation from DigitalOcean which will include your Droplet's IP address; you can also find this address from your Droplets listing page at `https://cloud.digitalocean.com/droplets`.
 
 
 
@@ -49,14 +53,18 @@ Check your email for a confirmation from DigitalOcean which will include your dr
 
 From your local command line, SSH into your Digital Ocean droplet:
 
-	$ ssh root@your-digital-ocean-ip-address
+```bash
+$ ssh root@your-digital-ocean-ip-address
+```
 	
 If your SSH key is set up properly, you should not be prompted to enter a password and you should automatically get logged in.
 
 Take a look at your web directory:
 
-	$ cd /var/www/html
-	$ ls
+```bash
+$ cd /var/www/html
+$ ls
+```
 
 You should see two files:
 
@@ -75,44 +83,58 @@ You can replace the contents of this `index.html` file if you'd like:
 
 While SSH'd into your Digital Ocean server, run this command:
 
-	$ sudo apt-get install git
+```bash
+$ sudo apt-get install git
+```
 	
 Confirm it's working:
 
-	$ git --version
+```bash
+$ git --version
+```
 	
 
 
 
 ## SSH Key: DigitalOcean <-> Github.com
 
-In order to communicate between your DigitalOcean droplet and Github, you need to set up a SSH key.
+In order to communicate between your DigitalOcean droplet and Github, you need to set up another SSH key.
 
 
 While SSH'd in to your server, generate a new SSH key:
 
-	$ ssh-keygen -t rsa -C "your@email.com"
+```bash
+$ ssh-keygen -t rsa -C "your@email.com"
+```
 	
 Press enter:
 
-	$ Enter file in which to save the key (/root/.ssh/id_rsa): 
+```bash
+$ Enter file in which to save the key (/root/.ssh/id_rsa): 
+```
 
 Press enter:
 	
-	$ Enter passphrase (empty for no passphrase): 
+```bash
+$ Enter passphrase (empty for no passphrase): 
+```
 
 Press enter:
-	
-	$ Enter same passphrase again: 
+
+```	
+$ Enter same passphrase again: 
+```
 
 You'll now have two new files in `/root/.ssh/`:
 
-	id_rsa
-	id_rsa.pub
++ `id_rsa`
++ `id_rsa.pub`
 	
 Run the `cat` command to view the contents of the `id_rsa.pub` file.
 
-	$ cat /root/.ssh/id_rsa.pub	
+```
+$ cat /root/.ssh/id_rsa.pub	
+```
 	
 Copy the contents of `id_rsa.pub`
 
@@ -127,7 +149,9 @@ With your SSH key setup and Git installed, you're ready to clone your `hello-wor
 
 In the `/var/www/html` directory on DigitalOcean, run this command:
 
-	$ git clone git@github.com:username/reponame.git
+```bash
+$ git clone git@github.com:username/reponame.git
+```
 	
 
 Now when you view the contents of your html folder you should see:
@@ -147,7 +171,7 @@ you should see your hello-world project:
 
 Deployment is the process of moving your application to production.
 
-For other PaaS's we've looked at (Pagoda, Jumpstarter, etc.), all you had to do to deploy new code changes was push code to a remote url they gave you.
+For other PaaS's we've looked at (Pagoda, OpenShift, etc.), all you had to do to deploy new code changes was push code to a remote url they gave you.
 
 By default, you don't have this option with DigitalOcean, so you'll need to SSH in to your droplet, move into your project's directory and do a `git pull` whenever you want to sync new changes.
 
@@ -223,33 +247,45 @@ Once the restart is complete, test out your subdomain `helloworld.yourdomain.com
 ## Tips / Notes
 
 
-&bullet; SSH Keys between your computer and DigitalOcean will only work on Droplets that were created *after* you set up the key. To set up a key for an existing Droplet, navigate into your computer's .ssh directory and run this command:
++ SSH Keys between your computer and DigitalOcean will only work on Droplets that were created *after* you set up the key. To set up a key for an existing Droplet, navigate into your computer's .ssh directory and run this command:
 
-	cat id_rsa.pub | ssh root@[your.ip.address.here] "cat >> ~/.ssh/authorized_keys"
+```bash
+cat id_rsa.pub | ssh root@[your.ip.address.here] "cat >> ~/.ssh/authorized_keys"
+```
 	
-&bullet; Find out the IP address of a domain:
++ Find out the IP address of a domain:
 
-	$ ping domain.com
+```bash
+$ ping domain.com
+```
 
-&bullet; Find out the nameserver of a domain:
++ Find out the nameserver of a domain:
 
-	$ dig +short NS domain.com
+```bash
+$ dig +short NS domain.com
+```
 
-&bullet; Check the version of PHP
++ Check the version of PHP
 
-	$ php -v
+```bash
+$ php -v
+```
 	
-&bullet; See what PHP modules are installed
++ See what PHP modules are installed
 
-	$ php -m
+```bash
+$ php -m
+```
 	
-&bullet; Check Apache configurations:
++ Check Apache configurations:
 
-	$ apache2ctl -S
+```bash
+$ apache2ctl -S
+```
 
-&bullet; Apache error log location: `/var/log/apache2/error.log`
++ Apache error log location: `/var/log/apache2/error.log`
 
-&bullet; Apache configuration location: `/etc/apache2/httpd.conf`
++ Apache configuration location: `/etc/apache2/httpd.conf`
 
 
 
