@@ -122,11 +122,15 @@ When building your migrations, there are two things you'll need to know (in addi
 
 __First:__ If a column is going to be a FK that connects to an auto-incrementing column on another table (common), it must be `unsigned`.
 
-	$table->integer('author_id')->unsigned();
+```php
+$table->integer('author_id')->unsigned();
+```
 
 __Second:__ Here's the syntax for defining a FK:
 
-	$table->foreign('author_id')->references('id')->on('authors'); 
+```php
+$table->foreign('author_id')->references('id')->on('authors'); 
+```
 
 [Here's the migration for all of the Foobooks tables](https://gist.github.com/susanBuck/992b1323f6cc0f68427d).
 

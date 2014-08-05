@@ -11,31 +11,41 @@ The first step to configuring Laravel to talk to your database, is making sure i
 
 We'll do this via MySQL in the command line.
 
-MAMP has a MySQL executable you can intitiate with the following commands:
+MAMP has a MySQL executable you can initiate with the following commands:
 
 Windows:
 	
-	C:\MAMP\bin\mysql\bin\mysql.exe --host=localhost -uroot -proot
+```bash
+$ C:\MAMP\bin\mysql\bin\mysql.exe --host=localhost -uroot -proot
+```
 
 Mac: 
 
-	/Applications/MAMP/Library/bin/mysql --host=localhost -uroot -proot
+```
+$ /Applications/MAMP/Library/bin/mysql --host=localhost -uroot -proot
+```
 	
 <small>Pro-tip: Add MAMP's path to mysql to your [system's PATH](https://github.com/susanBuck/notes/blob/master/07_SysAdmin/999_PATH_Variable.md) so you don't have to run the full path every time.</small>
 
 Once you're in mysql mode you should see a prompt that looks like this:
 
-	mysql >
+```bash
+mysql >
+```
 	
 Let's start with a command to show your existing databases:
 
-	mysql > SHOW DATABASES;
+```bash
+mysql > SHOW DATABASES;
+```
 	
 Make sure you end your statement with a semi-colon; this tells MySQL you're done so it can execute the line.
 
 Now create a database:
 
-	mysql > CREATE DATABASE foobooks;
+```bash
+mysql > CREATE DATABASE foobooks;
+```
 
 Run the `SHOW DATABASES;` command again to confirm your new database has been added. 
 
@@ -94,6 +104,8 @@ Update the `database`, `username`, and `password` values:
 	'prefix'    => '',
 ),
 ```
+
+Tip: If you're running MySQL on a port other than 3306 you can specify that in the above array.
 
 If you open `/app/config/database.php` you'll see `mysql` is the default database connection Laravel will use, so there's nothing you need to change there.
 

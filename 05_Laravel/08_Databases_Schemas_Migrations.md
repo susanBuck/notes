@@ -27,7 +27,9 @@ Laravel's command line utility, Artisan, will help you take care of migration ta
 
 First, let's have Artisan generate a new migration file:
 
-	$ php artisan migrate:make create_books_table
+```bash
+$ php artisan migrate:make create_books_table
+```
 
 The migration name (`create_books_table`) should reflect what you're doing. In this example we're creating a table called `books`.
 
@@ -38,7 +40,7 @@ Naming conventions:
 
 The `migrate:make` command will generate a new file in `/app/database/migrations/` and the filename will look something like this: `2014_07_17_022948_create_books_table.php`.
 
-Note the generated filename is prefixed with a unique timestamp. This insures migrations are run in the same order in which they were created.
+Note the generated filename is prefixed with a unique timestamp. This ensures migrations are run in the same order in which they were created.
 
 Open up your newly generated migration, and you should see something like this:
 
@@ -125,22 +127,22 @@ public function up() {
 
 	Schema::create('books', function($table) {
 
-		// Increments method will make a Primary, Auto-Incrementing field.
-		// Most tables start off this way
+		# Increments method will make a Primary, Auto-Incrementing field.
+		# Most tables start off this way
 		$table->increments('id');
 
-		// This generates two columns: `created_at` and `updated_at` to
-		// keep track of changes to a row
+		# This generates two columns: `created_at` and `updated_at` to
+		# keep track of changes to a row
 		$table->timestamps();
 
-		// The rest of the fields...
+		# The rest of the fields...
 		$table->string('title');
 		$table->string('author');
 		$table->integer('published');
 		$table->string('cover');
 		$table->string('purchase_link');
 
-		// FYI: We're skipping the 'tags' field for now; more on that later.
+		# FYI: We're skipping the 'tags' field for now; more on that later.
 
 	});
 }
@@ -169,9 +171,11 @@ Schema::drop('books');
 
 When you've completed writing the code for your migration, you'll use Artisan to run it:
 
-	$ php artisan migrate
+```bash
+$ php artisan migrate
+```
 
-(FYI: The first time you do this it will create a `migrations` table which will be used to keep track of what migrations you've run.)
+FYI: The first time you do this it will create a `migrations` table which will be used to keep track of what migrations you've run.
 
 That should do the trick. Examine your new `books` table in phpMyAdmin or MySQL Command Line to make sure it matches the design you were aiming for.
 
@@ -185,7 +189,9 @@ Any alterations to an existing table should be done in a new migration.
 
 For example, let's imagine you wanted to add a `page_count` field to the books table. Start with a new migration:
 
-	$ php artisan migrate:make `add_page_count_field_to_books_table`
+```bash
+$ php artisan migrate:make `add_page_count_field_to_books_table`
+```
 
 Edit the resulting migration:
 
@@ -234,8 +240,8 @@ When starting with a brand new app, it's okay to bend the rules a little and reb
 
 For example, in the case above when we forgot the `published` field, rather than creating a new migration, it would have been nice to add the field to the original migration that created the table.
 
-Then, we could have run `php artisan migrate:refresh` to reset and re-run all migrations.
+Then, we could have run `php artisan migrate:refresh` to reset and re-run all migrations. You could even go as far as to delete your `migrations` tables as well as all other tables and really start from scratch.
 
 At this point, this procedure is acceptable because you're the only one running your migrations since the project hasn't been shared with anyone.
 
-It's only once your project has been shared with teammates/other servers that you want to make sure even granular changes are put in new migrations rather than added to existing ones. If you do the latter, you run the risk that those using your codebase won't re-run the existing migration and as a result their database schemas will get out of sync.
+It's only once your project has been shared with teammates/other servers that you want to make sure even granular changes are put in new migrations rather than added to existing ones. If you do the latter, you run the risk that someone working with your codebase won't re-run the existing migration and as a result their database schemas will get out of sync.
