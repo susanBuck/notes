@@ -55,19 +55,19 @@ Load your `helloworld.php` file in your browser ala `http://localhost/helloworld
 
 ## helloworld.php Code
 
-	<!DOCTYPE html>
-	<html>
-	<head>
-	  <title>Hello World</title>
-	</head>
-	<body>
-	  
-	  <?php echo 'Hello World! You are visiting '.$_SERVER['SERVER_NAME']; ?>
-	  
-	</body>
-	</html>
+```html
+<!doctype html>
+<html>
+<head>
 
+	<title>Hello World</title>
+	<meta charset='utf-8'>
+		
+</head>
+<body>
 
-
-
-
+	<?php echo 'Hello World! You are visiting '.$_SERVER['SERVER_NAME']; ?>
+	
+</body>
+</html>
+```
