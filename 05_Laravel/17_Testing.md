@@ -387,8 +387,8 @@ $I->amGoingTo('Fill in the sign up form with valid values');
 
 what they actually do...
 ```php
-$I->fillFiled('email', 'test@gmail.com');
-$I->fillFiled('password', 'foobar12345');
+$I->fillField('email', 'test@gmail.com');
+$I->fillField('password', 'foobar12345');
 ```
 
 and what they click...

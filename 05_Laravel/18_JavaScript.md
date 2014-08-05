@@ -263,7 +263,7 @@ public function jsVars() {
 	# Bind a variable called 'foo'
 	JavaScript::put(['foo' => 'bar']);
 	
-	# Bind a variable called 'bar'
+	# Bind a variable called 'email'
 	JavaScript::put(['email' => Auth::user()->email]);
 	
 	return View::make('demo_jsVars');
