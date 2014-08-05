@@ -235,7 +235,9 @@ paths:
 
 The next configuration you need to make is specific to Acceptance tests. Because Acceptance tests are run on a server you need to tell Codeception the URL of your application.
 
-Open `/app/tests/acceptance.suite.yml` and change `url` to whatever your local URL is (most likely `http://localhost/` unless you've set up VirtualHosts)
+Open `/app/tests/acceptance.suite.yml` and change `url` to whatever your local URL is (most likely `http://localhost/` unless you've set up VirtualHosts). 
+
+Also, add `laravel4` as one of the *enabled modules*.
 
 ```yml
 # Codeception Test Suite Configuration
@@ -249,10 +251,20 @@ modules:
     enabled:
         - PhpBrowser
         - AcceptanceHelper
+        - Laravel4
     config:
         PhpBrowser:
             url: 'http://localhost/'
 ```
+
+After you save these changes, prompt Codeception to regenerate the base classes for all suites:
+
+```bash
+$ codecept build
+```
+
+
+
 
 
 ## New Tests
@@ -332,6 +344,11 @@ $ codecept run acceptance --steps
 Run just one test:
 ```bash
 $ codecept run acceptance HomeCept.php
+```
+
+Tests with debugging info:
+```bash
+$ codecept run --debug
 ```
 
 

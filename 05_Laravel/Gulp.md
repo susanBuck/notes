@@ -9,7 +9,7 @@ Resources:
 
 ---
 
-Assumptions: You've already installed Node and are able to run `npm` (Node Package Manager).
+Assumptions: You've already [installed Node and are able to run `npm` (Node Package Manager)](https://github.com/susanBuck/notes/blob/master/05_Laravel/Node.md).
 
 Gulp is a **Task Runner** (another popular Taskrunner you may have heard of is Grunt).
 
