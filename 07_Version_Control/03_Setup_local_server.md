@@ -55,7 +55,7 @@ Load your `helloworld.php` file in your browser ala `http://localhost/helloworld
 
 ## helloworld.php Code
 
-```html
+```php
 <!doctype html>
 <html>
 <head>
