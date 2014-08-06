@@ -6,8 +6,8 @@ Bower    = Package manager for client side files
 
 Gulp     = Taskrunner
 
-Homebrow = Package manager for Apple (written in Ruby)
+Homebrew = Package manager for Apple (written in Ruby)
 
-Node     = 
+Node/Node.js = Server-side JavaScript.
 
 NPM      = Node Package Manager
