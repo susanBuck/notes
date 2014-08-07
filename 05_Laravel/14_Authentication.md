@@ -133,7 +133,6 @@ Route::post('/signup',
 			$user = new User;
 			$user->email    = Input::get('email');
 			$user->password = Hash::make(Input::get('password'));
-			$user->email    = Input::get('email');
 			
 			# Try to add the user 
 			try {
