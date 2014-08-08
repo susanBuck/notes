@@ -234,14 +234,12 @@ $ php artisan list
 
 ## Your first migrations
 
-Getting your migration code right the first time can be challenging, especially if you're starting a new project with a whole bunch of new tables.
+Getting your migration code right the first time can be challenging, especially if you're starting a new project with a whole bunch of new tables. When starting with a brand new app, it's okay to bend the rules and rebuild and rerun an existing migration to get your tables right.
 
-When starting with a brand new app, it's okay to bend the rules a little and rebuild and rerun an existing migration to get your table right.
+For example, in the case above when we forgot the `published` field, rather than creating a new migration, it would have been nice to add the field to the original migration that created the table. Then, you could run `php artisan migrate:refresh` to reset and re-run all migrations. 
 
-For example, in the case above when we forgot the `published` field, rather than creating a new migration, it would have been nice to add the field to the original migration that created the table.
+Migrate:refresh is great, but it assumes all your `down()` functions are written perfectly, and it also assumes you haven't had any migrations abort part-way through because of some issue. These assumptions aren't always correct, especially when you're first writing migrations and building a lot of tables. 
 
-Then, we could have run `php artisan migrate:refresh` to reset and re-run all migrations. You could even go as far as to delete your `migrations` tables as well as all other tables and really start from scratch.
+Given this, if you ever want to do a for-real "start over" you should manually delete *all* your tables (including the `migrations` table) using phpMyAdmin or some database tool. This will ensure you can run your migration with an absolute fresh start.
 
-At this point, this procedure is acceptable because you're the only one running your migrations since the project hasn't been shared with anyone.
-
-It's only once your project has been shared with teammates/other servers that you want to make sure even granular changes are put in new migrations rather than added to existing ones. If you do the latter, you run the risk that someone working with your codebase won't re-run the existing migration and as a result their database schemas will get out of sync.
+At this point, this work-around is acceptable because you're the only one running your migrations since the project hasn't been shared with anyone. It's only once your project has been shared with teammates/other servers that you obviously can't just start over, and you'll want to make sure even granular changes done a migration at a time. 
