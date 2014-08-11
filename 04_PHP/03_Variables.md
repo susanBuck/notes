@@ -3,10 +3,12 @@ Variables are used to store information so that it can easily be retrieved and m
 In PHP the name of a variable is always preceded by a dollar sign `$`.
 
 You assign values to variables using the *assignment operator* which is just an equal sign `=`. 
-	
-	<?php
-	$favorite_color = 'red';
-	?>
+
+```php
+<?php
+$favorite_color = 'red';
+?>
+```
 
 PHP variables don't have to be declared before they're used. Setting a variable for the first time is simultaneously declaring that variable.
 
@@ -23,10 +25,12 @@ This means that any changes to the new variable will not affect the original.
 
 Example:
 
-	$foo = 1;
-	$bar = $foo;
-	$bar = 2;
-	echo $foo; # Outputs 1.
+```php
+$foo = 1;
+$bar = $foo;
+$bar = 2;
+echo $foo; # Outputs 1.
+```
 
 ### Assignment by reference
 
@@ -36,10 +40,12 @@ Assigning a variable by reference is done with an ampersand.
 
 Example:
 
-	$foo = 1;
-	$bar = &$foo;
-	$bar = 2;
-	echo $foo; # Outputs 2
+```php
+$foo = 1;
+$bar = &$foo;
+$bar = 2;
+echo $foo; # Outputs 2
+```
 	
 Below we'll talk more about how you can pass variables to functions by reference.
 
@@ -48,17 +54,18 @@ Below we'll talk more about how you can pass variables to functions by reference
 
 One way to output variables from your script, is to use the `echo` construct.
 
-	<?php
-	$age = 50;
-	echo $age; # Outputs 50
-	?>
+```php
+$age = 50;
+echo $age; # Outputs 50
+```
 
 When outputting variables in HTML, you'll typically see code written in a more compact fashion:
 
-	<p>
-		My favorite color is<?php echo $favorite_color; ?>
-	</p>
-
+```php
+<p>
+	My favorite color is<?php echo $favorite_color; ?>
+</p>
+```
 
 
 
@@ -83,8 +90,10 @@ For example in Java you might say:
 	
 In PHP you don't have to explicitly set a variable's data type; instead, PHP will automatically determine the type for you.
 
-	$votes = 100; # Give it an integer, it'll be an integer
-	$votes = "Unknown"; # Give it a string, it'll be a string
+```php
+$votes = 100; # Give it an integer, it'll be an integer
+$votes = "Unknown"; # Give it a string, it'll be a string
+```
 
 PHP doesn't support explicit variable typing. 
 
@@ -110,8 +119,10 @@ While you don't have to set variable types, you can convert variable types using
 
 For example, you could convert a floating point number to an integer:
 
-	$votes = (int) 10.9;
-	echo $votes; # Outputs 10
+```php
+$votes = (int) 10.9;
+echo $votes; # Outputs 10
+```
 
 
 
@@ -133,12 +144,14 @@ A variable declared **outside a function** is **global**. This means it is visib
 
 Given that, the following would not work:
 
-	function report_votes() {
-		echo "Vote count:".$votes;
-	}
-	
-	$votes = 50; # Global
-	report_votes();
+```php
+function report_votes() {
+	echo "Vote count:".$votes;
+}
+
+$votes = 50; # Global
+report_votes();
+```
 
 The reason is because the variable `$votes` is global, and therefor when you try to use it inside the `report_votes()` function, it doesn't know what you're talking about.
 
@@ -146,25 +159,30 @@ In order to make a global variable visible in a function, you have to use the **
 
 You could fix the above code like this: 
 
-	function report_votes() {
-		global $votes; 	# Makes the global variable $votes visible inside this function
-		echo "Vote count:".$votes;
-	}
-	
-	$votes = 50; # Global
-	report_votes(); # Outputs "Vote count: 50"
+```php
+function report_votes() {
+	global $votes; 	# Makes the global variable $votes visible inside this function
+	echo "Vote count:".$votes;
+}
+
+$votes = 50; # Global
+report_votes(); # Outputs "Vote count: 50"
+```
 
 ### Local variables
 
 A variable declared **in a function** is **local** to that function. This mean it's only visible to the code in that function; it is not visible outside the function.
 
-	function upvote() {
-		$votes++; # Local
-	}
-	
-	$votes = 50; # Global
-	upvote();
-	echo $votes; # Outputs 50
+```php
+function upvote() {
+	$votes++; # Local
+}
+
+$votes = 50; # Global
+upvote();
+echo $votes; # Outputs 50
+```
+
 
 ### Static variables
 
@@ -172,16 +190,18 @@ Static variables are used in functions, and visible only in functions; they are 
 
 Example:
 
-	function upvote() {
-		static $votes = 99;
-		$votes++;
-		echo $votes.'<br>';
-	}
+```php
+function upvote() {
+	static $votes = 99;
+	$votes++;
+	echo $votes.'<br>';
+}
 
-	upvote(); # Outputs 100
-	upvote(); # Outputs 101
-	upvote(); # Outputs 102
-	upvote(); # Outputs 103
+upvote(); # Outputs 100
+upvote(); # Outputs 101
+upvote(); # Outputs 102
+upvote(); # Outputs 103
+```
 
 ### Function variables
 
@@ -189,13 +209,15 @@ Function variables are defined via the parameters of a function call, and are lo
 
 Example:
 
-	function upvote($votes) {
-		$votes++;
-		echo $votes.'<br>';
-	}
+```php
+function upvote($votes) {
+	$votes++;
+	echo $votes.'<br>';
+}
 
-	upvote(99); # Outputs 100
-	echo $votes; # Undefined
+upvote(99);  # Outputs 100
+echo $votes; # Undefined
+```
 
 
 
@@ -208,26 +230,30 @@ If you pass a variable **by reference** to a function, **that function has the a
 
 For example, let's start with a scenario where the parameter passed to a function is *not* passed by reference:
 
-	function upvote($votes) {
-		$votes++;
-	}
+```php
+function upvote($votes) {
+	$votes++;
+}
 
-	$votes = 50;
-	upvote($votes);
-	echo $votes; # Outputs 50
+$votes = 50;
+upvote($votes);
+echo $votes; # Outputs 50
+```
 	
 
 Note how `$votes` is incremented inside the function, but the end result is still 50. This is because the *local* `$votes` used in the function is independent from the *global* `$votes` used outside the function.
 	
 Now let's look at that same function, but this time the parameter *is* passed by reference (as indicated with the ampersand):
 
-	function upvote(&$votes) {
-		$votes++;
-	}
+```php
+function upvote(&$votes) {
+	$votes++;
+}
 
-	$votes = 50;
-	upvote($votes); 
-	echo $votes.'<br>'; # Outputs 51
+$votes = 50;
+upvote($votes); 
+echo $votes.'<br>'; # Outputs 51
+```
 	
 This time, the end result is 51 because the *global* `$votes` variable was passed by reference, allowing it to be updated locally in the function.
 
@@ -250,49 +276,54 @@ The final output should thus be:
 	
 ### Using a global variable...
 
-	function upvote() {
-		
-		global $votes;
-		$votes++;
-		echo $votes.'<br>';
-		
-	}
+```php
+function upvote() {
+	
+	global $votes;
+	$votes++;
+	echo $votes.'<br>';
+	
+}
 
-	$votes = 100;
-	upvote(); # Outputs 101
-	upvote(); # Outputs 102
-	upvote(); # Outputs 103
+$votes = 100;
+upvote(); # Outputs 101
+upvote(); # Outputs 102
+upvote(); # Outputs 103
+```
 
 
 ### Using a static variable...
 
-	function upvote() {
-		
-		static $votes = 100;
-		$votes++;
-		echo $votes.'<br>';
-		
-	}
+```php
+function upvote() {
+	
+	static $votes = 100;
+	$votes++;
+	echo $votes.'<br>';
+	
+}
 
-	upvote(); # Outputs 101
-	upvote(); # Outputs 102
-	upvote(); # Outputs 103
+upvote(); # Outputs 101
+upvote(); # Outputs 102
+upvote(); # Outputs 103
+```
 
 
 ### Using a variable reference....
 
-	function upvote(&$votes) {
-		
-		$votes++;
-		echo $votes.'<br>';
-		
-	}
+```php
+function upvote(&$votes) {
 	
-	$votes = 100;
-	upvote($votes); # Outputs 101
-	upvote($votes); # Outputs 102
-	upvote($votes); # Outputs 103
+	$votes++;
+	echo $votes.'<br>';
+	
+}
 
+$votes = 100;
+upvote($votes); # Outputs 101
+upvote($votes); # Outputs 102
+upvote($votes); # Outputs 103
+```
 
 
 
