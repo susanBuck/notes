@@ -1,6 +1,6 @@
 ## PHPiggy Bank
 
-Create a file called **bank.php** and fill it with the following code, then load bank.php in your browser.
+Create a file called **bank.php** and fill it with the following code, then load it in your browser.
 
 ```php
 <!DOCTYPE html>
