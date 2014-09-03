@@ -22,7 +22,6 @@ Create a new directory in your `Documents` folder called `Sites`:
 
 In MAMP preferences, set your *document root* aka *root* to this new directory:
 
-
 <img src='http://making-the-internet.s3.amazonaws.com/vc-set-root-in-mamp@2x.png' style='width:100%; max-width:540px'>
 
 Also in preferences, under *Ports* click *Set Apache & MySQL* ports to `80` & `3306`:
@@ -31,10 +30,11 @@ Also in preferences, under *Ports* click *Set Apache & MySQL* ports to `80` & `3
 
 Next, create a new file in your code editor and save it as `helloworld.php` in your `Sites` directory.
 
-Fill your `helloworld.php` file with the code below.
+Paste in [this code](https://gist.github.com/susanBuck/3f133c6d64be0f6f27a9) to your `helloworld.php` file.
 
 Load your `helloworld.php` file in your browser ala `http://localhost/helloworld.php`.
 
+<img src='http://making-the-internet.s3.amazonaws.com/vc-hello-world-done-on-mac@2x.png' class='' style='max-width:746px; width:100%' alt=''>
 
 A note on ports: the default Apache port is 80, so setting it to 80 above makes it so you can access your local sites via the url `http://localhost`. If your Apache port is something else, for example, 8888, you'd have to access your sites via `http://localhost:8888`.
 
@@ -42,32 +42,34 @@ A note on ports: the default Apache port is 80, so setting it to 80 above makes 
 
 ## MAMP Setup on Windows
 
-Download and install MAMP for Windows: <http://www.mamp.info/en/mamp_windows_beta.html>
+Download and install MAMP for Windows: <http://www.mamp.info/en/mamp_windows_beta.html>.
 
-Create a new file in your code editor and save it as `helloworld.php` in `c:\MAMP\htdocs`. This directory, `c:\MAMP\htdocs` is your *document root* aka *root*.
+During installation, you may be told that MAMP requires two additional pieces of software:
 
-Fill your `helloworld.php` file with the code below.
++ Microsoft .NET framework 4
++ Microsoft Visual C++
 
-Load your `helloworld.php` file in your browser ala `http://localhost/helloworld.php`
+Follow all the prompts, instructions to install these add-ons. 
+
+Once MAMP is installed, you should see this Window, and barring any conflicts, your Apache and MySQL server should be running:
+
+<img src='http://making-the-internet.s3.amazonaws.com/vc-mamp-on-windows-running@2x.png' class='' style='max-width:1056px; width:100%' alt=''>
+
+With your local server running, you can test out your first web page...
+
+Create a new file in your code editor and save it as `helloworld.php` in `c:\MAMP\htdocs`. This directory, `c:\MAMP\htdocs` is your *document root* aka *root* for your local server.
+
+Paste in [this code](https://gist.github.com/susanBuck/3f133c6d64be0f6f27a9) to your `helloworld.php` file.
+
+Load your `helloworld.php` file in your browser ala `http://localhost/helloworld.php`.
+
+<img src='http://making-the-internet.s3.amazonaws.com/vc-hello-world-done-on-pc@2x.png' class='' style='max-width:579px; width:100%' alt=''>
 
 
 
+## Troubleshooting
+If Apache or MySQL fails to start (as indicated by a lack of two green dots in the MAMP window), check for error logs in the following locations:
 
-## helloworld.php Code
++ Mac: `/Applications/MAMP/logs`
++ Windows: `C:\MAMP\logs`
 
-```php
-<!doctype html>
-<html>
-<head>
-
-	<title>Hello World</title>
-	<meta charset='utf-8'>
-		
-</head>
-<body>
-
-	<?php echo 'Hello World! You are visiting '.$_SERVER['SERVER_NAME']; ?>
-	
-</body>
-</html>
-```
