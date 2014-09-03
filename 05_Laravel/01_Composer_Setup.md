@@ -95,7 +95,7 @@ $ php -m
 Also, here's a [grep](http://ss64.com/bash/grep.html) command to find instances of &ldquo;openssl&rdquo; in your php.ini file:
 
 ```
-$ php -i | grep --ignore-case --color --line-number openssl
+$ php -i | grep --ignore-case --line-number openssl
 ```
 
 
@@ -109,13 +109,13 @@ Running through the installer, you should see the following screens.
 
 Make sure the `php.exe` path on the **third screen** matches the same MAMP php.exe you set up in the above steps. This way you know what PHP Composer is using, and you know it's using a `php.ini` file with `openssl` enabled.
 
-<img src='http://making-the-internet.s3.amazonaws.com/laravel-composer-install-on-windows@2x.png' class='' style='max-width:928px; width:100%' alt=''>
+<img src='http://making-the-internet.s3.amazonaws.com/laravel-composer-install-on-windows@2x.png' class='' style='max-width:925px; width:100%' alt='Composer installation on Windows'>
 
 When the installer is complete, **close and restart Cmder**. 
 
 Now, you should be able to run the `composer` command from within any directory. This works because the installer updated your PATH variable for you.
 
-<img src='http://making-the-internet.s3.amazonaws.com/laravel-windows-composer-confirm@2x.png' class='' style='max-width:888px; width:100%' alt=''>
+<img src='http://making-the-internet.s3.amazonaws.com/laravel-windows-composer-confirm@2x.png' class='' style='max-width:537px; width:100%' alt=''>
 
 That's it! Composer is installed and ready to go.
 
@@ -134,7 +134,7 @@ __Solution:__ Identify what `php.ini` file you're using with this command:
 
 	$ php --ini
 	
-Open the indicated `php.ini` file and make sure the following line is not commented out (i.e. it does *not* have a semi-colon in front of it:
+Open the indicated `php.ini` file and make sure the following line is not commented out (i.e. it does *not* have a semi-colon in front of it):
 
 	extension=php_openssl.dll
 
@@ -182,10 +182,6 @@ Similarly, if you get a *Permission denied* error when trying to move `composer.
 ```bash
 $ sudo mv composer.phar composer
 ```
-
-<-- 
-https://piazza.com/class/ht1cmoh734q7lz?cid=79 
--->
 
 
 

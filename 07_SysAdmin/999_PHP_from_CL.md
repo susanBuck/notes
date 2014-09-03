@@ -153,7 +153,7 @@ Use *[grep](http://ss64.com/bash/grep.html)* to search for something specific in
 For example, search for &ldquo;php.ini&rdquo;:
 
 ```bash
-php -i | grep --ignore-case --color --line-number php.ini
+$ php -i | grep --ignore-case --line-number php.ini
 ```
 
 
