@@ -4,7 +4,7 @@ As you work via the Command Line, you'll occasionally need to make edits to text
 
 There are two challenges you may face when making these edits in a [GUI](http://en.wikipedia.org/wiki/Graphical_user_interface)-based text editor like [Sublime](http://www.sublimetext.com/), TextEdit (Mac), Notepad (Win), etc.:
 
-1. The file is locked/read-only and needs special priveledges; it will let you open in a GUI but won't let you save.
+1. The file is locked/read-only and needs special privileges; it will let you open in a GUI but won't let you save.
 
 2. You can't find the file because it's hidden or in a hard-to-locate system path or is hidden.
 
@@ -37,7 +37,7 @@ After hitting `^X` it will ask you if you want to save. Type the letter `y` for 
 
 For a quick reference of shortcuts available in nano check out this [cheat sheet](http://mintaka.sdsu.edu/reu/nano.html) and for a more thorough set of documentation check out the [nano editor homepage](http://www.nano-editor.org/).
 
-If you ever need to edit a file that requires adminstrator priveleges, you can prefix your `nano` command with [sudo](http://ss64.com/osx/sudo.html). Sudo lets you execute a command as the *superuser*.
+If you ever need to edit a file that requires administrator privileges, you can prefix your `nano` command with [sudo](http://ss64.com/osx/sudo.html). Sudo lets you execute a command as the *superuser*.
 
 
 ### Hate nano?

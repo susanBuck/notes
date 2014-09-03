@@ -15,7 +15,7 @@ The application where you type your commands (and see any results of those comma
 
 Windows systems includes the limited **Command Prompt** application, which has nowhere near the power of *Bash*. Windows also has **PowerShell**, but the commands are different than what is used in th Bash shell.
 
-Given this, we're going to use a console emulator called **Cmder** which will allow you to *mostly* replicate anything you'd do in a Bash shell.
+Given this, we're going to use a console emulator called [**Cmder**](http://bliker.github.io/cmder/) which will allow you to *mostly* replicate anything you'd do in a Bash shell.
 
 
 
@@ -30,9 +30,15 @@ Find in `/Users/ComputerName/Applications/Utilities/` or just type `Terminal` in
 
 ### Windows - **Cmder** 
 
-Cmder is a Windows frontend for the standard Windows Command Shell (aka `cmd.exe`)
+Cmder is a Windows front-end for the standard Windows Command Shell (aka `cmd.exe`)
 
-Download from <http://bliker.github.io/cmder/> (Make sure you download the **full version** of Cmder, not the mini version.)
+Download from <http://bliker.github.io/cmder/> (Make sure you download the **full version**, not the mini version.)
+
+The download will give you a zip file; extract this into your `C:\Program Files` directory.
+
+<img src='http://making-the-internet.s3.amazonaws.com/sysadmin-extract-cmder@2x.png' class='' style='max-width:633px; width:100%' alt='Extract cmder'>
+
+When it's done extracting, find `c:\Program Files\cmder.exe` to launch Cmder.
 
 
 
@@ -41,7 +47,7 @@ Download from <http://bliker.github.io/cmder/> (Make sure you download the **ful
 ## Common Commands
 | Description        | Command
 | ------------- |:-------------:| 
-| Find out which directory you're in <br> (Present working directory) | `pwd`
+| Find out which directory you're in <br> (*present working directory*) | `pwd`
 | Go home | `cd ~`
 | List the contents of the current directory | `ls` 
 | List contents with hidden files & permissions | `ls -la` 
@@ -50,7 +56,7 @@ Download from <http://bliker.github.io/cmder/> (Make sure you download the **ful
 | Go back two directories | `cd ../../`   
 | Make a directory in current direcotory | `mkdir foobar` 
 | Remove a file | `rm foobar.txt` 
-| Remove a directory | `rm -R foobar/`   
+| Remove a directory (be careful!) | `rm -R foobar/`   
 | Create a new text-based file | `touch foobar.txt`
 | Re-enter previous commands | Up arrow 
 | Abort | ctrl + c
@@ -62,6 +68,7 @@ Download from <http://bliker.github.io/cmder/> (Make sure you download the **ful
 | ------------- |:-------------:| -----:|
 | What files have changed? | `git status` | 
 | Stage a file that's ready to be committed |  `git add foobar.txt`  |
+| Stage all changed files |  `git add --all`  |
 | Commit |`git commit -m "Commit message goes here"` |
 | Push | `git push origin master`|
 | Pull | `git pull origin master` |

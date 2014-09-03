@@ -16,17 +16,18 @@ The following instructions are Windows-centric, as PHP is installed by default o
 
 Before digging into these instructions, confirm you're logged into Windows as a user with **Administrator privileges**. This can generally be configured via *Control Panel > User Accounts*. However, it may vary across different Windows versions and you may have to search around Google for further guidance.
 
+In addition to logging in to Windows as an administrator, you may have to explicitly load Cmder as an admin. To do this, right click the Cmder icon and choose *Run as Administrator*. 
 
-
+<img src='http://making-the-internet.s3.amazonaws.com/laravel-run-cmder-as-admin@2x.png' class='' style='max-width:869px; width:100%' alt='Run Cmder as Administrator'>
 
 ## Where is php.exe?
 
-First: Locate a copy of `php.exe`. Assuming you have MAMP installed, you should find one in `C:\MAMP\bin\php\php5.5.7\` (replace the version number with whichever you want to use). 
+First: Locate a copy of `php.exe`. Assuming you have MAMP installed, you should find one in `C:\MAMP\bin\php\php5.5.12\` (replace the version number with whichever you want to use). 
 
 To test this out, try the `-v` flag again, this time specifying the full path to php:
 
 ```php
-$ C:\MAMP\bin\php\php5.5.7\php.exe -v
+$ C:\MAMP\bin\php\php5.5.12\php.exe -v
 ```
 
 If this doesn't report back on the version of PHP, dig around your `C:\MAMP\bin\php` folder for a copy of `php.exe`.
@@ -69,9 +70,9 @@ Each path in your PATH variable is separated by a semi-colon. Here's an example:
 
 	%SystemRoot%\system32;%SystemRoot%;%SystemRoot%\System32\Wbem;%SYSTEMROOT%\System32\WindowsPowerShell\v1.0\;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;
 
-Since you now know that there's a `php.exe` in `C:\MAMP\bin\php\php5.5.7\` you want to add this directory to your PATH variable:
+Since you now know that there's a `php.exe` in `C:\MAMP\bin\php\php5.5.12\` you want to add this directory to your PATH variable:
 
-<img src='http://making-the-internet.s3.amazonaws.com/laravel-setting-path-variable-on-windows.png?@2x' class='' style='max-width:1371px; width:100%' alt=''>
+<img src='http://making-the-internet.s3.amazonaws.com/laravel-setting-path-variable-on-windows.png?@2x' class='' style='max-width:1127; width:100%' alt=''>
 
 Tip: The text input for editing the PATH variable is small and hard to work with... Copy your variable to a text editor to work with it there, then paste it back when you're done.
 
@@ -89,7 +90,7 @@ This command will tell you where PHP is loading from:
 $ where.exe php
 ```
 	
-<img src='http://making-the-internet.s3.amazonaws.com/laravel-where-php@2x.png' class='' style='max-width:520px; width:100%' alt=''>
+<img src='http://making-the-internet.s3.amazonaws.com/laravel-where-php@2x.png' class='' style='max-width:487px; width:100%' alt=''>
 	
 And this command will tell you what version of PHP you're running
 
@@ -97,7 +98,7 @@ And this command will tell you what version of PHP you're running
 $ php -v
 ```
 	
-<img src='http://making-the-internet.s3.amazonaws.com/laravel-php-v@2x.png' class='' style='max-width:520px; width:100%' alt=''>
+<img src='http://making-the-internet.s3.amazonaws.com/laravel-php-v@2x.png' class='' style='max-width:486px; width:100%' alt=''>
 	
 If the above two commands work, you have confirmed that you can execute PHP from the command line.
 
@@ -115,11 +116,11 @@ $ php --ini
 	
 You should see that it's looking in `c:\Windows` by default:
 
-<img src='http://making-the-internet.s3.amazonaws.com/sysadmin-php-from-command-line-ini-location@2x.png' class='' style='max-width:520px; width:100%' alt=''>
+<img src='http://making-the-internet.s3.amazonaws.com/sysadmin-php-from-command-line-ini-location@2x.png' class='' style='max-width:498px; width:100%' alt=''>
 
 Given this, you need to create a `php.ini` file in `c:\Windows`. 
 
-For the contents of this file, copy the text from our example: [php.ini template](https://gist.github.com/susanBuck/73f7ca03344331fb9edf). This `php.ini` file has a variable called `extension_dir` which is set to `C:\MAMP\bin\php\php5.5.7\ext\`; if you're using a different PHP version you should update it accordingly.
+For the contents of this file, copy the text from our example: [php.ini template](https://gist.github.com/susanBuck/73f7ca03344331fb9edf). This `php.ini` file has a variable called `extension_dir` which is set to `C:\MAMP\bin\php\php5.5.12\ext\`; if you're using a different PHP version you should update it accordingly.
 
 If you have any access issues creating your `php.ini` file in `c:\Windows`, you can try the following workarounds:
 
@@ -133,7 +134,7 @@ Once you've got `c:\Windows\php.ini` created and saved, check your ini settings 
 $ php --ini
 ```
 	
-<img src='http://making-the-internet.s3.amazonaws.com/sysadmin-php-from-command-line-ini-location-set@2x.png' class='' style='max-width:533px; width:100%' alt=''>
+<img src='http://making-the-internet.s3.amazonaws.com/sysadmin-php-from-command-line-ini-location-set@2x.png' class='' style='max-width:559px; width:100%' alt='Ini location set'>
 
 Moving forward, remember that whenever you use PHP from the CL it's loading this particular configuration file. 
 
@@ -154,6 +155,7 @@ For example, search for &ldquo;php.ini&rdquo;:
 ```bash
 php -i | grep --ignore-case --color --line-number php.ini
 ```
+
 
 
 
