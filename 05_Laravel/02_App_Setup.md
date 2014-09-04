@@ -5,69 +5,50 @@ The Laravel framework has a few system requirements:
 * PHP >= 5.4
 * MCrypt PHP Extension
 
-In addition to making sure your MAMP server is running PHP >= 5.4, you also need to make sure your PHP for CL setup is up to date.
+Not only do you need to meet these requirements on your server, you also need to make sure PHP from CL meets these requirements. If it doesn't, you may run into some problems when working with Composer or Laravel from the command line.
 
-To confirm your system meets these requirements, find out what PHP executable your system uses when called from the command line...
+To double check the PHP version, run this command:
 
-Mac:
-
-```php
-$ which php
-```
-	
-Windows/Cmder:
-
-```php
-$ where.exe php
-```
-	
-<img src='http://making-the-internet.s3.amazonaws.com/laravel-confirm-php@2x.png' class='' style='max-width:951px; width:100%' alt='Laravel confirm PHP is installed'>
-
-The results above indicate the `php` command is using MAMP's install of PHP and  the version number is > 5.4.
-
-You can also confirm your version number with this command:
-
-```
+```bash
 $ php -v
 ```
-	
-If the above test reveals you're not using MAMP's php.exe, you can switch it following the [PHP for CL doc](https://github.com/susanBuck/notes/blob/master/07_SysAdmin/999_PHP_from_CL.md) which covers how to add MAMP's PHP to your PATH.
 
-If you're using MAMP's php.exe, the **MCrypt extension** required by Laravel will be installed by default. If you use a different PHP, though, you'll need to make sure that extension is running.
+To make sure Mcrypt is installed, run this command to search for `mcrypt` in your `php.ini` file:
 
-### Tips / Notes
+```bash
+$ php -i | grep --line-number mcrypt
+```
 
-* It's not absolutely necessary that you use MAMP's php.exe. You may already have another build of PHP on your system that you wish to use. The above outline is suggested for beginner users; advanced users are welcome to configure your systems however you'd like.
+If you hit any issues with the above checks, you should revisit the docs on setting up PHP from CL.
 
-* The command `php --info` will dump out all sorts of info about your php install, including version number and active extensions. This command is the equivalent to running `phpinfo();` in a PHP script.
-
-
+Once you've confirmed the above, you're ready to move on...
 
 
 ## Create a new Laravel app
 
-With PHP configured and Composer installed, it's time to spawn your first Laravel app.
-	
-Change directories into your local document root and use the `composer create-project` command to create a new Laravel app. 
+There are a few different ways to spawn a new Laravel application but we'll be using Composer.
 
-For our demonstrations, we're going to build an application called *Foobooks* which will manage a library of books. Given that, our application name will be `foobook`. Adjust this line to match what you're building.
+Change directories into your local Document Root where your new app will live.
+
+For our demonstrations, we're going to build an application called *Foobooks* which will manage a library of books. Given that, our application name will be `foobooks`. Adjust this line to match what you're building.
+
+Here's the magic command:
 
 ```bash
-$ composer create-project laravel/laravel foobook --prefer-dist
+$ composer create-project laravel/laravel foobooks --prefer-dist
 ```
 	
 FYI: Download will take a little bit of time.
 
-When composer is done working, move into the newly created project directory:
+When Composer is done working, move into the newly created project directory:
 
 ```bash
-$ cd foobook
-
+$ cd foobooks
 ```
 	
 Once in this directory, run `ls -la` command; you should see all the Laravel related files in there.
 
-<img src='http://making-the-internet.s3.amazonaws.com/laravel-fresh-install@2x.png' class='' style='max-width:780px; width:100%' alt='Laravel fresh install'>
+<img src='http://making-the-internet.s3.amazonaws.com/laravel-fresh-install@2x.png' class='' style='max-width:668px; width:100%' alt='Laravel fresh install'>
 
 **IMPORTANT**: Laravel needs to have the ability to write to the **storage** directory, so set that permission:
 
@@ -81,7 +62,7 @@ $ chmod -R 777 app/storage
 
 
 ## Environment setting
-By default Laravel runs in `production` mode which suppresses errors. Because we're just getting started out, we want all errors to show to help with debugging, so let's make the default environment mode `local`.
+By default Laravel runs in **production** mode which suppresses errors. Because we're just getting started out, we want all errors to show to help with debugging, so let's make the default environment mode **local**.
 
 Open `/bootstrap/start.php` and replace the word `homestead` with an asterisk `*`:
 
@@ -100,18 +81,18 @@ This is a quick and dirty fix for now. Later we'll spend an entire section on co
 
 
 ## Point local server to your new app
-To view your new Laravel app on your browser, you'll need to point your localhost's document root to the `public/` directory within your new app. 
+To view your new Laravel app in your browser, you'll need to point your localhost's Document Root to the `public/` directory within your new app. 
 
 The paths will look something like this (adjust accordingly to match your system):
 
 Mac:
 ```
-/Users/YourName/Documents/Sites/foobook/public
+/applications/MAMP/htdocs/foobooks/public
 ```
 
 Windows: 
 ```
-c:\MAMP\htdocs\foobook\public
+c:\xampp\htdocs\foobook\public
 ```
 
 Once you've determined your path, make the change in MAMP:

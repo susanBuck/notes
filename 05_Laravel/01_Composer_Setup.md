@@ -64,7 +64,7 @@ To do this, follow these instructions: **[PHP from CL](https://github.com/susanB
 
 Let's make sure everything is set up as it should be.
 
-First, where is CL PHP? It should be pointing to a php.exe in MAMP.
+First, where is CL PHP? It should be pointing to a php.exe in XAMPP.
 
 ```bash
 $ where.exe php
@@ -72,17 +72,21 @@ $ where.exe php
 	
 <img src='http://making-the-internet.s3.amazonaws.com/laravel-where-php@2x.png' class='' style='max-width:520px; width:100%' alt=''>
 	
-Second, what `php.ini` file is CL PHP using? It should be in `c:\Windows\php.ini`
-
+Second, what `php.ini` file is CL PHP using? 
 ```bash
 $ php --ini
 ```
 
-<img src='http://making-the-internet.s3.amazonaws.com/sysadmin-php-from-command-line-ini-location-set@2x.png' class='' style='max-width:533px; width:100%' alt=''>
+It should be using the one found in `c:\xampp\php\php.ini`.
+
+<img src='http://making-the-internet.s3.amazonaws.com/sysadmin-php-from-command-line-ini-location-set@2x.png' class='' style='max-width:536px; width:100%' alt=''>
 
 If either of the above tests failed, revisit the **[PHP from CL](https://github.com/susanBuck/notes/blob/master/07_SysAdmin/999_PHP_from_CL.md)** doc.
 
-No matter which `php.exe` you use, the key thing you need to know is *which* `php.ini` file is being used when running PHP from the CL. That way, if you run into any issues, you know where to find your configurations. 
+
+## OpenSSL Check
+
+No matter which `php.exe` or `php.ini` you use, the key thing you need to know is *which* `php.ini` file is being used when running PHP from the CL. That way, if you run into any issues, you know where to find your configurations. 
 
 Whichever `php.ini` file you're using, make sure it has `openssl` enabled as that module will be needed to install Composer.
 
@@ -107,9 +111,10 @@ There's a handy installer for Window's Composer, which you can download here: <h
 
 Running through the installer, you should see the following screens. 
 
-Make sure the `php.exe` path on the **third screen** matches the same MAMP php.exe you set up in the above steps. This way you know what PHP Composer is using, and you know it's using a `php.ini` file with `openssl` enabled.
+Make sure the `php.exe` path on the **third screen** matches the same XAMPP php.exe you set up in the above steps (it should by default). This way you know what `php.exe` and `php.ini` Composer is using.
 
-<img src='http://making-the-internet.s3.amazonaws.com/laravel-composer-install-on-windows@2x.png' class='' style='max-width:925px; width:100%' alt='Composer installation on Windows'>
+[Enlarge...](http://making-the-internet.s3.amazonaws.com/laravel-composer-install-on-windows@2x.png)
+<img src='http://making-the-internet.s3.amazonaws.com/laravel-composer-install-on-windows@2x.png' class='' style='max-width:1252px; width:100%' alt='Composer installation on Windows'> 
 
 When the installer is complete, **close and restart Cmder**. 
 

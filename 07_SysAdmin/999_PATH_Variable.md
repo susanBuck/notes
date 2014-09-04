@@ -17,11 +17,15 @@ Windows/Cmder users, this command will show you your PATH variables.
 $ PATH
 ```
 
-## Edit your PATH
+
+## Mac: Edit your PATH
 
 Mac users, follow these instructions: [Mac OSX Change Path Variables](http://architectryan.com/2012/10/02/add-to-the-path-on-mac-os-x-mountain-lion/#.U9nTwIBs9vI).
 
-Windows users, to edit your PATH variables goto *My Computer* > *Properties* > *Advanced* > *Environment Variables* > *Path*.
+
+## Windows: Edit your PATH
+
+To edit your PATH variables in Windows goto *My Computer* > *Properties* > *Advanced* > *Environment Variables* > *Path*.
 
 Each path is separated by a semi-colon. Here's an example PATH variable:
 

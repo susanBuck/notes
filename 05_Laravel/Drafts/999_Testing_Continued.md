@@ -2,7 +2,7 @@ Reference: <http://codeception.com/docs/modules/WebDriver>
 
 Assumptions: You've already [installed Node and are able to run `npm` (Node Package Manager)](https://github.com/susanBuck/notes/blob/master/05_Laravel/Node.md).
 
-Install selenium and chrome driver (using [this handy node package](https://github.com/vvo/selenium-standalone)):
+Install selenium and Chrome driver (using [this handy node package](https://github.com/vvo/selenium-standalone)):
 
 ```bash
 $ npm install --production selenium-standalone@latest -g
