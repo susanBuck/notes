@@ -1,9 +1,8 @@
-## Is PHP for CL set up?
+## Is PHP from CL set up?
 
-In addition to running PHP on a server, you can also run a PHP executable from Command Line. 
+In addition to running PHP on a server, you can also run PHP from Command Line. 
 
-To see if PHP for CL is setup, and what PHP executable it's using, run these commands:
-
+To see if PHP for CL is setup, and what PHP executable (`php.exe`) it's using, run these commands:
 
 Mac:
 ```bash
@@ -17,18 +16,18 @@ $ where.exe php
 
 Mac Users, your results may show CL is using a PHP executable found in `/usr/bin/php`, which is what ships with OSX by default.
 
-Windows users, your results may show that it can't find it a PHP executable (PHP does not ship with Windows by default).
+Windows users, your results may show that it can't find it a PHP executable since PHP does not ship with Windows by default.
 
 We want to fix both cases so that your PHP from CL is using the same PHP you use on your local server (MAMP or XAMPP). Here's how...
 
 
-## Mac
+## Mac: PHP from CL
 First, identify the location of a PHP executable (`php.exe`) within MAMP's bin folders.
 
 As of this writing, we're working with php5.5.5.15 so we located this PHP executable: 
 
 ```bash
-/Applications/MAMP/bin/php/php5.5.14/bin/php.exe`
+/Applications/MAMP/bin/php/php5.5.14/bin/php.exe
 ```
 
 Now that you know where your `php.exe` is, you want to update your **PATH variable** so it can be found.
@@ -40,7 +39,7 @@ Given this, when you want to use a new executable, you need to specify its direc
 To do this, edit `~/.bash_profile` adding this line at the end:
 
 ```bash
-export PATH="/Applications/MAMP/bin/php/php5.5.14/bin/":$PATH
+export PATH="/Applications/MAMP/bin/php/php5.5.14/bin":$PATH
 ```
 
 This will add the MAMP executable PHP path to your existing $PATH.
@@ -53,17 +52,29 @@ You can now run this command to confirm your MAMP PHP path has been added:
 $ echo $PATH
 ```
 
-And finally, you can check which PHP is now being used:
+And finally, you can check which PHP is now being used in CL:
 
 ```bash
 $ which php
+/Applications/MAMP/bin/php/php5.5.14/bin/php
 ```
 
+You can also verify the same `php.ini` file that your MAMP server uses is now being used by PHP in CL:
+
+```bash
+$ php --ini
+Configuration File (php.ini) Path: /Applications/MAMP/bin/php/php5.5.14/conf
+Loaded Configuration File:         /Applications/MAMP/bin/php/php5.5.14/conf/php.ini
+Scan for additional .ini files in: (none)
+Additional .ini files parsed:      (none)
+```
+
+If the above commands work as expected, you have confirmed that you can execute PHP from the command line.
 
 
 
 
-## Windows
+## Windows: PHP from CL
 Before digging into these instructions, confirm you're logged into Windows as a user with **Administrator privileges**. This can generally be configured via *Control Panel > User Accounts*. However, it may vary across different Windows versions and you may have to search around Google for further guidance.
 
 In addition to logging in to Windows as an administrator, you may have to explicitly load Cmder as an admin. To do this, right click the Cmder icon and choose *Run as Administrator*. 
@@ -80,11 +91,18 @@ Once you know where `php.exe` lives, you can add its directory to your **PATH va
 
 Given this, when you add a new executable, you may need to specify its directory in your PATH variable. 
 	
-This command will show you your PATH variable:
+This command will show you your existing PATH variable:
 
 ```php
 $ PATH
 ```
+
+Example output:
+```
+%SystemRoot%\system32;%SystemRoot%;%SystemRoot%\System32\Wbem;%SYSTEMROOT%\System32\WindowsPowerShell\v1.0\;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;
+```
+
+Notice how each different path is separated by a semi-colon.
 
 To edit your PATH variable navigate to the following menu:
 
@@ -93,12 +111,6 @@ __My Computer > Properties > Advanced > Environment Variables__
 In the *Environment Variables* screen look for `Path` under *System variables*:
 
 <img src='http://making-the-internet.s3.amazonaws.com/laravel-getting-to-path-on-windows@2x.png' class='' style='max-width:767px; width:100%' alt=''>
-
-Each path in your PATH variable is separated by a semi-colon. Here's an example:
-
-```bash
-%SystemRoot%\system32;%SystemRoot%;%SystemRoot%\System32\Wbem;%SYSTEMROOT%\System32\WindowsPowerShell\v1.0\;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;
-```
 
 Since you now know there's a `php.exe` in `c:\XAMPP\php\` you want to add this directory to your PATH variable:
 
@@ -128,10 +140,14 @@ And this command will tell you what version of PHP you're running
 ```bash
 $ php -v
 ```
-	
+
 <img src='http://making-the-internet.s3.amazonaws.com/laravel-php-v@2x.png' class='' style='max-width:509px; width:100%' alt=''>
-	
-If the above two commands work, you have confirmed that you can execute PHP from the command line.
+
+You can also verify the same `php.ini` file that your XAMPP server uses is now being used by PHP in CL:
+
+<img src='http://making-the-internet.s3.amazonaws.com/laravel-xampp-win-ini-location@2x.png' class='' style='max-width:536px; width:100%' alt=''>
+
+If the above commands work as expected, you have confirmed that you can execute PHP from the command line.
 
 
 

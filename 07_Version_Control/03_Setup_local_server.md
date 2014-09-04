@@ -5,14 +5,14 @@ In this course we're using what's commonly referred to as the LAMP stack:
 + The __M__ stands for __MySQL__ - Open-source database server.
 + The __P__ stands for __PHP__ - Web scripting language.
 
-When setting up a local server, you could individually download and install Apache, PHP and MySQL or use a all-in-one package such as [MAMP](http://www.mamp.info/en/) (our choice for Mac) or [XAMPP](https://www.apachefriends.org/index.html) (our choice for Windows). Below are instructions for setting up both...
+When setting up a local server, you could individually download and install Apache, PHP and MySQL or use an all-in-one package such as [MAMP](http://www.mamp.info/en/) (our choice for Mac) or [XAMPP](https://www.apachefriends.org/index.html) (our choice for Windows). Below are instructions for setting up both...
 
 
 
 
 ## MAMP Setup on Mac
 
-Download and install MAMP: <https://www.mamp.info/en/>.
+Download and install MAMP: <https://mamp.info/en/downloads/>.
 
 <small>Note: The download includes both free *MAMP* and *MAMP Pro* (paid version). You'll only need to use the free MAMP version in this class.</small>
 
@@ -34,23 +34,27 @@ If you see **two little green dots** next to *Apache* and *MySQL Server* you kno
 
 <img src='http://making-the-internet.s3.amazonaws.com/vc-mamp-mac-all-systems-go@2x.png' class='' style='max-width:723px; width:100%' alt=''>
 
-
 If, however, one of them is missing a green dot, it means there was a problem. Check `/Applications/MAMP/logs` for any error log files which may indicate what the problem is.
 
-With MAMP installed and your local server running, test out your first PHP script: Create a new file in your code editor and save it as `helloworld.php` in `/Applications/MAMP/htdocs`.
+
+
+With MAMP installed and your local server running, test out your first PHP script: Create a new file in your code editor and save it as `helloworld.php` in `/Applications/MAMP/htdocs/`.
 
 Paste in [this code](https://gist.github.com/susanBuck/3f133c6d64be0f6f27a9) to your `helloworld.php` file.
 
-Load your `helloworld.php` file in your browser ala `http://localhost/helloworld.php`.
+Load your `helloworld.php` file in your browser via `http://localhost/helloworld.php`.
 
 <img src='http://making-the-internet.s3.amazonaws.com/vc-hello-world-done-on-mac@2x.png' class='' style='max-width:746px; width:100%' alt=''>
 
+That's it! Your local server for Windows is installed, running and tested.
 
 
 
 ## XAMPP Setup on Windows
 
 Download XAMPP for Windows from <https://apachefriends.org/>.
+
+Install XAMPP...
 
 [Enlarge...](http://making-the-internet.s3.amazonaws.com/vc-xampp-install-on-windows@2x.png)
 <img src='http://making-the-internet.s3.amazonaws.com/vc-xampp-install-on-windows@2x.png' class='' style='max-width:1038px; width:100%' alt=''>
@@ -59,13 +63,14 @@ Once installation is complete, from the XAMPP Control Panel **Start** Apache and
 
 <img src='http://making-the-internet.s3.amazonaws.com/vc-xampp-win-start-servers@2x.png' class='' style='max-width:723px; width:100%' alt=''>
 
-With XAMPP installed and your local server running, test out your first PHP script: Create a new file in your code editor and save it as `helloworld.php` in `c:/xampp/htdocs`. This path is your local server's **Document Root** which is where you'll put all your web files and projects. You may want to create a shortcut to this directory, because you'll be working in it a lot.
+With XAMPP installed and your local server running, test out your first PHP script: Create a new file in your code editor and save it as `helloworld.php` in `c:/xampp/htdocs/`. This path is your local server's **Document Root** which is where you'll put all your web files and projects. You may want to create a shortcut to this directory, because you'll be working in it a lot.
 
 Paste in [this code](https://gist.github.com/susanBuck/3f133c6d64be0f6f27a9) to your `helloworld.php` file.
 
-Load your `helloworld.php` file in your browser ala `http://localhost/helloworld.php`.
+Load your `helloworld.php` file in your browser via `http://localhost/helloworld.php`.
 
 <img src='http://making-the-internet.s3.amazonaws.com/vc-confirm-localhost-working-xampp-on-win@2x.png' class='' style='max-width:579px; width:100%' alt=''>
 
+That's it! Your local server for Windows is installed, running and tested.
 
 
