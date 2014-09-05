@@ -36,8 +36,6 @@ If you see **two little green dots** next to *Apache* and *MySQL Server* you kno
 
 If, however, one of them is missing a green dot, it means there was a problem. Check `/Applications/MAMP/logs` for any error log files which may indicate what the problem is.
 
-
-
 With MAMP installed and your local server running, test out your first PHP script: Create a new file in your code editor and save it as `helloworld.php` in `/Applications/MAMP/htdocs/`.
 
 Paste in [this code](https://gist.github.com/susanBuck/3f133c6d64be0f6f27a9) to your `helloworld.php` file.
@@ -63,7 +61,21 @@ Once installation is complete, from the XAMPP Control Panel **Start** Apache and
 
 <img src='http://making-the-internet.s3.amazonaws.com/vc-xampp-win-start-servers@2x.png' class='' style='max-width:723px; width:100%' alt=''>
 
-With XAMPP installed and your local server running, test out your first PHP script: Create a new file in your code editor and save it as `helloworld.php` in `c:/xampp/htdocs/`. This path is your local server's **Document Root** which is where you'll put all your web files and projects. You may want to create a shortcut to this directory, because you'll be working in it a lot.
+If either of these services don't start up, you'll want to dig into your log files for clues. From the XAMPP Control Panel, there's a logs button next to each service.
+
+A common cause servers failing to start is a **port conflict**. In XAMPP you can use the Netstat feature to see what current ports are being used on your computer:
+
+<img src='http://making-the-internet.s3.amazonaws.com/vc-xampp-win-netstat@2x.png' class='' style='max-width:1179px; width:100%' alt=''>
+
+To change your port, open Apache's config file (`httpd.conf`) then find the section under `Listen:`:
+
+<img src='http://making-the-internet.s3.amazonaws.com/vc-xampp-change-apache-port@2x.png' class='' style='max-width:1179px; width:100%' alt=''>
+
+Always stop and restart Apache after making a change to the config file.
+
+...
+
+Assuming your local server is now running, test out your first PHP script: Create a new file in your code editor and save it as `helloworld.php` in `c:/xampp/htdocs/`. This path is your local server's **Document Root** which is where you'll put all your web files and projects. You may want to create a shortcut to this directory, because you'll be working in it a lot.
 
 Paste in [this code](https://gist.github.com/susanBuck/3f133c6d64be0f6f27a9) to your `helloworld.php` file.
 
