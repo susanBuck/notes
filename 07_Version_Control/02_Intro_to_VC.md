@@ -1,4 +1,4 @@
-This isn't just about Version Control / Git; it's about optimizing your web development workflow and how to tie together the following pieces:
+This isn't just about Version Control/Git; it's about optimizing your web development workflow and how to tie together the following pieces:
 
 + Your local development environment
 + Your version control repository
@@ -23,11 +23,6 @@ These are some common (unideal) workflows used by beginner developers. Each work
 
 Pros/Cons?
 
-<!--
-__Upsides__ Straightforward, quick to set up
-__Downsides__ Users viewing your site can see the changes as you make them; no history of changes
--->
-
 ### The Dev File Wrangling Workflow
 1. FTP into your live server.
 2. Create "dev" copies of the files you want to work on.
@@ -36,22 +31,12 @@ __Downsides__ Users viewing your site can see the changes as you make them; no h
 
 Pros/Cons?
 
-<!-- 
-+ Downsides: Tedious; apps very rarely touch just one file, no history of changes
-+ Upsides: Users can't see the changes as you make them
--->
-
 ### The Local to Live Sync Workflow
 1. Run a local server, maintain a full clone of your site.
 2. Make changes on the local server.
 3. When done FTP changes to the live site, or use something like rsync to keep the local and live files in sync.
 
 Pros/Cons?
-
-<!--
-+ Downsides: Have to keep track of all the files you've made changes to, no history of changes
-+ Upsides: Users can't see the changes as you make them
---> 
 
 ### What other workflows have you used?
 
@@ -65,7 +50,7 @@ __Version control is a system of tracking changes to your code over time.__
 
 In addition to tracking what changed, VC also tracks who made the change and what the purpose of the change was.
 
-There are different VC systems (ex: Subversion) but for this class we'll be using Git:
+There are different VC systems but for this class we'll be using Git:
 
 >> Git is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency. Git is easy to learn and has a tiny footprint with lightning fast performance.
 
@@ -74,7 +59,7 @@ There are different VC systems (ex: Subversion) but for this class we'll be usin
 
 ## Benefits of Version Control
 
-[Github.com preview]
+[Github.com preview via https://github.com/laravel/laravel](https://github.com/laravel/laravel)
 
 ### Workflow enhancement
 + Because Git keeps a running history of your changes, you can quickly revert to a previous state of your code if you mess something up. Think cmd+z for programming.
@@ -92,10 +77,7 @@ There are different VC systems (ex: Subversion) but for this class we'll be usin
 
 
 ## How it works
-<img src='http://making-the-internet.s3.amazonaws.com/vc-local-to-git-and-live-server@2x.png' style='max-width:540px;'>
-
-<a href='http://making-the-internet.s3.amazonaws.com/vc-local-to-git-and-live-server-alternative@2x.png'>Alternative flow</a>
-
+<img src='http://making-the-internet.s3.amazonaws.com/vc-local-to-git-and-live-server-alternative@2x.png' style='max-width:540px;'>
 
 Working with VC/Git, you'll end up with at least three copies of your code base.
 
@@ -110,7 +92,7 @@ __The third copy of your site is the code that runs on your live server__; this 
 
 
 
-## The basic version control workflow looks like this
+## Basic version control workflow
 
 1. Make changes on a local copy of your code
 2. Save changes

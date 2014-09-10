@@ -8,15 +8,18 @@ If you have a .edu email address, you can request a discount via <https://educat
 
 
 
-## Setup SSH keys
+## SSH keys
 
-There are a handful of different protocols you can use when communicating with Github (http, https, git) but SSH is the most secure (and we've found it works most reliably across different setups).
+There are a handful of different protocols you can use when communicating with Github (*http*, *https*, *git*) but SSH is the most secure (and we've found it works most reliably across different setups).
 
->> SSH keys provide a more secure way of logging into a server with SSH than using a password alone. While a password can eventually be cracked with a brute force attack, SSH keys are nearly impossible to decipher by brute force alone. Generating a key pair provides you with two long string of characters: a public and a private key. You can place the public key on any server, and then unlock it by connecting to it with a client that already has the private key. When the two match up, the system unlocks without the need for a password. You can increase security even more by protecting the private key with a passphrase. - [source](https://www.digitalocean.com/community/tutorials/how-to-set-up-ssh-keys--2)
+To work with the SSH protocol, you'll need to create a **SSH key** that gives you access to the Github.com servers.
 
-To work with the SSH protocol, you'll need to create a SSH key that gives you access to the Github.com servers.
+>> SSH keys provide a more secure way of logging into a server with SSH than using a password alone. While a password can eventually be cracked with a brute force attack, SSH keys are nearly impossible to decipher by brute force alone. Generating a **key pair** provides you with two long string of characters: a **public and a private key**. You can place the public key on any server, and then unlock it by connecting to it with a client that already has the private key. When the two match up, the system unlocks without the need for a password. You can increase security even more by protecting the private key with a passphrase. -[source](https://www.digitalocean.com/community/tutorials/how-to-set-up-ssh-keys--2)
 
-### Generate SSH keys on your computer
+
+
+
+## Generate SSH keys on your computer
 
 Via CL, move into your `.ssh` directory:
 
@@ -49,7 +52,7 @@ Enter file in which to save the key (/Users/YourName/.ssh/id_rsa): [Press enter]
 When it asks you for a passphrase you can either create one or leave it blank. Regardless, hit Enter when you're done. 
 Same for when it asks you to confirm your passphrase.
 
->> It's up to you whether you want to use a passphrase. Entering a passphrase does have its benefits: the security of a key, no matter how encrypted, still depends on the fact that it is not visible to anyone else. Should a passphrase-protected private key fall into an unauthorized users possession, they will be unable to log in to its associated accounts until they figure out the passphrase, buying the hacked user some extra time. The only downside, of course, to having a passphrase, is then having to type it in each time you use the Key Pair. [source](https://www.digitalocean.com/community/tutorials/how-to-set-up-ssh-keys--2)
+>> It's up to you whether you want to use a passphrase. Entering a passphrase does have its benefits: the security of a key, no matter how encrypted, still depends on the fact that it is not visible to anyone else. Should a passphrase-protected private key fall into an unauthorized users possession, they will be unable to log in to its associated accounts until they figure out the passphrase, buying the hacked user some extra time. The only downside, of course, to having a passphrase, is then having to type it in each time you use the Key Pair. -[source](https://www.digitalocean.com/community/tutorials/how-to-set-up-ssh-keys--2)
 
 At this point, if you list the contents in the `.ssh` directory you should see two new files: 
 
@@ -67,13 +70,15 @@ $ ssh-add id_rsa
 
 ## Add SSH key at Github.com
 
-In Github.com, goto **Account Settings** (little screwdriver/wrench icon on the top right).
+In Github.com, goto **Settings** (little gear icon on the top right).
 
 Find the **SSH Keys** section.
 
 Click **Add SSH Key**.
 
-In the *Title* field, add a descriptive label for the new key. For example, if you're using a personal Mac, you might call this key *"Personal MacBook Air"*.
+<img src='http://making-the-internet.s3.amazonaws.com/vc-github-add-ssh-key@2x.png' class='' style='max-width:1055px; width:100%' alt='Github: Add a new SSH key'>
+
+In the *Title* field, add a descriptive label for the new key. For example, if you're using your own Mac, you might call this key *"Personal MacBook Air"*.
 
 For the *Key* field, you want to paste the contents of the `id_rsa.pub` file that was generated on your computer in the above step.
 
@@ -94,9 +99,9 @@ $ notepad id_rsa.pub
 *Copying the contents of id_rsa.pub on Windows:*
 <img src='http://making-the-internet.s3.amazonaws.com/vc-copy-id-rsa-pub-on-windows.png?@2x' style='max-width:1153px; width:75%'>
 
-With the contents of `id_rsa.pub` in your clipboard, paste the contents into the *Key field* on Github.
+With the contents of `id_rsa.pub` in your clipboard, paste the contents into the *Key* textarea.
 	
-<img src='http://making-the-internet.s3.amazonaws.com/vc-github-save-new-ssh-key.png?@2x' style='max-width:664px; width:75%'>
+<img src='http://making-the-internet.s3.amazonaws.com/vc-github-save-new-ssh-key.png?@2x' style='max-width:746px; width:75%'>
 
 Finally, click **Add key**.
 

@@ -23,6 +23,8 @@ $ cat C:\Users\YourName\.ssh\id_rsa.pub
 
 Back in DigitalOcean, find the menu on the left for **SSH Keys** in order to add a new key. Paste in the key and give it a descriptive name.
 
+<img src='http://making-the-internet.s3.amazonaws.com/vc-do-ssh-key@2x.png' class='' style='max-width:1063px; width:100%' alt=''>
+
 <small>
 Note: Instead of using your Github key, you could have generated a unique one for DigitalOcean. This latter technique is more secure and suggested for projects beyond the scope of this class.
 </small>
@@ -30,23 +32,35 @@ Note: Instead of using your Github key, you could have generated a unique one fo
 
 
 
-
-## New Droplet
+## Droplet Pricing
 
 DigitalOcean calls their virtual servers, **Droplets**; each Droplet that you spin up is a new virtual server for your personal use.
 
 In this course, you'll use **one single Droplet** to host all of your class projects. 
 
-The base plan which costs $5/mo should be enough to serve your needs, but if you need more you can always upgrade to the $10/mo plan
+The base plan which costs $5/mo should be enough to serve your needs, but if you need more you can always upgrade to the $10/mo plan. 
 
+Digital Ocean has a nice refer-a-friend program:
+
+
+>> Spread the love and earn rewards! Send $10 to your friends in account credits and receive $25 for each referral that totals $25 in billings. There is no limit to how many people you can refer. -<https://cloud.digitalocean.com/settings/referrals>
+
+
+Check the class Piazza for a thread where students can swap refer-a-friend links.
+
+
+
+
+## New Droplet
 From your DigitalOcean dashboard, find the big green button labeled *Create* to initiate a new Droplet.
 
 On the screen that follows, make your Droplet settings match the following options:
 
-<img src='http://making-the-internet.s3.amazonaws.com/version-control-digital-ocean-new-droplet@2x.png' class='' style='max-width:860px; width:100%' alt=''>
+<img src='http://making-the-internet.s3.amazonaws.com/vc-digital-ocean-new-droplet@2x.png' class='' style='max-width:1063px; width:100%' alt='New Droplet at Digital Ocean'>
+ 
+Once your Droplet is created, make note if its IP address:
 
-Check your email for a confirmation from DigitalOcean which will include your Droplet's IP address; you can also find this address from your Droplets listing page at `https://cloud.digitalocean.com/droplets`.
-
+<img src='http://making-the-internet.s3.amazonaws.com/vc-do-new-ip-address@2x.png' class='' style='max-width:1041px; width:100%' alt=''>
 
 
 ## Log in to your new server droplet via SSH
@@ -57,9 +71,9 @@ From your local command line, SSH into your Digital Ocean droplet:
 $ ssh root@your-digital-ocean-ip-address
 ```
 	
-If your SSH key is set up properly, you should not be prompted to enter a password and you should automatically get logged in.
+If your SSH key is set up properly, you should *not* be prompted to enter a password and you should automatically get logged in.
 
-Take a look at your web directory:
+Once logged in, take a look at your web directory:
 
 ```bash
 $ cd /var/www/html
@@ -91,6 +105,12 @@ Confirm it's working:
 
 ```bash
 $ git --version
+```
+
+Example response indicating Git is successfully installed:
+
+```bash
+git version 1.9.1
 ```
 	
 
@@ -138,8 +158,7 @@ $ cat /root/.ssh/id_rsa.pub
 	
 Copy the contents of `id_rsa.pub`
 
-Add this new key via your [Github SSH settings](https://github.com/settings/ssh).
-
+Add this new key via [Github.com SSH settings](https://github.com/settings/ssh).
 
 
 
@@ -150,13 +169,14 @@ With your SSH key setup and Git installed, you're ready to clone your `hello-wor
 In the `/var/www/html` directory on DigitalOcean, run this command:
 
 ```bash
-$ git clone git@github.com:username/reponame.git
+$ git clone git@github.com:username/hello-world.git
 ```
 	
+Your directory structure should now look something like this:
 
-Now when you view the contents of your html folder you should see:
-
-* `hello-world`
+* `hello-world/`
+	* `index.html`
+	* `README.md`
 * `index.html`
 * `info.php`
 
@@ -167,18 +187,22 @@ you should see your hello-world project:
 
 
 
-## Deployment process
+## Deployment
 
 Deployment is the process of moving your application to production.
 
-For other PaaS's we've looked at (Pagoda, OpenShift, etc.), all you had to do to deploy new code changes was push code to a remote url they gave you.
+The steps for deploying to DigitalOcean looks like this: 
 
-By default, you don't have this option with DigitalOcean, so you'll need to SSH in to your droplet, move into your project's directory and do a `git pull` whenever you want to sync new changes.
+1. SSH in to your droplet
+2. Change directories into your project
+3. Run `git pull` to sync any new changes
 
-Alternatively, you can follow [these instructions to set up automatic deployment with git](https://www.digitalocean.com/community/tutorials/how-to-set-up-automatic-deployment-with-git-with-a-vps).
+Alternatively, you can follow [these instructions to set up automatic deployment with git](https://digitalocean.com/community/tutorials/how-to-set-up-automatic-deployment-with-git-with-a-vps).
 
+**From this point forward you should avoid directly editing files on your live server.** Avoiding editing files on the live server will prevent your repositories from getting out of sync and creating messy merge conflicts.
 
-	
+The only exception to this rule is if you need to edit a file that's unique to different environments and is in your `.gitignore` file so it's not tracked across repositories. This will be discussed more in future topics.
+
 
 
 ## Domain setup
@@ -189,7 +213,7 @@ To set this up, we're going to configure a domain and subdomains for use with Di
 
 Start by creating a new domain name via a service like [Namecheap](https://www.namecheap.com/).
 
-This should cost $10 bucks for the year, give or take depending on the extension you buy. If you have an existing domain you'd like to use, you're welcome to do so- your instructions just might vary from ours if you're using a different domain company.
+This should cost $10 bucks for the year, give or take depending on the extension you buy. If you have an existing domain you'd like to use, you're welcome to do so&mdash; your instructions just might vary from ours if you're using a different domain company.
 
 After your create your domain, find your DNS settings. Here, you'll set both your `@` and `www` hostname to your DigitalOcean IP address.
 
@@ -214,9 +238,9 @@ Try again. Still not loading?
 
 ## Virtual Host setup
 
-Your primary domain is working, now lets get your subdomain working.
+Your primary domain is working, now lets get a subdomain working (`http://helloworld.domain.com`).
 
-On your DigitalOcean server, add the following Virtual Host block to the bottom 
+On your DigitalOcean server, add the following *Virtual Host* block to the bottom 
 of `/etc/apache2/sites-enabled/000-default.conf`:
 
 	<VirtualHost *:80>
@@ -241,51 +265,60 @@ Once the restart is complete, test out your subdomain `helloworld.yourdomain.com
 
 <img src='http://making-the-internet.s3.amazonaws.com/version-control-subdomain-good@2x.png' class='' style='max-width:588px; width:75%' alt=''>
 
+Keep these notes handy for when you set up projects, because each project should have it's own subdomain:
+
++ `http://p1.yourdomain.com`
++ `http://p2.yourdomain.com`
++ `http://p3.yourdomain.com`
++ `http://p4.yourdomain.com`
+
+
 
 
 
 ## Tips / Notes
 
 
-+ SSH Keys between your computer and DigitalOcean will only work on Droplets that were created *after* you set up the key. To set up a key for an existing Droplet, navigate into your computer's .ssh directory and run this command:
+SSH Keys between your computer and DigitalOcean will only work on Droplets that were created *after* you set up the key. To set up a key for an existing Droplet, navigate into your computer's .ssh directory and run this command:
 
 ```bash
 cat id_rsa.pub | ssh root@[your.ip.address.here] "cat >> ~/.ssh/authorized_keys"
 ```
 	
-+ Find out the IP address of a domain:
+Find out the IP address of a domain:
 
 ```bash
 $ ping domain.com
 ```
 
-+ Find out the nameserver of a domain:
+Find out the nameserver of a domain:
 
 ```bash
 $ dig +short NS domain.com
 ```
 
-+ Check the version of PHP
+Check the version of PHP
 
 ```bash
 $ php -v
 ```
 	
-+ See what PHP modules are installed
+See what PHP modules are installed
 
 ```bash
 $ php -m
 ```
 	
-+ Check Apache configurations:
+Check Apache configurations:
 
 ```bash
 $ apache2ctl -S
 ```
 
-+ Apache error log location: `/var/log/apache2/error.log`
+Apache error and configuration files on Digital Ocean:
 
-+ Apache configuration location: `/etc/apache2/httpd.conf`
++ Apache error log: `/var/log/apache2/error.log`
++ Apache configuration: `/etc/apache2/httpd.conf`
 
 
 

@@ -19,7 +19,7 @@ If you see a readout of a bunch of commands, it means Git is installed and you'r
 
 *Git is installed:*
 
-<img src='http://making-the-internet.s3.amazonaws.com/vc-git-success.png'> 
+<img src='http://making-the-internet.s3.amazonaws.com/vc-git-success@2x.png' style='max-width:589px; width:100%'> 
 
 If, however, you see an error telling you the command `git` is not recognized or not found, you'll need to install Git.
 
@@ -48,26 +48,42 @@ If you're running an **older operating system** and the latest Git build doesn't
 
 ## Tips:
 
-* Find out what version of git you're running: `git --version`
-* Find out where git is installed: 
-	+ Mac: `$ which git`
-	+ Windows/Cmder: `$ where.exe git`
+Find out what version of git you're running: 
+```bash
+$ git --version
+```
+
+Find out where git is installed on Mac:
+
+```bash
+$ which git
+```
+
+Find out where git is installed on Windows:
+
+```bash
+$ where.exe git`
+```
 
 
 
 
 ## Initial Git configuration
 
-Once you've confirmed Git is installed, you need to do a little initial setup.
+Once you've confirmed Git is installed, you need to do some initial setup.
 
-Run the following commands to set a user name and email key to be associated with any commits coming from your computer. Be sure to replace the name and email with your own details.
+Run the following commands to set a user name and email key to be associated with any commits coming from your computer. Replace the name and email with your own details.
 
-	git config --global user.name "Sam Seaborn"
-	git config --global user.email sam@gmail.com
+```bash
+$ git config --global user.name "Sam Seaborn"
+$ git config --global user.email sam@gmail.com
+```
 
-Let's do one more configuration which will make any Git input color coded (i.e. easier to read):
+Finally, one more configuration which will make any Git input color coded (i.e. easier to read):
 
-	git config --global color.ui true
+```bash
+$ git config --global color.ui true
+```
 
 That's it! Git is installed and you're ready for the next steps.
 
