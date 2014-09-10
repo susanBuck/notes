@@ -85,23 +85,23 @@ You should see two files:
 * `index.html`
 * `info.php`
 
-If you access your site in the browser (via the IP address DigitalOcean gives you), you should see the contents of `index.html` which looks like this:
+If you access your site in the browser (via the IP address DigitalOcean gives you), you should see the default contents of `index.html` which looks like this:
 
 <img src='http://making-the-internet.s3.amazonaws.com/vc-digital-ocean-default-index@2x.png' class='' style='max-width:883px; width:100%' alt=''>
 
-You can replace the contents of this `index.html` file if you'd like:
+There's a couple more tasks you need to take care of before you can start altering this content...
 
-<img src='http://making-the-internet.s3.amazonaws.com/vc-digital-ocean-new-index@2x.png' class='' style='max-width:580px; width:100%' alt=''>
+
 
 ## Install Git
 
-While SSH'd into your Digital Ocean server, run this command:
+While SSH'd into your Digital Ocean server, run this command to install git:
 
 ```bash
 $ sudo apt-get install git
 ```
 	
-Confirm it's working:
+Confirm git is now working:
 
 ```bash
 $ git --version
@@ -164,7 +164,7 @@ Add this new key via [Github.com SSH settings](https://github.com/settings/ssh).
 
 ## Clone a repository
 
-With your SSH key setup and Git installed, you're ready to clone your `hello-world` Github repository to your DigitalOcean Droplet.
+With your SSH key setup and Git installed, let's now look at how to clone your `hello-world` repository to your DigitalOcean Droplet.
 
 In the `/var/www/html` directory on DigitalOcean, run this command:
 
@@ -172,7 +172,7 @@ In the `/var/www/html` directory on DigitalOcean, run this command:
 $ git clone git@github.com:username/hello-world.git
 ```
 	
-Your directory structure should now look something like this:
+Your directory structure on DigitalOcean should now look something like this:
 
 * `hello-world/`
 	* `index.html`
@@ -180,8 +180,8 @@ Your directory structure should now look something like this:
 * `index.html`
 * `info.php`
 
-When you visit your DigitalOcean IP and tack on the `hello-world` subdirectory, 
-you should see your hello-world project:
+When you visit your DigitalOcean IP and tack on the `hello-world` subdirectory to the URL, 
+you should see your `hello-world` project, just as it looked when you ran it locally:
 
 <img src='http://making-the-internet.s3.amazonaws.com/version-control-hello-world-on-digital-ocean@2x.png' class='' style='max-width:580px; width:100%' alt=''>
 
@@ -189,20 +189,21 @@ you should see your hello-world project:
 
 ## Deployment
 
-Deployment is the process of moving your application to production.
+Deployment is the process of moving changes from your local/development environment to production. 
 
-The steps for deploying to DigitalOcean looks like this: 
+Once your repository is cloned from Github.com to DigitalOcean, the steps for deploying changes looks like this: 
 
 1. SSH in to your droplet
 2. Change directories into your project
 3. Run `git pull` to sync any new changes
 
-Alternatively, you can follow [these instructions to set up automatic deployment with git](https://digitalocean.com/community/tutorials/how-to-set-up-automatic-deployment-with-git-with-a-vps).
+<small>Alternatively, you can follow [these instructions to set up automatic deployment with git](https://digitalocean.com/community/tutorials/how-to-set-up-automatic-deployment-with-git-with-a-vps).</small>
 
-**From this point forward you should avoid directly editing files on your live server.** Avoiding editing files on the live server will prevent your repositories from getting out of sync and creating messy merge conflicts.
+**From this point forward you should avoid directly editing files on your live server.** Avoiding editing files on the live server will prevent your repositories from getting out of sync which can create messy merge conflicts.
 
+<small>
 The only exception to this rule is if you need to edit a file that's unique to different environments and is in your `.gitignore` file so it's not tracked across repositories. This will be discussed more in future topics.
-
+</small>
 
 
 ## Domain setup
@@ -211,19 +212,22 @@ Right now you can access your DigitalOcean droplet by typing its IP address into
 
 To set this up, we're going to configure a domain and subdomains for use with DigitalOcean.
 
-Start by creating a new domain name via a service like [Namecheap](https://www.namecheap.com/).
+Start by creating a new domain name via a service like **[Namecheap](http://www.namecheap.com/?aff=61057)**.
 
 This should cost $10 bucks for the year, give or take depending on the extension you buy. If you have an existing domain you'd like to use, you're welcome to do so&mdash; your instructions just might vary from ours if you're using a different domain company.
 
-After your create your domain, find your DNS settings. Here, you'll set both your `@` and `www` hostname to your DigitalOcean IP address.
+After your create your domain, find your **DNS settings**. Here, you'll set both your `@` and `www` hostname to your DigitalOcean IP address.
 
 Also, while you're there, add a subdomain called `helloworld` which also points to the same IP.
 
 <img src='http://making-the-internet.s3.amazonaws.com/version-control-namecheap-dns@2x.png' class='' style='max-width:916px; width:100%' alt='Namecheap DNS'>
 
+Save your changes, then return to DigitalOcean and find your *DNS* settings there, filling them in like this example:
+<img src='http://making-the-internet.s3.amazonaws.com/vc-digital-ocean-create-domain@2x.png' class='' style='max-width:842px; width:100%' alt=''>
+
 Give the above settings a few minutes to take effect, then test out your domain. You should see the same results you saw above when you tested your IP address, but this time it's loaded via your domain name:
 
-<img src='http://making-the-internet.s3.amazonaws.com/version-control-namecheap-domain-first-working@2x.png' class='Test new domain' style='max-width:588px; width:100%' alt=''>
+<img src='http://making-the-internet.s3.amazonaws.com/vc-namecheap-domain-first-working@2x.png' class='Test new domain' style='max-width:917px; width:100%' alt=''>
 
 If you don't yet see the above, try the following:
 
@@ -236,7 +240,7 @@ Try again. Still not loading?
 4. Try accessing your URL via [this proxy](http://www.megaproxy.com/freesurf/). Does it load there? If it loads there, it just means your computer is still caching old settings. 
 
 
-## Virtual Host setup
+## Virtual Host / Subdomain setup
 
 Your primary domain is working, now lets get a subdomain working (`http://helloworld.domain.com`).
 
@@ -251,15 +255,13 @@ of `/etc/apache2/sites-enabled/000-default.conf`:
 	  </Directory>
 	</VirtualHost>	
 
-Be sure to change the `ServerName` to match your domain. 
+Be sure to change the `ServerName` to match your subdomain. 
 
-Also, adjust the `DocumentRoot` and `Directory` to point to your `hello-world` directory.
+Also, if necessary, adjust the `DocumentRoot` and `Directory` to point to the location of your `hello-world` directory.
 
-To make these changes take effect, restart Apache:
+To make these changes take effect, find the *Power Cycle* button on your Droplet settings to restart your server.
 
-```bash
-$ sudo service apache2 restart
-```
+<img src='http://making-the-internet.s3.amazonaws.com/vc-do-power-cycle@2x.png' class='' style='max-width:1033px; width:100%' alt='Digital Ocean Power Cycle'>
 
 Once the restart is complete, test out your subdomain `helloworld.yourdomain.com`.
 
