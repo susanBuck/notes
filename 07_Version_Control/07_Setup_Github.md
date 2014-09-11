@@ -82,22 +82,17 @@ In the *Title* field, add a descriptive label for the new key. For example, if y
 
 For the *Key* field, you want to paste the contents of the `id_rsa.pub` file that was generated on your computer in the above step.
 
-To quickly open this file to copy it's contents, use the following commands...
-
-Mac:
+To view this file in order to copy its contents, you can use the `cat` command:
 
 ```bash
-$ edit id_rsa.pub
+$ cat id_rsa.pub
 ```
 
-Windows:
+Your key will look something like this:
 
 ```bash
-$ notepad id_rsa.pub
+ssh-rsa SDJKLSDGWERJSKLSDFsdfadsfKSDFJKSJFSjkfjdsklfJSKDFJKLSDadsfjklwefajslkdfDFJEWIFJSKLFJSKLDFJKSLDFJSdfadsfWEJFKLSDJFLKSDFJSKLDFJWER== your@email.com
 ```
-	
-*Copying the contents of id_rsa.pub on Windows:*
-<img src='http://making-the-internet.s3.amazonaws.com/vc-copy-id-rsa-pub-on-windows.png?@2x' style='max-width:1153px; width:75%'>
 
 With the contents of `id_rsa.pub` in your clipboard, paste the contents into the *Key* textarea.
 	
