@@ -62,7 +62,7 @@ $ which git
 Find out where git is installed on Windows:
 
 ```bash
-$ where.exe git`
+$ where.exe git
 ```
 
 

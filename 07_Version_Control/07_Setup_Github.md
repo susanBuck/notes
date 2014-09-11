@@ -91,7 +91,7 @@ $ cat id_rsa.pub
 Your key will look something like this:
 
 ```bash
-ssh-rsa SDJKLSDGWERJSKLSDFsdfadsfKSDFJKSJFSjkfjdsklfJSKDFJKLSDadsfjklwefajslkdfDFJEWIFJSKLFJSKLDFJKSLDFJSdfadsfWEJFKLSDJFLKSDFJSKLDFJWER== your@email.com
+ssh-rsa [LONG STRING OF RANDOM CHARACTERS]== your@email.com
 ```
 
 With the contents of `id_rsa.pub` in your clipboard, paste the contents into the *Key* textarea.
