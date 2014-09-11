@@ -78,7 +78,7 @@ github	git@github.com:susanBuck/hello-world.git (push)
 
 * To see a list of all current remotes use this command: `git remote -v`.
 
-* To see all your git configruations use this command: `git config -l`.
+* To see all your git configurations use this command: `git config -l`.
 
 * You can tell if a directory is a git repository if it contains a hidden directory called `.git`:
 
