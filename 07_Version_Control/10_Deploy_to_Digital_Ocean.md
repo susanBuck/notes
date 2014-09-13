@@ -212,18 +212,13 @@ Right now you can access your DigitalOcean droplet by typing its IP address into
 
 To set this up, we're going to configure a domain and subdomains for use with DigitalOcean.
 
-Start by creating a new domain name via a service like **[Namecheap](http://www.namecheap.com/?aff=61057)**. As of this writing, Namecheap is offering free domain names for students via <https://nc.me/>. 
+If you have an existing domain you'd like to use, that's fine. If not, you can create a new domain name via a service like **[Namecheap](http://www.namecheap.com/?aff=61057)**. As of this writing, Namecheap is offering free domain names for students via <https://nc.me/>. 
 
-If you have an existing domain you'd like to use, you're welcome to do so&mdash; your instructions just might vary from ours if you're using a different domain company.
-
-After your create your domain, find your **DNS settings**. Here, you'll set both your `@` and `www` hostname to your DigitalOcean IP address.
+After your create your domain, find your **DNS settings** within your domain companies' control panel. Here, you'll set both your `@` and `www` hostname to your DigitalOcean IP address.
 
 Also, while you're there, add a subdomain called `helloworld` which also points to the same IP.
 
 <img src='http://making-the-internet.s3.amazonaws.com/version-control-namecheap-dns@2x.png' class='' style='max-width:916px; width:100%' alt='Namecheap DNS'>
-
-Save your changes, then return to DigitalOcean and find your *DNS* settings there, filling them in like this example:
-<img src='http://making-the-internet.s3.amazonaws.com/vc-digital-ocean-create-domain@2x.png' class='' style='max-width:842px; width:100%' alt=''>
 
 Give the above settings a few minutes to take effect, then test out your domain. You should see the same results you saw above when you tested your IP address, but this time it's loaded via your domain name:
 
