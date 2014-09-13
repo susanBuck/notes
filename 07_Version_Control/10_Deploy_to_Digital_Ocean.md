@@ -212,7 +212,7 @@ Right now you can access your DigitalOcean droplet by typing its IP address into
 
 To set this up, we're going to configure a domain and subdomains for use with DigitalOcean.
 
-Start by creating a new domain name via a service like **[Namecheap](http://www.namecheap.com/?aff=61057)**. As of this writing, Namecheap is offering free domain names for students via <https://.nc.me/>. 
+Start by creating a new domain name via a service like **[Namecheap](http://www.namecheap.com/?aff=61057)**. As of this writing, Namecheap is offering free domain names for students via <https://nc.me/>. 
 
 If you have an existing domain you'd like to use, you're welcome to do so&mdash; your instructions just might vary from ours if you're using a different domain company.
 
