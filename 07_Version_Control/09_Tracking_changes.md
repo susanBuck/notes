@@ -87,7 +87,7 @@ Check your repository in Github.com to make sure the commit is there.
 
 * If you want to undo changes made to a file that haven't yet been staged, you can use the command `git checkout <file>`.
 
-* If you stage a file but decide you want to unstage it, run this command: `git reset HEAD <file>`. This won't revert any changes to that file (that's what `checkout does`), it will just remove it from the sage.
+* If you stage a file but decide you want to unstage it, run this command: `git reset HEAD <file>`. This won't revert any changes to that file (that's what `checkout` does), it will just remove it from the stage.
 
 * If you delete a file from a project, you'll use the `git rm <file>` command instead of `git add <file>`.
 
