@@ -57,12 +57,12 @@ Keyboard short-cuts will speed up your development process
 
 Mac:
 
-* Save the file in your editor: `[ctrl + s]`
-* Switch between windows: `[cmd + tab]`
-* Refresh browser: `[ctrl + r]`
+* Save the file in your editor: `[command + s]`
+* Switch between windows: `[command + tab]`
+* Refresh browser: `[command + r]`
 	
 PC: 
 
-* Save the file in your editor: `[alt + s]`
+* Save the file in your editor: `[ctrl + s]`
 * Switch between windows: `[alt + tab]`
 * Refresh browser: `[ctrl + r]`
