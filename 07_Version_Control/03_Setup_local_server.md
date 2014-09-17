@@ -44,8 +44,7 @@ Load your `helloworld.php` file in your browser via `http://localhost/helloworld
 
 <img src='http://making-the-internet.s3.amazonaws.com/vc-hello-world-done-on-mac@2x.png' class='' style='max-width:746px; width:100%' alt=''>
 
-That's it! Your local server for Windows is installed, running and tested.
-
+That's it! Your local server for Mac is installed, running and tested.
 
 
 ## XAMPP Setup on Windows
