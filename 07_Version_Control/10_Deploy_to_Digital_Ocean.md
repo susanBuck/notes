@@ -235,12 +235,19 @@ Try again. Still not loading?
 4. Try accessing your URL via [this proxy](http://www.megaproxy.com/freesurf/). Does it load there? If it loads there, it just means your computer is still caching old settings. 
 
 
-## Virtual Host / Subdomain setup
+## VirtualHost / Subdomain setup
 
 Your primary domain is working, now lets get a subdomain working (`http://helloworld.domain.com`).
 
-On your DigitalOcean server, add the following *Virtual Host* block to the bottom 
-of `/etc/apache2/sites-enabled/000-default.conf`:
+In the above step, you already set up your DNS for the subdomain, making it so that traffic hitting `http://helloworld.domain.com` will point to your IP address.
+
+Now we need to give the server instructions on what to do with this traffic.
+
+This is done via a VirtualHost configuration. In DigitalOcean, you make this configuration in the following file: `/etc/apache2/sites-enabled/000-default.conf`.
+
+If need a refresher on editing files via command line, [go here](https://github.com/susanBuck/notes/blob/master/07_SysAdmin/999_Editing_text_files_in_CL.md). 
+
+At the *bottom* of `000-default.conf`, add this VirtualHost block:
 
 	<VirtualHost *:80>
 	  ServerName helloworld.dwa15-practice.biz
@@ -250,11 +257,15 @@ of `/etc/apache2/sites-enabled/000-default.conf`:
 	  </Directory>
 	</VirtualHost>	
 
-Be sure to change the `ServerName` to match your subdomain. 
+Be sure to change the `ServerName` value to match *your* subdomain. In this example, it's set to `helloworld.dwa15-practice.biz` but you'll need to change it to match your domain.
 
 Also, if necessary, adjust the `DocumentRoot` and `Directory` to point to the location of your `hello-world` directory.
 
-To make these changes take effect, find the *Power Cycle* button on your Droplet settings to restart your server.
+When you're done, save your changes to `000-defualt.conf`.
+
+(If for some reason you make a mistake in `000-default.conf`, [here's a copy of the original](https://gist.github.com/susanBuck/790ea5a0d1ad7d02e586).)
+
+To make your VirtualHost changes take effect, find the *Power Cycle* button on your Droplet settings to restart your server.
 
 <img src='http://making-the-internet.s3.amazonaws.com/vc-do-power-cycle@2x.png' class='' style='max-width:1033px; width:100%' alt='Digital Ocean Power Cycle'>
 
