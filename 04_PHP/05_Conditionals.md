@@ -1,4 +1,4 @@
-HTML code is fairly brainless; what you type is what you get. With PHP, however, you can write code that allows your program to &ldquo;think&rdquo; using [control structures](http://us1.php.net/manual/en/language.control-structures.php) like the [if construct](http://us1.php.net/manual/en/control-structures.if.php).
+HTML code is fairly &ldquo;brainless&rdquo; what you type is what you get. With PHP, however, you can write code that allows your program to &ldquo;think&rdquo; using [control structures](http://us1.php.net/manual/en/language.control-structures.php) like the [if construct](http://us1.php.net/manual/en/control-structures.if.php).
 
 To demonstrate, we want to add a feature to the PHPiggy Bank which will report back to the user whether they've met a savings goal, depending on how much money they have.
 
@@ -13,8 +13,9 @@ If they haven't met their goal, then it should display this image:
 
 <img src='http://making-the-internet.s3.amazonaws.com/php-goal-not-met.png' alt='Goal not met'>
 
-	<img src='http://making-the-internet.s3.amazonaws.com/php-goal-not-met.png' alt='Goal not met'>
-	
+```html
+<img src='http://making-the-internet.s3.amazonaws.com/php-goal-not-met.png' alt='Goal not met'>
+```	
 
 ## Procedure
 
@@ -24,7 +25,9 @@ Write an *if statement* which will set a a variable called `$image` to be either
 
 In the display page, use this PHP image variable to display an image on the page: 
 
-	<img src='http://making-the-internet.s3.amazonaws.com/<?php echo $image?>' alt='Goal Status'>
+```html
+<img src='http://making-the-internet.s3.amazonaws.com/<?php echo $image?>' alt='Goal Status'>
+```
 
 
 
@@ -32,7 +35,9 @@ In the display page, use this PHP image variable to display an image on the page
 
 <img src='http://making-the-internet.s3.amazonaws.com/php-goal-almost-met.png' alt='Almost met'>
 
-	<img src='http://making-the-internet.s3.amazonaws.com/php-goal-almost-met.png' alt='Almost met'>
+```html
+<img src='http://making-the-internet.s3.amazonaws.com/php-goal-almost-met.png' alt='Almost met'>
+```
 	
 * If the total is less than $30, the goal is not met.
 * If the total is greater than $30 AND less than $50, they're almost there.

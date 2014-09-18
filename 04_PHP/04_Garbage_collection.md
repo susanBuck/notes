@@ -42,4 +42,4 @@ Then if you were to use the `unset()` function on `$votes`, the reference would 
 
 	unset($votes);
 	
-Another way the reference count on a variable can drop is in the case of local variables or function variables. At the end of the function, a these variables "go out of scope", leading to a reference drop.
+Another way the reference count on a variable can drop is in the case of local variables or function variables. At the end of the function these variables "go out of scope", leading to a reference drop.

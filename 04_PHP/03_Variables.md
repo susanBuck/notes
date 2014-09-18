@@ -2,7 +2,7 @@ Variables are used to store information so that it can easily be retrieved and m
 
 In PHP the name of a variable is always preceded by a dollar sign `$`.
 
-You assign values to variables using the *assignment operator* which is just an equal sign `=`. 
+You assign values to variables using the *assignment operator* equal sign `=`. 
 
 ```php
 <?php
@@ -19,7 +19,7 @@ Variable names should start with a letter or underscore, followed by any number 
 
 ### Assignment by value
 
-When you assign one variable to another, it **copies** the original value to the new one. 
+By default, when you assign one variable to another, it **copies** the original value to the new one. 
 
 This means that any changes to the new variable will not affect the original.
 
@@ -28,7 +28,7 @@ Example:
 ```php
 $foo = 1;
 $bar = $foo;
-$bar = 2;
+$bar = 2; /* Change $bar, yet $foo will remain 1 */
 echo $foo; # Outputs 1.
 ```
 
@@ -63,7 +63,7 @@ When outputting variables in HTML, you'll typically see code written in a more c
 
 ```php
 <p>
-	My favorite color is<?php echo $favorite_color; ?>
+	My favorite color is <?php echo $favorite_color; ?>
 </p>
 ```
 
@@ -71,7 +71,7 @@ When outputting variables in HTML, you'll typically see code written in a more c
 
 ## Data types
 
-PHP has 8 different data types:
+PHP has 8 different [data types](http://php.net/manual/en/language.types.php):
 
 * Strings <small>(always surrounded in quotes)</small>
 * Integers
@@ -91,9 +91,17 @@ For example in Java you might say:
 In PHP you don't have to explicitly set a variable's data type; instead, PHP will automatically determine the type for you.
 
 ```php
-$votes = 100; # Give it an integer, it'll be an integer
+$votes = 100;       # Give it an integer, it'll be an integer
 $votes = "Unknown"; # Give it a string, it'll be a string
+$votes = "100";		# Gave it a number, but it's in quotes, so it'll be a string.
 ```
+
+If you want to find out what type a variable is, use `gettype()`.
+
+
+
+
+## Type Juggling
 
 PHP doesn't support explicit variable typing. 
 
@@ -117,12 +125,15 @@ This wouldn't make it required that `$prefix` be a *string*, but it'd at least b
 
 While you don't have to set variable types, you can convert variable types using type casting. This is done by prefixing a value with your desired type in parenthesis.
 
-For example, you could convert a floating point number to an integer:
+For example, you could convert a decimal number to an integer:
 
 ```php
-$votes = (int) 10.9;
-echo $votes; # Outputs 10
+$votes = (int)10.9;  # Cast Double to an Integer
+echo gettype($votes) # Outputs "integer"
+echo $votes;         # Outputs 10
 ```
+
+
 
 
 
@@ -324,6 +335,11 @@ upvote($votes); # Outputs 101
 upvote($votes); # Outputs 102
 upvote($votes); # Outputs 103
 ```
+
+
+
+## Reference
++ [String conversion to numbers](http://php.net/manual/en/language.types.string.php#language.types.string.conversion)
 
 
 

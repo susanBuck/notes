@@ -7,6 +7,7 @@ Create a file called **bank.php** and fill it with the following code, then load
 <html>
 <head>
 	
+	<meta charset='utf-8'>
 	<title>PHPiggy Bank</title>
 	
 	<?php
@@ -32,7 +33,7 @@ Create a file called **bank.php** and fill it with the following code, then load
 	
 <body>
 	
-	<img alt='PHPiggy Bank Logo' src='http://making-the-internet.s3.amazonaws.com/php-phpiggy-bank.png'>
+	<img src='http://making-the-internet.s3.amazonaws.com/php-phpiggy-bank.png' alt='PHPiggy Bank Logo'>
 	
 	<p>
 	 You have $<?php echo $total; ?> in your piggy bank.
@@ -48,7 +49,7 @@ Create a file called **bank.php** and fill it with the following code, then load
 * PHP code is written in a text file that is saved with a `.php` extension. 
 * `.php` files can process both HTML code and PHP code.
 * PHP code is always surrounded by a start PHP tag `<?php` and an end PHP tag `?>`.
-* Every command in PHP should end with a semi-colon.
+* Every command ends with a semi-colon.
 
 
 
