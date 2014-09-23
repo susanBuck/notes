@@ -1,11 +1,11 @@
 ## Goal
-Learn the tools that will be most useful to us as web creators
+Learn the tools that will be most useful to us as web creators.
 
 ## Agenda
 
-* Set up your workspace, learn about common tools and all the PS panels
-* Start implementing a full design, learning lots of tools, tips and tricks along the way
-* Piece apart design into HTML/CSS
+* Set up your workspace, learn about common tools and all the PS panels.
+* Start implementing a full design, learning lots of tools, tips and tricks along the way.
+* Piece apart design into HTML/CSS.
 
 ## Topics covered
 
@@ -21,6 +21,9 @@ Learn the tools that will be most useful to us as web creators
 * Font files
 * Brushes
 * Patterns
+
+Bonus:
+
 * Save For Web
 * Image formats: jpg, gif, png
 * Piecing apart your comp for the web

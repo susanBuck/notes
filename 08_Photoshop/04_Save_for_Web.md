@@ -46,16 +46,5 @@ Paste
 	* Go to ➚ File: Save for Web and save this file as a .png (so it has transparency)
 
 ## Rebuild with HTML/CSS
-View source: [ice-cream-finder.html](/examples/_photoshop/ice-cream-finder.html)
-
-
-## Color Shifting
-Photoshop's default working space is Adobe RGB which is great for photos but bad for the web.
-
-Using sRGB working space is the best solution for ensuring consistency in PS and exported images.
-
-1. View: Proof Setup: Monitor RGB
-2. View: [checked] Proof Colors
-3. Edit: Color Settings set RGB to sRGB IEC…
-
-When Saving for Web make sure Embed Color Profile is off. Convert to sRGB doesn't matter
++ [Preview](http://codepen.io/wcc/full/dgrus/)
++ [View Code](http://codepen.io/wcc/pen/dgrus?editors=110)
