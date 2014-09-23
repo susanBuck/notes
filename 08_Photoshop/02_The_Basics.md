@@ -47,7 +47,7 @@ Bonus:
 * Toolbar
 
 	* Quick identification of the tools, we'll talk about them in more detail as we get to each one
-	* [Keyboard Shortcuts](/_photoshop/resources/photoshop-keyboard-shortcuts.png) for the tools
+	* [Keyboard Shortcuts](https://raw.githubusercontent.com/susanBuck/notes/master/08_Photoshop/photoshop-keyboard-shortcuts.png) for the tools
 	* Control panel: Shows options for tool you're using
 	
 * Panels - All toggle-able via Windows menu
