@@ -4,8 +4,7 @@ Learn the tools that will be most useful to us as web creators.
 ## Agenda
 
 * Set up your workspace, learn about common tools and all the PS panels.
-* Start implementing a full design, learning lots of tools, tips and tricks along the way.
-* Piece apart design into HTML/CSS.
+* Implement a full design, learning lots of tools, tips, and tricks along the way.
 
 ## Topics covered
 

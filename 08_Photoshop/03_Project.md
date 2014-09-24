@@ -57,12 +57,10 @@ Create a mock launch page for a hypothetical application called *Ice Cream Finde
 * Move the logo slightly behind the box.
 * Now go to **Blending Options** and play around with drop shadow to give it depth over the logo. An angle of -90 will make the shadow come right from the top.
 * Center the content box
+	* Go to *Select > All* to create a marquee around the entire document
+	* Select the layer you wish to center (in this case the content box).
+	* Go to **Layer: Align: Horizontal Centers**.
 
-	* Create a new layer and fill it entirely with red then knock the opacity down to 50%. You should see a red tint over your entire canvas.
-	
-	* Name this layer *center guide*. 
-	* Select the layer you wish to center (in this case the content box) and the *center guide* layer you just created then go to **Layer: Align: Horizontal Centers**.
-	* When you're done, hit the eyeball next to the *center guide* layer; this will disable it but not delete it in case you need to use it again to align anything.
 
 
 ## Description text
@@ -75,7 +73,7 @@ Create a mock launch page for a hypothetical application called *Ice Cream Finde
 
 Ultimately, your form elements will be designed via CSS - but because we want to see the whole picture as we build our layout, we'll use some template form elements.
 
-* Download [form-elements.psd](/examples/_photoshop/resources/form-elements.psd)
+* Download [form-elements.psd](https://github.com/susanBuck/notes/raw/master/08_Photoshop/assets/form-elements.psd)
 * Look for the folder *formfields: standard* and drag it over to your document.
 * Resize the input box to fit under your copy by going to **Edit: Free Transform**; because it's a shape layer we can resize it without distorting the image. Holding down Shift while you resize will maintain your proportions.
 Add a sample value such as `your@email.com`.

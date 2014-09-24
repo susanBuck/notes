@@ -9,7 +9,7 @@
 
 * CS6 Adobe products can still be purchased.
 * You can also get a [CS6 Trial here](http://prodesigntools.com/adobe-cs6-direct-download-links.html).
-* Make sure you follow the notes under &ldqu;Very Important Instructions&rdquo;.
+* Make sure you follow the notes under &ldquo;Very Important Instructions&rdquo;.
 
 
 **Version used in class**
