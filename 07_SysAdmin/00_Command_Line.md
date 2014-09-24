@@ -2,9 +2,10 @@
 - [LPTHW: Command Line Crash Course](http://learnpythonthehardway.org/book/appendixa.html)
 - [Tutsplus: 7 Simple and Useful Command-Line Tips](http://code.tutsplus.com/tutorials/7-simple-and-useful-command-line-tips--net-11608)
 - [ExplainShell.com](http://explainshell.com/) fantastic tool; type in any command and it will break down each piece.
-- [General Mac CL commands](http://www.pixelbeat.org/cmdline.html)
-- [Git Specific](http://www.git-tower.com/files/cheatsheet/Git_Cheat_Sheet_grey.pdf)
-
+- [Git Cheat Sheet](http://www.git-tower.com/files/cheatsheet/Git_Cheat_Sheet_grey.pdf)
+- [Command Cheat Sheet](https://d1b10bmlvqabco.cloudfront.net/attach/hykay018bam4zp/hzpj56v4gkv2if/i0e6xgtr3j
+3y/linuxcheatsheet.pdf)
+- [Another Command Cheat Sheet](http://www.pixelbeat.org/cmdline.html)
 
 
 
@@ -54,7 +55,7 @@ When it's done extracting, find `c:\Program Files\cmder.exe` to launch Cmder.
 | Change to a directory | `cd /path/to/foobar` 
 | Go back one directory | `cd ../`   
 | Go back two directories | `cd ../../`   
-| Make a directory in current direcotory | `mkdir foobar` 
+| Make a directory in current directory | `mkdir foobar` 
 | Remove a file | `rm foobar.txt` 
 | Remove a directory (be careful!) | `rm -R foobar/`   
 | Create a new text-based file | `touch foobar.txt`
