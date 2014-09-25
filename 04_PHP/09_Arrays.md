@@ -1,6 +1,6 @@
 [php.net Arrays](http://php.net/manual/en/language.types.array.php)
 
-<img src='http://making-the-internet.s3.amazonaws.com/php-arrays.png'>
+<img src='http://making-the-internet.s3.amazonaws.com/php-arrays@2x.png' style='max-width:648px'>
 
 Variables are useful for storing single pieces of information, but sometimes you need to organize multiple pieces together; enter arrays. 
 
@@ -20,19 +20,21 @@ To practice with arrays and some other upcoming material, we're going to build a
 
 logic.php:
 
-	<?php
-	$contestants["Sam"]   = "loser";
-	$contestants["Eliot"] = "loser";
-	$contestants["Liz"]   = "winner";
-	$contestants["Max"]   = "loser";
-	
-<img src='http://thewc.co.s3.amazonaws.com/challenges/php-array-parts.png'>
-	
+```php
+<?php
+$contestants["Sam"]   = "loser";
+$contestants["Eliot"] = "loser";
+$contestants["Liz"]   = "winner";
+$contestants["Max"]   = "loser";
+```
+		
 In this example, the name of the array is `$contestants`
 
 The **keys** are Sam, Eliot, Liz and Max. You can think of keys as an index, or position holder in an array.
 
 The **values** are loser, loser, winner and loser. Sam is a loser, Eliot is a loser, Liz is a winner, and Max is a loser.
+
+<img src='http://making-the-internet.s3.amazonaws.com/php-array-parts@2x.png' style='max-width:424px'>
 
 At this point the values are hard-coded; we'll make them randomly generated in a future step.
 
@@ -43,7 +45,9 @@ At this point the values are hard-coded; we'll make them randomly generated in a
 
 ### Print one value from the array:
 
-	Liz is a <?php echo $contestants['Liz']?>
+```php	
+Liz is a <?php echo $contestants['Liz']?>
+```
 	
 ### Print all the values from an array:		
 
@@ -51,13 +55,15 @@ A [foreach](http://www.php.net/manual/en/control-structures.foreach.php) loop is
 
 In the `<body>` of `raffle/index.php`
 
-	<h1>Contestants</h1>
-	
-	<?php 
-	foreach($contestants as $contestant => $result) {
-		echo $contestant." is a ".$result.".<br>";
-	}
-	?>		
+```php
+<h1>Contestants</h1>
+
+<?php 
+foreach($contestants as $contestant => $result) {
+	echo $contestant." is a ".$result.".<br>";
+}
+?>	
+```	
 		
 This loop will work its way through the `$contestants` array, one value at a time. Each iteration through, the `$contestant` variable (key) will *point to* `=>` the `$result` variable.
 
@@ -73,9 +79,11 @@ The second time, `$key` will be `"Eliot"` and `$value` will be `"loser"`
 ### Quick and dirty array printing
 If you need to quickly see the contents of an array, you can use the [print_r()](http://www.php.net/manual/en/function.print-r.php) function.
 
-	<pre>
-		<?php print_r($contestants); ?>
-	</pre>
+```php
+<pre>
+	<?php print_r($contestants); ?>
+</pre>
+```
 	
 Wrapping the `print_r()` call in the `<pre>` tag makes it display nicer (try it with and without to see the difference). 
 
@@ -90,37 +98,45 @@ So far our arrays were written using the **square bracket syntax**.
 
 Alternatively, arrays can be created using the [array()](http://us1.php.net/manual/en/function.array.php) function:
 
-	$contestants = Array(
-		'Sam'   => 'loser', 
-		'Eliot' => 'loser', 
-		'Liz'   => 'winner', 
-		'Max'   => 'loser'
-		);
+```php
+$contestants = Array(
+	'Sam'   => 'loser', 
+	'Eliot' => 'loser', 
+	'Liz'   => 'winner', 
+	'Max'   => 'loser'
+	);
+```
 		
 		
 		
 ### Numeric keys
 So far, our arrays keys have been Strings. Instead of Strings, you can also use integers. Here's an example using square bracket notation:	
-	
-	$shopping_list[0] = 'Apples';
-	$shopping_list[1] = 'Oranges';
-	$shopping_list[2] = 'Milk';
+
+```php
+$shopping_list[0] = 'Apples';
+$shopping_list[1] = 'Oranges';
+$shopping_list[2] = 'Milk';
+```
 
 And the same example, this time using the `array()` function:
 
-	$shopping_list = Array(
-		0 => 'Apples',
-		1 => 'Oranges',
-		2 => 'Milk',
-		);
+```php
+$shopping_list = Array(
+	0 => 'Apples',
+	1 => 'Oranges',
+	2 => 'Milk',
+	);
+```
 
 When using numeric keys that start at 0 and count up, specifying the key is optional:
 
-	$shopping_list = Array(
-		'Apples',
-		'Oranges',
-		'Milk'
-		);
+```php
+$shopping_list = Array(
+	'Apples',
+	'Oranges',
+	'Milk'
+	);
+```
 	
 In this example, Apples is at key position 0, Oranges at 1, Milk at 2.
 

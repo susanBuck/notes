@@ -13,16 +13,18 @@ First step: build a form to gather the contestant names:
 
 In the `<body>` of index.php:
 
-	<form method='POST' action='index.php'>
-		Enter 5 contestants<br>
-		<input type='text' name='contestant1'><br>
-		<input type='text' name='contestant2'><br>
-		<input type='text' name='contestant3'><br>
-		<input type='text' name='contestant4'><br>
-		<input type='text' name='contestant5'><br>
-		<input type='submit' value='Pick a winner!'><br>
-		<input type='submit'>
-	</form>
+```html
+<form method='POST' action='index.php'>
+	Enter 5 contestants<br>
+	<input type='text' name='contestant1'><br>
+	<input type='text' name='contestant2'><br>
+	<input type='text' name='contestant3'><br>
+	<input type='text' name='contestant4'><br>
+	<input type='text' name='contestant5'><br>
+	<input type='submit' value='Pick a winner!'><br>
+	<input type='submit'>
+</form>
+```
 
 The method attribute for forms can be either [POST](http://php.net/manual/en/reserved.variables.post.php) or [GET](http://www.php.net/manual/en/reserved.variables.get.php) which are two different ways to pass information over your server. 
 
@@ -51,12 +53,15 @@ To check out how $_POST works, set up some code that will print it to the page.
 
 In the `<body>` of demo.php:
 
-	<pre>
-		<?php print_r($_POST); ?>
-	</pre>
+```php
+<pre>
+	<?php print_r($_POST); ?>
+</pre>
+```
 
 Then, fill in some names to your form and hit submit; you should see the contestants of `$_POST` dumped on the screen.
 
+```php
 	Array
 	(
 	   [contestant1] => Susan
@@ -65,12 +70,15 @@ Then, fill in some names to your form and hit submit; you should see the contest
 	   [contestant4] => Bob
 	   [contestant5] => Anne
 	)
+```
 
 Note how the index (`contestant1`, `contestant2`, etc.) corresponds to the `name` attribute used on the inputs:
 
-	<input type='text' name='contestant1'><br>
+```php
+<input type='text' name='contestant1'><br>
+```
 
-Ok, so far so good. At this point you should have a $_POST array full of contestant's names.
+So far so good. At this point you should have a $_POST array full of contestant's names.
 
 For the next exercise, you'll work on using this information to display your results.
 <hr>
