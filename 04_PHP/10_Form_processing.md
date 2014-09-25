@@ -22,7 +22,6 @@ In the `<body>` of index.php:
 	<input type='text' name='contestant4'><br>
 	<input type='text' name='contestant5'><br>
 	<input type='submit' value='Pick a winner!'><br>
-	<input type='submit'>
 </form>
 ```
 
