@@ -97,7 +97,7 @@ We're also going to borrow the button styles found in form-elements.psd, but rat
 
 ## Map
 
-* Next, add the [map image](/examples/_photoshop/resources/map.jpg) to your document. Make sure its layer is behind the white content box.
+* Next, add the [map image](https://github.com/susanBuck/notes/raw/master/08_Photoshop/assets/map.png) to your document. Make sure its layer is behind the white content box.
 * With the map layer selected, hit Cmd + T to go into **Free Transform Mode**. Rotate and resize the map so it sits under the white content box.
 
 ## Animated Gifs
