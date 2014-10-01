@@ -20,7 +20,7 @@ Move into your bin directory:
 $ cd /usr/local/bin
 ```
 	
-Download and install composer.phar:
+Download and install `composer.phar`:
 
 ```bash
 $ curl -sS https://getcomposer.org/installer | php 
@@ -84,7 +84,7 @@ It should be using the one found in `c:\xampp\php\php.ini`.
 If either of the above tests failed, revisit the **[PHP from CL](https://github.com/susanBuck/notes/blob/master/07_SysAdmin/999_PHP_from_CL.md)** doc.
 
 
-## OpenSSL Check
+### OpenSSL Check
 
 No matter which `php.exe` or `php.ini` you use, the key thing you need to know is *which* `php.ini` file is being used when running PHP from the CL. That way, if you run into any issues, you know where to find your configurations. 
 
@@ -106,6 +106,8 @@ $ php -i | grep --ignore-case --line-number openssl
 
 
 ### Install
+
+Pre-checks out of the way, you're ready to install...
 
 There's a handy installer for Window's Composer, which you can download here: <https://getcomposer.org/Composer-Setup.exe>.
 

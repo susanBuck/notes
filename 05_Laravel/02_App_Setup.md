@@ -19,7 +19,7 @@ To make sure Mcrypt is installed, run this command to search for `mcrypt` in you
 $ php -i | grep --line-number mcrypt
 ```
 
-If you hit any issues with the above checks, you should revisit the docs on setting up PHP from CL.
+If you hit any issues with the above checks, you should revisit the docs on [setting up PHP from CL](https://github.com/susanBuck/notes/blob/master/07_SysAdmin/999_PHP_from_CL.md).
 
 Once you've confirmed the above, you're ready to move on...
 
@@ -50,6 +50,10 @@ Once in this directory, run `ls -la` command; you should see all the Laravel rel
 
 <img src='http://making-the-internet.s3.amazonaws.com/laravel-fresh-install@2x.png' class='' style='max-width:668px; width:100%' alt='Laravel fresh install'>
 
+
+
+
+## Permissions
 **IMPORTANT**: Laravel needs to have the ability to write to the **storage** directory, so set that permission:
 
 ```bash
@@ -105,7 +109,7 @@ If all went well, you should see Laravel's default welcome page when you hit `ht
 
 <img src='http://making-the-internet.s3.amazonaws.com/laravel-app-setup-success.png?@2x' class='' style='max-width:506px; width:75%' alt=''>
 
-Whenever configuring a server to run Laravel, always remember ***the document root has to point to the `public/` folder within your app directory**.
+Whenever configuring a server to run Laravel, always remember **the document root has to point to the `public/` folder within your app directory**.
 
 
 
