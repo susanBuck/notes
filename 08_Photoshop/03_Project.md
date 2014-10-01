@@ -102,7 +102,7 @@ We're also going to borrow the button styles found in form-elements.psd, but rat
 
 ## Animated Gifs
 
-* Copy [this ice cream icon](/examples/_photoshop/resources/ice-cream-icon.jpg) into Photoshop.
+* Copy [this ice cream icon](https://github.com/susanBuck/notes/raw/master/08_Photoshop/assets/ice-cream-icon.png) into Photoshop.
 * Use the magic wand tool to select all of the white background, then hit delete to get rid of it. It's a nice clean vector-like image, so this should work well. Depending on your tolerance settings, you may or may not have to also select the white space inside the ice cream.
 * Cmd + T to Free Transform the ice cream cone down to a smaller size and position it on the map.
 * Apply a **Color Overlay Blending Option** to make it some color other than black.
