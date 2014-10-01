@@ -90,14 +90,14 @@ We're also going to borrow the button styles found in form-elements.psd, but rat
 
 ## Brushes
 
-* Photoshop Brushes are a great way to add dimension to any project. Download [this ice cream cone set](/examples/_photoshop/resources/ice-cream-brushes.abr) and note where on your computer it's located.
+* Photoshop Brushes are a great way to add dimension to any project. Download [this ice cream cone set](https://github.com/susanBuck/notes/raw/master/08_Photoshop/assets/ice-cream-brushes.abr) and note where on your computer it's located.
 * Select the **Paint Brush Tool**, and in its settings window look for the tiny right arrow.
 * After you click the arrow find the option to **Load Brushes** where you can search for the .abr file.
 * Pick one of the cones and in your shade of pink draw it below your copy / inputs but above the content box. You can play with the opacity of the layer if it's too dark.
 
 ## Map
 
-* Next, add the [map image](/examples/_photoshop/resources/map.jpg) to your document. Make sure it's layer is behind the white content box.
+* Next, add the [map image](/examples/_photoshop/resources/map.jpg) to your document. Make sure its layer is behind the white content box.
 * With the map layer selected, hit Cmd + T to go into **Free Transform Mode**. Rotate and resize the map so it sits under the white content box.
 
 ## Animated Gifs
