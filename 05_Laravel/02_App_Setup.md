@@ -99,9 +99,13 @@ Windows:
 c:\xampp\htdocs\foobook\public
 ```
 
-Once you've determined your path, make the change in MAMP:
+In MAMP you can change the Document Root via the settings:
 
 <img src='http://making-the-internet.s3.amazonaws.com/laravel-app-setup-document-root@2x.png' class='' style='max-width:558px; width:75%' alt=''>
+
+In XAMP you'll change the Document Root via Apache's config file, `httpd.conf`:
+
+<img src='http://making-the-internet.s3.amazonaws.com/laravel-xamp-document-root@2x.png' class='' style='max-width:1087px; width:100%' alt=''>
 
 __Save all changes and restart your server.__
 
