@@ -114,8 +114,7 @@ In the *Environment Variables* screen look for `Path` under *System variables*:
 
 Since you now know there's a `php.exe` in `c:\XAMPP\php\` you want to add this directory to your PATH variable:
 
-<img src='http://making-the-internet.s3.amazonaws.com/laravel-setting-path-variable-on-windows.png?@2x' class='' style='max-width:1127; width:100%' alt='Setting path variable'>
-[Enlarge...](http://making-the-internet.s3.amazonaws.com/laravel-setting-path-variable-on-windows.png?@2x)
+<img src='http://making-the-internet.s3.amazonaws.com/laravel-setting-path-variable-on-windows@2x.png' class='' style='max-width:1127px; width:100%' alt='Setting path variable'>
 
 Tip: The text input for editing the PATH variable is small and hard to work with... Copy your variable to a text editor to work with it there, then paste it back when you're done.
 
