@@ -2,13 +2,13 @@
 
 Packages can be found from [Packagist](https://packagist.org/). 
 
-Let's practice with a helpful debugging package called Pre which will allow you to pretty print arrays, objects, etc.
+Let's practice with a helpful debugging package called *Pre* which will allow you to pretty print arrays, objects, etc.
 
-Visit the Packagist page for Pre: <https://packagist.org/packages/paste/pre>
+Visit the Packagist page for *Pre*: <https://packagist.org/packages/paste/pre>
 
 Note the require line it gives you: `"paste/pre": "dev-master"`
 
-In `/composer.json` add this line, ex:
+In `/composer.json` add this line:
 
 ```php
 "require": {
@@ -17,13 +17,13 @@ In `/composer.json` add this line, ex:
 },
 ```
 
-Run this to verify your json is valid:
+Within your project directory, run this command to verify your JSON is valid:
 
 ```bash
 $ composer validate
 ```
 	
-Install the dependency and update the `composer.lock` file:
+Within your project directory, run this command to install the dependency and update the `composer.lock` file:
 
 ```bash
 $ composer update
