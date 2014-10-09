@@ -39,3 +39,20 @@ Update:
 ```bash
 $ composer build          
 ```
+
+
+
+
+
+
+```bash
+$ codecept run --report
+```
+
+```bash
+$ codecept run --report --fail-fast
+```
+
+```bash
+$ php artisan db:seed --env=testing
+```

@@ -36,10 +36,10 @@ On the regular HTML output, next to each book listing there should be a link to 
 
 
 ## Procedure
-0. Create a To-do list
+0. Create a plan
 1. Define Routes
 2. Set up data source ([books.json](https://gist.github.com/susanBuck/1e46ca463e6d15ffa1b1)) with a practice route `/data`.
-3. Packages: Pretty debugging with "Pre"
+3. Packages: Pretty debugging with *Pre*
 4. Views: Build homepage
 5. View Inheritance: Create master template
 6. Pass Data to Views
