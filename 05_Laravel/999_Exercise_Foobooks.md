@@ -20,7 +20,7 @@ Each book should include the following attributes:
 + Published date
 + Tags
 + A cover image
-+ A link to bookstore where the book can be purchased
++ A link to barnesandnoble.com where the book can be purchased
 
 The search feature should query amongst any of the above criteria.
 
