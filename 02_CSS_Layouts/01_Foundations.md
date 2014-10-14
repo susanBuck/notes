@@ -64,7 +64,7 @@ These are the properties used layouts:
 * float (left, right)
 * clear (left, right or both)
 
-[CSS Cheat Sheet](http://thewc.co.s3.amazonaws.com/challenges/css-layouts-cheat-sheet.pdf)
+[CSS Cheat Sheet](http://thewc.co.s3.amazonaws.com/challenges/css-layouts-cheat-sheet.png)
 
 
 ## Containers
