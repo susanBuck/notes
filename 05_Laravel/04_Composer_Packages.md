@@ -96,12 +96,12 @@ Route::get('/practice', function() {
 });
 ```
 
-If we had more routes in this example, each one could use the `Pre::render()` class/method without having to indicate the namespace.
+If we added more routes to this example, each one could use the `Pre::render()` class/method without having to indicate the namespace.
 	
 
 ### Option 3) Add an alias so no namespace is required
 
-Finally, if you anticipate using a Class very frequently throughout your application, you can create a global alias for it.
+Finally, if you anticipate using a class frequently throughout your application, you can create a global alias for it.
 
 This is done in `/app/config/app.php` in the array called `aliases`.
 
@@ -143,7 +143,7 @@ Which method you want to use is up to you, but here's a general guideline:
 
 *Preface: If you're new to Object Oriented programming, some of the terms used below may be confusing (classes, objects, methods, instantiating, static, etc.). You can read [this note set](https://github.com/susanBuck/notes/blob/master/05_Laravel/999_OOP_Summary.md) for a quick run down and insight into some of these OOP-related terms.*
 
-Most packages are written using Object Oriented code and therefor, within each package you'll find one or more Classes.
+Most packages are written using Object Oriented code and therefor, within each package you'll find one or more class(es).
 
 For example...
 
@@ -151,9 +151,9 @@ For example...
 + The [xi-randomstring](https://packagist.org/packages/xi/randomstring) package has a class called `RandomStringGenerator` (<a href='https://github.com/xi-project/xi-randomstring/blob/master/library/Xi/RandomString/RandomStringGenerator.php'>RandomStringGenerator.php</a>). 
 + The [LoremIpsum](https://packagist.org/packages/badcow/lorem-ipsum) package has a class called `Generator` (<a href='https://github.com/samuelwilliams/LoremIpsum/blob/master/lib/Badcow/LoremIpsum/Generator.php'>Generator.php</a>).
 
-Looking at a package's classes can help you better get insight into how to use that package, especially if their documentation is sparse.
+Looking at a package's class(es) can help you better get insight into how to use that package, especially if the documentation is sparse.
 
-For example, the package provides absolutely no documentation in its [README.md file](https://github.com/xi-project/xi-randomstring). Not super helpful.
+For example, the *xi-randomstring* package provides absolutely no documentation in its [README.md file](https://github.com/xi-project/xi-randomstring). Not super helpful.
 
 However, if we dig into it's contents and examine the `RandomStringGenerator` class ([RandomStringGenerator.php](https://github.com/xi-project/xi-randomstring/blob/master/library/Xi/RandomString/RandomStringGenerator.php)), we can gleam insight into how to use this package because it's a relatively simple class:
 
