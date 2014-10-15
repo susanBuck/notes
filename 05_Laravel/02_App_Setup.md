@@ -96,7 +96,7 @@ Mac:
 
 Windows: 
 ```
-c:\xampp\htdocs\foobook\public
+c:\xampp\htdocs\foobooks\public
 ```
 
 In MAMP you can change the Document Root via the settings:
