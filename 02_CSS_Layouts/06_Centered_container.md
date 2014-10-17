@@ -34,7 +34,7 @@ Classic centered container:
 [Enlarge...](http://making-the-internet.s3.amazonaws.com/css-layouts-classic-centered-kitteh.png)
 
 * Path for background texture: <http://making-the-internet.s3.amazonaws.com/css-layouts-paper-texture.png>
-* Path for kitten: <http://placekitten.com/250/250>
+* Path for kitten: <http://placekitten.com/910/400>
 * Get the code for the rounded edge from <http://css3please.com>
 * Get the filler text from <http://catipsum.com>
 * You can create the columns with floats or with absolute positioning. What are the pros/cons of each?

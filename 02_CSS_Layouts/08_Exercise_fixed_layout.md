@@ -12,7 +12,7 @@
 
 4. Below the header is navigation which you'll want to set with `<li>`'s inside of a `<menu>` element. By default `<li>`'s stack; how can you get them to sit next to each other?
 
-5. Below the navigation bar is a left column and right column. Create these and fill with the given content / elements. You can get your image from <http://placekitten.com/> and your filler text from <http://kittyipsum.com>.
+5. Below the navigation bar is a left column and right column. Create these and fill with the given content / elements. You can get your image from <http://thewc.dev/practice-pixels> and your filler text from <http://kittyipsum.com>.
 
 6. Finally, the footer! As you plop this div in your code, you'll probably notice it floats up below your two columns in a very annoying fashion. Which brings us to....
 

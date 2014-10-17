@@ -47,7 +47,7 @@ What happens when you introduce a wrapper to the above example?
 	</style>
 	
 	<div id='wrapper'>
-		 <img src='http://placekitten.com/100/100'>
+		 <img src='http://practice-pixels.s3.amazonaws.com/kitten_250x250.jpg'>
 		 "Therefore it was decided to start upon their journey the next morning, and the Woodman sharpened his axe on a green grindstone and had all his joints properly oiled. The Scarecrow stuffed himself with fresh straw and Dorothy put new paint on his eyes that he might see better. The green girl, who was very kind to them, filled Dorothy's basket with good things to eat, and fastened a little bell around Toto's neck with a green ribbon. They went to bed quite early and slept soundly until daylight, when they were awakened by the crowing of a green cock that lived in the back yard of the Palace, and the cackling of a hen that had laid a green egg."
 	</div>
 	

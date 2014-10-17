@@ -44,7 +44,7 @@ Let's pull this together into our first layout strategy. This will give you prac
 
 * The menu should be fixed on the top left
 * Path for background texture: <http://making-the-internet.s3.amazonaws.com/css-layouts-paper-texture.png>
-* Path for kitten: <http://placekitten.com/250/250>
+* Path for kitten: <http://practice-pixels.s3.amazonaws.com/kitten_250x250.jpg>
 * Get the code for the rounded edge from <http://css3please.com>
 * Get the filler text from <http://catipsum.com>
 * (Bonus) The menu links should use anchors to jump to the different stories on the page
