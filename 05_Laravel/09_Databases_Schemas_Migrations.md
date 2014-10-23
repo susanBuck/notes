@@ -8,8 +8,6 @@ Reference:
 
 ---
 
-<img src='http://making-the-internet.s3.amazonaws.com/laravel-migration-summary@2x.png' class='' style='max-width:903px; width:100%' alt=''>
-
 With your app's database created and your connection to that database confirmed, it's time to build your tables.
 
 Rather than building tables with raw SQL queries, or using a MySQL GUI like phpMyAdmin, we'll use **Laravel Migrations**.
@@ -84,38 +82,14 @@ Before writing any code in the `up()` method, we have to decide what fields the 
 
 To do this, we looked at the existing `books.json` data and mapped the book parameters to the appropriate MySQL field type.
 
-<img src='http://making-the-internet.s3.amazonaws.com/laravel-books-table-design@2x.png' class='' style='max-width:983px; width:100%' alt=''>
+<img src='http://making-the-internet.s3.amazonaws.com/laravel-books-table-design@2x.png' class='' style='max-width:783px; width:100%' alt=''>
 
-To understand the MySQL data types we chose for each field, refer to this table:
-
-### Text
-
-| MySQL Data Type | Description | Range | Example | Laravel Equivalent
-|---	|---	|--- |--- |---
-| `CHAR(size)` | *Fixed* length String. | 0-255 | US State | `char('state', 2)` |
-| `VARCHAR(size)` | *Variable* length String. |0-255| Email address | `string('email')`
-| `TEXT` | Variable length String; can store up to 2GB of text data. | 0 - 65535 | Blog post | `text('post')`
-
-### Numbers
-
-
-| MySQL Data Type |  Description  | Range | Example | Laravel Equivalent
-|---	|---	|---	|---	|---
-| `INT` | Whole number. | -2147­483648 to 214748­3647 | Page count | `integer('page_count')` |
-| `FLOAT` | A small decimal number. | 7 Digits | Scientific calculations | `float('distance')`
-| `DOUBLE` | A large decimal number. | 15-16 Digits | Scientific calculations |`double('distance')`
-| `DECIMAL` | A DOUBLE stored as a string, allowing for a fixed decimal point. | 28-29 Significant digits | Money | `decimal('bank_balance')`
-
-
-### Misc
-| MySQL Data Type | Description | Range | Example | Laravel Equivalent
-|---	|---	|--- |--- |---
-| `BOOLEAN` | Alias for TINYINT(1) | TINYINT(1) | Logged in | `boolean('logged_in');`
-| `BLOB` | Binary Large Object | 0 - 65535 | An image | `binary('image')`
-
-Reference: [Full list of MySQL Data Types](http://help.scibit.com/mascon/masconMySQL_Field_Types.html)
+To understand the MySQL data types we chose for each field, [refer to this table](https://github.com/susanBuck/notes/blob/master/05_Laravel/08_Databases_MySQL_Data_Types.md).
 
 With the `books` table design in mind, it's time to write the Schema building code.
+
+
+
 
 
 ## up() - Build the table
@@ -155,7 +129,6 @@ We've commented the `Schema` methods we're using, but be sure to read the [Schem
 
 
 
-
 ## down() - Drop the table
 
 The &ldquo;undo&rdquo; action for creating a new table is really simple&mdash; just drop the table:
@@ -180,6 +153,11 @@ FYI: The first time you do this it will create a `migrations` table which will b
 That should do the trick. Examine your new `books` table in phpMyAdmin or MySQL Command Line to make sure it matches the design you were aiming for.
 
 
+
+
+## Recap
+
+<img src='http://making-the-internet.s3.amazonaws.com/laravel-migration-summary@2x.png' class='' style='max-width:1041px; width:100%' alt=''>
 
 
 ## Altering tables

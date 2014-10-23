@@ -7,7 +7,7 @@ Reference:
 
 ## Starting assumption
 
-+ You've already created a database, per the instructions in the Database primer. Our example database name is `foobooks`.
++ You've already created a database, per the instructions in the [Databases Primer note set](https://github.com/susanBuck/notes/blob/master/05_Laravel/07_Databases_Primer.md). Our example database name is `foobooks`.
 + MAMP or XAMPP is open and your MySQL database server is running.
 
 

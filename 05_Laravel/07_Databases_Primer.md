@@ -67,27 +67,11 @@ After you create your database, select it from the list of databases on the left
 
 ## New table
 
-Our first table will be called `books` and it should contain the following fields/columns, based on what we know about our books from the `books.json` file:
+Our first table will be called `books` and it should be designed to accomodate the data we've been using in the `books.json` file.
 
-* `id`
-* `title`
-* `author`
-* `published`
-* `cover`
-* `purchase_link`
+<img src='http://making-the-internet.s3.amazonaws.com/laravel-books-table-design@2x.png' class='' style='max-width:783px; width:100%' alt=''>
 
-Before we build this table, though, we need to decide what *MySQL data type* to use for each field.
-
-Refer to the [MySQL Data Types note set](https://github.com/susanBuck/notes/blob/master/05_Laravel/999_MySQL_Data_Types.md) to get a feel for the different data types available.
-
-Here are the data types we decided on for our books fields:
-
-* id INT
-* title VARCHAR(255)
-* author VARCHAR(255)
-* published INT(4)
-* cover VARCHAR(255)
-* purchase_link VARCHAR(255)
+To understand the **MySQL data types** chosen for each field, [refer to this table](https://github.com/susanBuck/notes/blob/master/05_Laravel/08_Databases_MySQL_Data_Types.md).
 
 In phpMyAdmin, this is what the books table design looks like:
 
