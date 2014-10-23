@@ -86,141 +86,10 @@ The procedure for setting up your live server database will look something like 
 4. Push changes to your live server and confirm the connection works.
 5. Run database migrations on live server database.
 
-In the following procedures we'll walk through these steps on **PagodaBox**, **OpenShift** and **Digital Ocean**.
 
 
 
-## PagodaBox
-
-Add a new **MySQL Database** to your PagodaBox application:
-
-<img src='http://making-the-internet.s3.amazonaws.com/laravel-pagoda-new-mysql-database@2x.png' class='' style='max-width:1250px; width:100%' alt=''>
-
-Once your database has been created, click it on your application dashboard, then look for the *Show Credentials* link. Make note of these credentials.
-
-<img src='http://making-the-internet.s3.amazonaws.com/laravel-pagoda-mysql-credentials@2x.png' class='' style='max-width:677px; width:100%' alt=''>
-
-With your credentials on hand, it's time to plug them in.
-
-Locally, open (or create if it doesn't exist) `/app/config/production/database.php`.
-
-The array that this file returns need to include an index `connections` that includes an array of `mysql` credentials like the code that follows. Update `database` and `username` to match the `Root User` and `Root Password` PagodaBox gave you in the above step.
-
-```php
-<?php
-
-return array(
-
-	'connections' => array(
-
-		'mysql' => array(
-			'driver'    => 'mysql',
-			'host'      => 'hostname-goes-here',
-			'database'  => 'database-name-goes-here',
-			'username'  => 'username-goes-here',
-			'password'  => 'password-goes-here',
-		),
-
-	),
-
-);
-```
-
-__Migrations:__
-To set up migrations on PagodaBox, open the `Boxfile` located in the root of your project. If you'll recall from when you first set up deployment to PagodaBox, the `Boxfile` is a PagodaBox-specific configuration file.
-
-At the end of the Boxfile, in the section under `after_deploy:` add the `php artisan migrate` command.
-
-```
-after_deploy:
-	- "rm -f app/storage/cache/*"
-	- "rm -f app/storage/views/*"
-	- "php artisan migrate"
-```
-
-This will run your database migrations on PagodaBox after each deployment. This is necessary because PagodaBox does not allow SSH access to manually run this command yourself.
-
-Save, add, commit and push your changes to Pagoda. Pay attention to the output Pagoda gives you as it re-deploys because there may be valuable debugging info if a problem occurs.
-
-__Test it:__
-Visit the debug route described at the top of this doc. If you see the green bar telling you your connection is confirmed, you're good to go and you can scroll down to the end of this doc for details on loading data. If you see a red bar, you've got some debugging to do.
-
-
-
-
-
-
-
-
-## OpenShift
-
-Add a new **MySQL Cartridge** on your OpenShift application:
-
-<img src='http://making-the-internet.s3.amazonaws.com/laravel-openshift-mysql@2x.png' class='' style='max-width:1346px; width:100%' alt=''>
-
-Make note of the MySQL `Root User` and `Root Password` credentials it gives you (these values can also be retrieved at any time from your application's dashboard).
-
-Next, you need to locate the host name your OpenShift MySQL database uses. This can be found by SSH'ing into your OpenShift server and running the `export` command, which will print out a list of environment variables.
-
-```bash
-$ export
-```
-
-The value you're looking for is the IP address listed to the right of `OPENSHIFT_MYSQL_DB_HOST`.
-
-<img src='http://making-the-internet.s3.amazonaws.com/laravel-openshift-export-environment-variables@2x.png' class='' style='max-width:1039px; width:100%' alt=''>
-
-With your credentials gathered, it's time to plug them in.
-
-Locally, open (or create if it doesn't exist) `/app/config/production/database.php`.
-
-The array that this file returns need to include an index `connections` that includes an array of `mysql` credentials like the code that follows. 
-
-Update `host`, `database`, `username` and `password` to be the values you gathered in the above steps.
-
-```php
-<?php
-
-return array(
-
-	'connections' => array(
-
-		'mysql' => array(
-			'driver'    => 'mysql',
-			'host'      => 'hostname-goes-here',
-			'database'  => 'database-name-goes-here',
-			'username'  => 'username-goes-here',
-			'password'  => 'password-goes-here',
-		),
-
-	),
-
-);
-```
-
-Save, add and commit your changes then push them to your OpenShift remote. 
-
-When the push is complete, SSH into OpenShift and have Composer re-build your `vendors/` folder:
-
-```bash
-$ composer install
-```
-
-When that's done (it takes a while), have artisan migrate your database structure:
-
-```bash
-$ php artisan migrate
-```
-
-
-__Test it:__
-Visit the debug route described at the top of this doc. If you see the green bar telling you your connection is confirmed, you're good to go and you can scroll down to the end of this doc for details on loading data. If you see a red bar, you've got some debugging to do.
-
-
-
-
-
-## DigitalOcean
+## Database setup on DigitalOcean
 
 SSH into your DigitalOcean Droplet.
 
@@ -250,7 +119,7 @@ mysql> SHOW DATABASES;
 3 rows in set (0.00 sec)
 ```
 
-Create the database for your application using the `CREATE DATABASE {db-name}` command:
+Create the database for your application using the `CREATE DATABASE <db-name>` command:
 
 ```bash
 mysql> CREATE DATABASE foobooks;
