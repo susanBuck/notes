@@ -18,7 +18,7 @@ The benefit of working with your database this way is your migrations scripts ca
 
 Laravel's command line utility, Artisan, will help you take care of migration tasks.
 
-
+**Before proceeding, if you still have a `books` table from the Databases Primer note set, go ahead and delete that table since we'll be creating it using Migrations.**
 
 
 ## Generate a new migration
@@ -159,16 +159,22 @@ That should do the trick. Examine your new `books` table in phpMyAdmin or MySQL 
 
 <img src='http://making-the-internet.s3.amazonaws.com/laravel-migration-summary@2x.png' class='' style='max-width:1041px; width:100%' alt=''>
 
+For a full list of Artisan commands (including migration related commands):
+
+```bash
+$ php artisan list
+```
+
+
 
 ## Altering tables
-
 
 Any alterations to an existing table should be done in a new migration. 
 
 For example, let's imagine you wanted to add a `page_count` field to the books table. Start with a new migration:
 
 ```bash
-$ php artisan migrate:make `add_page_count_field_to_books_table`
+$ php artisan migrate:make add_page_count_field_to_books_table
 ```
 
 Edit the resulting migration:
@@ -195,29 +201,28 @@ Run it:
 $ php artisan migrate
 ```
 
-Note how Artisan only runs this latest migration. Any time you call `artisan migrate` it will only run migrations that have not already been run.
+Note how Artisan only runs this latest migration. 
+Any time you call `artisan migrate` it will only run migrations that have not already been run.
 
-If you wanted to "go back to the beginning" and revert all migrations you could use this command:
+
+
+## Refresh
+
+The artisan command to reset and re-run all migrations looks like this:
 
 ```bash
 $ php artisan migrate:refresh
 ```
 
-For a full list of Artisan commands (including migration related commands):
 
-```bash
-$ php artisan list
-```
-
-
-## Your first migrations
+## Starting over / Your first migrations
 
 Getting your migration code right the first time can be challenging, especially if you're starting a new project with a whole bunch of new tables. When starting with a brand new app, it's okay to bend the rules and rebuild and rerun an existing migration to get your tables right.
 
 For example, in the case above when we forgot the `published` field, rather than creating a new migration, it would have been nice to add the field to the original migration that created the table. Then, you could run `php artisan migrate:refresh` to reset and re-run all migrations. 
 
-Migrate:refresh is great, but it assumes all your `down()` functions are written perfectly, and it also assumes you haven't had any migrations abort part-way through because of some issue. These assumptions aren't always correct, especially when you're first writing migrations and building a lot of tables. 
+`migrate:refresh` is great, but it assumes all your `down()` functions are written perfectly, and it also assumes you haven't had any migrations abort part-way through because of some issue. These assumptions aren't always correct, especially when you're first writing migrations and building a lot of tables. 
 
-Given this, if you ever want to do a for-real "start over" you should manually delete *all* your tables (including the `migrations` table) using phpMyAdmin or some database tool. This will ensure you can run your migration with an absolute fresh start.
+Given this, if you ever want to do a for-real &ldquo;start over&rdquo; you should manually delete *all* your tables (including the `migrations` table) using phpMyAdmin or some database tool. This will ensure you can run your migration with an absolute fresh start.
 
 At this point, this work-around is acceptable because you're the only one running your migrations since the project hasn't been shared with anyone. It's only once your project has been shared with teammates/other servers that you obviously can't just start over, and you'll want to make sure even granular changes done a migration at a time. 
