@@ -220,11 +220,9 @@ From this point forward we're going to look at database interaction from the per
 
 Check out the following tutorials to learn more about SQL:
 
-* [SQL for Beginners Part 1](http://net.tutsplus.com/tutorials/databases/sql-for-beginners)
-* [SQL for Beginners Part 2](http://net.tutsplus.com/tutorials/databases/sql-for-beginners-part-2/)
-* [SQL for Beginners Part 3](http://net.tutsplus.com/tutorials/databases/sql-for-beginners-part-3/)
-
-
+* [SQL for Beginners Part 1](http://code.tutsplus.com/tutorials/sql-for-beginners--net-8200)
+* [SQL for Beginners Part 2](http://code.tutsplus.com/tutorials/sql-for-beginners-part-2--net-8274)
+* [SQL for Beginners Part 3](http://code.tutsplus.com/articles/sql-for-beginners-part-3-database-relationships--net-8561)
 
 
 ### Tip: Via MySQL Command Line 
