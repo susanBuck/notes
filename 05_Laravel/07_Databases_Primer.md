@@ -222,7 +222,6 @@ Check out the following tutorials to learn more about SQL:
 
 * [SQL for Beginners Part 1](http://net.tutsplus.com/tutorials/databases/sql-for-beginners)
 * [SQL for Beginners Part 2](http://net.tutsplus.com/tutorials/databases/sql-for-beginners-part-2/)
-* [SQL for Beginners Part 3](http://net.tutsplus.com/tutorials/databases/sql-for-beginners-part-3/)
 
 
 
