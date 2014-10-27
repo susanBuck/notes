@@ -122,7 +122,7 @@ public function up() {
 }
 ```
 
-Noe how the Laravel `Schema` component is used to create the `books` table.
+Note how the Laravel `Schema` component is used to create the `books` table.
 
 We've commented the `Schema` methods we're using, but be sure to read the [Schema Documentation](http://laravel.com/docs/schema) for full details.
 
