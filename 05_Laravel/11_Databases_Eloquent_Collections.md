@@ -94,7 +94,7 @@ When building a web application, it's good practice minimize the number of queri
 
 One way you can optimize your application is to fetch data from an existing Collection, rather than making another round-trip query on the database. This comes in handy if, for example, you're dealing with a result set in which you want to suss out multiple things from that set: all the books, the first book, the last book, etc. Rather than doing a separate query for each of these needs, you can shift the responsibility over to the Collection and use the data you already fetched...
 
-For example, imagine at the top of a script you call upon the `all()` fetch method to grab all the books for displaying on a table in your View:
+For example, imagine at the top of a script you call upon the `get()` fetch method to grab all the books for displaying on a table in your View:
 
 ```php
 $books = Book::orderBy('id','descending')->get();
@@ -117,12 +117,12 @@ In summary:
 
 ```php
 # 2 queries:
-$books = Book::orderBy('id','descending')->get();
-$first_book = Book::orderBy('id','descending')->first();
+$books = Book::orderBy('id','descending')->get(); # Query on the Database
+$first_book = Book::orderBy('id','descending')->first(); # Query on the Database
 
 # 1 query (better):
-$books = Book::orderBy('id','descending')->get();
-$first_book = $books->first();
+$books = Book::orderBy('id','descending')->get(); # Query on the Database
+$first_book = $books->first(); # Query on the Collection
 ```
 
 
