@@ -135,6 +135,7 @@ Run `exit;` to get out of MySQL mode.
 
 
 ## Fill in MySQL config
+
 Locally, open (or create if it doesn't exist) `/app/config/production/database.php`.
 
 The array that this file returns need to include an index `connections` that includes an array of `mysql` credentials like the code that follows. 
@@ -164,7 +165,7 @@ return array(
 );
 ```
 
-Save, add and commit your local changes then push them to Github. 
+Save, add, commit, and push your local changes to Github. 
 
 Then, deploy your changes to DigitalOcean (i.e. while SSH'd into your project directory on DigitalOcean, run `git pull`).
 
@@ -175,6 +176,18 @@ $ cd /var/www/html/foobooks/
 $ git pull
 ```
 
+__A note on storing passwords in Github__
+
+In the above steps you just checked a password into a Public repository, making it publicly available for the world to see. This is usually a *big* no-no. Do not ever do this on a real world site! 
+
+Most likely, on a real world site you'd have your code in a Private repository making it less of an issue. Or, you might set up database and other sensitive credentials in `.env` files that are completely ignored (i.e. left out) from your Github repository for extra security.
+
+In a learning environment like this though, it's okay for the following reasons:
+
++ By default, remote MySQL connections are disabled on your server. This means connections to your database have to come from within your server. Therefor, even if someone found your MySQL database password in your public repository, they'd still have to have access to your server to do anything with it.
++ You shouldn't have anything important in your class project databases, so the pedagogical benefits outweigh the risks.
+
+If you do have sensitive data you wish to lock down, check out the `.env` files mentioned above, or consider switching to a Private repository.
 
 
 
@@ -211,6 +224,26 @@ There are three ways you may add data:
 + If you've set up database seeding, you can run the `php artisan db:seed` command.
 
 
+
+## Tips
+
+__phpMyAdmin__
+
+You shouldn't *need* to run phpMyAdmin on your production server, but if you'd like the option to do so, here's a blog post from DigitalOcean on [How To Install and Secure phpMyAdmin](https://www.digitalocean.com/community/tutorials/how-to-install-and-secure-phpmyadmin-on-ubuntu-12-04).
+
+__mysql_secure_installation__
+
+When you SSH into DigitalOcean, you may have noticed a message prompting you to run the command `mysql_secure_installation`:
+
+<img src='http://making-the-internet.s3.amazonaws.com/laravel-encouraged-to-run-mysql-secure@2x.png' class='' style='max-width:1017px; width:100%' alt=''>
+
+You're not instructed to do this in the instructions above for the sake of simplicty. However, on real world applications, you'll want to follow this step for your production applications.
+
+Once you run the command, you'll just be prompted to make some setting changes that will make your MySQL more secure.
+
+[See the process here...](http://making-the-internet.s3.amazonaws.com/laravel-mysql-secure-installation@2x.png)
+
+[You can read more about mysql_secure_installation here...](http://dev.mysql.com/doc/refman/5.0/en/mysql-secure-installation.html)
 
 
 

@@ -1,9 +1,9 @@
-## Reference:
+## Reference
 
 * <http://laravel.com/docs/eloquent#collections>
 
----
 
+## Collections
 An Eloquent query returns an object of the [Collection](http://devdocs.io/laravel/api/4.2/illuminate/support/collection) class.
 
 This object is a wrapper for an Array called **items** which contains all the data of your query.

@@ -7,7 +7,7 @@
 
 In terms of databases, here's the groundwork we've covered so far...
 
-+ Created a local MySQL database.
++ Created a MySQL database.
 + Configured Laravel so it could talk to the database.
 + Used Migrations and the Schema component to build a table in the database.
 
@@ -33,7 +33,7 @@ foreach ($book as $books) {
 
 There are many methods within the query builder to help you build any query imaginable (check the above-linked docs for a full reference).
 
-Or maybe you're an SQL wiz and you don't want any help from the query builder. In this case, you could use the `statement()` method to run any raw SQL statement:
+Or maybe you're a SQL wiz and you don't want any help from the query builder. In this case, you could use the `statement()` method to run any raw SQL statement:
 
 ```php
 DB::statement('SELECT * FROM books WHERE author LIKE "%Scott%"');
@@ -59,7 +59,7 @@ Here's a big picture view of this:
 
 <img src='http://making-the-internet.s3.amazonaws.com/laravel-orm-books@2x.png' class='' style='max-width:1057px; width:100%' alt=''>
 
-Note how for every public parameter of the class `Book`, there was a corresponding field in the table `books`. This one-to-one relationship allows for the so-called "mapping" of ORM.
+Note how for every public parameter of the class `Book`, there was a corresponding field in the table `books`. This one-to-one relationship allows for the so-called &ldquo;mapping&rdquo; of ORM.
 
 Laravel's ORM system is called **Eloquent**.
 
@@ -89,8 +89,18 @@ There are a few expectations Eloquent has in order to work:
 
 The latter two points can be configured if needed&mdash; for example, if you're working with an existing table which you don't have structural control over. If you're starting fresh, though, it's best to follow these conventions.
 
-With this infrastructure in place, let's put Eloquent to work with some fundamental CRUD operations...
+With this infrastructure in place, let's put Eloquent to work with some queries...
 
+
+
+
+## Query Structure
+
+All ORM queries are made up of *constraints* (optional) and a *fetch* method.
+
+<img src='http://making-the-internet.s3.amazonaws.com/laravel-eloquent-query-structure@2x.png' class='' style='max-width:1335px; width:100%' alt=''>
+
+Eloquent queries return a Collection object, which is covered in more detail in the next doc.
 
 
 
@@ -147,10 +157,15 @@ Same idea, but this time get one specific book:
 
 ```php
 Route::get('/practice-reading-one-book', function() {
-	
-	$book = Book::where('author', 'LIKE', '%Scott%')->first();
-	
-	return $book->title;
+
+    $book = Book::where('author', 'LIKE', '%Scott%')->first();
+
+    if($book) {
+        return $book->title;
+    }
+    else {
+        return 'Book not found.';
+    }
 
 });
 ```
@@ -160,18 +175,25 @@ Route::get('/practice-reading-one-book', function() {
 
 ```php
 Route::get('/practice-updating', function() {
-	
-	# First get a book to update
-	$book = Book::where('author', 'LIKE', '%Scott%')->first();
-	
-	# Give it a different title
-    $book->title = 'The Really Great Gatsby';
-   
-	# Save the changes
-    $book->save();
     
-	return "Update complete; check the database to see if your update worked...";
-	
+    # First get a book to update
+    $book = Book::where('author', 'LIKE', '%Scott%')->first();
+    
+    # If we found the book, update it
+    if($book) {
+
+        # Give it a different title
+        $book->title = 'The Really Great Gatsby';
+   
+        # Save the changes
+        $book->save();
+    
+        return "Update complete; check the database to see if your update worked...";
+    }
+    else {
+        return "Book not found, can't update.";
+    }
+    
 });
 ```
 
@@ -180,26 +202,26 @@ Route::get('/practice-updating', function() {
 
 ```php
 Route::get('/practice-deleting', function() {
-		
-	# First get a book to delete
-	$book = Book::where('author', 'LIKE', '%Scott%')->first();
-		
-	# Goodbye!
-	$book->delete();
-	   
-	return "Deletion complete; check the database to see if it worked...";
-		
+
+    # First get a book to delete
+    $book = Book::where('author', 'LIKE', '%Scott%')->first();
+
+    # If we found the book, delete it
+    if($book) {
+        
+        # Goodbye!
+        $book->delete();
+
+        return "Deletion complete; check the database to see if it worked...";
+
+    }
+    else {
+        return "Can't delete - Book not found.";
+    }
+
 });
 ```
 
-
-## Query Structure
-
-All ORM queries are made up of *constraints* (optional) and a *fetch* method.
-
-<img src='http://making-the-internet.s3.amazonaws.com/laravel-eloquent-query-structure@2x.png' class='' style='max-width:1335px; width:100%' alt=''>
-
-Eloquent queries return a Collection object, which is covered in more detail in the next doc.
 
 
 
