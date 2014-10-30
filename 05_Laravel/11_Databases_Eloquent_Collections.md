@@ -92,14 +92,13 @@ Some of these method names may be familiar, as they also exist as query builder 
 
 When building a web application, it's good practice minimize the number of queries you're making to the database, as excess database calls can slow down a site's load time.
 
-One way you can optimize your application is to fetch data from an existing Collection, rather than making another round-trip query on the database.
+One way you can optimize your application is to fetch data from an existing Collection, rather than making another round-trip query on the database. This comes in handy if, for example, you're dealing with a result set in which you want to suss out multiple things from that set: all the books, the first book, the last book, etc. Rather than doing a separate query for each of these needs, you can shift the responsibility over to the Collection and use the data you already fetched...
 
 For example, imagine at the top of a script you call upon the `all()` fetch method to grab all the books for displaying on a table in your View:
 
 ```php
 $books = Book::orderBy('id','descending')->get();
 ```
-	
 Within the View, you also want to draw attention to the the most recently added book to the collection.
 
 To gather this info, you could run this query:
@@ -118,11 +117,11 @@ In summary:
 
 ```php
 # 2 queries:
-$books = Book::all(); 
-$first_book = Book::first();
+$books = Book::orderBy('id','descending')->get();
+$first_book = Book::orderBy('id','descending')->first();
 
 # 1 query (better):
-$books = Book::all();
+$books = Book::orderBy('id','descending')->get();
 $first_book = $books->first();
 ```
 
