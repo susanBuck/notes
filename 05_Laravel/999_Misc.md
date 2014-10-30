@@ -1,3 +1,14 @@
+## Laravel DebugBar
+
+<https://packagist.org/packages/barryvdh/laravel-debugbar>
+
+Add the appropriate require statement to your `composer.json` and run `composer update`
+
+Add `'Barryvdh\Debugbar\ServiceProvider',` to the ServiceProvider array in `app/config/app.php`
+
+Full instructions here: <https://github.com/barryvdh/laravel-debugbar>
+
+
 ## Migration drop with foreign key
 
 See the `Drop()` method in `2014_07_22_064551_create_tables.php` migration
