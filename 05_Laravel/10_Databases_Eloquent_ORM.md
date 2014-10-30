@@ -24,22 +24,42 @@ The query builder is a Laravel component (accessed by the `DB` Facade) which mak
 For example, here's how you would grab all the rows from the `books` table using the DB `get()` method:
 
 ```php
+# Returns and object of books
 $books = DB::table('books')->get();
 
 foreach ($book as $books) {
-    var_dump($book->title);
+    echo $book->title;
+}
+```
+
+Another example, with some `where` filtering:
+
+```php
+$books = DB::table('books')->where('author', 'LIKE', '%Scott%')->get();
+
+foreach($books as $book) {
+    echo $book->title;
 }
 ```
 
 There are many methods within the query builder to help you build any query imaginable (check the above-linked docs for a full reference).
 
-Or maybe you're a SQL wiz and you don't want any help from the query builder. In this case, you could use the `statement()` method to run any raw SQL statement:
+Or maybe you're a SQL wiz and you don't want any help from the query builder. In this case, you can still use the Query Builder, but run your own SQL statements.
 
 ```php
-DB::statement('SELECT * FROM books WHERE author LIKE "%Scott%"');
-```
+# Write your own SQL select statement
+$sql = 'SELECT * FROM books WHERE author LIKE "%Scott%"';
 
-(Of course, if you're running queries like this, you should be aware of any SQL injection points...)
+# Escape your statement if you have any input coming from users to avoid SQL injection attacks
+# In this example we don't, but it doesn't hurt to do it anyway
+$sql = DB::raw($sql);
+
+# Run your SQL query
+$books = DB::select($sql);
+
+# Output the results
+echo Paste\Pre::render($books,'');
+```
 
 So these options exist... but they feel very procedural and lack the kind of structure and organization we're aiming for with Object Oriented Programming. There's got to be a better way...
 
@@ -80,7 +100,9 @@ class Book extends Eloquent {
 	
 }
 ```
-	
+
+__Convention over Configuration__
+
 There are a few expectations Eloquent has in order to work:
 
 + Your model class should *extend* the `Eloquent` class; this will allow your class to inherit the magical functionality provided by Eloquent ORM.
@@ -90,17 +112,6 @@ There are a few expectations Eloquent has in order to work:
 The latter two points can be configured if needed&mdash; for example, if you're working with an existing table which you don't have structural control over. If you're starting fresh, though, it's best to follow these conventions.
 
 With this infrastructure in place, let's put Eloquent to work with some queries...
-
-
-
-
-## Query Structure
-
-All ORM queries are made up of *constraints* (optional) and a *fetch* method.
-
-<img src='http://making-the-internet.s3.amazonaws.com/laravel-eloquent-query-structure@2x.png' class='' style='max-width:1335px; width:100%' alt=''>
-
-Eloquent queries return a Collection object, which is covered in more detail in the next doc.
 
 
 
@@ -169,6 +180,20 @@ Route::get('/practice-reading-one-book', function() {
 
 });
 ```
+
+
+
+## Query Structure
+
+Before moving on to Updating and Deleting, let's take a closer look at how Eloquent queries are structured...
+
+All queries are made up of *constraints* (optional) and a *fetch* method.
+
+<img src='http://making-the-internet.s3.amazonaws.com/laravel-eloquent-query-structure@2x.png' class='' style='max-width:1335px; width:100%' alt=''>
+
+Eloquent queries return a Collection object, which is covered in more detail in the next doc.
+
+
 
 
 ## CRUD - Updating
