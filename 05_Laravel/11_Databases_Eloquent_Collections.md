@@ -90,22 +90,22 @@ Some of these method names may be familiar, as they also exist as query builder 
 
 ## Query Responsibility
 
-When building a web application, it's good practice minimize the number of queries you're making to the database, as excess database calls can slow down site's load time.
+When building a web application, it's good practice minimize the number of queries you're making to the database, as excess database calls can slow down a site's load time.
 
 One way you can optimize your application is to fetch data from an existing Collection, rather than making another round-trip query on the database.
 
 For example, imagine at the top of a script you call upon the `all()` fetch method to grab all the books for displaying on a table in your View:
 
 ```php
-$books = Books::all();
+$books = Book::orderBy('id','descending')->get();
 ```
 	
-Within the View, you also want to display the first book that was added to the collection.
+Within the View, you also want to draw attention to the the most recently added book to the collection.
 
 To gather this info, you could run this query:
 
 ```php
-$first = Books::first();
+$first = Book::orderBy('id','descending')->first();
 ```
 	
 This would work, but it'd run a new SQL query to find the first book. The better solution would to fetch the needed info from the *existing* Collection (stored in the `$books` variable).
