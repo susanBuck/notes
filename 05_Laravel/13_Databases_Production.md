@@ -79,9 +79,9 @@ The procedure for setting up your live server database will look something like 
 
 1. Create a new MySQL database.
 2. Locate the following MySQL credentials:
-	1. host
-	2. username
-	3. password
+	1. `host`
+	2. `username`
+	3. `password`
 3. Plug these credentials into your production `database.php` configuration file.
 4. Push changes to your live server and confirm the connection works.
 5. Run database migrations on live server database.
@@ -105,7 +105,7 @@ $ mysql -u root -p
 
 When it asks for your password, use the MySQL password you just grabbed from the motd output.
 
-Run the `SHOW DATABSES;` command to see what databases exist on your server (there should be 3 default ones):
+Run the `SHOW DATABSES;` command to see what databases exist on your server (there should be 3 default ones). Don't forget that every SQL Command has to end with a semi-colon.
 
 ```bash
 mysql> SHOW DATABASES;
@@ -126,13 +126,22 @@ mysql> CREATE DATABASE foobooks;
 Query OK, 1 row affected (0.00 sec)
 ```
 
-__Fill in MySQL config:__ Locally, open (or create if it doesn't exist) `/app/config/production/database.php`.
+You can run `SHOW DATABSES;` again to confirm the new database exists.
+
+Run `exit;` to get out of MySQL mode.
+
+
+
+
+
+## Fill in MySQL config
+Locally, open (or create if it doesn't exist) `/app/config/production/database.php`.
 
 The array that this file returns need to include an index `connections` that includes an array of `mysql` credentials like the code that follows. 
 
 + Change `host` to be `localhost`.
 + Change `database` to be whatever you named your database when you created it above.
-+ Change `username` to be `root`.
++ Leave `username` as `root`.
 + Change `password` to be the same MySQL password you used above.
 
 ```php
@@ -155,23 +164,42 @@ return array(
 );
 ```
 
-Save, add and commit your changes then push them to Github. 
+Save, add and commit your local changes then push them to Github. 
 
-Follow whatever procedure you have set up to deploy your changes to DigitalOcean (for most students this involves running `git pull` from your project directory on DigitalOcean).
+Then, deploy your changes to DigitalOcean (i.e. while SSH'd into your project directory on DigitalOcean, run `git pull`).
+
+Example:
+
+```bash
+$ cd /var/www/html/foobooks/
+$ git pull
+```
 
 
-__Migrations:__ In your SSH session with DigitalOcean, have artisan run your migrations to build your table structure. Make sure you run this from your project directory.
+
+
+# Run Migrations
+
+While SSH'd into your project directory on DigitalOcean, have Artisan run your migrations to build your table structure. 
+
+Example:
 
 ```bash
 $ cd /var/www/html/foobooks/
 $ php artisan migrate
 ```
 
+What it'll look like:
 
-__Test it:__
+<img src='http://making-the-internet.s3.amazonaws.com/laravel-run-migration-on-production@2x.png' class='' style='max-width:649px; width:100%' alt=''>
+
+
+## Test it
+
 Visit the debug route described at the top of this doc. If you see the green bar telling you your connection is confirmed, you're good to go and you can scroll down to the end of this doc for details on loading data. If you see a red bar, you've got some debugging to do.
 
 
+<img src='http://making-the-internet.s3.amazonaws.com/laravel-debug-on-digitalocean@2x.png' class='' style='max-width:605px; width:100%' alt='Debug test on production'>
 
 
 ## Loading Data
@@ -179,7 +207,7 @@ At this point your database should be working on your production server just as 
 
 There are three ways you may add data:
 + If you've built input forms, you can fill them in and add data as a regular user would.
-+ If you had a test route that added some dummy data (as we've done in lecture) you can load that route prompting data to get entered.
++ If you had a test route that added some dummy data you can load that route prompting data to get entered.
 + If you've set up database seeding, you can run the `php artisan db:seed` command.
 
 
