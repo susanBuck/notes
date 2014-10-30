@@ -152,14 +152,21 @@ With some rows in your table, you can retrieve data:
 
 ```php
 Route::get('/practice-reading', function() {
-	
-	# The all() method will fetch all the rows from a Model/table
-	$books = Book::all();
-	
-	# Typically we'd pass $books to a View, but for quick and dirty demonstration, let's just output here...
-	foreach($books as $book) {
-		echo $book->title.'<br>';
-	}
+
+    # The all() method will fetch all the rows from a Model/table
+    $books = Book::all();
+
+    # Make sure we have results before trying to print them...
+    if($books->isEmpty() != TRUE) {
+        
+        # Typically we'd pass $books to a View, but for quick and dirty demonstration, let's just output here...
+        foreach($books as $book) {
+            echo $book->title.'<br>';
+        }
+    }
+    else {
+        return 'No books found';
+    }
 
 });
 ```
