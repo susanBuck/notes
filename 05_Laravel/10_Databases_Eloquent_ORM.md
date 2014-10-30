@@ -250,3 +250,15 @@ Be sure to study following pages:
 + <http://laravel.com/docs/eloquent>
 
 
+
+## More...
+
+While we spend a lot of time in this course deep in the workings of Laravel, it's important to understand that the paradigms we are working with are often universal across web programming software.
+
+As an example of this, read about [Ruby On Rail's Active Records](http://guides.rubyonrails.org/active_record_basics.html) and note the similarities to Laravel's Eloquent ORM.
+
+
+
+
+
+
