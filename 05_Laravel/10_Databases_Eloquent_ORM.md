@@ -27,7 +27,7 @@ For example, here's how you would grab all the rows from the `books` table using
 # Returns and object of books
 $books = DB::table('books')->get();
 
-foreach ($book as $books) {
+foreach ($books as $book) {
     echo $book->title;
 }
 ```
