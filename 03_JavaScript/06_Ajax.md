@@ -24,6 +24,7 @@ Keep this in mind as you work on projects. When developers first start using aja
 
 
 ## Technical definition
+
 Ajax stands for **Asynchronous JavaScript** and **XML**. It's not one single technology but actually a combination of technologies.
 
 Let's break down the different pieces:
@@ -60,7 +61,7 @@ It will need the following:
 * A button that will trigger the ajax call
 * A blank div with the id `#results` where the results of the ajax call will go
 	
-````
+```html
 <!DOCTYPE html>
 <head>
 </head>
@@ -97,7 +98,7 @@ With that set, let's focus on the JavaScript and the following tasks inside `rev
 * The ajax call needs to send some data with it - in this case, the name that the user typed in
 * The ajax call also needs to accept the results from the server (the name reversed), and do something with those results - in this case, put them in the `#results` div
 
-```javascript
+```js
 $('#process-btn').click(function() {
 	$.ajax({
 		type: 'POST',
@@ -135,14 +136,16 @@ This is one way of building an ajax call, but you can also take a traditional HT
 
 Let's change up the HTML, formatting it as a complete form. This includes a start and end form tag, and an actual submit button.
 
-	<form>
-		<label for='name'>Enter your name:</label><br>
-		<input type='text' id='name' name='name'><br><br>
-		<input type='submit' value='Reverse It!'>		
-	</form>
-	
-	<!--You'll put the results in this empty div -->
-	<div id='results'></div>
+```html
+<form>
+	<label for='name'>Enter your name:</label><br>
+	<input type='text' id='name' name='name'><br><br>
+	<input type='submit' value='Reverse It!'>		
+</form>
+
+<!--You'll put the results in this empty div -->
+<div id='results'></div>
+```
 	
 If you didn't do anything else and hit submit the page would attempt to process the form by submitting the page to itself (because we didn't specify an action attribute).
 
@@ -155,25 +158,28 @@ After you download it, unzip the contents and put just `jquery.form.js` in your 
 
 Then, include the plugin, right after jQuery:
 
-	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
-	<script type="text/javascript" src="js/jquery.form.js"></script>
+```html
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.form.js"></script>
 	
 
 Now, set up the ajax call using the plugin:
-				
-	// First, set up the options for the ajax submission
-	var options = { 
-		type: 'post',
-		url: 'process.php',
-		success: function(response) { 
-		    // Load the results recieved from process.php into the results div
-			$('#results').html(response);	    
-		} 
-	}; 
 
-	// Then attach the ajax form plugin to this form so that when it's submitted, 
-	// it will be submitted via ajax	
-	$('form').ajaxForm(options);
+```js				
+// First, set up the options for the ajax submission
+var options = { 
+	type: 'post',
+	url: 'process.php',
+	success: function(response) { 
+	    // Load the results recieved from process.php into the results div
+		$('#results').html(response);	    
+	} 
+}; 
+
+// Then attach the ajax form plugin to this form so that when it's submitted, 
+// it will be submitted via ajax	
+$('form').ajaxForm(options);
+```
 	
 The code above is relatively straightforward, but be sure to check out the [jQuery form plugin documentation](http://jquery.malsup.com/form/) for full details.
 
@@ -195,15 +201,17 @@ Because of this, it's useful to give the user some sort of feedback that work is
 Let's tweak the settings so that you can trigger something to happen when the ajax call starts. Specifically, we want to display a message on the page. When the work is done, we'll remove that message.
 
 To do this, add a `beforeSend` option:
-	
-	beforeSend: function() {
-		// Display a loading message while waiting for the ajax call to complete
-		$('#results').html("Loading...");
-	},
+
+```js	
+beforeSend: function() {
+	// Display a loading message while waiting for the ajax call to complete
+	$('#results').html("Loading...");
+},
+```
 
 Here it is in place:
 	
-```javascript		
+```js		
 $('#process-btn').click(function() {
 		
 	$.ajax({
@@ -227,13 +235,14 @@ $('#process-btn').click(function() {
 
 In order to test this out, you'll need to purposely slow down the process page:
 
-	<?php
-	# Make this script slower so we can test our loader
-	sleep(2);
-	
-	# Reverse the string and echo it to the page
-	echo strrev($_POST['name']);
+```php
+<?php
+# Make this script slower so we can test our loader
+sleep(2);
 
+# Reverse the string and echo it to the page
+echo strrev($_POST['name']);
+```
 
 [Here's this example in action...](http://mti.dwa15.com/examples/_ajax/manual-ajax-with-loader/reverser.php)
 
