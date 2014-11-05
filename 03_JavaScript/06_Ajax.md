@@ -161,7 +161,7 @@ Then, include the plugin, right after jQuery:
 ```html
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
 <script type="text/javascript" src="js/jquery.form.js"></script>
-	
+```
 
 Now, set up the ajax call using the plugin:
 
