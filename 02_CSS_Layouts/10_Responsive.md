@@ -4,19 +4,16 @@
 
 Put in the `<head>` of your HTML; enables use of media queries for cross-device layouts.
 
-```html
-<meta name="viewport" content="width=device-width, initial-scale=1">
-```
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 ### Border Box
 	
-```css
-*, *:before, *:after {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
-```		
+	*, *:before, *:after {
+	  -moz-box-sizing: border-box;
+	  -webkit-box-sizing: border-box;
+	  box-sizing: border-box;
+	}
+		
 
 ## Media Queries
 
@@ -24,13 +21,12 @@ Put in the `<head>` of your HTML; enables use of media queries for cross-device 
 
 Example:
 
-```css
-@media (max-width: 640px) { 
-	aside { 
-		display:none; 
-	} 
-}
-```	
+	@media (max-width: 640px) { 
+		aside { 
+			display:none; 
+		} 
+	}
+	
 
 
 
@@ -43,13 +39,11 @@ Example:
 
 ## REM expressions
 
-```css
-@media (max-width: 40rem) { 
-	aside { 
-		display:none; 
+	@media (max-width: 40rem) { 
+		aside { 
+			display:none; 
+		}
 	}
-}
-```
 
 Pixel width / 16 = rem
 
