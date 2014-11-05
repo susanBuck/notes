@@ -44,7 +44,7 @@ All that being said, you don't have to use XML as your data protocol. It's commo
 
 ## Making ajax happen...
 
-For the first example, lets create a simple name reverser: [example](http://mti.dwa15.dev/examples/_ajax/manual-ajax/reverser.php). 
+For the first example, lets create a simple name reverser: [example](http://php.wcc-hosting.com/ajax/reverser.php). 
 
 In this example, we're accomplishing something super basic on the server&mdash; reversing a string. What the server is doing isn't our focus though; we're more concerned with how the data is passed back and forth between the browser and the server. Once you've mastered this, you'll move on to more advanced processing on the server such as querying a database.
 
@@ -183,7 +183,7 @@ $('form').ajaxForm(options);
 	
 The code above is relatively straightforward, but be sure to check out the [jQuery form plugin documentation](http://jquery.malsup.com/form/) for full details.
 
-Test your code. You should see the same results as [this example...](http://mti.dwa15.com/examples/_ajax/form-ajax/reverser.php)
+Test your code. You should see the same results as [this example...](http://php.wcc-hosting.com/ajax/form-ajax/reverser.php)
 
 Note the actual experience for the user isn't at all different than the first example&mdash; the differences were only from the developer's perspective.
 
@@ -244,6 +244,6 @@ sleep(2);
 echo strrev($_POST['name']);
 ```
 
-[Here's this example in action...](http://mti.dwa15.com/examples/_ajax/manual-ajax-with-loader/reverser.php)
+[Here's this example in action...](http://php.wcc-hosting.com/ajax/manual-ajax-with-loader/reverser.php)
 
 Here's some [Image spinners](http://ajaxload.info/) or [CSS spinners](http://codepen.io/collection/HtAne/1) you can use in place of the text &ldquo;Loading...&rdquo;
