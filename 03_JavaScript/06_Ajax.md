@@ -81,7 +81,7 @@ It will need the following:
 </html>
 ````
 	
-<img style='border:1px solid #ccc' src='http://making-the-internet.s3.amazonaws.com/ajax-reverser-before.png'>
+<img src='http://making-the-internet.s3.amazonaws.com/ajax-reverser-before@2x.png' class='' style='max-width:599px; width:100%' alt=''>
 
 ### Page 2, `process.php` 
 This page will be in charge of receiving the ajax call behind the scenes and sending some response. Given that, it needs to accept the name, reverse it, and echo out the results.
@@ -118,7 +118,7 @@ $('#process-btn').click(function() {
 
 Test out your name reverser to make sure it works.
 
-<img style='border:1px solid #ccc' src='http://making-the-internet.s3.amazonaws.com/ajax-reverser-after.png'>
+<img src='http://making-the-internet.s3.amazonaws.com/ajax-reverser-after@2x.png' class='' style='max-width:599px; width:100%' alt=''>
 
 In this example, we're using the [$.ajax](http://api.jquery.com/jQuery.ajax/) method which provides the most functionality. Note, though, that there are [5 different methods for making ajax calls in jQuery](http://net.tutsplus.com/tutorials/javascript-ajax/5-ways-to-make-ajax-calls-with-jquery/). 
 
@@ -127,7 +127,7 @@ When you're working on ajax calls, it's useful to have a browser web developer t
 
 Here's the developer console in Chrome set on the Network tab after we ran the above work. Every time you make an ajax call it will get added to this window, and you can click on each call to see the details of what data was sent and what data was received from the server.
 
-<img style='border:1px solid #ccc' src='http://making-the-internet.s3.amazonaws.com/ajax-debug.gif'>
+<img src='http://making-the-internet.s3.amazonaws.com/ajax-debug@2x.png' class='' style='max-width:929px; width:100%' alt=''>
 
 ## Submitting an entire form via ajax
 In the first example, we used HTML form elements and wired our own behavior for that form: we attached a listener to the button making it act as a submit button, and we choose which data from the form got sent via ajax.
