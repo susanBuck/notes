@@ -44,7 +44,7 @@ All that being said, you don't have to use XML as your data protocol. It's commo
 
 ## Making ajax happen...
 
-For the first example, lets create a simple name reverser: [example](http://php.wcc-hosting.com/ajax/reverser.php). 
+For the first example, let's create a simple name reverser: [example](http://php.wcc-hosting.com/ajax/manual-ajax/reverser.php). 
 
 In this example, we're accomplishing something super basic on the server&mdash; reversing a string. What the server is doing isn't our focus though; we're more concerned with how the data is passed back and forth between the browser and the server. Once you've mastered this, you'll move on to more advanced processing on the server such as querying a database.
 
