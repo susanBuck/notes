@@ -5,16 +5,23 @@
 + <http://laravel.com/docs/schema#foreign-keys>
 
 
----
+
 
 ## Summary
-1. Identify the necessary tables and their relationships.
-2. Define the relationships in the Models.
+
+__Build__
+1. Sketch out the necessary tables and their relationships.
 3. Define the relationships in the structure of the tables (using FKs).
+2. Define the relationships in the Models.
+
+__Use__
 4. Utilize the relationships when adding data.
 5. Utilize the relationships when querying for data.
 
-----
+
+
+
+## Database Relationships
 
 A web application often contains multiple database tables, and those tables often relate to one another in some way. 
 
@@ -52,6 +59,26 @@ For example, the `books` table has a foreign key field `author_id` which connect
 
 
 
+## Identifying Relationships in Table Structure
+
+When building your migrations, there are two things you'll need to know (in addition to what you already know about schemas) to set up your relationships:
+
+__First:__ If a column is going to be a FK that connects to an auto-incrementing column on another table (common), it must be `unsigned` (positive).
+
+```php
+$table->integer('author_id')->unsigned();
+```
+
+__Second:__ Here's the syntax for defining a FK:
+
+```php
+$table->foreign('author_id')->references('id')->on('authors'); 
+```
+
+[Here's the migration for all of the Foobooks tables](https://gist.github.com/susanBuck/992b1323f6cc0f68427d).
+
+
+
 
 ## Identifying Relationships in Models
 
@@ -62,10 +89,11 @@ For example, the Author class should have a method called `book()` which returns
 ```php
 class Author extends Eloquent { 
 
-  		public function book() {
-			# Author has many Books
-			return $this->hasMany('Book');
-   		}
+	public function book() {
+		# Author has many Books
+		# Define a one-to-many relationship.
+		return $this->hasMany('Book');
+	}
 }
 ```
    	
@@ -76,6 +104,7 @@ class Book extends Eloquent {
 
 	public function author() {
 		# Book belongs to Author
+		# Define an inverse one-to-many relationship.
 		return $this->belongsTo('Author');
 	}
 }
@@ -116,32 +145,15 @@ class Book extends Eloquent {
 
 
 
-## Identifying Relationships in Table Structure
-
-When building your migrations, there are two things you'll need to know (in addition to what you already know about schemas) to set up your relationships:
-
-__First:__ If a column is going to be a FK that connects to an auto-incrementing column on another table (common), it must be `unsigned`.
-
-```php
-$table->integer('author_id')->unsigned();
-```
-
-__Second:__ Here's the syntax for defining a FK:
-
-```php
-$table->foreign('author_id')->references('id')->on('authors'); 
-```
-
-[Here's the migration for all of the Foobooks tables](https://gist.github.com/susanBuck/992b1323f6cc0f68427d).
-
 
 
 ## Recap so far
 So far we have:
 
 1. Identified the necessary tables and their relationships.
-2. Defined the relationships in the Models.
-3. Defined the relationships in the structure of the tables (using FKs).
+2. Defined the relationships in the structure of the tables (using FKs).
+3. Defined the relationships in the Models.
+
 
 Now, we can start implementing these relationships in the application and its data...
 

@@ -49,7 +49,7 @@ Schema::create('users', function($table) {
 
 	$table->increments('id');
 	$table->string('email')->unique();
-	$table->boolean('remember_token');
+	$table->string('remember_token',100); 
 	$table->string('password');
 	$table->timestamps();
 	
@@ -166,7 +166,7 @@ Notes:
 ### Flash messages
 In both the redirects above, we're passing along a value `flash_message`. 
 
-A flash message is technique used to display a message on a page for a single request lifecycle. For our authentication system, we'll use flash messages for the following purposes:
+A flash message is a technique used to display a message on a page for a single request lifecycle. For our authentication system, we'll use flash messages for the following purposes:
 
 Let the user know if...
 + there was a problem with sign up
