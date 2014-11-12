@@ -71,8 +71,8 @@ vs.
 
 ## Contact info
 * Always: Email.
-* Avoid contact Forms
-* Maybe? Phone number
+* Maybe: Contact forms.
+* Phone number (optional)
 * Social Networks (if you feel comfortable; just note they're going to search for you anyway)
 
 
