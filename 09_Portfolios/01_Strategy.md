@@ -87,6 +87,7 @@ __Identify your audience__
 The portfolio itself is the star; the work becomes almost secondary to the presentation of it. Often, very experimental:
 
 * [rleonardi](http://www.rleonardi.com/)
+* [kylereadsays](http://kylereadsays.com/)
 * [sagmeister.com - Live view of office](http://www.sagmeisterwalsh.com/)
 
 <!--

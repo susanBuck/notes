@@ -31,7 +31,7 @@ Good thumbnail ex, site is down tho: [The Big Pugh](http://thebigpugh.com)
 	* [Jen Hayden logo iterations](http://blog.imbreannarose.com/process-01-jen-hayden/)
 	* [Chad Pugh's Science Machine](https://vimeo.com/927062)
 	* [Book: Show Your Work](http://www.amazon.com/Show-Your-Work-Creativity-Discovered-ebook/dp/B00GU2RGGI/ref=sr_1_1?ie=UTF8&qid=1398806408&sr=8-1&keywords=show+your+work)
-
+* <http://alistapart.com/column/help-my-portfolio-sucks>
 
 
 ##  Copy
