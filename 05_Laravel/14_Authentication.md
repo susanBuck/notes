@@ -8,7 +8,7 @@
 
 ## Sessions
 
-The request lifecycle of a webpage is stateless. This means if you need to track information from one request to another, you have to store that information on the server using **Sessions** or on the user's browser using **Cookies**.
+The request lifecycle of a webpage is stateless. This means if you need to track information from one request to another, you have to store that information on the server using **Sessions** and/or on the user's browser using **Cookies**.
 
 >> *A session is a little text payload with an associated browser cookie that will allow PHP and Laravel to remember your user between requests.* - CodeBright, Authentication
 
@@ -29,7 +29,9 @@ By default, Laravel uses the `file` Session driver, but this can be changed in `
 
 When using the `file` Session driver, all sessions will be stored in `/app/storage/sessions/`.
 
-If you're using the `file` driver, there's not really anything you have to configure out of the box. Given that, you can get right to work with building an authentication system...
+If you're using the `file` driver, there's not really anything you have to configure out of the box. Given that, you can get right to work with building an authentication system.
+
+
 
 
 ## Users table
@@ -262,7 +264,7 @@ Route::post('/login',
 
 Notes:
 + Logging in a user entails passing an array of credentials to the [`Auth::attempt()`](http://devdocs.io/laravel/api/4.2/illuminate/auth/guard#method_attempt) method. 
-+ We're defaulting `remember` to be true so the user will be logged in indefinitely or until they log out. Alternatively, you could include a checkbox in your form that lets the user specify whether they want to be remembered.
++ We're defaulting `remember` to be true so the user will be logged in indefinitely or until they log out. If we wanted to make it so that users were *not* remembered when they close their browser, we'd change this to `false` *and* update `'expire_on_close'` to be `true` in `/app/storage/session.php`.
 + You don't have to hash the password, Auth will take care of that for you.
 + Because `Auth::attempt()` returns a nice boolean value of whether a login was successful, we used an *if else* statement here instead of a *try catch*.
 + On success, `Redirect::intended('/')` will send the user back to the last page they were at before they were sent to the login page. If there is no previous page, it goes to the specified default (in this case that's the homepage via `/`).
@@ -340,6 +342,8 @@ The `auth` filter is one that comes baked into Laravel by default. Open `/app/fi
 ## More...
 
 That's it for a basic authentication system. If you want to dig deeper, you can implement [password reminders and resets](http://laravel.com/docs/security#password-reminders-and-reset).
+
+Also, if you'd like to understand more about *how* the above authentication system works, read: [Unpacking_Sessions_and_Cookies](https://github.com/susanBuck/notes/blob/master/05_Laravel/999_Unpacking_Sessions_and_Cookies.md)
 
 
 
