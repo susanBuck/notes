@@ -123,15 +123,15 @@ To recap, if you're logged into a Laravel site and you come back to that site he
 
 ## remember_token
 
-When logging in a user, your method may look like this:
+When authenticating a user, the `attempt()` method accepts a second parameter called `$remember` which you can set to true or false:
 
 ```php
 Auth::attempt($credentials, $remember = true)
 ```
 
-Note the second param $rememmber, which is set to true. When we auth in this way, a new Cookie called `remember_82e5d2c56bdd0811318f0cf078b78bfc` is created.
+If you set `$remember` to `true`, a Cookie called `remember_82e5d2c56bdd0811318f0cf078b78bfc` is generated when the user logs in (this is in addition to the `login_` cookie).
 
-This cookie contains your user id *and* a unique string that maps to your `remember_token` field in the database.
+This remember Cookie contains your user id *and* a unique string that maps to your `remember_token` field in the database.
 
 Ex:
 ```
@@ -139,11 +139,27 @@ Ex:
 => string(62) "4|wkt3YLrHC5HEcIXPkeqxpMt1s7Y9yDYUZrMXySKdfYEk0q0YpjK05j3ypeHM"
 ```
 
-The remember token is refreshed on login/logout and is used to prevent against &ldquo;remember me&rdquo; cookie hijacking. This is a hack where a hacker may steal your cookie info, put it on their system, and attempt to access the app as if they are you, logged in. By refreshing the token on logout, it would invalidate any such attacks.
+The remember token is refreshed on login/logout and is used to prevent against &ldquo;remember me&rdquo; cookie hijacking. This is a hack where a hacker may steal your Cookie info, put it on their system, and attempt to access the app as if they are you, logged in. By refreshing the remember token on logout, it would invalidate any such attacks.
 
-The naming of this feature is a little misleading, because it sounds like the feature we see when we log in to sites and we see the option to *&ldquo;Remember me for x days&rdquo;*.
+You'll note that, by default, even if you set $remember to be `false`, it will still remember you if you close and reopen your browser. 
 
-Regardless of whether you use `$remember = true` or `$remember = false` when Authing, by default, Laravel will remember your user even if they close and re-open their browser. To disable this, you'd want to set `'expire_on_close' => true,` in `/app/config/session.php`.
+This is because the app is looking you up via the Session, not the remember Cookie.
+
+To disable this, you'd want to edit `/app/config/session.php` so that `expire_on_close` is set to true:
+
+```
+'expire_on_close' => true,
+```
+
+Here are some example combinations showing how the remember token and the Session `expire_on_close` setting interact with each other:
+
++ `$remember = false`, `'expire_on_close' => false`, User will be remembered because even though there's no remember_token, the Session will not expire on close.
+
++ `$remember = false`, `'expire_on_close' => true`, User will **not** be remembered because there's no remember_token *and* the Session will expire on close.
+
++ `$remember = true`, `'expire_on_close' => true`, User will be remembered because there's a remember_token and the Session will not expire on close.
+
+
 
 
 ## Misc
