@@ -1,6 +1,6 @@
 Working with Laravel's authentication system is a bit of a black box. With a few simple method invocations you can build a fully functioning login system, without really understanding how it's working.
 
-Given this, let's open the box and take a closer look at how the system works, specifically the relationship between Cookies, Sessions and the database.
+Given this, let's open the box and take a closer look at how the system works, specifically the relationship between Cookies, Sessions and the `users` table in the database.
 
 Before we jump in, it's important that you've already followed the noteset on [Authentication](https://github.com/susanBuck/notes/blob/master/05_Laravel/14_Authentication.md) before continuing here. 
 
@@ -8,11 +8,11 @@ Aside from that... some starting facts:
 
 **Cookies** are small text payloads made up of a key,value pair that are stored on a user's browser. 
 
-A web site can create Cookies, and retrieve Cookies on the user's browser.
+A site can create Cookies, and retrieve Cookies on the user's browser.
 
-Cookies are domain specific. This means my site can only access Cookies that it created.
+Cookies are domain specific. This means a site can only access Cookies that it created.
 
-**Sessions** are also small text payloads made up of key,value pairs, but instead of being stored on the user's browser, they're stored on the web sites server. 
+**Sessions** are also small text payloads made up of key,value pairs, but instead of being stored on the user's browser, they're stored on the site's server. 
 
 Sessions can be stored in a variety of ways on the server, but in our examples, we're using file based Sessions. This means all Sessions live in `/app/storage/sessions`. 
 
@@ -23,7 +23,7 @@ Cookies and Sessions are used, in combination, to recall information about your 
 
 ## Useful output
 
-Before digging into how Cookies and Sessions work together, we threw together some quick code that will output lots of debugging info we found helpful when dissecting what is going on.
+Before digging into how Cookies and Sessions work together, we threw together some code that will output debugging information we found helpful when dissecting what is going on.
 
 Set this code up in a route or controller so you can follow along:
 <https://gist.github.com/susanBuck/fe62ea527c8b2cf9c579>
@@ -55,7 +55,7 @@ In our example, this is what the cookie looks like:
 
 All cookies created by the Laravel framework are encrypted and signed with an authentication code, meaning they will be considered invalid if they have been changed by the client ([ref](http://laravel.com/docs/4.2/requests#cookies)).
 
-Given this, the data we're seeing for `laravel_session` is actually an encrypted value. If you want to see the unencrypted version, you can use Laravel's Cookie helper:
+Given this, the data we're seeing for `laravel_session` is actually an encrypted value. If you want to see the *unencrypted* version, you can use Laravel's Cookie helper:
 
 ```php
 echo var_dump(Cookie::get());
@@ -71,26 +71,23 @@ This unencrypted string corresponds to the name of your Session file. It's how L
 
 Given this, if we look in `/app/storage/sessions` where server Sessions are stored, we should see a file called `a5145831c801a8caa6ec77ac4a58cfb61392010b`
 
-
-`/app/storage/sessions/a5145831c801a8caa6ec77ac4a58cfb61392010b`
-
 The contents of that file will look something like this:
-
 
 <div style='font-family:consolas'>
 : a:4:{s:6:"<strong style='background-color:yellow'>_token</strong>";s:40:"<strong style='background-color:yellow'>aeFImfzRz3Ptr2o9O49K9MHZlBxQF2SVBHwiNXZ5</strong>";s:5:"flash";a:2:{s:3:"new";a:0:{}s:3:"old";a:0:{}}s:22:"PHPDEBUGBAR_STACK_DATA";a:0:{}s:9:"_sf2_meta";a:3:{s:1:"u";i:1416382453;s:1:"c";i:1416381868;s:1:"l";s:1:"0";}}
 </div>
 
-In the above contents, we highlighted the important part: There's a key `_token` that is set to the value `aeFImfzRz3Ptr2o9O49K9MHZlBxQF2SVBHwiNXZ5`. **This value is your session token**.
 
-This session token is used, among other places, for your CSRF tokens.
+In the above contents, we highlighted the important part: There's a key `_token` that is set to the value `aeFImfzRz3Ptr2o9O49K9MHZlBxQF2SVBHwiNXZ5`. **This value is your Session token**.
+
+This Session token is used, among other places, for your CSRF tokens.
 
 To recap:
-If I visit a Laravel site...
+If a user visits a Laravel site...
 
-1. It looks for the `laravel_session` Cookie in my browser. (If it doesn't exist, it will create it)
-2. It uses the value of this Cookie to look up my Session on the server.
-3. Within the Session is stored a unique session token that identifies me to the site.
+1. It looks for the `laravel_session` Cookie in the user's browser. (If it doesn't exist, it will create it)
+2. It uses the value of this Cookie to look up the user's Session on the server.
+3. Within the Session is a unique session token that identifies the user to the site.
 
 
 
@@ -106,17 +103,18 @@ Here's our Session after logging in, for the example we're using in this noteset
 a:5:{s:6:"<strong style='background-color:yellow'>_token</strong>";s:40:"<strong style='background-color:yellow'>aeFImfzRz3Ptr2o9O49K9MHZlBxQF2SVBHwiNXZ5</strong>";s:5:"flash";a:2:{s:3:"new";a:0:{}s:3:"old";a:0:{}}s:38:"<strong style='background-color:cyan'>login_82e5d2c56bdd0811318f0cf078b78bfc</strong>";s:1:<strong style='background-color:cyan'>"1"</strong>;s:22:"PHPDEBUGBAR_STACK_DATA";a:0:{}s:9:"_sf2_meta";a:3:{s:1:"u";i:1416383871;s:1:"c";i:1416381868;s:1:"l";s:1:"0";}}
 </div>
 
+
 Note the highlighted key,value pairs.
 
-Key `_token` is set to the value `aeFImfzRz3Ptr2o9O49K9MHZlBxQF2SVBHwiNXZ5`. (Unchanged change from when we weren't logged in.)
+Key `_token` is still set to the value `aeFImfzRz3Ptr2o9O49K9MHZlBxQF2SVBHwiNXZ5`.
 
-There's also a new key `login_82e5d2c56bdd0811318f0cf078b78bfc` which is set to the value `"1"` which corresponds to the `id` of the user we logged in as.
+There's also a new key `login_82e5d2c56bdd0811318f0cf078b78bfc` which is set to the value `"1"` which corresponds to the `id` of the user in the `users` table.
 
-To recap, if you're logged into a Laravel site and you come back to that site here's how it "remembers" you:
+To recap, if you're logged into a Laravel site and you come back to that site here's how it &ldquo;remembers&rdquo; you:
 
 1. It looks for the `laravel_session` Cookie in your browser.
 2. It uses the value of this Cookie to look up your Session on the server.
-3. Within the Session, it can find your user `id` and look up your corresponding row in the user table.
+3. Within the Session, it can find your user `id` and look up your corresponding row in the `users` table.
 
 
 
@@ -136,12 +134,12 @@ This remember Cookie contains your user id *and* a unique string that maps to yo
 Ex:
 ```
 [remember_82e5d2c56bdd0811318f0cf078b78bfc] 
-=> string(62) "4|wkt3YLrHC5HEcIXPkeqxpMt1s7Y9yDYUZrMXySKdfYEk0q0YpjK05j3ypeHM"
+=> string(62) "1|wkt3YLrHC5HEcIXPkeqxpMt1s7Y9yDYUZrMXySKdfYEk0q0YpjK05j3ypeHM"
 ```
 
-The remember token is refreshed on login/logout and is used to prevent against &ldquo;remember me&rdquo; cookie hijacking. This is a hack where a hacker may steal your Cookie info, put it on their system, and attempt to access the app as if they are you, logged in. By refreshing the remember token on logout, it would invalidate any such attacks.
+The remember token is refreshed on login/logout and is used to prevent against &ldquo;remember me&rdquo; cookie hijacking. This is an exploit where a hacker may steal your Cookie info, put it on their system, and attempt to access the app as if they are you, logged in. By refreshing the remember token on logout, it would invalidate any such attacks.
 
-You'll note that, by default, even if you set $remember to be `false`, it will still remember you if you close and reopen your browser. 
+You'll note that, by default, even if you set `$remember` to `false`, it will still remember you if you close and reopen your browser. 
 
 This is because the app is looking you up via the Session, not the remember Cookie.
 
