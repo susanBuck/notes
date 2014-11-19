@@ -22,7 +22,7 @@
 
 + Your controller class should extend Laravel's `BaseController`, which also exists in `/app/controllers/`. This is where you can put common logic shared by all your controllers.
 
-+ Within your Controller class you'll have public functions which represent the **actions** of your Controller.
++ Within your Controller class you'll have public methods which represent the **actions** of your Controller.
 
 + A `__construct()` method can be used to house logic that needs to happen before any of the other actions in the Controller.
 
