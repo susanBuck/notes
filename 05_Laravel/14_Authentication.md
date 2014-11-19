@@ -343,7 +343,7 @@ The `auth` filter is one that comes baked into Laravel by default. Open `/app/fi
 
 That's it for a basic authentication system. If you want to dig deeper, you can implement [password reminders and resets](http://laravel.com/docs/security#password-reminders-and-reset).
 
-Also, if you'd like to understand more about *how* the above authentication system works, read: [Unpacking_Sessions_and_Cookies](https://github.com/susanBuck/notes/blob/master/05_Laravel/999_Unpacking_Sessions_and_Cookies.md)
+Also, if you'd like to understand more about *how* the above authentication system works, read: [Unpacking Sessions and Cookies](https://github.com/susanBuck/notes/blob/master/05_Laravel/999_Unpacking_Sessions_and_Cookies.md)
 
 
 
