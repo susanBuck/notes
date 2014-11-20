@@ -11,13 +11,24 @@ Full instructions here: <https://github.com/barryvdh/laravel-debugbar>
 
 ## Migration drop with foreign key
 
-See the `Drop()` method in `2014_07_22_064551_create_tables.php` migration
+```php
+public function down() {
+
+	Schema::table('books', function($table) {
+		$table->dropForeign('books_author_id_foreign'); # table_fields_foreign
+	});
+
+	# Alternative: Here's the above but done with SQL:
+	//DB::statement('ALTER TABLE `books` DROP FOREIGN KEY `books_author_id_foreign`');
 
 
+	Schema::drop('books');
+}
+```
 
 ## Database Seeding
 
-See `/app/database/DatabaseSeeder.php`
+See `/app/database/seeds/`
 
 Run with `php artisan db:seed`
 
@@ -27,7 +38,7 @@ Run with `php artisan db:seed`
 
 
 
-## Deleting an entity in a many_to_many relationship
+## Model Events: Deleting an entity in a many_to_many relationship
 
 Scenario: *When deleting a Tag, you also want to delete any entries in the book_tag pivot table.*
 
@@ -43,7 +54,7 @@ Example in `TagController@destroy`
 
 Scenario: *You want to search for a term looking for a match in Books, Authors or Tags*
 
-Example in `BookController@getIndex`
+Example in `Book` model, `seach()` method.
 
 Done using [whereHas](http://devdocs.io/laravel/api/4.2/illuminate/database/eloquent/builder#method_whereHas)
 
@@ -55,17 +66,18 @@ Done using [whereHas](http://devdocs.io/laravel/api/4.2/illuminate/database/eloq
 
 Done with `fill()`.
 
-Example in `BookController@postEdit`
+Example in `BookController.php`, `postEdit()` method.
+
+```php
+$book->fill(Input::all());
+$book->save();
+```
 
 When using mass assignment, set `$guarded` in your Model to specify what fields should not be mass assigned:
 
 ```php
 protected $guarded = array('id', 'created_at', 'updated_at');
 ```
-
-
-
-
 
 
 
