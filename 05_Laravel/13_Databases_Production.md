@@ -136,9 +136,11 @@ Run `exit;` to get out of MySQL mode.
 
 ## Fill in MySQL config
 
-Locally, open (or create if it doesn't exist) `/app/config/production/database.php`.
+Locally, open `/app/config/production/database.php`. 
 
-The array that this file returns need to include an index `connections` that includes an array of `mysql` credentials like the code that follows. 
+If this file not yet exist (the directory `production` and/or the file `database.php`) go ahead and create it.
+
+The array that this file returns needs to include an index `connections` that contains an array of `mysql` credentials like the code that follows. 
 
 + Change `host` to be `localhost`.
 + Change `database` to be whatever you named your database when you created it above.

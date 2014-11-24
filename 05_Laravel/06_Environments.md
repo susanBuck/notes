@@ -1,26 +1,36 @@
+
+
+
 ## Cascading configurations
 
-Configurations in Laravel **cascade**. 
+All of the configuration files for a Laravel app are stored in the `/app/config/` directory.
 
-There is a default set of configurations which live in `/app/config/`, but you can overwrite them based on specific environments.
+Configurations in Laravel **cascade**. This means you can have a default set of variables that can be overwritten in specific environments. 
 
-This overwriting is done by creating new directories for unique environments in `/app/config/`.
+This overwriting is done by creating new directories for unique environments in `/app/config/`. Within these directories, you can then replicate the environment files found in `/app/config` and make the changes you need for that specific environment.
 
-For example, if you open `/app/config/app.php` you should see `debug` is set to `false`:
+For example: in `app/config/app.php` there's a environment variable `debug` which is set to `false` by default.
 
 ```php
 'debug' => false,
 ```
-	
-This means that, by default, this Laravel app will have debugging disabled. It's the default because the file where it lives (`app.php`) is in the root of the `config/` folder.
 
-However, you'll also notice there's *another* `app.php` inside `/config/local/`, and inside this file `debug` is set to `true`:
+You can create multiple versions of `app.php` stored in different directories, with different settings.
 
-```php
-'debug' => true,
-```
+Consider the following example:
 
-This means that when you run your app as a `local` environment, `debug` will be `true`, overwriting the default.
+1. `/app/config/local/app.php` We set `debug` to true
+2. `/app/config/production/app.php` We set `debug` to false
+3. `/app/config/app.php` We set `debug` to false
+
+
+In this example, if you were running in the `local` environment (1), debug would be true. 
+
+But if you were running in the `production` environment (2), debug would be false.
+
+Finally, if you were running in any other environment, or you didn't have an `app.php` in any environment subdirectory (3), `debug` would be false (the default).
+
+You can create new directories for as many different environments that you want. By default, Laravel comes with `local`, `packages` and `testing`. 
 
 Note that not everything in the array within `/app/config/app.php` is overwritten in `/app/config/local/app.php`, just the specific values you wish to overwrite.
 
