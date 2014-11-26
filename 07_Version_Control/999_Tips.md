@@ -1,15 +1,15 @@
 ## Hard Resetting - &ldquo;Pull in case of emergencies&rdquo;
 
-If you ever find yourself backed into a corner with lots of merges and conflicts you're unsure how to resolve, there's a last-resort solution with the following commands:
+If you ever find yourself backed into a corner with lots of merges and conflicts you're unsure how to resolve, there's a last-resort solution with the following commands (replace `origin` with the name of your remote):
 
 ```bash
 $ git fetch --all
 $ git reset --hard origin/master
 ```
 	
-git fetch downloads the latest from remote without trying to merge. 
+`git fetch` downloads the latest from remote without trying to merge. 
 
-git reset resets the master branch to what you just fetched.
+`git reset` resets the master branch to what you just fetched.
 
 **Warning: this will overwrite any changes you might have had in your repository.** 
 
