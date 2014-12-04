@@ -18,6 +18,14 @@ Given this, you only want to do this in situations where you're okay to reset yo
 The most common scenario for this is when your know your Github repository has the code exactly as you want it, but your local or live repository got messed up with changes you don't actually want to make.
 
 
+## Git: Ignore a file that's already in the repo
+
+```bash
+$ git update-index --assume-unchanged name_of_file.php
+```
+
+
+
 ## Checking log files
 Log files can provide useful information as you troubleshoot. Here's where you can find your log files:
 
