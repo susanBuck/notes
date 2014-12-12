@@ -1,3 +1,16 @@
+## Corrupt vendors
+
+Sometimes, you may run into an issue with a corrupt vendor, but you can't get around it because `composer update` keeps downloading packages from an existing, corrupt cache. 
+
+To resolve this, you can recursively remove Composer's cache folder:
+
+```bash
+$ rm -rf ~/.composer/cache
+```
+
+
+
+
 ## Storage permissions issue
 
 Symptoms:
