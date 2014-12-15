@@ -155,7 +155,7 @@ Here are some example combinations showing how the remember token and the Sessio
 
 + `$remember = false`, `'expire_on_close' => true`, User will **not** be remembered because there's no remember_token *and* the Session will expire on close.
 
-+ `$remember = true`, `'expire_on_close' => true`, User will be remembered because there's a remember_token and the Session will not expire on close.
++ `$remember = true`, `'expire_on_close' => true`, User will be remembered because even though the Session will expire on close, there's a remember_token.
 
 
 
