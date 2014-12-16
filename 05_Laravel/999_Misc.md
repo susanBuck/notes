@@ -112,3 +112,6 @@ If you have a bunch of fields, this gets tedious. An alternative is to bind the 
 {{ Form::close() }}
 ```
 
+
+
+
