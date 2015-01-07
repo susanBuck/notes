@@ -33,10 +33,10 @@ The forward slash in the second tag indicates it's the **end tag**.
 Other elements don't surround content, they live all by themselves.
 Here the [break element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/br) is used on its own to add new lines:
 
+
 	1 Main Street<br>
 	Cambridge, MA<br>
 	USA<br>
-
 
 
 	
@@ -44,7 +44,7 @@ Here the [break element](https://developer.mozilla.org/en-US/docs/Web/HTML/Eleme
 HTML ignores all spaces (past 1) and breaks
 If you want to add blank spaces you have to specify with an [HTML entity](http://www.w3schools.com/tags/ref_entities.asp): `&nbsp;`
 
-List of HTML entities: <http://nice-entity.com>
+List of HTML entities: [nice-entity.com](http://www.nice-entity.com)
 
 If you want line breaks you can use elements such as `<br>`, `<div>` or `<p>`
 
@@ -53,15 +53,17 @@ If you want line breaks you can use elements such as `<br>`, `<div>` or `<p>`
 
 ## Tag teamwork
 Some tags work together with other tags
-An `<ul>` ([unordered list](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ul)) tag teams up with `<li>` ([list item](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/li)) tags
+An `<ul>` ([unordered list](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ul)) tag teams up with `<li>` ([list item](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/li)) tags:
 
-	Here are some of my favorite web sites:
+~~~~
+<h2>Here are some of my favorite web sites:</h2>
 
-	<ul>
-	  <li>Google</li>
-	  <li>Women's Coding Collective</li>
-	  <li>Tumblr</li>
-	</ul>
+<ul>
+  <li>Google</li>
+  <li>Women's Coding Collective</li>
+  <li>Tumblr</li>
+</ul>
+~~~~
 
 Note how the `<li>` elements are __nested__ *inside* the `<ul>` elements.
 
@@ -86,15 +88,15 @@ Some start tags have **attributes** to describe information about that element.
 
 Example, the `<a>` element ([anchors](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a) i.e., links) has the `href` attribute which dictates where a link should go.
 
-~~~~
-<a href='http://wikipedia.org'>The Free Encyclopedia</a>
-~~~~
+
+	<a href='http://wikipedia.org'>The Free Encyclopedia</a>
+
 
 `target` might specify a link should open in a new tab
 
-~~~~
-<a href='http://wikipedia.org' target='_blank'>The Free Encyclopedia</a>
-~~~~
+
+	<a href='http://wikipedia.org' target='_blank'>The Free Encyclopedia</a>
+
 
 __Practice:__ Update your list of favorite links above to make the list items active links.
 
@@ -128,7 +130,9 @@ On your page, use this URL to display the image in an `<img>` element.
 
 Example:
 
-	<img alt='Adorable kitten' src='http://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Kitten_in_Rizal_Park%2C_Manila.jpg/340px-Kitten_in
+
+	<img alt='Adorable kitten' src='http://practice-pixels.s3.amazonaws.com/kitten_500x400.jpg'>
+
 
 
 
