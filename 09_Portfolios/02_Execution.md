@@ -10,7 +10,7 @@ Good thumbnail ex, site is down tho: [The Big Pugh](http://thebigpugh.com)
 * Limit to your best work. Quality > quantity.
 * Show the work that represents the work you want to get.
 * Useful thumbnails:
-	* Bad thumbnail examples: [Winstowd](http://www.winstonwd.com/webdesign/portfolio.php)
+	* Bad thumbnail examples: [VisualLure](http://www.visuallure.com/web-design-portfolio.html)
 	* Good thumbnail examples: [Indubitablee](http://www.indubitablee.com/)
 * Avoid excessively flashy navigation techniques: [OneOver.com](http://www.oneover.com/)
 * Find creative ways to showcase your work: [Carbon Design](http://www.cardondesign.com/work_d.html)

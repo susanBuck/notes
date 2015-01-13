@@ -35,8 +35,6 @@ __Getting Hired__
 
 __Hiring__
 
-Writers, Software developers, Content developers, Marketers. 
-
 Summary: Hiring is burdensome.
 
 
@@ -77,7 +75,7 @@ __Identify your audience__
 
 * Think about your target audience and consider different, catered versions of your portfolio.
 * Who is receiving this? An HR department? Founder of a small company? How might your approaches differ? 
-* Are they proficient in what you're selling? Ex: Applying to a design firm vs. applying to do design work for a restaurant.
+* Are they proficient in what you're selling? 
 
 
 
