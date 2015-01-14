@@ -34,15 +34,19 @@ Things to consider when choosing a host
 
 Hosting
 
-* One suggestion: [Site Ground](http://www.siteground.com/web-hosting.htm?afcode=bf90ce97069361478ba4f2426b5f9d4d)
+* Example provider: [Site Ground](http://www.siteground.com/web-hosting.htm?afcode=bf90ce97069361478ba4f2426b5f9d4d)
 * [Social media pulse on web hosting](http://reviewsignal.com/webhosting/compare/)
 * Quick and free way to publish some pages online: [NeoCities.org](http://neocities.org)
 * What else have you used?
 
+
+
+
 ## Domains
 
 * Unique IP (Internet Protocol) Mapping
-* Paid for yearly, between $7-15 a year.
+* Paid for yearly, between $7-15 a year
+* Example provider: [Hover](http://hover.evyy.net/c/118826/150221/2799)
 * Look for discounts if your purchase more than one year at a time
 * Always set to auto-renew
 * Domains can be purchased through the same company you get your hosting from, or from a different company.

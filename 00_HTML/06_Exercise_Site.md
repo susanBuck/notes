@@ -1,39 +1,54 @@
 ## Task
 
-Create a website for Mariposa Bakery in Cambridge
+Create a simple website for Mariposa Bakery in Cambridge
 
 Background: <http://www.yelp.com/biz/mariposa-bakery-cambridge>
 
-Planning: Create a directory called `mariposa/` somewhere on your local computer.
-Inside of it, create the .html files and subdirectories you'll need to organize your site based on the criteria below.
+Example: <http://mariposa.wcc-hosting.com/>
 
-## Assets (images, menu, etc)
 
-* <http://making-the-internet.s3.amazonaws.com/html-exercise-butteryfly-logo.jpg>
+
+
+## Create your directory structure and download images
+Create a directory called `mariposa/` somewhere on your local computer.
+
+Inside of it, create a subdirectory called `images/`.
+
+Download the following images to `/mariposa/images`:
+
+* <http://making-the-internet.s3.amazonaws.com/html-exercise-butterfly-logo.png>
 * <http://making-the-internet.s3.amazonaws.com/html-exercise-coffee-and-snack.jpg>
 * <http://making-the-internet.s3.amazonaws.com/html-exercise-menu.pdf>
 
-## Requirements
 
-* All pages should have the logo ('html-exercise-butteryfly-logo.jpg')
-* All pages should have a navigational menu with links to all the other pages (bonus: use a dash of [PHP includes](http://www.sophox.com/wordpress/?p=1158) to use one menu across all the pages)
 
-Include the following pages:
 
-* A landing page 
-* Short blurb about the bakery
-* Address
-* Hours
-	
-A contact page:
+## Build the index page
+Next, create a file called `index.html` in the root of your `mariposa` folder.
 
-* Address
-* Phone Number
-* Email ([ref: mailto](https://developer.mozilla.org/en-US/docs/Web-based_protocol_handlers))
+Inside of `index.html` lay out the basic HTML structure for a page, and in the `<body>` include this heading:
 
-A menu page:
+	<h1>Welcome to Mariposa Bakery</h1>
 
-* Includes the image `html-exercise-coffee-and-snack.jpg` at the top
-* Convert some of `html-exercise-menu.pdf` into a [HTML table](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table) (just enough for proof of concept)
+Load this file in your browser and make sure it works.
+
+Now, continue to build out the index making it match the example:
+
+* Add the logo up top
+* Create a secondary heading element for the words `Central Square, Cambridge MA` that's right below the primary heading.
+* Create a paragraph element for the description: `Quaint, brick-walled bakery with WiFi serving homemade goodies, sandwiches and espresso drinks.`
+* Create a link to their Yelp page. This link should load in a new tab.
+* Create a link to a page you'll create later, called `menu.html`
+* Create a secondary heading element that says `This Month's Specials`
+* Below this heading, create an unordered list element with the three specials listed in the example
+
+## Build the menu page
+
+With the index page complete, move on to the menu page and make it match the one in our example. 
+
+The menu of items is created using an HTML table, which you can find an [example of here](http://www.w3schools.com/htmL/html_tables.asp).
+
+
+
 
 
