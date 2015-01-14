@@ -26,7 +26,7 @@ Download the following images to `/mariposa/images`:
 ## Build the index page
 Next, create a file called `index.html` in the root of your `mariposa` folder.
 
-Inside of `index.html` lay out the basic HTML structure for a page, and in the `<body>` include this heading:
+Inside of `index.html` lay out the basic HTML structure for a page, and in the `<body>` include this heading element:
 
 	<h1>Welcome to Mariposa Bakery</h1>
 
@@ -34,13 +34,16 @@ Load this file in your browser and make sure it works.
 
 Now, continue to build out the index making it match the example:
 
+* Remembe to fill in your `<title>` element in the head of the page.
 * Add the logo up top
-* Create a secondary heading element for the words `Central Square, Cambridge MA` that's right below the primary heading.
+* Use a `<h2>` element for the words `Central Square, Cambridge MA` that's right below the `<h1>`.
 * Create a paragraph element for the description: `Quaint, brick-walled bakery with WiFi serving homemade goodies, sandwiches and espresso drinks.`
-* Create a link to their Yelp page. This link should load in a new tab.
+* Create a link to Mariposa's Yelp page. 
+	* The URL is `http://www.yelp.com/biz/mariposa-bakery-cambridge`. 
+	* This link should load in a new tab.
 * Create a link to a page you'll create later, called `menu.html`
-* Create a secondary heading element that says `This Month's Specials`
-* Below this heading, create an unordered list element with the three specials listed in the example
+* Create `<h2>` element that says `This Month's Specials`
+* Below this `<h2>`, create an unordered list element with the three specials listed in the example
 
 ## Build the menu page
 
