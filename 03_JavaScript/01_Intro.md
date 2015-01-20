@@ -5,10 +5,10 @@ Open up a blank document in your favorite code editor, save it as a `.html` file
 ### Web Developer Tools
 Familiarize yourself with the developer tools of your browser:
 
-* Chrome: View: Developer: Developer Tools then look for the Console tab. ([ref](https://developers.google.com/chrome-developer-tools/))
-* Firefox: Tools: Web Developer: Web Console. ([ref](https://developer.mozilla.org/en-US/docs/Tools/Web_Console))
-* Safari: Develop: Show Web Inspector then look for the Console tab. (Developer mode as to be enabled; [ref](http://trac.webkit.org/wiki/WebInspector))
-* Internet Explorer users: download one of the above browsers and follow their instructions.
+* __Chrome:__ *View: Developer: Developer Tools* then look for the Console tab. ([ref](https://developers.google.com/chrome-developer-tools/))
+* __Firefox:__ *Tools: Web Developer: Web Console* ([ref](https://developer.mozilla.org/en-US/docs/Tools/Web_Console))
+* __Safari:__ *Develop: Show Web Inspector* then look for the Console tab. (Note: Developer mode has to be enabled; [ref](http://trac.webkit.org/wiki/WebInspector))
+* **Internet Explorer:** download one of the above browsers and follow their instructions.
 
 ## What is JavaScript?
 [Web Development Puzzle](http://making-the-internet.s3.amazonaws.com/misc-puzzle.png)
@@ -17,33 +17,33 @@ Like CSS, JavaScript is more code that gets incorporated into your HTML page.
 
 JavaScript allows you to:
 
+* **Alter the page after the page has loaded**
 * Control the browser
 * Communicate asynchronously (Ajax)
-* **Alter the page after the page has loaded**
+
 
 Quick Facts:
 
 * JavaScript != Java
 * The official name for JavaScript is ECMAScript
-* JavaScript is most commonly used as a client-side script, but it also has server-side implementations.
+* JavaScript is most commonly used as a client-side script, but it also has server-side implementations
 
 
 
 ## Examples
 
-* [Essence: Manipulating CSS](http://codepen.io/wcc/pen/stncu/)
-* [Fun/Interactive: Animations](http://photojojo.com/store/awesomeness/sony-smart-lens-qx10-qx100/) 
-* [Practical: Menus](https://www.google.com/) 
-* [Practical: Form validation](https://wwws.mint.com/login.event?task=S) 
+* [Basic CSS manipulation](http://codepen.io/wcc/full/stncu/)
+* [Interface and animation](http://photojojo.com/store/awesomeness/sony-smart-lens-qx10-qx100/) 
+* [Form validation](https://wwws.mint.com/login.event?task=S) 
 * [Vogue with Konami - U-U-D-D-L-R-L-R-B-A-Enter](http://www.vogue.co.uk/) 
-* [Ajax: Fetch information live](http://instantdomainsearch.com/) 
+* [Ajax search](http://instantdomainsearch.com/) 
 
 
 ## Action + Reaction
 In these latter examples two main things are happening:
 
-1. JavaScript is &ldquo;listening&rdquo; for user some user action, be it a mouse hover or a key being entered in an input.
-2. That action is triggering a reaction on the page, be it displaying new content, hiding content, or changing the style of existing content.
+1. JavaScript is &ldquo;listening&rdquo; for user some user __action__, be it a mouse hover or a key being entered in an input.
+2. That action is triggering a __reaction__ on the page, be it displaying new content, hiding content, or changing the style of existing content.
 
 This simple action and reaction is the core of JavaScript, and it'll take your page to the next level from static content to a dynamic experience.
 
@@ -58,29 +58,33 @@ Let's start with a simple example using internal JavaScript:
 	
 	<!DOCTYPE html>
 	<head>
+		<title>Practice</title>
 	</head>
 	
 	<body>
+
+
+
 		<script>
 			alert('Hello');
 		</script>
 	</body>
 	</html>
 
-Notes:
+Observations:
 
-* The JS code is surround in a `<script>` block
-* The JS code is placed before the closing `</body>` tag
+* The JS code is surround in a `<script>` element
+* This script element is positioned right before the closing `</body>` tag
 * [alert()](https://developer.mozilla.org/en-US/docs/Web/API/Window.alert) is a built in JavaScript method
 * Methods consist of the method name followed by parentheses, where you can pass paramaters to the method
 * In this case the parameter is what the alert box should display: `'Hello'`
-* All JS commands should finish with a semicolon.
+* All JS commands should finish with a semicolon
 
 ## The Console
 
-One of your best friends when writing JavaScript is going to be a browser Console. Instructions for setting these up is at the beginning of these notes. Load your tool of choice and __make sure it's on the console tab__.
+One of your best friends when writing JavaScript is going to be a browser Console panel of your browser's web inspector panel. You can open your web inspector following the instructions at the top of this doc, or using the following keyboard shortcuts:
 
-<img src='http://making-the-internet.s3.amazonaws.com/js-console-in-chrome.png'>
+<img src='http://making-the-internet.s3.amazonaws.com/js-console-in-chrome.png?@2x' class='' style='max-width:871px; width:100%' alt='Open the console'>
 
 The Console is very useful and serves as a line of communication between you and the code allowing you to do the following:
 
@@ -104,7 +108,7 @@ After your alert command, add this code:
 
 When you run your code what do you see in the console?
 
-Before you move on to the next step, clear out the console.log and alert from your code so the next example will be clearer.
+Before you move on to the next step, remove the console.log and alert from your code so the next example will be clearer.
 
 ### Directly execute lines of JS for testing purposes
 
@@ -120,9 +124,9 @@ Create a 50x50 div on your page with a 1px solid black border. Make sure your di
 
 	<!DOCTYPE html>
 	<head>
-		<title>Class Practice</title>
+		<title>Practice</title>
 	
-		<style type='text/css'>
+		<style>
 			#lucy {
 				border:1px solid black;
 				width:100px;
@@ -154,9 +158,8 @@ Before we go any further with JavaScript, let's introduce jQuery.
 
 ### What is jQuery?
 
-* jQuery is a JavaScript library. 
-* Open source, cross-browser, CSS3 compliant.
-* JavaScript library is a `.js` file that a team of developers have written.
+* jQuery is an open-source JavaScript library. 
+* A JavaScript library is a `.js` file that a team of developers have written.
 * When we use libraries it gives our JavaScript shortcuts and extra functionality. 
 * Other JavaScript libraries: MooTools, YUI, Scriptaculous.
 * jQuery most commonly used library (over 65% of the 10,000 most visited websites on the internet).
@@ -230,7 +233,7 @@ We're going to use Option #2 for this class, but what are some pros and cons you
 
 Whichever option you choose, you just need to use the script element to link in the jQuery file:
 
-	 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
 Place this right before your closing body tag.
 
@@ -271,7 +274,7 @@ One way of interacting with the DOM is via a JavaScript method called `getElemen
 
 	document.getElementById('lucy').style.width = '500px';
 
-This line says, go into your Document Object Model (document), and get the element with the id `lucy`. Once we have that element, we access its style and then its width which we set to `500px`.
+This line says, go into your *Document Object Model (document)*, and get the element with the id `lucy`. Once we have that element, we access its style and then its width which we set to `500px`.
 
 This line works, but we can make it better (shorter, more flexible) by taking advantage of jQuery.
 
