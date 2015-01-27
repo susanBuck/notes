@@ -20,10 +20,10 @@ Topics covered:
 The following notes serve as a roadmap of all the steps to complete the project. 
 **For full documentation**, refer to the well-commented final source code:
 
-* [index.html](/examples/_js/card-o-matic/) (Use View Source to see HTML code)
-* [card-o-matic.js](/examples/_js/card-o-matic/js/card-o-matic.js)
-* [features.css](/examples/_js/card-o-matic/css/features.css)
-* [main.css](/examples/_js/card-o-matic/css/main.css)
+* [index.html](http://thewc.co/data/challenges/card-o-matic/) (Use View Source to see HTML code)
+* [card-o-matic.js](http://thewc.co/data/challenges/card-o-matic//js/card-o-matic.js)
+* [features.css](http://thewc.co/data/challenges/card-o-matic/css/features.css)
+* [main.css](http://thewc.co/data/challenges/card-o-matic/css/main.css)
 
 
 
@@ -58,7 +58,7 @@ Figure out what color was clicked using `$(this)`:
 
 >>In many object-oriented programming languages, this (or self) is a keyword which can be used in instance methods to refer to the object on which the currently executing method has been invoked. [-wikipedia](http://en.wikipedia.org/wiki/This_%28computer_science%29)
 
-[jQuery &ldquo;this&rdquo; keyword](http://learn.jquery.com/javascript-101/this-keyword/)
+Read more: [jQuery &ldquo;this&rdquo; keyword](http://learn.jquery.com/javascript-101/this-keyword/)
 
 **Step 3:** Introduce [JavaScript variables](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Values,_variables,_and_literals#Declaring_variables) to store the color.
 

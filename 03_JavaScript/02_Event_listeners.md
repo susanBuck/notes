@@ -1,9 +1,14 @@
 ## Recap
-* We're learning JavaScript and jQuery at the same time.
-* External jQuery include using the [script element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script): `<script src="/path/to/file.js"></script>`.
-* We're loading jQuery from the Google API Library.
-* Using the jQuery selector `$` you can interact with any element on the page.
-* Using the jQuery method `.css()` you can change the style of any element on the page.
+We're learning JavaScript and jQuery at the same time.
+
+jQuery is being included externally from Google's CDN: 
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+
+Using the jQuery selector `$` you can interact with any element on the page.
+
+Using the jQuery method [`.css()`](http://api.jquery.com/css/) you can change the style of any element on the page.
 
 ## Exercises from last class
 * Write a line that will make the lucy div have a 3px solid red border.
@@ -24,9 +29,7 @@ There's a full list of all the [jQuery event listeners here](http://api.jquery.c
 
 The names of these methods should be pretty self-explanatory for what they do, but let's look at how to write code for them.
 
-__Task: Write an event listener for the lucy div that when clicked, prints &ldquo;Hello World&rdquo; to the console.__
-
-
+Here's an example of a click listener, attached to the lucy div:
 	
 	$('#lucy').click(function() {	
 		console.log("You clicked on Lucy.");
@@ -40,5 +43,5 @@ __Task: Write an event listener for the lucy div that when clicked, prints &ldqu
 * When lucy is hovered, change her opacity to .5.
 * When either lucy or ricky is clicked, change the height of lucy to 300px.
 * When either lucy or ricky is clicked, make them disappear.
-* Bonus: Create a text input on your page where a user can type in a color. When the user finishes typing in their color and clicks on the lucy div, it should change that div to whatever color they typed in. You'll want to lookup the `.val()` method to get this done.
+* Bonus: Create a text input on your page where a user can type in a color. When the user finishes typing in their color and clicks on the lucy div, it should change that div to whatever color they typed in. You'll want to lookup the [`.val()`](http://api.jquery.com/val/) method to get this done.
 
