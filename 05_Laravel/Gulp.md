@@ -16,9 +16,6 @@ Gulp is a **Task Runner** (another popular Taskrunner you may have heard of is G
 The purpose of a task runner is to automate tedious tasks that you have to do over and over again in the course of a project. For example, you can create a job that will minify CSS files, concatenate JavaScript files, etc.
 
 
-
-
-
 ## Install Gulp
 
 Install gulp globally:
