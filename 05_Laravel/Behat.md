@@ -105,16 +105,108 @@ Feature: Allow guest users to log in to the site
 0m0.94s
 ```
 
+
+
+## Step definitions
+
+Step definitions allow you to create macros/functions for your tests. Sometimes you may want to do this so you can do something special (like generate a random value) or because you need to do something repeatedly in multiple steps.
+
+Behat can help you create step definitions - start by doing something in your test that does not already have a definition.
+
+For example, the second step on this scenario was made up on the fly:
+
+```
+Scenario: User enters their first name
+  Given I am on "/"
+  And I fill in 'first_name' with a random value
+```
+
+If you were to run the above test, Behat would recognize it as an undefined step and offer a suggestion for creating it:
+
+```
+You can implement step definitions for undefined steps with these snippets:
+
+    /**
+     * @Given /^I fill in \'([^\']*)\' with a random value$/
+     */
+    public function iFillInWithARandomValue($arg1)
+    {
+        throw new PendingException();
+    }
+```
+
+You could copy the above code and put it in `FeatureContext.php`, *or* you can have Behat do it for you by running this command:
+
+```bash
+$ behat --append-snippets
+```
+
+This will prompt Behat to go through your tests, look for any undefined steps and create them for you.
+
+After you run the above, if you open `FeatureContext.php` you should see the new function `iFillInWithARandomValue`, which you can them fill in the body of.
+
+Example: 
+
+```php
+ /**
+* @Given /^I fill in \'([^\']*)\' with a random value$/
+*/
+public function iFillInWithARandomValue($arg1)
+{
+        $this->fillField($arg1,time());
+}
+```
+
+
+
+## Cleaning out database tables
+
+Tell Behat about framework
+
+FeatureContext.php:
+
+```php
+/**
+* Get access to Laravel
+*/
+public static function bootstrapLaravel() {
+  
+  $unitTesting = true;
+  $testEnvironment = 'testing';
+
+  require_once __DIR__.'../../../../bootsrtap/start.php'
+
+}
+```
+
+
+
+## Tips
+
 If your test fails, you can get more info by adding the verbose flag when running behat:
 
 ```bash
 $ behat -v
 ```
 
-
 See a list of all possible commands:
 ```bash
 $ behat -h
+```
+
+Interrupt tests if one fails:
+```bash
+$ behat --stop-on-failure
+```
+
+Run a test for a specific feature:
+```bash
+$ behat --name "name-of-feature"
+```
+
+See a list of available definitions
+```bash
+$ behat -dl
 ```
 
 

@@ -1,3 +1,8 @@
+<--
+wcc-hosting.com / mariposa / f********4
+-->
+
+
 ## Task
 
 Create a simple website for Mariposa Bakery in Cambridge

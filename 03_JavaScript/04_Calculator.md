@@ -7,6 +7,10 @@ Challenge: **Create a simple addition calculator**
 [Final example](http://codepen.io/wcc/pen/rlCju/)
 
 
+### Getting started
+
+Starting HTML/CSS: <http://codepen.io/wcc/pen/gboRPq>
+
 ### Hints
 
 The JavaScript [eval()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/eval) method can be used to calculate values. For example, in the following statement, `total` would be set to 2.
