@@ -2,10 +2,11 @@ Whenever you allow users to input information on your site, you're opening yours
 
 Therefor, you need to *sanitize* any input from users before outputting it to the page; this can be done with PHP's [`htmlspecialchars()` function](http://us1.php.net/htmlspecialchars).
 
-
-	<?php foreach($contestants as $key => $value) { ?>
-			<?php echo htmlspecialchars($key, ENT_QUOTES, 'UTF-8'); ?> is a <?php echo $value; ?><br>
-	<?php } ?>
+~~~php
+<?php foreach($contestants as $key => $value) { ?>
+		<?php echo htmlspecialchars($key, ENT_QUOTES, 'UTF-8'); ?> is a <?php echo $value; ?><br>
+<?php } ?>
+~~~
 
 This helps prevent against a problem called __XSS (Cross Site Scripting)__ which happens when nefarious users put code into your forms. The job of `htmlspecialchars()` is to strip this code out to prevent it from running and causing any harm. 
 

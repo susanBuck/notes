@@ -8,7 +8,7 @@ Functions allow you to easily repeat tasks without repeating code.
 
 Example: 
 
-```php
+~~~php
 function calculate_total($subtotal, $discount, $shipping_method) {
 
     if($shipping_method == 'priority') {
@@ -25,13 +25,13 @@ function calculate_total($subtotal, $discount, $shipping_method) {
     return $total;
 
 }
-```
+~~~
 
 You would then use the above function like this:	
 
-```php
+~~~php
 Your total is <?=calculate_total(10,3,'priority')?>
-```
+~~~
 	
 	
 
@@ -40,7 +40,7 @@ Functions may accept arguments which provide extra info a function may use to ge
 
 If a function doesn't need arguments, then the parentheses would be left empty. Example:
 
-```php	
+~~~php	
 function add_new_user() {
  
      # Code here that would add a new user...
@@ -50,7 +50,7 @@ function add_new_user() {
 }
  
 $new_user = add_new_user();
-```
+~~~
 	
 ## Return
 Some functions may return values upon completion. For example, in the previous challenge, we could turn our *"Is the savings goal met?"* logic into a function called `get_goal_image` that would return the appropriate image name.
@@ -62,9 +62,9 @@ Try it...what would a `get_goal_image()` function look like?
 
 In addition to creating your own functions, PHP has many useful [built-in (internal)](http://us2.php.net/manual/en/functions.internal.php) functions. 
 
-```php
+~~~php
 string date ( string $format [, int $timestamp = time() ] )
-```
+~~~
 
 Use the [PHP date function](http://us1.php.net/manual/en/function.date.php) to produce the following time formats:
 

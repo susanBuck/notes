@@ -13,21 +13,21 @@ If they haven't met their goal, then it should display this image:
 
 <img src='http://making-the-internet.s3.amazonaws.com/php-goal-not-met.png' alt='Goal not met'>
 
-```html
+~~~html
 <img src='http://making-the-internet.s3.amazonaws.com/php-goal-not-met.png' alt='Goal not met'>
-```	
+~~~
 
 ## Procedure
 
 Define a variable `$goal` and set it to be `50`.
 
-Write an *if statement* which will set a a variable called `$image` to be either `php-goal-met.png` or `php-goal-not-met.png`.
+Write an *if statement* which will set a variable called `$image` to be either `php-goal-met.png` or `php-goal-not-met.png`.
 
 In the display page, use this PHP image variable to display an image on the page: 
 
-```html
+~~~html
 <img src='http://making-the-internet.s3.amazonaws.com/<?php echo $image?>' alt='Goal Status'>
-```
+~~~
 
 
 
@@ -35,9 +35,9 @@ In the display page, use this PHP image variable to display an image on the page
 
 <img src='http://making-the-internet.s3.amazonaws.com/php-goal-almost-met.png' alt='Almost met'>
 
-```html
+~~~html
 <img src='http://making-the-internet.s3.amazonaws.com/php-goal-almost-met.png' alt='Almost met'>
-```
+~~~
 	
 * If the total is less than $30, the goal is not met.
 * If the total is greater than $30 AND less than $50, they're almost there.

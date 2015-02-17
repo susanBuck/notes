@@ -2,7 +2,7 @@
 
 Create a file called **bank.php** and fill it with the following code, then load it in your browser.
 
-```php
+~~~php
 <!DOCTYPE html>
 <html>
 <head>
@@ -41,7 +41,7 @@ Create a file called **bank.php** and fill it with the following code, then load
 	
 </body>
 </html>
-```
+~~~
 
 	
 ## PHP Syntax
@@ -49,7 +49,7 @@ Create a file called **bank.php** and fill it with the following code, then load
 * PHP code is written in a text file that is saved with a `.php` extension. 
 * `.php` files can process both HTML code and PHP code.
 * PHP code is always surrounded by a start PHP tag `<?php` and an end PHP tag `?>`.
-* Every command ends with a semi-colon.
+* PHP statements end with a semi-colon.
 
 
 
@@ -58,7 +58,7 @@ Create a file called **bank.php** and fill it with the following code, then load
 
 [php.net Comments](http://us1.php.net/manual/en/language.basic-syntax.comments.php)
 
-```
+~~~php
 <?php
 // This is a single line comment
 
@@ -71,7 +71,7 @@ Multiple lines
 
 # Coments can be used to leave notes to yourself, or disable lines of code
 // echo $results;
-```
+~~~
 
 
 

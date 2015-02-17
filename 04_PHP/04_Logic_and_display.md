@@ -8,9 +8,9 @@ Remove the PHP code from the `<head>` of `bank.php` and put it in a new file cal
 
 Then use PHP's [require statement](http://us3.php.net/require) to connect `logic.php` to `bank.php`.
 
-```php
+~~~php
 <?php require 'logic.php'; ?>
-```
+~~~
 
 ## Things to note
 

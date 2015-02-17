@@ -20,7 +20,7 @@ To work with the *for loop*, let's imagine we were going to create a web-based v
 
 In the `<head>` of `index.php`:
 
-```html
+~~~html
 <style>
 	/* We'll use this class to style the boxes..Gold, 50x50px */
 	.box {
@@ -32,33 +32,33 @@ In the `<head>` of `index.php`:
 		 background-color:Gold;
 	}
 </style>
-```
+~~~
 
 In the `<body>` of `index.php`:
 
-```html
+~~~html
 <div class='box'>1</div>
 <div class='box'>2</div>
-```
+~~~
 
 
 ## Step 3) Lots of boxes
 
 In `logic.php`:
 
-```php
+~~~php
 <?php 
 $boxes = "";
 for($i = 0; $i < 10; $i++) {
     $boxes = $boxes."<div class='box'>".$i."</div>";
 }
-```
+~~~
 
 In the `<body>` of `index.php` (in place of the hard-coded boxes from the previous step):
 
-```php
+~~~php
 <?php echo $boxes; ?>
-```
+~~~
 
 How would you edit the above to get 100 boxes? 1000 boxes?
 
@@ -67,7 +67,7 @@ How would you edit the above to get 100 boxes? 1000 boxes?
 
 [php.net for control structure](http://us3.php.net/manual/en/control-structures.for.php)
 
-<img src='http://making-the-internet.s3.amazonaws.com/php-for-loop-breakdown@2x.png' class='' style='max-width:815px; width:100%' alt=''>
+<img src='http://making-the-internet.s3.amazonaws.com/php-for-loop-breakdown.png?@2x' class='' style='max-width:815px; width:100%' alt=''>
 
 
 

@@ -4,11 +4,11 @@ In PHP the name of a variable is always preceded by a dollar sign `$`.
 
 You assign values to variables using the *assignment operator* equal sign `=`. 
 
-```php
+~~~php
 <?php
 $favorite_color = 'red';
 ?>
-```
+~~~
 
 PHP variables don't have to be declared before they're used. Setting a variable for the first time is simultaneously declaring that variable.
 
@@ -25,12 +25,12 @@ This means that any changes to the new variable will not affect the original.
 
 Example:
 
-```php
+~~~php
 $foo = 1;
 $bar = $foo;
-$bar = 2; /* Change $bar, yet $foo will remain 1 */
-echo $foo; # Outputs 1.
-```
+$bar = 2; # Change $bar, yet $foo will remain 1 
+echo $foo; # Outputs 1
+~~~
 
 ### Assignment by reference
 
@@ -40,12 +40,12 @@ Assigning a variable by reference is done with an ampersand.
 
 Example:
 
-```php
+~~~php
 $foo = 1;
 $bar = &$foo;
 $bar = 2;
 echo $foo; # Outputs 2
-```
+~~~
 	
 Below we'll talk more about how you can pass variables to functions by reference.
 
@@ -54,18 +54,18 @@ Below we'll talk more about how you can pass variables to functions by reference
 
 One way to output variables from your script, is to use the `echo` construct.
 
-```php
+~~~php
 $age = 50;
 echo $age; # Outputs 50
-```
+~~~
 
 When outputting variables in HTML, you'll typically see code written in a more compact fashion:
 
-```php
+~~~php
 <p>
 	My favorite color is <?php echo $favorite_color; ?>
 </p>
-```
+~~~
 
 
 
@@ -86,17 +86,19 @@ In other programming languages, when declaring a variable you often have to spec
 
 For example in Java you might say:
 
-	int votes
+~~~
+int votes
+~~~
 	
 In PHP you don't have to explicitly set a variable's data type; instead, PHP will automatically determine the type for you.
 
-```php
+~~~php
 $votes = 100;       # Give it an integer, it'll be an integer
 $votes = "Unknown"; # Give it a string, it'll be a string
 $votes = "100";		# Gave it a number, but it's in quotes, so it'll be a string.
-```
+~~~
 
-If you want to find out what type a variable is, use `gettype()`.
+If you want to find out what type a variable is, use [`gettype()`](http://php.net/manual/en/function.gettype.php).
 
 
 
@@ -127,11 +129,11 @@ While you don't have to set variable types, you can convert variable types using
 
 For example, you could convert a decimal number to an integer:
 
-```php
+~~~php
 $votes = (int)10.9;  # Cast Double to an Integer
 echo gettype($votes) # Outputs "integer"
 echo $votes;         # Outputs 10
-```
+~~~
 
 
 
@@ -155,14 +157,14 @@ A variable declared **outside a function** is **global**. This means it is visib
 
 Given that, the following would not work:
 
-```php
+~~~php
 function report_votes() {
 	echo "Vote count:".$votes;
 }
 
 $votes = 50; # Global
 report_votes();
-```
+~~~
 
 The reason is because the variable `$votes` is global, and therefor when you try to use it inside the `report_votes()` function, it doesn't know what you're talking about.
 
@@ -170,7 +172,7 @@ In order to make a global variable visible in a function, you have to use the **
 
 You could fix the above code like this: 
 
-```php
+~~~php
 function report_votes() {
 	global $votes; 	# Makes the global variable $votes visible inside this function
 	echo "Vote count:".$votes;
@@ -178,13 +180,13 @@ function report_votes() {
 
 $votes = 50; # Global
 report_votes(); # Outputs "Vote count: 50"
-```
+~~~
 
 ### Local variables
 
 A variable declared **in a function** is **local** to that function. This mean it's only visible to the code in that function; it is not visible outside the function.
 
-```php
+~~~php
 function upvote() {
 	$votes++; # Local
 }
@@ -192,7 +194,7 @@ function upvote() {
 $votes = 50; # Global
 upvote();
 echo $votes; # Outputs 50
-```
+~~~
 
 
 ### Static variables
@@ -201,7 +203,7 @@ Static variables are used in functions, and visible only in functions; they are 
 
 Example:
 
-```php
+~~~php
 function upvote() {
 	static $votes = 99;
 	$votes++;
@@ -212,7 +214,7 @@ upvote(); # Outputs 100
 upvote(); # Outputs 101
 upvote(); # Outputs 102
 upvote(); # Outputs 103
-```
+~~~
 
 ### Function variables
 
@@ -220,7 +222,7 @@ Function variables are defined via the parameters of a function call, and are lo
 
 Example:
 
-```php
+~~~php
 function upvote($votes) {
 	$votes++;
 	echo $votes.'<br>';
@@ -228,7 +230,7 @@ function upvote($votes) {
 
 upvote(99);  # Outputs 100
 echo $votes; # Undefined
-```
+~~~
 
 
 
@@ -241,7 +243,7 @@ If you pass a variable **by reference** to a function, **that function has the a
 
 For example, let's start with a scenario where the parameter passed to a function is *not* passed by reference:
 
-```php
+~~~php
 function upvote($votes) {
 	$votes++;
 }
@@ -249,14 +251,14 @@ function upvote($votes) {
 $votes = 50;
 upvote($votes);
 echo $votes; # Outputs 50
-```
+~~~
 	
 
 Note how `$votes` is incremented inside the function, but the end result is still 50. This is because the *local* `$votes` used in the function is independent from the *global* `$votes` used outside the function.
 	
 Now let's look at that same function, but this time the parameter *is* passed by reference (as indicated with the ampersand):
 
-```php
+~~~php
 function upvote(&$votes) {
 	$votes++;
 }
@@ -264,7 +266,7 @@ function upvote(&$votes) {
 $votes = 50;
 upvote($votes); 
 echo $votes.'<br>'; # Outputs 51
-```
+~~~
 	
 This time, the end result is 51 because the *global* `$votes` variable was passed by reference, allowing it to be updated locally in the function.
 
@@ -287,7 +289,7 @@ The final output should thus be:
 	
 ### Using a global variable...
 
-```php
+~~~php
 function upvote() {
 	
 	global $votes;
@@ -300,12 +302,12 @@ $votes = 100;
 upvote(); # Outputs 101
 upvote(); # Outputs 102
 upvote(); # Outputs 103
-```
+~~~
 
 
 ### Using a static variable...
 
-```php
+~~~php
 function upvote() {
 	
 	static $votes = 100;
@@ -317,12 +319,12 @@ function upvote() {
 upvote(); # Outputs 101
 upvote(); # Outputs 102
 upvote(); # Outputs 103
-```
+~~~
 
 
 ### Using a variable reference....
 
-```php
+~~~php
 function upvote(&$votes) {
 	
 	$votes++;
@@ -334,7 +336,7 @@ $votes = 100;
 upvote($votes); # Outputs 101
 upvote($votes); # Outputs 102
 upvote($votes); # Outputs 103
-```
+~~~
 
 
 
