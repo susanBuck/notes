@@ -34,7 +34,7 @@ The **keys** are Sam, Eliot, Liz and Max. You can think of keys as an index, or 
 
 The **values** are loser, loser, winner and loser. Sam is a loser, Eliot is a loser, Liz is a winner, and Max is a loser.
 
-<img src='http://making-the-internet.s3.amazonaws.com/php-array-parts@2x.png' style='max-width:424px'>
+<img src='http://making-the-internet.s3.amazonaws.com/php-array-parts.png?@2x' style='max-width:424px'>
 
 At this point the values are hard-coded; we'll make them randomly generated in a future step.
 

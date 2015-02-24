@@ -30,7 +30,7 @@ function calculate_total($subtotal, $discount, $shipping_method) {
 You would then use the above function like this:	
 
 ~~~php
-Your total is <?=calculate_total(10,3,'priority')?>
+Your total is <?php echo calculate_total(10,3,'priority'); ?>
 ~~~
 	
 	
@@ -56,6 +56,8 @@ $new_user = add_new_user();
 Some functions may return values upon completion. For example, in the previous challenge, we could turn our *"Is the savings goal met?"* logic into a function called `get_goal_image` that would return the appropriate image name.
 
 Try it...what would a `get_goal_image()` function look like?
+
+
 
 
 ## Built-in functions
