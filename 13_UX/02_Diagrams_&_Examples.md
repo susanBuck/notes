@@ -1,5 +1,3 @@
-## Overview
-
 * [http://uxmag.com/articles/cubi-a-user-experience-model-for-project-success](http://uxmag.com/articles/cubi-a-user-experience-model-for-project-success)
 * [http://www.jjg.net/elements/pdf/elements.pdf](http://www.jjg.net/elements/pdf/elements.pdf)
 * [http://cl.ly/AX4l/o](http://cl.ly/AX4l/o)
