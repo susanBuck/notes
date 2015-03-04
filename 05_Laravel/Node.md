@@ -1,6 +1,6 @@
 ## Install Node
 
-Visit <http://node.js.org> and hit the big green Install button. It should detect your operating system and download the appropriate installer.
+Visit <http://nodejs.org> and hit the big green Install button. It should detect your operating system and download the appropriate installer.
 
 After running the installer, you should have access to `npm` (Node Package Manager), which is Node's version of Composer.
 
