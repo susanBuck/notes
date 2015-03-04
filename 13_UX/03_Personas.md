@@ -5,6 +5,7 @@
 * Communicate and form consensus
 * Make and defend decisions
 * Measure effectiveness
+
 [Smashing Magazine](http://www.smashingmagazine.com/2014/08/06/a-closer-look-at-personas-part-1/)
 	
 ## Social Media 
@@ -17,4 +18,4 @@ With our smartphones attached to our hips and our constant content push to socia
 
 Enough with all the talking it's time to do! 
 
-"Think about how to improve any product and service that you see. Including a door handle and a coffee machine."  Ð Marcin Treder, CEO of UXPin 	
+"Think about how to improve any product and service that you see. Including a door handle and a coffee machine."  &ndash;Marcin Treder, CEO of UXPin 	

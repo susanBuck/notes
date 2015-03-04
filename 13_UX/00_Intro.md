@@ -2,7 +2,6 @@
 * Gain an introductory understanding of what, "User Experience" and related terms mean in today's context. Explore UX thinking, real world examples, research techniques, and analytical techniques.
 * Utilize a select few of these techniques to experience a part of the UX world and discuss the implications of UX as technology evolves.
 
-
 ## Timeline
 Where and how we do begin? Let's explore the origin of the term "User Experience." Where did it come from, how did it originate, how did it evolve?
 

@@ -20,7 +20,7 @@
 
 [Teaching UX Design](http://www.quora.com/search?q=Teaching+ux+design)
 
-IKEA Related Links
+### IKEA Related Links
 
 * [http://www.businessinsider.com/this-heat-map-reveals-the-secret-to-ikeas-store-design-2014-1](http://www.businessinsider.com/this-heat-map-reveals-the-secret-to-ikeas-store-design-2014-1)
 * [http://www.businessinsider.com/ikeas-amazing-store-design-2014-1?op=1](http://www.businessinsider.com/ikeas-amazing-store-design-2014-1?op=1)
