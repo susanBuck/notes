@@ -1,5 +1,3 @@
-## Resources
-
 [UX Pin Free Design Articles](https://www.uxpin.com/knowledge.html)
 
 [History of Usability](http://www.smashingmagazine.com/2012/05/23/the-history-of-usability-from-simplicity-to-complexity/)
