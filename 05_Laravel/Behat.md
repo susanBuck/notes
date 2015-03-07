@@ -74,7 +74,7 @@ Feature: Allow guest users to log in to the site
 	Then I should see "Welcome"
 ```
 
-The first part, after `Feature:` is just a general description for you. The `Secenario:` part is the important part of this file.
+The first part, after `Feature:` is just a general description for you. The `Scenario:` part is the important part of this file.
 
 Once your feature/scenario is complete, try running it:
 
