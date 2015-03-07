@@ -174,7 +174,7 @@ public static function bootstrapLaravel() {
   $unitTesting = true;
   $testEnvironment = 'testing';
 
-  require_once __DIR__.'../../../../bootsrtap/start.php'
+  require_once __DIR__.'../../../../bootstrap/start.php'
 
 }
 ```
