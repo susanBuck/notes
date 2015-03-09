@@ -10,7 +10,7 @@
 	
 ## Social Media 
 	
-With our smartphones attached to our hips and our constant content push to social media we're doing a lot of persona creation for them. Another exercise you could do is reverse engineer a persona from an existing social media account to find where your users are what do they frequent in realtime. 
+With our smartphones attached to our hips and our constant content push to social media we&rsquo;re doing a lot of persona creation for them. Another exercise you could do is reverse engineer a persona from an existing social media account to find where your users are and what they frequent in realtime. 
 
 [Tommy Walker Online Marketing Strategist](http://tommy.ismy.name/brand-persona/#.VPeTD7DF-5K)
 
@@ -18,4 +18,4 @@ With our smartphones attached to our hips and our constant content push to socia
 
 Enough with all the talking it's time to do! 
 
-"Think about how to improve any product and service that you see. Including a door handle and a coffee machine."  &ndash;Marcin Treder, CEO of UXPin 	
+&ldquo;Think about how to improve any product and service that you see. Including a door handle and a coffee machine.&rdquo;  &ndash;Marcin Treder, CEO of UXPin 	

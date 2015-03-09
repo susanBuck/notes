@@ -10,12 +10,7 @@ Brainstorming qualities of a product or project can provide a great starting poi
 What type of words come to mind when viewing the space?  
 
 ## IKEA 
-"IKEA is highly disorienting and yet there is only one route to follow
-Your time allocation is used in the showroom
-By the time you get to the marketplace you feel licensed to impulse purchase
-Unintelligibility removes autonomy
-Submission is the first part of a two part contract
-Delay is followed by gratification." [Business Insider](http://www.businessinsider.com/this-heat-map-reveals-the-secret-to-ikeas-store-design-2014-1)
+&ldquo;IKEA is highly disorienting and yet there is only one route to follow. Your time allocation is used in the showroom. By the time you get to the marketplace you feel licensed to impulse purchase. Unintelligibility removes autonomy. Submission is the first part of a two part contract. Delay is followed by gratification.&rdquo; [Business Insider](http://www.businessinsider.com/this-heat-map-reveals-the-secret-to-ikeas-store-design-2014-1)
 		
 ## Spotify		
 How much does visual design affect the users even if there are minor changes? Lead Product Designer Samwoo E discusses various user tests they conducted to help support their UI design decision change. 
