@@ -1,7 +1,7 @@
 ## Finding themes
 
-* In the Appearance > Themes section of wp-admin you can see all your installed themes and designate your active theme.
-* Find new themes under Appearance > Add New.
+* In the *Appearance > Themes* section of wp-admin you can see all your installed themes and designate your active theme.
+* Find new themes under *Appearance > Add New*.
 * Filter themes by color, column, width, and features.
 * To learn more about a theme, visit its page in the WordPress Themes Directory (<http://wordpress.org/themes>).
 
@@ -13,8 +13,8 @@
 Chosen theme: <http://wordpress.org/themes/mog>
 
 * There are two ways to install themes.
-* With *Theme Installer*, just click the *Install* button. So easy!
-* Otherwise, to manually install a theme, download it to your computer, then upload it (via FTP) directly into `/wordpress/wp-content/themes`.
+    * With *Theme Installer*, just click the *Install* button. So easy!
+    * Otherwise, to manually install a theme, download it to your computer, then upload it (via FTP) directly into `/wordpress/wp-content/themes`.
 * You can activate a different theme by clicking the *Activate* link next to any theme.
 
 
@@ -24,11 +24,11 @@ Chosen theme: <http://wordpress.org/themes/mog>
 
 ### Free 
 * Budget friendly, limited selection.
-* Stick to the WordPress themes directory because they're vouced for and less likely to have malware.
+* Stick to the WordPress themes directory because they're vouched for and less likely to have malware.
 
 ### Premium 
 * Cost money, typically between $10 and $100.
-* Often come with better customization options and online support.
+* Sometimes come with better customization options and online support.
 * Some good marketplaces:
 	* [Creative Market](https://creativemarket.com/themes/wordpress)
 	* [The Best Designs](http://www.thebestdesigns.com/design/themes/)

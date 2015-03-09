@@ -1,3 +1,4 @@
+## 2 Installation methods:
 __One-click:__
 Automatic installation using software that your hosting company provides.
  
@@ -23,10 +24,10 @@ Cons of One-click:
 
 
 
-## Instructions
+## One-click Instructions
 1. Goto <http://thewc.co/hosting> and make sure your account is activated.
 
-2. Log in to cPanel using the details on the latter page.
+2. Log in to cPanel using the given details.
 
 3. In cPanel, find the **QuickInstall** option.
 

@@ -9,9 +9,9 @@ Create pages via *Pages :: Add New*
 
 Organize the menu via *Appearance :: Menu*
 
+* Remove *Home* (page) and *Sample Page* from the menu.
 * Order: *Portfolio, Contact, Blog, Home*
-* Remove *Home* and *Sample Page* from the menu.
-* Click *Create Menu* and set it to be the *Primary Menu*
+* Click *Create Menu* and then set it to be the *Primary Menu*
 
 <img src='http://note.io/LADRF7' style='width:50%'>
 	
@@ -23,10 +23,10 @@ Disable comments on pages via a page's *Quick Edit* section.
 
 
 ## Customize Theme
-* Clear out widgets for minimal look ala *Appearance :: Widgets*
+* Clear out any remaining widgets for a minimal look via *Appearance :: Widgets*
 * Upload a header via *Appearance :: Header* <http://making-the-internet.s3.amazonaws.com/wp-graphics-by-liz-header.png>
-* Uncheck *Show header text with your image.*
-* Set background color to white via *Appearance :: Background*
+* While still in the theme editor, under *Header Image* uncheck *Show header text with your image.* and remove the Tagline.
+* Set background color to white via the *Colors* option.
 
 
 
@@ -41,6 +41,9 @@ Make the Front page set to *Home*
 And the Posts page set to *Blog*
 
 <img src='http://note.io/LAEQoH'>
+
+Here's some sample copy for the Home page:
+
 
 
 

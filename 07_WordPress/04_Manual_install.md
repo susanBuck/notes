@@ -37,7 +37,7 @@ Once in the File Manager, click **Upload**.
 
 <img src='http://making-the-internet.s3.amazonaws.com/wp-filemanager-upload.png?@2x' style='width:75%; max-width:938px;'>
 
-Then proceed to upload the `wordpress-3.9.1.zip` file you downloaded.
+Then proceed to upload the `wordpress-x.x.x.zip` file you downloaded.
 
 <img src='http://making-the-internet.s3.amazonaws.com/wp-filemanager-choose-file.png?@2x' style='width:75%; max-width:938px;'>
 
