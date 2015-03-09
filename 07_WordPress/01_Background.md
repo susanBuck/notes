@@ -4,9 +4,7 @@
 
 Package of code written in *HTML*, *CSS*, *JavaScript* and *PHP*.
 
-Open source software, co-founded by Matt Mullenweg and Mike Little. 
-
-Maintained by a community with about 6 core developers.
+Open source software, maintained by a community with about 6 core developers.
 
 
 
@@ -14,8 +12,9 @@ Maintained by a community with about 6 core developers.
 
 ## .com vs .org
 
+[wordpress.**com**](http://wordpress.com) vs. 
 [wordpress.**org**](http://wordpress.org)
-[wordpress.**com**](http://wordpress.com)
+
 
 <img src='http://making-the-internet.s3.amazonaws.com/wp-com-vs-org.png?@2x' style='width:50%'>
 
@@ -80,7 +79,7 @@ To tell if a site is running WP, use *View Source* and look for any instances of
 
 
 ## Downsides
-* Because it's so popular, it's a desirable target for hackers.
+* Because it's so popular, has a history of being a desirable target for hackers.
 * Because anyone can create themes and plugins, you can sometimes get junk work.
 * See next point...
 

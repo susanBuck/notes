@@ -1,6 +1,5 @@
 ## Cheat Sheets
-* [WordPress Credentials Cheat Sheet](http://thewc.co.s3.amazonaws.com/challenges/wp-credentials-cheat-sheet.pdf)
-* [WordPress Installation Cheat Sheet](http://thewc.co.s3.amazonaws.com/challenges/wp-installation-cheat-sheet.pdf)
+* [WordPress Credentials Cheat Sheet](https://s3.amazonaws.com/making-the-internet/wp-credentials-cheat-sheet-in-person.pdf)
 
 
 
