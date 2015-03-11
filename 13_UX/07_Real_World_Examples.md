@@ -3,7 +3,7 @@
 * Used three successive freelance visual designers 
 This utilization of rapid prototyping and Lean UX (for quick iteration) only works because this is an established brand and thus can take the hits to its branding. But because of this conversions doubled and a year later Task Rabbit did $4M in business per month. 
 
-Quora - [What’s the difference between Agile Dev and Lean UX](http://www.quora.com/Whats-the-difference-between-Agile-Development-and-Lean-UX)
+Quora - [What&rsquo;s the difference between Agile Dev and Lean UX](http://www.quora.com/Whats-the-difference-between-Agile-Development-and-Lean-UX)
 
 
 ## Spotify

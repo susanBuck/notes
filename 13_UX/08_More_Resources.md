@@ -9,7 +9,7 @@ http://www.conundrummedia.com/waterfall-methodology-ux/
 
 https://www.linkedin.com/pulse/20140715183202-5383304-ux-design-simply-defined
 
-UX Processes
+## UX Processes
 
 http://www.smashingmagazine.com/2011/11/22/big-think-breaking-deliverables-habit/
 
