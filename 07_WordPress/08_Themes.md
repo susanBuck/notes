@@ -10,7 +10,7 @@
 
 ## Installing themes
 
-Chosen theme: <http://wordpress.org/themes/mog>
+__To do__: Install <http://wordpress.org/themes/mog>
 
 * There are two ways to install themes.
     * With *Theme Installer*, just click the *Install* button. So easy!

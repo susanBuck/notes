@@ -29,6 +29,6 @@ Pages on your site
 
 ## To-Do
 
-* Add a new post.
+* Add a new post with one of your favorite quotes; include a photo of the author of the quote using the *Featured Image* upload.
 * Edit the permalinks.
 * Look at *Publish Options*, *Post Types* and *Featured Image* options.

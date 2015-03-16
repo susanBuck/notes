@@ -7,12 +7,13 @@
 	* WordPress wp-admin
 	* Your email password (because any of the above can be reset with access to your email account).
 	
-* Don't use the username "admin" when setting up your WordPress site, &ldquo;The Club&rdquo; principle.
+* Don't use the username "admin" when setting up your WordPress site (&ldquo;The Club&rdquo; principle).
 * Use separate usernames and passwords for all your logins.
 * Pick solid Themes and Plugins.
 * Keep WordPress, Themes and Plugins up to date.
 * Install a Security Plugin such as [WordFence](http://wordfence.com/)
 
+More: <http://codex.wordpress.org/Hardening_WordPress>
 
 
 
