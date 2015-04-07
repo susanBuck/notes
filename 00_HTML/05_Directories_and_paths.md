@@ -1,7 +1,8 @@
 ## Keeping organized
 
-* Just like your computer has directories to keep things organized, so does a server
-* Web sites are made of many different assets (images, CSS files, JS files, HTML pages, etc.)
+Just like your computer has directories to keep things organized, so does a server.
+
+Web sites are made of many different assets (images, CSS files, JS files, HTML pages, etc.)
 
 Example Scenario: Personal Portfolio
 
@@ -29,7 +30,7 @@ Example Scenario: Personal Portfolio
 `http://domain.com/index.html` works the same as `http://domain.com`
 `http://domain.com/photography/index.html` works the same as `http://domain.com/photography/`
 
-Note: index.html only works on web servers and won't work on your local computer.
+Note: `index.html` only works on web servers and won't work on your local computer.
 
 
 ## Absolute Paths
@@ -67,17 +68,17 @@ Relative paths use the `../` syntax to go &ldquo;up&rdquo; one directory
 ## Practice
 Make the following happen using both relative and absolute links
 
-* From index.html display the logo
-* From index.html link to client-abc.html
-* From client-abc.html link to client-xyz.html
-* From client-xyz.html display the logo
+* From `index.html` display the logo
+* From `index.html` link to `client-abc.html`
+* From `client-abc.html` link to `client-xyz.html`
+* From `client-xyz.html` display the logo
 
 	
 
 
 ## External Absolute Paths
 
-When linking outside your site, always use full absolute paths *including* http:// and the domain name.
+When linking outside your site, always use full absolute paths *including* `http://` and the domain name.
 
 Examples: 
 
