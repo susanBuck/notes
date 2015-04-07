@@ -14,9 +14,9 @@ To get your work online you're going to need three things to start with:
 * Web hosting is typically paid for monthly increments 
 * Pricing ranges from a few bucks a month to hundreds to thousands of dollars for big sites/companies with high demand.
 
-Server options (in order of complexity)
+Server options:
 
-* Shared hosting
+* Shared hosting (Most common)
 * VPS (Virtual Private Server)
 * Dedicated hosting
 * PaaS / Cloud hosting
@@ -34,7 +34,7 @@ Things to consider when choosing a host
 
 Hosting
 
-* Example provider: [Site Ground](http://www.siteground.com/web-hosting.htm?afcode=bf90ce97069361478ba4f2426b5f9d4d)
+* Example provider: [A Small Orange](http://asmallorange.7eer.net/c/144212/185398/3107)
 * [Social media pulse on web hosting](http://reviewsignal.com/webhosting/compare/)
 * Quick and free way to publish some pages online: [NeoCities.org](http://neocities.org)
 * What else have you used?
@@ -48,8 +48,8 @@ Hosting
 * Paid for yearly, between $7-15 a year
 * Example provider: [Hover](http://hover.evyy.net/c/118826/150221/2799)
 * Look for discounts if your purchase more than one year at a time
-* Always set to auto-renew
-* Domains can be purchased through the same company you get your hosting from, or from a different company.
+* Set to auto-renew to avoid a lapse in ownership
+* Domains can be purchased through the same company you get your hosting from, or from a different company
 
 ## Picking a domain
 >> &ldquo;I just registered the domain name for my campaign website jackdonagyisrunningformayor2013nythisisthewebsite.com... that's as close as I could get, everything else was already pornography.&rdquo; - Jack Donagy, 30Rock
@@ -98,6 +98,6 @@ Note that your server username and password is typically not the same username a
 
 Once you FTP into your server, look for a folder called `public_html` or `www`; this is where you should put all your files. 
 
-If you don't see public_html or www, chances are you're already in the public folder on your website, so put your files there.
+If you don't see `public_html` or `www`, chances are you're already in the public folder on your website, so put your files there.
 
 <img src='http://making-the-internet.s3.amazonaws.com/html-public-html.png'>

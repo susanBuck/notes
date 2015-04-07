@@ -1,7 +1,6 @@
-<--
-wcc-hosting.com / mariposa / f********4
--->
-
+<?php
+# wcc-hosting.com / mariposa / f********4
+?>
 
 ## Task
 
@@ -52,9 +51,17 @@ Now, continue to build out the index making it match the example:
 
 ## Build the menu page
 
-With the index page complete, move on to the menu page and make it match the one in our example. 
+With the index page complete, move on to the menu page and make it match [the one in our example](http://mariposa.wcc-hosting.com/menu.html). 
 
-The menu of items is created using an HTML table, which you can find an [example of here](http://www.w3schools.com/htmL/html_tables.asp).
+The menu of items is created using the HTML table element. We didn't cover tables explicitly, so here's an opportunity to put your reference skills to the test. 
+
+[Check out MDN's page about tables...](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table)
+
+There's a lot of details there, so skim down to the **Examples** and find the **Simple table with header** example.
+You can copy that example and replace the info for your menu.
+
+Note how `<tr>` elements are used to create rows, and `<td>` elements are used to create cells within those rows.
+
 
 
 
