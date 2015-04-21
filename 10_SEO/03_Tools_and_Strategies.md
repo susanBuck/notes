@@ -7,7 +7,7 @@
 * Custom sites:
 
 Clean folder / file name structure:
-<img src='http://codagogy.com/images/tasks/seo-good-vs-bad-directory-structure.png'>
+<img src='http://thewc.co/images/tasks/seo-good-vs-bad-directory-structure.png'>
 
 Or rewrite URLs:
 [mod_rewrite](http://www.sitepoint.com/guide-url-rewriting/)
@@ -28,8 +28,8 @@ Rules placed in `.htaccess` file in root of your site. Example:
 
 ## Webmaster Tools
 
-<http://google.com/webmasters>
-<http://www.bing.com/toolbox/webmaster>
+* <http://google.com/webmasters>
+* <http://www.bing.com/toolbox/webmaster>
 
 ### Add your URL / Verify ownership
 
@@ -111,7 +111,7 @@ Install: JavaScript snippet on every page
 
 Social network traffic isn't directly related to search engine rankings, but it's tangentally related.
 
-[Before and after optimization](http://codagogy.com/images/tasks/seo-facebook-optimized-content.png)
+[Before and after optimization](http://thewc.co/images/tasks/seo-facebook-optimized-content.png)
 
 Control with meta property tags:
 

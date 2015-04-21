@@ -18,7 +18,7 @@
 
 ## Meta Description
 
-```html
+```
 <meta name="description" content="Bella Balloons provides Ohio Hot Air Balloon Rides, Cincinnati Hot Air Balloon Rides, and Dayton Hot Air Balloon Rides.">
 ```
 
@@ -48,7 +48,7 @@
 
 <img src='http://making-the-internet.s3.amazonaws.com/seo-good-bad-links.png'>
 
-* Don't label links "Click here"&mdash; waste of link power. 
+* Don't label links *Click here*&mdash; waste of link power. 
 * Links are how search engine bots crawl through your site.
 * Anchor text (the part you click) is associated with the URL.
 * [Remove `www` from URLs](https://gist.github.com/susanBuck/9240424)

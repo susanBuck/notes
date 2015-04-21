@@ -5,11 +5,11 @@ Infographic: http://www.nerdwallet.com/blog/2014/best-cities-female-entrepreneur
 ## Introduction
 SEO is the process you go through to make your site show up higher in search engine results so your audience can find you.
 
+<img src='http://thewc.co/images/tasks/seo-search-results-ranked.png'>      
+
+Deflating the hype: SEO Does not have to be a huge undertaking.
+
 [SEO Checklist](http://thewc.co.s3.amazonaws.com/challenges/seo-checklist.pdf)
-
-[75% of users will never get past the first page of results](http://thewc.co/images/tasks/seo-search-results-ranked.png)
-
-Deflating the hype: SEO Does not have to be a huge a undertaking.
 
 ## Audience
 
@@ -79,8 +79,8 @@ Example:
 * Start with a brainstorm
 * 1-10 primary target
 * 10-20 secondary target
-* [Bella Balloons Example Keyword Brainstorm](http://codagogy.com/images/tasks/seo-whiteboard.jpg)
-* Google Adword's Keywords Planner <https://adwords.google.com>
+* [Bella Balloons Example Keyword Brainstorm](http://thewc.co/images/tasks/seo-whiteboard.jpg)
+* <http://keywordtool.io/>
 
 
 
