@@ -1,9 +1,9 @@
 ## Friendly URLs
 
 * As a guiding principle for your URLs, aim to always make your URLs friendly for the user. This practice will also be optimal for search engines.
-* It's debatable in the SEO community about how much Google pays attention to keywords in URL's, but it certainly can't hurt. 
+* It's debatable in the SEO community about how much Google pays attention to keywords in URL's, but it can't hurt. 
 * Hyphens are the preferred symbol for separating words in URLs.
-* CMS such as WordPress, make friendly URLs easy.
+* CMS such as WordPress make friendly URLs easy.
 * Custom sites:
 
 Clean folder / file name structure:
@@ -62,7 +62,7 @@ If you wanted to exclude a path you would add:
 
 
 ### Sitelinks
-[Sitelinks](https://support.google.com/webmasters/bin/answer.py?hl=en&answer=47334) are the extra links that sometimes show below search results; these are picked automatically by Google and while we have no say over what they pick, we do have the option to exclude links by "demoting" them.
+[Sitelinks](https://support.google.com/webmasters/bin/answer.py?hl=en&answer=47334) are the extra links that sometimes show below search results; these are picked automatically by Google and while we have no say over what they pick, we do have the option to exclude links by demoting them from within Google Webmaster tools.
 
 
 ### "Your site on the web"
