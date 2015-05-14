@@ -1,135 +1,77 @@
+## What should be on your portfolio
+
+* Name
+* Contact info
+    * Always: Email
+    * Maybe: Contact forms
+    * Phone number (optional)
+* Bio
+* Location
+* Call to action (Available for hire, Accepting new clients, Contact for a quote, etc.)
+* Work
+    * Title
+    * 2-3 sentences description
+    * At least one visual
+    * Additional details (see information outlined above when you described your top 3 projects)
+    * Bonus: Initial process, early sketches, background information
+* Resume: HTML & PDF
+* Professional and/or social networks you participate in
 
 
 
-## Basic pointers
+## Execution - 3 Options
 
-<!--
-Good thumbnail ex, site is down tho: [The Big Pugh](http://thebigpugh.com)
--->
+### 1. Site Builders
 
-* Limit to your best work. Quality > quantity.
-* Show the work that represents the work you want to get.
-* Useful thumbnails:
-	* Bad thumbnail examples: [VisualLure](http://www.visuallure.com/web-design-portfolio.html)
-	* Good thumbnail examples: [Indubitablee](http://www.indubitablee.com/)
-* Avoid excessively flashy navigation techniques: [OneOver.com](http://www.oneover.com/)
-* Find creative ways to showcase your work: [Carbon Design](http://www.cardondesign.com/work_d.html)
-* Focusing on your specialty: [Dan Gilroy Websites for Lawyers](http://www.dangilroy.com/portfolio.htm), [Ann Reynolds Food Stylist](http://www.ann-reynolds.com/home-economist-food-stylist.php)
-* Allow the viewer to reach your goal (make sure you know what that goal is).
-* The quicker your site loads, the better.
-* Avoid Flash.
-* Downloadable resumes: Use formats like .pdf and avoid formats like .doc; keep file size less than 2mb.
+* [Squarespace](http://www.squarespace.com/pricing)
+* [Wix](http://www.wix.com/upgrade/website)
+* [Format](http://format.com/plans)
+* [Carbonmade](https://carbonmade.com/pricing)
+* [Tumblr](http://tumblr.com)
 
+Deciding factors:
 
-## Supplement
+* Do you like their templates?
+* Can you use a custom domain?
+* How much do you need to customize/how much can you customize?
+* How much space do you get/need?
+* Are the designs responsive?
+* Ask around for suggestions from friends/colleagues
 
-* Brief description 
-* Your role in the project (if it wasn't 100% you)
-* Information on the benefits the project might have had for the customer
-* Testimonials
-* Process breakdown (sketches, iterations)
-	* [Jen Hayden logo iterations](http://blog.imbreannarose.com/process-01-jen-hayden/)
-	* [Chad Pugh's Science Machine](https://vimeo.com/927062)
-	* [Book: Show Your Work](http://www.amazon.com/Show-Your-Work-Creativity-Discovered-ebook/dp/B00GU2RGGI/ref=sr_1_1?ie=UTF8&qid=1398806408&sr=8-1&keywords=show+your+work)
-* <http://alistapart.com/column/help-my-portfolio-sucks>
+Read more:
+
+* [WordPress vs. Web Site Builders](http://www.sitebuilderreport.com/what-about-wordpress)
+* <http://www.sitebuilderreport.com>
 
 
-##  Copy
+### 2. WordPress
 
-* Bulleted list
-* Occasional use of bold to prevent skimming
-* Short sentence fragments
-* Explanatory subheadings
-* One idea per paragraph
-* Half the word count of "conventional writing"
+Suggested only if you have prior WordPress experience
 
-Sources:
+### 3. Build your own
 
-* <a href='http://www.nngroup.com/articles/how-users-read-on-the-web/'>Jakob Nielsen's How Users Read on the Web</a>
-* <a href='http://www.slate.com/articles/technology/the_browser/2008/06/lazy_eyes.single.html'>Slate's Lazy Eyes</a>
+Suggested only if you have prior HTML/CSS experience
 
-
-
-Avoid fluff, vague talk:
->> I've been designing and building websites happily for years, and am proud to be part of a world-wide community of designers and developers working to make the internet a prettier, more productive place to be for everyone. I try to maintain an understanding of all technologies which can make a web-site not just work, but excel at its task. From project conception, all the way to launch, I'm proud that I can help my clients to realize projects which exceed expectations, and allow them to make the most of their on-line homes.
-
-Be specific:
->> My websites are built from the ground up using technologies like HTML5, CSS3, and jQuery. Over the past year I've shifted my focus towards Responsive Web Design or RWD. So, why Responsive Web Design? Well to help you better visualize the importance of RWD all you really need to see are the numbers. The following shows you the percent mobile traffic accounts for based off all web traffic in the World from the past 3 years. In Q1 of 2011 mobile web traffic only accounted for 4.5%. A year later you see that percentage jump from 4.5% to 13.14% in Q1 of 2012. In Q1 of 2013 mobile traffic continues to grow (23.86%) and analysts are predicting that mobile traffic will overtake desktop traffic in 2014.
-- [wadegarret.com](http://www.wadegarrett.com/)
-
-Go beyond job duties; elaborate on what you've accomplished and done:
-
-> Junior Designer, Becker Morgan Architecture
-> Focused on landscape design.
-
-vs.
-
-> Junior Designer, Becker Morgan Architecture
-> Contributed to 10 projects and solely executed the design for an indoor arboretum at the Kent County Administrative Complex.
-
-
-
-## Contact info
-* Always: Email.
-* Maybe: Contact forms.
-* Phone number (optional)
-* Social Networks (if you feel comfortable; just note they're going to search for you anyway)
-
-
-
-
-
-
-## No coding required
-* <a href='http://carbonmade.com/'>Carbonmade</a>  
-Free: 5 projects, 35 images (ads)
-$12/mo: 50 projects, 500 images, custom domain
-
-* [Simple, trackable resume builder](http://resume.io/) Free
-
-* <a href='http://prosite.com/'>ProSite by Behance</a>  
-$11/mo Unlimited space, connects to Behance, custom domain
-
-* <a href='http://www.krop.com/creativedatabase/'>Krop</a>  
-Free: 10 image limit  
-$9/mo: Unlimited images, custom domain
-
-* <a href='http://About.me'>About.me</a>  
-Make it easy for people to learn about you (more of an online business card than a portfolio). Good if you don't have specific work to show.
-
-* <a href='http://tumblr.com'>Tumblr</a>  
-Free; Mostly a blogging-esque platform, but very efficient for sharing content.
-
-
-
-
-## Build your own
-
-* Domain names: [NameCheap](http://namecheap.com)
+* Domain names: [Hover](http://bit.ly/wcc-hover)
+* Hosting: [SiteGround](http://bit.ly/wcc-siteground)
 * [Custom domain email hosting](http://web.appstorm.net/roundups/email-roundups/the-best-places-to-host-your-email-with-your-own-domain/)
-* Hosting: [SiteGround](http://goo.gl/473OyI)
-* WordPress: [WordPress](http://wordpress.com)
 
 
+## Search Engine Optimization
+* What is your site title and meta description?
+* What is your current standing in Google?
+* [Google SEO Starter Guide](http://static.googleusercontent.com/external_content/untrusted_dlcp/www.google.com/en/us/webmasters/docs/search-engine-optimization-starter-guide.pdf)
+* [Moz Beginner Guide to SEO](https://moz.com/beginners-guide-to-seo)
 
 
-## SEO
-
-Increase search engine traffic: [Google SEO Starter Guide](http://static.googleusercontent.com/external_content/untrusted_dlcp/www.google.com/en/us/webmasters/docs/search-engine-optimization-starter-guide.pdf).
-
-
-
-
-
-
-## Inspiration
-
-* <a href='http://stocklogos.com/topic/ultimate-creative-business-cards-collection'>creativebits.org - Unique business card designs</a>
-* <a href='http://logopond.com/'>Logopond.com - Identity inspiration</a>
-* <a href='http://www.smashingmagazine.com/2009/09/17/portfolio-design-study-design-patterns-and-current-practices/'>Smashing Mag's Portfolio Design Patterns & Current Practices</a>
-* <a href='http://foliofocus.com/'>Folio Focus</a>
-* <a href='http://onepagelove.com'>One Page Love</a>
-* <a href='https://creativemarket.com/blog/2013/05/14/4-tips-to-create-successful-landing-pages'>4 Tips to Create Successful Landing Pages</a>
+## Inspiration/Misc Reading and Resources
+* [creativebits.org - Unique business card designs](http://stocklogos.com/topic/ultimate-creative-business-cards-collection)
+* [Logopond.com - Identity inspiration](http://logopond.com)
+* [Smashing Mag's Portfolio Design Patterns & Current Practices](http://www.smashingmagazine.com/2009/09/17/portfolio-design-study-design-patterns-and-current-practices)
+* [Folio Focus](http://foliofocus.com)
+* [One Page Love](http://onepagelove.com)
+* [4 Tips to Create Successful Landing Pages](https://creativemarket.com/blog/2013/05/14/4-tips-to-create-successful-landing-pages)
 * [Unique resume / cv approaches](http://www.hongkiat.com/blog/creative-designer-resume-curriculum-vitae/)
 * [Steven Stevenson Challenge](http://www.smashingmagazine.com/2009/04/01/10-handy-tips-for-web-design-cvs-and-resumes/)
 * <http://theworstportfolioever.com/>
+* [Simple, trackable resume builder](http://resume.io/)
