@@ -25,7 +25,9 @@ Mac users, follow these instructions: [Mac OSX Change Path Variables](http://arc
 
 ## Windows: Edit your PATH
 
-To edit your PATH variables in Windows goto *My Computer* > *Properties* > *Advanced* > *Environment Variables* > *Path*.
+To edit your PATH variables in Windows goto *My Computer* > *Properties* (alternatively, you can get here by running `sysdm.cpl` from Command Line)
+
+In the Properties window goto *Advanced* > *Environment Variables* > *Path*.
 
 Each path is separated by a semi-colon. Here's an example PATH variable:
 

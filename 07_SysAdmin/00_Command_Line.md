@@ -16,7 +16,7 @@ The application where you type your commands (and see any results of those comma
 
 Windows systems includes the limited **Command Prompt** application, which has nowhere near the power of *Bash*. Windows also has **PowerShell**, but the commands are different than what is used in th Bash shell.
 
-Given this, we're going to use a console emulator called [**Cmder**](http://bliker.github.io/cmder/) which will allow you to *mostly* replicate anything you'd do in a Bash shell.
+Given this, Windows users are going to use a console emulator called [**Cmder**](http://bliker.github.io/cmder/) which will allow you to *mostly* replicate anything you'd do in a Bash shell.
 
 
 
@@ -25,15 +25,15 @@ Given this, we're going to use a console emulator called [**Cmder**](http://blik
 
 ### Mac - **Terminal**
 
-Comes installed on Macs by default. 
+*Terminal* comes installed on Macs by default. 
 
-Find in `/Users/ComputerName/Applications/Utilities/` or just type `Terminal` into Spotlight.
+Find it in `/Users/ComputerName/Applications/Utilities/` or just type `Terminal` into Spotlight.
 
 ### Windows - **Cmder** 
 
-Cmder is a Windows front-end for the standard Windows Command Shell (aka `cmd.exe`)
+*Cmder* is a Windows front-end for the standard Windows Command Shell (aka `cmd.exe`)
 
-Download from <http://bliker.github.io/cmder/> (Make sure you download the **full version**, not the mini version.)
+Download from <http://bliker.github.io/cmder/> (Make sure you download the **full version**, not the mini version).
 
 The download will give you a zip file; extract this into your `C:\Program Files` directory.
 

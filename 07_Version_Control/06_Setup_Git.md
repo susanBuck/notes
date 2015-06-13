@@ -45,8 +45,7 @@ If you don't&mdash; are you sure you completely closed and re-opened your CL she
 
 If you're running an **older operating system** and the latest Git build doesn't work, you may have to try an older version of git. [You can find older builds of git here.](https://code.google.com/p/git-osx-installer/)
 
-
-## Tips:
+__Tips:__
 
 Find out what version of git you're running: 
 ```bash
@@ -79,11 +78,30 @@ $ git config --global user.name "Sam Seaborn"
 $ git config --global user.email sam@gmail.com
 ```
 
-Finally, one more configuration which will make any Git input color coded (i.e. easier to read):
+Run the following command to make any Git input color coded (i.e. easier to read):
 
 ```bash
 $ git config --global color.ui true
 ```
 
-That's it! Git is installed and you're ready for the next steps.
+Finally, let's set what default text editor git should use.
+
+When deciding which editor to use, git follows this order of preference: 
+
+1. `$GIT_EDITOR` environment variable
+2. `core.editor` configuration
+3. `$VISUAL`
+4. `$EDITOR`
+5. Default chosen at compile time, which is usually vi.
+
+We'll use option #1 and set the default text editor to be Sublime Text. In order for this to work, you must already have a symlink setup for the `subl` binary. Ref: *Opening Sublime Text from Command Line*: [Mac Terminal Bash](#) or [Windows Cmder](#)
+
+Once you've confirmed the command `subl` works as expected, set it as your `GIT_EDITOR`:
+
+```bash
+export GIT_EDITOR=subl
+```
+
+
+
 
