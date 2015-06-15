@@ -1,17 +1,17 @@
 ## What is the PATH variable?
 
-When you run a command in the CL, it looks for the executable files using the directories listed in your *PATH variables* as a map. Given this, when you add a new executable, you may need to specify it's directory in your PATH variable. 
+When you run a command for a program in CL, it looks for the corresponding executable files using the directories listed in your *PATH variables* as a map. Given this, when you add a new executable/program you wish to use via CL, you have to add its directory to your PATH variable. 
 
 
 ## View your current PATH
 
-Mac users, this command will show you your PATH variable:
+Mac users, this command will show you your current PATH variable:
 
 ```bash
 $ echo $PATH
 ```
 	
-Windows/Cmder users, this command will show you your PATH variables.
+Windows/Cmder users, this command will show you your current PATH variable:
 
 ```bash
 $ PATH
