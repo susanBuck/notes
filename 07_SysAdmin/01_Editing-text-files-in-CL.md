@@ -2,9 +2,9 @@
 
 As you work via the Command Line, you'll occasionally need to make edits to text based configuration files.
 
-There are two challenges you may face when making these edits in a [GUI](http://en.wikipedia.org/wiki/Graphical_user_interface)-based text editor like [Sublime](http://www.sublimetext.com/), TextEdit (Mac), Notepad (Win), etc.:
+There are two challenges you may face when making these edits in a [GUI](http://en.wikipedia.org/wiki/Graphical_user_interface)-based text editor like [Sublime](http://sublimetext.com), TextEdit (Mac), Notepad (Win), etc.:
 
-1. The file is locked/read-only and needs special privileges; it will let you open in a GUI but won't let you save.
+1. The file is locked/read-only and needs "super user" privileges; it will let you open in a GUI but won't let you save.
 
 2. You can't find the file because it's hidden or in a hard-to-locate system path.
 

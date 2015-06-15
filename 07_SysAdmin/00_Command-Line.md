@@ -1,10 +1,9 @@
 ## Resources:
 - [LPTHW: Command Line Crash Course](http://learnpythonthehardway.org/book/appendixa.html)
 - [Tutsplus: 7 Simple and Useful Command-Line Tips](http://code.tutsplus.com/tutorials/7-simple-and-useful-command-line-tips--net-11608)
-- [ExplainShell.com](http://explainshell.com/) fantastic tool; type in any command and it will break down each piece.
+- [ExplainShell.com](http://explainshell.com/) Type in any command and it will break down each piece.
 - [Git Cheat Sheet](http://www.git-tower.com/files/cheatsheet/Git_Cheat_Sheet_grey.pdf)
-- [Command Cheat Sheet](https://d1b10bmlvqabco.cloudfront.net/attach/hykay018bam4zp/hzpj56v4gkv2if/i0e6xgtr3j
-3y/linuxcheatsheet.pdf)
+- [Command Cheat Sheet](https://d1b10bmlvqabco.cloudfront.net/attach/hykay018bam4zp/hzpj56v4gkv2if/i0e6xgtr3j3y/linuxcheatsheet.pdf)
 - [Another Command Cheat Sheet](http://www.pixelbeat.org/cmdline.html)
 
 
@@ -12,9 +11,11 @@
 ## What is the Command Line?
 The **Command Line Interface (CLI)** is a means of interacting with your computer via text commands. While it seems that the CLI is archaic compared to GUIs (Graphical User Interfaces) it's actually a very powerful method for interacting with files and programs.
 
-The application where you type your commands (and see any results of those commands) is called a *shell*. There are different types of shells, but the most common is the **Bash shell** which is what Linux and Mac systems use, via the application called **Terminal**.
+The application where you type your commands (and see any results of those commands) is called a *shell*. There are different types of shells, but the most common is the **Bash shell** which is what Linux and Mac systems use.
 
-Windows systems includes the limited **Command Prompt** application, which has nowhere near the power of *Bash*. Windows also has **PowerShell**, but the commands are different than what is used in th Bash shell.
+On Mac's, Bash shell is accessed via an included application called **Terminal**.
+
+Windows systems include the limited **Command Prompt** application, which has nowhere near the power of *Bash*. Windows also has **PowerShell**, but the commands are different than what is used in the Bash shell.
 
 Given this, Windows users are going to use a console emulator called [**Cmder**](http://bliker.github.io/cmder/) which will allow you to *mostly* replicate anything you'd do in a Bash shell.
 
@@ -31,17 +32,25 @@ Find it in `/Users/ComputerName/Applications/Utilities/` or just type `Terminal`
 
 ### Windows - **Cmder** 
 
-*Cmder* is a Windows front-end for the standard Windows Command Shell (aka `cmd.exe`)
+*Cmder* is a Windows front-end for the standard Windows Command Shell (aka `cmd.exe`).
 
-Download from <http://bliker.github.io/cmder/> (Make sure you download the **full version**, not the mini version).
+The build of Cmder we'll be using includes Git (i.e., *not* the mini version).
 
-The download will give you a zip file; extract this into your `C:\Program Files` directory.
+Download Cmder from this URL: <https://github.com/bliker/cmder/releases/download/v1.1.4.1/cmder.zip>
 
-<img src='http://making-the-internet.s3.amazonaws.com/sysadmin-extract-cmder@2x.png' class='' style='max-width:633px; width:100%' alt='Extract cmder'>
+<small>*June 15, 2015: As of this writing, the current version of Cmder requires some additional downloads we don't want to deal with. Given that, the above link is for a slightly older version. We'll stick with this until the issue is resolved. [ref](https://github.com/bliker/cmder/issues/501#issuecomment-104749350))*</small>
 
-When it's done extracting, find `c:\Program Files\cmder.exe` to launch Cmder.
+To install Cmder, start by creating a new, blank folder in `c:\Program Files` called `Cmder`.
+<img src='http://making-the-internet.s3.amazonaws.com/sysadmin-create-new-folder-for-cmder@2x.png' class='' style='max-width:629px; width:100%' alt=''>
+
+Then, extract the `cmder.zip` file you downloaded to this location:
+<img src='http://making-the-internet.s3.amazonaws.com/sysadmin-extract-cmder@2x.png' class='' style='max-width:817px; width:100%' alt=''>
 
 
+
+
+## Misc - Terminology
+People/tutorials use different terms for referring to the Bash shell- *bash*, *shell*, *terminal*, *command line*, etc. For the sake of consistency we'll use the term *Command Line* or *CL* for short. Unless otherwise specified, when referring to Command Line we mean Terminal on Mac and Cmder on Windows.
 
 
 

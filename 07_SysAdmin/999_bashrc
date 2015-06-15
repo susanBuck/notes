@@ -7,13 +7,13 @@
 # ------------------------------------
 # Set default text editor
 # Defaults to Sublime if it exists
-# Otherwise, TextEdit
+# Otherwise, nano
 # ------------------------------------
 sublime_path='/Applications/Sublime Text.app/Contents/SharedSupport/bin/'
 if [ -d "${sublime_path}" ]; then
     text_editor='subl'
 else
-    text_editor='TextEdit'
+    text_editor='nano'
 fi
 
 
@@ -27,9 +27,9 @@ export EDITOR="$VISUAL"
 
 # Append to PATH (/etc/paths)
 # Note: Run `echo $PATH` to see PATH variable
+
 export PATH="${sublime_path}":$PATH
-export PATH="/Applications/TextEdit.app/Contents/MacOS/":$PATH
-export PATH=$HOME/.rvm/bin:$PATH
+
 
 
 
@@ -68,21 +68,6 @@ alias myserver="ssh user@111.111.111.111"
 
 # Example alias for quickly getting to a commonly used directory
 alias htdocs='cd /Applications/MAMP/htdocs'
-
-
-
-# ------------------------------------
-# Functions used in the prompt 
-# functions below
-# ------------------------------------
-function parse_git_branch {
-    git branch 2>/dev/null | grep '^*' | sed 's_^..__' | sed 's_\(.*\)_(\1)_'
-}
-
-function git_dirty {
-    git diff --quiet HEAD &>/dev/null
-    [ $? == 1 ] && echo "!"
-}
 
 
 
@@ -140,8 +125,19 @@ NONE="\[\e[0m\]"
 
 # ------------------------------------
 # Configure prompt
-# delimiters between prompt components (like :@) are your default terminal text color, i.e. white
+# Includes special handling for git repos
 # ------------------------------------
+
+# When in a git repo, this method is used to determine the current branch
+function parse_git_branch {
+    git branch 2>/dev/null | grep '^*' | sed 's_^..__' | sed 's_\(.*\)_(\1)_'
+}
+
+# When in a git repo, this method is used to determine if there are changes
+function git_dirty {
+    git diff --quiet HEAD &>/dev/null
+    [ $? == 1 ] && echo "!"
+}
 
 # Variables
 ps1_user="$BIBlue\u$NONE"
@@ -176,18 +172,18 @@ fi
 # MOTD (Message of the Day)
 # What you see when Terminal opens
 # ------------------------------------
-echo "[1;35m"
+echo "[1;90m"
 echo "----------------------------"
 echo "Loaded ~/.bashrc"
 if [ ${appended} ]; then
     echo "Appended ~/.bashrc-append"
 fi
 echo ""
-echo "To edit run bashedit"
-echo "To refresh run bashrefresh"
+echo "To edit run $ bashedit"
+echo "To refresh run $ bashrefresh"
 echo ""
-echo "You are....... `whoami`"
-echo "You're in..... `pwd`"
+echo "You are: `whoami`"
+echo "You're in: `pwd`"
 echo ""
-echo "All aliasees...'alias'"
+echo "All aliasees...$ alias"
 echo "----------------------------"

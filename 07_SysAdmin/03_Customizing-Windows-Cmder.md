@@ -2,10 +2,9 @@
 
 Run `alias help` for details
 
-Run `alias name=full command` to create an alias.
-
 Aliases are stored in `config/aliases`
 
+Run `alias name=full command` to create an alias, or edit `config/aliases`.
 
 
 
@@ -17,15 +16,13 @@ Sublime Text includes a Command Line tool called `subl.exe` located at `C:\Progr
 
 This tool will let you open files and projects in Sublime directly from the Command Line as well working as an EDITOR for git.
 
-To make it easy to launch this tool, you want to add it's home path to your PATH variable. This way, when you execute `subl` from the command line, Windows will know where to look for it.
+To make it easy to launch this tool, you can add its directory to your PATH variable. This way, when you execute `subl` from the command line, Windows will know where to look for it.
 
-Add the following to your PATH. Note we're using the short path to `subl.exe` which is found by running `DIR /X`. If your short path is slightly different then above, make the necessary edits.
+Add the following dir to your PATH. Note we're using the short path to `subl.exe` which is found by running `DIR /X`. If your short path is slightly different then above, make the necessary edits.
 
 ```
 C:\PROGRA~1\SUBLIM~1\
 ```
-
-
 
 Ref: 
 + <https://scotch.io/tutoria«command-line-using-subl-exe-windows>
