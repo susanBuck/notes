@@ -17,7 +17,7 @@ $ cd ~/Documents
 Windows users:
 ```bash
 c:\Users\Susan
-&lambda cd My Documents
+&lambda; cd My Documents
 ```
 
 (Moving forward, the commands are the same of Mac/Users)
