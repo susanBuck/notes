@@ -1,17 +1,23 @@
+On Mac's, Bash shell is accessed via an included application called **Terminal**.
+
+Find it in `/Users/ComputerName/Applications/Utilities/` or just type `Terminal` into Spotlight.
+
+
+## Customizing
 
 There are many customizations you can make to your Command Line program that will make your day-to-day use easier.
 
 For example, you can configure...
 + your prompt (i.e. the line you see where you enter commands)
-+ your PATH variable
 + the message you see when you first open Terminal
 + aliases you can use to make long commands shorter
++ your PATH variable
 
 Customizations are made via the file `~/.bashrc`, which is what bash reads and executes every time you open Terminal.
 
 We're going to provide you with a template .bashrc you can start with, and customize as needed.
 
-Visit [`.bashrc-EXAMPLE`]() and copy its contents.
+Visit [`bashrc`](999_bashrc) and copy its contents.
 
 Next, open `~/.bashrc` using nano and paste in what you just copied.
 
@@ -23,14 +29,12 @@ If everything works, you should see this whenever you open Terminal:
 
 Read through the above file, as it's well commented and explains everything it does.
 
-That being said, here are some highlights:
+That being said, below are some highlights. You don't need to do anything - as everything described is already set up for you in the given bashrc template.
 
 
 
 
 ## Sublime from Command Line
-
-Ref: [https://www.sublimetext.com/docs/2/osx_command_line.html]
 
 Sublime Text includes a Command Line tool called `subl` located at `/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl`.
 
@@ -54,6 +58,7 @@ For more details, run with the help flag:
 subl --help
 ```
 
+Ref: [https://www.sublimetext.com/docs/2/osx_command_line.html]
 
 
 

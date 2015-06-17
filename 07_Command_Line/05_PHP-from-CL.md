@@ -24,35 +24,23 @@ We want to fix both cases so that your PHP from CL is using the same PHP you use
 ## Mac: PHP from CL
 First, identify the location of a PHP executable (`php.exe`) within MAMP's bin folders.
 
-As of this writing, we're working with php5.5.5.15 so we located this PHP executable: 
+As of this writing, we're working with `php5.5.5.15` so we located this PHP executable: 
 
 ```bash
 /Applications/MAMP/bin/php/php5.5.14/bin/php.exe
 ```
 
-Now that you know where your `php.exe` is, you want to update your **PATH variable** so it can be found.
-
-*What is a PATH variable?* When you run a command in the CL, it looks for the corresponding executable file using the directories listed in your *PATH variables* as a map. 
-
-Given this, when you want to use a new executable, you need to specify its directory in your PATH variable. 
-
-To do this, edit `~/.bash_profile` adding this line at the end:
+Now that you know where your `php.exe` is, you want to update your **PATH variable** via `~/.bashrc` so it can be found:
 
 ```bash
-export PATH="/Applications/MAMP/bin/php/php5.5.14/bin":$PATH
+export PATH=$PATH:"/Applications/MAMP/bin/php/php5.5.15/bin/"
 ```
 
-This will add the MAMP executable PHP path to your existing $PATH.
+If any of the above is confusing, re-read in the instructions on editing PATH variables.
 
-Save `~/.bash_profile` and restart Terminal.
+Save `~/.bashrc` and restart Terminal.
 
-You can now run this command to confirm your MAMP PHP path has been added:
-
-```bash
-$ echo $PATH
-```
-
-And finally, you can check which PHP is now being used in CL:
+Check which PHP is now being used in CL:
 
 ```bash
 $ which php
@@ -83,48 +71,11 @@ In addition to logging in to Windows as an administrator, you may have to explic
 
 ### Where is php.exe?
 
-First: Locate a copy of `php.exe`. Assuming you have XAMPP installed, you should find one in `c:\XAMPP\php`.
+First, identify the location of a PHP executable (`php.exe`). Assuming you have XAMPP installed, you should find one in `c:\XAMPP\php`.
 
-Once you know where `php.exe` lives, you can add its directory to your **PATH variable**...
+Once you know where `php.exe` lives, you can add its directory to your **PATH variable**, which is covered in full details in the previous instructions, [PATH Variable](04_PATH-Variable.md).
 
-*What is a PATH variable?* When you run a command in the CL, it looks for the corresponding executable file using the directories listed in your *PATH variables* as a map. 
-
-Given this, when you add a new executable, you may need to specify its directory in your PATH variable. 
-	
-This command will show you your existing PATH variable:
-
-```php
-$ PATH
-```
-
-Example output:
-```
-%SystemRoot%\system32;%SystemRoot%;%SystemRoot%\System32\Wbem;%SYSTEMROOT%\System32\WindowsPowerShell\v1.0\;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;
-```
-
-Notice how each different path is separated by a semi-colon.
-
-To edit your PATH variable navigate to the following menu:
-
-__My Computer > Properties > Advanced > Environment Variables__
-
-In the *Environment Variables* screen look for `Path` under *System variables*:
-
-<img src='http://making-the-internet.s3.amazonaws.com/laravel-getting-to-path-on-windows@2x.png' class='' style='max-width:767px; width:100%' alt=''>
-
-Since you now know there's a `php.exe` in `c:\XAMPP\php\` you want to add this directory to your PATH variable:
-
-<img src='http://making-the-internet.s3.amazonaws.com/laravel-setting-path-variable-on-windows@2x.png' class='' style='max-width:1127px; width:100%' alt='Setting path variable'>
-
-Tip: The text input for editing the PATH variable is small and hard to work with... Copy your variable to a text editor to work with it there, then paste it back when you're done.
-
-Make sure you end your path with a trailing backslash. The idea is to point to the directory where `php.exe` can be found, not the actual `php.exe` file..
-
-Ok/Save your changes.
-
-Restart *Cmder*.
-
-Test it out...
+After you've added the appropriate path, restart Cmder and test it out...
 
 This command will tell you where PHP is loading from:
 
@@ -178,7 +129,6 @@ $ php -i | grep --ignore-case --line-number php.ini
 
 ## Reference
 + [SO: Adding directory to PATH Environment Variable in Windows](http://stackoverflow.com/questions/9546324/adding-directory-to-path-environment-variable-in-windows)
-+ [How to set path and environment variables in Windows](http://www.computerhope.com/issues/ch000549.htm)
 + [PHP Configuration file (php.ini)](http://nl3.php.net/manual/en/configuration.file.php)
 
 <!--

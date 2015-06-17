@@ -37,7 +37,7 @@ If Git was *not* yet installed, head to the [download page](http://git-scm.com/d
 
 Download the program and run through installation.
 
-**Once installation is complete, close and re-open your CL shell.** 
+**Once installation is complete, close and re-open your CL program.** 
 
 Now, try the `git` command again. Do you see a bunch of instructions and commands related to Git? Good, you're all set! 
 
@@ -84,7 +84,10 @@ Run the following command to make any Git input color coded (i.e. easier to read
 $ git config --global color.ui true
 ```
 
-Finally, let's set what default text editor git should use.
+
+## Which text editor to use
+
+Sometimes git will need you to make changes in a text editor - for example, when adding a commit message.
 
 When deciding which editor to use, git follows this order of preference: 
 
@@ -94,13 +97,8 @@ When deciding which editor to use, git follows this order of preference:
 4. `$EDITOR`
 5. Default chosen at compile time, which is usually vi.
 
-We'll use option #1 and set the default text editor to be Sublime Text. In order for this to work, you must already have a symlink setup for the `subl` binary. Ref: *Opening Sublime Text from Command Line*: [Mac Terminal Bash](#) or [Windows Cmder](#)
+Mac users: If you're using our .bashrc template, $GIT_EDITOR is set to Sublime Text if it exists, otherwise nano.
 
-Once you've confirmed the command `subl` works as expected, set it as your `GIT_EDITOR`:
-
-```bash
-export GIT_EDITOR=subl
-```
 
 
 
