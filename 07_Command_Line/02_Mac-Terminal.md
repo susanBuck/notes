@@ -1,4 +1,4 @@
-On Mac's, Bash shell is accessed via an included application called **Terminal**.
+On Macs, Bash shell is accessed via an included application called **Terminal**.
 
 Find it in `/Users/ComputerName/Applications/Utilities/` or just type `Terminal` into Spotlight.
 
@@ -8,26 +8,34 @@ Find it in `/Users/ComputerName/Applications/Utilities/` or just type `Terminal`
 There are many customizations you can make to your Command Line program that will make your day-to-day use easier.
 
 For example, you can configure...
-+ your prompt (i.e. the line you see where you enter commands)
++ your prompt (i.e., the line you see where you enter commands)
 + the message you see when you first open Terminal
 + aliases you can use to make long commands shorter
 + your PATH variable
 
-Customizations are made via the file `~/.bashrc`, which is what bash reads and executes every time you open Terminal.
+Customizations are made via the file `~/.bashrc`, which is what Bash reads and executes every time you open Terminal.
 
-We're going to provide you with a template .bashrc you can start with, and customize as needed.
+We're going to provide you with a template `.bashrc` you can start with, and customize as needed.
 
-Visit [`bashrc`](999_bashrc) and copy its contents.
+Visit [`bashrc`](https://raw.githubusercontent.com/susanBuck/notes/master/07_Command_Line/999_bashrc) and copy its contents.
 
-Next, open `~/.bashrc` using nano and paste in what you just copied.
+Next, open `~/.bashrc` with *nano*, a command line text editor. That's done with the command `nano` which we'll prefix with `sudo` in order to open the file as an administrator:
 
-Save your changes in nano, then close and re-open Terminal for the changes to take effect.
+```bash
+$ sudo nano ~/.bashrc
+```
+
+At this point, you'll see the contents of ~/.bashrc which may or may not be empty. If it's empty, go ahead and paste in the contents we had you copy above. If it's not empty, paste in the contents *after* what is already there.
+
+Save your changes in nano by hitting `ctrl` + `x`.
+
+Then close and re-open Terminal for the changes to take effect.
 
 If everything works, you should see this whenever you open Terminal:
 
 <img src='http://making-the-internet.s3.amazonaws.com/sysadmin-after-bashrc@2x.png' style='max-width:526px; width:100%' alt='After adding .bashrc script'>
 
-Read through the above file, as it's well commented and explains everything it does.
+Read through the template file, as it's well commented and explains everything it does.
 
 That being said, below are some highlights. You don't need to do anything - as everything described is already set up for you in the given bashrc template.
 

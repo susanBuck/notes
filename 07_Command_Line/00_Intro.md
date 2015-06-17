@@ -5,7 +5,7 @@ The application where you type your commands (and see any results of those comma
 
 On Macs, Bash shell is accessed via an included application called **Terminal**.
 
-Windows systems include the limited **Command Prompt** application, which has nowhere near the power of *Bash*. Windows also has **PowerShell**, but the commands are different than what is used in the Bash shell.
+Windows systems include the limited **Command Prompt** application, which has nowhere near the power of Bash. Windows also has **PowerShell**, but the commands are different than what is used in the Bash shell.
 
 Given this, Windows users are going to use a console emulator called **Cmder** which will allow you to *mostly* replicate anything you'd do in a Bash shell.
 
@@ -20,7 +20,7 @@ People/tutorials use different terms for referring to the Bash shell- *bash*, *s
 
 
 
-## Resources:
+## Resources for more info:
 - [LPTHW: Command Line Crash Course](http://learnpythonthehardway.org/book/appendixa.html)
 - [Tutsplus: 7 Simple and Useful Command-Line Tips](http://code.tutsplus.com/tutorials/7-simple-and-useful-command-line-tips--net-11608)
 - [ExplainShell.com](http://explainshell.com/) Type in any command and it will break down each piece.
