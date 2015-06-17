@@ -8,10 +8,9 @@ In this course, we'll use a special build of Cmder that has the following benefi
 + Includes a custom Git prompt
 + Includes `elevate` to easily run commands as an admin
 
-
 Download Cmder from this URL: <https://github.com/bliker/cmder/releases/download/v1.1.4.1/cmder.zip>
 
-To install Cmder, start by creating a new, blank folder in `c:\Program Files` called `Cmder`.
+To install Cmder, start by creating a new, blank folder in `c:\Program Files` called `cmder`.
 <img src='http://making-the-internet.s3.amazonaws.com/sysadmin-create-new-folder-for-cmder@2x.png' class='' style='max-width:629px; width:100%' alt=''>
 
 Then, extract the zip file you downloaded to this new folder:
