@@ -1,9 +1,16 @@
 Git is a command line tool, so before digging into Git it'll be useful to go over some basics of working in the command line (CL). In the following primer, we'll cover instructions for getting your command line set up, as well as some basics commands.
 
-+ [Intro](https://github.com/susanBuck/notes/blob/master/07_Command_Line/00_Intro.md): Learn what Command Line is, and some handy resources you may want to bookmark.
-+ Set up:
+1. [Intro](https://github.com/susanBuck/notes/blob/master/07_Command_Line/00_Intro.md): Learn what Command Line is, and some handy resources you may want to bookmark.
+2. Set up:
     + [Mac Terminal](https://github.com/susanBuck/notes/blob/master/07_Command_Line/02_Mac-Terminal.md): For mac users: this doc will walk you through Terminal, which is the program you'll use to work in the Command Line. In addition to a basic intro, we'll also set you up with some handy customizations.
     + [Windows Cmder](https://github.com/susanBuck/notes/blob/master/07_Command_Line/03_Windows-Cmder.md): For Windows users: this doc will get you set up with Cmder, which is the Command Line program we'll be using. This doc will get you set up with everything you need.
+
+If you hit *any* bumps with the above instructions- don't fret! Feel free to show up to class early, and we can help you one-on-one. We can also go around and help anyone who is stuck at the start of the class.
+
+
+
+
+## Practice
 
 Now that you're set up, fire up Terminal or Cmder and let's get started.
 
@@ -16,11 +23,10 @@ $ cd ~/Documents
 
 Windows users:
 ```bash
-c:\Users\Susan
-&lambda; cd My Documents
+$ cd My Documents
 ```
 
-(Moving forward, the commands are the same of Mac/Users)
+(Moving forward, the commands are the same fo Mac/Users)
 
 Once you're there, run the command `pwd` (present working directory) which will output your current location so you can confirm you're in the right spot.
 ```bash
@@ -32,7 +38,7 @@ To see the contents of your Desktop, use the `ls` (list) command.
 $ ls
 ```
 
-Now on your desktop lets create a new, empty directory using the `mkdir` command. We'll call the directory `practice`
+Now on your desktop lets create a new, empty directory using the `mkdir` command. We'll call the directory `practice`.
 ```bash
 $ mkdir practice
 ```
@@ -62,10 +68,10 @@ $ nano example.txt
 
 Enter some text into the file, then hit `ctrl` + `x` to save your changes.
 
-Windows users, you can open it with plain old Notepad:
+Windows users won't have access to `nano`, so you can open the file with plain old Notepad:
 
 ```bash
-&lambda; notepad example.txt
+$ notepad example.txt
 ```
 
 This should bring up Notepad... enter some text, save your changes, then close Notepad.
@@ -85,7 +91,7 @@ $ rm -i example.txt
 remove example.text? (type 'y' for yes and hit Enter)
 ```
 
-Note the addition of the `-i`... This is a flag which is how you send extra instructions when using commands. In this case the `i` flag is short for interactive, which means it'll ask you before deleting files. It's a good habit to use the `i` flag when working with `rm` so you don't accidentally delete anything you didn't mean to.
+Note the addition of the `-i`... This is a **flag** which is how you send extra instructions when using commands. In this case the `i` flag is short for interactive, which means it'll ask you before deleting files. It's a good habit to use the `i` flag when working with `rm` so you don't accidentally delete anything you didn't mean to.
 
 To learn more about any of the commands so far, you can type `man` followed by the command name. This will tell you how to use the command and all the flag options you have.
 
@@ -95,7 +101,7 @@ $ man rm
 
 The output from the `man` command will often span multiple screens. Use the `Enter` key to page through the output, or hit `ctrl` + `C` to exit.
 
-That's the basics of working with directories and files with CL. See [Common Commands] for a quick cheat sheet on all the commands we used above.
+That's the basics of working with directories and files with CL. See [Common Commands](https://github.com/susanBuck/notes/blob/master/07_Command_Line/04_Common-commands.md) for a quick cheat sheet on all the commands we used above.
 
 Before we wrap up here, let's clean up the folder we created.
 
