@@ -12,11 +12,13 @@ In this course, we'll use a special build of Cmder that has the following benefi
 
 Download Cmder from this URL: <https://s3.amazonaws.com/making-the-internet/cmder.zip>
 
-Extract the resulting file to `C:\Program Files`.
+Extract the resulting file to `C:\Program Files` (extraction may take a few minutes).
 
-<img src='http://making-the-internet.s3.amazonaws.com/sysadmin-extract-cmder@2x.png' style='max-width:629px; width:100%'>
+<img src='http://making-the-internet.s3.amazonaws.com/sysadmin-extract-cmder@2x.png' style='max-width:400px; width:100%'>
 
 Within the extracted folder `C:\Program Files\cmder\`, you'll see the Cmder icon you can use to launch the program.
+
+<img src='http://making-the-internet.s3.amazonaws.com/sysadmin-cmder-in-destination@2x.png' class='' style='max-width:400px; width:100%' alt=''>
 
 That's all you need to do to get Cmder rolling. The rest of this doc includes some notes about how Cmder is customized, but requires no action on your part.
 

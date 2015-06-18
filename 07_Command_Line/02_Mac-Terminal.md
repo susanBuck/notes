@@ -66,7 +66,7 @@ For more details, run with the help flag:
 subl --help
 ```
 
-Ref: [https://www.sublimetext.com/docs/2/osx_command_line.html]
+Ref: <https://www.sublimetext.com/docs/2/osx_command_line.html>
 
 
 
