@@ -1,5 +1,7 @@
 ### Windows - **Cmder** 
 
+<img src='http://making-the-internet.s3.amazonaws.com/sysadmin-cmder@2x.png' style='max-width:920px; width:100%'>
+
 *Cmder* is a Windows front-end for the standard Windows Command Shell (aka `cmd.exe`).
 
 In this course, we'll use a special build of Cmder that has the following benefits/customizations:
@@ -10,15 +12,15 @@ In this course, we'll use a special build of Cmder that has the following benefi
 
 Download Cmder from this URL: <https://s3.amazonaws.com/making-the-internet/cmder.zip>
 
-To install Cmder, start by creating a new, blank folder in `c:\Program Files` called `Cmder`.
-<img src='http://making-the-internet.s3.amazonaws.com/sysadmin-create-new-folder-for-cmder@2x.png' class='' style='max-width:629px; width:100%' alt=''>
+Extract the resulting file to `C:\Program Files`.
 
-Then, extract the zip file you downloaded to this new folder:
-<img src='http://making-the-internet.s3.amazonaws.com/sysadmin-extract-cmder@2x.png' class='' style='max-width:817px; width:100%' alt=''>
+<img src='http://making-the-internet.s3.amazonaws.com/sysadmin-extract-cmder@2x.png' style='max-width:629px; width:100%'>
 
-Within the extracted folder, you'll see the Cmder icon you can use to launch the program.
+Within the extracted folder `C:\Program Files\cmder\`, you'll see the Cmder icon you can use to launch the program.
 
 That's all you need to do to get Cmder rolling. The rest of this doc includes some notes about how Cmder is customized, but requires no action on your part.
+
+
 
 
 ## Basic settings
