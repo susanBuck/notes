@@ -3,9 +3,9 @@ Git is a command line tool, so before digging into Git it'll be useful to go ove
 1. [Intro](https://github.com/susanBuck/notes/blob/master/07_Command_Line/00_Intro.md): Learn what Command Line is, and some handy resources you may want to bookmark.
 2. Set up:
     + [Mac Terminal](https://github.com/susanBuck/notes/blob/master/07_Command_Line/02_Mac-Terminal.md): For Mac users: this doc will walk you through Terminal, which is the program you'll use to work in the Command Line. In addition to a basic intro, we'll also set you up with some handy customizations.
-    + [Windows Cmder](https://github.com/susanBuck/notes/blob/master/07_Command_Line/03_Windows-Cmder.md): For Windows users: this doc will get you set up with Cmder, which is the Command Line program we'll be using. This doc will get you set up with everything you need.
+    + [Windows Cmder](https://github.com/susanBuck/notes/blob/master/07_Command_Line/03_Windows-Cmder.md): For Windows users: this doc will get you set up with Cmder, which is the Command Line program we'll be using. 
 
-If you hit *any* bumps with the above instructions, don't fret! Feel free to show up to class early, and we can help you one-on-one. We can also go around and help anyone who is stuck at the start of the class.
+**If you hit *any* bumps with the above instructions, don't fret! Feel free to show up to class early, and we can help you one-on-one. We can also go around and help anyone who is stuck at the start of the class.**
 
 
 
@@ -14,31 +14,40 @@ If you hit *any* bumps with the above instructions, don't fret! Feel free to sho
 
 Now that you're set up, fire up Terminal or Cmder and let's get started.
 
-One of the things you'll do most in CL is work with files on your computer and navigate around directories. To start, let's move to your Desktop folder using the `cd` (change directory command). The location of your Desktop on Mac and Windows is slightly different, so run the respective command below:
+One of the things you'll do most in CL is work with files on your computer and navigate around directories.
 
-Mac users:
-```bash
-$ cd ~/Documents
-```
+When you first open Terminal/Cmder you should be in your home directory, and you can confirm this by typing in the command `pwd` which is short for *present working directory*, i.e. *where am I?*
 
-Windows users:
-```bash
-$ cd My Documents
-```
+In my case, on a Mac I see this as a result of pwd:
 
-(Moving forward, the commands are the same for Mac/Windows users)
-
-Once you're there, run the command `pwd` (present working directory) which will output your current location so you can confirm you're in the right spot.
 ```bash
 $ pwd
+/Users/Susan
 ```
 
-To see the contents of your Desktop, use the `ls` (list) command.
+On Windows, I see this:
+
+```bash
+$ pwd
+c:\Users\Susan
+```
+
+Next, type in the command `ls` (list) which will show you everything in your home direcory.
+
+One of the directories you should see listed is your Desktop.
+
+Move to your Desktop folder using the `cd` (change directory command). 
+
+```bash
+$ cd Desktop
+```
+
+Use the `ls` (list) command again to see the contents of your Desktop:
 ```bash
 $ ls
 ```
 
-Now on your desktop let's create a new, empty directory using the `mkdir` command. We'll call the directory `practice`.
+On the desktop let's create a new, empty directory using the `mkdir` command. We'll call the directory `practice`.
 ```bash
 $ mkdir practice
 ```
@@ -103,7 +112,7 @@ The output from the `man` command will often span multiple screens. Use the `Ent
 
 Those are the basics of working with directories and files with CL. See [Common Commands](https://github.com/susanBuck/notes/blob/master/07_Command_Line/04_Common-commands.md) for a quick cheat sheet on all the commands we used above.
 
-Before we wrap up here, let's clean up the `practice` folder we created.
+Before we wrap up, let's clean up the `practice` folder we created.
 
 First, run the following command to move up one directory (i.e., out of the `practice` directory):
 
@@ -128,5 +137,27 @@ If git is installed, you'll see a bunch of instructions and you're good to go.
 
 Cmder comes with Git installed, so Windows users are all set.
 
-Mac users, however, may see *Command not found* when they try to run `git`. To fix this, head over to <https://git-scm.com/downloads> and click the link to download Git for Mac. Once it's installed, run the installer, then close and re-open Terminal (this step is important!). Try running `git` again and you should be all set.
+Mac users, however, may see *Command not found* when they try to run `git`. 
+
+To fix this, head over to <https://git-scm.com/downloads> and click the link to download Git for Mac. 
+
+Once it's installed, run the installer, then close and re-open Terminal (this step is important!). 
+
+Try running `git` again and you should be all set.
+
+
+## In conclusion...
+
+There's lots more you can do in CL besides working with files and directories. The above exercise was just to get you familiar with working with commands and some basic navigation.
+
+As mentioned above, don't fret if you hit any bumps. We'll be on hand before, during and after class to walk you through any issues.
+
+See you in class!
+
+
+
+
+
+
+
 
