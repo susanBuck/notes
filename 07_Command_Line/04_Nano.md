@@ -1,6 +1,6 @@
-There are many ways you can edit text files on your computer... You can use a GUI like TextEdit (Mac), Notepad (Win), Sublime Text, etc. Or you can use a Command Line based text editor such as nano, vim, and vi.
+There are many ways you can edit text files on your computer. You can use a GUI like TextEdit (Mac), Notepad (Windows), Sublime Text, etc. Or you can use a Command Line based text editor such as nano, vim, or vi.
 
-Some developers love CL editors, others prefer GUIs. If you're in the latter category, there will still be times when you need to use a CL text editor because a GUI editor will have limitations. For example...
+Some developers love CL editors, others prefer GUIs. If you're in the latter category, there will still be times when you need to use a CL text editor because a GUI editor will have limitations. For example:
 
 1. Some files are locked/read-only and needs administrator privileges to alter; your GUI editor may let you open the file, but it won't let you save.
 
@@ -8,7 +8,7 @@ Some developers love CL editors, others prefer GUIs. If you're in the latter cat
 
 3. You're SSH'd into a live server where you can't open files directly in your GUI.
 
-Given this, it's important to feel comfortable with a CL based editor. For our purposes, we'll use **nano**. It's not the most powerful CL editor, but it'll get the job done and it's the simplist to work with.
+Given this, it's important to feel comfortable with a CL based editor. For our purposes, we'll use **nano**. It's not the most powerful CL editor, but it'll get the job done and it's the simplest to work with.
 
 Let's look at how to use nano...
 
@@ -40,7 +40,7 @@ After hitting `^X` it will ask you if you want to save. Type the letter `y` for 
 
 <img src='http://making-the-internet.s3.amazonaws.com/sysadmin-nano-edit@2x.png' class='' style='max-width:989px; width:100%' alt=''>
 
-For a quick reference of shortcuts available in nano check out this [cheat sheet](http://mintaka.sdsu.edu/reu/nano.html) and for a more thorough set of documentation check out the [nano editor homepage](http://www.nano-editor.org/).
+For a quick reference of shortcuts available in nano check out this [cheat sheet](http://mintaka.sdsu.edu/reu/nano.html) and for more thorough documentation check out the [nano editor homepage](http://www.nano-editor.org/).
 
 
 
@@ -55,7 +55,7 @@ On Mac/Unix environments, you can prefix your `nano` command with [sudo](http://
 $ sudo nano example.txt
 ```
 
-In Windows/Cmder, you can use the elevate command:
+In Windows/Cmder, you can use the [elevate](http://code.kliu.org/misc/elevate/) command:
 
 ```bash
 $ elevate nano example.txt

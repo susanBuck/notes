@@ -29,12 +29,12 @@ $ cd My Documents
 (Moving forward, the commands are the same for Mac/Windows users)
 
 Once you're there, run the command `pwd` (present working directory) which will output your current location so you can confirm you're in the right spot.
-```
+```bash
 $ pwd
 ```
 
 To see the contents of your Desktop, use the `ls` (list) command.
-```
+```bash
 $ ls
 ```
 
@@ -48,7 +48,7 @@ Now, move into this new directory:
 $ cd practice
 ```
 
-Now that we're in here, let's create a new file called `touch example.txt` with the `touch` command:
+Now that we're in here, let's create a new file called `example.txt` with the `touch` command:
 ```bash
 $ touch example.txt
 ```
@@ -74,7 +74,7 @@ Windows users won't have access to `nano`, so you can open the file with plain o
 $ notepad example.txt
 ```
 
-This should bring up Notepad... enter some text, save your changes, then close Notepad.
+This should bring up Notepad. Enter some text, save your changes, then close Notepad.
 
 To confirm your changes were made, both Mac and Windows users can use the `cat` (concatenate) command which will output the contents of any text file directly in the console:
 
@@ -84,7 +84,7 @@ $ cat example.txt
 
 Look good?
 
-We've created a file, we've edited it, now lets delete it by running this command:
+We've created a file, we've edited it, now let's delete it by running this command:
 
 ```bash
 $ rm -i example.txt
@@ -101,11 +101,11 @@ $ man rm
 
 The output from the `man` command will often span multiple screens. Use the `Enter` key to page through the output, or hit `ctrl` + `C` to exit.
 
-That's the basics of working with directories and files with CL. See [Common Commands](https://github.com/susanBuck/notes/blob/master/07_Command_Line/04_Common-commands.md) for a quick cheat sheet on all the commands we used above.
+Those are the basics of working with directories and files with CL. See [Common Commands](https://github.com/susanBuck/notes/blob/master/07_Command_Line/04_Common-commands.md) for a quick cheat sheet on all the commands we used above.
 
-Before we wrap up here, let's clean up the folder we created.
+Before we wrap up here, let's clean up the `practice` folder we created.
 
-First, run the following command to move up one directory...i.e. out of the `example` directory:
+First, run the following command to move up one directory (i.e., out of the `practice` directory):
 
 ```bash
 $ cd ../
@@ -113,7 +113,7 @@ $ cd ../
 
 And now delete:
 ```bash
-$ rm -i example
+$ rm -i practice
 ```
 
 ## Installing git
@@ -128,5 +128,5 @@ If git is installed, you'll see a bunch of instructions and you're good to go.
 
 Cmder comes with Git installed, so Windows users are all set.
 
-Mac users, however, may see *Command not found* when they try to run `git`. To fix this, head over to <https://git-scm.com/downloads> and click the link to download Git for Mac. Once it's installed, run the installer then close and re-open Terminal (this step is important!). Try running `git` again and you should be all set.
+Mac users, however, may see *Command not found* when they try to run `git`. To fix this, head over to <https://git-scm.com/downloads> and click the link to download Git for Mac. Once it's installed, run the installer, then close and re-open Terminal (this step is important!). Try running `git` again and you should be all set.
 
