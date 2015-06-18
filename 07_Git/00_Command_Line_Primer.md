@@ -5,7 +5,7 @@ Git is a command line tool, so before digging into Git it'll be useful to go ove
     + [Mac Terminal](https://github.com/susanBuck/notes/blob/master/07_Command_Line/02_Mac-Terminal.md): For Mac users: this doc will walk you through Terminal, which is the program you'll use to work in the Command Line. In addition to a basic intro, we'll also set you up with some handy customizations.
     + [Windows Cmder](https://github.com/susanBuck/notes/blob/master/07_Command_Line/03_Windows-Cmder.md): For Windows users: this doc will get you set up with Cmder, which is the Command Line program we'll be using. This doc will get you set up with everything you need.
 
-If you hit *any* bumps with the above instructions- don't fret! Feel free to show up to class early, and we can help you one-on-one. We can also go around and help anyone who is stuck at the start of the class.
+If you hit *any* bumps with the above instructions, don't fret! Feel free to show up to class early, and we can help you one-on-one. We can also go around and help anyone who is stuck at the start of the class.
 
 
 
@@ -14,7 +14,7 @@ If you hit *any* bumps with the above instructions- don't fret! Feel free to sho
 
 Now that you're set up, fire up Terminal or Cmder and let's get started.
 
-One of the things you'll do most in CL is work with files on your computer and navigate around directories. To start, lets move to your Desktop folder using the `cd` (change directory command). The location of your Desktop on Mac and Windows is slightly different, so run the respective command below:
+One of the things you'll do most in CL is work with files on your computer and navigate around directories. To start, let's move to your Desktop folder using the `cd` (change directory command). The location of your Desktop on Mac and Windows is slightly different, so run the respective command below:
 
 Mac users:
 ```bash
@@ -26,19 +26,19 @@ Windows users:
 $ cd My Documents
 ```
 
-(Moving forward, the commands are the same fo Mac/Users)
+(Moving forward, the commands are the same for Mac/Windows users)
 
 Once you're there, run the command `pwd` (present working directory) which will output your current location so you can confirm you're in the right spot.
-```bash
+```
 $ pwd
 ```
 
 To see the contents of your Desktop, use the `ls` (list) command.
-```bash
+```
 $ ls
 ```
 
-Now on your desktop lets create a new, empty directory using the `mkdir` command. We'll call the directory `practice`.
+Now on your desktop let's create a new, empty directory using the `mkdir` command. We'll call the directory `practice`.
 ```bash
 $ mkdir practice
 ```

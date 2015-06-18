@@ -10,7 +10,7 @@ In this course, we'll use a special build of Cmder that has the following benefi
 
 Download Cmder from this URL: <https://github.com/bliker/cmder/releases/download/v1.1.4.1/cmder.zip>
 
-To install Cmder, start by creating a new, blank folder in `c:\Program Files` called `cmder`.
+To install Cmder, start by creating a new, blank folder in `c:\Program Files` called `Cmder`.
 <img src='http://making-the-internet.s3.amazonaws.com/sysadmin-create-new-folder-for-cmder@2x.png' class='' style='max-width:629px; width:100%' alt=''>
 
 Then, extract the zip file you downloaded to this new folder:
@@ -46,6 +46,6 @@ Run `alias name=full command` to create an alias, or edit `config/aliases`.
 
 
 ## Customizing the prompt
-Done gia `config/prompt.lua` or `config/git.lua` when you're in a git repository.
+Done via `config/prompt.lua` or `config/git.lua` when you're in a git repository.
 
 
