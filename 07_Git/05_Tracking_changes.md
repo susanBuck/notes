@@ -24,7 +24,7 @@ Next, commit this change using the `commit` command, plus the `-m` switch which 
 
 <img src='http://making-the-internet.s3.amazonaws.com/vc-git-commit.png?@2x' class='' style='max-width:589px; width:75%' alt=''>
 
-Finally, push this change to Github.com. 
+Finally, push this change to Github.com. [](For me, this has always been "git push origin master" but I think we can sort that out.)
 
 	$ git push github master
 	
