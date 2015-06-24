@@ -5,7 +5,6 @@ We're going to use CL because this gives you the most powerful and consistent ac
 
 Once you get the hang of CL you can explore some visual apps.
 
-
 ## See if Git is installed
 
 First, let's see if your computer already has Git installed by running the `git` command:
@@ -13,7 +12,6 @@ First, let's see if your computer already has Git installed by running the `git`
 ```bash
 $ git
 ```
-
 
 If you see a readout of a bunch of commands, it means Git is installed and you're good to go; skip down to the section titled *Initial Git Configuration*.
 
@@ -27,32 +25,40 @@ If, however, you see an error telling you the command `git` is not recognized or
 
 <img src='http://making-the-internet.s3.amazonaws.com/vc-git-not-installed.png'>
 
-Windows Users: If you're using *Cmder* and you downloaded the full version (as suggested), it comes with Git installed, so the above command should definitely show that Git ready to go.
+## Windows Users
+If you're using *cmder* and you downloaded the full version (as suggested), it comes with Git installed, so the above command should definitely show that Git ready to go. 
 
+## Install Git using a package manager
+If you're using Mac OS or a Linux distribution, and Git was *not* yet installed, we're going to install it using a package manager.
 
+### Mac OS
+On a Mac, we recommend using [homebrew](http://brew.sh/). You can install homebrew by running this command in your terminal:
+```bash
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+```
+You can use homebrew to install a lot of other command line tools used in web development. Homebrew will also keep track of all the dependencies necessary to make any given tool work as well as make it easy to update command line tools that you've installed using homebrew.
+[](Need to check if brew install requires opening a new terminal or aliasing git etc.)
 
-
-## Download and install Git
-If Git was *not* yet installed, head to the [download page](http://git-scm.com/downloads) and choose your operating system. [](Is homebrew for mac users too ambitious? I find that it's best to adopt it early, otherwise package management in Mac OS starts to get ugly.)
-
-Download the program and run through installation.
-
-**Once installation is complete, close and re-open your CL program.** 
-
-Now, try the `git` command again. Do you see a bunch of instructions and commands related to Git? Good, you're all set! 
-
-If you don't&mdash; are you sure you completely closed and re-opened your CL shell? 
-
+### Linux
+On debian-based systems:
+```bash
+sudo apt-get install git
+```
+On RedHat-based systems:
+```bash
+yum install git
+```
+## Other installation resources
 If you're running an **older operating system** and the latest Git build doesn't work, you may have to try an older version of git. [You can find older builds of git here.](https://code.google.com/p/git-osx-installer/)
 
 __Tips:__
 
-Find out what version of git you're running: [](If git is bundled with Mac OS we may need to make an upgrade recommendation. I'm pretty sure it's not, but it's definitely undesirable to have anyone working on, say, sub-1.7. If we have linux users, may also check on bundled versions there, but they are likely to be newer. Mac bundles horribly old versions of things.)
+Find out what version of git you're running: 
 ```bash
 $ git --version
 ```
 
-Find out where git is installed on Mac:
+Find out where git is installed on Mac or Linux:
 
 ```bash
 $ which git
@@ -64,11 +70,8 @@ Find out where git is installed on Windows:
 $ where.exe git
 ```
 
-
-
-
 ## Initial Git configuration
-
+[](Move this all to a configuration slide?)
 Once you've confirmed Git is installed, you need to do some initial setup.
 
 Run the following commands to set a user name and email key to be associated with any commits coming from your computer. Replace the name and email with your own details.
@@ -83,7 +86,6 @@ Run the following command to make any Git input color coded (i.e. easier to read
 ```bash
 $ git config --global color.ui true
 ```
-
 
 ## Which text editor to use
 
