@@ -5,13 +5,31 @@ For the following scenario, we're going to create a new project called `hello-wo
 
 ## Set up your practice project
 
-Create a new directory in the document root of your local server called `hello-world`. 
+Move into your home directory, and create a new directory called `dev`. This is where you'll put all your repos.
+
+Move into `dev` and create a new project called `hello-world`.
+
+Move into `hello-world`.
+
+Mac users:
+
+    cd ~/
+    mkdir dev
+    cd dev
+    mkdir hello-world 
+    cd hello-world
+
+Windows users:
+
+    cd c:\Users\Your-Username\
+    mkdir dev
+    cd dev
+    mkdir hello-world
+    cd hello-world
 
 Within this directory, create a new file called `README.md` with the following contents:
 
-
     # Hello World
-
     Just for practice
 
 
@@ -20,10 +38,8 @@ Within this directory, create a new file called `README.md` with the following c
 
 From CL, within your `hello-world` directory, run the command `git init`. 
 
-For example:
+Example:
 
-
-    $ cd /Applications/MAMP/htdocs/hello-world
     $ git init
     Initialized empty Git repository in /Users/Susan/Sites/hello-world/.git/
 
