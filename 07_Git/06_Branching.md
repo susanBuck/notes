@@ -100,12 +100,12 @@ If you tell Github to switch to prizes, and then go to "Commits" you'll see your
 If you switch it back to master and then go to "Commits" you'll see it's not there. This is good.
 
 
-At this point, your collaborator may want to look at your work on their local environment. To do that, they would run this command:
+At this point, your collaborator may want to look at your work on their local environment. To do that, they would run these commands:
 
-	git pull origin prizes 
+	git fetch
+	git checkout prizes
 
-Now they too will have that branch on their local system and they can "checkout" into that branch to see your code.
-You can both "pass" back and forth code changes this way, without ever messing with the master branch.
+Now they can look at the changes you've made, and even run your code on their local server. You can both "pass" back and forth code changes this way, without ever messing with the master branch.
 
 
 ## Merging your branch
@@ -123,16 +123,18 @@ Then run git merge followed by the name of the branch you wish to merge
 	 mydomain.com/controllers/c_index.php |    7 +++++++
 	 1 file changed, 7 insertions(+)
 
-Now that we've merged, we'll need to do a "git push" because our master branch now has a bunch of commits waiting from the prizes branch we just merged on.
+Now that we've merged, we'll need to do a "git push" because our master branch now has a bunch of commits waiting from the prizes branch we just merged into master.
 
 ## Keeping your branch updated
 
 When working on a branch you can / should try and keep it up to date with the master branch to avoid conflicts down the road.
 
+	git checkout master
+	git pull
 	git checkout prizes
-	git pull origin master
+	git merge master
 
-Once you do this, it will initiate a new commit of all the changes. Make sure you push this commit to your branch, not the master branch. When using a GUI it can be easy to make this mistake...because you just did a pull from master to branch...If you were to hit push it'd go branch to master when you really want branch to branch.
+This will merge any changes made in the master branch into your feature branch. If you have any merge conflicts, you will have to resolve them, but as a general rule, it's better to do this early and often. That way, any merge conflicts will be small and manageable, and your memory of your code will be fresh so that you can make sure to keep the right lines of code for each conflict.
 
 
 <!--
