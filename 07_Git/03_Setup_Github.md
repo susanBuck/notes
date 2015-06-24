@@ -72,7 +72,7 @@ Find the **SSH Keys** section.
 
 Click **Add SSH Key**.
 
-<img src='http://making-the-internet.s3.amazonaws.com/vc-github-add-ssh-key@2x.png' class='' style='max-width:1055px; width:100%' alt='Github: Add a new SSH key'>
+<img src='http://making-the-internet.s3.amazonaws.com/vc-github-add-ssh-key.png?@2x' class='' style='max-width:1055px; width:100%' alt='Github: Add a new SSH key'>
 
 In the *Title* field, add a descriptive label for the new key. For example, if you're using your own Mac, you might call this key *"Personal MacBook Air"*.
 
