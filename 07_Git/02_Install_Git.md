@@ -38,7 +38,7 @@ If you're using *cmder* and you downloaded the full version (as suggested), it c
 
 
 ## Install Git using a package manager
-If you're using Mac OS or a Linux distribution, and Git was *not* yet installed, we're going to install it using a package manager.
+If you're using Mac OS or a Linux distribution, and Git was *not* yet installed, we're going to install it using a package manager. 
 
 ### Mac OS
 On a Mac, we recommend using [homebrew](http://brew.sh/). You can install homebrew by running this command in your terminal:
