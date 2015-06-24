@@ -1,16 +1,14 @@
 Welcome to Version Control with Git!
 
-The following documents are intended to get you rolling with Git by understanding the following compoenents:
+The following documents are intended to get you rolling with Git by understanding the following components:
 
 * What is Git/Version Control and why we use it.
-* Setting up a local development environment.
+* Tracking changes to your code using git
 * Working with repositories and Github.com.
-* Deploying work to your live servers.
 * Briefly covered: Branching / Stashing.
 
 Some Git-essentials *not* covered here:
 
-* Checking out changes
 * Merging
 * Forking
 * Reverting commits
