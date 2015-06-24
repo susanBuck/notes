@@ -43,36 +43,32 @@ Edit your README.md file adding the date to the top of the file.
 
 Also, add a new file called `index.php` and include this code:
 
-```html
-<h1>Hello World!</h1>
-```
+    <h1>Hello World!</h1>
+
 
 Now lets track these changes in Github (one edit of an existing file, one new file).
 
 You can stage the files one at a time:
 
-```
-$ git add README.md
-$ git add index.php
-```
+
+    $ git add README.md
+    $ git add index.php
+
 	
 Or you can use this command to stage any changed or new files:
 
-```bash
-$ git add --all
-```
+    $ git add --all
+
 
 Once your changes are staged, commit:
 
-```bash
-$ git commit -m "Updated readme file; added index file."
-```
+    $ git commit -m "Updated readme file; added index file."
+
 
 And finally, push your commit:
 
-```bash
-$ git push github master
-```
+    $ git push github master
+
 
 Check your repository in Github.com to make sure the commit is there.
 

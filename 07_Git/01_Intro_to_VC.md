@@ -23,7 +23,8 @@ There are different VC systems but for this class we'll be using Git:
 + Storing your code in a Git repository serves as an ongoing backup of your code.
 
 ## How it works
-<img src='http://making-the-internet.s3.amazonaws.com/vc-local-to-git-and-live-server-alternative@2x.png' style='max-width:540px;'>
+
+<img src='http://making-the-internet.s3.amazonaws.com/vc-local-to-git-and-live-server-alternative.png?@2x' style='max-width:540px;'>
 
 Working with VC/Git, you'll end up with at least three copies of your code base.
 

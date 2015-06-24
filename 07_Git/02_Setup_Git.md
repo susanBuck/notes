@@ -9,15 +9,14 @@ Once you get the hang of CL you can explore some visual apps.
 
 First, let's see if your computer already has Git installed by running the `git` command:
 
-```bash
-$ git
-```
+    $ git
+
 
 If you see a readout of a bunch of commands, it means Git is installed and you're good to go; skip down to the section titled *Initial Git Configuration*.
 
 *Git is installed:*
 
-<img src='http://making-the-internet.s3.amazonaws.com/vc-git-success@2x.png' style='max-width:589px; width:100%'> 
+<img src='http://making-the-internet.s3.amazonaws.com/vc-git-success.png?@2x' style='max-width:589px; width:100%'> 
 
 If, however, you see an error telling you the command `git` is not recognized or not found, you'll need to install Git.
 
@@ -33,42 +32,42 @@ If you're using Mac OS or a Linux distribution, and Git was *not* yet installed,
 
 ### Mac OS
 On a Mac, we recommend using [homebrew](http://brew.sh/). You can install homebrew by running this command in your terminal:
-```bash
-ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-```
+
+    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
 You can use homebrew to install a lot of other command line tools used in web development. Homebrew will also keep track of all the dependencies necessary to make any given tool work as well as make it easy to update command line tools that you've installed using homebrew.
 [](Need to check if brew install requires opening a new terminal or aliasing git etc.)
 
 ### Linux
 On debian-based systems:
-```bash
-sudo apt-get install git
-```
+
+    sudo apt-get install git
+
 On RedHat-based systems:
-```bash
-yum install git
-```
+
+    yum install git
+
 ## Other installation resources
 If you're running an **older operating system** and the latest Git build doesn't work, you may have to try an older version of git. [You can find older builds of git here.](https://code.google.com/p/git-osx-installer/)
 
 __Tips:__
 
 Find out what version of git you're running: 
-```bash
-$ git --version
-```
+
+    $ git --version
+
 
 Find out where git is installed on Mac or Linux:
 
-```bash
-$ which git
-```
+
+    $ which git
+
 
 Find out where git is installed on Windows:
 
-```bash
-$ where.exe git
-```
+
+    $ where.exe git
+
 
 ## Initial Git configuration
 [](Move this all to a configuration slide?)
@@ -76,16 +75,14 @@ Once you've confirmed Git is installed, you need to do some initial setup.
 
 Run the following commands to set a user name and email key to be associated with any commits coming from your computer. Replace the name and email with your own details.
 
-```bash
-$ git config --global user.name "Sam Seaborn"
-$ git config --global user.email sam@gmail.com
-```
+    $ git config --global user.name "Sam Seaborn"
+    $ git config --global user.email sam@gmail.com
+
 
 Run the following command to make any Git input color coded (i.e. easier to read):
 
-```bash
-$ git config --global color.ui true
-```
+    $ git config --global color.ui true
+
 
 ## Which text editor to use
 

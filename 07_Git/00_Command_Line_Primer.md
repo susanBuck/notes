@@ -1,3 +1,5 @@
+## Command Line Primer
+
 Git is a command line tool, so before digging into Git it'll be useful to go over some basics of working in the command line (CL). In the following primer, we'll cover instructions for getting your command line set up, as well as some basic commands.
 
 1. [Intro](https://github.com/susanBuck/notes/blob/master/07_Command_Line/00_Intro.md): Learn what Command Line is, and some handy resources you may want to bookmark.
@@ -20,17 +22,17 @@ When you first open Terminal/Cmder you should be in your home directory, and you
 
 In my case, on a Mac I see this as a result of pwd:
 
-```bash
-$ pwd
-/Users/Susan
-```
+
+    $ pwd
+    /Users/Susan
+
 
 On Windows, I see this:
 
-```bash
-$ pwd
-c:\Users\Susan
-```
+
+    $ pwd
+    c:\Users\Susan
+
 
 Next, type in the command `ls` (list) which will show you everything in your home direcory.
 
@@ -38,75 +40,72 @@ One of the directories you should see listed is your Desktop.
 
 Move to your Desktop folder using the `cd` (change directory command). 
 
-```bash
-$ cd Desktop
-```
+
+    $ cd Desktop
+
 
 Use the `ls` (list) command again to see the contents of your Desktop:
-```bash
-$ ls
-```
+
+    $ ls
+
 
 On the desktop let's create a new, empty directory using the `mkdir` command. We'll call the directory `practice`.
-```bash
-$ mkdir practice
-```
+
+    $ mkdir practice
+
 
 Now, move into this new directory:
-```bash
-$ cd practice
-```
+
+    $ cd practice
+
 
 Now that we're in here, let's create a new file called `example.txt` with the `touch` command:
-```bash
-$ touch example.txt
-```
+
+    $ touch example.txt
+
 
 Use the `ls` command again to see that the file was created: 
-```bash
-$ ls 
-```
+
+    $ ls 
+
 
 Now let's edit this file...
 
 Mac users you can edit it directly in the CL with a program called `nano`:
 
-```bash
-$ nano example.txt
-```
+    $ nano example.txt
 
 Enter some text into the file, then hit `ctrl` + `x` to save your changes.
 
 Windows users won't have access to `nano`, so you can open the file with plain old Notepad:
 
-```bash
-$ notepad example.txt
-```
+    $ notepad example.txt
+
 
 This should bring up Notepad. Enter some text, save your changes, then close Notepad.
 
 To confirm your changes were made, both Mac and Windows users can use the `cat` (concatenate) command which will output the contents of any text file directly in the console:
 
-```bash
-$ cat example.txt
-```
+
+    $ cat example.txt
+
 
 Look good?
 
 We've created a file, we've edited it, now let's delete it by running this command:
 
-```bash
-$ rm -i example.txt
-remove example.text? (type 'y' for yes and hit Enter)
-```
+
+    $ rm -i example.txt
+    remove example.text? (type 'y' for yes and hit Enter)
+
 
 Note the addition of the `-i`... This is a **flag** which is how you send extra instructions when using commands. In this case the `i` flag is short for interactive, which means it'll ask you before deleting files. It's a good habit to use the `i` flag when working with `rm` so you don't accidentally delete anything you didn't mean to.
 
 To learn more about any of the commands so far, you can type `man` followed by the command name. This will tell you how to use the command and all the flag options you have.
 
-```bash
-$ man rm
-```
+
+    $ man rm
+
 
 The output from the `man` command will often span multiple screens. Use the `Enter` key to page through the output, or hit `ctrl` + `C` to exit.
 
@@ -116,22 +115,22 @@ Before we wrap up, let's clean up the `practice` folder we created.
 
 First, run the following command to move up one directory (i.e., out of the `practice` directory):
 
-```bash
-$ cd ../
-```
+
+    $ cd ../
+
 
 And now delete:
-```bash
-$ rm -i practice
-```
+
+    $ rm -i practice
+
 
 ## Installing git
 
 To see if Git is installed on your computer, run this command:
 
-```bash
-$ git
-```
+
+    $ git
+
 
 If git is installed, you'll see a bunch of instructions and you're good to go. 
 

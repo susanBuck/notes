@@ -9,11 +9,11 @@ Create a new directory in the document root of your local server called `hello-w
 
 Within this directory, create a new file called `README.md` with the following contents:
 
-```markdown
-# Hello World
 
-Just for practice
-```
+    # Hello World
+
+    Just for practice
+
 
 
 ## Initiate your repository
@@ -22,11 +22,11 @@ From CL, within your `hello-world` directory, run the command `git init`.
 
 For example:
 
-```bash
-$ cd /Applications/MAMP/htdocs/hello-world
-$ git init
-Initialized empty Git repository in /Users/Susan/Sites/hello-world/.git/
-```
+
+    $ cd /Applications/MAMP/htdocs/hello-world
+    $ git init
+    Initialized empty Git repository in /Users/Susan/Sites/hello-world/.git/
+
 
 
 
@@ -38,11 +38,11 @@ In Github, create a __New Repository__ called `hello-world`.
  
 Use the following settings:
 
-<img src='http://making-the-internet.s3.amazonaws.com/vc-hello-world-repository-on-github@2x.png' style='max-width:875px; width:100%'>
+<img src='http://making-the-internet.s3.amazonaws.com/vc-hello-world-repository-on-github.png?@2x' style='max-width:875px; width:100%'>
 
 After your repository is created, copy the SSH URL for your repository at Github: 
 
-<img src='http://making-the-internet.s3.amazonaws.com/vc-get-repo-url@2x.png' style='max-width:1019px; width:100%'>
+<img src='http://making-the-internet.s3.amazonaws.com/vc-get-repo-url.png?@2x' style='max-width:1019px; width:100%'>
 
 
 
@@ -51,24 +51,21 @@ After your repository is created, copy the SSH URL for your repository at Github
 
 Returning to CL on your computer, run this command, replacing the SSH URL with the one you copied in the above step:
 
-```bash
-$ git remote add github git@github.com:username/hello-world.git
-```
+    $ git remote add github git@github.com:username/hello-world.git
+
 
 This will create a connection between your local repository and the remote repository at Github.com. `github` is the nickname we're giving this connection.
 
 You can use this command to verify your remote was added:
 
-```bash
-$ git remote -v
-```
+    $ git remote -v
+
 	
 Example results:
 
-```bash
-github	git@github.com:susanBuck/hello-world.git (fetch)
-github	git@github.com:susanBuck/hello-world.git (push)
-```
+    github	git@github.com:susanBuck/hello-world.git (fetch)
+    github	git@github.com:susanBuck/hello-world.git (push)
+
 
 ## Tips
 

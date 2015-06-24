@@ -25,29 +25,28 @@ Via CL, move into your `.ssh` directory:
 
 Mac: 
 
-```bash
-$ cd /Users/YourName/.ssh
-```
+    $ cd /Users/YourName/.ssh
+
 
 Windows:
 
-```bash
-$ cd C:\Users\YourName\.ssh
-```
+
+    $ cd C:\Users\YourName\.ssh
+
 	
 If this `.ssh` directory does not exist, it's okay&mdash; the next step will generate it for you.
 
 Generate a new SSH key with the following command:
 
-```bash
-$ ssh-keygen -t rsa -C "your_email@example.com"
-```
+
+    $ ssh-keygen -t rsa -C "your_email@example.com"
+
 	
 When it asks you for the filename, hit Enter (it will default it `id_rsa`).
 
-```bash
-Enter file in which to save the key (/Users/YourName/.ssh/id_rsa): [Press enter]
-```
+
+    Enter file in which to save the key (/Users/YourName/.ssh/id_rsa): [Press enter]
+
 
 When it asks you for a passphrase you can either create one or leave it blank. Regardless, hit Enter when you're done. 
 Same for when it asks you to confirm your passphrase.
@@ -61,10 +60,7 @@ At this point, if you list the contents in the `.ssh` directory you should see t
 	
 (Mac users only) Add your new key to the ssh-agent:
  
-```bash
-$ ssh-add id_rsa
-```
-[](If people are using ssh-agent, they should be able to use a passphrase on their key and not have to enter it every time they push or pull. This is definitely the best practice option. However, if using a passphrase will require them to enter it every time they push or pull, i.e. maybe on Windows, then we should not recommend that. Would like to pin down these recommendations.)
+    $ ssh-add id_rsa
 
 
 
@@ -84,15 +80,13 @@ For the *Key* field, you want to paste the contents of the `id_rsa.pub` file tha
 
 To view this file in order to copy its contents, you can use the `cat` command:
 
-```bash
-$ cat id_rsa.pub
-```
+    $ cat id_rsa.pub
+
 
 Your key will look something like this:
 
-```bash
-ssh-rsa [LONG STRING OF RANDOM CHARACTERS]== your@email.com
-```
+    ssh-rsa [LONG STRING OF RANDOM CHARACTERS]== your@email.com
+
 
 With the contents of `id_rsa.pub` in your clipboard, paste the contents into the *Key* textarea.
 	
@@ -102,25 +96,24 @@ Finally, click **Add key**.
 
 To test your new SSH key, run the following command to connect to Github over SSH:
 
-```bash
-$ ssh -T git@github.com
-```
+
+    $ ssh -T git@github.com
 
 You may see this warning:	
 
-```bash
-The authenticity of host 'github.com (207.97.227.239)' can't be established.
-# RSA key fingerprint is 16:27:ac:a5:76:28:2d:36:63:1b:56:4d:eb:df:a6:48.
-# Are you sure you want to continue connecting (yes/no)?
-```
+
+    The authenticity of host 'github.com (207.97.227.239)' can't be established.
+    # RSA key fingerprint is 16:27:ac:a5:76:28:2d:36:63:1b:56:4d:eb:df:a6:48.
+    # Are you sure you want to continue connecting (yes/no)?
+
 	
 Type `yes` and hit enter.
 
 If all went well, you should see this message:
 
-```bash
-Hi username! You've successfully authenticated, but GitHub does not provide shell access.
-```
+
+    Hi username! You've successfully authenticated, but GitHub does not provide shell access.
+
 	
 If that username is yours, you've successfully set up your SSH key.
 

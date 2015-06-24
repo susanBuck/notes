@@ -2,10 +2,10 @@
 
 If you ever find yourself backed into a corner with lots of merges and conflicts you're unsure how to resolve, there's a last-resort solution with the following commands (replace `origin` with the name of your remote):
 
-```bash
-$ git fetch --all
-$ git reset --hard origin/master
-```
+
+    $ git fetch --all
+    $ git reset --hard origin/master
+
 	
 `git fetch` downloads the latest from remote without trying to merge. 
 
@@ -20,9 +20,8 @@ The most common scenario for this is when your know your Github repository has t
 
 ## Git: Ignore a file that's already in the repo
 
-```bash
-$ git update-index --assume-unchanged name_of_file.php
-```
+    $ git update-index --assume-unchanged name_of_file.php
+
 
 ## Is this directory a repo?
 You can tell if a directory has been set up as a repo because it will have a .git folder in it.
