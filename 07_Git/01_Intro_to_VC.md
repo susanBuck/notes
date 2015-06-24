@@ -95,15 +95,15 @@ __The third copy of your site is the code that runs on your live server__; this 
 ## Basic version control workflow
 
 1. Make changes on a local copy of your code
-2. Save changes
+2. Save changes [](Commit here, instead of committing in next sequence)
 3. Test your work via your local server, is everything good? 
 
 Steps 1,2,3 repeat over and over until the feature or change you're working on is ready.
 When everything is set and you're ready to go live...
 
 4. __Stage__ individual files that have changed
-5. __Commit__ everything you staged
-6. __Push__ your commits to Github and/or your live server
-7. __Deploy__ your changes to your live server.
+5. __Commit__ everything you staged [](Seems like this would result in massive commits)
+6. __Push__ your commits to Github and/or your live server [](No, only to github)
+7. __Deploy__ your changes to your live server. [](Github to live server should always be a separate step)
 
 We'll be digging into all these steps in the following steps.

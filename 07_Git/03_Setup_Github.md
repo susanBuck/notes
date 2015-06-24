@@ -64,7 +64,7 @@ At this point, if you list the contents in the `.ssh` directory you should see t
 ```bash
 $ ssh-add id_rsa
 ```
-
+[](If people are using ssh-agent, they should be able to use a passphrase on their key and not have to enter it every time they push or pull. This is definitely the best practice option. However, if using a passphrase will require them to enter it every time they push or pull, i.e. maybe on Windows, then we should not recommend that. Would like to pin down these recommendations.)
 
 
 

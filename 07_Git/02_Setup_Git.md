@@ -33,7 +33,7 @@ Windows Users: If you're using *Cmder* and you downloaded the full version (as s
 
 
 ## Download and install Git
-If Git was *not* yet installed, head to the [download page](http://git-scm.com/downloads) and choose your operating system. 
+If Git was *not* yet installed, head to the [download page](http://git-scm.com/downloads) and choose your operating system. [](Is homebrew for mac users too ambitious? I find that it's best to adopt it early, otherwise package management in Mac OS starts to get ugly.)
 
 Download the program and run through installation.
 
@@ -47,7 +47,7 @@ If you're running an **older operating system** and the latest Git build doesn't
 
 __Tips:__
 
-Find out what version of git you're running: 
+Find out what version of git you're running: [](If git is bundled with Mac OS we may need to make an upgrade recommendation. I'm pretty sure it's not, but it's definitely undesirable to have anyone working on, say, sub-1.7. If we have linux users, may also check on bundled versions there, but they are likely to be newer. Mac bundles horribly old versions of things.)
 ```bash
 $ git --version
 ```
