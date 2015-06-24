@@ -24,25 +24,6 @@ The most common scenario for this is when your know your Github repository has t
 $ git update-index --assume-unchanged name_of_file.php
 ```
 
-
-
-## Checking log files
-Log files can provide useful information as you troubleshoot. Here's where you can find your log files:
-
-Mac MAMP: `/Applications/MAMP/logs/`
-Windows WAMP: `c:/wamp/www/logs/`
-
-On a shared server:
-Create a file called `phpinfo.php` and in it put this line of code:
-
-	<?php phpinfo(); ?>
-
-When you run that page you'll get a listing of information about your server. Search for `error_log` to see what path it stores your error_logs in. 
-
-If it doesn't give a path but just says "error_log" that means the log will be generated in the directory from which the error is created ([screenshot](http://content.screencast.com/users/susanBuck/folders/Jing/media/bc263b92-c757-4ab1-aed0-f9f7bd3f77cf/00002854.png)).
-
-Example: If my file `susanbuck.net/index.php` generated an error, I'd see a log file in `susanbuck.net/error_log`
-
 ## Is this directory a repo?
 You can tell if a directory has been set up as a repo because it will have a .git folder in it.
 To see this folder, though, you have to make sure your system is showing hidden files. ([Windows](http://windows.microsoft.com/en-US/windows-vista/Show-hidden-files)) ([Mac](http://osxdaily.com/2009/02/25/show-hidden-files-in-os-x/))
