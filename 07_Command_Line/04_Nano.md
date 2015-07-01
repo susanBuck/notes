@@ -36,7 +36,7 @@ Nano uses keyboard shortcuts that all start with the *ctrl* key. In documentatio
 
 For example, if you see `^X` it means hit *ctrl + X*; this command allows you to exit the file you're currently editing.
 
-After hitting `^X` it will ask you if you want to save. Type the letter `y` for yes.
+After hitting `^X` it will ask you if you want to save. Type the letter `y` for yes and then hit *Enter*.
 
 <img src='http://making-the-internet.s3.amazonaws.com/sysadmin-nano-edit@2x.png' class='' style='max-width:989px; width:100%' alt=''>
 

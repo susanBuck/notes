@@ -75,7 +75,7 @@ Mac users you can edit it directly in the CL with a program called `nano`:
 
     $ nano example.txt
 
-Enter some text into the file, then hit `ctrl` + `x` to save your changes.
+Enter some text into the file, then hit `ctrl` + `x` to save your changes. It will ask you to type in the letter `y` to confirm your save. After typing in `y`, hit Enter.
 
 Windows users won't have access to `nano`, so you can open the file with plain old Notepad:
 
