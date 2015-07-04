@@ -16,6 +16,8 @@ Git is a command line tool, so before digging into Git it'll be useful to go ove
 
 Now that you're set up, fire up Terminal or Cmder and let's get started.
 
+### Navigating on the command line
+
 One of the things you'll do most in CL is work with files on your computer and navigate around directories.
 
 When you first open Terminal/Cmder you should be in your home directory, and you can confirm this by typing in the command `pwd` which is short for *present working directory*, i.e. *where am I?*
@@ -58,8 +60,9 @@ Now, move into this new directory:
 
     $ cd practice
 
+### Working with text files
 
-Now that we're in here, let's create a new file called `example.txt` with the `touch` command:
+In our new practice directory, let's create a new file called `example.txt` with the `touch` command:
 
     $ touch example.txt
 
@@ -70,6 +73,8 @@ Use the `ls` command again to see that the file was created:
 
 
 Now let's edit this file...
+
+#### Editing with nano or notepad
 
 Mac users you can edit it directly in the CL with a program called `nano`:
 
@@ -89,8 +94,29 @@ To confirm your changes were made, both Mac and Windows users can use the `cat` 
 
     $ cat example.txt
 
-
 Look good?
+
+#### Quitting files in vi on Mac
+
+Mac and Linux users will also have the vi text editor installed, and some programs (including git) 
+will use vi as their default text editor. We're recommending that you use either nano or Sublime 
+because they are a bit more user-friendly when you're first learning. However, as you start using 
+your command line more, you'll probably eventually end up in vi by accident. Just so that you know 
+what it looks like when a document is opened in vi, let's try it once now. 
+
+    $ vi example.txt
+
+You should see the contents of your text file. Now, to quit without saving:
+
+1. Press Esc
+2. Press : (colon). The cursor should reappear at the lower left corner of the screen beside a colon prompt.
+3. Enter the following: q!
+4. Press enter / return.
+
+If you want to experiment with using vi as a text editor, there are a lot of great primers online, 
+but for now this should be enough to handle any surprise vi moments.
+
+#### Deleting files on the command line
 
 We've created a file, we've edited it, now let's delete it by running this command:
 
@@ -101,6 +127,8 @@ We've created a file, we've edited it, now let's delete it by running this comma
 
 Note the addition of the `-i`... This is a **flag** which is how you send extra instructions when using commands. In this case the `i` flag is short for interactive, which means it'll ask you before deleting files. It's a good habit to use the `i` flag when working with `rm` so you don't accidentally delete anything you didn't mean to.
 
+### Using man pages
+
 To learn more about any of the commands so far, you can type `man` followed by the command name. This will tell you how to use the command and all the flag options you have.
 
 
@@ -110,6 +138,8 @@ To learn more about any of the commands so far, you can type `man` followed by t
 The output from the `man` command will often span multiple screens. Use the `Enter` key to page through the output, or hit `ctrl` + `C` to exit.
 
 Those are the basics of working with directories and files with CL. See [Common Commands](https://github.com/susanBuck/notes/blob/master/07_Command_Line/04_Common-commands.md) for a quick cheat sheet on all the commands we used above.
+
+### Cleaning up
 
 Before we wrap up, let's clean up the `practice` folder we created.
 
