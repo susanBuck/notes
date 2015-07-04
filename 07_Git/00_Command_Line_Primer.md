@@ -129,7 +129,7 @@ Note the addition of the `-i`... This is a **flag** which is how you send extra 
 
 ### Using man pages
 
-To learn more about any of the commands so far, you can type `man` followed by the command name. This will tell you how to use the command and all the flag options you have.
+To learn more about any of the commands so far, you can type `man` followed by the command name. This will tell you how to use the command and all the flag options you have. These "manuals" are called "man pages", and they exist for almost all command line programs.
 
 
     $ man rm
