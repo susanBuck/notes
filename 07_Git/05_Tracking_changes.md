@@ -24,12 +24,10 @@ Next, commit this change using the `commit` command, plus the `-m` switch which 
 
 <img src='http://making-the-internet.s3.amazonaws.com/vc-git-commit.png?@2x' class='' style='max-width:589px; width:75%' alt=''>
 
-Finally, push this change to Github.com. [](For me, this has always been "git push origin master" but I think we can sort that out.)
+Finally, push this change to Github.com.
 
-	$ git push github master
+	$ git push origin master
 	
-<img src='http://making-the-internet.s3.amazonaws.com/vc-git-push.png?@2x' class='' style='max-width:589px; width:75%' alt=''>
-
 To double check your commit made it to Github.com, look for your new README.md file on Github.com:
 
 <img src='http://making-the-internet.s3.amazonaws.com/vc-first-commit-in-github.png?@2x' class='' style='max-width:822px; width:75%' alt=''>
@@ -67,7 +65,7 @@ Once your changes are staged, commit:
 
 And finally, push your commit:
 
-    $ git push github master
+    $ git push origin master
 
 
 Check your repository in Github.com to make sure the commit is there.

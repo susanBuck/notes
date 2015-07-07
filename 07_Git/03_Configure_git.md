@@ -28,6 +28,37 @@ When deciding which editor to use, git follows this order of preference:
 
 For our purposes, we'll go with option 1, the `$GIT_EDITOR` environment variable.
 
-Mac users: If you're using our `.bashrc` template, `$GIT_EDITOR` is set to Sublime Text if it exists, otherwise it uses Nano.
-
 Windows users: Create a new environment variable called `GIT_EDITOR` that is set to the path of Sublime Text (usually `c:\PROGRA~1\SUBLIM~1\`). Here are [instructions on setting environment variables](https://github.com/susanBuck/notes/blob/master/07_Command_Line/04_PATH-Variable.md).
+
+### Changing GIT_EDITOR on a Mac
+
+We're going to set what's called an environment variable by editing a configuration file in your home directory called `.bashrc`.
+
+First, change directories to your home directory and then use the ls command with the `-a` flag for all files:
+
+    $ cd
+    $ ls -a
+
+If you don't already see a file called `.bashrc` we will just create it now.
+
+    $ nano .bashrc
+
+Add the following line to your bashrc file, copied exactly (capitalization and spaces matter!):
+
+```bash
+    export GIT_EDITOR=nano
+```
+
+Then what we'll do is reload that configuration file, so that your terminal environment gets updated:
+
+```bash
+    source ~/.bashrc
+```
+
+You can confirm that your editor configuration is set by looking and the `GIT_EDITOR` variable on your command line:
+
+```bash
+    echo $GIT_EDITOR
+```
+
+The output should say that you're set to use nano.

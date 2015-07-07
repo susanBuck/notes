@@ -60,17 +60,19 @@ After your repository is created, copy the SSH URL for your repository at Github
 
 <img src='http://making-the-internet.s3.amazonaws.com/vc-get-repo-url.png?@2x' style='max-width:1019px; width:100%'>
 
-
+Make sure that SSH option is checked, and that the URL you copy has an `@` in it, like `git@github.com:username/hello-world.git`. 
+Github also offers an https URL, but we'll be using SSH since we configured SSH keys when we set up your Github connection.
 
 
 ## Connect your local repo and your remote repo
 
 Returning to CL on your computer, run this command, replacing the SSH URL with the one you copied in the above step:
 
-    $ git remote add github git@github.com:username/hello-world.git
+    $ git remote add origin git@github.com:username/hello-world.git
 
 
-This will create a connection between your local repository and the remote repository at Github.com. `github` is the nickname we're giving this connection.
+This will create a connection between your local repository and the remote repository at Github.com. `origin` is a nickname we're giving this connection.
+We're suggesting `origin` because that is what Github uses as the default remote name, so it is what you'll see in most of their instructions.
 
 You can use this command to verify your remote was added:
 
@@ -79,8 +81,8 @@ You can use this command to verify your remote was added:
 	
 Example results:
 
-    github	git@github.com:susanBuck/hello-world.git (fetch)
-    github	git@github.com:susanBuck/hello-world.git (push)
+    origin	git@github.com:susanBuck/hello-world.git (fetch)
+    origin	git@github.com:susanBuck/hello-world.git (push)
 
 
 ## Tips
