@@ -11,7 +11,10 @@ In this course, we'll use a special build of Cmder that has the following benefi
 + Includes [`elevate`](http://code.kliu.org/misc/elevate/) to easily run commands as an admin
 + Includes `nano`, a simple CL text editor
 
-Download Cmder from this URL: <https://s3.amazonaws.com/making-the-internet/cmder-dwa15-v2.zip>
+<strong style='background-color:yellow; display:block; padding:5px;'>
+Download Cmder:<br> <a href='https://s3.amazonaws.com/making-the-internet/cmder-dwa15-v2.zip'>https://s3.amazonaws.com/making-the-internet/cmder-dwa15-v2.zip
+</a>
+</strong>
 
 Extract the downloaded .zip file to `C:\Program Files` (Right click the zip file, Choose Extract all.)
 
