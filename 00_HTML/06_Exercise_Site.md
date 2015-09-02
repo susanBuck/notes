@@ -18,11 +18,10 @@ Create a directory called `mariposa/` somewhere on your local computer.
 
 Inside of it, create a subdirectory called `images/`.
 
-Download the following images to `/mariposa/images`:
+Download a copy of the following images to `/mariposa/images`:
 
 * <http://making-the-internet.s3.amazonaws.com/html-exercise-butterfly-logo.png>
 * <http://making-the-internet.s3.amazonaws.com/html-exercise-coffee-and-snack.jpg>
-* <http://making-the-internet.s3.amazonaws.com/html-exercise-menu.pdf>
 
 
 
@@ -38,22 +37,21 @@ Load this file in your browser and make sure it works.
 
 Now, continue to build out the index making it match the example:
 
-* Remembe to fill in your `<title>` element in the head of the page.
+* Remember to fill in your `<title>` element in the head of the page.
 * Add the logo up top
 * Use a `<h2>` element for the words `Central Square, Cambridge MA` that's right below the `<h1>`.
 * Create a paragraph element for the description: `Quaint, brick-walled bakery with WiFi serving homemade goodies, sandwiches and espresso drinks.`
-* Create a link to Mariposa's Yelp page. 
-	* The URL is `http://www.yelp.com/biz/mariposa-bakery-cambridge`. 
+* Create a link to Mariposa's Yelp page.
+	* The URL is `http://www.yelp.com/biz/mariposa-bakery-cambridge`.
 	* This link should load in a new tab.
-* Create a link to a page you'll create later, called `menu.html`
-* Create `<h2>` element that says `This Month's Specials`
-* Below this `<h2>`, create an unordered list element with the three specials listed in the example
+* Create a link to `menu.html`, which you'll create in the next step.
+
 
 ## Build the menu page
 
-With the index page complete, move on to the menu page and make it match [the one in our example](http://mariposa.wcc-hosting.com/menu.html). 
+With the index page complete, move on to the menu page and make it match [the one in our example](http://mariposa.wcc-hosting.com/menu.html).
 
-The menu of items is created using the HTML table element. We didn't cover tables explicitly, so here's an opportunity to put your reference skills to the test. 
+The menu of items is created using the HTML table element. We didn't cover tables explicitly, so here's an opportunity to put your reference skills to the test.
 
 [Check out MDN's page about tables...](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table)
 
@@ -61,9 +59,3 @@ There's a lot of details there, so skim down to the **Examples** and find the **
 You can copy that example and replace the info for your menu.
 
 Note how `<tr>` elements are used to create rows, and `<td>` elements are used to create cells within those rows.
-
-
-
-
-
-

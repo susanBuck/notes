@@ -1,8 +1,10 @@
 *Update needed: Instructions are for Mac, need to add Windows details.*
 
-The following is the basic procedure for setting up a SSH key so you can SSH into a server without having to enter a password everytime.
+---
 
-Move into .ssh keys directory:
+The following is the basic procedure for setting up a SSH key so you can SSH into a server without having to enter a password every time.
+
+On your computer, move into .ssh keys directory:
 
 ```bash
 $ cd ~/.ssh

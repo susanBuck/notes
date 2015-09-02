@@ -49,6 +49,8 @@ The focus is on the work; the portfolio itself is subtle and lets the content sh
 * [Rob Young](http://eisforeffort.com/)
 * [Petra Sell](http://www.volpelino.com/)
 
+<!-- http://james-oconnell.com/ -->
+
 ### Pitch
 
 Your work alone does not always get you the job. You could have the most fantastic work, but if you can't apply that work to the context in which you're aiming for, you're not going to stand out. Aim to show your target how your skills and experience can work for them.

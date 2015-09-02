@@ -20,7 +20,7 @@ When a browser connects to a secure site it retrieves the site's SSL certificate
 2. The certificate has been issued by a Certificate Authority the browser trusts
 3. The certificate is being used by the website for which it was issued
 
-If it fails on any one of these checks the browser will display a warning to the end user. 
+If it fails on any one of these checks the browser will display a warning to the end user.
 
 If it passes, a padlock will be displayed in the URL bar next to the URL:
 
@@ -54,8 +54,8 @@ If there's a problem, you'll see a broken lock and a notice from the browser:
 
 
 ## SSL Certificates
-* When using HTTPS, a SSL Certificate is required on your server 
-* SSL certificates are issued by __[Certificate Authorities (CAs)](http://en.wikipedia.org/wiki/Certificate_authority)__ which are trusted third parties recognized by browser manufacturers. 
+* When using HTTPS, a SSL Certificate is required on your server
+* SSL certificates are issued by __[Certificate Authorities (CAs)](http://en.wikipedia.org/wiki/Certificate_authority)__ which are trusted third parties recognized by browser manufacturers.
 * The largest CA is Symantec (aka VeriSign, Thawte, Geotrust) with a 38.1% market share followed by Comodo with a 29.1% market share, and GoDaddy with a 13.4% market share ([ref](http://en.wikipedia.org/wiki/Certificate_authority#Providers)).
 * Purchase either directly from these companies or a reseller.
 
@@ -111,7 +111,7 @@ There are three parts to setting up a SSL certificate on your server:
 
 ### Step 1. Generate private key on your server
 
-SSH into your server and run the following command: 
+SSH into your server and run the following command:
 
 ```bash
 openssl genrsa -out companyname.key 2048
@@ -135,7 +135,7 @@ Once you've entered the above, you can open the resulting .key file to view the 
 [long strings of encoded data]
 -----END RSA PRIVATE KEY-----
 ```
-	
+
 There's nothing more you need to do with this file; it just needs to exist on your server.
 
 
@@ -161,22 +161,22 @@ This command will prompt several questions...
 
 **Country Name**
 Use the two-letter code without punctuation for country, for example: US or CA.
- 
+
 **State or Province**
 Spell out the state completely; do not abbreviate the state or province name, for example: California
- 
+
 **Locality or City**
 The Locality field is the city or town name, for example: Berkeley. Do not abbreviate. For example: Saint Louis, not St. Louis
- 
+
 **Company**
 If the company or department has an &, @, or any other symbol using the shift key in its name, the symbol must be spelled out or omitted, in order to enroll. Example: XY & Z Corporation would be XYZ Corporation or XY and Z Corporation.
- 
+
 **Organizational Unit**
 This field is optional; but can be used to help identify certificates registered to an organization. The Organizational Unit (OU) field is the name of the department or organization unit making the request. To skip the OU field, press Enter on the keyboard.
- 
+
 **Common Name**
 The Common Name is the Host + Domain Name. It looks like `company.com`.
- 
+
 Most certificates can only be used on servers using the Common Name specified during enrollment. For example, a certificate for the domain `company.com` will receive a warning if accessing a site named `www.company.com` or `secure.company.com`, because `www.company.com` and `secure.company.com` are different from `company.com`.
 
 Do not enter an email address, challenge password or an optional company name when generating the CSR.
@@ -197,17 +197,17 @@ Once your CA has approved your certificate, they'll sign the CSR and give you yo
 
 Example:
 
-```bash	
+```bash
 -----BEGIN CERTIFICATE-----
 [long strings of encoded data]
 -----END CERTIFICATE-----
-```bash
-	
+```
+
 Save this file as `companyname.crt` and save it in the same location you created your .key and .csr files in the above steps.
 
 ### Step 3. Installing the certificate
 
-In addition to your customized SSL certificate, you'll also need to download a root certificate/intermedia certificate which tells the browser what CA you're using. 
+In addition to your customized SSL certificate, you'll also need to download a root certificate/intermedia certificate which tells the browser what CA you're using.
 
 Copy both your custom SSL certificate and the root certificate to your live server, in the same location you generated your private key and CSR.
 
@@ -230,18 +230,18 @@ Test your new SSL certificate by browsing your site via HTTPS and using a [SSL C
 
 ## Signing your own certificate
 
-If you want to create a certificate of your own without having to involve a CA, you can perform both steps by yourself. This means that the user's browser will present them with a huge *&ldquo;This certificate is self-signed! warning&rdquo;*, but if this doesn't concern you, then it doesn't matter. 
+If you want to create a certificate of your own without having to involve a CA, you can perform both steps by yourself. This means that the user's browser will present them with a huge *&ldquo;This certificate is self-signed! warning&rdquo;*, but if this doesn't concern you, then it doesn't matter.
 
 Self-signed certificates can be a cheap alternative to CA signed certificates when you're testing things out and experimenting, or if you're the only person that needs a secure connection to your host. They can also be good for allowing regular users to use secured connections if they know they can trust you and you warn them about the certificate warnings in advance.
 
 Here, the process of creating the CSR and having it signed are merged into one so you don't create the CSR file. Instead, you just generate the certificate file directly. The following is a command to generate a self-signed certificate:
- 
+
  ```bash
 openssl req -new -x509 -key keyfilename.pem -out certfilename.pem -days 365
 ```
- 
-As you can see, it's similair to the other command for creating a CSR that you would have signed by a CA, but it has two more options than the previous one. 
-The first of the extra options is the `-x509` option. This is the option that tells OpenSSL to output a self-signed certificate instead of a CSR. 
+
+As you can see, it's similair to the other command for creating a CSR that you would have signed by a CA, but it has two more options than the previous one.
+The first of the extra options is the `-x509` option. This is the option that tells OpenSSL to output a self-signed certificate instead of a CSR.
 
 The second of the extra options is the `-days` option. This option simply specifies how long (in days) the certificate is valid. Once the number of days has passed, you should generate a new certificate file and dispose of the old one.
 
@@ -267,7 +267,7 @@ Then apply that filter to routes:
 
 ```php
 Route::get('checkout', ['before' => 'force.ssl', function() {
-    
+
 }];
 ```
 
@@ -301,20 +301,17 @@ Example: The following image is hard coded to be served over http and would inva
 ```html
 <img src='http://domain.com/images/logo.jpg'>
 ```
-	
+
 The preferred path would look like this:
 
 ```html
 <img src='/images/logo.jpg'>
 ```
-	
+
 This can also be accomplished with external CDNs by omitting the http/https altogether:
 
 ```
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 ```
-	
+
 (Note, this will only work when running your work on a server; it will not work when testing work locally on your computer)
-	
-
-
