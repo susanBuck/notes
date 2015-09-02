@@ -13,13 +13,13 @@ echo $PATH
 
 Your PATH variable is built from the contents of `/etc/paths`.
 
-You can add paths to this file, or append to PATH via `~/.bashrc`. 
+You can add paths to this file, or append to PATH via `~/.bashrc`.
 
 
 __Adding a new path__
 Let's look at an example scenario of adding Sublime Text to your path.
 
-Sublime includes a Command Line tool called `subl` located at `/Applications/Sublime Text.app/Contents/SharedSupport/bin/`, so that's the path we want to add. 
+Sublime includes a Command Line tool called `subl` located at `/Applications/Sublime Text.app/Contents/SharedSupport/bin/`, so that's the path we want to add.
 
 To do this, in `~/.bashrc`, add this line:
 
@@ -79,7 +79,7 @@ __Adding a new path___
 
 Let's look at an example scenario where we add Sublime Text to your path.
 
-Sublime includes a Command Line tool called `subl` located at `C:\Program Files\Sublime Text 3\`, so that's the path we want to add. 
+Sublime includes a Command Line tool called `subl` located at `C:\Program Files\Sublime Text 3\`, so that's the path we want to add.
 
 The spaces in this path will cause problems though, so use the `dir /x` command to find out the alternative names, sans spaces.
 
@@ -91,7 +91,7 @@ $ dir /x
 $ cd PROGRA~1
 $ dir /x
 
-# In the results you should see the altnerative name for Sublime is SUBLIM~1
+# In the results you should see the alternative name for Sublime is SUBLIM~1
 ```
 
 Based on the above, we've determined the appropriate, space-free, path to Sublime is:
@@ -133,4 +133,3 @@ Moving forward, whenever you want to add a new executable, just append it to you
 ### Reference
 + [SO: Adding directory to PATH Environment Variable in Windows](http://stackoverflow.com/questions/9546324/adding-directory-to-path-environment-variable-in-windows)
 + [How to set path and environment variables in Windows](http://www.computerhope.com/issues/ch000549.htm)
-

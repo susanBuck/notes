@@ -1,4 +1,4 @@
-There are many ways you can edit text files on your computer. You can use a GUI like TextEdit (Mac), Notepad (Windows), Sublime Text, etc. Or you can use a Command Line based text editor such as nano, vim, or vi.
+There are many ways you can edit text files on your computer. You can use a GUI like TextEdit (Mac), Notepad (Windows), Atom, etc. Or you can use a Command Line based text editor such as nano, vim, or vi.
 
 Some developers love CL editors, others prefer GUIs. If you're in the latter category, there will still be times when you need to use a CL text editor because a GUI editor will have limitations. For example:
 
@@ -47,7 +47,7 @@ For a quick reference of shortcuts available in nano check out this [cheat sheet
 
 ## Edit as admin
 
-Some files require admin priveleges to edit. You can examine the permissions of a file to find out if it does need admin priveleges, or you'll simply find out when you go to edit a file as a regular user and you're told you don't have access.
+Some files require administrator privileges to edit. You can examine the permissions of a file to find out if it does need admin privileges, or you'll simply find out when you go to edit a file as a regular user and you're told you don't have access.
 
 On Mac/Unix environments, you can prefix your `nano` command with [sudo](http://ss64.com/osx/sudo.html) to run the command as a *super user*:
 
@@ -60,4 +60,3 @@ In Windows/Cmder, you can use the [elevate](http://code.kliu.org/misc/elevate/) 
 ```bash
 $ elevate nano example.txt
 ```
-

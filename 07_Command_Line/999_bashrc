@@ -6,12 +6,13 @@
 
 # ------------------------------------
 # Set default text editor
-# Defaults to Sublime if it exists
+# Defaults to Atom if it exists
 # Otherwise, nano
+# Tip: In Atom goto Atom >> Install Shell Commands if you don't have access to atom via CL
 # ------------------------------------
-sublime_path='/Applications/Sublime Text.app/Contents/SharedSupport/bin/'
-if [ -d "${sublime_path}" ]; then
-    text_editor='subl'
+atom_path='/Applications/Atom.app/Contents/Resources/app/'
+if [ -d "${atom_path}" ]; then
+    text_editor='atom'
 else
     text_editor='nano'
 fi
@@ -22,13 +23,10 @@ fi
 # ------------------------------------
 # Environment variables
 # ------------------------------------
-export VISUAL=subl
+export VISUAL=text_editor
 export EDITOR="$VISUAL"
+export GIT_EDITOR="$VISUAL"
 
-# Append to PATH (/etc/paths)
-# Note: Run `echo $PATH` to see PATH variable
-
-export PATH="${sublime_path}":$PATH
 
 
 
@@ -38,8 +36,11 @@ export PATH="${sublime_path}":$PATH
 # ------------------------------------
 # Aliases for (1) quickly opening .bashrc and (2) have terminal recognize changes to it
 alias bashedit='sudo ${text_editor} ~/.bashrc'
-alias bashappendedit='sudo ${text_editor} ~/.bashrc-append'
 alias bashrefresh='source ~/.bashrc'
+
+alias bashappendedit='sudo ${text_editor} ~/.bashrc-append'
+alias bashappendrefresh='source ~/.bashrc-append'
+
 
 # Search history. Example usage: histg foo
 alias histg="history | grep"
@@ -49,11 +50,11 @@ alias myip="curl http://ipecho.net/plain; echo"
 
 # -l list in long format
 # -F Display a...
-#       slash (`/') immediately after each pathname that is a directory, 
-#       asterisk (`*') after each that is executable, 
+#       slash (`/') immediately after each pathname that is a directory,
+#       asterisk (`*') after each that is executable,
 #       at sign (`@') after each symbolic link
-#       equals sign (`=') after each socket, 
-#       percent sign (`%') after each whiteout, 
+#       equals sign (`=') after each socket,
+#       percent sign (`%') after each whiteout,
 #       vertical bar (`|') after each that is a FIFO.
 # -G = Color
 # -a = Show hidden files
@@ -157,8 +158,8 @@ export PS1="${ps1_dir}${ps1_git} \$ "
 # ------------------------------------
 # Load non-generic .bashrc
 # To use, create ~/.bashrc-append
-# This is where you might put aliases, functions, etc. 
-# that are specific to your system/
+# This is where you might put aliases, functions, etc.
+# that are specific to your system
 # ------------------------------------
 if [ -f ~/.bashrc-append ]; then
    source ~/.bashrc-append
@@ -185,5 +186,5 @@ echo ""
 echo "You are: `whoami`"
 echo "You're in: `pwd`"
 echo ""
-echo "All aliasees...$ alias"
+echo "All aliases...$ alias"
 echo "----------------------------"

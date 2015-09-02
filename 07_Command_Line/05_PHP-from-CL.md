@@ -1,8 +1,8 @@
 ## Is PHP from CL set up?
 
-In addition to running PHP on a server, you can also run PHP from Command Line. 
+In addition to running PHP on a server, you can also run PHP from Command Line.
 
-To see if PHP for CL is setup, and what PHP executable (`php.exe`) it's using, run these commands:
+To see if PHP for CL is setup, and what PHP executable (`php.exe`) CL is using, run these commands:
 
 Mac:
 ```bash
@@ -24,7 +24,7 @@ We want to fix both cases so that your PHP from CL is using the same PHP you use
 ## Mac: PHP from CL
 First, identify the location of a PHP executable (`php.exe`) within MAMP's bin folders.
 
-As of this writing, we're working with `php5.5.5.15` so we located this PHP executable: 
+As of this writing, we're working with `php5.5.5.15` so we located this PHP executable:
 
 ```bash
 /Applications/MAMP/bin/php/php5.5.14/bin/php.exe
@@ -65,7 +65,7 @@ If the above commands work as expected, you have confirmed that you can execute 
 ## Windows: PHP from CL
 Before digging into these instructions, confirm you're logged into Windows as a user with **Administrator privileges**. This can generally be configured via *Control Panel > User Accounts*. However, it may vary across different Windows versions and you may have to search around Google for further guidance.
 
-In addition to logging in to Windows as an administrator, you may have to explicitly load Cmder as an admin. To do this, right click the Cmder icon and choose *Run as Administrator*. 
+In addition to logging in to Windows as an administrator, you may have to explicitly load Cmder as an admin. To do this, right click the Cmder icon and choose *Run as Administrator*.
 
 <img src='http://making-the-internet.s3.amazonaws.com/laravel-run-cmder-as-admin@2x.png' class='' style='max-width:869px; width:100%' alt='Run Cmder as Administrator'>
 
@@ -82,9 +82,9 @@ This command will tell you where PHP is loading from:
 ```bash
 $ where.exe php
 ```
-	
+
 <img src='http://making-the-internet.s3.amazonaws.com/laravel-where-php@2x.png' class='' style='max-width:516px; width:100%' alt=''>
-	
+
 And this command will tell you what version of PHP you're running
 
 ```bash

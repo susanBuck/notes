@@ -1,4 +1,4 @@
-### Windows - **Cmder** 
+### Windows - **Cmder**
 
 <img src='http://making-the-internet.s3.amazonaws.com/sysadmin-cmder@2x.png' style='max-width:920px; width:100%'>
 
@@ -9,8 +9,9 @@ In this course, we'll use a special build of Cmder that has the following benefi
 + Uses a version of Cmder that is tested across multiple systems
 + Includes a custom Git prompt
 + Includes [`elevate`](http://code.kliu.org/misc/elevate/) to easily run commands as an admin
++ Includes `nano`, a simple CL text editor
 
-Download Cmder from this URL: <https://s3.amazonaws.com/making-the-internet/cmder.zip>
+Download Cmder from this URL: <https://s3.amazonaws.com/making-the-internet/cmder-customized-by-susan-v2.zip>
 
 Extract the resulting file to `C:\Program Files` (extraction may take a few minutes).
 
@@ -32,7 +33,7 @@ Basic Cmder interface settings are done via (`Win + Alt + P`) the *Settings* men
 
 
 ## Creating your own commands
-Create new commands via text files with the `.bat` extension inside `bin/`. 
+Create new commands via text files with the `.bat` extension inside `bin/`.
 
 For an example, see the `alias.bat` file that creates the `alias` command.
 
@@ -51,5 +52,3 @@ Run `alias name=full command` to create an alias, or edit `config/aliases`.
 
 ## Customizing the prompt
 Done via `config/prompt.lua` or `config/git.lua` when you're in a git repository.
-
-
