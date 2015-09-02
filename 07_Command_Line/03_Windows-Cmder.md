@@ -12,7 +12,7 @@ In this course, we'll use a special build of Cmder that has the following benefi
 + Includes `nano`, a simple CL text editor
 
 <strong style='background-color:yellow; display:block; padding:5px;'>
-Download Cmder:<br> <a href='https://s3.amazonaws.com/making-the-internet/cmder-dwa15-v2.zip'>https://s3.amazonaws.com/making-the-internet/cmder-dwa15-v2.zip
+Download the dwa15 build of Cmder:<br> <a href='https://s3.amazonaws.com/making-the-internet/cmder-dwa15-v2.zip'>https://s3.amazonaws.com/making-the-internet/cmder-dwa15-v2.zip
 </a>
 </strong>
 
