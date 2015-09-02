@@ -16,7 +16,7 @@ Download and install MAMP: <https://mamp.info/en/downloads/>.
 
 <small>Note: The download includes both free *MAMP* and *MAMP Pro* (paid version). You'll only need to use the free MAMP version in this class.</small>
 
-In **Preferences > Web Server**, note that the **Document Root** is, by default, set to `/Applications/MAMP/htdocs`. 
+In **Preferences > Web Server**, note that the **Document Root** is, by default, set to `/Applications/MAMP/htdocs`.
 
 <img src='http://making-the-internet.s3.amazonaws.com/vc-mamp-htdocs-document-root@2x.png' class='' style='max-width:603px; width:100%' alt=''>
 
@@ -30,7 +30,7 @@ The default Apache port is 80, so setting it to this makes it so you can access 
 
 After you adjust your ports, MAMP should restart your local server.
 
-If you see **two little green dots** next to *Apache* and *MySQL Server* you know everything started okay. 
+If you see **two little green dots** next to *Apache* and *MySQL Server* you know everything started okay.
 
 <img src='http://making-the-internet.s3.amazonaws.com/vc-mamp-mac-all-systems-go@2x.png' class='' style='max-width:723px; width:100%' alt=''>
 
@@ -56,17 +56,23 @@ Install XAMPP...
 [Enlarge...](http://making-the-internet.s3.amazonaws.com/vc-xampp-install-on-windows@2x.png)
 <img src='http://making-the-internet.s3.amazonaws.com/vc-xampp-install-on-windows@2x.png' class='' style='max-width:1038px; width:100%' alt=''>
 
-Once installation is complete, from the XAMPP Control Panel **Start** Apache and MySQL. If all goes well they should light up green.
+Once installation is complete, from the XAMPP Control Panel **Start** Apache and MySQL.
+
+If all goes well, *Apache* and *MySQL* in the *Modules* column should light up with a green background.
 
 <img src='http://making-the-internet.s3.amazonaws.com/vc-xampp-win-start-servers@2x.png' class='' style='max-width:723px; width:100%' alt=''>
 
-If either of these services don't start up, you'll want to dig into your log files for clues. From the XAMPP Control Panel, there's a logs button next to each service.
+If either of these services don't start up, you'll want to dig into your log files for clues. From the XAMPP Control Panel, there's a *logs* button next to each service.
 
-A common cause servers failing to start is a **port conflict**. In XAMPP you can use the Netstat feature to see what current ports are being used on your computer:
+The most common issue we see is a port conflict with Apache's default port (80). If this happens, you want to find the process that is currently using port 80.
+
+Using XAMPP's Netstat window, you can see what ports your computer is currently using:
 
 <img src='http://making-the-internet.s3.amazonaws.com/vc-xampp-win-netstat@2x.png' class='' style='max-width:1179px; width:100%' alt=''>
 
-To change your port, open Apache's config file (`httpd.conf`) then find the section under `Listen:`:
+If you find a process using 80, you can end it via the *Processes* tab in Window's Task Manager.
+
+Alternatively, you can tell XAMPP to use a different port for Apache; open Apache's config file (`httpd.conf`) then find the section under `Listen:`:
 
 <img src='http://making-the-internet.s3.amazonaws.com/vc-xampp-change-apache-port@2x.png' class='' style='max-width:1179px; width:100%' alt=''>
 
@@ -83,5 +89,3 @@ Load your `helloworld.php` file in your browser via `http://localhost/helloworld
 <img src='http://making-the-internet.s3.amazonaws.com/vc-confirm-localhost-working-xampp-on-win@2x.png' class='' style='max-width:579px; width:100%' alt=''>
 
 That's it! Your local server for Windows is installed, running and tested.
-
-
