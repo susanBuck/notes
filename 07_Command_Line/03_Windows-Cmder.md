@@ -13,7 +13,7 @@ In this course, we'll use a special build of Cmder that has the following benefi
 
 Download Cmder from this URL: <https://s3.amazonaws.com/making-the-internet/cmder-dwa15-v2.zip>
 
-Extract the resulting .zip file to `C:\Program Files` (Right click the zip file, Choose Extract all.)
+Extract the downloaded .zip file to `C:\Program Files` (Right click the zip file, Choose Extract all.)
 
 Extraction may take a few minutes.
 
