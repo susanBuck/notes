@@ -75,7 +75,7 @@ If this is happening to you, try the following steps.
 
 First, __close and re-open XAMPP__. It may just fix the problem. Some users have reported that after a fresh install of XAMPP, this step is needed.
 
-If that doesn't work, open Window's *Task Manager* and switch the *Processes* tab. Select any process labeled `httpd.exe` and terminate it by clicking *End Process*:
+If that doesn't work, open Window's [*Task Manager*](http://www.howtogeek.com/66622/stupid-geek-tricks-6-ways-to-open-windows-task-manager/) and switch the *Processes* tab. Select any process labeled `httpd.exe` and terminate it by clicking *End Process*:
 
 <img src='http://making-the-internet.s3.amazonaws.com/sysadmin-windows-taskmanager@2x.png' class='' style='max-width:939px; width:100%' alt='Windows Task Manager'>
 
