@@ -67,15 +67,15 @@ If either of these services don't start up, you'll want to dig into your log fil
 
 ### Port conflict troubleshooting
 
-(Skip this section to Apache and MySQL started without any problem)
+(Skip this section if Apache and MySQL started without any issues.)
 
-The most common issue we see with getting Apache started in XAMPP is a port conflict, specifically if some other process on your computer is already using Apache's default port of 80.
+The most common issue we see with getting Apache started in XAMPP is a port conflict, specifically if some other process on your computer is already using Apache's default port of `80`.
 
 If this is happening to you, try the following steps.
 
 First, __close and re-open XAMPP__. It may just fix the problem. Some users have reported that after a fresh install of XAMPP, this step is needed.
 
-If that doesn't work, open Window's Task Manager and switch the *Processes* tab. Select any process labeled `httpd.exe` and terminate it by clicking *End Process*:
+If that doesn't work, open Window's *Task Manager* and switch the *Processes* tab. Select any process labeled `httpd.exe` and terminate it by clicking *End Process*:
 
 <img src='http://making-the-internet.s3.amazonaws.com/sysadmin-windows-taskmanager@2x.png' class='' style='max-width:939px; width:100%' alt='Windows Task Manager'>
 
@@ -87,7 +87,7 @@ As a last resource, if the above steps don't work, you can tell XAMPP to use a d
 
 An alternative port number you might try is `8080`.
 
-Always stop and restart Apache after making a change to the config file.
+Always stop and restart Apache after making a change to the `httpd.conf` file.
 
 If this works, note that when you access your local server pages your URL will need to append the port like so: `http://localhost:8080`
 
