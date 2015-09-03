@@ -64,22 +64,35 @@ If all goes well, *Apache* and *MySQL* in the *Modules* column should light up w
 
 If either of these services don't start up, you'll want to dig into your log files for clues. From the XAMPP Control Panel, there's a *logs* button next to each service.
 
-The most common issue we see is a port conflict with Apache's default port (80). If this happens, you want to find the process that is currently using port 80.
 
-Using XAMPP's Netstat window, you can see what ports your computer is currently using:
+### Port conflict troubleshooting
 
-<img src='http://making-the-internet.s3.amazonaws.com/vc-xampp-win-netstat@2x.png' class='' style='max-width:1179px; width:100%' alt=''>
+(Skip this section to Apache and MySQL started without any problem)
 
-If you find a process using 80, you can end it via the *Processes* tab in Window's Task Manager.
+The most common issue we see with getting Apache started in XAMPP is a port conflict, specifically if some other process on your computer is already using Apache's default port of 80.
 
-Alternatively, you can tell XAMPP to use a different port for Apache; open Apache's config file (`httpd.conf`) then find the section under `Listen:`:
+If this is happening to you, try the following steps.
+
+First, __close and re-open XAMPP__. It may just fix the problem. Some users have reported that after a fresh install of XAMPP, this step is needed.
+
+If that doesn't work, open Window's Task Manager and switch the *Processes* tab. Select any process labeled `httpd.exe` and terminate it by clicking *End Process*:
+
+<img src='http://making-the-internet.s3.amazonaws.com/sysadmin-windows-taskmanager@2x.png' class='' style='max-width:939px; width:100%' alt='Windows Task Manager'>
+
+Then, try starting Apache from the XAMPP control panel again.
+
+As a last resource, if the above steps don't work, you can tell XAMPP to use a different port for Apache; open Apache's config file (`httpd.conf`) then find the section under `Listen:`:
 
 <img src='http://making-the-internet.s3.amazonaws.com/vc-xampp-change-apache-port@2x.png' class='' style='max-width:1179px; width:100%' alt=''>
 
+An alternative port number you might try is `8080`.
+
 Always stop and restart Apache after making a change to the config file.
 
-...
+If this works, note that when you access your local server pages your URL will need to append the port like so: `http://localhost:8080`
 
+
+### Your first file
 Assuming your local server is now running, test out your first PHP script: Create a new file in your code editor and save it as `helloworld.php` in `c:/xampp/htdocs/`. This path is your local server's **Document Root** which is where you'll put all your web files and projects. You may want to create a shortcut to this directory, because you'll be working in it a lot.
 
 Paste in [this code](https://gist.github.com/susanBuck/3f133c6d64be0f6f27a9) to your `helloworld.php` file.
