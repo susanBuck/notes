@@ -173,7 +173,6 @@ fi
 # MOTD (Message of the Day)
 # What you see when Terminal opens
 # ------------------------------------
-echo "[1;90m"
 echo "----------------------------"
 echo "Loaded ~/.bashrc"
 if [ ${appended} ]; then
