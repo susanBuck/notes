@@ -1,7 +1,9 @@
+
+
 <img src='http://making-the-internet.s3.amazonaws.com/sysadmin-permissions-cheat-sheet.png?@2x' class='' style='max-width:532px; width:75%' alt=''>
 
 ## Suggested Permissions
-For directories: `755` `drwxr-xr-x` 
+For directories: `755` `drwxr-xr-x`
 
 For files: `644` `-rw-r--r--`
 

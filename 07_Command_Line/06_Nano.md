@@ -1,3 +1,7 @@
+Nano was briefly covered in the Primer section, but lets take a closer look at why you would want to use nano, and instructions on how to use nano as an administrator.
+
+---
+
 There are many ways you can edit text files on your computer. You can use a GUI like TextEdit (Mac), Notepad (Windows), Atom, etc. Or you can use a Command Line based text editor such as nano, vim, or vi.
 
 Some developers love CL editors, others prefer GUIs. If you're in the latter category, there will still be times when you need to use a CL text editor because a GUI editor will have limitations. For example:
