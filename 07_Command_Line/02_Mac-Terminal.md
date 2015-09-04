@@ -13,9 +13,9 @@ For example, you can configure...
 + aliases you can use to make long commands shorter
 + your PATH variable
 
-Customizations are made via the file `~/.bashrc`, which is what Bash reads and executes every time you open Terminal.
+Our first configurations will be made via the file `~/.bashrc`.
 
-We're going to provide you with a template `.bashrc` file you can start with, and customize as needed.
+We're going to provide you with a template `.bashrc` file you can start with and customize as needed.
 
 Visit [bashrc](https://raw.githubusercontent.com/susanBuck/notes/master/07_Command_Line/999_bashrc) and copy its contents.
 
@@ -33,7 +33,26 @@ Nano will ask you if you want to *Save modified buffer*. Type the letter `y` to 
 
 Nano will confirm what filename the changes will be saved to&mdash; in this case `.bashrc`. Hit enter to confirm the save.
 
-Close and re-open Terminal for the changes to take effect.
+Next, we need to edit `~/.bash_profile` and tell it to load `~/.bashrc`.
+
+Open `~/.bash_profile` in nano:
+
+```bash
+$ sudo nano ~/.bash_profile
+```
+
+Paste in this code:
+
+```bash
+if [ -f ~/.bashrc ]; then
+   source ~/.bashrc
+fi
+```
+
+Hit `ctrl` + `x` to save and exit.
+Type the letter `y` to confirm you want to save.
+
+__Close and re-open Terminal for the changes to take effect.__
 
 If everything works, you should see this whenever you open Terminal:
 
