@@ -83,14 +83,13 @@ Note the addition of the `-i`... This is a **flag** which is how you send extra 
 
 ## Using man pages
 
-To learn more about any of the commands so far, you can type `man` followed by the command name. This will tell you how to use the command and all the flag options you have. These "manuals" are called "man pages", and they exist for almost all command line programs.
+__Mac users__: To learn more about any of the commands so far, you can type `man` followed by the command name. This will tell you how to use the command and all the flag options you have. These "manuals" are called "man pages", and they exist for almost all command line programs.
 
     $ man rm
 
 The output from the `man` command will often span multiple screens. Use the `Enter` key to page through the output, or hit `ctrl` + `z` to exit.
 
-Those are the basics of working with directories and files with CL. See [Common Commands](https://github.com/susanBuck/notes/blob/master/07_Command_Line/04_Common-commands.md) for a quick cheat sheet on all the commands we used above.
-
+__Windows/Cmder users__: Unfortunately `man` does not work in Cmder, but you can learn more about any command by typing it in at [ExplainShell](http://explainshell.com/).
 
 ## Cleaning up
 
@@ -131,3 +130,5 @@ Try running `git` again and you should be all set.
 ## In conclusion...
 
 There's lots more you can do in CL besides working with files and directories. The above exercise was just to get you familiar with working with commands and some basic directory navigation.
+
+See [Common Commands](https://github.com/susanBuck/notes/blob/master/07_Command_Line/04_Common-commands.md) for a quick cheat sheet on all the commands we used above.
