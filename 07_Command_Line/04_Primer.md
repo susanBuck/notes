@@ -93,7 +93,7 @@ To learn more about any of the commands so far, you can type `man` followed by t
     $ man rm
 
 
-The output from the `man` command will often span multiple screens. Use the `Enter` key to page through the output, or hit `ctrl` + `C` to exit.
+The output from the `man` command will often span multiple screens. Use the `Enter` key to page through the output, or hit `ctrl` + `z` to exit.
 
 Those are the basics of working with directories and files with CL. See [Common Commands](https://github.com/susanBuck/notes/blob/master/07_Command_Line/04_Common-commands.md) for a quick cheat sheet on all the commands we used above.
 
@@ -103,14 +103,13 @@ Before we wrap up, let's clean up the `practice` folder we created.
 
 First, run the following command to move up one directory (i.e., out of the `practice` directory):
 
-
     $ cd ../
-
 
 And now delete:
 
-    $ rm -i practice
+    $ rm -ir practice
 
+Note the addition of the `r` flag, which is needed for recursively removing directories and their contents.
 
 ## Installing git
 
