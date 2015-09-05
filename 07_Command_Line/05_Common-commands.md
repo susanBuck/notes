@@ -14,4 +14,4 @@
 | Remove a directory (with confirmation) | `rm -Ri foobar/`
 | Create a new text-based file | `touch foobar.txt`
 | Re-enter previous commands | Up arrow
-| Abort | ctrl + c
+| Abort | try `ctrl` + `z` or `ctrl` + `c`
