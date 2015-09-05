@@ -89,7 +89,7 @@ __Mac users__: To learn more about any of the commands so far, you can type `man
 
 The output from the `man` command will often span multiple screens. Use the `Enter` key to page through the output, or hit `ctrl` + `z` to exit.
 
-__Windows/Cmder users__: Unfortunately `man` does not work in Cmder, but you can learn more about any command by typing it in at [ExplainShell](http://explainshell.com/).
+__Windows/Cmder users__: Unfortunately `man` does not work in Cmder, but you can learn more about common commands by typing them it in at [ExplainShell](http://explainshell.com/).
 
 ## Cleaning up
 
@@ -131,4 +131,4 @@ Try running `git` again and you should be all set.
 
 There's lots more you can do in CL besides working with files and directories. The above exercise was just to get you familiar with working with commands and some basic directory navigation.
 
-See [Common Commands](https://github.com/susanBuck/notes/blob/master/07_Command_Line/04_Common-commands.md) for a quick cheat sheet on all the commands we used above.
+See [Common Commands](https://github.com/susanBuck/notes/blob/master/07_Command_Line/05_Common-commands.md) for a quick cheat sheet on all the commands we used above.
